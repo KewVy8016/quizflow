@@ -147,10 +147,10 @@ function updateShuffleButton() {
     if (btn) {
         if (shuffleEnabled) {
             btn.classList.add('active');
-            btn.textContent = '🔀 สลับตัวเลือก ✓';
+            btn.innerHTML = '🔀 <span class="btn-label">สลับตัวเลือก ✓</span>';
         } else {
             btn.classList.remove('active');
-            btn.textContent = '🔀 สลับตัวเลือก';
+            btn.innerHTML = '🔀 <span class="btn-label">สลับตัวเลือก</span>';
         }
     }
 }
@@ -189,10 +189,10 @@ function updateShuffleQuestionsButton() {
     if (btn) {
         if (shuffleQuestionsEnabled) {
             btn.classList.add('active');
-            btn.textContent = '📋 สลับข้อสอบ ✓';
+            btn.innerHTML = '📋 <span class="btn-label">สลับข้อสอบ ✓</span>';
         } else {
             btn.classList.remove('active');
-            btn.textContent = '📋 สลับข้อสอบ';
+            btn.innerHTML = '📋 <span class="btn-label">สลับข้อสอบ</span>';
         }
     }
 }
