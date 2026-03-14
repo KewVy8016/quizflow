@@ -3,9 +3,15 @@ let currentQuestion = 0;
 let answers = {};
 let quizTopic = '';
 let quizFile = '';
+
+// Shuffle answers (ตัวเลือกคำตอบ)
 let shuffleEnabled = false;
 let shuffledQuizData = [];
 let answerMappings = {}; // Maps shuffled index to original index for each question
+
+// Shuffle questions (ลำดับข้อสอบ)
+let shuffleQuestionsEnabled = false;
+let shuffledQuestionOrder = []; // Array of original indices in shuffled order
 
 // Get quiz topic from URL
 function getQuizFileFromURL() {
@@ -64,11 +70,20 @@ function loadState() {
         answers = state.answers || {};
     }
     
-    // Load shuffle preference
+    // Load shuffle answers preference
     const shuffleKey = `quiz_shuffle_${quizTopic}`;
     const savedShuffle = localStorage.getItem(shuffleKey);
     shuffleEnabled = savedShuffle === 'true';
     updateShuffleButton();
+
+    // Load shuffle questions preference
+    const shuffleQKey = `quiz_shuffle_questions_${quizTopic}`;
+    const savedShuffleQ = localStorage.getItem(shuffleQKey);
+    shuffleQuestionsEnabled = savedShuffleQ === 'true';
+    if (shuffleQuestionsEnabled) {
+        createShuffledQuestionOrder();
+    }
+    updateShuffleQuestionsButton();
 }
 
 function saveState() {
@@ -132,10 +147,52 @@ function updateShuffleButton() {
     if (btn) {
         if (shuffleEnabled) {
             btn.classList.add('active');
-            btn.textContent = '🔀 สลับข้อ ✓';
+            btn.textContent = '🔀 สลับตัวเลือก ✓';
         } else {
             btn.classList.remove('active');
-            btn.textContent = '🔀 สลับข้อ';
+            btn.textContent = '🔀 สลับตัวเลือก';
+        }
+    }
+}
+
+// ---- Question Order Shuffle ----
+
+function toggleShuffleQuestions() {
+    shuffleQuestionsEnabled = !shuffleQuestionsEnabled;
+    const shuffleQKey = `quiz_shuffle_questions_${quizTopic}`;
+    localStorage.setItem(shuffleQKey, shuffleQuestionsEnabled);
+    updateShuffleQuestionsButton();
+    
+    if (shuffleQuestionsEnabled) {
+        createShuffledQuestionOrder();
+    } else {
+        shuffledQuestionOrder = [];
+    }
+    // Reset to first question when toggling
+    currentQuestion = 0;
+    saveState();
+    renderQuestion();
+}
+
+function createShuffledQuestionOrder() {
+    // Create an array [0, 1, 2, ..., n-1] then shuffle it
+    shuffledQuestionOrder = quizData.map((_, i) => i);
+    for (let i = shuffledQuestionOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledQuestionOrder[i], shuffledQuestionOrder[j]] = 
+            [shuffledQuestionOrder[j], shuffledQuestionOrder[i]];
+    }
+}
+
+function updateShuffleQuestionsButton() {
+    const btn = document.getElementById('shuffle-questions-btn');
+    if (btn) {
+        if (shuffleQuestionsEnabled) {
+            btn.classList.add('active');
+            btn.textContent = '📋 สลับข้อสอบ ✓';
+        } else {
+            btn.classList.remove('active');
+            btn.textContent = '📋 สลับข้อสอบ';
         }
     }
 }
@@ -146,10 +203,15 @@ function renderQuestion() {
         return;
     }
     
-    // Use shuffled data if enabled, otherwise use original
+    // Resolve the "real" original index based on question order shuffle
+    const originalQIndex = shuffleQuestionsEnabled
+        ? shuffledQuestionOrder[currentQuestion]
+        : currentQuestion;
+    
+    // Use shuffled answer data if enabled, otherwise use original
     const displayData = shuffleEnabled ? shuffledQuizData : quizData;
-    const question = displayData[currentQuestion];
-    const hasAnswered = answers.hasOwnProperty(currentQuestion);
+    const question = displayData[originalQIndex];
+    const hasAnswered = answers.hasOwnProperty(originalQIndex);
     
     const container = document.getElementById('quiz-container');
     container.innerHTML = `
@@ -168,7 +230,7 @@ function renderQuestion() {
         </div>
     `;
     
-    renderAnswers(question, hasAnswered);
+    renderAnswers(question, hasAnswered, originalQIndex);
     updateProgress();
     
     // Event listeners
@@ -180,7 +242,7 @@ function renderQuestion() {
     }
 }
 
-function renderAnswers(question, hasAnswered) {
+function renderAnswers(question, hasAnswered, originalQIndex) {
     const answersContainer = document.getElementById('answers-container');
     
     question.answers.forEach((answer, displayIndex) => {
@@ -189,26 +251,26 @@ function renderAnswers(question, hasAnswered) {
         btn.textContent = answer.text;
         btn.disabled = hasAnswered;
         
-        // Get the original index if shuffled, otherwise use display index
-        const originalIndex = shuffleEnabled ? answerMappings[currentQuestion][displayIndex] : displayIndex;
+        // Get the original answer index if answer-shuffle is enabled
+        const originalAnsIndex = shuffleEnabled ? answerMappings[originalQIndex][displayIndex] : displayIndex;
         
         if (hasAnswered) {
             if (answer.correct) {
                 btn.classList.add('correct');
-            } else if (answers[currentQuestion] === originalIndex) {
+            } else if (answers[originalQIndex] === originalAnsIndex) {
                 btn.classList.add('incorrect');
             }
-        } else if (answers[currentQuestion] === originalIndex) {
+        } else if (answers[originalQIndex] === originalAnsIndex) {
             btn.classList.add('selected');
         }
         
-        btn.addEventListener('click', () => selectAnswer(originalIndex));
+        btn.addEventListener('click', () => selectAnswer(originalQIndex, originalAnsIndex));
         answersContainer.appendChild(btn);
     });
 }
 
-function selectAnswer(answerIndex) {
-    answers[currentQuestion] = answerIndex;
+function selectAnswer(originalQIndex, answerIndex) {
+    answers[originalQIndex] = answerIndex;
     saveState();
     renderQuestion();
 }
@@ -236,6 +298,7 @@ function showResult() {
     resultContainer.classList.remove('hidden');
     
     let correctCount = 0;
+    // Always score against original quizData indices stored in answers
     quizData.forEach((question, index) => {
         const userAnswer = answers[index];
         if (userAnswer !== undefined && question.answers[userAnswer].correct) {
@@ -277,6 +340,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('No quiz file specified in URL, redirecting to index');
         window.location.href = 'index.html';
         return;
+    }
+    
+    if (document.getElementById('shuffle-questions-btn')) {
+        document.getElementById('shuffle-questions-btn').addEventListener('click', toggleShuffleQuestions);
     }
     
     if (document.getElementById('shuffle-btn')) {

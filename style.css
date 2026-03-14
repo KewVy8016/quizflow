@@ -103,6 +103,8 @@ header h1 {
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .btn-shuffle {
@@ -125,6 +127,7 @@ header h1 {
     background: rgba(76, 175, 80, 0.6);
     border-color: rgba(76, 175, 80, 1);
     color: #ffffff;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
 }
 
 .progress-bar {
