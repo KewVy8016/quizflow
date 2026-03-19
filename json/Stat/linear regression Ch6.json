@@ -1,0 +1,442 @@
+[
+  {
+    "text": "หัวใจสำคัญของการวิเคราะห์การถดถอย [Regression Analysis] คืออะไร?",
+    "info": "นิยามของการถดถอยคือการหาแบบจำลองทางคณิตศาสตร์ที่อธิบายความสัมพันธ์ของตัวแปรเพื่อใช้ทำนายค่าในอนาคต",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การหาค่าเฉลี่ยของข้อมูลทั้งหมด", "correct": false },
+      { "text": "การศึกษาความสัมพันธ์ระหว่างตัวแปรเพื่อการพยากรณ์", "correct": true },
+      { "text": "การทดสอบว่ากลุ่มตัวอย่างสองกลุ่มต่างกันหรือไม่", "correct": false },
+      { "text": "การจัดกลุ่มข้อมูลที่มีลักษณะคล้ายกันเข้าด้วยกัน", "correct": false }
+    ]
+  },
+  {
+    "text": "ตัวแปรที่ทำหน้าที่เป็น 'ต้นเหตุ' หรือตัวที่ใช้ในการทำนาย เรียกว่าอะไร?",
+    "info": "ตัวแปรอิสระ หรือ X คือตัวแปรต้นที่ส่งผลต่อการเปลี่ยนแปลงของตัวแปรตาม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปรตาม [Dependent Variable]", "correct": false },
+      { "text": "ตัวแปรแฝง [Latent Variable]", "correct": false },
+      { "text": "ตัวแปรอิสระ [Independent Variable]", "correct": true },
+      { "text": "ตัวแปรสอดแทรก [Intervening Variable]", "correct": false }
+    ]
+  },
+  {
+    "text": "ในทางการตลาด หากต้องการทราบว่า 'งบโฆษณา' ส่งผลต่อ 'ยอดขาย' อย่างไร ยอดขายจัดเป็นตัวแปรชนิดใด?",
+    "info": "ยอดขายคือผลลัพธ์ที่ต้องการศึกษา [ตัวแปร Y] ซึ่งแปรผันไปตามงบโฆษณา",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปรอิสระ", "correct": false },
+      { "text": "ตัวแปรตาม", "correct": true },
+      { "text": "ตัวแปรควบคุม", "correct": false },
+      { "text": "ค่าคงที่", "correct": false }
+    ]
+  },
+  {
+    "text": "การเปลี่ยนคำถามจาก 'เกิดอะไรขึ้น?' เป็น 'อะไรจะเกิดขึ้นต่อไป?' สอดคล้องกับการวิเคราะห์แบบใดมากที่สุด?",
+    "info": "Linear Regression เป็นเครื่องมือหลักของ Predictive Analytics ที่ใช้ข้อมูลในอดีตมาคาดการณ์อนาคต",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Descriptive Analytics", "correct": false },
+      { "text": "Diagnostic Analytics", "correct": false },
+      { "text": "Predictive Analytics", "correct": true },
+      { "text": "Prescriptive Analytics", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดกล่าวถึงความสำคัญของ Linear Regression ได้ถูกต้องที่สุด?",
+    "info": "ความสำคัญหลักคือการเปลี่ยนข้อมูลเป็นโมเดลที่ช่วยให้ผู้บริหารคาดการณ์ผลลัพธ์ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ช่วยในการหาข้อสรุปเชิงพรรณนาเท่านั้น", "correct": false },
+      { "text": "ช่วยในการตัดสินใจและวางแผนอนาคตจากการพยากรณ์", "correct": true },
+      { "text": "ใช้สำหรับข้อมูลที่เป็นกลุ่มเชิงคุณภาพเท่านั้น", "correct": false },
+      { "text": "ใช้ลดขนาดของข้อมูลให้เล็กลง", "correct": false }
+    ]
+  },
+  {
+    "text": "Simple Linear Regression ต่างจาก Multiple Linear Regression อย่างไร?",
+    "info": "Simple มี X ตัวเดียว ส่วน Multiple มี X ตั้งแต่ 2 ตัวขึ้นไป",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "จำนวนตัวแปรตาม", "correct": false },
+      { "text": "จำนวนตัวแปรอิสระ", "correct": true },
+      { "text": "ชนิดของมาตรวัดข้อมูล", "correct": false },
+      { "text": "ความซับซ้อนของตัวแปรตาม", "correct": false }
+    ]
+  },
+  {
+    "text": "หากต้องการศึกษาความสัมพันธ์ระหว่าง 'ความเข้มข้นของฝุ่น PM 2.5' กับ 'จำนวนผู้ป่วยโรคทางเดินหายใจ' ควรใช้โมเดลแบบใด?",
+    "info": "มีตัวแปรต้น (ฝุ่น) 1 ตัว และตัวแปรตาม (ผู้ป่วย) 1 ตัว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Simple Linear Regression", "correct": true },
+      { "text": "Multiple Linear Regression", "correct": false },
+      { "text": "Logistic Regression", "correct": false },
+      { "text": "Polynomial Regression", "correct": false }
+    ]
+  },
+  {
+    "text": "การพยากรณ์พื้นที่จัดเก็บข้อมูลโดยใช้ 'อายุ, เพศ และตำแหน่งงาน' เป็นตัวแปรต้น จัดเป็นโมเดลประเภทใด?",
+    "info": "มีการใช้ตัวแปรอิสระมากกว่า 1 ตัว (อายุ, เพศ, ตำแหน่ง) ในการทำนาย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Simple Linear Regression", "correct": false },
+      { "text": "Multiple Linear Regression", "correct": true },
+      { "text": "Binary Regression", "correct": false },
+      { "text": "Non-linear Regression", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือลักษณะบังคับของตัวแปรตาม [Y] ใน Linear Regression?",
+    "info": "ตามนิยามในเอกสาร ตัวแปรตามต้องเป็นเชิงปริมาณเพื่อให้สร้างสมการเส้นตรงได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ต้องเป็นข้อมูลเชิงคุณภาพ [กลุ่ม]", "correct": false },
+      { "text": "ต้องเป็นข้อมูลเชิงปริมาณ [ตัวเลข] เท่านั้น", "correct": true },
+      { "text": "เป็นได้ทั้งเชิงปริมาณและคุณภาพ", "correct": false },
+      { "text": "ต้องมีค่าเป็น 0 หรือ 1 เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "'Non-linear Regression' มีลักษณะอย่างไร?",
+    "info": "นิยามของ Non-linear คือรูปแบบที่ไม่สามารถแทนด้วยสมการเชิงเส้นได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความสัมพันธ์เป็นเส้นตรง", "correct": false },
+      { "text": "ความสัมพันธ์เป็นเส้นโค้งหรือรูปแบบอื่นที่ไม่ใช่เส้นตรง", "correct": true },
+      { "text": "มีตัวแปรอิสระหลายตัว", "correct": false },
+      { "text": "ตัวแปรตามเป็นกลุ่ม", "correct": false }
+    ]
+  },
+  {
+    "text": "ในสมการ Y = a + bX + e ตัวแปร e หมายถึงอะไร?",
+    "info": "e คือส่วนต่างที่ตัวแปรอิสระไม่สามารถอธิบายตัวแปรตามได้ทั้งหมด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "สัมประสิทธิ์สหสัมพันธ์", "correct": false },
+      { "text": "ค่าคงที่", "correct": false },
+      { "text": "ค่าความคลาดเคลื่อน [Residual]", "correct": true },
+      { "text": "ตัวแปรต้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า a ในสมการถดถอยหมายถึงอะไร?",
+    "info": "a หรือ Intercept คือค่าตั้งต้นของ Y เมื่อไม่มีอิทธิพลจาก X",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความชันของกราฟ", "correct": false },
+      { "text": "จุดที่เส้นตรงตัดแกน Y [ค่า Y เมื่อ X=0]", "correct": true },
+      { "text": "สัมประสิทธิ์ของตัวแปรต้น", "correct": false },
+      { "text": "ค่าความแม่นยำของโมเดล", "correct": false }
+    ]
+  },
+  {
+    "text": "หากสมการคือ Y = 10 + 2X ถ้า X เพิ่มขึ้น 1 หน่วย Y จะเปลี่ยนไปอย่างไร?",
+    "info": "ค่า b=2 [ความชัน] บอกอัตราการเปลี่ยนแปลงของ Y ต่อการเพิ่มขึ้นของ X หนึ่งหน่วย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพิ่มขึ้น 10 หน่วย", "correct": false },
+      { "text": "ลดลง 2 หน่วย", "correct": false },
+      { "text": "เพิ่มขึ้น 2 หน่วย", "correct": true },
+      { "text": "คงที่", "correct": false }
+    ]
+  },
+  {
+    "text": "สมการใดคือรูปแบบของ Multiple Linear Regression?",
+    "info": "เป็นสมการที่รวมอิทธิพลของตัวแปรอิสระหลายตัวเข้าด้วยกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Y = a + bX", "correct": false },
+      { "text": "Y = a + b1X1 + b2X2 + ... + e", "correct": true },
+      { "text": "Y = aX^2 + bX + c", "correct": false },
+      { "text": "Y = a + e", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า b [Coefficient] มีเครื่องหมายติดลบ หมายความว่าอย่างไร?",
+    "info": "เครื่องหมายลบบอกทิศทางความสัมพันธ์ที่สวนทางกัน [Negative Relationship]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "X และ Y ไม่มีความสัมพันธ์กัน", "correct": false },
+      { "text": "X เพิ่มขึ้น Y จะลดลง", "correct": true },
+      { "text": "X เพิ่มขึ้น Y จะเพิ่มขึ้น", "correct": false },
+      { "text": "ข้อมูลผิดพลาด", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีการ 'Ordinary Least Squares [OLS]' มีหลักการสำคัญอย่างไร?",
+    "info": "OLS พยายามหาเส้นที่ 'ใกล้จุดข้อมูลจริงมากที่สุด' โดยลดผลรวมของ e^2",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทำให้ผลรวมของค่าความคลาดเคลื่อนยกกำลังสองน้อยที่สุด", "correct": true },
+      { "text": "ทำให้ค่าเฉลี่ยของ X และ Y เท่ากัน", "correct": false },
+      { "text": "ทำให้เส้นตรงตัดผ่านจุดทุกจุดในกราฟ", "correct": false },
+      { "text": "ทำให้ค่า a มีค่าเป็นบวกเสมอ", "correct": false }
+    ]
+  },
+  {
+    "text": "การคำนวณหาค่า b ใน Simple Linear Regression ต้องใช้อะไรเป็นหลัก?",
+    "info": "ตามสูตร b = [nΣXY - ΣXΣY] / [nΣX^2 - (ΣX)^2] ซึ่งเป็นการหาความสัมพันธ์ของ X, Y เทียบกับ X",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ส่วนเบี่ยงเบนมาตรฐานของ Y เท่านั้น", "correct": false },
+      { "text": "ความแปรปรวนร่วมของ X, Y หารด้วยความแปรปรวนของ X", "correct": true },
+      { "text": "ค่าสูงสุดและต่ำสุดของข้อมูล", "correct": false },
+      { "text": "การสุ่มตัวเลขจนกว่าจะลงตัว", "correct": false }
+    ]
+  },
+  {
+    "text": "เมื่อได้ค่า b มาแล้ว จะหาค่า a ได้จากสูตรใด?",
+    "info": "จุดตัดแกน Y คำนวณได้จากค่าเฉลี่ยของ Y หักลบด้วยผลคูณของความชันและค่าเฉลี่ย X",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "a = X̄ - bȲ", "correct": false },
+      { "text": "a = Ȳ - bX̄", "correct": true },
+      { "text": "a = Ȳ / n", "correct": false },
+      { "text": "a = b × X̄", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธี 'Maximum Likelihood Estimation [MLE]' มักใช้ในกรณีใด?",
+    "info": "ตามเอกสารระบุว่า MLE เป็นวิธีที่นิยมในการประมาณค่าคงที่และสัมประสิทธิ์ในโมเดลพหุคูณ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Simple Linear Regression เท่านั้น", "correct": false },
+      { "text": "ใช้ประมาณค่าสัมประสิทธิ์ใน Multiple Regression และโมเดลที่ซับซ้อน", "correct": true },
+      { "text": "ใช้หาค่าเฉลี่ยเลขคณิต", "correct": false },
+      { "text": "ใช้เมื่อข้อมูลมีขนาดเล็กมาก", "correct": false }
+    ]
+  },
+  {
+    "text": "ทำไมในการคำนวณ Error ต้องมีการ 'ยกกำลังสอง' [e^2]?",
+    "info": "หากไม่ยกกำลังสอง ผลรวมของ Error รอบเส้นตรงจะมีค่าเข้าใกล้ 0 ทำให้วัดความผิดพลาดไม่ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อให้ตัวเลขดูเยอะขึ้น", "correct": false },
+      { "text": "เพื่อป้องกันไม่ให้ค่าความคลาดเคลื่อนที่เป็นบวกและลบหักล้างกันเอง", "correct": true },
+      { "text": "เพื่อให้เข้ากับสมการเส้นโค้ง", "correct": false },
+      { "text": "เพื่อหาค่าเฉลี่ยได้ง่ายขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า R^2 [R-Square] บอกอะไรเรา?",
+    "info": "R^2 คือสัมประสิทธิ์การตัดสินใจ [Coefficient of Determination] วัดคุณภาพของโมเดล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทิศทางความสัมพันธ์", "correct": false },
+      { "text": "เปอร์เซ็นต์ที่ตัวแปรอิสระสามารถอธิบายความผันแปรของตัวแปรตามได้", "correct": true },
+      { "text": "จำนวนกลุ่มตัวอย่างที่เพียงพอ", "correct": false },
+      { "text": "ค่าเฉลี่ยของความคลาดเคลื่อน", "correct": false }
+    ]
+  },
+  {
+    "text": "หาก R^2 = 0.85 หมายความว่าอย่างไร?",
+    "info": "R^2 บอกความสามารถในการอธิบายข้อมูลของโมเดล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "สมการนี้ผิดพลาด 85%", "correct": false },
+      { "text": "ตัวแปรต้นอธิบายตัวแปรตามได้ 85% อีก 15% คือปัจจัยอื่น", "correct": true },
+      { "text": "ความชันของกราฟเท่ากับ 0.85", "correct": false },
+      { "text": "ข้อมูลมีความสัมพันธ์กันน้อยมาก", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Multiple Regression ทำไมต้องใช้ 'Adjusted R-Square'?",
+    "info": "Adjusted R^2 จะปรับลดค่าลงหากตัวแปรที่เพิ่มเข้าไปไม่มีนัยสำคัญจริง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพราะค่า R^2 ปกติจะเพิ่มขึ้นเสมอเมื่อเพิ่มตัวแปร แม้ตัวแปรนั้นจะไม่เกี่ยวก็ตาม", "correct": true },
+      { "text": "เพื่อให้ได้ค่าที่สูงกว่า R^2 ปกติ", "correct": false },
+      { "text": "เพราะคำนวณง่ายกว่า", "correct": false },
+      { "text": "ใช้เฉพาะเมื่อข้อมูลเป็นตัวเลขทศนิยม", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า RMSE [Root Mean Square Error] ค่าน้อยหรือค่ามากจึงจะดี?",
+    "info": "RMSE วัดความผิดพลาด ยิ่งน้อยแปลว่าความผิดพลาดต่ำ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่ามากดี เพราะแสดงว่าข้อมูลเยอะ", "correct": false },
+      { "text": "ค่าน้อยดี เพราะแสดงว่าพยากรณ์ได้ใกล้เคียงความจริง", "correct": true },
+      { "text": "ต้องมีค่าเท่ากับ 1 เท่านั้น", "correct": false },
+      { "text": "ต้องมีค่าเท่ากับค่า a", "correct": false }
+    ]
+  },
+  {
+    "text": "สูตรของ RMSE คือข้อใด?",
+    "info": "เป็นการหาค่าเฉลี่ยของส่วนต่างยกกำลังสองแล้วถอดรากเพื่อให้อยู่ในหน่วยเดียวกับข้อมูลเดิม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Σ[Actual - Predict]", "correct": false },
+      { "text": "√[Σ[Predict - Actual]^2 / N]", "correct": true },
+      { "text": "R^2 × 100", "correct": false },
+      { "text": "a + bX", "correct": false }
+    ]
+  },
+  {
+    "text": "'Multicollinearity' คือปัญหาที่เกิดจากอะไร?",
+    "info": "ใน Multiple Regression ตัวแปรต้นต้องเป็นอิสระต่อกัน ไม่ควรแย่งกันอธิบายตัวแปรตาม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปรตามสัมพันธ์กับตัวแปรอิสระมากเกินไป", "correct": false },
+      { "text": "ตัวแปรอิสระกันเองมีความสัมพันธ์กันสูงเกินไป", "correct": true },
+      { "text": "ข้อมูลมีขนาดเล็กเกินไป", "correct": false },
+      { "text": "ค่า R^2 มีค่าเป็น 0", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีการนำตัวแปรเข้าสู่สมการแบบ 'All Enter' คืออะไร?",
+    "info": "เป็นวิธีที่เชื่อว่าทุกตัวแปรที่เก็บมามีความสำคัญทั้งหมด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เลือกเฉพาะตัวที่เก่งที่สุด", "correct": false },
+      { "text": "ใส่ตัวแปรอิสระทุกตัวที่มีเข้าไปในสมการพร้อมกันทีเดียว", "correct": true },
+      { "text": "ค่อยๆ ใส่ทีละตัว", "correct": false },
+      { "text": "ใส่เฉพาะตัวที่มีค่าเป็นบวก", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีเลือกตัวแปรแบบ 'Stepwise' มีลักษณะเด่นอย่างไร?",
+    "info": "Stepwise เป็นการผสมผสานระหว่าง Forward และ Backward เพื่อให้ได้ชุดตัวแปรที่ดีที่สุด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใส่เข้าไปแล้วไม่เคยเอาออก", "correct": false },
+      { "text": "นำตัวแปรเข้าที่ละตัวและตรวจสอบย้อนกลับเพื่อดึงตัวที่ไม่สำคัญออก", "correct": true },
+      { "text": "ดึงตัวแปรออกตั้งแต่เริ่มแรกจนหมด", "correct": false },
+      { "text": "สุ่มเลือกตัวแปรเข้าสมการ", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธี 'Backward' เริ่มต้นการสร้างสมการอย่างไร?",
+    "info": "Backward เริ่มจากโมเดลเต็ม [Full Model] แล้วค่อยๆ ตัดตัวที่ไม่มีนัยสำคัญออก",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เริ่มจากไม่มีตัวแปรเลย", "correct": false },
+      { "text": "เริ่มจากมีตัวแปรอิสระทุกตัวอยู่ในระบบสมการ", "correct": true },
+      { "text": "เริ่มจากตัวแปรตัวสุดท้ายในฐานข้อมูล", "correct": false },
+      { "text": "เริ่มจากตัวแปรที่มีค่าเฉลี่ยสูงสุด", "correct": false }
+    ]
+  },
+  {
+    "text": "หากพบว่าตัวแปรอิสระไม่มี 'นัยสำคัญ' (p-value > 0.05) ควรทำอย่างไรตามวิธี Forward?",
+    "info": "Forward จะเพิ่มตัวแปรเฉพาะตัวที่มีอิทธิพลอย่างมีนัยสำคัญเท่านั้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใส่เข้าไปเรื่อยๆ", "correct": false },
+      { "text": "หยุดการนำตัวแปรนั้นเข้าสู่สมการ", "correct": true },
+      { "text": "เปลี่ยนไปใช้โมเดล Simple แทน", "correct": false },
+      { "text": "คูณค่าสัมประสิทธิ์เพิ่มขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ในการแปลผลสมการ Sale = 0.71 + 0.07[TV] + 0.23[Radio] ตัวแปรใดส่งผลต่อยอดขายมากที่สุด?",
+    "info": "เพราะมีค่าสัมประสิทธิ์ [0.23] สูงกว่า TV [0.07]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "TV", "correct": false },
+      { "text": "Radio", "correct": true },
+      { "text": "Intercept", "correct": false },
+      { "text": "ทั้งสองเท่ากัน", "correct": false }
+    ]
+  },
+  {
+    "text": "จากสมการ Sale = 0.71 + 0.07[TV] - 0.06[Newspaper] การโฆษณาทางหนังสือพิมพ์ส่งผลอย่างไร?",
+    "info": "ค่าสัมประสิทธิ์เป็นลบ [-0.06] หมายถึงความสัมพันธ์ในทิศทางตรงกันข้าม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทำให้ยอดขายเพิ่มขึ้น", "correct": false },
+      { "text": "ทำให้ยอดขายลดลง", "correct": true },
+      { "text": "ไม่ส่งผลเลย", "correct": false },
+      { "text": "เพิ่มขึ้นเป็น 2 เท่า", "correct": false }
+    ]
+  },
+  {
+    "text": "คำว่า 'Holding other variables constant' มักใช้ในการแปรผลโมเดลแบบใด?",
+    "info": "เมื่อมี X หลายตัว การแปรผล X ตัวหนึ่งต้องกำหนดให้ตัวอื่นคงที่เพื่อดูอิทธิพลที่แท้จริง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Simple Linear Regression", "correct": false },
+      { "text": "Multiple Linear Regression", "correct": true },
+      { "text": "Descriptive Statistics", "correct": false },
+      { "text": "T-test", "correct": false }
+    ]
+  },
+  {
+    "text": "การดูค่า 'p-value' ในผลลัพธ์ Regression เพื่อวัตถุประสงค์ใด?",
+    "info": "ปกติถ้า p < 0.05 แสดงว่าตัวแปรนั้นมีผลต่อ Y อย่างเชื่อถือได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อดูความชันของเส้นตรง", "correct": false },
+      { "text": "เพื่อทดสอบนัยสำคัญว่าตัวแปรนั้นส่งผลจริงหรือไม่", "correct": true },
+      { "text": "เพื่อหาค่าสูงสุดของข้อมูล", "correct": false },
+      { "text": "เพื่อหาค่าจุดตัดแกน Y", "correct": false }
+    ]
+  },
+  {
+    "text": "หากกราฟเส้น Forecast [พยากรณ์] และ Actual [จริง] ทับกันสนิท หมายถึงอะไร?",
+    "info": "การที่เส้นทับกันแปลว่าค่าที่ทายได้ตรงกับค่าจริงเกือบทั้งหมด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โมเดลผิดพลาด", "correct": false },
+      { "text": "โมเดลมีความแม่นยำสูงมาก [R^2 เข้าใกล้ 1]", "correct": true },
+      { "text": "ข้อมูลหายไปบางส่วน", "correct": false },
+      { "text": "ต้องคำนวณใหม่", "correct": false }
+    ]
+  },
+  {
+    "text": "ถ้า n=10, Σ[Predict-Actual]^2 = 8.64 ค่า RMSE จะเป็นเท่าไหร่?",
+    "info": "ตามสูตร √(8.64/10) = √0.864 ≈ 0.929",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "0.864", "correct": false },
+      { "text": "0.929", "correct": true },
+      { "text": "8.640", "correct": false },
+      { "text": "1.000", "correct": false }
+    ]
+  },
+  {
+    "text": "ในการพยากรณ์ระดับก๊าซคาร์บอนมอนอกไซด์จากปริมาณบุหรี่ที่สูบ 'ปริมาณบุหรี่' คือตัวแปรใด?",
+    "info": "ปริมาณบุหรี่เป็นสิ่งที่เรารู้หรือกำหนดเพื่อนำไปทำนายผล [ก๊าซ]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปรตาม", "correct": false },
+      { "text": "ตัวแปรอิสระ", "correct": true },
+      { "text": "ตัวแปรควบคุม", "correct": false },
+      { "text": "ค่าความคลาดเคลื่อน", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใด 'ไม่ใช่' ประโยชน์ของการวิเคราะห์การถดถอย?",
+    "info": "การเปรียบเทียบค่าเฉลี่ยหลายกลุ่มคือหน้าที่ของ ANOVA ไม่ใช่ Regression",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การเปรียบเทียบค่าเฉลี่ยของประชากร 3 กลุ่ม", "correct": true },
+      { "text": "การพยากรณ์ยอดขายในไตรมาสหน้า", "correct": false },
+      { "text": "การระบุปัจจัยที่ส่งผลต่อความพึงพอใจลูกค้า", "correct": false },
+      { "text": "การประมาณการความเสี่ยงในการลงทุน", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า 'Beta' [Standardized Coefficient] มีประโยชน์อย่างไรใน Multiple Regression?",
+    "info": "Beta แปลงทุกตัวแปรให้เป็นมาตรฐานเดียวกัน ทำให้รู้ว่าใครมีผลมากที่สุดจริงๆ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้บอกหน่วยของข้อมูล", "correct": false },
+      { "text": "ใช้เปรียบเทียบอิทธิพลของตัวแปรที่มีหน่วยวัดต่างกัน", "correct": true },
+      { "text": "ใช้หาจุดตัดแกน Y", "correct": false },
+      { "text": "ใช้ลดค่า Error", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือ 'ข้อจำกัด' ของ Linear Regression?",
+    "info": "หากความสัมพันธ์จริงเป็นเส้นโค้ง แต่เราฝืนใช้ Linear Regression ผลพยากรณ์จะผิดพลาด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "คำนวณด้วยคอมพิวเตอร์ไม่ได้", "correct": false },
+      { "text": "ไม่สามารถอธิบายความสัมพันธ์ที่ไม่เป็นเส้นตรงได้ดี", "correct": true },
+      { "text": "ใช้ได้กับข้อมูลขนาดเล็กเท่านั้น", "correct": false },
+      { "text": "ให้ผลลัพธ์ที่เป็นตัวเลขเสมอ", "correct": false }
+    ]
+  }
+]
