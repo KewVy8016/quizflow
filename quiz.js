@@ -22,7 +22,9 @@ function getQuizFileFromURL() {
 // Initialize quiz
 async function initQuiz() {
     console.log('Initializing quiz with file:', quizFile);
-    quizTopic = quizFile.replace('.json', '').replace(/_/g, ' ');
+    // ใช้แค่ชื่อไฟล์ (ไม่รวม subfolder path) เพื่อให้ stateKey สม่ำเสมอ
+    const fileName = quizFile.split('/').pop().split('\\').pop();
+    quizTopic = fileName.replace('.json', '').replace(/_/g, ' ');
     document.getElementById('quiz-title').textContent = quizTopic;
     
     try {

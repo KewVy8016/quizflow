@@ -116,7 +116,18 @@ async function loadQuizLibrary() {
             return;
         }
 
-        // สร้างปุ่มเลือก subject ด้านบน (เหมือนโฟลเดอร์)
+        // wrapper สำหรับ subject selector
+        const selectorWrapper = document.createElement('div');
+        selectorWrapper.id = 'subject-selector-wrapper';
+
+        // wrapper สำหรับ quiz grid section
+        const sectionWrapper = document.createElement('div');
+        sectionWrapper.id = 'subject-section-wrapper';
+
+        libraryContainer.appendChild(selectorWrapper);
+        libraryContainer.appendChild(sectionWrapper);
+
+        // สร้างปุ่มเลือก subject
         const subjectSelector = document.createElement('div');
         subjectSelector.className = 'subject-selector';
 
@@ -126,20 +137,16 @@ async function loadQuizLibrary() {
             if (index === 0) btn.classList.add('active');
             btn.textContent = cat.subject;
             btn.addEventListener('click', () => {
-                // เปลี่ยน active chip
-                document
-                    .querySelectorAll('.subject-chip')
-                    .forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.subject-chip').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                // render เฉพาะ subtree ของ subject ที่เลือก
-                renderSubjectSection(libraryContainer, categories, cat.subject);
+                renderSubjectSection(sectionWrapper, categories, cat.subject);
             });
             subjectSelector.appendChild(btn);
         });
 
-        libraryContainer.appendChild(subjectSelector);
+        selectorWrapper.appendChild(subjectSelector);
         // แสดง subject แรกเป็นค่าเริ่มต้น
-        renderSubjectSection(libraryContainer, categories, categories[0].subject);
+        renderSubjectSection(sectionWrapper, categories, categories[0].subject);
     } catch (error) {
         console.error('Error loading quiz library:', error);
         libraryContainer.innerHTML = `
@@ -157,35 +164,26 @@ async function loadQuizLibrary() {
 }
 
 // render quiz เฉพาะของ subject ที่เลือก (lazy per subject)
-async function renderSubjectSection(container, categories, subjectName) {
-    // ลบ section เดิมถ้ามี (แต่คง selector ไว้)
-    const oldSection = container.querySelector('.subject-section');
-    if (oldSection) {
-        container.removeChild(oldSection);
-    }
+async function renderSubjectSection(sectionWrapper, categories, subjectName) {
+    sectionWrapper.innerHTML = '';
 
     const category = categories.find(c => c.subject === subjectName);
     if (!category) return;
 
-    const section = document.createElement('section');
-    section.className = 'subject-section';
-
     const title = document.createElement('h2');
     title.className = 'subject-title';
     title.textContent = category.subject;
-    section.appendChild(title);
+    sectionWrapper.appendChild(title);
 
     const grid = document.createElement('div');
     grid.className = 'quiz-library';
 
-    // สร้างการ์ดจากไฟล์ใน subject นี้เท่านั้น
     for (const quizFile of category.files) {
         const card = await createQuizCard(quizFile, category.subject);
         grid.appendChild(card);
     }
 
-    section.appendChild(grid);
-    container.appendChild(section);
+    sectionWrapper.appendChild(grid);
 }
 
 async function createQuizCard(quizFile, subject) {

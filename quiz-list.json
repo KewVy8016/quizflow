@@ -1,5 +1,21 @@
 [
-  "Main Memory Management_ OS Concepts.json",
-  "Resource Deadlocks_ Allocation, Avoidance, and Recovery.json",
-  "Threads and Concurrency in Operating Systems.json"
+  {
+    "subject": "Operating System",
+    "files": [
+      "Operating System/Main Memory Management_ OS Concepts.json",
+      "Operating System/Resource Deadlocks_ Allocation, Avoidance, and Recovery.json",
+      "Operating System/Threads and Concurrency in Operating Systems.json"
+    ]
+  },
+  {
+    "subject": "Ebusiness",
+    "files": [
+      "Ebusiness/EB04 ปรับปรุง.json",
+      "Ebusiness/EB05 ปรับปรุง.json",
+      "Ebusiness/EB06 ปรับปรุง.json",
+      "Ebusiness/EB07 ปรับปรุง.json",
+      "Ebusiness/EB08 ปรับปรุง.json",
+      "Ebusiness/EB09 ปรับปรุง.json"
+    ]
+  }
 ]
