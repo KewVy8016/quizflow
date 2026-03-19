@@ -131,22 +131,28 @@ async function loadQuizLibrary() {
         const subjectSelector = document.createElement('div');
         subjectSelector.className = 'subject-selector';
 
-        categories.forEach((cat, index) => {
+        // restore subject ที่เคยเลือกไว้ (ถ้ามี)
+        const savedSubject = sessionStorage.getItem('quiz_last_subject');
+        const initialSubject = categories.find(c => c.subject === savedSubject)
+            ? savedSubject
+            : categories[0].subject;
+
+        categories.forEach((cat) => {
             const btn = document.createElement('button');
             btn.className = 'subject-chip';
-            if (index === 0) btn.classList.add('active');
+            if (cat.subject === initialSubject) btn.classList.add('active');
             btn.textContent = cat.subject;
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.subject-chip').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+                sessionStorage.setItem('quiz_last_subject', cat.subject);
                 renderSubjectSection(sectionWrapper, categories, cat.subject);
             });
             subjectSelector.appendChild(btn);
         });
 
         selectorWrapper.appendChild(subjectSelector);
-        // แสดง subject แรกเป็นค่าเริ่มต้น
-        renderSubjectSection(sectionWrapper, categories, categories[0].subject);
+        renderSubjectSection(sectionWrapper, categories, initialSubject);
     } catch (error) {
         console.error('Error loading quiz library:', error);
         libraryContainer.innerHTML = `
@@ -215,6 +221,7 @@ async function createQuizCard(quizFile, subject) {
     `;
     
     card.addEventListener('click', () => {
+        sessionStorage.setItem('quiz_last_subject', subject);
         const url = `quiz.html?topic=${encodeURIComponent(quizFile)}`;
         console.log('Navigating to quiz:', url);
         window.location.href = url;

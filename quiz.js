@@ -318,7 +318,11 @@ function showResult() {
 
 // Event listeners
 document.getElementById('back-btn').addEventListener('click', () => {
-    window.location.href = 'index.html';
+    if (document.referrer && document.referrer.includes('index.html') || history.length > 1) {
+        history.back();
+    } else {
+        window.location.href = 'index.html';
+    }
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {
