@@ -66,22 +66,48 @@ async function discoverQuizFiles() {
     return existingFiles;
 }
 
+// แปลงโครงสร้าง quiz-list ให้เป็นรูปแบบที่มี subject เสมอ
+// รองรับทั้งรูปแบบเก่า (array ของ string) และรูปแบบใหม่ (array ของ { subject, files })
+function normalizeQuizList(quizList) {
+    if (!Array.isArray(quizList) || quizList.length === 0) {
+        return [];
+    }
+
+    const first = quizList[0];
+
+    // รูปแบบใหม่: [{ subject: 'OS', files: ['Operating System/xxx.json'] }, ...]
+    if (typeof first === 'object' && first !== null && 'subject' in first && Array.isArray(first.files)) {
+        return quizList;
+    }
+
+    // รูปแบบเดิม: ['Main Memory.json', 'Threads.json', ...]
+    if (typeof first === 'string') {
+        return [{
+            subject: 'ทั่วไป',
+            files: quizList
+        }];
+    }
+
+    return [];
+}
+
 // Load and display quiz library
 async function loadQuizLibrary() {
     const libraryContainer = document.getElementById('quiz-library');
     
     try {
-        const quizList = await discoverQuizFiles();
+        const rawQuizList = await discoverQuizFiles();
+        const categories = normalizeQuizList(rawQuizList);
         
         libraryContainer.innerHTML = '';
         
-        if (!quizList || quizList.length === 0) {
+        if (!categories || categories.length === 0) {
             libraryContainer.innerHTML = `
                 <div class="loading">
                     <p>❌ ไม่พบไฟล์ quiz</p>
-                    <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-                        กรุณาเพิ่มชื่อไฟล์ใน library.js หรือรัน:<br>
-                        <code style="background: #f0f0f0; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 5px;">
+                    <p style="font-size: 0.9em; color: #eee; margin-top: 10px;">
+                        กรุณาเพิ่มไฟล์ในโฟลเดอร์ <code>json/</code> หรือรัน:<br>
+                        <code style="background: #f0f0f0; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 5px; color: #333;">
                             npm run setup
                         </code>
                     </p>
@@ -90,9 +116,26 @@ async function loadQuizLibrary() {
             return;
         }
         
-        for (const quizFile of quizList) {
-            const card = await createQuizCard(quizFile);
-            libraryContainer.appendChild(card);
+        // แสดงแบบแบ่งตามรายวิชา (subject)
+        for (const category of categories) {
+            const section = document.createElement('section');
+            section.className = 'subject-section';
+
+            const title = document.createElement('h2');
+            title.className = 'subject-title';
+            title.textContent = category.subject;
+            section.appendChild(title);
+
+            const grid = document.createElement('div');
+            grid.className = 'quiz-library';
+
+            for (const quizFile of category.files) {
+                const card = await createQuizCard(quizFile, category.subject);
+                grid.appendChild(card);
+            }
+
+            section.appendChild(grid);
+            libraryContainer.appendChild(section);
         }
     } catch (error) {
         console.error('Error loading quiz library:', error);
@@ -110,9 +153,11 @@ async function loadQuizLibrary() {
     }
 }
 
-async function createQuizCard(quizFile) {
+async function createQuizCard(quizFile, subject) {
     console.log('Creating card for quiz file:', quizFile);
-    const topicName = quizFile.replace('.json', '').replace(/_/g, ' ');
+    // รองรับ path ที่มี subfolder เช่น "Ebusiness/EB04.json"
+    const fileName = quizFile.split('/').pop().split('\\').pop();
+    const topicName = fileName.replace('.json', '').replace(/_/g, ' ');
     
     // Load quiz to get question count
     let questionCount = 0;
@@ -147,6 +192,7 @@ async function createQuizCard(quizFile) {
     card.className = 'quiz-card';
     card.innerHTML = `
         <h3>${topicName}</h3>
+        ${subject ? `<div class="quiz-subject-tag">${subject}</div>` : ''}
         <div class="quiz-info">${questionCount} คำถาม</div>
         <div class="quiz-progress">Progress: ${progress} / ${questionCount}</div>
     `;

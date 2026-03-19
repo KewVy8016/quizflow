@@ -40,6 +40,19 @@ header h1 {
     gap: 16px;
 }
 
+/* ── Subject sections (group by subject) ───── */
+.subject-section {
+    margin-bottom: 32px;
+}
+
+.subject-title {
+    color: #ffffff;
+    font-size: clamp(1.2em, 4vw, 1.8em);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
 .quiz-card {
     background: white;
     border-radius: 12px;
@@ -59,6 +72,16 @@ header h1 {
     margin-bottom: 10px;
     font-size: clamp(1.1em, 3.5vw, 1.4em);
     line-height: 1.4;
+}
+
+.quiz-subject-tag {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #4b5563;
+    background: #e5e7eb;
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-bottom: 6px;
 }
 
 .quiz-info {
