@@ -45,6 +45,7 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
     margin-bottom: 18px;
     padding: 10px;
     border-radius: 999px;
