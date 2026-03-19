@@ -1,0 +1,552 @@
+[
+  {
+    "text": "Logistic Regression จัดเป็นเทคนิคประเภทใดใน Machine Learning?",
+    "info": "เป็นเทคนิคแบบมีผู้กำกับ (Supervised Learning) ที่ใช้ทำนายผลลัพธ์เชิงหมวดหมู่ทวิภาค",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Regression: สำหรับพยากรณ์ค่าตัวเลขต่อเนื่อง [เช่น ราคาบ้าน]", "correct": false },
+      { "text": "Classification: สำหรับการจำแนกกลุ่ม [เช่น ใช่/ไม่ใช่]", "correct": true },
+      { "text": "Clustering: การจัดกลุ่มข้อมูลที่ไม่มีป้ายกำกับ", "correct": false },
+      { "text": "Dimension Reduction: การลดจำนวนตัวแปรให้เหลือน้อยลง", "correct": false }
+    ]
+  },
+  {
+    "text": "ตัวแปรตาม (Dependent Variable) ใน Logistic Regression ต้องมีลักษณะอย่างไร?",
+    "info": "ใช้พยากรณ์ผลลัพธ์ที่เป็นกลุ่ม [Categorical Outcome] เช่น 0 หรือ 1",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Continuous: เป็นตัวเลขต่อเนื่อง", "correct": false },
+      { "text": "Categorical: เป็นข้อมูลเชิงกลุ่ม เช่น เป็นโรค/ไม่เป็นโรค", "correct": true },
+      { "text": "Infinite: มีค่าได้ไม่จำกัด", "correct": false },
+      { "text": "Linear: มีความสัมพันธ์เป็นเส้นตรงกับตัวแปรอิสระ", "correct": false }
+    ]
+  },
+  {
+    "text": "'Binary Outcome' ในบริบทของบทนี้หมายถึงข้อใด?",
+    "info": "เป็นนิยามของการถดถอยโลจิสติกที่เน้นการทำนายผลลัพธ์แบบทวิภาค",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ผลลัพธ์ที่มี 10 ทางเลือก", "correct": false },
+      { "text": "ผลลัพธ์ที่มีความต่อเนื่อง", "correct": false },
+      { "text": "ผลลัพธ์ที่มีเพียง 2 กรณี [เช่น Pass/Fail]", "correct": true },
+      { "text": "ผลลัพธ์ที่เป็นค่าลบได้", "correct": false }
+    ]
+  },
+  {
+    "text": "ทำไมเราจึงไม่ใช้ Linear Regression กับข้อมูลที่เป็น Yes/No?",
+    "info": "Logistic Regression จะบีบค่าผลลัพธ์ [Bounded Output] ให้อยู่ในช่วง [0, 1] เสมอ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพราะ Linear Regression คำนวณช้ากว่า", "correct": false },
+      { "text": "เพราะ Linear อาจพยากรณ์ค่าที่น้อยกว่า 0 หรือมากกว่า 1 ซึ่งไม่มีความหมาย", "correct": true },
+      { "text": "เพราะ Linear Regression ใช้ตัวแปรอิสระได้เพียงตัวเดียว", "correct": false },
+      { "text": "เพราะ Linear Regression ต้องใช้ข้อมูลขนาดใหญ่เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือประโยชน์ของ Decision Boundary ใน Logistic Regression?",
+    "info": "ใช้กำหนดเกณฑ์ เช่น ถ้า P > 0.5 ให้ถือว่าเป็น “สำเร็จ”",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ช่วยลดจำนวนข้อมูลที่ผิดปกติ", "correct": false },
+      { "text": "ช่วยสร้างเส้นแบ่งเขตการตัดสินใจว่าข้อมูลควรอยู่ในกลุ่มใด", "correct": true },
+      { "text": "ช่วยคำนวณหาค่าเฉลี่ยของประชากร", "correct": false },
+      { "text": "ช่วยเพิ่มค่าสัมประสิทธิ์ให้สูงขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "หากต้องการตรวจจับอีเมลว่าเป็น 'Spam' หรือ 'Inbox' ควรใช้เทคนิคใด?",
+    "info": "เป็นการจำแนกประเภทข้อมูล [Classification] แบบ 2 กลุ่มที่นิยมใช้ในไอที",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Linear Regression", "correct": false },
+      { "text": "Time Series", "correct": false },
+      { "text": "Logistic Regression", "correct": true },
+      { "text": "ANOVA", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดไม่ใช่การประยุกต์ใช้ Logistic Regression ที่ระบุในไฟล์?",
+    "info": "การพยากรณ์ราคาบ้านเป็นงานของ Multiple Linear Regression เนื่องจากผลลัพธ์เป็นตัวเลขต่อเนื่อง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "พยากรณ์ราคาบ้านตามทำเลที่ตั้ง", "correct": true },
+      { "text": "การอนุมัติสินเชื่อทางการเงิน", "correct": false },
+      { "text": "การทำนายว่าคนใช้เป็นโรคหรือไม่", "correct": false },
+      { "text": "การคัดแยกอีเมลขยะ", "correct": false }
+    ]
+  },
+  {
+    "text": "'Interpretability' ของ Logistic Regression หมายถึงอะไร?",
+    "info": "เป็นจุดเด่นที่ทำให้เราเข้าใจความสัมพันธ์ของปัจจัยต่างๆ ได้ง่าย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การที่โมเดลสามารถทำงานได้รวดเร็ว", "correct": false },
+      { "text": "การอธิบายได้ว่าปัจจัยใดส่งผลต่อตัวแปรตามมากน้อยเพียงใด", "correct": true },
+      { "text": "การที่โมเดลสามารถพยากรณ์ค่าลบได้", "correct": false },
+      { "text": "การใช้ทรัพยากรเครื่องคอมพิวเตอร์น้อย", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่าความน่าจะเป็น [Probability] ในโมเดลนี้มีขอบเขตเท่าใด?",
+    "info": "ฟังก์ชัน Sigmoid จะเปลี่ยนค่าจากการคำนวณเชิงเส้นให้มาอยู่ในช่วงนี้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ระหว่าง -1 ถึง 1", "correct": false },
+      { "text": "ระหว่าง 0 ถึง 1", "correct": true },
+      { "text": "ตั้งแต่ 0 ไปจนถึงอนันต์", "correct": false },
+      { "text": "น้อยกว่า 0.5 เสมอ", "correct": false }
+    ]
+  },
+  {
+    "text": "ในการตลาดนิยมใช้ Logistic Regression ทำนายสิ่งใด?",
+    "info": "เป็นผลลัพธ์แบบไบนารี [ซื้อ/ไม่ซื้อ] ซึ่งเหมาะกับโมเดลนี้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยอดขายรวมของปีนั้น", "correct": false },
+      { "text": "ลูกค้าจะตัดสินใจซื้อสินค้า [Convert] หรือไม่", "correct": true },
+      { "text": "ราคาสินค้าที่เหมาะสม", "correct": false },
+      { "text": "จำนวนพนักงานในแผนก", "correct": false }
+    ]
+  },
+  {
+    "text": "ฟังก์ชัน Sigmoid มีชื่อเรียกทางสถิติอีกชื่อว่าอะไร?",
+    "info": "เป็นฟังก์ชันคณิตศาสตร์ที่เป็นหัวใจหลักของ Logistic Regression",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Linear Function", "correct": false },
+      { "text": "Logistic Function", "correct": true },
+      { "text": "Error Term", "correct": false },
+      { "text": "Link Function", "correct": false }
+    ]
+  },
+  {
+    "text": "กราฟของ Sigmoid Function มีลักษณะเป็นรูปทรงใด?",
+    "info": "สะท้อนธรรมชาติของเหตุการณ์ที่ช่วงแรกและช่วงปลายเปลี่ยนช้า แต่ตรงกลางเปลี่ยนเร็ว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เส้นตรง [Linear]", "correct": false },
+      { "text": "รูปตัว U", "correct": false },
+      { "text": "รูปตัว S [S-Curve]", "correct": true },
+      { "text": "รูปทรงระฆังคว่ำ", "correct": false }
+    ]
+  },
+  {
+    "text": "เมื่อค่า z = 0 ผลลัพธ์ของฟังก์ชัน Sigmoid [σ[z]] จะมีค่าเท่าใด?",
+    "info": "เป็นจุดกึ่งกลางพอดีของฟังก์ชันตามคุณสมบัติทางคณิตศาสตร์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "0", "correct": false },
+      { "text": "0.5", "correct": true },
+      { "text": "1", "correct": false },
+      { "text": "อนันต์", "correct": false }
+    ]
+  },
+  {
+    "text": "ฟังก์ชัน Sigmoid ทำหน้าที่เป็น 'ตัวแปลง' [Translator] เพื่อสิ่งใด?",
+    "info": "ช่วยให้เราสื่อสารได้ว่าเหตุการณ์มีโอกาสเกิดขึ้นกี่เปอร์เซ็นต์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อเปลี่ยนภาษาโปรแกรมให้เร็วขึ้น", "correct": false },
+      { "text": "เพื่อแปลงค่า z ให้เป็นค่าความน่าจะเป็นระหว่าง 0 ถึง 1", "correct": true },
+      { "text": "เพื่อแปลผลภาษาอังกฤษเป็นภาษาไทย", "correct": false },
+      { "text": "เพื่อย้ายข้อมูลจากตารางหนึ่งไปอีกตารางหนึ่ง", "correct": false }
+    ]
+  },
+  {
+    "text": "'Squash' ในบริบทของ Sigmoid หมายถึงอะไร?",
+    "info": "ทำให้ผลลัพธ์ไม่หลุดจากขอบเขตของความน่าจะเป็น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การขยายค่าข้อมูลให้กว้างขึ้น", "correct": false },
+      { "text": "การบีบค่าตั้งแต่ลบอนันต์ถึงบวกอนันต์ให้มาอยู่ในช่วง 0 ถึง 1", "correct": true },
+      { "text": "การลบข้อมูลที่มีค่าซ้ำกัน", "correct": false },
+      { "text": "การหาค่าเฉลี่ยของตัวแปรอิสระ", "correct": false }
+    ]
+  },
+  {
+    "text": "หากค่า z มีค่าเป็นบวกมากๆ (z → ∞) ค่า Sigmoid จะเข้าใกล้ค่าใด?",
+    "info": "เป็นเพดานสูงสุดของฟังก์ชันความน่าจะเป็น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "0", "correct": false },
+      { "text": "0.5", "correct": false },
+      { "text": "1", "correct": true },
+      { "text": "ติดลบอนันต์", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดอธิบายคุณสมบัติการจัดการ 'ค่าสุดโต่ง' [Outliers] ของ Sigmoid ได้ถูกต้อง?",
+    "info": "ทำให้โมเดลมีความทนทาน [Robust] ต่อข้อมูลที่ผิดปกติ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Outliers จะทำให้กราฟพยากรณ์เพี้ยนไปทั้งเส้น", "correct": false },
+      { "text": "ไม่ว่าค่า z จะพุ่งไปสูงแค่ไหน ผลลัพธ์จะถูกล็อกไว้ใกล้เคียง 1 เสมอ", "correct": true },
+      { "text": "Sigmoid จะตัดข้อมูล Outliers ทั้งก่อนการคำนวณ", "correct": false },
+      { "text": "Outliers จะทำให้ค่า Sigmoid กลายเป็น 0 ทันที", "correct": false }
+    ]
+  },
+  {
+    "text": "สูตรคณิตศาสตร์ของฟังก์ชัน Sigmoid คือข้อใด?",
+    "info": "เป็นสูตรมาตรฐานที่ใช้ในการบีบค่า z ให้อยู่ในช่วง 0-1",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "y = β₀ + β₁X₁", "correct": false },
+      { "text": "σ[z] = 1 / [1 + e⁻ᶻ]", "correct": true },
+      { "text": "P / [1 - P]", "correct": false },
+      { "text": "[OR - 1] × 100", "correct": false }
+    ]
+  },
+  {
+    "text": "กลไกการทำงานลำดับแรกของโมเดล Logistic Regression คืออะไร?",
+    "info": "ข้อมูลตัวแปรต้นคือจุดเริ่มต้นก่อนนำไปคำนวณผลรวมเชิงเส้น (z)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การหาความน่าจะเป็น", "correct": false },
+      { "text": "การรับตัวแปรอิสระ X เข้ามา", "correct": true },
+      { "text": "การเปรียบเทียบกับ Threshold", "correct": false },
+      { "text": "การสร้าง S-Curve", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่าคงที่ e ในสูตร Sigmoid มีค่าประมาณเท่าใด?",
+    "info": "เป็นค่าคงที่ทางคณิตศาสตร์ที่เป็นฐานของลอการิทึมธรรมชาติ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "3.141", "correct": false },
+      { "text": "0.5", "correct": false },
+      { "text": "2.718", "correct": true },
+      { "text": "1.0", "correct": false }
+    ]
+  },
+  {
+    "text": "'Multicollinearity' คือข้อตกลงเบื้องต้นที่ต้องระวังเรื่องใด?",
+    "info": "หากตัวแปรต้นสัมพันธ์กันเองมากเกินไปจะทำให้การวิเคราะห์ผลลัพธ์คลาดเคลื่อน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปรตามต้องเป็น 2 กลุ่ม", "correct": false },
+      { "text": "ตัวแปรอิสระสัมพันธ์กันเองสูงเกินไป", "correct": true },
+      { "text": "ขนาดกลุ่มตัวอย่างน้อยเกินไป", "correct": false },
+      { "text": "ข้อมูลมีการกระจายตัวแบบปกติ", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีการประมาณค่าสัมประสิทธิ์ (β) ใน Logistic Regression คือวิธีใด?",
+    "info": "เป็นการหาค่าที่ทำให้โอกาสเกิดข้อมูลที่สังเกตได้มีค่าสูงที่สุด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Ordinary Least Squares (OLS)", "correct": false },
+      { "text": "Maximum Likelihood Estimation (MLE)", "correct": true },
+      { "text": "Stepwise Regression", "correct": false },
+      { "text": "Random Sampling", "correct": false }
+    ]
+  },
+  {
+    "text": "การใช้ Wald Test ในขั้นตอนการวิเคราะห์มีวัตถุประสงค์เพื่ออะไร?",
+    "info": "ใช้ค่า p-value เป็นเกณฑ์ตัดสินว่าตัวแปรนั้นมีผลต่อโมเดลจริงหรือไม่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อหาค่า R-Square", "correct": false },
+      { "text": "เพื่อตรวจสอบนัยสำคัญทางสถิติของตัวแปรอิสระแต่ละตัว", "correct": true },
+      { "text": "เพื่อเปลี่ยนกลุ่มข้อมูลจาก 0 เป็น 1", "correct": false },
+      { "text": "เพื่อเพิ่มความเร็วในการประมวลผล", "correct": false }
+    ]
+  },
+  {
+    "text": "หากต้องการใช้ Logistic Regression กับกลุ่มข้อมูลมากกว่า 2 กลุ่มแบบ 'ไม่มีลำดับ' ควรเลือกแบบใด?",
+    "info": "ออกแบบมาเพื่อจำแนกกลุ่มที่มากกว่า 2 และไม่มีความสัมพันธ์เชิงลำดับ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Binary Logistic Regression", "correct": false },
+      { "text": "Multinomial Logistic Regression", "correct": true },
+      { "text": "Ordinal Logistic Regression", "correct": false },
+      { "text": "Linear Regression", "correct": false }
+    ]
+  },
+  {
+    "text": "การทดสอบ Hosmer-Lemeshow ใช้วัดสิ่งใดใน Logistic Regression?",
+    "info": "เพื่อดูว่าตัวแบบที่สร้างขึ้นสอดคล้องกับพฤติกรรมข้อมูลจริงเพียงใด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความสัมพันธ์ระหว่างตัวแปรอิสระ", "correct": false },
+      { "text": "ความสอดคล้องระหว่างข้อมูลจริงกับข้อมูลที่พยากรณ์ [Goodness of Fit]", "correct": true },
+      { "text": "จำนวนตัวอย่างขั้นต่ำ", "correct": false },
+      { "text": "ค่าสัมประสิทธิ์ของตัวแปร", "correct": false }
+    ]
+  },
+  {
+    "text": "'Omnibus Tests of Model Coefficients' จะพิจารณาค่าสถิติใดเป็นหลัก?",
+    "info": "ใช้ทดสอบว่าตัวแปรอิสระทั้งหมดรวมกันพยากรณ์ได้ดีกว่าตัวแบบที่ไม่มีตัวแปรอิสระหรือไม่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Mean Square Error [MSE]", "correct": false },
+      { "text": "Chi-square และ p-value", "correct": true },
+      { "text": "Standard Deviation", "correct": false },
+      { "text": "Interquartile Range", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือตัววัดประสิทธิภาพของโมเดล Logistic Regression (Model Evaluation)?",
+    "info": "เป็นเครื่องมือมาตรฐานในการวัดประสิทธิภาพงานจำแนกประเภท [Classification]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "R Squared และ MSE", "correct": false },
+      { "text": "Accuracy, Precision, Recall และ ROC Curve", "correct": true },
+      { "text": "RMSE และ Adjusted R Square", "correct": false },
+      { "text": "Pearson Correlation", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า 'Pseudo R-Square' เช่น Nagelkerke R Square มีหน้าที่อะไร?",
+    "info": "ใช้แทนค่า R² ปกติ เพื่อดูว่าตัวแปรอิสระอธิบายผลลัพธ์ได้กี่เปอร์เซ็นต์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "หาค่าเฉลี่ยของความผิดพลาด", "correct": false },
+      { "text": "ดูประสิทธิภาพในการอธิบายความแปรผันของตัวแบบ", "correct": true },
+      { "text": "ระบุกลุ่มของข้อมูลว่าเป็น 0 หรือ 1", "correct": false },
+      { "text": "คำนวณหาค่า Odds Ratio", "correct": false }
+    ]
+  },
+  {
+    "text": "ในการระบุกลุ่ม 'Event of Interest' (กลุ่มที่เกิดเหตุการณ์) มักแทนด้วยเลขใด?",
+    "info": "เป็นกลุ่มที่เราสนใจ เช่น เป็นโรค, ผิดนัดชำระหนี้, หรือการโจมตี",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "กลุ่ม 0", "correct": false },
+      { "text": "กลุ่ม 1", "correct": true },
+      { "text": "กลุ่ม -1", "correct": false },
+      { "text": "กลุ่ม 100", "correct": false }
+    ]
+  },
+  {
+    "text": "เกณฑ์ตัดสินมาตรฐาน [Threshold] ที่ใช้ระบุกลุ่มคือค่าใด?",
+    "info": "ถ้าความน่าจะเป็น P ≥ 0.5 จะระบุว่าเป็นกลุ่ม 1 หากน้อยกว่าจะระบุเป็นกลุ่ม 0",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "0.05", "correct": false },
+      { "text": "0.5", "correct": true },
+      { "text": "1.0", "correct": false },
+      { "text": "0.95", "correct": false }
+    ]
+  },
+  {
+    "text": "ทำไมบางครั้งต้องปรับ Threshold ให้เข้มงวดขึ้น [เช่น ตั้งไว้ที่ 0.8]?",
+    "info": "การจัดการความเสี่ยง [Risk Management] ในบางงานต้องการความมั่นใจระดับสูง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อความสวยงามของกราฟ", "correct": false },
+      { "text": "เพื่อป้องกันความเสี่ยง เช่น ต้องมั่นใจสูงมากก่อนอนุมัติบัตรเครดิต", "correct": true },
+      { "text": "เพื่อลดภาระของ CPU", "correct": false },
+      { "text": "เพื่อให้ค่า P-value ลดลง", "correct": false }
+    ]
+  },
+  {
+    "text": "'False Positive' ในบริบทของ Confusion Matrix หมายความว่าอย่างไร?",
+    "info": "เป็นสถานการณ์ที่โมเดลพยากรณ์ผิดว่าเกิดเหตุการณ์ ทั้งที่ความจริงไม่เกิด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทายว่าเป็นโรค และเป็นจริงๆ", "correct": false },
+      { "text": "ทายว่าเป็นโรค แต่จริงๆ ไม่ได้เป็น [ทายผิด]", "correct": true },
+      { "text": "ทายว่าไม่เป็นโรค และไม่เป็นจริงๆ", "correct": false },
+      { "text": "ทายว่าไม่เป็นโรค แต่จริงๆ เป็นโรค", "correct": false }
+    ]
+  },
+  {
+    "text": "ในขั้นตอน 'การเตรียมข้อมูล' [Data Preparation] ข้อใดสำคัญที่สุด?",
+    "info": "หากตัวแปรตามไม่ใช่กลุ่ม จะไม่สามารถทำ Logistic Regression ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตรวจสอบว่าตัวแปรตามเป็นข้อมูลเชิงปริมาณต่อเนื่อง", "correct": false },
+      { "text": "ตรวจสอบว่าตัวแปรตามเป็นข้อมูลเชิงกลุ่ม [Categorical]", "correct": true },
+      { "text": "การหาค่าเฉลี่ยของทุกตัวแปร", "correct": false },
+      { "text": "การลบตัวแปรอิสระทิ้งให้หมด", "correct": false }
+    ]
+  },
+  {
+    "text": "Link Function มาตรฐานที่นิยมใช้มากที่สุดคือข้อใด?",
+    "info": "เป็นฟังก์ชันเชื่อมโยงมาตรฐานสำหรับ Binary Logistic Regression",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Probit", "correct": false },
+      { "text": "Logit", "correct": true },
+      { "text": "Identity", "correct": false },
+      { "text": "Log-log", "correct": false }
+    ]
+  },
+  {
+    "text": "การสร้าง Confusion Matrix มีความสำคัญอย่างไรในการประเมินโมเดล?",
+    "info": "ใช้เปรียบเทียบค่าที่โมเดลทายกับค่าจริงเพื่อดูความแม่นยำ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ช่วยหาค่าสัมประสิทธิ์ที่ไม่แม่นยำที่สุด", "correct": false },
+      { "text": "ช่วยให้รู้ว่าโมเดล 'เก่ง' แค่ไหนในสถานการณ์จริง", "correct": true },
+      { "text": "ช่วยลดค่า Chi-square", "correct": false },
+      { "text": "ช่วยเพิ่มขนาดกลุ่มตัวอย่าง", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า R² = 0.378 จากตัวอย่างการวิเคราะห์ แปลผลได้ว่าอย่างไร?",
+    "info": "เป็นการบอกประสิทธิภาพภาพรวมของปัจจัยที่เรามีต่อผลลัพธ์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โมเดลมีความคลาดเคลื่อน 37.8%", "correct": false },
+      { "text": "ตัวแปรอิสระสามารถทำนายหรืออธิบายสาเหตุการเกิด Attack ได้แม่นยำ 37.8%", "correct": true },
+      { "text": "มีตัวแปรอิสระทั้งหมด 37.8 ตัว", "correct": false },
+      { "text": "โมเดลนี้ไม่สามารถใช้งานได้เลย", "correct": false }
+    ]
+  },
+  {
+    "text": "หากค่า Estimate (β) มีผลเป็น 'บวก' (+) สื่อถึงสิ่งใด?",
+    "info": "ค่าบวกบอกทิศทางของผลกระทบที่ส่งเสริมให้เกิดเหตุการณ์ที่สนใจ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ปัจจัยนี้ลดโอกาสเกิด Attack", "correct": false },
+      { "text": "ปัจจัยนี้เพิ่มโอกาสเกิด Attack", "correct": true },
+      { "text": "ตัวแปรนี้ไม่มีนัยสำคัญทางสถิติ", "correct": false },
+      { "text": "ข้อมูลตัวแปรนี้มีค่าผิดปกติ", "correct": false }
+    ]
+  },
+  {
+    "text": "เกณฑ์ตัดสิน p-value เพื่อระบุว่าตัวแปรมีผลจริง (มีนัยสำคัญ) คือข้อใด?",
+    "info": "หากน้อยกว่าเกณฑ์นี้ แสดงว่าผลที่เห็นไม่ได้เกิดจากความบังเอิญ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "p > 0.05", "correct": false },
+      { "text": "p < 0.05", "correct": true },
+      { "text": "p = 1.0", "correct": false },
+      { "text": "p < 0.5", "correct": false }
+    ]
+  },
+  {
+    "text": "สูตรการเปลี่ยน Odds Ratio (OR) เป็นเปอร์เซ็นต์คือข้อใด?",
+    "info": "ใช้หาเปอร์เซ็นต์ที่เพิ่มขึ้นหรือลดลงของโอกาสเกิดเหตุการณ์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "OR × 100", "correct": false },
+      { "text": "[OR - 1] × 100", "correct": true },
+      { "text": "[1 - OR] × 100", "correct": false },
+      { "text": "1 / OR", "correct": false }
+    ]
+  },
+  {
+    "text": "Requests/sec มีค่า OR = 1.063 หมายถึงโอกาสเกิด Attack เป็นอย่างไร?",
+    "info": "เมื่อ OR > 1 ให้นำเศษทศนิยมมาตอบเป็นเปอร์เซ็นต์ที่เพิ่มขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ลดลง 6.3%", "correct": false },
+      { "text": "เพิ่มขึ้น 6.3%", "correct": true },
+      { "text": "เพิ่มขึ้น 106.3%", "correct": false },
+      { "text": "ไม่เปลี่ยนแปลง", "correct": false }
+    ]
+  },
+  {
+    "text": "Packet Size [KB] มี OR = 0.858 แปลผลได้ว่าอย่างไร?",
+    "info": "[0.858 - 1] × 100 = -14.2% ค่าที่เป็นลบหมายถึงลดโอกาส",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยิ่งไฟล์ใหญ่ โอกาสเกิด Attack ยิ่งเพิ่มขึ้น", "correct": false },
+      { "text": "ยิ่งไฟล์ใหญ่ โอกาสเกิด Attack ยิ่งลดลง 14.2%", "correct": true },
+      { "text": "ขนาดไฟล์ไม่มีผลต่อการโจมตี", "correct": false },
+      { "text": "ทุก 1 KB ที่เพิ่มขึ้น เพิ่มโอกาส 85.8%", "correct": false }
+    ]
+  },
+  {
+    "text": "CPU Usage มี OR = 1.062 หากการใช้งาน CPU เพิ่มขึ้น 1% โอกาสเกิด Attack จะเปลี่ยนไปอย่างไร?",
+    "info": "การแปลผลของตัวแปรอิสระต่อโอกาสเกิดเหตุการณ์ตามค่า OR",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพิ่มขึ้น 1.062%", "correct": false },
+      { "text": "เพิ่มขึ้น 6.2%", "correct": true },
+      { "text": "ลดลง 6.2%", "correct": false },
+      { "text": "เพิ่มขึ้น 10.62%", "correct": false }
+    ]
+  },
+  {
+    "text": "หากค่า Odds Ratio น้อยกว่า 1 หมายความว่าอย่างไร?",
+    "info": "ค่าที่น้อยกว่า 1 จะให้เปอร์เซ็นต์การเปลี่ยนแปลงที่เป็นลบ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เป็นปัจจัยที่เพิ่มโอกาสเกิด", "correct": false },
+      { "text": "เป็นตัวป้องกัน [ลดโอกาสเกิด]", "correct": true },
+      { "text": "ข้อมูลผิดพลาด", "correct": false },
+      { "text": "ตัวแปรไม่มีผล", "correct": false }
+    ]
+  },
+  {
+    "text": "จากตัวอย่าง 'Packet Size ใหญ่ขึ้น ลดโอกาสโจมตี' อาจตีความพฤติกรรมแฮกเกอร์ได้ว่าอย่างไร?",
+    "info": "เนื่องจากโอกาสโจมตีลดลงเมื่อไฟล์ใหญ่ขึ้น แสดงว่าไฟล์เล็กมีความเสี่ยงสูงกว่า",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การโจมตีส่วนใหญ่มาในรูปแบบไฟล์ขนาดใหญ่", "correct": false },
+      { "text": "การโจมตีส่วนใหญ่มาในรูปแบบไฟล์ขนาดเล็ก", "correct": true },
+      { "text": "แฮกเกอร์ไม่ชอบใช้ไฟล์", "correct": false },
+      { "text": "ระบบความปลอดภัยตรวจจับไฟล์เล็กไม่ได้", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า 'Accuracy = 80%' ในสรุปท้ายไฟล์หมายถึงสิ่งใด?",
+    "info": "เป็นร้อยละความถูกต้องในการพยากรณ์ภาพรวม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โมเดลทำงานได้รวดเร็ว 80%", "correct": false },
+      { "text": "โมเดลมีความแม่นยำและมีประสิทธิภาพดี", "correct": true },
+      { "text": "ตัวแปรอิสระมีทั้งหมด 80 ตัว", "correct": false },
+      { "text": "มีข้อมูลหายไป 20%", "correct": false }
+    ]
+  },
+  {
+    "text": "ในสมการ P[Y=1|X] สัญลักษณ์ P แทนค่าใด?",
+    "info": "เป็นผลลัพธ์หลักที่ได้จากการคำนวณผ่านฟังก์ชัน Sigmoid",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่าสัมประสิทธิ์", "correct": false },
+      { "text": "ความน่าจะเป็นที่ข้อมูลอยู่ในกลุ่มที่สนใจ [Class 1]", "correct": true },
+      { "text": "ค่าคลาดเคลื่อน", "correct": false },
+      { "text": "ตัวแปรอิสระ", "correct": false }
+    ]
+  },
+  {
+    "text": "Intercept (β₀) ที่มีค่าเป็นลบ [เช่น -5.27] ในตัวอย่าง สื่อถึงอะไร?",
+    "info": "เป็นค่าเริ่มต้นของโมเดลก่อนพิจารณาตัวแปร Requests, Packet Size และ CPU",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โอกาสเกิด Attack พื้นฐานมีค่าต่ำมากเมื่อไม่มีปัจจัยอื่นมาเกี่ยวข้อง", "correct": true },
+      { "text": "โมเดลทำงานผิดพลาด", "correct": false },
+      { "text": "ไม่สามารถพยากรณ์กลุ่มได้", "correct": false },
+      { "text": "ตัวแปรตามต้องเป็นค่าลบ", "correct": false }
+    ]
+  },
+  {
+    "text": "หากค่า p > 0.05 สำหรับตัวแปรหนึ่ง เราควรทำอย่างไร?",
+    "info": "ไม่ผ่านเกณฑ์นัยสำคัญทางสถิติที่ยอมรับกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "สรุปว่าตัวแปรนั้นมีผลมหาศาล", "correct": false },
+      { "text": "สรุปว่าตัวแปรนั้นอาจไม่มีผลจริง [ผลที่เห็นอาจเป็นแค่ความบังเอิญ]", "correct": true },
+      { "text": "เปลี่ยนเกณฑ์ p-value เป็น 1.0", "correct": false },
+      { "text": "บังคับให้เป็นปัจจัยหลักในโมเดล", "correct": false }
+    ]
+  },
+  {
+    "text": "การแปลผล Logistic Regression ควรพิจารณาเฉพาะตัวแปรใด?",
+    "info": "เพื่อความมั่นใจว่าปัจจัยนั้นส่งผลต่อการเกิด Attack อย่างมีนัยสำคัญจริง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปรที่มีค่าสัมประสิทธิ์เป็นบวกเท่านั้น", "correct": false },
+      { "text": "ตัวแปรที่มีนัยสำคัญทางสถิติ (p < 0.05) เท่านั้น", "correct": true },
+      { "text": "เฉพาะตัวแปร Intercept", "correct": false },
+      { "text": "เฉพาะตัวแปรที่มีนัยสำคัญ", "correct": false }
+    ]
+  },
+  {
+    "text": "สรุปภาพรวมในการสอบ: หากค่า OR ห่างจาก 1 มากๆ หมายถึงอะไร?",
+    "info": "ยิ่งค่า OR ต่างจาก 1 มากเท่าไหร่ (ไม่ว่าทางบวกหรือลบ) ยิ่งแสดงว่าปัจจัยนั้นมีผลต่อโอกาสเกิดเหตุการณ์ชัดเจน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ปัจจัยนั้นมีผลกระทบต่อโอกาสเกิดเหตุการณ์สูงมาก", "correct": true },
+      { "text": "โมเดลรันไม่ผ่าน", "correct": false },
+      { "text": "ตัวแปรนั้นไม่มีความสำคัญ", "correct": false },
+      { "text": "ต้องเปลี่ยนไปใช้ Linear Regression", "correct": false }
+    ]
+  }
+]

@@ -1,0 +1,332 @@
+[
+  {
+    "text": "นิยามของ Predictive Analytics คือข้อใด?",
+    "info": "หัวใจหลักของ Predictive Analytics คือการใช้ Historical Data ร่วมกับ Statistical Algorithms/ML เพื่อพยากรณ์สิ่งที่ยังไม่เกิดขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การสรุปข้อมูลในอดีตเพื่อให้เห็นภาพรวมของเหตุการณ์", "correct": false },
+      { "text": "การใช้ข้อมูลในอดีตร่วมกับอัลกอริทึมทางสถิติและ ML เพื่อระบุความน่าจะเป็นของผลลัพธ์ในอนาคต", "correct": true },
+      { "text": "การแนะนำทางเลือกที่ดีที่สุดในการตัดสินใจทางธุรกิจ", "correct": false },
+      { "text": "การแก้ไขข้อมูลที่มีผิดพลาดให้ถูกต้องเพื่อการจัดทำรายงาน", "correct": false }
+    ]
+  },
+  {
+    "text": "การเปลี่ยนคำถามจาก 'เกิดอะไรขึ้น?' เป็น 'อะไรจะเกิดขึ้นต่อไป?' เป็นหัวใจของข้อใด?",
+    "info": "Predictive คือการมองไปข้างหน้าเพื่อคาดการณ์แนวโน้มจากรูปแบบที่พบในอดีต",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Descriptive Analytics", "correct": false },
+      { "text": "Diagnostic Analytics", "correct": false },
+      { "text": "Predictive Analytics", "correct": true },
+      { "text": "Prescriptive Analytics", "correct": false }
+    ]
+  },
+  {
+    "text": "หากธนาคารต้องการทราบว่า 'ทำไม' ลูกค้าถึงแท้ไปปิดบัญชีเมื่อเดือนที่แล้ว ควรใช้การวิเคราะห์ระดับใด?",
+    "info": "Diagnostic Analytics มุ่งเน้นการหา 'สาเหตุ' [Why] และความสัมพันธ์ของเหตุการณ์ในอดีต",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Descriptive Analytics", "correct": false },
+      { "text": "Diagnostic Analytics", "correct": true },
+      { "text": "Predictive Analytics", "correct": false },
+      { "text": "Prescriptive Analytics", "correct": false }
+    ]
+  },
+  {
+    "text": "ระดับสูงสุดของการวิเคราะห์ข้อมูลที่ให้ 'คำแนะนำ' ว่าควรดำเนินการอย่างไรคือข้อใด?",
+    "info": "Prescriptive Analytics ช่วยให้คำแนะนำและทางเลือกในการตัดสินใจเพื่อให้เกิดผลลัพธ์ที่ดีที่สุด [Optimization]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Predictive Analytics", "correct": false },
+      { "text": "Diagnostic Analytics", "correct": false },
+      { "text": "Prescriptive Analytics", "correct": true },
+      { "text": "Descriptive Analytics", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดกล่าวถูกต้องเกี่ยวกับความสัมพันธ์ระหว่าง Value และ Complexity ในลำดับขั้นการวิเคราะห์?",
+    "info": "เมื่อขยับลำดับชั้นการวิเคราะห์สูงขึ้น ความยากเชิงเทคนิคจะเพิ่มขึ้นแต่จะให้มูลค่าเชิงธุรกิจที่สูงขึ้นตามไปด้วย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยิ่งความยาก [Complexity] ต่ำ มูลค่า [Value] ยิ่งสูง", "correct": false },
+      { "text": "ยิ่งความยาก [Complexity] สูง มูลค่า [Value] ยิ่งสูง", "correct": true },
+      { "text": "ความยากและมูลค่าไม่มีความสัมพันธ์กัน", "correct": false },
+      { "text": "Descriptive มีมูลค่าสูงที่สุดเพราะเป็นฐานราก", "correct": false }
+    ]
+  },
+  {
+    "text": "หากต้องการทายว่า 'ลูกค้าคนนี้จะยกเลิกบริการ [Churn] หรือไม่' ควรเลือกใช้ Model ประเภทใด?",
+    "info": "Classification ใช้พยากรณ์ผลลัพธ์ที่เป็นกลุ่มหรือหมวดหมู่ เช่น ใช่/ไม่ใช่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Regression Models", "correct": false },
+      { "text": "Time Series Models", "correct": false },
+      { "text": "Classification Models", "correct": true },
+      { "text": "Clustering Models", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือตัวอย่างของการใช้ Regression Models?",
+    "info": "Regression ใช้พยากรณ์ตัวเลขต่อเนื่อง [Continuous Variables]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การแยกอีเมลขยะ [Spam]", "correct": false },
+      { "text": "การจัดกลุ่มลูกค้าตามพฤติกรรมโดยไม่ระบุกลุ่มล่วงหน้า", "correct": false },
+      { "text": "การพยากรณ์ยอดขายในเดือนหน้าเป็นจำนวนเงิน", "correct": true },
+      { "text": "การพยากรณ์ราคาหุ้นตามเวลา", "correct": false }
+    ]
+  },
+  {
+    "text": "เทคนิคใดเน้นปัจจัยด้าน 'เวลา' (Trend/Seasonality) เป็นหลักในการพยากรณ์?",
+    "info": "Time Series Analysis ใช้ข้อมูลที่เก็บตามลำดับเวลาเพื่อดูแนวโน้มหรือฤดูกาล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Logistic Regression", "correct": false },
+      { "text": "Time Series Analysis", "correct": true },
+      { "text": "Support Vector Machines", "correct": false },
+      { "text": "Decision Trees", "correct": false }
+    ]
+  },
+  {
+    "text": "การจัดกลุ่มลูกค้าที่มีลักษณะคล้ายคลึงกันเข้าด้วยกัน 'โดยไม่ได้ระบุกลุ่มไว้ก่อน' คือนิยามของข้อใด?",
+    "info": "Clustering Models เน้นการจัดกลุ่มข้อมูลที่เหมือนกันเข้าด้วยกันโดยไม่ได้กำหนดเป้าหมายล่วงหน้า",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Classification", "correct": false },
+      { "text": "Regression", "correct": false },
+      { "text": "Clustering", "correct": true },
+      { "text": "Association", "correct": false }
+    ]
+  },
+  {
+    "text": "'Decision Trees' มีลักษณะเด่นอย่างไรในทางสถิติ?",
+    "info": "Decision Trees เป็นแผนผังการตัดสินใจเพื่อหาผลลัพธ์และความน่าจะเป็น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้พยากรณ์ค่าที่เปลี่ยนตามเวลาเท่านั้น", "correct": false },
+      { "text": "เป็นแบบจำลองโครงสร้างเหมือนต้นไม้ช่วยในการตัดสินใจและคำนวณความน่าจะเป็น", "correct": true },
+      { "text": "ใช้จัดกลุ่มข้อมูลที่ไม่มีเฉลยล่วงหน้า", "correct": false },
+      { "text": "ใช้หาค่าเฉลี่ยของประชากรจำนวนมาก", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือประโยชน์ของ Machine Learning (ML) ในงาน Predictive Analytics?",
+    "info": "ML ช่วยทลายกำแพงความซับซ้อนของข้อมูลมหาศาลที่มนุษย์คำนวณเองไม่ไหว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ช่วยลบข้อมูลที่ไม่ต้องการทิ้งโดยอัตโนมัติ", "correct": false },
+      { "text": "ช่วยสร้างแบบจำลองที่ซับซ้อนเกินกว่าที่มนุษย์จะจัดการได้ในอดีต", "correct": true },
+      { "text": "ใช้จัดทำรายงานสรุปยอดขายประจำปีให้สวยงาม", "correct": false },
+      { "text": "ใช้แทนที่การตัดสินใจของมนุษย์ทั้งหมด 100%", "correct": false }
+    ]
+  },
+  {
+    "text": "'Data Lake' ในบริบทของ Predictive Analytics หมายถึงอะไร?",
+    "info": "Data Lake คือแหล่งรวบรวมข้อมูลดิบจำนวนมากที่ใช้หาความสัมพันธ์ที่แฝงอยู่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "แหล่งเก็บน้ำสำหรับหล่อเย็นเครื่องเซิร์ฟเวอร์", "correct": false },
+      { "text": "บ่อเก็บข้อมูลขนาดใหญ่ขององค์กรที่ใช้ในการขุดหาแนวโน้ม", "correct": true },
+      { "text": "ระบบการจัดส่งสินค้าในพื้นที่ห่างไกล", "correct": false },
+      { "text": "ขั้นตอนสุดท้ายของการนำแบบจำลองไปใช้จริง", "correct": false }
+    ]
+  },
+  {
+    "text": "เทคนิคใดที่เลียนแบบการทำงานของสมองมนุษย์เพื่อหาความสัมพันธ์ที่ซับซ้อน?",
+    "info": "Deep Learning ถูกออกแบบมาเพื่อเลียนแบบการประมวลผลของสมองมนุษย์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Linear Regression", "correct": false },
+      { "text": "Deep Learning [Neural Networks]", "correct": true },
+      { "text": "ARIMA", "correct": false },
+      { "text": "Excel Dashboard", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดอธิบายคำว่า 'Dynamic Activity' ในการพยากรณ์ได้ถูกต้องที่สุด?",
+    "info": "การพยากรณ์ต้อง 'สดใหม่' เสมอ โดยการนำข้อมูลใหม่มาฝึกฝนแบบจำลองต่อเนื่อง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การคำนวณสถิติเพียงครั้งเดียวแล้วนำไปใช้ตลอดไป", "correct": false },
+      { "text": "กระบวนการที่ใช้ข้อมูลใหม่มาอัปเดตการคาดการณ์อย่างต่อเนื่อง", "correct": true },
+      { "text": "การเลือกใช้สูตรสถิติที่ง่ายที่สุดเพื่อให้ประมวลผลเร็ว", "correct": false },
+      { "text": "การทำงานเฉพาะในช่วงเวลาที่มีวิกฤตเศรษฐกิจเท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ขั้นตอนแรกที่สำคัญที่สุดในกระบวนการ Predictive Analytics คือข้อใด?",
+    "info": "หากตั้งโจทย์หรือเป้าหมายผิด ผลลัพธ์ที่ได้จะไร้ค่าทันที",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การรวบรวมข้อมูล", "correct": false },
+      { "text": "การกำหนดเป้าหมายของโครงการ [Define Project]", "correct": true },
+      { "text": "การสร้างแบบจำลอง", "correct": false },
+      { "text": "การทำความสะอาดข้อมูล", "correct": false }
+    ]
+  },
+  {
+    "text": "'Garbage In, Garbage Out' มักถูกกล่าวถึงในขั้นตอนใดมากที่สุด?",
+    "info": "หากข้อมูลที่นำเข้าสู่โมเดลสกปรก ผลการพยากรณ์ก็จะไม่มีคุณภาพ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Define Project", "correct": false },
+      { "text": "Clean and Prepare Data", "correct": true },
+      { "text": "Deploy Model", "correct": false },
+      { "text": "Monitor Model", "correct": false }
+    ]
+  },
+  {
+    "text": "ขั้นตอนใดในกระบวนการที่มักใช้เวลามากที่สุด (ประมาณ 70-80%)?",
+    "info": "การทำความสะอาดข้อมูลเป็นขั้นตอนที่ยุ่งยากและกินเวลามากที่สุดเพื่อให้ได้ข้อมูลที่มีคุณภาพ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การรวบรวมข้อมูล", "correct": false },
+      { "text": "การทำความสะอาดและเตรียมข้อมูล", "correct": true },
+      { "text": "การสร้างและทดสอบแบบจำลอง", "correct": false },
+      { "text": "การนำแบบจำลองไปใช้งาน", "correct": false }
+    ]
+  },
+  {
+    "text": "ขั้นตอนการ 'Train' แบบจำลองด้วยข้อมูลในอดีตอยู่ในขั้นตอนใด?",
+    "info": "ขั้นตอนการสร้าง [Build] คือการใช้สถิติ/ML ฝึกสอนข้อมูลเพื่อให้แบบจำลองเรียนรู้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Collect Data", "correct": false },
+      { "text": "Build and Test Model", "correct": true },
+      { "text": "Deploy Model", "correct": false },
+      { "text": "Define Project", "correct": false }
+    ]
+  },
+  {
+    "text": "เมื่อประสิทธิภาพของแบบจำลองลดลงเนื่องจากสภาพแวดล้อมเปลี่ยนไป ควรทำอย่างไรในขั้นตอนที่ 6?",
+    "info": "เมื่อพฤติกรรมข้อมูลเปลี่ยน ต้องนำข้อมูลใหม่มาฝึกสอนซ้ำเพื่อรักษาความแม่นยำ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ลบแบบจำลองทิ้งและเริ่มต้นใหม่", "correct": false },
+      { "text": "ฝืนใช้ต่อไปเพราะผ่านการทดสอบมาแล้ว", "correct": false },
+      { "text": "ติดตามและปรับปรุง [Monitor and Refine] โดยการ Retrain ข้อมูลใหม่", "correct": true },
+      { "text": "เปลี่ยนเป้าหมายของโครงการใหม่", "correct": false }
+    ]
+  },
+  {
+    "text": "ขั้นตอนใดที่เน้นการนำผลลัพธ์ที่ได้ไป 'ทำงานจริง' บนระบบธุรกิจ?",
+    "info": "Deployment คือการนำโมเดลไปรันกับข้อมูลจริงเพื่อตัดสินใจอัตโนมัติ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Model Training", "correct": false },
+      { "text": "Deployment", "correct": true },
+      { "text": "Data Management", "correct": false },
+      { "text": "Feedback", "correct": false }
+    ]
+  },
+  {
+    "text": "ในภาคการเงิน การใช้ Predictive Analytics เพื่อประเมินความเสี่ยงก่อนอนุมัติเงินกู้เรียกว่าอะไร?",
+    "info": "Credit Scoring คือการให้คะแนนความเสี่ยงด้านเครดิตเพื่อใช้พิจารณาสินเชื่อ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Fraud Detection", "correct": false },
+      { "text": "Credit Scoring", "correct": true },
+      { "text": "Market Trading", "correct": false },
+      { "text": "Claim Mitigation", "correct": false }
+    ]
+  },
+  {
+    "text": "บริษัทประกันภัยใช้การวิเคราะห์เชิงคาดการณ์เพื่อเป้าหมายใด?",
+    "info": "ประกันภัยใช้เพื่อป้องกันการโกงและเตรียมรับมือภัยธรรมชาติเพื่อลดค่าสินไหม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การส่งสต็อกสินค้าล่วงหน้า", "correct": false },
+      { "text": "การตรวจจับการฉ้อโกงการเคลมและคาดการณ์สภาพอากาศสุดขั้ว", "correct": true },
+      { "text": "การวินิจฉัยโรคตามประวัติสุขภาพ", "correct": false },
+      { "text": "การบำรุงรักษาเครื่องจักรในสายการผลิต", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือตัวอย่างการประยุกต์ใช้ใน 'การค้าปลีก' (Retail)?",
+    "info": "ร้านค้าปลีกใช้คาดการณ์ Demand เพื่อจัดการสต็อกล่วงหน้าลดเวลาส่งมอบ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การส่งมอบสต็อกสินค้าไปยังสถานีกระจายสินค้าล่วงหน้า", "correct": true },
+      { "text": "การตรวจสอบอุปกรณ์ในสายผลิตเพื่อหาความบกพร่อง", "correct": false },
+      { "text": "การตรวจจับสัญญาณเตือนเท็จในเครื่องติดตามผู้ป่วย", "correct": false },
+      { "text": "การอนุมัติวงเงินบัตรเครดิต", "correct": false }
+    ]
+  },
+  {
+    "text": "การนำเสนอขายสินค้าที่แพงขึ้น (Up-sell) หรือสินค้าที่เกี่ยวเนื่อง (Cross-sell) อาศัยเทคนิคใด?",
+    "info": "ระบบแนะนำสินค้าช่วยเพิ่มโอกาสในการขายโดยอิงตามประวัติและความสนใจของลูกค้า",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Anomaly Detection", "correct": false },
+      { "text": "Recommendation Systems", "correct": true },
+      { "text": "Predict Maintenance", "correct": false },
+      { "text": "Fault Detection", "correct": false }
+    ]
+  },
+  {
+    "text": "'Predictive Maintenance' ในโรงงานอุตสาหกรรมมีประโยชน์อย่างไร?",
+    "info": "การบำรุงรักษาเชิงคาดการณ์ช่วยระบุสภาพเครื่องจักรและแผนการซ่อมล่วงหน้า",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ช่วยพยากรณ์ยอดขายเครื่องจักร", "correct": false },
+      { "text": "ช่วยคาดการณ์ว่าเครื่องจักรจะเสียเมื่อไหร่เพื่อซ่อมแซมก่อนพัง", "correct": true },
+      { "text": "ช่วยจัดตารางเวลาการเข้างานของพนักงาน", "correct": false },
+      { "text": "ช่วยตรวจสอบคุณภาพอาหารในโรงอาหาร", "correct": false }
+    ]
+  },
+  {
+    "text": "ในด้านการดูแลสุขภาพ การวิเคราะห์เชิงคาดการณ์ช่วยแก้ปัญหาใดในอุปกรณ์ติดตามผู้ป่วย?",
+    "info": "การใช้ AI ช่วยคัดกรองสัญญาณเตือนที่ไม่สำคัญออกไปเพื่อเพิ่มประสิทธิภาพการดูแล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ปรับความดังของเสียงเตือน", "correct": false },
+      { "text": "ขจัดสัญญาณเตือนเท็จ [False Alarms] เพื่อให้ติดตามสภาวะได้จริง", "correct": true },
+      { "text": "เปลี่ยนหน้าจอแสดงผลให้สวยงาม", "correct": false },
+      { "text": "ลดการใช้ไฟฟ้าของอุปกรณ์", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือประโยชน์ด้าน 'Real-time Answers' ของ Predictive Analytics?",
+    "info": "แบบจำลองที่พร้อมใช้งานสามารถวิเคราะห์ข้อมูลใหม่และตอบสนองได้ทันที",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การทำรายงานสรุปรายปีส่งผู้บริหาร", "correct": false },
+      { "text": "การให้คำตอบทันทีเมื่อมีข้อมูลใหม่ไหลเข้าสู่แบบจำลองที่ฝึกมาแล้ว", "correct": true },
+      { "text": "การใช้เวลานานในการตรวจสอบความถูกต้องของข้อมูล", "correct": false },
+      { "text": "การพยากรณ์สภาพอากาศในอีก 10 ปีข้างหน้า", "correct": false }
+    ]
+  },
+  {
+    "text": "การค้นหา 'รูปแบบที่แฝงอยู่' (Hidden Patterns) ในข้อมูล Big Data ช่วยแก้ปัญหาในข้อใด?",
+    "info": "Predictive Analytics ช่วยเปิดเผยรูปแบบเชิงลึกที่แฝงอยู่ในข้อมูลจำนวนมหาศาล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ปัญหาการตัดสินใจตามความรู้สึก", "correct": false },
+      { "text": "ปัญหาความซับซ้อนของข้อมูลที่มนุษย์มองไม่เห็นด้วยตาเปล่า", "correct": true },
+      { "text": "ปัญหาการขาดแคลนงบประมาณ", "correct": false },
+      { "text": "ปัญหาการเชื่อมต่ออินเทอร์เน็ต", "correct": false }
+    ]
+  },
+  {
+    "text": "'Data-Driven Decisions' หมายถึงอะไร?",
+    "info": "คือการใช้ Data เป็นตัวนำทางแทนการเตาเพื่อให้เกิดความแม่นยำ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การตัดสินใจโดยอิงจากสัญชาตญาณ", "correct": false },
+      { "text": "การตัดสินใจที่ใช้ข้อเท็จจริงจากข้อมูลมาเป็นฐานสนับสนุนเพื่อลดความเสี่ยง", "correct": true },
+      { "text": "การตัดสินใจเลือกเก็บข้อมูลที่ทำให้บริษัทดูดีที่สุด", "correct": false },
+      { "text": "การตัดสินใจหยุดใช้ระบบคอมพิวเตอร์", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดสรุปความหมายของ 'Competitive Advantage' ในแง่ของ Predictive Analytics ได้ดีที่สุด?",
+    "info": "การมองเห็นโอกาสหรือความเสี่ยงล่วงหน้าทำให้ธุรกิจกุมความได้เปรียบเหนือคู่แข่ง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "บริษัทที่พยากรณ์อนาคตได้ดีกว่า จะมีความได้เปรียบในการแข่งขันมากกว่า", "correct": true },
+      { "text": "บริษัทที่มีพนักงานมากกว่าจะชนะบริษัทที่มีข้อมูลมากกว่า", "correct": false },
+      { "text": "บริษัทที่ใช้เงินลงทุนสูงที่สุดคือผู้ชนะเสมอ", "correct": false },
+      { "text": "การมีข้อมูลเยอะที่สุดโดยไม่นำมาวิเคราะห์คือความได้เปรียบ", "correct": false }
+    ]
+  }
+]

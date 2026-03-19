@@ -1,0 +1,332 @@
+[
+  {
+    "text": "หากต้องการเปรียบเทียบค่าเฉลี่ยของข้อมูล 4 กลุ่ม พร้อมกันในครั้งเดียว ควรเลือกใช้สถิติใด?",
+    "info": "T-test ใช้เปรียบเทียบค่าเฉลี่ยได้เพียง 2 กลุ่ม หากมีมากกว่า 2 กลุ่มต้องใช้ ANOVA เพื่อทดสอบพร้อมกันและลดโอกาสเกิด Type I Error",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "T-test [Independent]", "correct": false },
+      { "text": "One-Way ANOVA", "correct": true },
+      { "text": "Correlation", "correct": false },
+      { "text": "Chi-square", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือวัตถุประสงค์หลักของการวิเคราะห์ความแปรปรวน (ANOVA)?",
+    "info": "ANOVA ใช้ตรวจสอบว่าค่าเฉลี่ยของหลายกลุ่มมีความแตกต่างกันหรือไม่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อหาความสัมพันธ์ระหว่างตัวแปร 2 ตัว", "correct": false },
+      { "text": "เพื่อทดสอบว่าความแปรปรวนของทุกกลุ่มเท่ากับ 0 หรือไม่", "correct": false },
+      { "text": "เพื่อเปรียบเทียบค่าเฉลี่ยของประชากรมากกว่า 2 กลุ่ม", "correct": true },
+      { "text": "เพื่อพยากรณ์ค่าในอนาคต", "correct": false }
+    ]
+  },
+  {
+    "text": "การใช้ T-test จับคู่ทดสอบทีละคู่ [Multiple T-tests] แทนการใช้ ANOVA จะส่งผลอย่างไร?",
+    "info": "การทำ T-test หลายครั้งทำให้โอกาสเกิดความผิดพลาดในการปฏิเสธ HO เพิ่มขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทำให้ผลการทดสอบแม่นยำขึ้น", "correct": false },
+      { "text": "ประหยัดเวลาในการคำนวณ", "correct": false },
+      { "text": "เพิ่มโอกาสในการสรุปผลผิดพลาด [Type I Error]", "correct": true },
+      { "text": "ไม่ส่งผลเสียใดๆ", "correct": false }
+    ]
+  },
+  {
+    "text": "สมมติฐานหลัก [HO] ของ One-Way ANOVA คือข้อใด?",
+    "info": "HO ของ ANOVA กำหนดว่าค่าเฉลี่ยของทุกกลุ่มเท่ากัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "μ1 ≠ μ2 ≠ μ3 ≠ μk", "correct": false },
+      { "text": "มีค่าเฉลี่ยอย่างน้อย 1 คู่ไม่เท่ากัน", "correct": false },
+      { "text": "μ1 = μ2 = μ3 = ... = μk", "correct": true },
+      { "text": "σ12 ≠ σ22", "correct": false }
+    ]
+  },
+  {
+    "text": "สมมติฐานรอง [H1] ของ ANOVA หมายความว่าอย่างไร?",
+    "info": "เพียงแค่มีหนึ่งคู่ที่แตกต่างกันก็สามารถปฏิเสธ HO ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่าเฉลี่ยของทุกกลุ่มไม่เท่ากันทั้งหมด", "correct": false },
+      { "text": "มีค่าเฉลี่ยอย่างน้อย 1 คู่ที่แตกต่างกัน", "correct": true },
+      { "text": "ค่าเฉลี่ยกลุ่มแรกมากที่สุด", "correct": false },
+      { "text": "ค่าเฉลี่ยกลุ่มสุดท้ายมากที่สุด", "correct": false }
+    ]
+  },
+  {
+    "text": "ความแปรปรวนระหว่างกลุ่มใน ANOVA เรียกว่าอะไร?",
+    "info": "SSB (Sum of Squares Between) คือความแปรปรวนที่เกิดจากความแตกต่างของค่าเฉลี่ยแต่ละกลุ่ม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "SSE", "correct": false },
+      { "text": "SSB", "correct": true },
+      { "text": "SST", "correct": false },
+      { "text": "MSE", "correct": false }
+    ]
+  },
+  {
+    "text": "ความแปรปรวนภายในกลุ่มเรียกว่าอะไร?",
+    "info": "SSE (Sum of Squares Error) คือความแปรปรวนที่เกิดจากความแตกต่างของข้อมูลภายในกลุ่มเดียวกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "SSB", "correct": false },
+      { "text": "SST", "correct": false },
+      { "text": "SSE", "correct": true },
+      { "text": "MSB", "correct": false }
+    ]
+  },
+  {
+    "text": "ความสัมพันธ์ขององค์ประกอบความแปรปรวนที่ถูกต้องคือข้อใด?",
+    "info": "ความแปรปรวนรวม [Total] เกิดจากความแปรปรวนระหว่างกลุ่มและภายในกลุ่มรวมกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "SSB = SST + SSE", "correct": false },
+      { "text": "SST = SSB + SSE", "correct": true },
+      { "text": "SSE = SSB + SST", "correct": false },
+      { "text": "SST = SSB – SSE", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า F ใน ANOVA คำนวณจากอะไร?",
+    "info": "ค่า F เป็นอัตราส่วนของความแปรปรวนระหว่างกลุ่มต่อความแปรปรวนภายในกลุ่ม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "MSB / MSE", "correct": true },
+      { "text": "MSE / MSB", "correct": false },
+      { "text": "SST / SSE", "correct": false },
+      { "text": "SSE / SST", "correct": false }
+    ]
+  },
+  {
+    "text": "หากค่า SSB สูงมากเมื่อเทียบกับ SSE จะเกิดอะไรขึ้น?",
+    "info": "เมื่อความแตกต่างระหว่างกลุ่มสูงกว่าในกลุ่ม ค่า F จะเพิ่มขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่า F จะต่ำ", "correct": false },
+      { "text": "ค่า F จะสูง", "correct": true },
+      { "text": "ค่า F จะเป็นศูนย์", "correct": false },
+      { "text": "ค่า F จะติดลบ", "correct": false }
+    ]
+  },
+  {
+    "text": "เงื่อนไขสำคัญของการใช้ ANOVA คืออะไร?",
+    "info": "ความเป็นอิสระของตัวอย่างเป็นเงื่อนไขพื้นฐานของ ANOVA",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ข้อมูลต้องเป็นตัวเลข", "correct": false },
+      { "text": "ตัวอย่างต้องเป็นอิสระต่อกัน", "correct": true },
+      { "text": "ข้อมูลต้องมีค่าเท่ากัน", "correct": false },
+      { "text": "กลุ่มต้องมีขนาดเท่ากัน", "correct": false }
+    ]
+  },
+  {
+    "text": "สถิติใดใช้ตรวจสอบว่าความแปรปรวนของแต่ละกลุ่มเท่ากันหรือไม่?",
+    "info": "Levene Test ใช้ตรวจสอบ Homogeneity of Variance ก่อนทำ ANOVA",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Tukey Test", "correct": false },
+      { "text": "Levene Test", "correct": true },
+      { "text": "Z-Test", "correct": false },
+      { "text": "Correlation Test", "correct": false }
+    ]
+  },
+  {
+    "text": "ถ้าผล Levene Test ได้ p-value มากกว่า 0.05 ควรสรุปอย่างไร?",
+    "info": "p-value มากกว่า 0.05 แสดงว่าไม่พบความแตกต่างของความแปรปรวน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความแปรปรวนไม่เท่ากัน", "correct": false },
+      { "text": "ความแปรปรวนเท่ากัน", "correct": true },
+      { "text": "ข้อมูลไม่ปกติ", "correct": false },
+      { "text": "ต้องทำ Post-hoc", "correct": false }
+    ]
+  },
+  {
+    "text": "Degrees of Freedom ระหว่างกลุ่มคำนวณอย่างไร?",
+    "info": "df ระหว่างกลุ่มขึ้นอยู่กับจำนวนกลุ่ม k",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "N - 1", "correct": false },
+      { "text": "k - 1", "correct": true },
+      { "text": "N - k", "correct": false },
+      { "text": "k + 1", "correct": false }
+    ]
+  },
+  {
+    "text": "Degrees of Freedom ภายในกลุ่มคำนวณอย่างไร?",
+    "info": "df ภายในกลุ่มคำนวณจากจำนวนข้อมูลทั้งหมดลบจำนวนกลุ่ม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "N - k", "correct": true },
+      { "text": "N - 1", "correct": false },
+      { "text": "k - 1", "correct": false },
+      { "text": "N + k", "correct": false }
+    ]
+  },
+  {
+    "text": "ถ้าค่า Fคำนวณ มากกว่า Fตาราง ควรตัดสินใจอย่างไร?",
+    "info": "ค่า F สูงกว่าค่าวิกฤตแสดงว่าค่าเฉลี่ยมีความแตกต่างกันอย่างมีนัยสำคัญ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยอมรับ HO", "correct": false },
+      { "text": "ปฏิเสธ HO", "correct": true },
+      { "text": "เปลี่ยนวิธีทดสอบ", "correct": false },
+      { "text": "คำนวณใหม่", "correct": false }
+    ]
+  },
+  {
+    "text": "Post-hoc Test มีวัตถุประสงค์เพื่ออะไร?",
+    "info": "หลังจาก ANOVA พบความแตกต่างแล้ว Post-hoc จะใช้ระบุว่าคู่ใดแตกต่างกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตรวจสอบการแจกแจงปกติ", "correct": false },
+      { "text": "หาคู่ของกลุ่มที่แตกต่างกัน", "correct": true },
+      { "text": "คำนวณค่าเฉลี่ยรวม", "correct": false },
+      { "text": "ตรวจสอบความแปรปรวน", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธี Post-hoc ที่นิยมใช้เมื่อเปรียบเทียบทุกคู่ของกลุ่มคืออะไร?",
+    "info": "Tukey HSD ใช้เปรียบเทียบค่าเฉลี่ยของทุกคู่กลุ่ม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Tukey HSD", "correct": true },
+      { "text": "Chi-square", "correct": false },
+      { "text": "Z-test", "correct": false },
+      { "text": "Regression", "correct": false }
+    ]
+  },
+  {
+    "text": "ถ้า p-value จาก ANOVA น้อยกว่า 0.05 หมายความว่าอย่างไร?",
+    "info": "p-value < 0.05 ทำให้ปฏิเสธ H0",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่าเฉลี่ยทุกกลุ่มเท่ากัน", "correct": false },
+      { "text": "ค่าเฉลี่ยทุกกลุ่มไม่ต่างกัน", "correct": false },
+      { "text": "มีค่าเฉลี่ยอย่างน้อย 1 กลุ่มแตกต่าง", "correct": true },
+      { "text": "ข้อมูลผิดพลาด", "correct": false }
+    ]
+  },
+  {
+    "text": "ตัวแปรที่ถูกควบคุมและแบ่งออกเป็นหลายระดับใน ANOVA เรียกว่าอะไร?",
+    "info": "Factor คือตัวแปรอิสระที่ถูกแบ่งเป็นหลายระดับเพื่อทำการทดลองเปรียบเทียบค่าเฉลี่ย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Response", "correct": false },
+      { "text": "Factor", "correct": true },
+      { "text": "Sample", "correct": false },
+      { "text": "Error", "correct": false }
+    ]
+  },
+  {
+    "text": "ในการคำนวณ Sum of Squares หากคุณลืมลบค่า CM ออกจากผลรวมของเลขยกกำลังสอง จะเกิดอะไรขึ้น?",
+    "info": "CM ใช้สำหรับหักอิทธิพลของค่าเฉลี่ยรวมออกจากข้อมูลดิบ หากไม่ลบออก ค่า SS จะรวมขนาดของข้อมูลทั้งหมดเข้าไป ทำให้ค่าที่ได้สูงเกินจริง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่า SS จะมีค่าเป็น 0", "correct": false },
+      { "text": "ค่า SS จะมีค่าสูงผิดปกติมาก [Overestimated]", "correct": true },
+      { "text": "ค่า SS จะติดลบ", "correct": false },
+      { "text": "ไม่มีผลต่อค่า F", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า Degrees of Freedom ของ Error (df_error) ใน One-Way ANOVA คำนวณอย่างไร?",
+    "info": "df ของ Error คือจำนวนข้อมูลทั้งหมดที่เหลือหลังจากใช้ข้อมูลไปคำนวณค่าเฉลี่ยของแต่ละกลุ่ม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "จำนวนกลุ่ม - 1 [k - 1]", "correct": false },
+      { "text": "จำนวนข้อมูลทั้งหมด - 1 [N - 1]", "correct": false },
+      { "text": "จำนวนข้อมูลทั้งหมด - จำนวนกลุ่ม [N - k]", "correct": true },
+      { "text": "[จำนวนกลุ่ม - 1] × [จำนวนข้อมูล - 1]", "correct": false }
+    ]
+  },
+  {
+    "text": "หากต้องการเปรียบเทียบค่าเฉลี่ยของ 4 เทคนิคการสกัดฟอสฟอรัส โดยแต่ละเทคนิคทดลอง 8 ครั้ง ค่า df รวม (df_total) จะเท่ากับเท่าใด?",
+    "info": "จำนวนข้อมูลทั้งหมด N = 4 × 8 = 32 ดังนั้น df_total = N – 1 = 32 – 1 = 31",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "4", "correct": false },
+      { "text": "7", "correct": false },
+      { "text": "31", "correct": true },
+      { "text": "32", "correct": false }
+    ]
+  },
+  {
+    "text": "ในตาราง ANOVA ค่า Mean Square (MS) ได้มาจากการคำนวณในข้อใด?",
+    "info": "Mean Square คือค่าเฉลี่ยของ Sum of Squares จึงต้องนำ SS มาหารด้วย Degree of Freedom",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "SS × df", "correct": false },
+      { "text": "SS ÷ df", "correct": true },
+      { "text": "√SS", "correct": false },
+      { "text": "SSB + SSE", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่าสถิติ F มีคุณสมบัติเด่นในข้อใดที่ต่างจากค่าสถิติ t?",
+    "info": "ค่า F เป็นอัตราส่วนของค่าที่ยกกำลังสอง (MSB/MSE) จึงไม่มีทางติดลบ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่า F สามารถติดลบได้", "correct": false },
+      { "text": "ค่า F มีค่าเป็นบวกเสมอ และมีการแจกแจงแบบเบ้ขวา", "correct": true },
+      { "text": "ค่า F ใช้เปรียบเทียบได้แค่ 2 กลุ่มเท่านั้น", "correct": false },
+      { "text": "ค่า F ไม่ขึ้นอยู่กับระดับนัยสำคัญ", "correct": false }
+    ]
+  },
+  {
+    "text": "หากอาจารย์ถามว่า “Signal-to-Noise Ratio” ใน ANOVA คือค่าใด?",
+    "info": "ค่า F เปรียบเทียบสัญญาณ (ความแตกต่างระหว่างกลุ่ม) กับสัญญาณรบกวน (ความแปรปรวนภายในกลุ่ม)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่า CM", "correct": false },
+      { "text": "ค่า p-value", "correct": false },
+      { "text": "ค่าสถิติ F", "correct": true },
+      { "text": "ค่า SST", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีการของ Scheffé’s Test มีความโดดเด่นในเรื่องใดมากที่สุด?",
+    "info": "Scheffé สามารถใช้เปรียบเทียบหลายรูปแบบได้ แต่มีความเข้มงวดสูงทำให้ปฏิเสธ H0 ได้ยากกว่าวิธีอื่น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "มีอำนาจการทดสอบสูงที่สุด", "correct": false },
+      { "text": "คำนวณง่ายที่สุด", "correct": false },
+      { "text": "มีความยืดหยุ่นสูงในการเปรียบเทียบกลุ่มที่ซับซ้อน", "correct": true },
+      { "text": "ใช้ได้เฉพาะเมื่อขนาดตัวอย่างเท่ากัน", "correct": false }
+    ]
+  },
+  {
+    "text": "“หน่วยทดลอง” (Experimental Unit) จากตัวอย่างการผลิตถุงกระดาษคือข้อใด?",
+    "info": "หน่วยทดลองคือสิ่งที่ได้รับทรีทเมนต์และถูกนำมาวัดผลการทดลอง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เยื่อไม้", "correct": false },
+      { "text": "ระดับความเข้มข้น 5%", "correct": false },
+      { "text": "ถุงกระดาษแต่ละใบที่นำมาวัดความเหนียว", "correct": true },
+      { "text": "เครื่องวัดความเหนียว", "correct": false }
+    ]
+  },
+  {
+    "text": "เงื่อนไข Independence (ความเป็นอิสระ) ของข้อมูล มักจะตรวจสอบได้จากส่วนใด?",
+    "info": "ความเป็นอิสระของข้อมูลเกิดจากกระบวนการสุ่มและการออกแบบการทดลองที่ถูกต้อง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "การคำนวณ Levene Test", "correct": false },
+      { "text": "การดู Histogram", "correct": false },
+      { "text": "วิธีการออกแบบการทดลองและการสุ่มตัวอย่าง", "correct": true },
+      { "text": "การดูค่า p-value ในตาราง ANOVA", "correct": false }
+    ]
+  },
+  {
+    "text": "หากสรุปผลว่า “เทคนิคการสกัดฟอสฟอรัสมีผลต่อปริมาณฟอสฟอรัสอย่างมีนัยสำคัญที่ระดับ 0.05” หมายความว่าอย่างไร?",
+    "info": "ระดับนัยสำคัญ 0.05 คือความเสี่ยงที่ยอมรับได้ในการปฏิเสธ H0 ผิดพลาด [Type I Error]",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทุกเทคนิคให้ผลแตกต่างกันทั้งหมด", "correct": false },
+      { "text": "มีโอกาสผิดพลาดในการสรุปผลครั้งนี้ไม่เกิน 5%", "correct": true },
+      { "text": "เทคนิคที่ 1 ดีกว่าเทคนิคที่ 4 แน่นอน", "correct": false },
+      { "text": "ความแปรปรวนภายในกลุ่มมีค่าเป็น 0", "correct": false }
+    ]
+  }
+]

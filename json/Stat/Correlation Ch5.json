@@ -1,0 +1,332 @@
+[
+  {
+    "text": "สหสัมพันธ์ (Correlation) คือเครื่องมือทางสถิติที่ใช้เพื่อวัตถุประสงค์ใดเป็นหลัก?",
+    "info": "Correlation ใช้สำหรับวัดว่าตัวแปรสองตัวมีความสัมพันธ์กันมากน้อยเพียงใดและมีทิศทาง อย่างไร",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อหาค่าเฉลี่ยและส่วนเบี่ยงเบนมาตรฐานของตัวแปรเดียว", "correct": false },
+      { "text": "เพื่อวัดระดับความสัมพันธ์และทิศทางระหว่างตัวแปรเชิงปริมาณ 2 ตัวแปร", "correct": true },
+      { "text": "เพื่อพิสูจน์ความเป็นเหตุเป็นผล (Causation) ระหว่างตัวแปร", "correct": false },
+      { "text": "เพื่อจัดกลุ่มข้อมูลตามลักษณะคุณภาพ", "correct": false }
+    ]
+  },
+  {
+    "text": "ในทางสถิติ ค่า Pearson Product-Moment Correlation (r) เน้นวัดความสัมพันธ์รูปแบบใด?",
+    "info": "Pearson r ใช้วัดความสัมพันธ์เชิงเส้นระหว่างตัวแปรเชิงปริมาณสองตัว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความสัมพันธ์แบบเส้นโค้ง", "correct": false },
+      { "text": "ความสัมพันธ์ที่เป็นเส้นตรง [Linear]", "correct": true },
+      { "text": "ความสัมพันธ์เชิงคุณภาพ", "correct": false },
+      { "text": "ความสัมพันธ์แบบไม่มีทิศทาง", "correct": false }
+    ]
+  },
+  {
+    "text": "วัตถุประสงค์ในข้อใดช่วยในเรื่องการ 'ตัดตัวแปรที่ไม่เกี่ยวข้องออกจากการสร้าง Model'?",
+    "info": "ใช้ตรวจสอบว่าตัวแปรมีความสัมพันธ์กันจริงหรือไม่ เพื่อคัดเลือกตัวแปรที่สำคัญต่อโมเดล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "To Measure Strength", "correct": false },
+      { "text": "To Identify Direction", "correct": false },
+      { "text": "To Determine Existence of Relationship", "correct": true },
+      { "text": "To Lead to Prediction", "correct": false }
+    ]
+  },
+  {
+    "text": "การทราบทิศทาง [Direction] ของความสัมพันธ์มีประโยชน์อย่างไร?",
+    "info": "ทิศทางของสหสัมพันธ์บอกว่าตัวแปรเพิ่มขึ้นพร้อมกันหรือเพิ่มหนึ่งลดหนึ่ง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อดูว่าตัวแปรแปรผันตามกันหรือสวนทางกัน", "correct": true },
+      { "text": "เพื่อหาค่าเฉลี่ยของข้อมูล", "correct": false },
+      { "text": "เพื่อพิสูจน์ว่า X ทำให้เกิด Y", "correct": false },
+      { "text": "เพื่อดูความหนาแน่นของข้อมูล", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อความโดยอธิบายหลักการ 'Correlation is not causation' ได้ถูกต้องที่สุด?",
+    "info": "Correlation แสดงเพียงความสัมพันธ์ ไม่ได้พิสูจน์เหตุและผล",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความสัมพันธ์คือความเป็นเหตุเป็นผล", "correct": false },
+      { "text": "สัมพันธ์กันแต่ไม่ได้หมายความว่าตัวแปรหนึ่งเป็นสาเหตุให้อีกตัวแปรหนึ่งเกิดขึ้น", "correct": true },
+      { "text": "ถ้าค่า r สูง แสดงว่าเป็นเหตุเป็นผลกันแน่นอน", "correct": false },
+      { "text": "ค่า r ไม่สามารถบอกความสัมพันธ์ได้", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อตกลงเบื้องต้นระบุว่าตัวแปรต้องมีระดับการวัดแบบใดขึ้นไป?",
+    "info": "Pearson Correlation ใช้กับข้อมูลระดับ Interval หรือ Ratio",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Nominal", "correct": false },
+      { "text": "Ordinal", "correct": false },
+      { "text": "Interval", "correct": true },
+      { "text": "ข้อมูลเชิงคุณภาพ", "correct": false }
+    ]
+  },
+  {
+    "text": "การตรวจสอบว่าข้อมูลมีความสัมพันธ์เชิงเส้นตรง (Linearity) ต้องตรวจสอบจากสิ่งใด?",
+    "info": "Scatter Plot ใช้ดูรูปแบบความสัมพันธ์ของจุดข้อมูลว่าเป็นเส้นตรงหรือไม่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ค่าเฉลี่ย", "correct": false },
+      { "text": "กราฟ XY [Scatter Plot]", "correct": true },
+      { "text": "ส่วนเบี่ยงเบนมาตรฐาน", "correct": false },
+      { "text": "ค่า p-value", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อตกลงเรื่อง 'การกระจายตัวแบบปกติ' (Normality) ตรวจสอบจากอะไร?",
+    "info": "การกระจายตัวแบบปกติจะมีลักษณะคล้ายรูประฆังคว่ำ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "กราฟ Histogram รูปทรงระฆังคว่ำ", "correct": true },
+      { "text": "การสุ่มข้อมูล", "correct": false },
+      { "text": "ความเป็นอิสระต่อกัน", "correct": false },
+      { "text": "ระดับการวัด", "correct": false }
+    ]
+  },
+  {
+    "text": "'ตัวแปรทั้งสองต้องมีอิสระต่อกัน' (Independence) มีความหมายว่าอย่างไร?",
+    "info": "ค่าสังเกตแต่ละชุดต้องเป็นอิสระจากกันเพื่อไม่ให้เกิดอคติทางสถิติ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ตัวแปร X และ Y ต้องไม่เกี่ยวข้อง", "correct": false },
+      { "text": "ข้อมูลแต่ละคู่ต้องไม่ส่งผลกระทบต่อกัน", "correct": true },
+      { "text": "ค่า r ต้องเป็น 0", "correct": false },
+      { "text": "ข้อมูลต้องมาจากแหล่งเดียวกัน", "correct": false }
+    ]
+  },
+  {
+    "text": "ตัวแปรในข้อใดที่ 'ไม่ผ่าน' ข้อตกลงเรื่องระดับการวัด?",
+    "info": "เป็นข้อมูลระดับ Ordinal ซึ่งต่ำกว่าระดับ Interval",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "รายได้ [บาท]", "correct": false },
+      { "text": "อุณหภูมิ [เซลเซียส]", "correct": false },
+      { "text": "ระดับความพึงพอใจ [น้อย ปานกลาง มาก]", "correct": true },
+      { "text": "น้ำหนัก [กิโลกรัม]", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่าสัมประสิทธิ์สหสัมพันธ์ (r) มีคุณสมบัติเรื่องหน่วยวัดอย่างไร?",
+    "info": "r เป็นค่าที่ถูกมาตรฐานแล้วจึงไม่มีหน่วยวัด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "มีหน่วยเดียวกับ X", "correct": false },
+      { "text": "มีหน่วยเปอร์เซ็นต์", "correct": false },
+      { "text": "ไม่มีหน่วย", "correct": true },
+      { "text": "มีหน่วยเดียวกับ Y", "correct": false }
+    ]
+  },
+  {
+    "text": "ค่า r มีค่าอยู่ในช่วงใดเสมอ?",
+    "info": "ค่าสหสัมพันธ์ถูกกำหนดให้อยู่ในช่วงนี้เท่านั้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "-1 ถึง 1", "correct": true },
+      { "text": "0 ถึง 1", "correct": false },
+      { "text": "-1 ถึง 0", "correct": false },
+      { "text": "ไม่จำกัด", "correct": false }
+    ]
+  },
+  {
+    "text": "หากค่า r เข้าใกล้ 1 หรือ -1 แสดงถึงอะไร?",
+    "info": "ยิ่งค่า r ห่างจาก 0 มาก ความสัมพันธ์ยิ่งแข็งแรง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความสัมพันธ์ต่ำ", "correct": false },
+      { "text": "ความสัมพันธ์สูงมาก", "correct": true },
+      { "text": "ข้อมูลผิด", "correct": false },
+      { "text": "ไม่มีความสัมพันธ์", "correct": false }
+    ]
+  },
+  {
+    "text": "สัญลักษณ์ p [Rho] หมายถึงอะไร?",
+    "info": "p แทนค่าพารามิเตอร์ของประชากร ส่วน r เป็นค่าของกลุ่มตัวอย่าง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "สหสัมพันธ์ของกลุ่มตัวอย่าง", "correct": false },
+      { "text": "สหสัมพันธ์ของประชากร", "correct": true },
+      { "text": "ค่าความคลาดเคลื่อน", "correct": false },
+      { "text": "สัมประสิทธิ์การตัดสินใจ", "correct": false }
+    ]
+  },
+  {
+    "text": "r = -0.90 เทียบกับ r = 0.50 ข้อใดแข็งแกร่งกว่า?",
+    "info": "ความแข็งแกร่งดูจากค่าสัมบูรณ์ ซึ่ง 0.90 มากกว่า 0.50",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "r = 0.50", "correct": false },
+      { "text": "r = -0.90", "correct": true },
+      { "text": "เท่ากัน", "correct": false },
+      { "text": "เปรียบเทียบไม่ได้", "correct": false }
+    ]
+  },
+  {
+    "text": "เครื่องหมายลบของ r หมายถึงอะไร?",
+    "info": "เมื่อค่าของตัวแปรหนึ่งเพิ่ม อีกตัวแปรจะลดลง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "แปรผันตามกัน", "correct": false },
+      { "text": "แปรผันตรงข้ามกัน", "correct": true },
+      { "text": "ข้อมูลผิด", "correct": false },
+      { "text": "ไม่มีความสัมพันธ์", "correct": false }
+    ]
+  },
+  {
+    "text": "r = 0.85 จัดเป็นระดับใด?",
+    "info": "ค่า r ระหว่าง 0.80-1.00 ถือว่ามีความสัมพันธ์สูงมาก",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ต่ำ", "correct": false },
+      { "text": "ปานกลาง", "correct": false },
+      { "text": "สูงมาก", "correct": true },
+      { "text": "ไม่มี", "correct": false }
+    ]
+  },
+  {
+    "text": "r² ใช้บอกอะไร?",
+    "info": "r² คือสัดส่วนความแปรปรวนของ Y ที่อธิบายได้ด้วย X",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทิศทาง", "correct": false },
+      { "text": "X อธิบาย Y ได้กี่เปอร์เซ็นต์", "correct": true },
+      { "text": "ความคลาดเคลื่อน", "correct": false },
+      { "text": "นัยสำคัญ", "correct": false }
+    ]
+  },
+  {
+    "text": "ถ้า r = 0.80 ค่า r² เท่ากับเท่าใด?",
+    "info": "r² = 0.80 x 0.80",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "0.80", "correct": false },
+      { "text": "0.64", "correct": true },
+      { "text": "0.16", "correct": false },
+      { "text": "1.60", "correct": false }
+    ]
+  },
+  {
+    "text": "ถ้า r² = 0.64 ปัจจัยอื่นมีสัดส่วนเท่าใด?",
+    "info": "100 - 64 = 36%",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "64%", "correct": false },
+      { "text": "36%", "correct": true },
+      { "text": "100%", "correct": false },
+      { "text": "0%", "correct": false }
+    ]
+  },
+  {
+    "text": "สมมติฐาน H0 : p = 0 หมายถึงอะไร?",
+    "info": "สมมติฐานว่างตั้งต้นว่าตัวแปรไม่สัมพันธ์กัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "มีความสัมพันธ์", "correct": false },
+      { "text": "ไม่มีความสัมพันธ์", "correct": true },
+      { "text": "เป็นเหตุเป็นผล", "correct": false },
+      { "text": "มีนัยสำคัญ", "correct": false }
+    ]
+  },
+  {
+    "text": "หาก p-value < 0.05 ต้องตัดสินใจอย่างไร?",
+    "info": "ค่า p ต่ำกว่าระดับนัยสำคัญแสดงว่าผลลัพธ์มีนัยสำคัญทางสถิติ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยอมรับ H0", "correct": false },
+      { "text": "ปฏิเสธ H0", "correct": true },
+      { "text": "เก็บข้อมูลใหม่", "correct": false },
+      { "text": "r = 0", "correct": false }
+    ]
+  },
+  {
+    "text": "ผลลัพธ์จะ 'เชื่อถือไม่ได้' เมื่อใด?",
+    "info": "ค่า p สูงแสดงว่าผลลัพธ์อาจเกิดจากความบังเอิญ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "p < 0.05", "correct": false },
+      { "text": "p > 0.05", "correct": true },
+      { "text": "r = 1", "correct": false },
+      { "text": "r = -1", "correct": false }
+    ]
+  },
+  {
+    "text": "Scatter Plot ที่ไม่มีรูปแบบ จะมีค่า r ประมาณเท่าใด?",
+    "info": "ไม่มีรูปแบบเชิงเส้นจึงทำให้ค่า r ใกล้ศูนย์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใกล้ 1", "correct": false },
+      { "text": "ใกล้ -1", "correct": false },
+      { "text": "ใกล้ 0", "correct": true },
+      { "text": "มากกว่า 1", "correct": false }
+    ]
+  },
+  {
+    "text": "จุดบน Scatter Plot เกาะเส้นตรงมากขึ้น จะเกิดอะไรขึ้นกับ r?",
+    "info": "ความแน่นของจุดข้อมูลสะท้อนความแข็งแรงของความสัมพันธ์",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เข้าใกล้ 0", "correct": false },
+      { "text": "เข้าใกล้ 1 หรือ -1", "correct": true },
+      { "text": "ติดลบเสมอ", "correct": false },
+      { "text": "คงที่", "correct": false }
+    ]
+  },
+  {
+    "text": "ยิ่งอ่านหนังสือมาก คะแนนสอบยิ่งสูง เป็นความสัมพันธ์แบบใด?",
+    "info": "ตัวแปรเพิ่มขึ้นพร้อมกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เชิงบวก", "correct": true },
+      { "text": "เชิงลบ", "correct": false },
+      { "text": "ไม่มีความสัมพันธ์", "correct": false },
+      { "text": "โค้ง", "correct": false }
+    ]
+  },
+  {
+    "text": "ยิ่งตั้งอุณหภูมิแอร์ต่ำ ค่าไฟยิ่งสูง เป็นความสัมพันธ์แบบใด?",
+    "info": "ตัวแปรหนึ่งลด อีกตัวเพิ่ม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เชิงบวก", "correct": false },
+      { "text": "เชิงลบ", "correct": true },
+      { "text": "ไม่มี", "correct": false },
+      { "text": "ศูนย์แท้", "correct": false }
+    ]
+  },
+  {
+    "text": "ขั้นตอนการสรุปผล Correlation ที่ถูกต้องคืออะไร?",
+    "info": "การแปรผลต้องพิจารณาครบทั้งสามส่วน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ดูเฉพาะ r", "correct": false },
+      { "text": "ดูทิศทาง ขนาด และนัยสำคัญ", "correct": true },
+      { "text": "ดูเฉพาะ p-value", "correct": false },
+      { "text": "ใช้ความรู้สึก", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Predictive Analytics ใช้ Correlation เพื่ออะไร?",
+    "info": "ตัวแปรที่มีความสัมพันธ์สูงมักถูกนำไปใช้ใน Regression",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "สร้าง Histogram", "correct": false },
+      { "text": "หาตัวแปรที่มีผลต่อผลลัพธ์เพื่อนำไปสร้างโมเดลพยากรณ์", "correct": true },
+      { "text": "เก็บข้อมูล", "correct": false },
+      { "text": "หาค่าเฉลี่ย", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อควรระวังที่สุดในการใช้ Correlation คืออะไร?",
+    "info": "ความสัมพันธ์ไม่ได้หมายความว่าตัวแปรหนึ่งเป็นสาเหตุของอีกตัวหนึ่ง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "คำนวณผิด", "correct": false },
+      { "text": "สรุปว่า Correlation คือ Causation", "correct": true },
+      { "text": "ใช้กราฟผิด", "correct": false },
+      { "text": "กลุ่มตัวอย่างน้อย", "correct": false }
+    ]
+  }
+]
