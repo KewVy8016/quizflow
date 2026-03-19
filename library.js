@@ -115,28 +115,31 @@ async function loadQuizLibrary() {
             `;
             return;
         }
-        
-        // แสดงแบบแบ่งตามรายวิชา (subject)
-        for (const category of categories) {
-            const section = document.createElement('section');
-            section.className = 'subject-section';
 
-            const title = document.createElement('h2');
-            title.className = 'subject-title';
-            title.textContent = category.subject;
-            section.appendChild(title);
+        // สร้างปุ่มเลือก subject ด้านบน (เหมือนโฟลเดอร์)
+        const subjectSelector = document.createElement('div');
+        subjectSelector.className = 'subject-selector';
 
-            const grid = document.createElement('div');
-            grid.className = 'quiz-library';
+        categories.forEach((cat, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'subject-chip';
+            if (index === 0) btn.classList.add('active');
+            btn.textContent = cat.subject;
+            btn.addEventListener('click', () => {
+                // เปลี่ยน active chip
+                document
+                    .querySelectorAll('.subject-chip')
+                    .forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // render เฉพาะ subtree ของ subject ที่เลือก
+                renderSubjectSection(libraryContainer, categories, cat.subject);
+            });
+            subjectSelector.appendChild(btn);
+        });
 
-            for (const quizFile of category.files) {
-                const card = await createQuizCard(quizFile, category.subject);
-                grid.appendChild(card);
-            }
-
-            section.appendChild(grid);
-            libraryContainer.appendChild(section);
-        }
+        libraryContainer.appendChild(subjectSelector);
+        // แสดง subject แรกเป็นค่าเริ่มต้น
+        renderSubjectSection(libraryContainer, categories, categories[0].subject);
     } catch (error) {
         console.error('Error loading quiz library:', error);
         libraryContainer.innerHTML = `
@@ -153,30 +156,46 @@ async function loadQuizLibrary() {
     }
 }
 
+// render quiz เฉพาะของ subject ที่เลือก (lazy per subject)
+async function renderSubjectSection(container, categories, subjectName) {
+    // ลบ section เดิมถ้ามี (แต่คง selector ไว้)
+    const oldSection = container.querySelector('.subject-section');
+    if (oldSection) {
+        container.removeChild(oldSection);
+    }
+
+    const category = categories.find(c => c.subject === subjectName);
+    if (!category) return;
+
+    const section = document.createElement('section');
+    section.className = 'subject-section';
+
+    const title = document.createElement('h2');
+    title.className = 'subject-title';
+    title.textContent = category.subject;
+    section.appendChild(title);
+
+    const grid = document.createElement('div');
+    grid.className = 'quiz-library';
+
+    // สร้างการ์ดจากไฟล์ใน subject นี้เท่านั้น
+    for (const quizFile of category.files) {
+        const card = await createQuizCard(quizFile, category.subject);
+        grid.appendChild(card);
+    }
+
+    section.appendChild(grid);
+    container.appendChild(section);
+}
+
 async function createQuizCard(quizFile, subject) {
     console.log('Creating card for quiz file:', quizFile);
     // รองรับ path ที่มี subfolder เช่น "Ebusiness/EB04.json"
     const fileName = quizFile.split('/').pop().split('\\').pop();
     const topicName = fileName.replace('.json', '').replace(/_/g, ' ');
     
-    // Load quiz to get question count
-    let questionCount = 0;
-    try {
-        const filePath = `json/${quizFile}`;
-        console.log('Fetching quiz info from:', filePath);
-        const response = await fetch(filePath);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        
-        const quizData = await response.json();
-        questionCount = quizData.length;
-        console.log(`Quiz "${quizFile}" has ${questionCount} questions`);
-    } catch (error) {
-        console.error(`Error loading ${quizFile}:`, error);
-    }
-    
+    // ไม่โหลดไฟล์ quiz ตอนหน้า library เพื่อความเร็ว
+    // ใช้แค่ progress จาก localStorage (ถ้ามี)
     // Get progress from localStorage
     const stateKey = `quiz_state_${topicName}`;
     const savedState = localStorage.getItem(stateKey);
@@ -193,8 +212,8 @@ async function createQuizCard(quizFile, subject) {
     card.innerHTML = `
         <h3>${topicName}</h3>
         ${subject ? `<div class="quiz-subject-tag">${subject}</div>` : ''}
-        <div class="quiz-info">${questionCount} คำถาม</div>
-        <div class="quiz-progress">Progress: ${progress} / ${questionCount}</div>
+        <div class="quiz-info">คลิกเพื่อเริ่มทำข้อสอบ</div>
+        <div class="quiz-progress">${progress > 0 ? `Progress: ${progress} ข้อ` : 'ยังไม่ได้เริ่มทำ'}</div>
     `;
     
     card.addEventListener('click', () => {
