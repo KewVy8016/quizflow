@@ -1,0 +1,563 @@
+[
+  {
+    "text": "หน่วยเก็บข้อมูลหลัก (main memory) และรีจิสเตอร์ (registers) มีลักษณะร่วมกันอย่างไรในมุมมองของ CPU",
+    "info": "CPU สามารถเข้าถึงข้อมูลได้โดยตรงจาก main memory และ registers เท่านั้น ไม่สามารถเข้าถึงข้อมูลจากอุปกรณ์อื่นได้โดยตรง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "เป็นหน่วยเก็บข้อมูลถาวรที่ข้อมูลไม่สูญหายเมื่อปิดเครื่อง", "correct": false },
+      { "text": "เป็นหน่วยเก็บข้อมูลที่ CPU สามารถเข้าถึงได้โดยตรงเท่านั้น", "correct": true },
+      { "text": "เป็นหน่วยเก็บข้อมูลที่ช้าที่สุดในระบบ", "correct": false },
+      { "text": "เป็นหน่วยเก็บข้อมูลที่มีความจุมากที่สุด", "correct": false }
+    ]
+  },
+  {
+    "text": "คู่ของรีจิสเตอร์ base และ limit ใช้สำหรับวัตถุประสงค์ใด",
+    "info": "Base register กำหนดตำแหน่งเริ่มต้นของ address space ส่วน limit register กำหนดขนาด CPU จะตรวจสอบทุก memory access ว่าไม่เกิน limit เพื่อป้องกันการเข้าถึงหน่วยความจำนอกเหนือที่ได้รับอนุญาต",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ใช้สำหรับเพิ่มความเร็วในการเข้าถึงหน่วยความจำ", "correct": false },
+      { "text": "ใช้สำหรับกำหนด address space ของโพรเซสและป้องกันการเข้าถึงนอกเหนือขอบเขต", "correct": true },
+      { "text": "ใช้สำหรับสลับข้อมูลระหว่าง memory และ disk", "correct": false },
+      { "text": "ใช้สำหรับจัดการ page table", "correct": false }
+    ]
+  },
+  {
+    "text": "address binding แบบ execution-time binding แตกต่างจากแบบ compile-time และ load-time อย่างไร",
+    "info": "Execution-time binding จะเลื่อนการจับคู่ logical address ไปยัง physical address ไปจนถึงขณะรันโปรแกรม ทำให้สามารถย้ายโพรเซสระหว่าง execution ได้ ต้องใช้ hardware support เช่น relocation register",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "address จะถูกกำหนดตอน compile และไม่สามารถเปลี่ยนแปลงได้", "correct": false },
+      { "text": "address จะถูกกำหนดตอน load และคงที่ตลอด", "correct": false },
+      { "text": "address จะถูกจับคู่ตอนรันโปรแกรม ทำให้โพรเซสสามารถเคลื่อนย้ายในหน่วยความจำได้", "correct": true },
+      { "text": "address จะถูกกำหนดโดยผู้ใช้ขณะรันโปรแกรม", "correct": false }
+    ]
+  },
+  {
+    "text": "logical address กับ physical address ต่างกันอย่างไร",
+    "info": "Logical address (virtual address) คือ address ที่ CPU สร้างขึ้น ส่วน physical address คือ address จริงในหน่วยความจำที่ memory unit เห็น ทั้งสองจะแตกต่างกันเมื่อใช้ execution-time binding",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "logical address คือ address ที่ CPU สร้าง, physical address คือ address จริงใน memory", "correct": true },
+      { "text": "logical address คือ address จริงใน memory, physical address คือ address ที่ CPU สร้าง", "correct": false },
+      { "text": "ทั้งสองมีความหมายเหมือนกัน", "correct": false },
+      { "text": "logical address ใช้เฉพาะใน kernel space เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "relocation register มีหน้าที่อะไรในระบบ memory management",
+    "info": "Relocation register (หรือ base register) ใช้เก็บค่าเริ่มต้นของ physical address ของโพรเซส ค่านี้จะถูกบวกเข้ากับ logical address ทุกครั้งเพื่อให้ได้ physical address ช่วยให้โพรเซสสามารถถูกวางไว้ที่ตำแหน่งใดก็ได้ใน memory",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เก็บขนาดของโพรเซสเพื่อป้องกัน overflow", "correct": false },
+      { "text": "เก็บค่าเริ่มต้นของ physical address เพื่อบวกกับ logical address", "correct": true },
+      { "text": "เก็บค่า page table base address", "correct": false },
+      { "text": "เก็บค่า interrupt vector", "correct": false }
+    ]
+  },
+  {
+    "text": "dynamic linking มีข้อดีอย่างไรเมื่อเทียบกับ static linking",
+    "info": "Dynamic linking เลื่อนการเชื่อมโยง library ไปจนถึง execution time โดยใช้ stub ทำให้ library สามารถแชร์กันระหว่างโพรเซสได้ ลดขนาดของ executable และง่ายต่อการอัปเดต library โดยไม่ต้อง recompile โปรแกรมทั้งหมด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โปรแกรมทำงานได้เร็วขึ้น", "correct": false },
+      { "text": "library สามารถแชร์กันระหว่างโพรเซสและอัปเดตได้ง่าย", "correct": true },
+      { "text": "ไม่ต้องมี library ในระบบ", "correct": false },
+      { "text": "โปรแกรมมีขนาดใหญ่ขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "swapping ในระบบปฏิบัติการคืออะไร",
+    "info": "Swapping คือการย้ายโพรเซสทั้งหมดออกจาก main memory ไปยัง backing store (disk) ชั่วคราว แล้วนำกลับเข้ามาเพื่อทำงานต่อ ช่วยให้ระบบสามารถรันโพรเซสที่มีขนาดรวมเกิน physical memory ได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "การสลับข้อมูลระหว่าง cache และ main memory", "correct": false },
+      { "text": "การย้ายโพรเซสออกจาก memory ไปยัง disk แล้วนำกลับมา", "correct": true },
+      { "text": "การสลับหน้า page ใน memory", "correct": false },
+      { "text": "การสลับข้อมูลระหว่าง CPU registers", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อจำกัดหลักของการ swapping ในระบบสมัยใหม่",
+    "info": "Swapping มี overhead สูงเพราะ transfer time ขึ้นกับขนาดของโพรเซส และมีปัญหากับ pending I/O รวมถึงไม่เหมาะกับอุปกรณ์ flash memory ที่มีจำนวน write cycles จำกัด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ไม่สามารถทำได้บนระบบ multicore", "correct": false },
+      { "text": "ใช้เวลานานเพราะขึ้นกับขนาดโพรเซสและมีปัญหากับ I/O", "correct": true },
+      { "text": "ต้องใช้ hardware พิเศษ", "correct": false },
+      { "text": "ทำได้เฉพาะบน Linux เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "first-fit, best-fit, worst-fit เป็นอัลกอริทึมที่ใช้ในบริบทใด",
+    "info": "อัลกอริทึมเหล่านี้ใช้ใน contiguous memory allocation เพื่อเลือกช่องว่าง (hole) ที่เหมาะสมในการจัดสรร memory ให้กับโพรเซส",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "การจัดสรรหน่วยความจำแบบ contiguous memory allocation", "correct": true },
+      { "text": "การจัดการ page table", "correct": false },
+      { "text": "การจัดเรียง process ใน ready queue", "correct": false },
+      { "text": "การจัดการ disk scheduling", "correct": false }
+    ]
+  },
+  {
+    "text": "อัลกอริทึมใดต่อไปนี้ให้ผลดีที่สุดในแง่ของ speed และ storage utilization จากการวิเคราะห์",
+    "info": "First-fit และ best-fit ให้ผลดีกว่า worst-fit ในแง่ของความเร็วและการใช้พื้นที่ โดย first-fit มักจะเร็วที่สุดและ best-fit ให้ internal fragmentation น้อยที่สุด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "worst-fit", "correct": false },
+      { "text": "first-fit และ best-fit", "correct": true },
+      { "text": "best-fit เท่านั้น", "correct": false },
+      { "text": "first-fit เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "external fragmentation คืออะไร",
+    "info": "External fragmentation เกิดขึ้นเมื่อมีพื้นที่ว่างรวมเพียงพอสำหรับโพรเซสแต่กระจัดกระจายเป็นชิ้นเล็กชิ้นน้อยไม่ต่อเนื่องกัน ทำให้ไม่สามารถจัดสรรให้โพรเซสขนาดใหญ่ได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "พื้นที่ว่างภายใน partition ที่ถูกจัดสรรแล้ว", "correct": false },
+      { "text": "พื้นที่ว่างรวมเพียงพอแต่ไม่ต่อเนื่องกัน", "correct": true },
+      { "text": "หน่วยความจำไม่พอสำหรับโพรเซส", "correct": false },
+      { "text": "page table มีขนาดใหญ่เกินไป", "correct": false }
+    ]
+  },
+  {
+    "text": "internal fragmentation คืออะไร",
+    "info": "Internal fragmentation เกิดขึ้นเมื่อ memory ที่จัดสรรให้โพรเซสมีขนาดใหญ่กว่าที่โพรเซสต้องการจริง พื้นที่ส่วนเกินอยู่ภายใน partition นั้นแต่ไม่ได้ถูกใช้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "พื้นที่ว่างภายใน partition ที่จัดสรรแล้ว", "correct": true },
+      { "text": "พื้นที่ว่างที่กระจัดกระจายไม่ต่อเนื่อง", "correct": false },
+      { "text": "การสูญเสียพื้นที่จาก page table", "correct": false },
+      { "text": "การสูญเสียพื้นที่จาก swapping", "correct": false }
+    ]
+  },
+  {
+    "text": "compaction เป็นเทคนิคที่ใช้แก้ปัญหาใด และต้องมีเงื่อนไขอะไร",
+    "info": "Compaction ใช้แก้ external fragmentation โดยการสับย้ายเนื้อหาใน memory ให้พื้นที่ว่างมารวมกันเป็นก้อนเดียว ต้องมี hardware support สำหรับ dynamic relocation (execution-time binding) จึงจะทำได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "แก้ internal fragmentation ต้องมี static relocation", "correct": false },
+      { "text": "แก้ external fragmentation ต้องมี dynamic relocation", "correct": true },
+      { "text": "แก้ internal fragmentation ต้องมี paging", "correct": false },
+      { "text": "แก้ external fragmentation ต้องมี segmentation", "correct": false }
+    ]
+  },
+  {
+    "text": "segmentation จัดการ memory ตามมุมมองของผู้ใช้อย่างไร",
+    "info": "Segmentation มอง memory เป็นกลุ่มของ segments ที่เป็น logical units เช่น main program, function, stack, array แต่ละ segment มีขนาดต่างกันและไม่จำเป็นต้องต่อเนื่องใน physical memory",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "มอง memory เป็นชุดของ blocks ขนาดคงที่", "correct": false },
+      { "text": "มอง memory เป็นกลุ่มของ logical units ที่มีขนาดต่างกัน", "correct": true },
+      { "text": "มอง memory เป็นพื้นที่ต่อเนื่องกัน", "correct": false },
+      { "text": "มอง memory เป็นชุดของ pages ขนาดเท่ากัน", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน segmentation architecture logical address ประกอบด้วยอะไรบ้าง",
+    "info": "Logical address ใน segmentation ประกอบด้วย segment number และ offset โดย segment number ใช้เป็น index ใน segment table เพื่อหา base address และ limit ของ segment นั้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "page number และ page offset", "correct": false },
+      { "text": "segment number และ offset", "correct": true },
+      { "text": "base และ limit", "correct": false },
+      { "text": "page number และ segment number", "correct": false }
+    ]
+  },
+  {
+    "text": "paging แก้ปัญหา external fragmentation ได้อย่างไร",
+    "info": "Paging แบ่ง physical memory เป็น frames ขนาดคงที่ และ logical memory เป็น pages ขนาดเดียวกัน ทำให้สามารถวาง pages ของโพรเซสลงใน frames ที่ว่างได้โดยไม่ต้องต่อเนื่องกัน ป้องกัน external fragmentation",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทำให้ memory เป็น contiguous", "correct": false },
+      { "text": "ใช้ frames ขนาดคงที่ ทำให้ไม่ต้องใช้พื้นที่ต่อเนื่อง", "correct": true },
+      { "text": "ใช้ compaction อัตโนมัติ", "correct": false },
+      { "text": "ใช้ segmentation ร่วมด้วย", "correct": false }
+    ]
+  },
+  {
+    "text": "page offset ใน logical address มีขนาดเท่าใด หาก page size คือ 4 KB (2^12)",
+    "info": "Page offset มีขนาด log2(page size) ดังนั้นถ้า page size = 2^12 bytes แล้ว offset จะมีขนาด 12 bits",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "10 bits", "correct": false },
+      { "text": "12 bits", "correct": true },
+      { "text": "20 bits", "correct": false },
+      { "text": "32 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "การเข้าถึง memory ในระบบ paging ที่ไม่มี TLB ต้องใช้กี่ครั้ง",
+    "info": "ไม่มี TLB จะต้องเข้าถึง memory 2 ครั้ง: ครั้งแรกเพื่ออ่าน page table (หา frame number) ครั้งที่สองเพื่ออ่าน/เขียนข้อมูลจริง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1 ครั้ง", "correct": false },
+      { "text": "2 ครั้ง", "correct": true },
+      { "text": "3 ครั้ง", "correct": false },
+      { "text": "4 ครั้ง", "correct": false }
+    ]
+  },
+  {
+    "text": "Translation Look-aside Buffer (TLB) มีหน้าที่อะไร",
+    "info": "TLB เป็น associative memory ขนาดเล็กที่เก็บ page table entries ที่เพิ่งถูกใช้ล่าสุด เพื่อลดจำนวนการเข้าถึง memory ในการแปลง address โดยใช้ parallel search",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "เก็บ page table ทั้งหมด", "correct": false },
+      { "text": "cache page table entries เพื่อเพิ่มความเร็วในการ address translation", "correct": true },
+      { "text": "เก็บเนื้อหาของ pages ที่ใช้บ่อย", "correct": false },
+      { "text": "เก็บ interrupt vectors", "correct": false }
+    ]
+  },
+  {
+    "text": "ASID (Address-Space Identifier) ใน TLB มีประโยชน์อย่างไร",
+    "info": "ASID ใช้ระบุว่า TLB entry นั้นเป็นของโพรเซสใด ทำให้ไม่ต้อง flush TLB ทุกครั้งที่ context switch ช่วยเพิ่มประสิทธิภาพ",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เพิ่มขนาดของ TLB", "correct": false },
+      { "text": "ระบุโพรเซสเจ้าของ TLB entry ป้องกันการ flush TLB ทุก context switch", "correct": true },
+      { "text": "เก็บ page offset", "correct": false },
+      { "text": "ตรวจสอบสิทธิ์การเข้าถึง", "correct": false }
+    ]
+  },
+  {
+    "text": "valid-invalid bit ใน page table ใช้สำหรับอะไร",
+    "info": "Valid-invalid bit บ่งบอกว่า page นั้นอยู่ใน logical address space ของโพรเซสหรือไม่ ช่วยตรวจจับการเข้าถึง address ที่ไม่ถูกต้อง (illegal address) และป้องกันการเข้าถึง memory นอกเหนือที่ได้รับอนุญาต",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "บอกว่า page อยู่ใน memory หรือไม่", "correct": false },
+      { "text": "บอกว่า page อยู่ใน logical address space และเป็น legal page หรือไม่", "correct": true },
+      { "text": "บอกสิทธิ์การอ่าน/เขียน", "correct": false },
+      { "text": "บอกว่า page ถูกแชร์หรือไม่", "correct": false }
+    ]
+  },
+  {
+    "text": "paging ช่วยให้เกิดการแชร์โค้ดระหว่างโพรเซสได้อย่างไร",
+    "info": "Paging ช่วยให้โพรเซสหลายตัวสามารถแชร์หน้าเดียวกันใน physical memory ได้โดยการ map page table ของแต่ละโพรเซสไปยัง frame เดียวกัน เหมาะกับโค้ดแบบ reentrant (read-only)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "คัดลอกโค้ดให้ทุกโพรเซส", "correct": false },
+      { "text": "map page table ของหลายโพรเซสไปยัง frame เดียวกัน", "correct": true },
+      { "text": "ใช้ segmentation ร่วมด้วย", "correct": false },
+      { "text": "เก็บโค้ดใน TLB", "correct": false }
+    ]
+  },
+  {
+    "text": "ทำไม hierarchical page table (two-level paging) จึงถูกนำมาใช้",
+    "info": "Two-level paging ใช้เพื่อลดขนาดของ page table ที่ต้องอยู่ใน memory โดยแบ่ง page table ออกเป็นหลายส่วนและทำ paging ให้กับ page table เอง เหมาะกับ address space ขนาดใหญ่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อเพิ่มความเร็วในการแปลง address", "correct": false },
+      { "text": "เพื่อลดขนาดของ page table ที่ต้องอยู่ใน memory", "correct": true },
+      { "text": "เพื่อลด internal fragmentation", "correct": false },
+      { "text": "เพื่อเพิ่มจำนวน frames", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน two-level paging บน 32-bit machine ที่มี page size 4 KB logical address ถูกแบ่งอย่างไร",
+    "info": "Page size 4 KB (2^12) → offset 12 bits ที่เหลือ 20 bits เป็น page number ซึ่งแบ่งเป็น p1 (outer page) และ p2 (inner page) ตามขนาดของ page table",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "p1 (10 bits), p2 (10 bits), offset (12 bits)", "correct": true },
+      { "text": "p1 (12 bits), p2 (8 bits), offset (12 bits)", "correct": false },
+      { "text": "p1 (8 bits), p2 (12 bits), offset (12 bits)", "correct": false },
+      { "text": "p1 (20 bits), offset (12 bits)", "correct": false }
+    ]
+  },
+  {
+    "text": "ปัญหาในการใช้ multi-level paging บน 64-bit address space คืออะไร",
+    "info": "64-bit address space ทำให้จำนวนระดับของ page table เพิ่มขึ้นอย่างมาก (อาจถึง 4-5 ระดับ) และจำนวน memory accesses ในการแปลง address ก็เพิ่มขึ้นตามไปด้วย",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ไม่มีปัญหาเพราะ hardware รองรับ", "correct": false },
+      { "text": "จำนวนระดับ page table เพิ่มขึ้นและ memory accesses เพิ่มขึ้น", "correct": true },
+      { "text": "page size ใหญ่เกินไป", "correct": false },
+      { "text": "TLB ใช้ไม่ได้กับ 64-bit", "correct": false }
+    ]
+  },
+  {
+    "text": "hashed page table เหมาะกับสถาปัตยกรรมใด",
+    "info": "Hashed page table เหมาะกับ address space ที่ใหญ่กว่า 32 bits โดยใช้ hash function ในการค้นหา page table entry ลดขนาดของ page table",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "32-bit address space", "correct": false },
+      { "text": "address space ที่ใหญ่กว่า 32 bits", "correct": true },
+      { "text": "16-bit address space", "correct": false },
+      { "text": "real-mode addressing", "correct": false }
+    ]
+  },
+  {
+    "text": "inverted page table แตกต่างจาก page table แบบปกติอย่างไร",
+    "info": "Inverted page table มีหนึ่ง entry ต่อหนึ่ง physical frame (ไม่ใช่ต่อ logical page) และเก็บข้อมูลว่า frame นี้ถูก map มาจากโพรเซสใดและ virtual page ใด เหมาะกับ address space ขนาดใหญ่",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "มีหนึ่ง entry ต่อหนึ่ง logical page", "correct": false },
+      { "text": "มีหนึ่ง entry ต่อหนึ่ง physical frame", "correct": true },
+      { "text": "มีหนึ่ง entry ต่อหนึ่งโพรเซส", "correct": false },
+      { "text": "เก็บเฉพาะ page ที่ใช้บ่อย", "correct": false }
+    ]
+  },
+  {
+    "text": "clustered page table เหมาะกับกรณีใด",
+    "info": "Clustered page table เป็นรูปแบบของ hashed page table ที่แต่ละ entry อ้างถึงหลาย pages (เช่น 16 pages) เหมาะกับ sparse address spaces ที่ memory references กระจายตัวไม่ต่อเนื่อง",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "dense address space", "correct": false },
+      { "text": "sparse address space", "correct": true },
+      { "text": "small address space", "correct": false },
+      { "text": "real-time systems", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใด swapping จึงไม่เหมาะกับอุปกรณ์ flash memory ใน mobile devices",
+    "info": "Flash memory มีจำนวน write cycles จำกัดและ throughput ระหว่าง flash และ CPU ต่ำ ทำให้การ swap บ่อยครั้งจะลดอายุการใช้งานและประสิทธิภาพ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "flash memory มีขนาดเล็กเกินไป", "correct": false },
+      { "text": "flash memory มี write cycles จำกัดและ throughput ต่ำ", "correct": true },
+      { "text": "flash memory เป็น read-only", "correct": false },
+      { "text": "ระบบปฏิบัติการ mobile ไม่รองรับ", "correct": false }
+    ]
+  },
+  {
+    "text": "iOS จัดการเมื่อหน่วยความจำเหลือน้อยอย่างไร",
+    "info": "iOS จะขอให้แอปพลิเคชัน relinquish (คืน) memory โดยสมัครใจ โดยเฉพาะ read-only data ที่สามารถโหลดกลับจาก flash ได้อีกครั้ง ถ้าไม่คืนอาจถูก terminate",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "swap โพรเซสออกไปยัง flash ทันที", "correct": false },
+      { "text": "ขอให้แอปคืน memory โดยสมัครใจ", "correct": true },
+      { "text": "terminate ทุกแอปทันที", "correct": false },
+      { "text": "reboot เครื่อง", "correct": false }
+    ]
+  },
+  {
+    "text": "Android จัดการเมื่อหน่วยความจำเหลือน้อยอย่างไร",
+    "info": "Android จะ terminate แอปพลิเคชันเมื่อหน่วยความจำเหลือน้อย แต่ก่อน terminate จะบันทึก application state เพื่อให้ restart ได้รวดเร็ว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "swap โพรเซสออกไปยัง flash", "correct": false },
+      { "text": "terminate แอปและบันทึก state เพื่อ restart เร็ว", "correct": true },
+      { "text": "ขอให้แอปคืน memory โดยสมัครใจ", "correct": false },
+      { "text": "ไม่ทำอะไร", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อเสียของ small page size",
+    "info": "Small page size ช่วยลด internal fragmentation แต่ทำให้ page table มีขนาดใหญ่ขึ้น เพราะต้องใช้จำนวน entries มากขึ้นในการ map address space เดียวกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "internal fragmentation มากขึ้น", "correct": false },
+      { "text": "page table มีขนาดใหญ่ขึ้น", "correct": true },
+      { "text": "TLB มีประสิทธิภาพลดลง", "correct": false },
+      { "text": "context switch ช้าลง", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดถูกต้องเกี่ยวกับการ address binding ในระบบ real-time",
+    "info": "Execution-time binding ต้องใช้ hardware support (relocation register) แต่ละ access ต้องบวกค่า relocation register ทำให้มี overhead เล็กน้อย",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "compile-time binding เหมาะกับระบบที่ต้องการย้ายโพรเซส", "correct": false },
+      { "text": "execution-time binding ไม่ต้องใช้ hardware support", "correct": false },
+      { "text": "execution-time binding ต้องใช้ relocation register และมี overhead เล็กน้อย", "correct": true },
+      { "text": "load-time binding ทำได้เฉพาะกับ static linking", "correct": false }
+    ]
+  },
+  {
+    "text": "จากตัวอย่าง internal fragmentation ถ้า page size = 2048 bytes และ process size = 72766 bytes จะมี internal fragmentation เท่าใด",
+    "info": "72766 / 2048 = 35.53 → ต้องใช้ 36 pages (36×2048=73728) internal fragmentation = 73728 - 72766 = 962 bytes",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "2048 bytes", "correct": false },
+      { "text": "962 bytes", "correct": true },
+      { "text": "1086 bytes", "correct": false },
+      { "text": "1024 bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือสาเหตุที่ standard swapping ไม่ถูกใช้ในระบบปฏิบัติการสมัยใหม่",
+    "info": "Standard swapping มี overhead สูงเนื่องจาก transfer time ขึ้นกับขนาดโพรเซส และมีปัญหา I/O pending ปัจจุบันใช้ paging และ modified version ของ swapping เฉพาะเมื่อ memory ต่ำมาก",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "hardware ไม่รองรับ", "correct": false },
+      { "text": "overhead สูงและมีปัญหากับ I/O", "correct": true },
+      { "text": "disk มีขนาดไม่พอ", "correct": false },
+      { "text": "โปรแกรมเมอร์ไม่ต้องการ", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบที่มีการใช้งาน TLB ถ้า TLB hit rate = 98%, TLB access time = 1 ns, memory access time = 100 ns จะได้ effective memory access time เท่าใด",
+    "info": "Effective access time = (hit rate × (TLB time + memory time)) + (miss rate × (TLB time + 2×memory time)) = 0.98×(1+100) + 0.02×(1+200) = 98.98 + 4.02 = 103 ns",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "100 ns", "correct": false },
+      { "text": "101 ns", "correct": false },
+      { "text": "103 ns", "correct": true },
+      { "text": "200 ns", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใดการจัดสรร memory แบบ best-fit จึงอาจไม่ดีที่สุดในทางปฏิบัติ",
+    "info": "Best-fit ต้อง search ทั้ง list ของ holes และมักจะสร้าง leftover holes ที่เล็กมาก (tiny holes) ซึ่งไม่สามารถใช้ได้ ทำให้เกิด external fragmentation สูง",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "สร้าง leftover holes ที่เล็กมาก", "correct": true },
+      { "text": "ช้าที่สุด", "correct": false },
+      { "text": "ใช้พื้นที่มากที่สุด", "correct": false },
+      { "text": "เกิด internal fragmentation สูง", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน segmentation architecture segment table entry ประกอบด้วยข้อมูลใดบ้าง",
+    "info": "Segment table entry ประกอบด้วย base (starting physical address) และ limit (length of segment) รวมถึง protection bits และ valid bit",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "page number และ offset", "correct": false },
+      { "text": "base, limit, protection bits", "correct": true },
+      { "text": "frame number และ offset", "correct": false },
+      { "text": "base และ frame number", "correct": false }
+    ]
+  },
+  {
+    "text": "การ swap ในระบบที่มี pending I/O มีปัญหาอะไร",
+    "info": "หาก swap out โพรเซสที่กำลังทำ I/O อยู่ เมื่อ I/O เสร็จ data จะถูกเขียนไปยัง memory address เดิมซึ่งอาจถูกใช้โดยโพรเซสอื่นแล้ว ทำให้ข้อมูลเสียหาย",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "I/O ทำงานช้าลง", "correct": false },
+      { "text": "ข้อมูลอาจถูกเขียนทับโดยโพรเซสอื่น", "correct": true },
+      { "text": "disk เสียหาย", "correct": false },
+      { "text": "CPU overload", "correct": false }
+    ]
+  },
+  {
+    "text": "double buffering ใน swapping หมายถึงอะไร",
+    "info": "Double buffering คือการโอน I/O ไปยัง kernel buffer ก่อน แล้วจึง copy ไปยัง user space ป้องกันปัญหาเมื่อ process ถูก swap out ระหว่าง I/O แต่เพิ่ม overhead",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ใช้ buffer สองตัวเพื่อเพิ่มความเร็ว", "correct": false },
+      { "text": "โอน I/O ไปยัง kernel buffer ก่อนเพื่อป้องกันปัญหา swapping", "correct": true },
+      { "text": "เก็บ buffer ทั้งใน memory และ disk", "correct": false },
+      { "text": "ใช้ buffer สำหรับ read และ write แยกกัน", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน paging การเข้าถึง memory แบบ sequential จะมี TLB hit rate สูงหรือต่ำ",
+    "info": "Sequential access มี locality สูง (spatial locality) ทำให้ TLB hit rate สูงเพราะหน้าเดียวกันถูกใช้ซ้ำหรือหน้าถัดไปอยู่ใน TLB แล้ว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ต่ำเพราะต้องเปลี่ยนหน้าบ่อย", "correct": false },
+      { "text": "สูงเพราะมี locality", "correct": true },
+      { "text": "ไม่แน่นอน", "correct": false },
+      { "text": "เท่ากับ random access", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อเสียของ inverted page table",
+    "info": "Inverted page table ทำให้การแชร์ memory (shared memory) ทำได้ยาก เพราะแต่ละ physical frame มี entry เดียว ต้องใช้วิธีพิเศษในการ map virtual address หลายตัวไปยัง frame เดียวกัน",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ใช้ memory มากกว่า", "correct": false },
+      { "text": "shared memory ทำได้ยาก", "correct": true },
+      { "text": "search ช้ากว่า", "correct": false },
+      { "text": "ไม่รองรับ 64-bit", "correct": false }
+    ]
+  },
+  {
+    "text": "โค้ดแบบ reentrant มีลักษณะอย่างไร",
+    "info": "Reentrant code คือโค้ดที่สามารถถูกแชร์โดยหลายโพรเซสพร้อมกันได้ โดยไม่มีการแก้ไขตัวเอง (read-only) ทำให้สามารถมี single copy ใน memory",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โค้ดที่แก้ไขตัวเองได้", "correct": false },
+      { "text": "โค้ด read-only ที่แชร์ได้", "correct": true },
+      { "text": "โค้ดที่ต้องใช้ thread-safe", "correct": false },
+      { "text": "โค้ดที่ recursive", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ paging การเพิ่มขนาด page มีผลอย่างไร",
+    "info": "Page size ใหญ่ขึ้น → internal fragmentation เพิ่มขึ้น แต่ page table มีขนาดเล็กลง และ TLB สามารถครอบคลุมพื้นที่ memory ได้มากขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "internal fragmentation ลดลง", "correct": false },
+      { "text": "page table เล็กลง, internal fragmentation เพิ่มขึ้น", "correct": true },
+      { "text": "TLB มีประสิทธิภาพลดลง", "correct": false },
+      { "text": "context switch ช้าลง", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดกล่าวถึง external fragmentation ได้ถูกต้อง",
+    "info": "External fragmentation เกิดจาก holes ที่กระจัดกระจายไม่ต่อเนื่องกัน ทำให้ไม่สามารถจัดสรรโพรเซสขนาดใหญ่ได้แม้พื้นที่ว่างรวมจะเพียงพอ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "เกิดใน paging เป็นหลัก", "correct": false },
+      { "text": "เกิดใน contiguous allocation และ segmentation", "correct": true },
+      { "text": "แก้ได้โดยใช้ larger page size", "correct": false },
+      { "text": "ไม่มีในระบบสมัยใหม่", "correct": false }
+    ]
+  },
+  {
+    "text": "segment-table length register (STLR) ใช้ตรวจสอบอะไร",
+    "info": "STLR เก็บจำนวน segments ที่โปรแกรมใช้ ใช้ตรวจสอบว่า segment number ที่ request นั้นถูกต้อง (s < STLR) ป้องกันการเข้าถึง segment ที่ไม่มีอยู่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ขนาดของ segment", "correct": false },
+      { "text": "จำนวน segments ที่โปรแกรมใช้", "correct": true },
+      { "text": "base address ของ segment table", "correct": false },
+      { "text": "สิทธิ์การเข้าถึง", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดเป็นข้อดีของ contiguous memory allocation",
+    "info": "Contiguous allocation มี implementation ที่ง่ายและ overhead ต่ำ แต่มีปัญหา external fragmentation",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ไม่มี fragmentation", "correct": false },
+      { "text": "implementation ง่ายและ overhead ต่ำ", "correct": true },
+      { "text": "สามารถย้ายโพรเซสได้ง่าย", "correct": false },
+      { "text": "เหมาะกับ virtual memory", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใดระบบปฏิบัติการส่วนใหญ่จึงไม่ใช้ swapping แต่นิยมใช้ paging แทน",
+    "info": "Paging ช่วยให้ physical memory ไม่ต้อง contiguous ลด external fragmentation และสามารถ load process ได้ทีละ page ทำให้ใช้ memory ได้มีประสิทธิภาพมากกว่า swapping",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "paging เร็วกว่า", "correct": false },
+      { "text": "paging ลด fragmentation และ load ได้ทีละ page", "correct": true },
+      { "text": "swapping ไม่ปลอดภัย", "correct": false },
+      { "text": "hardware ไม่รองรับ swapping", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบที่ใช้ paging และ TLB หากมีการ context switch เกิดขึ้นโดยไม่มี ASID จะเกิดอะไรขึ้น",
+    "info": "ไม่มี ASID ต้อง flush TLB ทั้งหมดทุกครั้งที่ context switch เพื่อป้องกันการเข้าถึง memory ของโพรเซสผิด ซึ่งทำให้ประสิทธิภาพลดลง",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "TLB ทำงานได้ปกติ", "correct": false },
+      { "text": "ต้อง flush TLB ทุก context switch", "correct": true },
+      { "text": "ระบบจะ crash", "correct": false },
+      { "text": "TLB ถูกปิดการทำงาน", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบที่มีการ share โค้ดระหว่างโพรเซสโดยใช้ paging ข้อใดถูกต้อง",
+    "info": "Shared pages ต้องเป็น read-only เพื่อป้องกันการแก้ไขที่จะกระทบโพรเซสอื่น และแต่ละโพรเซสมี page table ที่ชี้ไปยัง frame เดียวกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "shared pages ต้องเป็น read-write", "correct": false },
+      { "text": "shared pages ต้องเป็น read-only", "correct": true },
+      { "text": "แต่ละโพรเซสมี copy ต่างกัน", "correct": false },
+      { "text": "ต้องใช้ segmentation ร่วมด้วย", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของ two-level paging เหนือ single-level paging",
+    "info": "Two-level paging ช่วยให้ page table ไม่ต้องอยู่ใน memory ทั้งหมด สามารถ page out ส่วนที่ไม่ถูกใช้ ลด memory usage สำหรับโปรแกรมที่มี address space ใหญ่แต่ใช้จริงน้อย",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "address translation เร็วขึ้น", "correct": false },
+      { "text": "page table สามารถอยู่ใน disk ได้บางส่วน", "correct": true },
+      { "text": "ไม่ต้องใช้ TLB", "correct": false },
+      { "text": "internal fragmentation น้อยลง", "correct": false }
+    ]
+  }
+]

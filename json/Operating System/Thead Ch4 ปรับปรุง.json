@@ -1,0 +1,552 @@
+[
+  {
+    "text": "หน่วยพื้นฐานของการใช้ CPU ที่เป็นรากฐานของระบบมัลติเธรด (multithreaded computer systems) คืออะไร",
+    "info": "เธรด (thread) คือหน่วยพื้นฐานของการใช้ CPU ที่ช่วยให้สามารถทำงานหลายส่วนภายในโพรเซสเดียวกันได้พร้อมกัน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "โพรเซส (Process) ซึ่งเป็นหน่วยหลักของการจัดสรรทรัพยากร", "correct": false },
+      { "text": "เธรด (Thread) ซึ่งเป็นหน่วยย่อยภายในโพรเซสที่ใช้ CPU", "correct": true },
+      { "text": "อินเทอร์รัพท์ (Interrupt) ที่ใช้แทรกการทำงานของ CPU", "correct": false },
+      { "text": "เคอร์เนล (Kernel) ที่เป็นแกนกลางของระบบปฏิบัติการ", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดต่อไปนี้ไม่ใช่ประโยชน์ของการเขียนโปรแกรมแบบมัลติเธรด (multithreaded programming)",
+    "info": "ประโยชน์หลักของมัลติเธรด ได้แก่ การตอบสนองที่ดีขึ้น (responsiveness), การแบ่งปันทรัพยากร (resource sharing), ความประหยัด (economy) เนื่องจากสร้างเธรดได้เบากว่าโพรเซส, และความสามารถในการขยายขนาด (scalability) บนระบบหลายคอร์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "การตอบสนองที่ดีขึ้น (Responsiveness) โดยเฉพาะกับส่วนติดต่อผู้ใช้", "correct": false },
+      { "text": "การแบ่งปันทรัพยากร (Resource Sharing) ที่ง่ายกว่า IPC", "correct": false },
+      { "text": "ความปลอดภัยที่เพิ่มขึ้น (Improved Security) จากการแยกเธรด", "correct": true },
+      { "text": "ความประหยัด (Economy) เพราะสร้างและสลับเธรดเร็วกว่าโพรเซส", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือความแตกต่างหลักระหว่างความขนาน (concurrency) กับการขนานแท้จริง (parallelism)",
+    "info": "Parallelism หมายถึงการทำงานหลาย tasks พร้อมกันจริง ๆ บนหลายหน่วยประมวลผล ส่วน concurrency หมายถึงการทำให้หลาย tasks มีความคืบหน้า (making progress) โดยอาจสลับกันทำบนหน่วยประมวลผลเดียว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Concurrency ใช้ได้เฉพาะระบบ single-core ส่วน Parallelism ใช้ได้เฉพาะ multi-core", "correct": false },
+      { "text": "Parallelism ทำงานหลาย tasks พร้อมกันจริง ๆ ในขณะที่ Concurrency ทำให้ tasks มีความคืบหน้าโดยไม่จำเป็นต้องพร้อมกัน", "correct": true },
+      { "text": "Concurrency หมายถึงการแบ่งข้อมูล ส่วน Parallelism หมายถึงการแบ่งงาน", "correct": false },
+      { "text": "Concurrency ต้องการการ synchronize เสมอ ส่วน Parallelism ไม่ต้องการ", "correct": false }
+    ]
+  },
+  {
+    "text": "ในบริบทของมัลติคอร์โปรแกรมมิ่ง (multicore programming) คำว่า data parallelism หมายถึงอะไร",
+    "info": "Data parallelism คือการกระจายชุดข้อมูลย่อยของข้อมูลเดียวกันไปบนหลายคอร์ โดยแต่ละคอร์จะดำเนินการแบบเดียวกันกับข้อมูลคนละส่วน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "กระจายเธรดที่ต่างกันไปทำงานคนละอย่างบนคอร์ต่างกัน", "correct": false },
+      { "text": "กระจายชุดข้อมูลย่อยของข้อมูลเดียวกันไปบนหลายคอร์ และดำเนินการแบบเดียวกันกับข้อมูลแต่ละส่วน", "correct": true },
+      { "text": "รันหลายโพรเซสแบบขนานโดยใช้ข้อมูลชุดเดียวกัน", "correct": false },
+      { "text": "แบ่งโค้ดออกเป็นส่วน ๆ แล้วให้แต่ละคอร์รันส่วนที่ต่างกัน", "correct": false }
+    ]
+  },
+  {
+    "text": "มัลติเธรดโมเดล (multithreading model) ใดที่แมปยูเซอร์เธรด (user-level threads) หลายตัวไปยังเคอร์เนลเธรด (kernel thread) เพียงตัวเดียว ทำให้ถ้าเธรดหนึ่งถูกบล็อกจะทำให้ทุกเธรดถูกบล็อกไปด้วย",
+    "info": "Many-to-One model เป็นโมเดลที่ user threads หลายตัว map ไปยัง kernel thread เดียว มีข้อเสียคือถ้า thread ใด thread หนึ่งถูก block ทั้งหมดจะถูก block และไม่สามารถใช้ parallelism บน multicore ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "One-to-One ซึ่งให้ parallelism สูงสุด", "correct": false },
+      { "text": "Many-to-Many ซึ่งใช้ทั้ง user และ kernel threads จำนวนมาก", "correct": false },
+      { "text": "Many-to-One ซึ่งถูกใช้ใน Solaris Green Threads", "correct": true },
+      { "text": "Two-level Model ซึ่งรวมการผูกเธรดแบบพิเศษ", "correct": false }
+    ]
+  },
+  {
+    "text": "ระบบปฏิบัติการใดต่อไปนี้ใช้ One-to-One multithreading model",
+    "info": "One-to-One model ถูกใช้ใน Windows, Linux, และ Solaris 9 ขึ้นไป ซึ่งแต่ละ user-level thread จะถูก map ไปยัง kernel thread หนึ่งตัวโดยตรง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Solaris Green Threads และ GNU Portable Threads", "correct": false },
+      { "text": "Windows, Linux, และ Solaris 9 ขึ้นไป", "correct": true },
+      { "text": "IRIX, HP-UX และ FreeBSD รุ่นเก่า", "correct": false },
+      { "text": "macOS และ iOS ก่อนเวอร์ชัน 10.6", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือลักษณะสำคัญของยูเซอร์เธรด (user-level threads) เมื่อเทียบกับเคอร์เนลเธรด (kernel-level threads)",
+    "info": "User-level threads จัดการโดย user-level threads library โดยไม่ต้องอาศัยเคอร์เนล ทำให้การสลับเธรดทำได้รวดเร็ว แต่หากเธรดใดถูก block ทั้งโพรเซสอาจถูก block",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "User-level threads ถูกจัดการโดยเคอร์เนลและสามารถใช้ parallelism ได้เต็มที่", "correct": false },
+      { "text": "User-level threads ถูกจัดการโดย user-level library โดยไม่ต้องผ่านเคอร์เนล", "correct": true },
+      { "text": "User-level threads มี overhead สูงกว่า kernel threads เนื่องจากต้องผ่าน syscall", "correct": false },
+      { "text": "User-level threads ไม่สามารถทำงานร่วมกับ kernel threads ได้", "correct": false }
+    ]
+  },
+  {
+    "text": "API มาตรฐาน POSIX สำหรับการสร้างและจัดการเธรดที่นิยมใช้ในระบบ UNIX มีชื่อว่าอะไร",
+    "info": "Pthreads (POSIX threads) เป็นมาตรฐาน IEEE 1003.1c สำหรับ thread API ที่พบได้ทั่วไปในระบบ UNIX เช่น Solaris, Linux, Mac OS X",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Win32 Thread API", "correct": false },
+      { "text": "Java Thread API (java.lang.Thread)", "correct": false },
+      { "text": "Pthreads (POSIX threads)", "correct": true },
+      { "text": "OpenMP Runtime Library", "correct": false }
+    ]
+  },
+  {
+    "text": "Java threads ถูกจัดการโดยส่วนใด และโดยทั่วไปใช้โมเดลเธรดใด",
+    "info": "Java threads ถูกจัดการโดย JVM (Java Virtual Machine) และโดยทั่วไปจะใช้โมเดลเธรดที่ระบบปฏิบัติการรองรับ (通常是 one-to-one)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "JVM ใช้โมเดล one-to-one บนระบบปฏิบัติการส่วนใหญ่", "correct": true },
+      { "text": "Java Compiler จัดการเธรดโดยใช้ many-to-one model เสมอ", "correct": false },
+      { "text": "Java Class Loader ใช้ many-to-many model เพื่อเพิ่มประสิทธิภาพ", "correct": false },
+      { "text": "Java Runtime Environment (JRE) ใช้เฉพาะ user-level threads", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือวิธีการสร้างเธรดในภาษา Java",
+    "info": "ใน Java สามารถสร้างเธรดได้โดยการ extends คลาส Thread หรือ implement interface Runnable แล้วส่งให้ Thread constructor",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Extend Thread class หรือ Implement Runnable interface", "correct": true },
+      { "text": "ใช้คำสั่ง fork() ใน java.lang.Process", "correct": false },
+      { "text": "ใช้คำสั่ง clone() ใน java.lang.Object", "correct": false },
+      { "text": "ใช้ JNI เรียก pthread_create() เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "แนวคิด Implicit threading หมายถึงอะไร",
+    "info": "Implicit threading เป็นการจัดการสร้าง和管理เธรดโดย compiler หรือ run-time libraries แทนที่ programmer จะต้องเขียนจัดการเอง ช่วยลดความซับซ้อน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "โปรแกรมเมอร์ต้องเขียนโค้ดสร้างและจัดการเธรดอย่างชัดเจนทุกครั้ง", "correct": false },
+      { "text": "Compiler และ run-time libraries จัดการสร้างและจัดการเธรดให้อัตโนมัติ", "correct": true },
+      { "text": "ระบบปฏิบัติการซ่อนเธรดไม่ให้ผู้ใช้เห็น", "correct": false },
+      { "text": "โปรแกรมไม่สามารถสร้างเธรดได้ ต้องพึ่งพา hardware เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดต่อไปนี้เป็นเทคนิค Implicit threading",
+    "info": "เทคนิค implicit threading ที่กล่าวถึงในเนื้อหา ได้แก่ Thread Pools, OpenMP, Grand Central Dispatch (GCD), และอื่นๆ เช่น Intel TBB, java.util.concurrent",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Pthreads ที่ต้องเรียก pthread_create เอง", "correct": false },
+      { "text": "Windows API CreateThread", "correct": false },
+      { "text": "Thread Pools ที่มี threads พร้อมใช้งานและรับงานจากคิว", "correct": true },
+      { "text": "fork() และ exec() สำหรับสร้างโพรเซส", "correct": false }
+    ]
+  },
+  {
+    "text": "Thread pool มีข้อดีอย่างไร",
+    "info": "Thread pool ช่วยลด overhead ในการสร้างเธรดใหม่ทุกครั้ง, จำกัดจำนวนเธรดในระบบ, และแยกงานออกจากกลไกการสร้างเธรด ทำให้จัดการ scheduling ได้ยืดหยุ่น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ลด overhead ในการสร้างเธรด, จำกัดจำนวนเธรด, และแยกงานออกจากกลไกการสร้างเธรด", "correct": true },
+      { "text": "เพิ่มจำนวนเธรดไม่จำกัดเพื่อให้ทำงานได้เร็วขึ้น", "correct": false },
+      { "text": "ทำให้ไม่ต้องใช้ synchronization ใด ๆ เลย", "correct": false },
+      { "text": "รับประกันว่าเธรดจะทำงานแบบ real-time เสมอ", "correct": false }
+    ]
+  },
+  {
+    "text": "เมื่อเรียก fork() ในโปรแกรมแบบมัลติเธรด ปัญหาที่เกิดขึ้นคืออะไร",
+    "info": "ในระบบ UNIX บางรุ่นมี fork() สองแบบ: แบบหนึ่งทำสำเนาเฉพาะเธรดที่เรียก, อีกแบบทำสำเนาทุกเธรด ขึ้นอยู่กับการ implement",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "fork() จะคัดลอกเฉพาะเธรดที่เรียก ทำให้เธรดอื่นหายไป", "correct": false },
+      { "text": "fork() อาจคัดลอกเฉพาะเธรดที่เรียกหรือทุกเธรด ขึ้นกับการ implement", "correct": true },
+      { "text": "fork() ไม่สามารถใช้ได้ถ้ามีเธรดมากกว่าหนึ่ง", "correct": false },
+      { "text": "fork() จะทำสำเนาทุกเธรดเสมอโดยอัตโนมัติ", "correct": false }
+    ]
+  },
+  {
+    "text": "การยกเลิกเธรด (thread cancellation) แบบ deferred cancellation ทำงานอย่างไร",
+    "info": "Deferred cancellation อนุญาตให้เธรดเป้าหมายตรวจสอบเป็นระยะว่าควรถูกยกเลิกหรือไม่ (เช่น ที่ cancellation point) ทำให้เธรดสามารถทำ cleanup ได้ก่อนสิ้นสุด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยกเลิกเธรดทันทีโดยไม่ต้องรอ (asynchronous)", "correct": false },
+      { "text": "ให้เธรดตรวจสอบเป็นระยะ ๆ เมื่อถึง cancellation point จึงยกเลิก", "correct": true },
+      { "text": "ต้องเรียกฟังก์ชัน pthread_join() ก่อนจึงจะยกเลิกได้", "correct": false },
+      { "text": "ไม่สามารถยกเลิกเธรดได้ในโหมดนี้", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Pthreads หากเธรดถูกตั้งค่าให้ cancellation type เป็น asynchronous จะเกิดอะไรขึ้น",
+    "info": "Asynchronous cancellation จะยุติเธรดเป้าหมายทันทีโดยไม่รอให้ถึง cancellation point ซึ่งอาจทำให้ทรัพยากรไม่ถูกปลดปล่อยอย่างถูกต้อง",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เธรดจะถูกยกเลิกทันทีโดยไม่รอให้ถึง cancellation point", "correct": true },
+      { "text": "เธรดจะถูกยกเลิกเมื่อเธรดเรียก pthread_testcancel() เท่านั้น", "correct": false },
+      { "text": "เธรดจะถูก suspend ไว้จนกว่าจะมีการเรียก pthread_join()", "correct": false },
+      { "text": "การตั้งค่า asynchronous ไม่มีผลใด ๆ", "correct": false }
+    ]
+  },
+  {
+    "text": "Thread-local storage (TLS) มีประโยชน์อย่างไร",
+    "info": "TLS ช่วยให้แต่ละเธรดมีพื้นที่เก็บข้อมูลเฉพาะของตัวเอง ซึ่งไม่ถูกแชร์ระหว่างเธรด ลดปัญหา race condition",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้สำหรับแชร์ข้อมูลระหว่างเธรดอย่างปลอดภัย", "correct": false },
+      { "text": "ใช้สำหรับเก็บข้อมูลเฉพาะของแต่ละเธรด แยกจากกัน", "correct": true },
+      { "text": "ใช้สำหรับเก็บข้อมูลของโพรเซสทั้งหมดเพื่อให้ทุกเธรดเข้าถึงได้", "correct": false },
+      { "text": "ใช้เป็น buffer สำหรับ I/O ที่เร็วขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Windows แต่ละเธรดประกอบด้วยองค์ประกอบใดบ้าง",
+    "info": "Windows thread ประกอบด้วย thread id, register set, user stack, kernel stack, และ private storage area สำหรับ run-time libraries และ DLLs",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Thread id, register set, user stack, kernel stack, private storage", "correct": true },
+      { "text": "เฉพาะ program counter และ stack pointer เท่านั้น", "correct": false },
+      { "text": "เฉพาะ PCB (Process Control Block) และ TCB (Thread Control Block)", "correct": false },
+      { "text": "เฉพาะ user stack และ kernel stack โดยไม่มี thread id", "correct": false }
+    ]
+  },
+  {
+    "text": "โครงสร้างข้อมูลหลักของเธรดใน Windows มีอะไรบ้าง",
+    "info": "Windows มี ETHREAD (executive thread block), KTHREAD (kernel thread block), และ TEB (thread environment block) สำหรับจัดการข้อมูลของเธรด",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ETHREAD, KTHREAD, TEB", "correct": true },
+      { "text": "PCB, TCB, UCB (User Control Block)", "correct": false },
+      { "text": "TSS (Task State Segment), GDT, LDT", "correct": false },
+      { "text": "เฉพาะ Thread Control Block (TCB) เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Linux การสร้างเธรดใช้ system call อะไร และทำงานอย่างไร",
+    "info": "Linux ใช้ clone() system call ซึ่งอนุญาตให้ child task แชร์ address space ของ parent (process) ผ่าน flags เช่น CLONE_VM, CLONE_FILES เป็นต้น",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "fork() ซึ่งจะสร้างโพรเซสใหม่เสมอและไม่สามารถแชร์ address space", "correct": false },
+      { "text": "clone() ซึ่งสามารถกำหนดให้ child แชร์ address space กับ parent ได้", "correct": true },
+      { "text": "pthread_create() ซึ่งเป็น system call โดยตรงใน Linux", "correct": false },
+      { "text": "exec() ซึ่งใช้สำหรับโหลดโปรแกรมใหม่", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Linux flag CLONE_VM ที่ใช้กับ clone() มีความหมายอย่างไร",
+    "info": "CLONE_VM ทำให้ child task แชร์ memory space เดียวกับ parent ซึ่งเป็นลักษณะสำคัญของเธรด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "แชร์ file-system information (เช่น root, cwd)", "correct": false },
+      { "text": "แชร์ address space เดียวกัน (memory space)", "correct": true },
+      { "text": "แชร์ signal handlers", "correct": false },
+      { "text": "แชร์ตาราง file descriptors ที่เปิดอยู่", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของการใช้ many-to-many multithreading model",
+    "info": "Many-to-Many model ช่วยให้ระบบสามารถสร้าง user threads ได้มากโดยไม่ผูกกับ kernel threads มากเกินไป และยังสามารถใช้ parallelism บน multicore ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ลด overhead ในการสร้าง kernel threads และเพิ่ม concurrency", "correct": true },
+      { "text": "รับประกันว่า thread blocking จะไม่กระทบ thread อื่น", "correct": false },
+      { "text": "ทำให้ user thread แต่ละตัวต้องผูกกับ kernel thread ตลอดเวลา", "correct": false },
+      { "text": "ไม่จำเป็นต้องใช้ scheduler เลย", "correct": false }
+    ]
+  },
+  {
+    "text": "Two-level model (คล้าย M:M) มีลักษณะพิเศษอย่างไร",
+    "info": "Two-level model คล้าย many-to-many แต่เพิ่มความสามารถในการผูก user thread เข้ากับ kernel thread โดยตรง (bound thread) เพื่อประสิทธิภาพ",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "อนุญาตให้ user thread บางตัวถูกผูก (bound) กับ kernel thread เฉพาะตัว", "correct": true },
+      { "text": "ใช้ user threads ทั้งหมดบน kernel thread เดียว", "correct": false },
+      { "text": "ไม่สนับสนุน parallelism บน multicore", "correct": false },
+      { "text": "ต้องใช้ hardware support พิเศษเท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "Scheduler activations เกี่ยวข้องกับอะไร",
+    "info": "Scheduler activations เป็นกลไกในการสื่อสารระหว่าง user-level thread library และ kernel เพื่อจัดการ scheduling ให้มีประสิทธิภาพ ลดปัญหาเมื่อ thread ถูก block",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "การจัดการ scheduling ระหว่าง user-level threads และ kernel threads", "correct": true },
+      { "text": "การเปิดใช้งาน scheduler ใน kernel โดยอัตโนมัติ", "correct": false },
+      { "text": "การปิดการใช้งาน preemptive scheduling เพื่อความเสถียร", "correct": false },
+      { "text": "การเรียงลำดับเธรดตาม priority แบบคงที่", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดกล่าวถึง OpenMP ได้ถูกต้อง",
+    "info": "OpenMP เป็นชุดของ compiler directives และ libraries ที่ใช้สำหรับ parallel programming โดยเฉพาะบน shared memory และเป็น implicit threading เทคนิคหนึ่ง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เป็น API สำหรับสร้างเธรดใน Java โดยเฉพาะ", "correct": false },
+      { "text": "เป็นชุดของ compiler directives และ libraries สำหรับ parallel programming", "correct": true },
+      { "text": "เป็นโมเดลเธรดที่ใช้เฉพาะใน Windows", "correct": false },
+      { "text": "เป็น system call สำหรับสร้างโพรเซสแบบเบา", "correct": false }
+    ]
+  },
+  {
+    "text": "Grand Central Dispatch (GCD) เป็นเทคโนโลยีที่พัฒนาขึ้นสำหรับระบบปฏิบัติการใด",
+    "info": "GCD พัฒนาโดย Apple สำหรับ macOS และ iOS เป็น implicit threading เทคนิคที่ใช้ blocks และ dispatch queues",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Windows 10 ขึ้นไป", "correct": false },
+      { "text": "Linux (GNU/Linux)", "correct": false },
+      { "text": "macOS และ iOS", "correct": true },
+      { "text": "Solaris 11", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใดการสร้างเธรดจึงประหยัดกว่าการสร้างโพรเซส",
+    "info": "เธรดใช้ทรัพยากรน้อยกว่าเพราะแชร์ memory space และทรัพยากรอื่น ๆ ของโพรเซสเดียวกัน ไม่ต้องทำ copy-on-write เต็มรูปแบบ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "เพราะเธรดไม่ต้องการ stack แยก", "correct": false },
+      { "text": "เพราะเธรดแชร์ address space และทรัพยากรของโพรเซส", "correct": true },
+      { "text": "เพราะเธรดไม่ต้องมีการจัดการ interrupt", "correct": false },
+      { "text": "เพราะเธรดไม่ต้องใช้หน่วยความจำ", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือความท้าทายของมัลติคอร์โปรแกรมมิ่ง (multicore programming) ตามที่กล่าวในเนื้อหา",
+    "info": "ความท้าทาย ได้แก่ การแบ่งกิจกรรม, การรักษาสมดุล, การแบ่งข้อมูล, การจัดการ data dependency, การทดสอบ และการ debug",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Dividing activities, Balance, Data splitting, Data dependency, Testing and debugging", "correct": true },
+      { "text": "เฉพาะการสร้างเธรดและการล็อก (locking)", "correct": false },
+      { "text": "เฉพาะการจัดการหน่วยความจำและ cache coherency", "correct": false },
+      { "text": "ไม่มีข้อท้าทายใด ๆ เพราะ compiler จัดการให้หมด", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Windows TEB (Thread Environment Block) ถูกเก็บอยู่ในพื้นที่ใด",
+    "info": "TEB (Thread Environment Block) เก็บ thread id, user-mode stack, thread-local storage และอยู่ใน user space",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Kernel space (พื้นที่เคอร์เนล)", "correct": false },
+      { "text": "User space (พื้นที่ผู้ใช้)", "correct": true },
+      { "text": "Registry (รีจิสทรี)", "correct": false },
+      { "text": "ROM (อ่านอย่างเดียว)", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Windows KTHREAD (Kernel Thread Block) มีหน้าที่หลักอะไร",
+    "info": "KTHREAD เก็บข้อมูล scheduling, synchronization, kernel-mode stack และ pointer ไปยัง TEB อยู่ใน kernel space",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เก็บข้อมูล scheduling และ synchronization รวมถึง kernel stack", "correct": true },
+      { "text": "เก็บข้อมูลของโพรเซสทั้งหมดที่เธรดนี้สังกัด", "correct": false },
+      { "text": "เก็บ user-mode stack และ thread-local storage", "correct": false },
+      { "text": "เก็บข้อมูลของ dynamic link libraries (DLLs)", "correct": false }
+    ]
+  },
+  {
+    "text": "Linux เรียกเธรดว่าอะไร",
+    "info": "Linux เรียกเธรดว่า 'tasks' และใช้ struct task_struct ในการจัดการ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Processes (โพรเซส)", "correct": false },
+      { "text": "Tasks (งาน)", "correct": true },
+      { "text": "Threads (เธรด)", "correct": false },
+      { "text": "Kernel threads (เคอร์เนลเธรด)", "correct": false }
+    ]
+  },
+  {
+    "text": "ระบบปฏิบัติการใดต่อไปนี้ใช้ many-to-many model ในเวอร์ชันก่อนหน้า 9",
+    "info": "Solaris ก่อนเวอร์ชัน 9 ใช้ many-to-many model (เรียกว่า MxN model)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Windows XP", "correct": false },
+      { "text": "Linux kernel 2.4", "correct": false },
+      { "text": "Solaris 8 และก่อนหน้า", "correct": true },
+      { "text": "macOS 10.5 (Leopard)", "correct": false }
+    ]
+  },
+  {
+    "text": "การจัดการสัญญาณ (signal handling) ในมัลติเธรดมีความซับซ้อนเพิ่มขึ้นอย่างไร",
+    "info": "สัญญาณอาจเป็น synchronous (เกิดจากเธรดเอง) หรือ asynchronous (ส่งจากเธรดอื่นหรือกระบวนการ) ทำให้ต้องกำหนดว่าสัญญาณจะถูกส่งไปยังเธรดใด",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ต้องกำหนดว่าสัญญาณจะถูกส่งไปยังเธรดใด และจัดการทั้ง sync/async signals", "correct": true },
+      { "text": "สัญญาณไม่สามารถใช้ได้ในโปรแกรมมัลติเธรด", "correct": false },
+      { "text": "สัญญาณทั้งหมดจะถูกส่งไปยังเธรดหลักเท่านั้น", "correct": false },
+      { "text": "ไม่มีความซับซ้อนเพิ่มขึ้น เพราะจัดการเหมือน single-thread", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือตัวอย่างของ implicit threading ที่ใช้ใน Java",
+    "info": "java.util.concurrent package เป็นตัวอย่างของ implicit threading ใน Java ที่มี thread pools, executors และ utilities",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "java.util.concurrent (Executors, ThreadPoolExecutor)", "correct": true },
+      { "text": "javax.swing.SwingUtilities.invokeLater()", "correct": false },
+      { "text": "java.lang.Thread โดยตรง", "correct": false },
+      { "text": "java.io.InputStreamReader", "correct": false }
+    ]
+  },
+  {
+    "text": "เธรดใน Windows API มีคุณสมบัติอย่างไรเมื่อเทียบกับโมเดล",
+    "info": "Windows ใช้ one-to-one mapping โดยแต่ละเธรดมี context ประกอบด้วย register set, stacks, และ private storage",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้ one-to-one mapping และมี register set, stacks, private storage", "correct": true },
+      { "text": "ใช้ many-to-one mapping เพื่อลด overhead", "correct": false },
+      { "text": "ใช้ many-to-many mapping ผ่าน ThreadFiber", "correct": false },
+      { "text": "ไม่มี private storage ต้องใช้ global variables แทน", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Linux flags ที่ใช้กับ clone() เพื่อแชร์ signal handlers คือข้อใด",
+    "info": "CLONE_SIGHAND เป็น flag ที่ทำให้ child task แชร์ signal handlers กับ parent",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "CLONE_FS", "correct": false },
+      { "text": "CLONE_VM", "correct": false },
+      { "text": "CLONE_SIGHAND", "correct": true },
+      { "text": "CLONE_FILES", "correct": false }
+    ]
+  },
+  {
+    "text": "ประโยชน์ของ implicit threading ในแง่ของความถูกต้องของโปรแกรมคืออะไร",
+    "info": "เมื่อจำนวนเธรดเพิ่มขึ้น การจัดการเธรดแบบ explicit ทำให้ยากต่อการรักษาความถูกต้อง Implicit threading ช่วยลดความซับซ้อนและความผิดพลาด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ช่วยลดความซับซ้อนและลดโอกาสผิดพลาดจากการจัดการเธรดด้วยตนเอง", "correct": true },
+      { "text": "ทำให้โปรแกรมทำงานเร็วขึ้นเสมอ", "correct": false },
+      { "text": "ไม่ต้องใช้ synchronization ใด ๆ", "correct": false },
+      { "text": "รับประกันว่าไม่มี deadlock เกิดขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Windows ThreadFiber package ใช้โมเดลเธรดแบบใด",
+    "info": "ThreadFiber ใน Windows เป็นการ implement many-to-many model ที่ช่วยให้ user threads จัดการกับ fibers ซึ่งเป็น lightweight units",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "One-to-One (เหมือน threads ปกติ)", "correct": false },
+      { "text": "Many-to-One (เฉพาะ fibers หลายตัวบน thread เดียว)", "correct": false },
+      { "text": "Many-to-Many (fibers หลายตัวบน threads หลายตัว)", "correct": true },
+      { "text": "Two-level model ที่ผูก fiber กับ thread เฉพาะ", "correct": false }
+    ]
+  },
+  {
+    "text": "เมื่อใช้ Pthreads การตั้งค่า cancellation state เป็น PTHREAD_CANCEL_DISABLE จะส่งผลอย่างไร",
+    "info": "หาก cancellation state ถูก disable เธรดจะไม่ถูกยกเลิกจนกว่าจะ enable อีกครั้ง คำขอ cancellation จะรอ (pending)",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เธรดจะถูกยกเลิกทันที (asynchronous cancellation)", "correct": false },
+      { "text": "เธรดจะไม่ถูกยกเลิกจนกว่าจะ enable และถึง cancellation point", "correct": true },
+      { "text": "เธรดจะถูก suspend ไว้จนกว่าจะมีการเรียก pthread_join()", "correct": false },
+      { "text": "โปรแกรมจะเกิด segmentation fault ทันที", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของการใช้ thread pools",
+    "info": "Thread pools ลด overhead ในการสร้างเธรดใหม่, จำกัดจำนวนเธรด, และแยกงานออกจากกลไกการสร้างเธรด",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ลด overhead, จำกัดจำนวนเธรด, แยกงานออกจากกลไกการสร้างเธรด", "correct": true },
+      { "text": "เพิ่มจำนวนเธรดได้ไม่จำกัดเพื่อให้ตอบสนองเร็วขึ้น", "correct": false },
+      { "text": "รับประกันว่าเธรดจะทำงานแบบ real-time", "correct": false },
+      { "text": "ไม่ต้องใช้ synchronization ระหว่างเธรด", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Linux struct task_struct ทำหน้าที่อะไร",
+    "info": "struct task_struct เป็นโครงสร้างข้อมูลหลักที่เก็บข้อมูลของ task (process/thread) รวมถึงข้อมูลที่แชร์หรือเป็นเอกลักษณ์ของแต่ละ task",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เก็บข้อมูลของ process/thread และชี้ไปยัง data structures อื่น ๆ", "correct": true },
+      { "text": "เก็บเฉพาะ PID (process identifier)", "correct": false },
+      { "text": "เก็บเฉพาะ memory map และ page tables", "correct": false },
+      { "text": "เก็บเฉพาะ signal handlers และ pending signals", "correct": false }
+    ]
+  },
+  {
+    "text": "Scalability ในมัลติเธรดหมายถึงอะไร",
+    "info": "Scalability หมายถึงความสามารถของโพรเซสในการใช้ประโยชน์จากสถาปัตยกรรม multiprocessor ได้อย่างมีประสิทธิภาพ เมื่อจำนวนคอร์เพิ่มขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ความสามารถในการใช้ประโยชน์จากหลายโพรเซสเซอร์", "correct": true },
+      { "text": "ความสามารถในการขยายจำนวนเธรดโดยไม่มีขีดจำกัด", "correct": false },
+      { "text": "ความสามารถในการขยายหน่วยความจำที่ใช้", "correct": false },
+      { "text": "ความสามารถในการรองรับผู้ใช้หลายคนพร้อมกัน", "correct": false }
+    ]
+  },
+  {
+    "text": "การเขียนโปรแกรมแบบ task parallelism มีลักษณะอย่างไร",
+    "info": "Task parallelism คือการกระจาย threads ไปบน cores โดยแต่ละ thread ทำหน้าที่ unique operation ต่างกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "กระจายข้อมูลชุดเดียวกันไปหลายคอร์ แล้วทำ operation เดียวกัน", "correct": false },
+      { "text": "กระจาย threads โดยแต่ละ thread ทำ operation ที่แตกต่างกัน", "correct": true },
+      { "text": "รันหลายโปรแกรมพร้อมกันบนคอร์เดียวกัน", "correct": false },
+      { "text": "ใช้เธรดเดียวทำงานหลายงานโดยสลับกัน", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Windows ETHREAD (executive thread block) เก็บข้อมูลอะไรบ้าง",
+    "info": "ETHREAD เก็บ pointer ไปยัง process ที่เธรดสังกัด, pointer ไปยัง KTHREAD, และข้อมูลอื่น ๆ สำหรับ executive",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "pointer ไปยัง process และ KTHREAD", "correct": true },
+      { "text": "เฉพาะ thread id และ priority", "correct": false },
+      { "text": "user-mode stack และ thread-local storage", "correct": false },
+      { "text": "kernel-mode stack และ trap frame", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือผลกระทบหากใช้ asynchronous cancellation โดยไม่มีการเตรียมการ cleanup",
+    "info": "Asynchronous cancellation อาจทำให้ทรัพยากร (เช่น memory, file handles) ไม่ถูกปลดปล่อย เกิด memory leak หรือ corrupted state",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "อาจเกิด resource leak และ inconsistent state", "correct": true },
+      { "text": "ไม่มีผลกระทบใด ๆ เนื่องจาก kernel จัดการ cleanup ให้", "correct": false },
+      { "text": "โปรแกรมจะทำงานเร็วขึ้น", "correct": false },
+      { "text": "เธรดจะถูก suspend แทนการยกเลิก", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Pthreads function pthread_testcancel() ใช้ทำอะไร",
+    "info": "pthread_testcancel() สร้าง cancellation point เพื่อให้เธรดตรวจสอบว่ามีคำขอ cancellation รออยู่หรือไม่ หากมีจะถูกยกเลิก ณ จุดนั้น",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ทดสอบว่าเธรดถูกยกเลิกแล้วหรือยัง โดยไม่มีการยกเลิก", "correct": false },
+      { "text": "สร้าง cancellation point เพื่อให้เธรดตรวจสอบและยกเลิกถ้ามีคำขอ", "correct": true },
+      { "text": "ยกเลิกเธรดทันทีโดยไม่ต้องรอ", "correct": false },
+      { "text": "ปิดการใช้งาน cancellation สำหรับเธรดนี้", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใดระบบปฏิบัติการสมัยใหม่ส่วนใหญ่จึงเลือกใช้ one-to-one model",
+    "info": "One-to-one model ให้ parallelism ได้เต็มที่บน multicore และการจัดการเธรดทำได้ง่ายขึ้น แม้จะมี overhead มากกว่า many-to-one เล็กน้อย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพื่อให้ได้ parallelism ที่แท้จริงบน multicore และลดความซับซ้อนในการจัดการ", "correct": true },
+      { "text": "เพื่อลด overhead ในการสร้างเธรดให้ต่ำที่สุด", "correct": false },
+      { "text": "เพื่อให้เข้ากับ Java Virtual Machine เท่านั้น", "correct": false },
+      { "text": "เพราะ many-to-one model ไม่สามารถใช้ได้บน multicore", "correct": false }
+    ]
+  },
+  {
+    "text": "ในระบบ Linux ไฟล์ descriptor ระหว่าง parent และ child ที่สร้างด้วย clone() และใช้ CLONE_FILES จะเป็นอย่างไร",
+    "info": "CLONE_FILES ทำให้ child และ parent แชร์ชุด open files เดียวกัน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "แชร์ชุด open files ร่วมกัน", "correct": true },
+      { "text": "มี open files แยกกันโดยสมบูรณ์", "correct": false },
+      { "text": "child ไม่สามารถเปิดไฟล์ได้", "correct": false },
+      { "text": "open files ถูกปิดทั้งหมดหลัง clone", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของการใช้ many-to-many model เหนือ one-to-one",
+    "info": "Many-to-many model อนุญาตให้มี user threads จำนวนมากโดยไม่ต้องสร้าง kernel threads มากเท่า ซึ่งลด overhead และเพิ่ม scalability",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ลด overhead จากการสร้าง kernel threads จำนวนมาก", "correct": true },
+      { "text": "ให้ parallelism สูงกว่า one-to-one", "correct": false },
+      { "text": "ง่ายต่อการ implement ใน kernel", "correct": false },
+      { "text": "รับประกันว่า thread blocking จะไม่ส่งผลกระทบ", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน Windows Thread Environment Block (TEB) เก็บข้อมูลใดบ้าง",
+    "info": "TEB เก็บ thread id, user-mode stack, thread-local storage และข้อมูลที่ใช้โดย run-time libraries และ DLLs",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "thread id, user-mode stack, thread-local storage", "correct": true },
+      { "text": "kernel-mode stack และ scheduling parameters", "correct": false },
+      { "text": "pointer ไปยัง KTHREAD และ ETHREAD", "correct": false },
+      { "text": "เฉพาะ register set และ instruction pointer", "correct": false }
+    ]
+  }
+]

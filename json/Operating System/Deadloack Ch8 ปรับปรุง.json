@@ -1,0 +1,563 @@
+[
+  {
+    "text": "ระบบถูกกล่าวว่าอยู่ในสถานะ safe state หากมีลำดับของโพรเซสที่สามารถดำเนินการได้โดยไม่มี deadlock เงื่อนไขใดต่อไปนี้ถูกต้อง",
+    "info": "Safe state หมายถึงมีลำดับการดำเนินการของโพรเซสทั้งหมดที่ทำให้แต่ละโพรเซสสามารถขอทรัพยากรเพิ่มได้จาก resources ที่ว่างอยู่และ resources ที่ถูก hold โดยโพรเซสที่ดำเนินการไปแล้วก่อนหน้า",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ต้องมีทรัพยากรเพียงพอสำหรับทุกโพรเซสในเวลาเดียวกัน", "correct": false },
+      { "text": "มีลำดับของโพรเซสที่แต่ละโพรเซสสามารถขอทรัพยากรเพิ่มได้จาก resources ที่ว่าง + resources ที่โพรเซสก่อนหน้าในลำดับถืออยู่", "correct": true },
+      { "text": "ต้องไม่มี circular wait ใน resource allocation graph เท่านั้น", "correct": false },
+      { "text": "ทุกโพรเซสต้องประกาศ maximum resource needs ก่อน run", "correct": false }
+    ]
+  },
+  {
+    "text": "เงื่อนไข 4 ประการที่ทำให้เกิด deadlock มีอะไรบ้าง",
+    "info": "Deadlock จะเกิดขึ้นเมื่อเงื่อนไข 4 ประการเกิดขึ้นพร้อมกัน: mutual exclusion, hold and wait, no preemption, และ circular wait",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Mutual exclusion, Hold and wait, No preemption, Circular wait", "correct": true },
+      { "text": "Mutual exclusion, Starvation, Preemption, Circular wait", "correct": false },
+      { "text": "Hold and wait, Preemption, Starvation, Deadlock detection", "correct": false },
+      { "text": "Mutual exclusion, Hold and wait, Preemption, Safe state", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน resource allocation graph หากมี cycle เกิดขึ้น และ resource type แต่ละประเภทมี instance เดียว ข้อใดถูกต้อง",
+    "info": "หาก resource type แต่ละประเภทมีเพียง instance เดียว การมี cycle ใน resource allocation graph บ่งบอกว่าเกิด deadlock อย่างแน่นอน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "อาจเกิด deadlock หรือไม่ก็ได้ ขึ้นกับสถานะ", "correct": false },
+      { "text": "ไม่เกิด deadlock อย่างแน่นอน", "correct": false },
+      { "text": "เกิด deadlock อย่างแน่นอน", "correct": true },
+      { "text": "ต้องตรวจสอบเพิ่มเติมด้วย banker's algorithm", "correct": false }
+    ]
+  },
+  {
+    "text": "Banker's algorithm ใช้สำหรับอะไร",
+    "info": "Banker's algorithm ใช้สำหรับ deadlock avoidance ในระบบที่มี resource type หลาย instances โดยพิจารณาว่าการจัดสรรทรัพยากรให้ process จะทำให้ระบบยังคงอยู่ใน safe state หรือไม่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้ตรวจจับ deadlock หลังจากเกิดแล้ว", "correct": false },
+      { "text": "ใช้ป้องกัน deadlock โดยการจำกัดการขอทรัพยากร", "correct": false },
+      { "text": "ใช้หลีกเลี่ยง deadlock โดยตรวจสอบ safe state ก่อนจัดสรร", "correct": true },
+      { "text": "ใช้กู้คืนระบบจาก deadlock", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือลักษณะของ unsafe state",
+    "info": "Unsafe state ไม่ได้หมายความว่าเกิด deadlock แล้ว แต่หมายถึงมีความเป็นไปได้ที่ deadlock จะเกิดขึ้นในอนาคต หาก process ขอทรัพยากรในลักษณะใดลักษณะหนึ่ง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เกิด deadlock แล้ว", "correct": false },
+      { "text": "ไม่มีโอกาสเกิด deadlock เลย", "correct": false },
+      { "text": "มีความเป็นไปได้ที่จะเกิด deadlock", "correct": true },
+      { "text": "ระบบไม่สามารถจัดสรรทรัพยากรได้อีก", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดต่อไปนี้เป็นวิธีการป้องกัน deadlock (deadlock prevention) แบบ hold and wait",
+    "info": "การป้องกัน deadlock แบบ hold and wait ทำได้โดยให้ process ขอทรัพยากรทั้งหมดก่อนเริ่มทำงาน หรือขอได้เฉพาะเมื่อไม่มีทรัพยากรใดถืออยู่เลย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ให้ process ขอทรัพยากรทั้งหมดก่อนเริ่มทำงาน หรือขอได้เมื่อไม่มีทรัพยากรถืออยู่", "correct": true },
+      { "text": "อนุญาตให้ process ขอทรัพยากรได้เรื่อย ๆ โดยไม่จำกัด", "correct": false },
+      { "text": "ให้ process คืนทรัพยากรทั้งหมดเมื่อต้องรอ", "correct": false },
+      { "text": "กำหนดลำดับการขอทรัพยากร", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีการป้องกัน deadlock (deadlock prevention) แบบ no preemption มีหลักการอย่างไร",
+    "info": "ถ้า process ที่ถือทรัพยากรอยู่ขอทรัพยากรเพิ่มแล้วไม่ได้รับ ระบบจะ preempt ทรัพยากรทั้งหมดที่ process นั้นถืออยู่และให้ process ต้องรอจนกว่าจะได้ทรัพยากรทั้งหมดกลับคืน",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "不允许抢占任何资源", "correct": false },
+      { "text": "ถ้า process ขอทรัพยากรแล้วไม่ได้รับ ระบบจะยึดทรัพยากรทั้งหมดที่ process นั้นถืออยู่", "correct": true },
+      { "text": "process สามารถยึดทรัพยากรจาก process อื่นได้", "correct": false },
+      { "text": "process ต้องคืนทรัพยากรเมื่อทำงานเสร็จเท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "วิธีการป้องกัน deadlock แบบ circular wait ทำได้โดย",
+    "info": "การป้องกัน circular wait ทำได้โดยกำหนดลำดับการขอทรัพยากร (total ordering) ให้ process ขอทรัพยากรตามลำดับที่กำหนด เช่น ขอ A ก่อน B เสมอ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "กำหนดลำดับการขอทรัพยากรให้ process ขอตามลำดับที่กำหนด", "correct": true },
+      { "text": "อนุญาตให้ process ขอทรัพยากรเป็นวงกลมได้", "correct": false },
+      { "text": "ห้าม process ขอทรัพยากรหลายตัว", "correct": false },
+      { "text": "ให้ process ขอทรัพยากรทีละตัวเท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน banker's algorithm หาก Request_i ≤ Need_i แต่ Request_i > Available ระบบจะทำอย่างไร",
+    "info": "ถ้า Request_i > Available หมายถึงทรัพยากรไม่พอในขณะนี้ process ต้องรอ (wait) จนกว่าทรัพยากรจะว่าง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "จัดสรรทรัพยากรให้ทันที", "correct": false },
+      { "text": "process ต้องรอ (must wait)", "correct": true },
+      { "text": "terminate process ทันที", "correct": false },
+      { "text": "ยึดทรัพยากรจาก process อื่น", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อเสียของ deadlock prevention แบบ hold and wait",
+    "info": "Hold and wait ทำให้ process ต้องขอทรัพยากรทั้งหมดล่วงหน้า ซึ่งอาจทำให้ใช้ทรัพยากรต่ำ (low resource utilization) และอาจเกิด starvation ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ทำให้เกิด deadlock บ่อยขึ้น", "correct": false },
+      { "text": "low resource utilization และ starvation", "correct": true },
+      { "text": "complexity สูงเกินไป", "correct": false },
+      { "text": "ไม่สามารถใช้กับระบบจริงได้", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือความแตกต่างระหว่าง deadlock prevention และ deadlock avoidance",
+    "info": "Prevention ใช้การจำกัดวิธีการขอทรัพยากรเพื่อให้เงื่อนไข deadlock ไม่เกิดขึ้น ส่วน avoidance ใช้ข้อมูลล่วงหน้า (maximum needs) เพื่อตัดสินใจจัดสรรให้ระบบอยู่ใน safe state เสมอ",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Prevention ใช้ resource allocation graph ส่วน avoidance ใช้ wait-for graph", "correct": false },
+      { "text": "Prevention จำกัดวิธีการขอทรัพยากร ส่วน avoidance ใช้ข้อมูลล่วงหน้าตรวจสอบ safe state", "correct": true },
+      { "text": "Prevention ตรวจจับ deadlock ส่วน avoidance ป้องกัน deadlock", "correct": false },
+      { "text": "Prevention ใช้ banker's algorithm ส่วน avoidance ใช้ cycle detection", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน resource allocation graph เส้นประ (dashed line) แทนความหมายอะไร",
+    "info": "เส้นประหรือ claim edge ใช้ใน resource allocation graph สำหรับ deadlock avoidance แสดงว่า process อาจขอทรัพยากรนั้นในอนาคต",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "process กำลังขอทรัพยากร", "correct": false },
+      { "text": "process กำลังถือครองทรัพยากร", "correct": false },
+      { "text": "process อาจขอทรัพยากรนั้นในอนาคต (claim edge)", "correct": true },
+      { "text": "process ได้รับทรัพยากรแล้ว", "correct": false }
+    ]
+  },
+  {
+    "text": "wait-for graph ใช้สำหรับอะไร",
+    "info": "Wait-for graph ใช้ใน deadlock detection สำหรับระบบที่มี resource type ละ 1 instance โดย node เป็น process และ edge P_i → P_j แสดงว่า P_i กำลังรอ P_j อยู่",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้สำหรับ deadlock avoidance", "correct": false },
+      { "text": "ใช้สำหรับ deadlock detection ในระบบ single instance per resource type", "correct": true },
+      { "text": "ใช้สำหรับ deadlock prevention", "correct": false },
+      { "text": "ใช้สำหรับ banker's algorithm", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock detection หาก wait-for graph มี cycle หมายความว่าอย่างไร",
+    "info": "ใน wait-for graph หากพบ cycle แสดงว่ามี deadlock เกิดขึ้น เนื่องจาก process ต่างรอซึ่งกันและกันเป็นวง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ระบบอยู่ใน safe state", "correct": false },
+      { "text": "เกิด deadlock", "correct": true },
+      { "text": "อาจเกิด deadlock หรือไม่ก็ได้", "correct": false },
+      { "text": "ต้องตรวจสอบเพิ่มเติม", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock detection algorithm สำหรับ multiple instances เวกเตอร์ Finish[i] ถูกกำหนดเริ่มต้นอย่างไร",
+    "info": "Finish[i] เริ่มต้นเป็น true หาก Allocation[i] = 0 (process ไม่ได้ถือทรัพยากรใด) และ false หาก Allocation[i] ≠ 0",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Finish[i] = true สำหรับทุก i", "correct": false },
+      { "text": "Finish[i] = false สำหรับทุก i", "correct": false },
+      { "text": "Finish[i] = true ถ้า Allocation[i] = 0, false ถ้า Allocation[i] ≠ 0", "correct": true },
+      { "text": "Finish[i] = true ถ้า Need[i] = 0", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของการตรวจจับ deadlock (deadlock detection) เมื่อเทียบกับการป้องกัน (prevention)",
+    "info": "Detection อนุญาตให้ระบบใช้ทรัพยากรได้อย่างเต็มที่ (higher resource utilization) ไม่ต้องจำกัดการขอทรัพยากร แต่มี overhead ในการตรวจจับและ recovery",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ไม่มี overhead ในการตรวจสอบ", "correct": false },
+      { "text": "ไม่ต้องมีข้อมูลล่วงหน้า (maximum needs)", "correct": false },
+      { "text": "อนุญาตให้ใช้ทรัพยากรได้เต็มที่ไม่ต้องจำกัด", "correct": true },
+      { "text": "รับประกันว่า deadlock จะไม่เกิดขึ้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ในการกู้คืนจาก deadlock (recovery) วิธีใดที่ใช้ abort process ทีละตัว",
+    "text": "การ abort process ทีละตัวจนกว่า deadlock cycle จะหายไป ต้องเลือก process ที่จะ abort โดยพิจารณาจากหลายปัจจัย เช่น priority, computation time, resources used",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "abort process ที่มี priority สูงสุด", "correct": false },
+      { "text": "abort process ที่ใช้ทรัพยากรน้อยที่สุด", "correct": false },
+      { "text": "abort process ทีละตัวโดยพิจารณาจากหลายปัจจัย", "correct": true },
+      { "text": "abort process แบบสุ่ม", "correct": false }
+    ]
+  },
+  {
+    "text": "ปัญหา starvation ในการกู้คืนจาก deadlock เกิดขึ้นเมื่อ",
+    "info": "Starvation อาจเกิดขึ้นหาก process ตัวเดิมถูกเลือกเป็น victim ซ้ำ ๆ ต้องนำจำนวนครั้งที่ถูก rollback มาเป็นปัจจัยในการเลือก victim",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "process ถูก abort แล้วไม่สามารถ restart ได้", "correct": false },
+      { "text": "process ตัวเดิมถูกเลือกเป็น victim ซ้ำ ๆ", "correct": true },
+      { "text": "process ไม่ได้รับทรัพยากรเลย", "correct": false },
+      { "text": "system ไม่มีทรัพยากรเพียงพอ", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดกล่าวถึง mutual exclusion condition ได้ถูกต้อง",
+    "info": "Mutual exclusion หมายถึง resource ที่ไม่สามารถแชร์ได้ (non-sharable) จะมี process ได้ใช้เพียง process เดียวในแต่ละครั้ง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "resource ทุกประเภทต้องมี mutual exclusion", "correct": false },
+      { "text": "resource ที่แชร์ได้ (sharable) ไม่ต้องการ mutual exclusion", "correct": true },
+      { "text": "mutual exclusion เป็นสาเหตุเดียวของ deadlock", "correct": false },
+      { "text": "mutual exclusion ไม่สามารถป้องกันได้", "correct": false }
+    ]
+  },
+  {
+    "text": "ระบบปฏิบัติการส่วนใหญ่เช่น UNIX และ Windows จัดการกับ deadlock อย่างไร",
+    "info": "ระบบปฏิบัติการส่วนใหญ่ใช้วิธี ignore the problem หรือ pretend that deadlocks never occur เนื่องจาก deadlock พบได้ยากและ overhead ในการจัดการสูง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ใช้ deadlock prevention", "correct": false },
+      { "text": "ใช้ deadlock avoidance", "correct": false },
+      { "text": "ignore the problem (pretend deadlocks never occur)", "correct": true },
+      { "text": "ใช้ deadlock detection และ recovery เสมอ", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน banker's algorithm หากระบบอยู่ใน unsafe state หมายความว่าอย่างไร",
+    "info": "Unsafe state ไม่ได้หมายความว่า deadlock เกิดขึ้นแล้ว แต่มีความเป็นไปได้ที่จะเกิด deadlock หาก process ขอทรัพยากรในลักษณะที่ไม่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "deadlock เกิดขึ้นแล้ว", "correct": false },
+      { "text": "deadlock จะเกิดขึ้นแน่นอน", "correct": false },
+      { "text": "มีความเป็นไปได้ที่จะเกิด deadlock", "correct": true },
+      { "text": "ระบบไม่สามารถจัดสรรทรัพยากรได้อีก", "correct": false }
+    ]
+  },
+  {
+    "text": "จากตัวอย่าง banker's algorithm หากมี 5 processes (P0-P4) และ 3 resource types A(10), B(5), C(7) ที่ Allocation และ Max กำหนดให้ Need matrix ถูกคำนวณอย่างไร",
+    "info": "Need = Max - Allocation เช่น P0 มี Max (7,5,3) และ Allocation (0,1,0) ดังนั้น Need (7,4,3)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Need = Allocation - Max", "correct": false },
+      { "text": "Need = Max - Allocation", "correct": true },
+      { "text": "Need = Available - Allocation", "correct": false },
+      { "text": "Need = Max + Allocation", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน banker's algorithm การตรวจสอบความปลอดภัย (safety algorithm) จะทำงานอย่างไร",
+    "info": "Safety algorithm จะหา process ที่ Finish[i]=false และ Need_i ≤ Work จากนั้นจำลองการให้ process ทำงานและคืนทรัพยากร (Work = Work + Allocation_i) ทำซ้ำจนครบทุก process",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "หา process ที่ Request_i ≤ Work แล้วจัดสรร", "correct": false },
+      { "text": "หา process ที่ Finish[i]=false และ Need_i ≤ Work แล้วจำลองการทำงาน", "correct": true },
+      { "text": "หา process ที่ Allocation_i > 0", "correct": false },
+      { "text": "หา cycle ใน resource allocation graph", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อเสียของ deadlock detection algorithm ที่มีหลาย instances",
+    "info": "Detection algorithm สำหรับหลาย instances มี complexity O(m × n²) ซึ่งสูง และการกำหนดความถี่ในการตรวจจับก็เป็นปัญหาที่ต้อง权衡",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ไม่สามารถตรวจจับ deadlock ได้", "correct": false },
+      { "text": "complexity สูง O(m × n²) และต้องกำหนดความถี่ในการตรวจจับ", "correct": true },
+      { "text": "ใช้ได้กับ single instance เท่านั้น", "correct": false },
+      { "text": "ต้องใช้ memory มากเกินไป", "correct": false }
+    ]
+  },
+  {
+    "text": "การกู้คืนจาก deadlock ด้วยวิธี rollback หมายถึงอะไร",
+    "info": "Rollback คือการย้อนกลับ process ไปยัง safe state ก่อนหน้า (เช่น checkpoint) แล้ว restart process จากจุดนั้นเพื่อหลีกเลี่ยง deadlock",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ยกเลิก process และเริ่มใหม่ตั้งแต่ต้น", "correct": false },
+      { "text": "ย้อนกลับ process ไปยัง safe state และ restart", "correct": true },
+      { "text": "ย้าย process ไปยังเครื่องอื่น", "correct": false },
+      { "text": "ลด priority ของ process", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock detection หากมี deadlock หลาย disjoint cycles การเลือก abort process ควรพิจารณาอะไร",
+    "info": "การเลือก abort process ควรพิจารณาหลายปัจจัย เช่น priority, computation time, resources used, resources needed, number of processes to terminate, interactive or batch",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เลือก process ที่มี priority ต่ำสุด", "correct": false },
+      { "text": "เลือก process ที่ใช้ทรัพยากรน้อยที่สุด", "correct": false },
+      { "text": "พิจารณาหลายปัจจัยร่วมกัน", "correct": true },
+      { "text": "เลือก process แบบสุ่ม", "correct": false }
+    ]
+  },
+  {
+    "text": "resource allocation graph ที่มี cycle แต่ไม่มี deadlock เกิดขึ้นได้เมื่อใด",
+    "info": "เมื่อ resource type บางประเภทมีหลาย instances cycle ใน graph อาจไม่ทำให้เกิด deadlock เพราะ resources ใน cycle อาจถูกใช้โดย process อื่นที่ไม่เกี่ยวข้อง",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เมื่อ resource type ทั้งหมดมี instance เดียว", "correct": false },
+      { "text": "เมื่อ resource type บางประเภทมีหลาย instances", "correct": true },
+      { "text": "เมื่อไม่มี process ใดถือครอง resource", "correct": false },
+      { "text": "เมื่อทุก process อยู่ใน ready queue", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือความแตกต่างระหว่าง request edge และ assignment edge ใน resource allocation graph",
+    "info": "Request edge (P_i → R_j) แสดงว่า process กำลังขอ resource ส่วน assignment edge (R_j → P_i) แสดงว่า resource ถูก allocate ให้ process แล้ว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Request edge จาก resource ไป process, Assignment edge จาก process ไป resource", "correct": false },
+      { "text": "Request edge จาก process ไป resource, Assignment edge จาก resource ไป process", "correct": true },
+      { "text": "ทั้งสองแบบเหมือนกัน", "correct": false },
+      { "text": "Request edge ใช้เส้นประ, Assignment edge ใช้เส้นทึบ", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใด deadlock prevention แบบ mutual exclusion จึงไม่สามารถทำได้กับ resource ที่ไม่สามารถแชร์ได้",
+    "info": "Resource ที่ไม่สามารถแชร์ได้ (non-sharable) จำเป็นต้องมี mutual exclusion โดยธรรมชาติ ดังนั้นเงื่อนไขนี้ไม่สามารถป้องกันได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพราะ resource type เหล่านั้นจำเป็นต้องมี mutual exclusion", "correct": true },
+      { "text": "เพราะระบบปฏิบัติการไม่รองรับ", "correct": false },
+      { "text": "เพราะทำให้ประสิทธิภาพต่ำ", "correct": false },
+      { "text": "เพราะ deadlock จะไม่เกิดขึ้นกับ resource เหล่านี้", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน banker's algorithm หาก Request_i ถูกพิจารณาและพบว่า unsafe ระบบจะทำอย่างไร",
+    "info": "หากการจัดสรรตาม Request_i ทำให้ระบบ unsafe ระบบจะไม่จัดสรรและ process ต้องรอ (must wait) โดยคืนค่า resource-allocation state กลับไปเหมือนเดิม",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "จัดสรรให้แล้วรอให้ process คืน", "correct": false },
+      { "text": "ไม่จัดสรรและ process ต้องรอ", "correct": true },
+      { "text": "terminate process ทันที", "correct": false },
+      { "text": "จัดสรรให้โดยไม่สนใจ", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของการใช้ deadlock avoidance แบบ resource allocation graph (single instance)",
+    "info": "Avoidance แบบ resource allocation graph ใช้ได้กับ single instance per resource type และสามารถตรวจสอบ cycle เพื่อป้องกัน deadlock ได้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ใช้ได้กับ multiple instances", "correct": false },
+      { "text": "ไม่ต้องมีข้อมูลล่วงหน้า", "correct": false },
+      { "text": "ใช้ได้กับ single instance และตรวจสอบ cycle", "correct": true },
+      { "text": "ไม่มี overhead", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock detection algorithm ถ้า Finish[i] == false สำหรับบาง i หมายความว่าอย่างไร",
+    "info": "ถ้าหลังจากทำ detection algorithm แล้วยังมี Finish[i] == false แสดงว่า process เหล่านั้นอยู่ในสถานะ deadlock",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "process นั้นทำงานเสร็จแล้ว", "correct": false },
+      { "text": "process นั้น deadlocked", "correct": true },
+      { "text": "system อยู่ใน safe state", "correct": false },
+      { "text": "process นั้นไม่ได้ขอ resource", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือตัวอย่างของ sharable resource ที่ไม่ต้องมี mutual exclusion",
+    "info": "Read-only files เป็น sharable resource ที่ process หลายตัวสามารถอ่านพร้อมกันได้โดยไม่เกิดปัญหา",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Printer", "correct": false },
+      { "text": "Read-only file", "correct": true },
+      { "text": "Memory space", "correct": false },
+      { "text": "Mutex lock", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใด deadlock prevention แบบ hold and wait จึงทำให้เกิด starvation ได้",
+    "info": "หาก process ต้องการ resource ที่ไม่ค่อยว่าง process อาจต้องรอเป็นเวลานานเพราะต้องขอทรัพยากรทั้งหมดพร้อมกัน",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เพราะ process ไม่สามารถขอทรัพยากรเพิ่มได้", "correct": false },
+      { "text": "เพราะ process ที่ต้องการ resource ยอดนิยมอาจรอไม่ได้รับเป็นเวลานาน", "correct": true },
+      { "text": "เพราะ process ต้องคืนทรัพยากรทั้งหมด", "correct": false },
+      { "text": "เพราะ process ถูก terminate เสมอ", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock recovery การเลือก victim ควรคำนึงถึง cost factor อะไรบ้าง",
+    "info": "Cost factor ในการเลือก victim ได้แก่ priority, computation time, resources used, resources needed, number of processes to terminate, และ number of rollbacks เพื่อป้องกัน starvation",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "priority เท่านั้น", "correct": false },
+      { "text": "priority และ computation time", "correct": false },
+      { "text": "หลายปัจจัยรวมถึง number of rollbacks", "correct": true },
+      { "text": "random selection", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อเสียของการใช้ deadlock avoidance (banker's algorithm)",
+    "info": "Banker's algorithm ต้องการให้ process ประกาศ maximum resource needs ล่วงหน้า ซึ่งอาจไม่ทราบได้ และมี overhead ในการคำนวณ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ต้องใช้ hardware พิเศษ", "correct": false },
+      { "text": "ต้องรู้ maximum resource needs ล่วงหน้า", "correct": true },
+      { "text": "ไม่สามารถใช้กับระบบจริงได้", "correct": false },
+      { "text": "ตรวจจับ deadlock ไม่ได้", "correct": false }
+    ]
+  },
+  {
+    "text": "จากตัวอย่าง detection algorithm หาก P2 ขอ C เพิ่มอีก 1 instance และระบบมี deadlock กระบวนการใดบ้างที่ deadlock",
+    "info": "จากตัวอย่าง P0 สามารถคืนทรัพยากรได้ แต่ยังไม่พอให้ process อื่น P1, P2, P3, P4 จึงเกิด deadlock",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "P0 เท่านั้น", "correct": false },
+      { "text": "P1 และ P2", "correct": false },
+      { "text": "P1, P2, P3, P4", "correct": true },
+      { "text": "P2 เท่านั้น", "correct": false }
+    ]
+  },
+  {
+    "text": "ระบบปฏิบัติการใดที่ใช้ deadlock detection และ recovery อย่างจริงจัง",
+    "info": "ระบบปฏิบัติการทั่วไปเช่น UNIX, Windows มักไม่ใช้ detection/recovery อย่างจริงจัง แต่บางระบบเช่น database systems และบาง real-time systems อาจใช้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Windows และ Linux", "correct": false },
+      { "text": "macOS และ iOS", "correct": false },
+      { "text": "ระบบฐานข้อมูล (database systems)", "correct": true },
+      { "text": "Android", "correct": false }
+    ]
+  },
+  {
+    "text": "เงื่อนไข circular wait หมายถึงอะไร",
+    "info": "Circular wait คือชุดของ process ที่รอซึ่งกันและกันเป็นวงกลม โดย P0 รอ resource ที่ P1 ถือ, P1 รอ resource ที่ P2 ถือ, ... และ Pn รอ resource ที่ P0 ถือ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "process ตัวเดียวรอทรัพยากรที่ตัวเองถือ", "correct": false },
+      { "text": "ชุดของ process ที่รอซึ่งกันและกันเป็นวงกลม", "correct": true },
+      { "text": "process หลายตัวรอทรัพยากรเดียวกัน", "correct": false },
+      { "text": "process ทุกตัวรอทรัพยากรที่ว่าง", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของ deadlock prevention แบบ circular wait (total ordering)",
+    "info": "Circular wait prevention โดยการกำหนด total ordering ทำให้ process ต้องขอทรัพยากรตามลำดับ ป้องกันการเกิด cycle ใน resource allocation graph",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ไม่ต้องมีข้อมูลล่วงหน้า", "correct": false },
+      { "text": "ป้องกัน circular wait ได้ง่าย", "correct": true },
+      { "text": "เพิ่ม resource utilization", "correct": false },
+      { "text": "ลด starvation", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือความสัมพันธ์ระหว่าง unsafe state และ deadlock",
+    "info": "Unsafe state เป็น superset ของ deadlock state กล่าวคือ deadlock state เป็น unsafe state แต่ unsafe state อาจไม่เกิด deadlock",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "unsafe state = deadlock state", "correct": false },
+      { "text": "deadlock state เป็น subset ของ unsafe state", "correct": true },
+      { "text": "unsafe state เป็น subset ของ deadlock state", "correct": false },
+      { "text": "ไม่มีความสัมพันธ์กัน", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน resource allocation graph กระบวนการใดบ้างที่ถือครอง resource บ้าง? พิจารณาจากกราฟที่มี P1→R2, R2→P2, P2→R1, R1→P1",
+    "info": "จาก edges: R2→P2 แสดงว่า P2 ถือ R2, R1→P1 แสดงว่า P1 ถือ R1",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "P1 ถือ R1, P2 ถือ R2", "correct": true },
+      { "text": "P1 ถือ R2, P2 ถือ R1", "correct": false },
+      { "text": "P1 ถือ R1 และ R2", "correct": false },
+      { "text": "P2 ถือ R1 และ R2", "correct": false }
+    ]
+  },
+  {
+    "text": "กระบวนการใดต่อไปนี้ไม่ใช่ขั้นตอนของ deadlock recovery",
+    "info": "Deadlock recovery มีขั้นตอน abort processes หรือ rollback ไม่มีขั้นตอนการเพิ่ม resource เข้าระบบ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Abort all deadlocked processes", "correct": false },
+      { "text": "Abort one process at a time", "correct": false },
+      { "text": "เพิ่ม resource เข้าระบบ (add more resources)", "correct": true },
+      { "text": "Rollback to safe state", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock detection algorithm เวกเตอร์ Work และ Finish ใช้ทำอะไร",
+    "info": "Work คือจำนวน resources ที่ว่างอยู่ ส่วน Finish บ่งบอกว่า process นั้นทำงานเสร็จแล้วหรือไม่ (สามารถคืนทรัพยากรได้)",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Work = จำนวน process, Finish = จำนวน resources", "correct": false },
+      { "text": "Work = resources ที่ว่าง, Finish = สถานะการทำงานของ process", "correct": true },
+      { "text": "Work = resources ที่ถูกใช้, Finish = ทรัพยากรที่เหลือ", "correct": false },
+      { "text": "Work = maximum needs, Finish = allocated resources", "correct": false }
+    ]
+  },
+  {
+    "text": "เหตุใดการตรวจจับ deadlock (detection) จึงไม่ถูกเรียกใช้บ่อยเกินไป",
+    "info": "การตรวจจับ deadlock มี overhead สูง โดยเฉพาะ O(m × n²) หากเรียกบ่อยจะเสียประสิทธิภาพของระบบ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เพราะ deadlock เกิดขึ้นบ่อย", "correct": false },
+      { "text": "เพราะมี overhead สูง", "correct": true },
+      { "text": "เพราะไม่จำเป็น", "correct": false },
+      { "text": "เพราะ system ไม่สามารถตรวจจับได้", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock avoidance แบบ resource allocation graph เมื่อใดที่ request จะถูกปฏิเสธ",
+    "info": "Request จะถูกปฏิเสธหากการแปลง request edge เป็น assignment edge ทำให้เกิด cycle ใน resource allocation graph",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เมื่อมี cycle ใน graph แล้ว", "correct": false },
+      { "text": "เมื่อแปลง request edge แล้วเกิด cycle", "correct": true },
+      { "text": "เมื่อไม่มี resources ว่าง", "correct": false },
+      { "text": "เมื่อ process ขอทรัพยากรเกิน Need", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือข้อดีของ deadlock detection เมื่อเทียบกับ deadlock avoidance",
+    "info": "Detection ไม่ต้องให้ process ประกาศ maximum resource needs ล่วงหน้า ทำให้ใช้งานง่ายกว่าในบางระบบ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ไม่ต้องใช้ข้อมูล maximum needs ล่วงหน้า", "correct": true },
+      { "text": "ไม่มี overhead", "correct": false },
+      { "text": "ป้องกัน deadlock ได้ 100%", "correct": false },
+      { "text": "ใช้ทรัพยากรน้อยกว่า", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดคือปัจจัยที่ควรพิจารณาในการเลือก victim สำหรับ deadlock recovery",
+    "info": "ปัจจัยได้แก่ priority, computation time, resources used, resources needed, number of processes to terminate, และ是否为 interactive",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "เฉพาะ priority", "correct": false },
+      { "text": "เฉพาะ computation time", "correct": false },
+      { "text": "priority, computation time, resources used, resources needed, number of processes", "correct": true },
+      { "text": "random selection", "correct": false }
+    ]
+  },
+  {
+    "text": "การกู้คืนจาก deadlock โดยการ preempt resources ต้องคำนึงถึงอะไร",
+    "info": "ต้องคำนึงถึง victim selection, rollback (safe state), และ starvation prevention",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "เฉพาะ victim selection", "correct": false },
+      { "text": "victim selection, rollback, starvation prevention", "correct": true },
+      { "text": "เฉพาะ rollback", "correct": false },
+      { "text": "เฉพาะ starvation prevention", "correct": false }
+    ]
+  },
+  {
+    "text": "ข้อใดอธิบายความหมายของ safe sequence ได้ถูกต้อง",
+    "info": "Safe sequence คือลำดับของ process ที่แต่ละ process สามารถขอทรัพยากรเพิ่มได้จาก resources ที่ว่างรวมกับ resources ที่ process ก่อนหน้าในลำดับคืนแล้ว",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ลำดับที่ process ทำงานโดยไม่มีการรอ", "correct": false },
+      { "text": "ลำดับที่ process ขอทรัพยากรตามลำดับ", "correct": false },
+      { "text": "ลำดับที่แต่ละ process สามารถขอทรัพยากรเพิ่มจาก available + resources ที่ process ก่อนหน้าคืน", "correct": true },
+      { "text": "ลำดับที่ไม่มี circular wait", "correct": false }
+    ]
+  },
+  {
+    "text": "ใน deadlock prevention แบบ no preemption ถ้า process ขอทรัพยากรแล้วไม่ได้ จะเกิดอะไรขึ้น",
+    "info": "Process จะต้องคืนทรัพยากรทั้งหมดที่ถืออยู่ (release) และรอจนกว่าจะได้ทรัพยากรทั้งหมดกลับคืน",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "process ถูก terminate", "correct": false },
+      { "text": "process คืนทรัพยากรทั้งหมดและรอ", "correct": true },
+      { "text": "process ยังคงถือทรัพยากรไว้", "correct": false },
+      { "text": "system จัดสรรทรัพยากรให้โดยอัตโนมัติ", "correct": false }
+    ]
+  }
+]

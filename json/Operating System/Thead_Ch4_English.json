@@ -1,0 +1,552 @@
+[
+  {
+    "text": "What is the basic unit of CPU utilization that forms the foundation of multithreaded computer systems?",
+    "info": "A thread is the basic unit of CPU utilization that enables multiple parts of a process to run concurrently within the same process.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Process, which is the primary unit of resource allocation", "correct": false },
+      { "text": "Thread, which is a sub-unit within a process that uses the CPU", "correct": true },
+      { "text": "Interrupt, which is used to preempt CPU execution", "correct": false },
+      { "text": "Kernel, which is the core of the operating system", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is NOT a benefit of multithreaded programming?",
+    "info": "The main benefits of multithreading are: Responsiveness, Resource Sharing, Economy (threads are cheaper to create than processes), and Scalability on multicore systems.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Responsiveness, especially for user interfaces", "correct": false },
+      { "text": "Resource Sharing, which is simpler than IPC", "correct": false },
+      { "text": "Improved Security from thread isolation", "correct": true },
+      { "text": "Economy, because threads are faster to create and switch than processes", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the key difference between concurrency and parallelism?",
+    "info": "Parallelism means multiple tasks are executed simultaneously on multiple processing units. Concurrency means multiple tasks make progress, possibly by interleaving on a single processing unit.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Concurrency is only for single-core systems, while Parallelism is only for multi-core systems", "correct": false },
+      { "text": "Parallelism executes multiple tasks truly simultaneously, while Concurrency makes tasks progress without necessarily being simultaneous", "correct": true },
+      { "text": "Concurrency refers to data partitioning, while Parallelism refers to task partitioning", "correct": false },
+      { "text": "Concurrency always requires synchronization, while Parallelism does not", "correct": false }
+    ]
+  },
+  {
+    "text": "In the context of multicore programming, what does data parallelism mean?",
+    "info": "Data parallelism involves distributing subsets of the same data across multiple cores, where each core performs the same operation on its portion of the data.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Distributing different threads to perform different tasks on different cores", "correct": false },
+      { "text": "Distributing subsets of the same data across multiple cores, performing the same operation on each subset", "correct": true },
+      { "text": "Running multiple processes in parallel using the same dataset", "correct": false },
+      { "text": "Dividing code into sections and having each core run a different section", "correct": false }
+    ]
+  },
+  {
+    "text": "Which multithreading model maps multiple user-level threads to a single kernel thread, causing all threads to block if one blocks?",
+    "info": "The Many-to-One model maps multiple user threads to a single kernel thread. Its drawback is that if any thread blocks, all threads block, and it cannot exploit parallelism on multicore systems.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "One-to-One, which provides maximum parallelism", "correct": false },
+      { "text": "Many-to-Many, which uses many user and kernel threads", "correct": false },
+      { "text": "Many-to-One, which was used in Solaris Green Threads", "correct": true },
+      { "text": "Two-level model, which includes special thread binding", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following operating systems uses the One-to-One multithreading model?",
+    "info": "The One-to-One model is used by Windows, Linux, and Solaris 9 and above, where each user-level thread is mapped directly to one kernel thread.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Solaris Green Threads and GNU Portable Threads", "correct": false },
+      { "text": "Windows, Linux, and Solaris 9 and above", "correct": true },
+      { "text": "IRIX, HP-UX, and older FreeBSD versions", "correct": false },
+      { "text": "macOS and iOS before version 10.6", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a key characteristic of user-level threads compared to kernel-level threads?",
+    "info": "User-level threads are managed by a user-level thread library without kernel involvement, making thread switching very fast. However, if a thread blocks, the entire process may block.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "User-level threads are managed by the kernel and can fully exploit parallelism", "correct": false },
+      { "text": "User-level threads are managed by a user-level library without going through the kernel", "correct": true },
+      { "text": "User-level threads have higher overhead than kernel threads because they require syscalls", "correct": false },
+      { "text": "User-level threads cannot work with kernel threads", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the name of the POSIX standard API for creating and managing threads commonly used in UNIX systems?",
+    "info": "Pthreads (POSIX threads) is the IEEE 1003.1c standard thread API commonly found in UNIX systems such as Solaris, Linux, and Mac OS X.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Win32 Thread API", "correct": false },
+      { "text": "Java Thread API (java.lang.Thread)", "correct": false },
+      { "text": "Pthreads (POSIX threads)", "correct": true },
+      { "text": "OpenMP Runtime Library", "correct": false }
+    ]
+  },
+  {
+    "text": "By which component are Java threads managed, and which threading model is generally used?",
+    "info": "Java threads are managed by the JVM (Java Virtual Machine) and generally use the threading model supported by the underlying OS (typically one-to-one).",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "JVM uses one-to-one model on most operating systems", "correct": true },
+      { "text": "Java Compiler manages threads using always a many-to-one model", "correct": false },
+      { "text": "Java Class Loader uses a many-to-many model for better performance", "correct": false },
+      { "text": "Java Runtime Environment (JRE) uses only user-level threads", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the ways to create a thread in Java?",
+    "info": "In Java, threads can be created by extending the Thread class or by implementing the Runnable interface and passing it to the Thread constructor.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Extend Thread class or Implement Runnable interface", "correct": true },
+      { "text": "Use fork() in java.lang.Process", "correct": false },
+      { "text": "Use clone() in java.lang.Object", "correct": false },
+      { "text": "Use JNI to call pthread_create() only", "correct": false }
+    ]
+  },
+  {
+    "text": "What does Implicit threading mean?",
+    "info": "Implicit threading is the creation and management of threads by the compiler or run-time libraries instead of the programmer, reducing complexity.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "The programmer must explicitly write code to create and manage threads every time", "correct": false },
+      { "text": "The compiler and run-time libraries automatically create and manage threads", "correct": true },
+      { "text": "The operating system hides threads from the user", "correct": false },
+      { "text": "Programs cannot create threads and must rely on hardware only", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is an Implicit threading technique?",
+    "info": "Implicit threading techniques discussed in the content include Thread Pools, OpenMP, Grand Central Dispatch (GCD), and others such as Intel TBB and java.util.concurrent.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Pthreads, which requires manually calling pthread_create", "correct": false },
+      { "text": "Windows API CreateThread", "correct": false },
+      { "text": "Thread Pools that have threads ready and waiting to accept jobs from a queue", "correct": true },
+      { "text": "fork() and exec() for creating processes", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the advantages of a Thread pool?",
+    "info": "Thread pools reduce the overhead of creating new threads each time, limit the number of threads in the system, and separate the task from the thread creation mechanism for flexible scheduling.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Reduce thread creation overhead, limit the number of threads, and separate tasks from the thread creation mechanism", "correct": true },
+      { "text": "Allow unlimited thread creation for faster responses", "correct": false },
+      { "text": "Guarantee that threads always run in real-time", "correct": false },
+      { "text": "Eliminate the need for synchronization between threads", "correct": false }
+    ]
+  },
+  {
+    "text": "What problem arises when calling fork() in a multithreaded program?",
+    "info": "In some UNIX variants there are two versions of fork(): one that duplicates only the calling thread, and another that duplicates all threads, depending on the implementation.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "fork() will copy only the calling thread, causing other threads to disappear", "correct": false },
+      { "text": "fork() may copy only the calling thread or all threads, depending on the implementation", "correct": true },
+      { "text": "fork() cannot be used if there is more than one thread", "correct": false },
+      { "text": "fork() always automatically copies all threads", "correct": false }
+    ]
+  },
+  {
+    "text": "How does deferred cancellation of a thread work?",
+    "info": "Deferred cancellation allows the target thread to periodically check whether it should be cancelled (e.g., at cancellation points), enabling the thread to perform cleanup before terminating.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Cancel the thread immediately without waiting (asynchronous)", "correct": false },
+      { "text": "Allow the thread to check periodically and cancel when it reaches a cancellation point", "correct": true },
+      { "text": "Must call pthread_join() before cancellation is possible", "correct": false },
+      { "text": "The thread cannot be cancelled in this mode", "correct": false }
+    ]
+  },
+  {
+    "text": "In Pthreads, what happens when a thread's cancellation type is set to asynchronous?",
+    "info": "Asynchronous cancellation terminates the target thread immediately without waiting for a cancellation point, which may cause resources to not be released properly.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "The thread is cancelled immediately without waiting for a cancellation point", "correct": true },
+      { "text": "The thread is cancelled only when it calls pthread_testcancel()", "correct": false },
+      { "text": "The thread is suspended until pthread_join() is called", "correct": false },
+      { "text": "Setting asynchronous has no effect", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the benefit of Thread-local storage (TLS)?",
+    "info": "TLS allows each thread to have its own private storage area that is not shared between threads, reducing race condition problems.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Used for safely sharing data between threads", "correct": false },
+      { "text": "Used for storing each thread's own private data, separate from others", "correct": true },
+      { "text": "Used for storing process-wide data so all threads can access it", "correct": false },
+      { "text": "Used as a buffer for faster I/O", "correct": false }
+    ]
+  },
+  {
+    "text": "In Windows systems, what components does each thread consist of?",
+    "info": "A Windows thread consists of a thread ID, register set, user stack, kernel stack, and a private storage area for run-time libraries and DLLs.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Thread ID, register set, user stack, kernel stack, private storage", "correct": true },
+      { "text": "Only the program counter and stack pointer", "correct": false },
+      { "text": "Only the PCB (Process Control Block) and TCB (Thread Control Block)", "correct": false },
+      { "text": "Only the user stack and kernel stack with no thread ID", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the main data structures for threads in Windows?",
+    "info": "Windows has ETHREAD (executive thread block), KTHREAD (kernel thread block), and TEB (thread environment block) for managing thread data.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "ETHREAD, KTHREAD, TEB", "correct": true },
+      { "text": "PCB, TCB, UCB (User Control Block)", "correct": false },
+      { "text": "TSS (Task State Segment), GDT, LDT", "correct": false },
+      { "text": "Only Thread Control Block (TCB)", "correct": false }
+    ]
+  },
+  {
+    "text": "In Linux, which system call is used to create a thread and how does it work?",
+    "info": "Linux uses the clone() system call, which allows the child task to share the parent's address space via flags such as CLONE_VM, CLONE_FILES, etc.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "fork(), which always creates a new process and cannot share address space", "correct": false },
+      { "text": "clone(), which can be configured to share the parent's address space with the child", "correct": true },
+      { "text": "pthread_create(), which is a direct system call in Linux", "correct": false },
+      { "text": "exec(), which is used to load a new program", "correct": false }
+    ]
+  },
+  {
+    "text": "In Linux, what does the CLONE_VM flag used with clone() mean?",
+    "info": "CLONE_VM causes the child task to share the same memory space as the parent, which is a key characteristic of threads.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Share file-system information (e.g., root, cwd)", "correct": false },
+      { "text": "Share the same address space (memory space)", "correct": true },
+      { "text": "Share signal handlers", "correct": false },
+      { "text": "Share the open file descriptor table", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the advantages of using the many-to-many multithreading model?",
+    "info": "The Many-to-Many model allows the system to create many user threads without being tied to many kernel threads, and can still exploit parallelism on multicore systems.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Reduces kernel thread creation overhead and increases concurrency", "correct": true },
+      { "text": "Guarantees that thread blocking will not affect other threads", "correct": false },
+      { "text": "Forces each user thread to remain bound to a kernel thread at all times", "correct": false },
+      { "text": "Requires no scheduler at all", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the special feature of the Two-level model (similar to M:M)?",
+    "info": "The Two-level model is similar to many-to-many but adds the ability to bind a user thread directly to a specific kernel thread (bound thread) for performance.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Allows some user threads to be bound to a specific kernel thread", "correct": true },
+      { "text": "Runs all user threads on a single kernel thread", "correct": false },
+      { "text": "Does not support parallelism on multicore systems", "correct": false },
+      { "text": "Requires special hardware support only", "correct": false }
+    ]
+  },
+  {
+    "text": "What do Scheduler Activations relate to?",
+    "info": "Scheduler activations are a mechanism for communication between the user-level thread library and the kernel to manage scheduling efficiently, reducing problems when a thread blocks.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Managing scheduling between user-level threads and kernel threads", "correct": true },
+      { "text": "Automatically activating the scheduler in the kernel", "correct": false },
+      { "text": "Disabling preemptive scheduling for stability", "correct": false },
+      { "text": "Statically ordering threads by priority", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement about OpenMP is correct?",
+    "info": "OpenMP is a set of compiler directives and libraries for parallel programming, especially on shared memory systems, and is one of the implicit threading techniques.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "It is an API for creating threads specifically in Java", "correct": false },
+      { "text": "It is a set of compiler directives and libraries for parallel programming", "correct": true },
+      { "text": "It is a threading model used exclusively in Windows", "correct": false },
+      { "text": "It is a system call for creating lightweight processes", "correct": false }
+    ]
+  },
+  {
+    "text": "Grand Central Dispatch (GCD) was developed for which operating system?",
+    "info": "GCD was developed by Apple for macOS and iOS. It is an implicit threading technique that uses blocks and dispatch queues.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Windows 10 and above", "correct": false },
+      { "text": "Linux (GNU/Linux)", "correct": false },
+      { "text": "macOS and iOS", "correct": true },
+      { "text": "Solaris 11", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is creating a thread more economical than creating a process?",
+    "info": "Threads use fewer resources because they share the memory space and other resources of the same process, without needing full copy-on-write.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Because threads do not need a separate stack", "correct": false },
+      { "text": "Because threads share the address space and resources of the process", "correct": true },
+      { "text": "Because threads do not require interrupt handling", "correct": false },
+      { "text": "Because threads do not use memory", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the challenges of multicore programming as described in the content?",
+    "info": "The challenges include: dividing activities, balancing, data splitting, managing data dependency, testing, and debugging.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Dividing activities, Balance, Data splitting, Data dependency, Testing and debugging", "correct": true },
+      { "text": "Only thread creation and locking", "correct": false },
+      { "text": "Only memory management and cache coherency", "correct": false },
+      { "text": "No challenges at all, because the compiler handles everything", "correct": false }
+    ]
+  },
+  {
+    "text": "In Windows systems, where is the TEB (Thread Environment Block) stored?",
+    "info": "The TEB (Thread Environment Block) stores the thread ID, user-mode stack, and thread-local storage, and resides in user space.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Kernel space", "correct": false },
+      { "text": "User space", "correct": true },
+      { "text": "Registry", "correct": false },
+      { "text": "ROM (read-only memory)", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary role of KTHREAD (Kernel Thread Block) in Windows?",
+    "info": "KTHREAD stores scheduling and synchronization data, the kernel-mode stack, and a pointer to the TEB, residing in kernel space.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Stores scheduling and synchronization information including the kernel stack", "correct": true },
+      { "text": "Stores all data about the process to which this thread belongs", "correct": false },
+      { "text": "Stores user-mode stack and thread-local storage", "correct": false },
+      { "text": "Stores information about dynamic link libraries (DLLs)", "correct": false }
+    ]
+  },
+  {
+    "text": "What does Linux call threads?",
+    "info": "Linux refers to threads as 'tasks' and uses the struct task_struct to manage them.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Processes", "correct": false },
+      { "text": "Tasks", "correct": true },
+      { "text": "Threads", "correct": false },
+      { "text": "Kernel threads", "correct": false }
+    ]
+  },
+  {
+    "text": "Which operating system used the many-to-many model in versions prior to 9?",
+    "info": "Solaris before version 9 used the many-to-many model (also called the MxN model).",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Windows XP", "correct": false },
+      { "text": "Linux kernel 2.4", "correct": false },
+      { "text": "Solaris 8 and earlier", "correct": true },
+      { "text": "macOS 10.5 (Leopard)", "correct": false }
+    ]
+  },
+  {
+    "text": "How does signal handling in multithreaded programs become more complex?",
+    "info": "Signals can be synchronous (generated by the thread itself) or asynchronous (sent from another thread or process), requiring decisions about which thread should receive the signal.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Must determine which thread receives the signal and handle both sync/async signals", "correct": true },
+      { "text": "Signals cannot be used in multithreaded programs", "correct": false },
+      { "text": "All signals are delivered only to the main thread", "correct": false },
+      { "text": "No added complexity since it is handled the same as in single-threaded programs", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is an example of implicit threading used in Java?",
+    "info": "The java.util.concurrent package is an example of implicit threading in Java, providing thread pools, executors, and utilities.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "java.util.concurrent (Executors, ThreadPoolExecutor)", "correct": true },
+      { "text": "javax.swing.SwingUtilities.invokeLater()", "correct": false },
+      { "text": "java.lang.Thread directly", "correct": false },
+      { "text": "java.io.InputStreamReader", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the characteristics of threads in the Windows API compared to threading models?",
+    "info": "Windows uses one-to-one mapping, where each thread has a context consisting of a register set, stacks, and private storage.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Uses one-to-one mapping with register set, stacks, and private storage", "correct": true },
+      { "text": "Uses many-to-one mapping to reduce overhead", "correct": false },
+      { "text": "Uses many-to-many mapping through ThreadFiber", "correct": false },
+      { "text": "Has no private storage and must use global variables instead", "correct": false }
+    ]
+  },
+  {
+    "text": "In Linux, which flag used with clone() is for sharing signal handlers?",
+    "info": "CLONE_SIGHAND is the flag that causes the child task to share signal handlers with the parent.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "CLONE_FS", "correct": false },
+      { "text": "CLONE_VM", "correct": false },
+      { "text": "CLONE_SIGHAND", "correct": true },
+      { "text": "CLONE_FILES", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the benefit of implicit threading in terms of program correctness?",
+    "info": "As the number of threads increases, managing threads explicitly makes it harder to maintain correctness. Implicit threading reduces complexity and the chance of errors.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Reduces complexity and lowers the chance of errors from manually managing threads", "correct": true },
+      { "text": "Always makes the program run faster", "correct": false },
+      { "text": "Eliminates the need for any synchronization", "correct": false },
+      { "text": "Guarantees that no deadlock will occur", "correct": false }
+    ]
+  },
+  {
+    "text": "In Windows, what threading model does the ThreadFiber package use?",
+    "info": "ThreadFiber in Windows is an implementation of the many-to-many model, allowing user threads to manage fibers, which are lightweight units.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "One-to-One (like regular threads)", "correct": false },
+      { "text": "Many-to-One (multiple fibers on a single thread only)", "correct": false },
+      { "text": "Many-to-Many (multiple fibers on multiple threads)", "correct": true },
+      { "text": "Two-level model that binds a fiber to a specific thread", "correct": false }
+    ]
+  },
+  {
+    "text": "When using Pthreads, what is the effect of setting the cancellation state to PTHREAD_CANCEL_DISABLE?",
+    "info": "If cancellation state is disabled, the thread will not be cancelled until it is enabled again. The cancellation request will remain pending.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "The thread is cancelled immediately (asynchronous cancellation)", "correct": false },
+      { "text": "The thread will not be cancelled until cancellation is enabled and a cancellation point is reached", "correct": true },
+      { "text": "The thread will be suspended until pthread_join() is called", "correct": false },
+      { "text": "The program will immediately cause a segmentation fault", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the advantages of using thread pools?",
+    "info": "Thread pools reduce thread creation overhead, limit the number of threads, and separate the task from the thread creation mechanism.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Reduce overhead, limit thread count, and separate tasks from thread creation mechanism", "correct": true },
+      { "text": "Allow unlimited thread creation for faster responses", "correct": false },
+      { "text": "Guarantee that threads always run in real-time", "correct": false },
+      { "text": "Eliminate the need for synchronization between threads", "correct": false }
+    ]
+  },
+  {
+    "text": "In Linux, what is the role of struct task_struct?",
+    "info": "struct task_struct is the main data structure that holds information about a task (process/thread), including both shared and unique data for each task.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Stores process/thread data and points to other data structures", "correct": true },
+      { "text": "Stores only the PID (process identifier)", "correct": false },
+      { "text": "Stores only memory maps and page tables", "correct": false },
+      { "text": "Stores only signal handlers and pending signals", "correct": false }
+    ]
+  },
+  {
+    "text": "What does Scalability mean in the context of multithreading?",
+    "info": "Scalability refers to the ability of a process to efficiently leverage multiprocessor architecture as the number of cores increases.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "The ability to take advantage of multiple processors", "correct": true },
+      { "text": "The ability to expand the number of threads without limit", "correct": false },
+      { "text": "The ability to expand the amount of memory used", "correct": false },
+      { "text": "The ability to support multiple users simultaneously", "correct": false }
+    ]
+  },
+  {
+    "text": "What does task parallelism programming look like?",
+    "info": "Task parallelism involves distributing threads across cores where each thread performs a unique, different operation.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Distribute the same dataset to multiple cores and perform the same operation", "correct": false },
+      { "text": "Distribute threads where each thread performs a different operation", "correct": true },
+      { "text": "Run multiple programs simultaneously on the same core", "correct": false },
+      { "text": "Use a single thread to perform multiple tasks by interleaving", "correct": false }
+    ]
+  },
+  {
+    "text": "In Windows, what information does ETHREAD (Executive Thread Block) store?",
+    "info": "ETHREAD stores a pointer to the process the thread belongs to, a pointer to the KTHREAD, and other data used by the executive.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Pointer to the process and to KTHREAD", "correct": true },
+      { "text": "Only thread ID and priority", "correct": false },
+      { "text": "User-mode stack and thread-local storage", "correct": false },
+      { "text": "Kernel-mode stack and trap frame", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the impact of using asynchronous cancellation without cleanup preparation?",
+    "info": "Asynchronous cancellation may cause resources (e.g., memory, file handles) not to be released, leading to memory leaks or corrupted state.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "May cause resource leaks and inconsistent state", "correct": true },
+      { "text": "No impact because the kernel handles cleanup automatically", "correct": false },
+      { "text": "The program will run faster", "correct": false },
+      { "text": "The thread will be suspended instead of cancelled", "correct": false }
+    ]
+  },
+  {
+    "text": "In Pthreads, what does the function pthread_testcancel() do?",
+    "info": "pthread_testcancel() creates a cancellation point so that the thread can check if there is a pending cancellation request. If there is, the thread will be cancelled at that point.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Tests whether the thread has already been cancelled, without actually cancelling it", "correct": false },
+      { "text": "Creates a cancellation point for the thread to check and cancel if a request is pending", "correct": true },
+      { "text": "Cancels the thread immediately without waiting", "correct": false },
+      { "text": "Disables cancellation for this thread", "correct": false }
+    ]
+  },
+  {
+    "text": "Why do most modern operating systems choose to use the one-to-one model?",
+    "info": "The one-to-one model provides full parallelism on multicore systems and makes thread management simpler, despite slightly more overhead than many-to-one.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "To achieve true parallelism on multicore systems and reduce management complexity", "correct": true },
+      { "text": "To minimize thread creation overhead", "correct": false },
+      { "text": "To be compatible with the Java Virtual Machine only", "correct": false },
+      { "text": "Because the many-to-one model cannot run on multicore systems", "correct": false }
+    ]
+  },
+  {
+    "text": "In Linux, when a child is created with clone() using CLONE_FILES, how are file descriptors shared between parent and child?",
+    "info": "CLONE_FILES causes the child and parent to share the same set of open files.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "They share the same set of open files", "correct": true },
+      { "text": "They have completely separate open files", "correct": false },
+      { "text": "The child cannot open any files", "correct": false },
+      { "text": "All open files are closed after clone", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the advantage of the many-to-many model over one-to-one?",
+    "info": "The many-to-many model allows many user threads without requiring an equal number of kernel threads, reducing overhead and improving scalability.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Reduces overhead from creating many kernel threads", "correct": true },
+      { "text": "Provides higher parallelism than one-to-one", "correct": false },
+      { "text": "Is easier to implement in the kernel", "correct": false },
+      { "text": "Guarantees that thread blocking will have no impact", "correct": false }
+    ]
+  },
+  {
+    "text": "In Windows, what does the Thread Environment Block (TEB) store?",
+    "info": "TEB stores the thread ID, user-mode stack, thread-local storage, and data used by run-time libraries and DLLs.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "Thread ID, user-mode stack, thread-local storage", "correct": true },
+      { "text": "Kernel-mode stack and scheduling parameters", "correct": false },
+      { "text": "Pointer to KTHREAD and ETHREAD", "correct": false },
+      { "text": "Only the register set and instruction pointer", "correct": false }
+    ]
+  }
+]
