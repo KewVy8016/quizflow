@@ -93,7 +93,7 @@ function normalizeQuizList(quizList) {
             semester: 'ทุกภาคเรียน',
             subjects: quizList.map(cat => ({
                 subject: cat.subject,
-                files: Array.isArray(cat.files) ? cat.files.map(f => (typeof f === 'string' ? f : f.file))
+                files: Array.isArray(cat.files) ? cat.files.map(f => (typeof f === 'string' ? f : f.file)) : []
             }))
         }];
     }
