@@ -51,5 +51,16 @@
         ]
       }
     ]
+  },
+  {
+    "semester": "ปี 2 เทอม 1",
+    "subjects": [
+      {
+        "subject": "Midterm/Cloud",
+        "files": [
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 1.json"
+        ]
+      }
+    ]
   }
 ]

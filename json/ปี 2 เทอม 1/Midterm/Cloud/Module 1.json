@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Which of the following is the definition of cloud computing?",
+    "info": "ข้อ C ถูกต้อง เพราะ Cloud Computing คือการส่งมอบทรัพยากร IT ตามความต้องการผ่านอินเทอร์เน็ต โดยคิดราคาตามการใช้งานจริง (Pay-as-you-go)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "On-site physical server management and maintenance.", "correct": false },
+      { "text": "Storing data solely on local hard drives and internal networks.", "correct": false },
+      { "text": "On-demand delivery of IT resources via the internet with pay-as-you-go pricing.", "correct": true },
+      { "text": "Buying hardware at a fixed cost for long-term usage.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which advantage of cloud computing refers to \"trading capital expense for variable expense\"?",
+    "info": "ข้อ B ถูกต้อง หมายถึงการเปลี่ยนจากการที่ต้องลงทุนก้อนใหญ่ในตอนแรก (CapEx) มาเป็นการจ่ายตามการใช้งานจริง (VariableOpEx)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Stop guessing capacity.", "correct": false },
+      { "text": "Trade capital expense for variable expense.", "correct": true },
+      { "text": "Benefit from massive economies of scale.", "correct": false },
+      { "text": "Go global in minutes.", "correct": false }
+    ]
+  },
+  {
+    "text": "How does \"Massive economies of scale\" benefit AWS customers?",
+    "info": "ข้อ B ถูกต้อง ยิ่งมีผู้ใช้งานมาก AWS ยิ่งสามารถจัดซื้อทรัพยากรได้ในราคาถูกลง ซึ่งช่วยให้ลดค่าบริการให้กับลูกค้าได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Customers can build their own data centers at a lower cost.", "correct": false },
+      { "text": "AWS achieves lower variable costs due to aggregate usage from hundreds of thousands of customers.", "correct": true },
+      { "text": "It allows customers to have more physical control over the hardware.", "correct": false },
+      { "text": "Customers can use services for free if they are large enough.", "correct": false }
+    ]
+  },
+  {
+    "text": "What challenge does \"Stop guessing capacity\" address?",
+    "info": "ข้อ B ถูกต้อง การใช้ Cloud ช่วยให้ไม่ต้องคาดเดาขนาดของ Server ที่ต้องการล่วงหน้า ลดปัญหาการซื้อ Server มาแล้วใช้ไม่คุ้ม หรือซื้อมาไม่พอใช้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "High latency in global regions.", "correct": false },
+      { "text": "Underutilizing or overprovisioning server resources.", "correct": true },
+      { "text": "Lack of security in the data center.", "correct": false },
+      { "text": "Difficulties in hiring IT staff.", "correct": false }
+    ]
+  },
+  {
+    "text": "\"Speed and agility\" in the cloud means:",
+    "info": "ข้อ C ถูกต้อง ความรวดเร็วและความคล่องตัวหมายถึงการที่สามารถดึงทรัพยากรมาใช้ได้ภายในไม่กี่นาที แทนที่จะต้องรอเป็นสัปดาห์หรือเป็นเดือนเหมือนในอดีต",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Servers run faster than physical machines.", "correct": false },
+      { "text": "It takes weeks to provision a new server.", "correct": false },
+      { "text": "New IT resources are only a click away, reducing the time to make them available to developers.", "correct": true },
+      { "text": "The internet speed is guaranteed to be 1Gbps.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is \"Undifferentiated heavy lifting\" in the context of cloud computing?",
+    "info": "ข้อ B ถูกต้อง คือการทำงานพื้นฐานที่ซ้ำซ้อนและไม่ได้สร้างความแตกต่างทางธุรกิจ เช่น การดูแลระบบไฟฟ้า แอร์ หรือการยก Server เข้าตู้แร็ค ซึ่ง AWS จะเป็นคนจัดการส่วนนี้ให้",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Building complex applications.", "correct": false },
+      { "text": "Common tasks like racking servers, powering them, and maintaining data centers.", "correct": true },
+      { "text": "Advanced data analytics.", "correct": false },
+      { "text": "Training machine learning models.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which cloud advantage allows a company to deploy applications in multiple regions around the world in minutes?",
+    "info": "ข้อ C ถูกต้อง เพราะ AWS มีโครงสร้างพื้นฐานอยู่ทั่วโลก ทำให้เราสามารถขยายบริการไปยังภูมิภาคต่างๆ ได้อย่างรวดเร็วเพื่อลด Latency ให้กับลูกค้า",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Stop guessing capacity.", "correct": false },
+      { "text": "Benefit from massive economies of scale.", "correct": false },
+      { "text": "Go global in minutes.", "correct": true },
+      { "text": "Increase speed and agility.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which cloud service model provides the highest level of flexibility and management control over IT resources?",
+    "info": "ข้อ C ถูกต้อง IaaS ให้การควบคุมระดับล่างสุด เช่น ระบบเครือข่าย เครื่องเซิร์ฟเวอร์เสมือน และการจัดเก็บข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Software as a Service (SaaS).", "correct": false },
+      { "text": "Platform as a Service (PaaS).", "correct": false },
+      { "text": "Infrastructure as a Service (IaaS).", "correct": true },
+      { "text": "Database as a Service (DBaaS).", "correct": false }
+    ]
+  },
+  {
+    "text": "In which service model does the customer NOT need to manage the underlying infrastructure or operating systems?",
+    "info": "ข้อ B ถูกต้อง ใน PaaS (เช่น AWS Elastic Beanstalk) ลูกค้าเน้นที่การจัดการ Application เท่านั้น ไม่ต้องดูแล OS หรือ Hardware ด้านล่าง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IaaS", "correct": false },
+      { "text": "PaaS", "correct": true },
+      { "text": "On-premises", "correct": false },
+      { "text": "Hybrid", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is an example of Software as a Service (SaaS)?",
+    "info": "ข้อ C ถูกต้อง SaaS คือ Software ที่พร้อมใช้งานได้เลยผ่านหน้าเว็บ โดยผู้ให้บริการดูแลทุกอย่างให้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EC2.", "correct": false },
+      { "text": "Amazon VPC.", "correct": false },
+      { "text": "Web-based email services (like Gmail).", "correct": true },
+      { "text": "AWS Cloud Adoption Framework.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a \"Hybrid Deployment\"?",
+    "info": "ข้อ C ถูกต้อง เป็นการผสมผสานระหว่างการใช้งานบน Cloud และการใช้งานใน Data Center ของตัวเอง (On-premises)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Using only on-premises data centers.", "correct": false },
+      { "text": "Using only public cloud services.", "correct": false },
+      { "text": "Connecting infrastructure and applications between cloud-based resources and existing on-premises resources.", "correct": true },
+      { "text": "Using multiple cloud providers like AWS and Azure at the same time.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which deployment model is also known as \"Private Cloud\"?",
+    "info": "ข้อ C ถูกต้อง การรันระบบใน Data Center ส่วนตัวโดยใช้เทคโนโลยีการทำ Virtualization เรียกว่า On-premises หรือ Private Cloud",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "All-in on the cloud.", "correct": false },
+      { "text": "Hybrid.", "correct": false },
+      { "text": "On-premises.", "correct": true },
+      { "text": "Community Cloud.", "correct": false }
+    ]
+  },
+  {
+    "text": "What are \"Web Services\"?",
+    "info": "ข้อ B ถูกต้อง เป็นนิยามของ Web Services ตามตำรา AWS ที่เน้นการสื่อสารผ่านโปรโตคอลมาตรฐาน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Websites used for social media.", "correct": false },
+      { "text": "Any piece of software that makes itself available over the internet and uses a standardized XML or JSON format for messaging.", "correct": true },
+      { "text": "Internet service providers (ISPs).", "correct": false },
+      { "text": "Physical cables connecting data centers.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which perspective of the AWS Cloud Adoption Framework (CAF) focuses on aligning IT strategy with business strategy?",
+    "info": "ข้อ B ถูกต้อง Business Perspective เน้นที่ความคุ้มค่าและผลประโยชน์ทางธุรกิจ รวมถึงการจัดแนวทาง IT ให้ตรงกับกลยุทธ์บริษัท",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "People Perspective.", "correct": false },
+      { "text": "Business Perspective.", "correct": true },
+      { "text": "Governance Perspective.", "correct": false },
+      { "text": "Platform Perspective.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS CAF perspective focuses on workforce transformation and organizational change management?",
+    "info": "ข้อ A ถูกต้อง People Perspective เน้นเรื่องการเตรียมคน การฝึกทักษะ และการปรับเปลี่ยนโครงสร้างองค์กรเพื่อรองรับ Cloud",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "People Perspective.", "correct": true },
+      { "text": "Platform Perspective.", "correct": false },
+      { "text": "Security Perspective.", "correct": false },
+      { "text": "Operations Perspective.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS CAF perspective focuses on minimizing business risk and maximizing the value of IT investments?",
+    "info": "ข้อ B ถูกต้อง Governance Perspective เน้นเรื่องการควบคุม ความเสี่ยง และการวัดผลความคุ้มค่า",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Business Perspective.", "correct": false },
+      { "text": "Governance Perspective.", "correct": true },
+      { "text": "Operations Perspective.", "correct": false },
+      { "text": "Security Perspective.", "correct": false }
+    ]
+  },
+  {
+    "text": "A Cloud Architect is designing the target state environment and architecture. Which AWS CAF perspective applies?",
+    "info": "ข้อ A ถูกต้อง Platform Perspective เกี่ยวข้องกับการออกแบบโครงสร้างทางเทคนิค เช่น Compute, Network และ Storage",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Platform Perspective.", "correct": true },
+      { "text": "People Perspective.", "correct": false },
+      { "text": "Business Perspective.", "correct": false },
+      { "text": "Security Perspective.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS CAF perspective ensures that the organization meets compliance requirements and identity management standards?",
+    "info": "ข้อ C ถูกต้อง Security Perspective ดูแลเรื่องความปลอดภัย การพิสูจน์ตัวตน และการทำตามกฎระเบียบต่างๆ",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Operations Perspective.", "correct": false },
+      { "text": "Governance Perspective.", "correct": false },
+      { "text": "Security Perspective.", "correct": true },
+      { "text": "Platform Perspective.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS CAF perspective focuses on defining how day-to-day business will be conducted and measured in the cloud?",
+    "info": "ข้อ B ถูกต้อง Operations Perspective เน้นเรื่องการรันระบบในแต่ละวัน การทำ Monitoring และการจัดการ Incident",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Business Perspective.", "correct": false },
+      { "text": "Operations Perspective.", "correct": true },
+      { "text": "Platform Perspective.", "correct": false },
+      { "text": "Governance Perspective.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the benefit of the \"Pay-as-you-go\" pricing model?",
+    "info": "ข้อ C ถูกต้อง ช่วยให้ประหยัดค่าใช้จ่ายเพราะไม่ต้องจ่ายส่วนเกินที่ไม่ได้ใช้งาน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "You pay more if you use less.", "correct": false },
+      { "text": "You pay a fixed monthly fee regardless of usage.", "correct": false },
+      { "text": "You only pay for the individual services you need, for as long as you use them.", "correct": true },
+      { "text": "You must pay for at least 1 year upfront.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS tool is a web-based interface for managing AWS services?",
+    "info": "ข้อ C ถูกต้อง เป็นหน้าเว็บ GUI ที่ใช้งานง่ายที่สุดสำหรับผู้เริ่มต้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS CLI.", "correct": false },
+      { "text": "AWS SDK.", "correct": false },
+      { "text": "AWS Management Console.", "correct": true },
+      { "text": "AWS CloudFormation.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which tool allows you to control AWS services using scripts and commands in your terminal?",
+    "info": "ข้อ B ถูกต้อง CLI เหมาะสำหรับการทำ Automation ผ่านการพิมพ์คำสั่ง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Management Console.", "correct": false },
+      { "text": "AWS Command Line Interface (CLI).", "correct": true },
+      { "text": "AWS SDK.", "correct": false },
+      { "text": "Amazon VPC.", "correct": false }
+    ]
+  },
+  {
+    "text": "What does AWS SDK stand for?",
+    "info": "ข้อ C ถูกต้อง SDK คือชุดเครื่องมือที่ช่วยให้นักพัฒนาเขียน Code เชื่อมต่อกับ AWS ได้โดยตรงจากภาษาโปรแกรมที่ถนัด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Software Deployment Kit.", "correct": false },
+      { "text": "System Development Kit.", "correct": false },
+      { "text": "Software Development Kit.", "correct": true },
+      { "text": "Server Development Kit.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is the AWS equivalent of a physical server?",
+    "info": "ข้อ C ถูกต้อง EC2 คือเครื่องเซิร์ฟเวอร์เสมือน (Virtual Server)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon S3.", "correct": false },
+      { "text": "Amazon VPC.", "correct": false },
+      { "text": "Amazon EC2.", "correct": true },
+      { "text": "Amazon RDS.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is the AWS equivalent of a network router or firewall?",
+    "info": "ข้อ C ถูกต้อง VPC ช่วยจัดการเรื่องเครือข่าย และ Security Groups ทำหน้าที่เป็น Virtual Firewall",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EC2.", "correct": false },
+      { "text": "Amazon S3.", "correct": false },
+      { "text": "Amazon VPC / Security Groups.", "correct": true },
+      { "text": "Amazon Route 53.", "correct": false }
+    ]
+  },
+  {
+    "text": "Why does AWS compare its services to \"building blocks\"?",
+    "info": "ข้อ C ถูกต้อง AWS ออกแบบบริการย่อยๆ มาเพื่อให้เราเลือกนำมาประกอบกันเป็นระบบที่ใหญ่ขึ้นได้ตามความต้องการ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Because the services are physically shaped like blocks.", "correct": false },
+      { "text": "Because you must use all of them together to work.", "correct": false },
+      { "text": "Because they are designed to work together to build customized and complex solutions.", "correct": true },
+      { "text": "Because they are only for small projects.", "correct": false }
+    ]
+  },
+  {
+    "text": "In the cloud, what happens to \"Variable Expense\" when you stop using a resource?",
+    "info": "ข้อ B ถูกต้อง นี่คือจุดเด่นของ Cloud คือถ้าปิดเครื่องหรือลบทรัพยากรทิ้ง ค่าใช้จ่ายส่วนนั้นก็จะหยุดทันที",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "You still have to pay for it.", "correct": false },
+      { "text": "The expense stops immediately.", "correct": true },
+      { "text": "The price increases.", "correct": false },
+      { "text": "You get a refund for the past year.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is a capability of the People Perspective in AWS CAF?",
+    "info": "ข้อ B ถูกต้อง การฝึกอบรมและการจัดสรรบุคลากรเป็นส่วนสำคัญของ People Perspective",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Data protection.", "correct": false },
+      { "text": "Training and staffing.", "correct": true },
+      { "text": "Compute provisioning.", "correct": false },
+      { "text": "Service monitoring.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is a key goal of cloud adoption?",
+    "info": "ข้อ C ถูกต้อง เป้าหมายสูงสุดของการใช้ Cloud คือการปรับเปลี่ยนวิธีการทำงานเพื่อสร้างนวัตกรรมใหม่ๆ ให้ธุรกิจ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To increase complexity in IT management.", "correct": false },
+      { "text": "To reduce the need for security.", "correct": false },
+      { "text": "To transform the way you work and enable business innovation.", "correct": true },
+      { "text": "To move all physical hardware into the office.", "correct": false }
+    ]
+  },
+  {
+    "text": "According to the course, cloud adoption requires:",
+    "info": "ข้อ C ถูกต้อง การเปลี่ยนไปใช้ Cloud ให้สำเร็จต้องมีการวางแผนที่รอบคอบและได้รับความร่วมมือจากทั้งองค์กร",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Only the IT department's involvement.", "correct": false },
+      { "text": "A simple one-step process.", "correct": false },
+      { "text": "A thoughtful, deliberate strategy and alignment across the organization.", "correct": true },
+      { "text": "No planning at all.", "correct": false }
+    ]
+  }
+]
