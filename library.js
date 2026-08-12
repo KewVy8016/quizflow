@@ -66,8 +66,9 @@ async function discoverQuizFiles() {
     return existingFiles;
 }
 
-// แปลงโครงสร้าง quiz-list ให้เป็นรูปแบบที่มี subject เสมอ
-// รองรับทั้งรูปแบบเก่า (array ของ string) และรูปแบบใหม่ (array ของ { subject, files })
+// แปลงโครงสร้าง quiz-list ให้เป็นรูปแบบมาตรฐานที่มี semester เสมอ:
+//   [{ semester: 'ปี 1 เทอม 1', subjects: [{ subject, files }] }, ...]
+// รองรับทั้งรูปแบบใหม่ (มี semester), รูปแบบเก่า (มี subject เดิม) และรูปแบบ string array
 function normalizeQuizList(quizList) {
     if (!Array.isArray(quizList) || quizList.length === 0) {
         return [];
@@ -75,20 +76,45 @@ function normalizeQuizList(quizList) {
 
     const first = quizList[0];
 
-    // รูปแบบใหม่: [{ subject: 'OS', files: ['Operating System/xxx.json'] }, ...]
-    if (typeof first === 'object' && first !== null && 'subject' in first && Array.isArray(first.files)) {
-        return quizList;
+    // รูปแบบใหม่: [{ semester: 'ปี 1 เทอม 1', subjects: [{ subject, files }] }, ...]
+    if (typeof first === 'object' && first !== null && 'semester' in first && Array.isArray(first.subjects)) {
+        return quizList.map(sem => ({
+            semester: sem.semester,
+            subjects: (sem.subjects || []).map(sub => ({
+                subject: sub.subject || 'ทั่วไป',
+                files: Array.isArray(sub.files) ? sub.files : []
+            }))
+        }));
     }
 
-    // รูปแบบเดิม: ['Main Memory.json', 'Threads.json', ...]
+    // รูปแบบเดิม: [{ subject: 'OS', files: [...] }, ...] → ครอบด้วยภาคเรียนเดียว
+    if (typeof first === 'object' && first !== null && 'subject' in first && Array.isArray(first.files)) {
+        return [{
+            semester: 'ทุกภาคเรียน',
+            subjects: quizList.map(cat => ({
+                subject: cat.subject,
+                files: Array.isArray(cat.files) ? cat.files.map(f => (typeof f === 'string' ? f : f.file))
+            }))
+        }];
+    }
+
+    // รูปแบบเดิม: ['foo.json', 'bar.json', ...] → วิชา "ทั่วไป"
     if (typeof first === 'string') {
         return [{
-            subject: 'ทั่วไป',
-            files: quizList
+            semester: 'ทุกภาคเรียน',
+            subjects: [{ subject: 'ทั่วไป', files: quizList }]
         }];
     }
 
     return [];
+}
+
+// หา subject ทั้งหมดที่ซ้ำชื่อกันในภาคเรียนเดียวกัน (label path ซ้อน เช่น "Midterm/Stat")
+function findSubject(semester, subjectName) {
+    for (const sub of semester.subjects) {
+        if (sub.subject === subjectName) return sub;
+    }
+    return null;
 }
 
 // Load and display quiz library
@@ -97,11 +123,11 @@ async function loadQuizLibrary() {
     
     try {
         const rawQuizList = await discoverQuizFiles();
-        const categories = normalizeQuizList(rawQuizList);
+        const semesters = normalizeQuizList(rawQuizList);
         
         libraryContainer.innerHTML = '';
         
-        if (!categories || categories.length === 0) {
+        if (!semesters || semesters.length === 0) {
             libraryContainer.innerHTML = `
                 <div class="loading">
                     <p>❌ ไม่พบไฟล์ quiz</p>
@@ -116,43 +142,51 @@ async function loadQuizLibrary() {
             return;
         }
 
+        // wrapper สำหรับ semester selector
+        const semesterWrapper = document.createElement('div');
+        semesterWrapper.id = 'semester-selector-wrapper';
+
         // wrapper สำหรับ subject selector
-        const selectorWrapper = document.createElement('div');
-        selectorWrapper.id = 'subject-selector-wrapper';
+        const subjectWrapper = document.createElement('div');
+        subjectWrapper.id = 'subject-selector-wrapper';
 
         // wrapper สำหรับ quiz grid section
         const sectionWrapper = document.createElement('div');
         sectionWrapper.id = 'subject-section-wrapper';
 
-        libraryContainer.appendChild(selectorWrapper);
+        libraryContainer.appendChild(semesterWrapper);
+        libraryContainer.appendChild(subjectWrapper);
         libraryContainer.appendChild(sectionWrapper);
 
-        // สร้างปุ่มเลือก subject
-        const subjectSelector = document.createElement('div');
-        subjectSelector.className = 'subject-selector';
+        // restore semester ที่เคยเลือกไว้ (ถ้ามี)
+        const savedSemester = sessionStorage.getItem('quiz_last_semester');
+        let currentSemester = semesters.find(s => s.semester === savedSemester)
+            ? savedSemester
+            : semesters[0].semester;
 
-        // restore subject ที่เคยเลือกไว้ (ถ้ามี)
-        const savedSubject = sessionStorage.getItem('quiz_last_subject');
-        const initialSubject = categories.find(c => c.subject === savedSubject)
-            ? savedSubject
-            : categories[0].subject;
+        // ── แถวที่ 1: ปุ่มเลือกภาคเรียน ──
+        const semesterSelector = document.createElement('div');
+        semesterSelector.className = 'semester-selector';
 
-        categories.forEach((cat) => {
+        semesters.forEach((sem) => {
             const btn = document.createElement('button');
-            btn.className = 'subject-chip';
-            if (cat.subject === initialSubject) btn.classList.add('active');
-            btn.textContent = cat.subject;
+            btn.className = 'semester-chip';
+            if (sem.semester === currentSemester) btn.classList.add('active');
+            btn.textContent = sem.semester;
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.subject-chip').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.semester-chip').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                sessionStorage.setItem('quiz_last_subject', cat.subject);
-                renderSubjectSection(sectionWrapper, categories, cat.subject);
+                currentSemester = sem.semester;
+                sessionStorage.setItem('quiz_last_semester', currentSemester);
+                renderSubjects(subjectWrapper, sectionWrapper, semesters, currentSemester);
             });
-            subjectSelector.appendChild(btn);
+            semesterSelector.appendChild(btn);
         });
 
-        selectorWrapper.appendChild(subjectSelector);
-        renderSubjectSection(sectionWrapper, categories, initialSubject);
+        semesterWrapper.appendChild(semesterSelector);
+
+        // ── แถวที่ 2 + เนื้อหาของภาคเรียนปัจจุบัน ──
+        renderSubjects(subjectWrapper, sectionWrapper, semesters, currentSemester);
     } catch (error) {
         console.error('Error loading quiz library:', error);
         libraryContainer.innerHTML = `
@@ -169,23 +203,65 @@ async function loadQuizLibrary() {
     }
 }
 
+// render ปุ่มเลือกวิชาของภาคเรียน + เนื้อหาวิชาที่เลือก
+function renderSubjects(subjectWrapper, sectionWrapper, semesters, semesterName) {
+    const semester = semesters.find(s => s.semester === semesterName);
+    subjectWrapper.innerHTML = '';
+
+    if (!semester || semester.subjects.length === 0) {
+        sectionWrapper.innerHTML = `
+            <div class="loading">
+                <p>ไม่มี quiz ในภาคเรียนนี้</p>
+            </div>
+        `;
+        return;
+    }
+
+    // restore subject ที่เคยเลือกไว้ (ถ้ายังอยู่ในภาคเรียนนี้)
+    const savedSubject = sessionStorage.getItem('quiz_last_subject');
+    let currentSubject = findSubject(semester, savedSubject)
+        ? savedSubject
+        : semester.subjects[0].subject;
+
+    const subjectSelector = document.createElement('div');
+    subjectSelector.className = 'subject-selector';
+
+    semester.subjects.forEach((sub) => {
+        const btn = document.createElement('button');
+        btn.className = 'subject-chip';
+        if (sub.subject === currentSubject) btn.classList.add('active');
+        btn.textContent = sub.subject;
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.subject-chip').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentSubject = sub.subject;
+            sessionStorage.setItem('quiz_last_subject', currentSubject);
+            renderSubjectSection(sectionWrapper, semester, sub.subject);
+        });
+        subjectSelector.appendChild(btn);
+    });
+
+    subjectWrapper.appendChild(subjectSelector);
+    renderSubjectSection(sectionWrapper, semester, currentSubject);
+}
+
 // render quiz เฉพาะของ subject ที่เลือก (lazy per subject)
-async function renderSubjectSection(sectionWrapper, categories, subjectName) {
+async function renderSubjectSection(sectionWrapper, semester, subjectName) {
     sectionWrapper.innerHTML = '';
 
-    const category = categories.find(c => c.subject === subjectName);
-    if (!category) return;
+    const subject = findSubject(semester, subjectName);
+    if (!subject) return;
 
     const title = document.createElement('h2');
     title.className = 'subject-title';
-    title.textContent = category.subject;
+    title.textContent = `${semester.semester} › ${subject.subject}`;
     sectionWrapper.appendChild(title);
 
     const grid = document.createElement('div');
     grid.className = 'quiz-library';
 
-    for (const quizFile of category.files) {
-        const card = await createQuizCard(quizFile, category.subject);
+    for (const quizFile of subject.files) {
+        const card = await createQuizCard(quizFile, subject.subject);
         grid.appendChild(card);
     }
 
@@ -194,7 +270,7 @@ async function renderSubjectSection(sectionWrapper, categories, subjectName) {
 
 async function createQuizCard(quizFile, subject) {
     console.log('Creating card for quiz file:', quizFile);
-    // รองรับ path ที่มี subfolder เช่น "Ebusiness/EB04.json"
+    // รองรับ path ที่มี subfolder เช่น "ปี 1 เทอม 1/Ebusiness/EB04.json"
     const fileName = quizFile.split('/').pop().split('\\').pop();
     const topicName = fileName.replace('.json', '').replace(/_/g, ' ');
     

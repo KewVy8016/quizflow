@@ -40,6 +40,60 @@ header h1 {
     gap: 16px;
 }
 
+/* ── Semester selector (ภาคเรียน) ─────────── */
+.semester-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 14px;
+    padding: 10px 16px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.semester-chip {
+    position: relative;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px 10px 38px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: #f3f4f6;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.semester-chip::before {
+    content: '📚';
+    position: absolute;
+    left: 11px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.semester-chip:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.semester-chip.active {
+    background: linear-gradient(135deg, #ffd166, #ff9f43);
+    color: #3d2b00;
+    box-shadow: 0 2px 10px rgba(255, 159, 67, 0.45);
+}
+
+.semester-chip.active::before {
+    content: '📚';
+}
+
 /* ── Subject selector (folder-like chips) ───── */
 .subject-selector {
     display: flex;
