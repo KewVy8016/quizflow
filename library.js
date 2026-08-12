@@ -117,6 +117,27 @@ function findSubject(semester, subjectName) {
     return null;
 }
 
+// เก็บสถานะปัจจุบันของหน้า library เพื่อ re-render เมื่อกลับมาจากหน้าสอบ (bfcache)
+let libraryState = {
+    semesters: [],
+    semesterName: '',
+    subjectName: '',
+    subjectWrapper: null,
+    sectionWrapper: null
+};
+
+function refreshLibraryState() {
+    if (!libraryState.sectionWrapper || libraryState.semesters.length === 0) return;
+    const semester = libraryState.semesters.find(s => s.semester === libraryState.semesterName);
+    if (!semester) return;
+
+    let subjectName = findSubject(semester, libraryState.subjectName)
+        ? libraryState.subjectName
+        : semester.subjects[0].subject;
+
+    renderSubjectSection(libraryState.sectionWrapper, semester, subjectName);
+}
+
 // Load and display quiz library
 async function loadQuizLibrary() {
     const libraryContainer = document.getElementById('quiz-library');
@@ -158,11 +179,16 @@ async function loadQuizLibrary() {
         libraryContainer.appendChild(subjectWrapper);
         libraryContainer.appendChild(sectionWrapper);
 
+        libraryState.semesters = semesters;
+        libraryState.subjectWrapper = subjectWrapper;
+        libraryState.sectionWrapper = sectionWrapper;
+
         // restore semester ที่เคยเลือกไว้ (ถ้ามี)
         const savedSemester = sessionStorage.getItem('quiz_last_semester');
         let currentSemester = semesters.find(s => s.semester === savedSemester)
             ? savedSemester
             : semesters[0].semester;
+        libraryState.semesterName = currentSemester;
 
         // ── แถวที่ 1: ปุ่มเลือกภาคเรียน ──
         const semesterSelector = document.createElement('div');
@@ -177,6 +203,7 @@ async function loadQuizLibrary() {
                 document.querySelectorAll('.semester-chip').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 currentSemester = sem.semester;
+                libraryState.semesterName = currentSemester;
                 sessionStorage.setItem('quiz_last_semester', currentSemester);
                 renderSubjects(subjectWrapper, sectionWrapper, semesters, currentSemester);
             });
@@ -222,6 +249,8 @@ function renderSubjects(subjectWrapper, sectionWrapper, semesters, semesterName)
     let currentSubject = findSubject(semester, savedSubject)
         ? savedSubject
         : semester.subjects[0].subject;
+    libraryState.semesterName = semesterName;
+    libraryState.subjectName = currentSubject;
 
     const subjectSelector = document.createElement('div');
     subjectSelector.className = 'subject-selector';
@@ -235,6 +264,7 @@ function renderSubjects(subjectWrapper, sectionWrapper, semesters, semesterName)
             document.querySelectorAll('.subject-chip').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentSubject = sub.subject;
+            libraryState.subjectName = currentSubject;
             sessionStorage.setItem('quiz_last_subject', currentSubject);
             renderSubjectSection(sectionWrapper, semester, sub.subject);
         });
@@ -308,3 +338,13 @@ async function createQuizCard(quizFile, subject) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', loadQuizLibrary);
+
+// เมื่อกลับมาจากหน้าสอบ (history back / bfcache) ให้ re-render การ์ดเพื่ออัปเดต progress
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        refreshLibraryState();
+    }
+});
+
+// เมื่อสลับกลับมาที่แท็บนี้ ให้อัปเดต progress ใหม่จาก localStorage
+window.addEventListener('focus', refreshLibraryState);
