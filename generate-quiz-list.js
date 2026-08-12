@@ -47,14 +47,21 @@ function collectFiles(node, base = '') {
 
 // กลุ่มไฟล์ตาม "โฟลเดอร์ที่อยู่" (relative กับโฟลเดอร์ภาคเรียน)
 // ตัวอย่าง: Midterm/Stat/a.json → subject "Midterm/Stat"
-function groupByFolder(node, base = '') {
+// fileBase = path prefix ที่รวมภาคเรียน (ใช้สำหรับ fetch), label = ชื่อที่แสดง (ไม่รวมภาคเรียน)
+function groupByFolder(node, fileBase, label) {
     const groups = [];
-    const selfFiles = node.files.map(f => (base ? `${base}/${f}` : f));
-    if (selfFiles.length > 0) {
-        groups.push({ subject: base || node.name, files: selfFiles });
+    if (node.files.length > 0) {
+        groups.push({
+            subject: label || node.name,
+            files: node.files.map(f => (fileBase ? `${fileBase}/${f}` : f))
+        });
     }
     for (const child of node.children) {
-        groups.push(...groupByFolder(child, base ? `${base}/${child.name}` : child.name));
+        groups.push(...groupByFolder(
+            child,
+            fileBase ? `${fileBase}/${child.name}` : child.name,
+            label ? `${label}/${child.name}` : child.name
+        ));
     }
     return groups;
 }
@@ -64,7 +71,9 @@ try {
     const semesters = [];
 
     for (const semesterNode of root.children) {
-        const subjects = groupByFolder(semesterNode);
+        // ใช้โฟลเดอร์ภาคเรียนเป็น base path เพื่อให้ quiz.js fetch ได้ถูกต้อง
+        // เช่น "ปี 1 เทอม 1/Operating System/xxx.json"
+        const subjects = groupByFolder(semesterNode, semesterNode.name, '');
         if (subjects.length > 0) {
             semesters.push({ semester: semesterNode.name, subjects });
         }

@@ -5,27 +5,27 @@
       {
         "subject": "Operating System",
         "files": [
-          "Operating System/Deadloack Ch8 ปรับปรุง.json",
-          "Operating System/Deadlock_Ch8_English.json",
-          "Operating System/MainMemory Ch9 ปรับปรุง.json",
-          "Operating System/MainMemory_Ch9_English.json",
-          "Operating System/Main Memory Management_ OS Concepts.json",
-          "Operating System/Resource Deadlocks_ Allocation, Avoidance, and Recovery.json",
-          "Operating System/Thead Ch4 ปรับปรุง.json",
-          "Operating System/Thead_Ch4_English.json",
-          "Operating System/Threads and Concurrency in Operating Systems.json"
+          "ปี 1 เทอม 1/Operating System/Deadloack Ch8 ปรับปรุง.json",
+          "ปี 1 เทอม 1/Operating System/Deadlock_Ch8_English.json",
+          "ปี 1 เทอม 1/Operating System/MainMemory Ch9 ปรับปรุง.json",
+          "ปี 1 เทอม 1/Operating System/MainMemory_Ch9_English.json",
+          "ปี 1 เทอม 1/Operating System/Main Memory Management_ OS Concepts.json",
+          "ปี 1 เทอม 1/Operating System/Resource Deadlocks_ Allocation, Avoidance, and Recovery.json",
+          "ปี 1 เทอม 1/Operating System/Thead Ch4 ปรับปรุง.json",
+          "ปี 1 เทอม 1/Operating System/Thead_Ch4_English.json",
+          "ปี 1 เทอม 1/Operating System/Threads and Concurrency in Operating Systems.json"
         ]
       },
       {
         "subject": "Stat",
         "files": [
-          "Stat/Correlation Ch5.json",
-          "Stat/linear regression Ch6.json",
-          "Stat/Logistic Regression Ch7.json",
-          "Stat/Model Evaluation Ch7.json",
-          "Stat/One Way ANOVA ch4.json",
-          "Stat/Predictive Analytics ch5.json",
-          "Stat/Time Series Analysis Ch8.json"
+          "ปี 1 เทอม 1/Stat/Correlation Ch5.json",
+          "ปี 1 เทอม 1/Stat/linear regression Ch6.json",
+          "ปี 1 เทอม 1/Stat/Logistic Regression Ch7.json",
+          "ปี 1 เทอม 1/Stat/Model Evaluation Ch7.json",
+          "ปี 1 เทอม 1/Stat/One Way ANOVA ch4.json",
+          "ปี 1 เทอม 1/Stat/Predictive Analytics ch5.json",
+          "ปี 1 เทอม 1/Stat/Time Series Analysis Ch8.json"
         ]
       }
     ]
@@ -36,18 +36,18 @@
       {
         "subject": "Ebusiness",
         "files": [
-          "Ebusiness/EB04 ปรับปรุง.json",
-          "Ebusiness/EB05 ปรับปรุง.json",
-          "Ebusiness/EB06 ปรับปรุง.json",
-          "Ebusiness/EB07 ปรับปรุง.json",
-          "Ebusiness/EB08 ปรับปรุง.json",
-          "Ebusiness/EB09 ปรับปรุง.json",
-          "Ebusiness/EbusinessEB04.json",
-          "Ebusiness/EbusinessEB05.json",
-          "Ebusiness/EbusinessEB06.json",
-          "Ebusiness/EbusinessEB07.json",
-          "Ebusiness/EbusinessEB08.json",
-          "Ebusiness/EbusinessEB09.json"
+          "ปี 1 เทอม 2/Ebusiness/EB04 ปรับปรุง.json",
+          "ปี 1 เทอม 2/Ebusiness/EB05 ปรับปรุง.json",
+          "ปี 1 เทอม 2/Ebusiness/EB06 ปรับปรุง.json",
+          "ปี 1 เทอม 2/Ebusiness/EB07 ปรับปรุง.json",
+          "ปี 1 เทอม 2/Ebusiness/EB08 ปรับปรุง.json",
+          "ปี 1 เทอม 2/Ebusiness/EB09 ปรับปรุง.json",
+          "ปี 1 เทอม 2/Ebusiness/EbusinessEB04.json",
+          "ปี 1 เทอม 2/Ebusiness/EbusinessEB05.json",
+          "ปี 1 เทอม 2/Ebusiness/EbusinessEB06.json",
+          "ปี 1 เทอม 2/Ebusiness/EbusinessEB07.json",
+          "ปี 1 เทอม 2/Ebusiness/EbusinessEB08.json",
+          "ปี 1 เทอม 2/Ebusiness/EbusinessEB09.json"
         ]
       }
     ]
