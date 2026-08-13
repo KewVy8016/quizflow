@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Which AWS data transfer scenario is typically free of charge?",
+    "info": "โดยทั่วไปแล้ว AWS ไม่คิดค่าบริการสำหรับการนำข้อมูลเข้า (Inbound data transfer) จากภายนอกเข้ามายังระบบ แต่การส่งข้อมูลออก (Outbound) ไปยังอินเทอร์เน็ตหรือข้าม Region จะมีค่าบริการ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Outbound data transfer from Amazon S3 to the Internet.", "correct": false },
+      { "text": "Data transfer between two EC2 instances in different AWS Regions.", "correct": false },
+      { "text": "Inbound data transfer from the Internet to an Amazon EC2 instance.", "correct": true },
+      { "text": "Outbound data transfer from an Amazon CloudFront distribution to the Internet.", "correct": false }
+    ]
+  },
+  {
+    "text": "A company wants to run a predictable database workload 24/7 for the next three years. Which EC2 pricing model provides the highest percentage of cost savings?",
+    "info": "สำหรับการจ่ายแบบสำรองการใช้งาน (Reserved Instances) รูปแบบ All Upfront (AURI) หรือชำระเงินล่วงหน้าทั้งหมด จะมอบส่วนลดสูงสุดเมื่อเทียบกับ Partial Upfront (PURI) และ No Upfront (NURI)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "On-Demand Instances", "correct": false },
+      { "text": "Spot Instances", "correct": false },
+      { "text": "All Upfront Reserved Instances (AURI)", "correct": true },
+      { "text": "No Upfront Reserved Instances (NURI)", "correct": false }
+    ]
+  },
+  {
+    "text": "How does AWS pricing change as a customer's usage volume increases for services like Amazon S3?",
+    "info": "AWS มีหลักการ Pay less by using more โดยบริการจัดเก็บข้อมูลอย่าง Amazon S3 มีโครงสร้างราคาแบบ Tiered Pricing ทำให้ยิ่งจัดเก็บข้อมูลปริมาณมาก ค่าบริการต่อ GB ก็จะยิ่งถูกลง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The cost per GB increases due to resource allocation limits.", "correct": false },
+      { "text": "The cost per GB decreases through tiered volume discounts.", "correct": true },
+      { "text": "The cost per GB remains fixed regardless of usage.", "correct": false },
+      { "text": "The customer must switch to an Enterprise Agreement to get discounts.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service is offered at no additional cost, although you pay for the AWS resources provisioned by it?",
+    "info": "AWS CloudFormation, Elastic Beanstalk และ Auto Scaling เป็นเครื่องมือฟรีที่ไม่มีค่าบริการจัดการตัวมันเอง แต่ผู้ใช้งานต้องชำระค่าบริการทรัพยากร (เช่น EC2, EBS) ที่ถูกสร้างขึ้นมาใช้งาน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EC2", "correct": false },
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "AWS CloudFormation", "correct": true },
+      { "text": "Amazon EBS", "correct": false }
+    ]
+  },
+  {
+    "text": "How long does the AWS Free Tier standard 12-month offer remain active for new AWS accounts?",
+    "info": "AWS Free Tier สิทธิ์การใช้งานฟรีสำหรับลูกค้าใหม่ในระยะเวลา 12 เดือนแรก จะเริ่มนับตั้งแต่วันที่สมัครเปิดบัญชี AWS",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "12 months starting from the date the customer signs up for AWS.", "correct": true },
+      { "text": "12 months starting from the date the first paid resource is created.", "correct": false },
+      { "text": "Indefinitely, as long as usage remains below the monthly threshold.", "correct": false },
+      { "text": "Until the account reaches a total spend of $100.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which factor is considered one of the three fundamental cost drivers for most AWS services?",
+    "info": "ตัวขับเคลื่อนต้นทุนหลัก 3 ประการ (3 Fundamental drivers of cost) ของ AWS ประกอบไปด้วย Compute (ชั่วโมง/วินาทีของการประมวลผล), Storage (ปริมาณพื้นที่จัดเก็บ) และ Data Transfer Out (การส่งข้อมูลออก)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Number of IAM Users created", "correct": false },
+      { "text": "Inbound Data Transfer volume", "correct": false },
+      { "text": "Compute duration and instance type", "correct": true },
+      { "text": "Number of Service Control Policies (SCPs) applied", "correct": false }
+    ]
+  },
+  {
+    "text": "Which option represents a Hard Benefit when calculating the Total Cost of Ownership (TCO) for migrating to AWS?",
+    "info": "Hard Benefits คือผลประโยชน์ทางเงินที่วัดผลได้ชัดเจนโดยตรง เช่น การลดรายจ่ายลงทุนซื้ออุปกรณ์ฮาร์ดแวร์/ซอฟต์แวร์ (CapEx) และการลดค่าใช้จ่ายด้าน Compute/Storage ในขณะที่ Productivity และ Agility เป็น Soft Benefits",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Increased developer productivity", "correct": false },
+      { "text": "Reduction in physical server and storage hardware purchases (CapEx)", "correct": true },
+      { "text": "Improved customer satisfaction scores", "correct": false },
+      { "text": "Faster time-to-market for new features", "correct": false }
+    ]
+  },
+  {
+    "text": "Which cost element is an indirect facility cost included in an on-premises TCO calculation, but handled directly by AWS in the cloud?",
+    "info": "ในระบบ On-premises ผู้ใช้ต้องแบกรับค่า Facilities เช่น ค่าพื้นที่ (Space), ค่าไฟฟ้า (Power) และระบบความเย็น (Cooling) ของศูนย์ข้อมูล ซึ่งเมื่อย้ายมาใช้ AWS ค่าใช้จ่ายส่วนนี้จะถูกบริหารจัดการและรวมอยู่ในค่าบริการ cloud อยู่แล้ว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "OS licensing fees", "correct": false },
+      { "text": "Database administration labor", "correct": false },
+      { "text": "Data center power and cooling", "correct": true },
+      { "text": "Application software development", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of using the AWS Pricing Calculator?",
+    "info": "AWS Pricing Calculator เป็นเครื่องมือประเมินค่าใช้จ่ายรายเดือน ช่วยให้ผู้ใช้สามารถวางแผน จำลองสถาปัตยกรรม (Model solutions) และคำนวณงบประมาณก่อนที่จะเริ่มสร้างระบบจริงได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To automatically generate and pay monthly AWS invoices.", "correct": false },
+      { "text": "To estimate monthly costs and model solutions before building them.", "correct": true },
+      { "text": "To track real-time EC2 CPU utilization across accounts.", "correct": false },
+      { "text": "To audit security vulnerabilities in a VPC deployment.", "correct": false }
+    ]
+  },
+  {
+    "text": "Switching from CapEx (Capital Expenditure) to OpEx (Operational Expenditure) by migrating to AWS primarily provides which business advantage?",
+    "info": "การย้ายมา Cloud ช่วยเปลี่ยนจาก CapEx (การลงทุนก้อนใหญ่ล่วงหน้าซื้อฮาร์ดแวร์) ไปเป็น OpEx ซึ่งเป็นการจ่ายตามการใช้งานจริง (Pay-as-you-go) ทำให้ธุรกิจมีความยืดหยุ่นทางการเงินมากขึ้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Eliminates the need for any IT staff.", "correct": false },
+      { "text": "Replaces variable pay-as-you-go expenses with large upfront investments.", "correct": false },
+      { "text": "Replaces large upfront infrastructure investments with low variable pay-as-you-go costs.", "correct": true },
+      { "text": "Guarantees that monthly costs will never fluctuate.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is considered an On-Premises IT Labor Cost when evaluating TCO?",
+    "info": "ค่าแรงด้านไอที (IT Labor Costs) ของระบบ On-premises รวมถึงเวลาและค่าใช้จ่ายของพนักงานในการดูแลรักษาเครื่อง พัทช์ซอฟต์แวร์ และบริหารจัดการฮาร์ดแวร์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Support Plan subscription charges", "correct": false },
+      { "text": "Time spent manually patching and maintaining physical server hardware", "correct": true },
+      { "text": "AWS Cost Explorer API usage fees", "correct": false },
+      { "text": "Bandwidth charges from an Internet Service Provider (ISP)", "correct": false }
+    ]
+  },
+  {
+    "text": "When using the AWS Pricing Calculator, what information can you obtain regarding your estimate?",
+    "info": "รายงานการประเมินราคาจาก AWS Pricing Calculator จะสรุปรายละเอียดงบประมาณออกเป็น ค่าใช้จ่ายรวม 12 เดือนแรก (First 12 months total), ค่าใช้จ่ายล่วงหน้า (Total upfront) และค่าใช้จ่ายรายเดือน (Total monthly)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A break down of first 12 months total, total upfront, and total monthly costs.", "correct": true },
+      { "text": "A real-time audit of your current running EC2 instances.", "correct": false },
+      { "text": "Automatic discount approvals from the AWS Finance team.", "correct": false },
+      { "text": "A list of all IAM users with administrative permissions.", "correct": false }
+    ]
+  },
+  {
+    "text": "In AWS Organizations, which feature enables centralized billing management across multiple AWS accounts?",
+    "info": "Consolidated Billing เป็นฟีเจอร์ของ AWS Organizations ที่รวบรวมค่าใช้จ่ายของทุก บัญชี AWS ภายใต้องค์กรมาไว้ที่บัญชีหลัก (Management Account) เพื่อการชำระเงินและดูใบแจ้งหนี้จากที่เดียว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Service Control Policies (SCPs)", "correct": false },
+      { "text": "Consolidated Billing", "correct": true },
+      { "text": "AWS Budgets", "correct": false },
+      { "text": "Cost Explorer", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary function of a Service Control Policy (SCP) in AWS Organizations?",
+    "info": "SCPs ใช้กำหนดขอบเขตสิทธิ์การใช้งานสูงสุด (Maximum permissions) ของบัญชี AWS ต่างๆ หรือ Organizational Units (OUs) ในองค์กร เพื่อควบคุมความปลอดภัยในระดับโครงสร้าง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To assign monthly spending limits and send email alerts.", "correct": false },
+      { "text": "To define maximum available permissions for accounts within an Organization or OU.", "correct": true },
+      { "text": "To automatically deploy EC2 instances across child accounts.", "correct": false },
+      { "text": "To encrypt data stored in S3 buckets across all member accounts.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following represents the top level of the hierarchy in AWS Organizations?",
+    "info": "โครงสร้างลำดับขั้นของ AWS Organizations มีจุดเริ่มต้นสูงสุดอยู่ที่ Root ซึ่งเป็นจุดศูนย์รวมของ OUs และบัญชีลูกทั้งหมด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Organizational Unit (OU)", "correct": false },
+      { "text": "Root", "correct": true },
+      { "text": "Management Account", "correct": false },
+      { "text": "Service Control Policy (SCP)", "correct": false }
+    ]
+  },
+  {
+    "text": "What financial advantage does Consolidated Billing offer when multiple accounts use Amazon S3?",
+    "info": "การรวมบิล (Consolidated Billing) จะนำปริมาณการใช้งาน (เช่น ปริมาณ GB ของ S3) จากทุกบัญชีมารวมกัน ทำให้ก้าวเข้าสู่ Tier ราคาที่ถูกลงได้เร็วขึ้นตามหลัก Volume-based discount",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "S3 bucket creation fees are waived across all accounts.", "correct": false },
+      { "text": "S3 storage usage is aggregated across all accounts to reach lower pricing tiers faster.", "correct": true },
+      { "text": "Outbound data transfer for S3 becomes entirely free.", "correct": false },
+      { "text": "AWS automatically deletes unused S3 objects to save costs.", "correct": false }
+    ]
+  },
+  {
+    "text": "How are Organizational Units (OUs) utilized within AWS Organizations?",
+    "info": "OU ใช้จัดกลุ่มบัญชี AWS ในองค์กรอย่างเป็นหมวดหมู่ (เช่น ตามแผนก Dev, Prod) เพื่อให้ง่ายต่อการบังคับใช้นโยบายควบคุมอย่าง SCPs ในระดับกลุ่ม",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To partition billing charges by individual credit cards.", "correct": false },
+      { "text": "To group AWS accounts logically to apply common management policies and SCPs.", "correct": true },
+      { "text": "To connect VPCs across different AWS Regions automatically.", "correct": false },
+      { "text": "To host root user credentials for security backup.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which interface can NOT be used to configure or manage AWS Organizations?",
+    "info": "AWS Organizations สามารถเข้าถึงและจัดการได้ผ่าน Console, CLI, SDKs และ HTTPS Query APIs ไม่ใช่เครื่องมือคำนวณราคาอย่าง AWS Pricing Calculator",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Management Console", "correct": false },
+      { "text": "AWS Command Line Interface (AWS CLI)", "correct": false },
+      { "text": "AWS Software Development Kits (SDKs)", "correct": false },
+      { "text": "AWS Cost Calculator Console", "correct": true }
+    ]
+  },
+  {
+    "text": "Which tool in the AWS Billing and Cost Management console provides historical cost visual charts and future cost forecasting?",
+    "info": "AWS Cost Explorer มีแดชบอร์ดช่วยวิเคราะห์ Visualizing กราฟแนวโน้มค่าใช้จ่ายในย้อนหลัง และมีฟีเจอร์พยากรณ์ค่าใช้จ่ายล่วงหน้า (Forecast)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Cost & Usage Report", "correct": false },
+      { "text": "AWS Budgets", "correct": false },
+      { "text": "AWS Cost Explorer", "correct": true },
+      { "text": "AWS Bills page", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the main difference between AWS Budgets and AWS Cost Explorer?",
+    "info": "AWS Budgets ทำหน้าที่แจ้งเตือน (Alerts) เมื่อการใช้งานหรือค่าใช้จ่ายเกินงบที่ตั้งไว้ ส่วน Cost Explorer เน้นการแสดงภาพวิเคราะห์ข้อมูลในอดีตและการทำแนวโน้มพยากรณ์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Budgets sets custom alerts when costs or usage exceed defined thresholds, while Cost Explorer visualizes and forecasts costs.", "correct": true },
+      { "text": "AWS Budgets is used for payment processing, while Cost Explorer is used for downloading invoices.", "correct": false },
+      { "text": "AWS Budgets only tracks EC2 instances, while Cost Explorer tracks all services.", "correct": false },
+      { "text": "AWS Budgets is a paid feature, whereas AWS Cost Explorer is completely free for API access.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which tool provides the most granular and comprehensive billing dataset, delivering CSV files into an Amazon S3 bucket?",
+    "info": "AWS Cost and Usage Report (CUR) เป็นเครื่องมือที่ให้ข้อมูลละเอียดที่สุดเกี่ยวกับค่าใช้จ่ายและหน่วยการใช้งาน โดยสามารถส่งข้อมูลเป็นไฟล์บันทึกไปยัง S3 Bucket เพื่อนำไปวิเคราะห์ต่อได้ (เช่น ใช้ร่วมกับ Athena)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Billing Dashboard", "correct": false },
+      { "text": "AWS Cost and Usage Report (CUR)", "correct": true },
+      { "text": "AWS Budgets", "correct": false },
+      { "text": "AWS Pricing Calculator", "correct": false }
+    ]
+  },
+  {
+    "text": "Where can an AWS Account Administrator view month-to-date spend breakdowns by specific services?",
+    "info": "หน้า Billing Dashboard จะมีส่วนแสดง Spend Summary และ Month-to-Date Spend by Service ให้ผู้ดูแลระบบดูภาพรวมค่าใช้จ่ายแยกตามบริการได้สะดวก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Trusted Advisor console", "correct": false },
+      { "text": "AWS Billing Dashboard", "correct": true },
+      { "text": "AWS IAM Console", "correct": false },
+      { "text": "AWS CloudTrail log files", "correct": false }
+    ]
+  },
+  {
+    "text": "What capability does AWS Budgets offer beyond tracking overall costs?",
+    "info": "AWS Budgets ไม่ได้ติดตามแค่ต้นทุนทางการเงิน ($) เท่านั้น แต่ยังสามารถตั้งค่าติดตามปริมาณการใช้งาน (Usage) และการใช้ประโยชน์จากสัญญาซื้อล่วงหน้า (RI Utilization & Coverage) ได้อีกด้วย",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It can automatically terminate resources when budget limit is reached.", "correct": false },
+      { "text": "It can track resource usage (such as EC2 hours or S3 GB) and Reserved Instance (RI) utilization.", "correct": true },
+      { "text": "It generates automatic tax exemption certificates.", "correct": false },
+      { "text": "It negotiates custom volume discounts with AWS Sales.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which report in AWS Cost Explorer helps evaluate if you are efficiently utilizing your purchased Reserved Instances?",
+    "info": "ภายใน Cost Explorer จะมีรายงาน RI Utilization (สัดส่วนการนำ RI มาใช้งานจริง) และ RI Coverage (สัดส่วนของ Workload ที่ได้รับการคุ้มครองด้วย RI) เพื่อประเมินความคุ้มค่า",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "RI Utilization and Coverage reports", "correct": true },
+      { "text": "AWS TCO Evaluation report", "correct": false },
+      { "text": "Monthly Invoice Breakdown", "correct": false },
+      { "text": "CloudTrail Audit logs", "correct": false }
+    ]
+  },
+  {
+    "text": "A developer is building a prototype on AWS and requires technical support during business hours via email. Which AWS Support Plan is the most cost-effective choice?",
+    "info": "Developer Support ออกแบบมาสำหรับการทดสอบและพัฒนาระดับเริ่มต้น มีการสนับสนุนทางเทคนิคผ่านระบบตั๋ว/อีเมลในเวลาทำการ (Business hours) ในราคาประหยัด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Basic Support", "correct": false },
+      { "text": "Developer Support", "correct": true },
+      { "text": "Business Support", "correct": false },
+      { "text": "Enterprise Support", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS Support Plan provides 24/7 access to technical support via phone, chat, and email with a response time of under 15 minutes for critical business system outages?",
+    "info": "Enterprise Support เสนอการการันตีการตอบกลับเคสระดับ Critical (ระบบวิกฤติล่ม) ภายใน 15 นาทีตลอด 24 ชั่วโมง 7 วัน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Basic Support", "correct": false },
+      { "text": "Developer Support", "correct": false },
+      { "text": "Business Support", "correct": false },
+      { "text": "Enterprise Support", "correct": true }
+    ]
+  },
+  {
+    "text": "What unique resource is assigned specifically to Enterprise Support Plan customers to provide dedicated technical guidance and advocacy?",
+    "info": "ผู้สมัคร Enterprise Support จะได้รับผู้ดูแลเฉพาะรายบุคคลคือ Technical Account Manager (TAM) ซึ่งจะคอยให้คำแนะนำ ออกแบบ และดูแลภาพรวมทางเทคนิคอย่างใกล้ชิด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Infrastructure Event Management (IEM) engineer on-demand", "correct": false },
+      { "text": "Technical Account Manager (TAM)", "correct": true },
+      { "text": "AWS Solutions Architect on a per-hour rate", "correct": false },
+      { "text": "Dedicated Billing Concierge team for all users", "correct": false }
+    ]
+  },
+  {
+    "text": "Which feature or service is accessible to ALL AWS customers, including those on the Basic Support Plan?",
+    "info": "แผน Basic Support (ฟรีสำหรับทุกบัญชี) ให้สิทธิ์เข้าถึง Resource Center, AWS Service Health Dashboard, เอกสารประกอบ (Docs/FAQs) และ Discussion Forums",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "24/7 technical support via phone", "correct": false },
+      { "text": "AWS Service Health Dashboard and Discussion Forums", "correct": true },
+      { "text": "Direct case creation for guidance on system architecture", "correct": false },
+      { "text": "A dedicated Technical Account Manager (TAM)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service automatically checks your AWS environment against best practices and provides optimization recommendations for Security, Performance, and Cost?",
+    "info": "AWS Trusted Advisor ทำหน้าที่ตรวจประเมินระบบตาม AWS Best Practices พร้อมแนะนำปรับปรุงข้อบกพร่องทั้ง 5 ด้าน เช่น ด้านความปลอดภัย ด้านประสิทธิภาพ และด้านการประหยัดค่าใช้จ่าย",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Trusted Advisor", "correct": true },
+      { "text": "AWS Systems Manager", "correct": false },
+      { "text": "AWS Inspector", "correct": false },
+      { "text": "AWS Cost Explorer", "correct": false }
+    ]
+  },
+  {
+    "text": "A company running production workloads requires 24/7 technical support access and a response time of less than 1 hour for urgent production system failures. What is the MINIMUM support plan required?",
+    "info": "Business Support เหมาะสำหรับผู้ที่รัน ระบบใช้งานจริง (Production workloads) รองรับการติดต่อ 24/7 ผ่านโทรศัพท์/แชท และมี SLA ในการตอบกลับเคสระดับ Urgent (Production system down) ภายใน 1 ชั่วโมง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Developer Support", "correct": false },
+      { "text": "Business Support", "correct": true },
+      { "text": "Enterprise Support", "correct": false },
+      { "text": "Premium Support", "correct": false }
+    ]
+  }
+]

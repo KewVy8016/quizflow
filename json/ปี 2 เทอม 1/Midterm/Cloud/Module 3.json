@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Which of the following best describes an AWS Region?",
+    "info": "AWS Region คือพื้นที่ทางภูมิศาสตร์ (geographical area) ซึ่งโดยทั่วไปจะประกอบด้วยอย่างน้อยสอง Availability Zones ขึ้นไป",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A single physical data center located in a specific country", "correct": false },
+      { "text": "A geographical area that typically consists of two or more Availability Zones", "correct": true },
+      { "text": "A global cache point used exclusively by Amazon CloudFront", "correct": false },
+      { "text": "A network server instance created inside a virtual private cloud", "correct": false }
+    ]
+  },
+  {
+    "text": "Who controls the data replication across different AWS Regions?",
+    "info": "การสำรองหรือคัดลอกข้อมูล (Data replication) ข้าม Region อยู่ภายใต้การควบคุมและตัดสินใจของผู้ใช้งานลูกค้าเอง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Account Managers", "correct": false },
+      { "text": "The customer (You)", "correct": true },
+      { "text": "Amazon CloudFront automatically", "correct": false },
+      { "text": "AWS Support Engineers", "correct": false }
+    ]
+  },
+  {
+    "text": "What does AWS use for communication between different Regions?",
+    "info": "การสื่อสารระหว่าง AWS Regions จะผ่านโครงสร้างพื้นฐานเครือข่ายหลักของ AWS เอง (AWS backbone network infrastructure)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Public Internet connections", "correct": false },
+      { "text": "Local ISP cables", "correct": false },
+      { "text": "AWS backbone network infrastructure", "correct": true },
+      { "text": "Regional edge caches", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is NOT listed as a factor when determining the right Region for your services?",
+    "info": "ปัจจัยในการเลือก Region ประกอบด้วย 4 อย่าง ได้แก่ กฎหมายการกำกับดูแลข้อมูล (Data governance), ความใกล้ชิดลูกค้าเพื่อลด Latency, บริการที่มีให้ใช้ใน Region นั้น และราคาซึ่งแตกต่างกันตาม Region",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data governance and legal requirements", "correct": false },
+      { "text": "Proximity to customers (latency)", "correct": false },
+      { "text": "The number of IAM users in your account", "correct": true },
+      { "text": "Costs (which vary by Region)", "correct": false }
+    ]
+  },
+  {
+    "text": "What is an AWS Availability Zone (AZ)?",
+    "info": "Availability Zone คือส่วนย่อยที่แยกออกจากกันอย่างสมบูรณ์ (fully isolated partition) ของโครงสร้างพื้นฐาน AWS ซึ่งประกอบด้วยศูนย์ข้อมูล (data centers) หลายแห่ง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A global network of Edge locations", "correct": false },
+      { "text": "A fully isolated partition of the AWS infrastructure consisting of discrete data centers", "correct": true },
+      { "text": "A software bundle used for managing AWS billing", "correct": false },
+      { "text": "A single rack of physical servers inside a shared facilities center", "correct": false }
+    ]
+  },
+  {
+    "text": "How are Availability Zones within the same Region interconnected?",
+    "info": "Availability Zones เชื่อมต่อกันด้วยเครือข่ายส่วนตัวที่มีความเร็วสูง (high-speed private networking)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Via public internet routers", "correct": false },
+      { "text": "By using high-speed private networking", "correct": true },
+      { "text": "Through satellite connections only", "correct": false },
+      { "text": "Through third-party VPN gateways", "correct": false }
+    ]
+  },
+  {
+    "text": "What does AWS recommend doing with data and resources to ensure resiliency?",
+    "info": "AWS แนะนำให้ทำการคัดลอกสำรองข้อมูลและทรัพยากรกระจายไปยังหลาย Availability Zones เพื่อสร้างความทนทานและความยืดหยุ่น (resiliency) ของระบบ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Store all resources in a single data center", "correct": false },
+      { "text": "Keep resources offline when not in use", "correct": false },
+      { "text": "Replicate data and resources across Availability Zones", "correct": true },
+      { "text": "Restrict access to a single Region only", "correct": false }
+    ]
+  },
+  {
+    "text": "Typically, how many physical servers are housed in a single AWS data center?",
+    "info": "ในศูนย์ข้อมูล (Data center) แต่ละแห่งของ AWS มักจะมีเซิร์ฟเวอร์กายภาพ (physical servers) อยู่ประมาณ 50,000 ถึง 80,000 เครื่อง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "1,000 to 5,000", "correct": false },
+      { "text": "10,000 to 20,000", "correct": false },
+      { "text": "50,000 to 80,000", "correct": true },
+      { "text": "Over 500,000", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is true regarding AWS data centers?",
+    "info": "Data center แต่ละแห่งจะมีระบบไฟฟ้า เครือข่าย และการเชื่อมต่อแบบสำรอง (redundant) และตั้งอยู่ในอาคารแยกต่างหาก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Multiple data centers always share the exact same power facility", "correct": false },
+      { "text": "Each data center has redundant power, networking, and connectivity, and is housed in a separate facility", "correct": true },
+      { "text": "Data processing only occurs in Edge locations, not data centers", "correct": false },
+      { "text": "AWS data centers are accessible to the general public for visits", "correct": false }
+    ]
+  },
+  {
+    "text": "What components make up the AWS Points of Presence global network?",
+    "info": "จุดให้บริการ (Points of Presence) ประกอบไปด้วย Edge locations และ Regional edge caches",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Regions and Availability Zones only", "correct": false },
+      { "text": "Edge locations and Regional edge caches", "correct": true },
+      { "text": "Virtual Private Clouds and Subnets", "correct": false },
+      { "text": "Compute nodes and Storage buckets", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the specific role of \"Regional edge caches\" in AWS Points of Presence?",
+    "info": "Regional edge caches ถูกใช้งานสำหรับแคชข้อมูลที่มีการเข้าถึงไม่บ่อยนัก (infrequent access content)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Storing master database tables", "correct": false },
+      { "text": "Caching content that is infrequently accessed", "correct": true },
+      { "text": "Managing Identity and Access Management policies", "correct": false },
+      { "text": "Hosting virtual desktop infrastructure", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS infrastructure feature is defined as \"dynamically adapting capacity\"?",
+    "info": "Elastic infrastructure คือโครงสร้างพื้นฐานที่มีความยืดหยุ่น โดยสามารถปรับเปลี่ยนขนาดความจุแบบพลวัต (dynamic adaptation of capacity) ตามการใช้งานจริง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Scalability", "correct": false },
+      { "text": "Elastic infrastructure", "correct": true },
+      { "text": "Fault-tolerance", "correct": false },
+      { "text": "High availability", "correct": false }
+    ]
+  },
+  {
+    "text": "How is \"Scalable infrastructure\" defined in the AWS Global Infrastructure features?",
+    "info": "Scalable infrastructure หมายถึงโครงสร้างพื้นฐานที่สามารถปรับตัวเพื่อรองรับการเติบโตของระบบได้ (adapts to accommodate growth)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Continues operating properly in the presence of a failure", "correct": false },
+      { "text": "High level of operational performance with no downtime", "correct": false },
+      { "text": "Adapts to accommodate growth", "correct": true },
+      { "text": "Caches content closer to users", "correct": false }
+    ]
+  },
+  {
+    "text": "An infrastructure that \"continues operating properly in the presence of a failure\" due to built-in redundancy is demonstrating which feature?",
+    "info": "Fault-tolerance (ความทนทานต่อความผิดพลาด) คือความสามารถในการทำงานได้อย่างถูกต้องต่อเนื่องแม้มียอดความเสียหายข้อผิดพลาดเกิดขึ้น ด้วยส่วนประกอบสำรอง (built-in redundancy)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Elasticity", "correct": false },
+      { "text": "Scalability", "correct": false },
+      { "text": "Fault-tolerance", "correct": true },
+      { "text": "Latency optimization", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is a characteristic of \"High availability\" in AWS infrastructure?",
+    "info": "High availability (ความพร้อมใช้งานสูง) โดดเด่นด้วยประสิทธิภาพการทำงานสูง ลดระยะเวลาระบบล่ม (minimized downtime) และไม่ต้องพึ่งพาการแทรกแซงจากมนุษย์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Requires manual human intervention to fix failures", "correct": false },
+      { "text": "High level of operational performance, minimized downtime, and no human intervention", "correct": true },
+      { "text": "Stores raw archive data for long-term governance", "correct": false },
+      { "text": "Provides lower regional pricing tiers", "correct": false }
+    ]
+  },
+  {
+    "text": "Which three service groups belong to AWS \"Foundation Services\"?",
+    "info": "บริการพื้นฐาน (Foundation Services) ของ AWS ประกอบด้วย Compute, Networking และ Storage",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Databases, Analytics, Mobile Services", "correct": false },
+      { "text": "Applications, Platform Services, Infrastructure", "correct": false },
+      { "text": "Compute, Networking, Storage", "correct": true },
+      { "text": "Security, Cost Management, Governance", "correct": false }
+    ]
+  },
+  {
+    "text": "According to the AWS architecture overview, where do Regions, Availability Zones, and Edge locations reside?",
+    "info": "Regions, Availability Zones และ Edge locations จัดอยู่ในชั้นของ Infrastructure (โครงสร้างพื้นฐาน)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Applications layer", "correct": false },
+      { "text": "Platform Services layer", "correct": false },
+      { "text": "Foundation Services layer", "correct": false },
+      { "text": "Infrastructure layer", "correct": true }
+    ]
+  },
+  {
+    "text": "Which of the following services is classified under the \"Storage\" service category?",
+    "info": "Amazon EFS (รวมถึง S3, EBS, และ S3 Glacier) จัดอยู่ในหมวดหมู่บริการ Storage",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EC2", "correct": false },
+      { "text": "Amazon Relational Database Service (Amazon RDS)", "correct": false },
+      { "text": "Amazon Elastic File System (Amazon EFS)", "correct": true },
+      { "text": "AWS Direct Connect", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is an AWS Compute service?",
+    "info": "AWS Lambda (รวมถึง EC2, ECS, ECR, EKS, Fargate, Elastic Beanstalk และ Auto Scaling) อยู่ในหมวดหมู่ Compute",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "AWS Lambda", "correct": true },
+      { "text": "AWS KMS", "correct": false },
+      { "text": "Amazon Route 53", "correct": false }
+    ]
+  },
+  {
+    "text": "Under which service category does \"Amazon DynamoDB\" belong?",
+    "info": "Amazon DynamoDB (รวมถึง RDS, Aurora, และ Redshift) จัดเป็นบริการในหมวดหมู่ Database",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Storage", "correct": false },
+      { "text": "Compute", "correct": false },
+      { "text": "Database", "correct": true },
+      { "text": "Analytics", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service belongs to the \"Networking and Content Delivery\" category?",
+    "info": "AWS Transit Gateway (รวมถึง VPC, ELB, CloudFront, Route 53, Direct Connect, VPN) อยู่ในหมวด Networking and Content Delivery",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Shield", "correct": false },
+      { "text": "AWS CloudTrail", "correct": false },
+      { "text": "AWS Transit Gateway", "correct": true },
+      { "text": "Amazon Cognito", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following services is listed under \"Security, Identity, and Compliance\"?",
+    "info": "AWS Artifact (รวมถึง IAM, Organizations, Cognito, KMS, Shield) อยู่ในหมวด Security, Identity, and Compliance",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Budgets", "correct": false },
+      { "text": "AWS Artifact", "correct": true },
+      { "text": "AWS Config", "correct": false },
+      { "text": "Amazon EKS", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is part of the \"Cost Management\" category?",
+    "info": "AWS Cost Explorer (รวมถึง AWS Cost and Usage Report และ AWS Budgets) จัดอยู่ในหมวด Cost Management",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Well-Architected Tool", "correct": false },
+      { "text": "AWS Trusted Advisor", "correct": false },
+      { "text": "AWS Cost Explorer", "correct": true },
+      { "text": "Amazon CloudWatch", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is classified under \"Management and Governance\"?",
+    "info": "AWS CloudTrail (พร้อมด้วย AWS Management Console, Config, CloudWatch, Auto Scaling, CLI, Trusted Advisor, Well-Architected Tool) จัดอยู่ในหมวด Management and Governance",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Direct Connect", "correct": false },
+      { "text": "AWS CloudTrail", "correct": true },
+      { "text": "Amazon Glacier", "correct": false },
+      { "text": "Amazon Aurora", "correct": false }
+    ]
+  },
+  {
+    "text": "In the AWS Management Console, under which category can you find AWS IAM?",
+    "info": "ใน AWS Console บริการ IAM จะปรากฏอยู่ใต้หมวดหมู่ Security, Identity, & Compliance",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Management & Governance", "correct": false },
+      { "text": "Platform Services", "correct": false },
+      { "text": "Security, Identity, & Compliance", "correct": true },
+      { "text": "Application Integration", "correct": false }
+    ]
+  },
+  {
+    "text": "In the AWS Management Console, under which category is Amazon VPC located?",
+    "info": "บริการ Amazon VPC จัดอยู่ในหมวดหมู่ Networking & Content Delivery",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Compute", "correct": false },
+      { "text": "Networking & Content Delivery", "correct": true },
+      { "text": "Database", "correct": false },
+      { "text": "Storage", "correct": false }
+    ]
+  },
+  {
+    "text": "At what level does a Subnet exist within the AWS Global Infrastructure?",
+    "info": "Subnet จะคงโตและดำรงตัวอยู่ในระดับของ Availability Zone (AZ level)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Global level", "correct": false },
+      { "text": "Region level", "correct": false },
+      { "text": "Availability Zone level", "correct": true },
+      { "text": "Edge location level", "correct": false }
+    ]
+  },
+  {
+    "text": "At what level does a Virtual Private Cloud (VPC) exist?",
+    "info": "VPC ครอบคลุมและตั้งอยู่ในระดับของ Region (Region level)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Availability Zone level", "correct": false },
+      { "text": "Region level", "correct": true },
+      { "text": "Edge location level", "correct": false },
+      { "text": "Global level", "correct": false }
+    ]
+  },
+  {
+    "text": "Which pair of AWS services are \"Global\" services rather than Regional services?",
+    "info": "IAM และ Amazon Route 53 เป็นบริการระดับ Global สากลทั่วโลก ส่วน EC2 และ Lambda เป็นบริการระดับ Regional",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Amazon EC2 and AWS Lambda", "correct": false },
+      { "text": "IAM and Amazon Route 53", "correct": true },
+      { "text": "Amazon VPC and Amazon S3", "correct": false },
+      { "text": "AWS CloudFormation and Amazon ECS", "correct": false }
+    ]
+  },
+  {
+    "text": "Which component of AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?",
+    "info": "Amazon CloudFront ใช้ AWS Edge Locations ในการส่งมอบข้อมูลและเนื้อหาไปยังผู้ใช้ด้วยความหน่วงต่ำสุด (low latency)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Regions", "correct": false },
+      { "text": "AWS edge locations", "correct": true },
+      { "text": "AWS Availability Zones", "correct": false },
+      { "text": "Amazon Virtual Private Cloud (Amazon VPC)", "correct": false }
+    ]
+  }
+]

@@ -1,0 +1,332 @@
+[
+  {
+    "text": "A company needs to run a short-term, batch processing workload that can tolerate interruptions. Cost efficiency is the highest priority. Which Amazon EC2 purchasing option is MOST cost-effective?",
+    "info": "Spot Instances ให้ส่วนลดสูงสุดถึง 90% เหมาะอย่างยิ่งกับงาน Batch Processing หรือ Workload ที่รับความเสี่ยงจากการถูกขัดจังหวะ (Interruption) ได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "On-Demand Instances", "correct": false },
+      { "text": "Reserved Instances", "correct": false },
+      { "text": "Spot Instances", "correct": true },
+      { "text": "Dedicated Hosts", "correct": false }
+    ]
+  },
+  {
+    "text": "A company must run a database application on a physical server that is fully dedicated to their use to meet strict compliance and licensing requirements based on per-core licensing. Which EC2 instance type or option should they choose?",
+    "info": "Dedicated Hosts คือ Physical Server ทั้งเครื่องที่เป็นของคุณคนเดียว ช่วยให้ควบคุมการรัน Instance บน Physical Hardware เดิมได้ ซึ่งจำเป็นสำหรับการปฏิบัติตามข้อกำหนด Compliance และใช้ License แบบเดิม (BYOL) ที่คิดตาม Socket/Core ได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Dedicated Instances", "correct": false },
+      { "text": "Dedicated Hosts", "correct": true },
+      { "text": "Reserved Instances", "correct": false },
+      { "text": "On-Demand Instances", "correct": false }
+    ]
+  },
+  {
+    "text": "During the creation of an Amazon EC2 instance, where can a system administrator specify a script to automatically install software or configure settings when the instance launches for the first time?",
+    "info": "User Data คือช่องทางที่ให้เราใส่ Bootstrap Script (เช่น Bash Script) เพื่อสั่งให้ระบบทำ Automate Task ติดตั้งหรือตั้งค่าระบบล่วงหน้าขณะที่ EC2 บูตเครื่องขึ้นมาครั้งแรก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Security Group Rules", "correct": false },
+      { "text": "Key Pair", "correct": false },
+      { "text": "User Data", "correct": true },
+      { "text": "Amazon Machine Image (AMI)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement BEST describes the fundamental difference between Amazon EBS and EC2 Instance Store?",
+    "info": "Instance Store เป็นไดรฟ์ที่ติดอยู่กับ Physical Server เครื่องนั้นแบบ Ephemeral (ชั่วคราว) ข้อมูลจะหายทันทีเมื่อ Stop/Terminate เครื่อง ส่วน EBS คือ Block Storage ที่เชื่อมต่อผ่าน Network ทำให้ข้อมูลยังคงอยู่แม้จะสั่ง Stop Instance (Persistent)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Instance Store is persistent storage, while EBS is temporary storage that is deleted when the instance stops.", "correct": false },
+      { "text": "Instance Store is ephemeral storage attached directly to the host computer, while EBS is network-attached persistent storage.", "correct": true },
+      { "text": "EBS volume data is lost when an instance is stopped, whereas Instance Store retains its data.", "correct": false },
+      { "text": "EBS volumes can only be attached to one instance at a time, while Instance Store can be shared across multiple regions.", "correct": false }
+    ]
+  },
+  {
+    "text": "A financial institution plans to deploy a core banking application on AWS that will run continuously for the next 3 years. Which EC2 pricing model will offer the highest cost savings for this steady-state workload?",
+    "info": "งานที่เป็น Steady-state (รันตลอดเวลา 24/7) และมีกรอบเวลานาน 1-3 ปี การเลือกใช้ Reserved Instances (RI) หรือ Savings Plans จะให้ส่วนลดที่คุ้มค่าที่สุดเมื่อเทียบกับ On-Demand",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Spot Instances", "correct": false },
+      { "text": "On-Demand Instances", "correct": false },
+      { "text": "Reserved Instances (or Compute Savings Plans)", "correct": true },
+      { "text": "Dedicated Hosts on On-Demand", "correct": false }
+    ]
+  },
+  {
+    "text": "An administrator changes the EC2 instance type of a web server from t3.medium to t3.large to handle higher CPU and memory demands. What type of scaling does this action represent?",
+    "info": "Vertical Scaling (Scale Up) คือการเปลี่ยนขนาดหรือสเปกของทรัพยากร (เช่น CPU/RAM) ให้กับเครื่องเดิม ส่วน Horizontal Scaling (Scale Out) คือการเพิ่มจำนวนเครื่อง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Horizontal Scaling (Scaling Out)", "correct": false },
+      { "text": "Vertical Scaling (Scaling Up)", "correct": true },
+      { "text": "Auto Scaling", "correct": false },
+      { "text": "Elastic Load Balancing", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is NOT a required component or setting when launching a basic Amazon EC2 instance?",
+    "info": "AWS Lambda เป็นบริการ Serverless คนละประเภทกับ EC2 ไม่เกี่ยวข้องกันในการกด Launch EC2 Instance",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Machine Image (AMI)", "correct": false },
+      { "text": "Instance Type", "correct": false },
+      { "text": "Network Settings (VPC / Subnet)", "correct": false },
+      { "text": "AWS Lambda Function", "correct": true }
+    ]
+  },
+  {
+    "text": "You want to explicitly deny traffic from a specific malicious IP address trying to access your EC2 instance. Where should you configure this rule?",
+    "info": "Security Group รองรับเฉพาะกฎการอนุญาต (Allow rules เท่านั้น) ดังนั้น หากต้องการบล็อกหรือปฏิเสธเฉพาะ IP (Deny rule) จะต้องไปตั้งค่าที่ Network ACL (NACL) ซึ่งทำหน้าที่เป็น Stateless Firewall ระดับ Subnet",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Security Group", "correct": false },
+      { "text": "Network Access Control List (Network ACL)", "correct": true },
+      { "text": "Key Pair", "correct": false },
+      { "text": "EC2 User Data", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a key advantage of using AWS Lambda compared to Amazon EC2?",
+    "info": "AWS Lambda เป็นบริการแบบ Serverless ทำให้ผู้ใช้ไม่ต้องคอยตั้งค่า ปรับขนาด หรือดูแล Maintenance เครื่องเซิร์ฟเวอร์ และคิดเงินเฉพาะเวลาที่ Code ถูกเรียกใช้และประมวลผลจริงเท่านั้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Full access to the underlying Operating System kernel.", "correct": false },
+      { "text": "Ability to run long-running background tasks indefinitely.", "correct": false },
+      { "text": "Serverless execution where you only pay for the compute time consumed by your code.", "correct": true },
+      { "text": "Built-in SSH access to inspect running environments.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the maximum execution time limit (timeout) for a single AWS Lambda function invocation?",
+    "info": "AWS Lambda ถูกออกแบบมาสำหรับงานสั้นๆ โดยกำหนดให้มีระยะเวลารันสูงสุดต่อ 1 Invocation ไม่เกิน 15 นาที (900 วินาที)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "5 minutes", "correct": false },
+      { "text": "15 minutes", "correct": true },
+      { "text": "1 hour", "correct": false },
+      { "text": "Unlimited", "correct": false }
+    ]
+  },
+  {
+    "text": "A photo-sharing platform wants to automatically resize images whenever users upload a new photo. Which combination of AWS services is BEST suited for this event-driven architecture?",
+    "info": "รูปแบบยอดนิยมของ Event-driven คือการนำ Amazon S3 (ใช้อัปโหลดรูป) ตั้งค่า S3 Event Notification ให้ส่ง Trigger ไปสั่งงาน AWS Lambda เพื่อรัน Code ปรับขนาดรูป (Resize) แบบอัตโนมัติทันที",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EBS and Amazon EC2", "correct": false },
+      { "text": "Amazon S3 and AWS Lambda", "correct": true },
+      { "text": "Amazon EFS and AWS Elastic Beanstalk", "correct": false },
+      { "text": "AWS Snowball and Amazon ECS", "correct": false }
+    ]
+  },
+  {
+    "text": "Which parameters are used to calculate the billing cost for running AWS Lambda functions?",
+    "info": "ค่าบริการ Lambda คำนวณจาก จำนวนครั้งที่ถูกเรียกใช้งาน (Requests) ร่วมกับ ระยะเวลาที่ใช้ประมวลผล (Duration) ซึ่งผูกอยู่กับปริมาณ Memory ที่คุณกำหนดไว้ให้ Function นั้นๆ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Number of CPU cores and assigned EBS storage size.", "correct": false },
+      { "text": "Total lines of code uploaded and execution frequency.", "correct": false },
+      { "text": "Total number of requests and execution duration (based on allocated memory).", "correct": true },
+      { "text": "Amount of inbound and outbound network bandwidth used.", "correct": false }
+    ]
+  },
+  {
+    "text": "A developer has a continuous batch process that takes approximately 45 minutes to execute. Which service should they choose to run this process?",
+    "info": "เนื่องจาก AWS Lambda มีขีดจำกัดเวลาทำงานสูงสุด 15 นาที หากงานต้องใช้เวลาทำยาวนานถึง 45 นาที จึงควรเลือกใช้ Amazon EC2, Elastic Beanstalk หรือ Container แทน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Lambda", "correct": false },
+      { "text": "Amazon EC2 or AWS Elastic Beanstalk", "correct": true },
+      { "text": "Amazon CloudFront", "correct": false },
+      { "text": "AWS KMS", "correct": false }
+    ]
+  },
+  {
+    "text": "Which programming environment is NOT natively supported by AWS Lambda without using a custom runtime?",
+    "info": "AWS Lambda มี Native Runtimes รองรับภาษามาตรฐาน เช่น Python, Node.js, Java, C#, Go, Ruby และ PowerShell ส่วนภาษาอื่นๆ ที่ไม่รองรับโดยตรง จะต้องสร้างเป็น Custom Runtime เพิ่มเติมขึ้นมาเอง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Python", "correct": false },
+      { "text": "Node.js", "correct": false },
+      { "text": "Java", "correct": false },
+      { "text": "16-bit Assembly Code", "correct": true }
+    ]
+  },
+  {
+    "text": "What does the term \"Cold Start\" mean in the context of AWS Lambda?",
+    "info": "Cold Start คือช่วงหน่วงเวลาเล็กน้อยในการรันครั้งแรก หลังจากที่ Function นั้นไม่ได้ถูกเรียกใช้นานๆ เนื่องจาก AWS ต้องใช้เวลาจัดเตรียมและตั้งค่า Execution Environment (Container) ใหม่ขึ้นมารองรับ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The delay experienced when Lambda initializes a new container execution environment for an inactive function.", "correct": true },
+      { "text": "A feature that pauses Lambda functions to prevent budget overruns.", "correct": false },
+      { "text": "The process of rebooting the underlying EC2 instance supporting Lambda.", "correct": false },
+      { "text": "An error state when Lambda cannot establish an internet connection.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a primary difference between a Virtual Machine (VM) and a Container?",
+    "info": "Container มีขนาดเบากว่าและบูตเร็วกว่า Virtual Machine (VM) เพราะ Container ใช้ OS Kernel ร่วมกับ Host ในขณะที่ VM ต้องรัน Guest Operating System เต็มรูปแบบแยกจำลองขึ้นมาใหม่ทุกตัว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Virtual machines share the host OS kernel, whereas containers include a full guest OS for each instance.", "correct": false },
+      { "text": "Containers are lightweight and share the host operating system kernel, making them faster to start than VMs.", "correct": true },
+      { "text": "Virtual machines can only run on-premises, while containers can only run in the AWS Cloud.", "correct": false },
+      { "text": "Containers are used exclusively for running database engines.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service serves as a fully managed Docker container registry that allows developers to store, manage, and deploy container images?",
+    "info": "Amazon ECR (Elastic Container Registry) คือบริการ Registry ที่ใช้สำหรับจัดเก็บและบริหารจัดการ Container Images (เช่น Docker Image) ของคุณได้อย่างปลอดภัย",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon ECS", "correct": false },
+      { "text": "Amazon EKS", "correct": false },
+      { "text": "Amazon ECR", "correct": true },
+      { "text": "AWS CodeDeploy", "correct": false }
+    ]
+  },
+  {
+    "text": "A developer wants to run Docker containers on AWS without needing to provision, configure, or manage any underlying EC2 instances. Which compute engine should they use?",
+    "info": "AWS Fargate เป็น Serverless Compute Engine สำหรับรัน Container (ใช้งานร่วมกับ ECS หรือ EKS) โดยที่คุณไม่ต้องกังวลเรื่องการสร้าง การดูแล หรือการปรับขนาด EC2 Instances เบื้องหลังเลย",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon ECS with EC2 Launch Type", "correct": false },
+      { "text": "AWS Fargate", "correct": true },
+      { "text": "Spot Instances", "correct": false },
+      { "text": "AWS Batch", "correct": false }
+    ]
+  },
+  {
+    "text": "A company currently uses Kubernetes on-premises and wants to migrate its workloads to AWS while keeping their existing Kubernetes tooling and deployment files. Which service is BEST suited?",
+    "info": "Amazon EKS (Elastic Kubernetes Service) คือบริการจัดการ Kubernetes แบบ Managed Service บน AWS ช่วยให้ย้าย Workload และใช้คำสั่ง/Tooling เดิมของ Kubernetes (เช่น kubectl) ได้โดยตรง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon ECS", "correct": false },
+      { "text": "Amazon EKS", "correct": true },
+      { "text": "AWS Elastic Beanstalk", "correct": false },
+      { "text": "AWS Lambda", "correct": false }
+    ]
+  },
+  {
+    "text": "In Amazon ECS, what is the blue-print or text file (in JSON format) that describes one or more containers that form your application (e.g., specifying image, CPU, memory)?",
+    "info": "Task Definition ใน Amazon ECS คือพิมพ์เขียว (Text/JSON File) ที่ใช้ระบุโครงสร้างและพารามิเตอร์ของ Container เช่น Docker Image ที่ใช้, ปริมาณ CPU/RAM, Port Mapping, และ Data Volume",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Cluster Definition", "correct": false },
+      { "text": "Task Definition", "correct": true },
+      { "text": "Node Blueprint", "correct": false },
+      { "text": "Pod Specification", "correct": false }
+    ]
+  },
+  {
+    "text": "According to the AWS Shared Responsibility Model, who is responsible for operating system patching on EC2 nodes when using Amazon ECS with the EC2 Launch Type?",
+    "info": "ในรูปแบบ EC2 Launch Type ลูกค้าเป็นผู้ดูแลและจัดการ EC2 Instances ดังนั้น ลูกค้าจึงมีหน้าที่ดูแลความปลอดภัย การลง Patch และอัปเดต OS ของ EC2 Node เหล่านั้นเอง (ถ้าอยากให้ AWS ดูแลส่วนนี้ ต้องขยับไปใช้ AWS Fargate)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS", "correct": false },
+      { "text": "The Customer", "correct": true },
+      { "text": "The Docker Community", "correct": false },
+      { "text": "Amazon ECS Agent", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a key benefit of containerizing applications?",
+    "info": "ประโยชน์หลักของ Containerization คือเรื่อง Environment Consistency (ทำงานได้เหมือนกันทุกที่) เพราะตัว Container ได้แพ็กรวมทุกอย่างที่ Code ต้องใช้ไว้ข้างในแล้ว จึงรันได้สม่ำเสมอไม่ว่าจะรันบนเครื่อง Dev, Test, หรือ Production",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It guarantees 100% security without needing security group configurations.", "correct": false },
+      { "text": "It provides consistency across different environments (from development to production).", "correct": true },
+      { "text": "It automatically scales disk storage attached to physical servers.", "correct": false },
+      { "text": "It restricts application development to a single programming language.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement BEST describes AWS Elastic Beanstalk?",
+    "info": "AWS Elastic Beanstalk เป็นบริการระดับ PaaS (Platform as a Service) เพียงแค่นักพัฒนาอัปโหลด Code ระบบจะจัดการสร้าง Infrastructure, Load Balancing, Auto Scaling และ Health Monitoring ให้อัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "An Infrastructure as Code service using JSON/YAML templates to provision resources.", "correct": false },
+      { "text": "A Platform as a Service (PaaS) that enables quick deployment of web applications while automatically handling provisioning and load balancing.", "correct": true },
+      { "text": "A Serverless database service for high-performance NoSQL workloads.", "correct": false },
+      { "text": "A container orchestration service for managed Kubernetes clusters.", "correct": false }
+    ]
+  },
+  {
+    "text": "How is a customer charged when using AWS Elastic Beanstalk?",
+    "info": "ตัวบริการ Elastic Beanstalk เป็นบริการ ฟรี (ไม่มีค่าธรรมเนียมการใช้บริการตัวมันเอง) ผู้ใช้จ่ายเงินเฉพาะทรัพยากรที่ระบบสร้างขึ้นเบื้องหลัง เช่น ค่า EC2, EBS, Load Balancer หรือ RDS ตามจริงเท่านั้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "There is a fixed monthly platform fee for Elastic Beanstalk plus compute usage.", "correct": false },
+      { "text": "There is no additional charge for Elastic Beanstalk itself; customers only pay for the underlying AWS resources created.", "correct": true },
+      { "text": "Pricing is based strictly on the number of lines of code uploaded.", "correct": false },
+      { "text": "Charges are calculated based on the number of active application users per hour.", "correct": false }
+    ]
+  },
+  {
+    "text": "A developer wants to deploy a Node.js web application quickly without learning how to set up VPCs, EC2 instances, Auto Scaling Groups, or Load Balancers manually. Which service should they use?",
+    "info": "Elastic Beanstalk เหมาะสำหรับนักพัฒนาที่ต้องการ Deploy Application รวดเร็วโดยไม่อยากยุ่งยากกับการตั้งค่า Infrastructure เบื้องหลังเอง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS CloudFormation", "correct": false },
+      { "text": "AWS Elastic Beanstalk", "correct": true },
+      { "text": "AWS CodeCommit", "correct": false },
+      { "text": "Amazon Direct EC2 Launch", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service is designed to help you model, provision, and manage AWS resources by treating Infrastructure as Code (IaC) using templates?",
+    "info": "AWS CloudFormation คือบริการ Infrastructure as Code (IaC) ที่ให้เราเขียนการสร้าง Resource ทั้งหมดผ่าน Code/Template (JSON หรือ YAML)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Elastic Beanstalk", "correct": false },
+      { "text": "AWS CloudFormation", "correct": true },
+      { "text": "AWS OpsWorks", "correct": false },
+      { "text": "AWS Systems Manager", "correct": false }
+    ]
+  },
+  {
+    "text": "In which scenario would AWS Lambda be MORE suitable than Amazon EC2?",
+    "info": "Lambda โดดเด่นในงานประเภท Event-driven และเกิดขึ้นชั่วคราวเป็นครั้งคราว (Infrequently) เพราะถ้าไม่มี Request เข้ามา ก็ไม่ต้องเสียค่าใช้จ่ายใดๆ สำหรับ Server",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Running a web server that requires a constant 24/7 online presence.", "correct": false },
+      { "text": "Processing image uploads in response to user actions that occur infrequently throughout the day.", "correct": true },
+      { "text": "Running legacy software that requires custom Windows drivers and a specific kernel setup.", "correct": false },
+      { "text": "Executing long-running mathematical modeling that takes 8 hours per run.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which option correctly orders the AWS compute services from MOST control over infrastructure to LEAST control over infrastructure?",
+    "info": "EC2 (IaaS): ควบคุมได้สูงสุด (เลือก OS, Install Drivers, Networking, Security) / Elastic Beanstalk (PaaS): ควบคุมระดับกลาง (ระบบจัดการ Infra ให้ แตยังเข้าไปปรับ Config เครื่องได้) / Lambda (Serverless): ควบคุมได้น้อยสุด (ดูแค่ส่วน Code ไม่สามารถยุ่งกับ Server หรือ OS ได้เลย)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "AWS Lambda -> AWS Elastic Beanstalk -> Amazon EC2", "correct": false },
+      { "text": "Amazon EC2 -> AWS Elastic Beanstalk -> AWS Lambda", "correct": true },
+      { "text": "AWS Elastic Beanstalk -> Amazon EC2 -> AWS Lambda", "correct": false },
+      { "text": "Amazon EC2 -> AWS Lambda -> AWS Elastic Beanstalk", "correct": false }
+    ]
+  },
+  {
+    "text": "Which metric is commonly monitored by an Amazon EC2 Auto Scaling group to trigger a Scale Out action (adding more EC2 instances)?",
+    "info": "ค่า Average CPU Utilization ที่สูงขึ้นเกินขีดที่ตั้งไว้ (เช่น >70%) เป็นตัวชี้วัด (Metric) ยอดนิยมในการสั่งให้ Auto Scaling Group ทำการเพิ่มจำนวนเครื่อง (Scale Out) เพื่อมารับภาระงาน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Average CPU Utilization exceeding a pre-defined threshold.", "correct": true },
+      { "text": "Number of registered IAM users in the account.", "correct": false },
+      { "text": "Total storage capacity consumed in an Amazon S3 bucket.", "correct": false },
+      { "text": "Monthly cost threshold exceeded in AWS Budgets.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is an Amazon Machine Image (AMI)?",
+    "info": "AMI (Amazon Machine Image) คือ Master Template หรือ พิมพ์เขียวที่มีการบันทึก OS, Software, และ Configuration เอาไว้ล่วงหน้า เพื่อใช้เป็นต้นแบบในการสร้าง/Clone EC2 Instances ออกมาใช้งาน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A script executed automatically upon stopping an EC2 instance.", "correct": false },
+      { "text": "A packaged template containing the operating system, application server, and software required to launch an EC2 instance.", "correct": true },
+      { "text": "An encryption key pair used to authenticate SSH access.", "correct": false },
+      { "text": "A physical server located inside an AWS Data Center.", "correct": false }
+    ]
+  }
+]

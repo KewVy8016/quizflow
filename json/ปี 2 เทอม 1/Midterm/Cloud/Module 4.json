@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Under the AWS Shared Responsibility Model, which of the following is a responsibility of the customer?",
+    "info": "การอัปเดตและแพตช์ ระบบปฏิบัติการ (OS) บน Amazon EC2 เป็นความรับผิดชอบของลูกค้า (Security IN the Cloud) ส่วนข้ออื่นๆ เป็นหน้าที่ของ AWS (Security OF the Cloud)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Patching the physical host hypervisor", "correct": false },
+      { "text": "Maintaining environmental controls in data centers", "correct": false },
+      { "text": "Managing OS updates and patches on Amazon EC2 instances", "correct": true },
+      { "text": "Decommissioning old hardware storage drives", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS IAM component is used to grant temporary security credentials for AWS resources or users?",
+    "info": "IAM Role ใช้สำหรับมอบสิทธิ์ชั่วคราว (Temporary credentials) ให้กับบริการของ AWS, แอปพลิเคชัน หรือผู้ใช้ภายนอก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IAM Group", "correct": false },
+      { "text": "IAM Role", "correct": true },
+      { "text": "IAM User", "correct": false },
+      { "text": "IAM Access Key", "correct": false }
+    ]
+  },
+  {
+    "text": "What format is used to write AWS IAM Policy documents?",
+    "info": "IAM Policy จะถูกเขียนและบันทึกในรูปแบบเอกสาร JSON (JavaScript Object Notation)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "XML", "correct": false },
+      { "text": "YAML", "correct": false },
+      { "text": "JSON", "correct": true },
+      { "text": "HTML", "correct": false }
+    ]
+  },
+  {
+    "text": "Which security principle dictates that users should be granted only the access necessary to perform their job tasks?",
+    "info": "หลักการ Principle of Least Privilege คือการกำหนดสิทธิ์ให้ผู้ใช้งานเท่าที่จำเป็นต่อการปฏิบัติงานเท่านั้น เพื่อลดความเสี่ยงด้านความปลอดภัย",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Principle of Least Privilege", "correct": true },
+      { "text": "Shared Responsibility Model", "correct": false },
+      { "text": "Defense in Depth", "correct": false },
+      { "text": "Implicit Allow", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the default evaluation behavior of an IAM policy if no explicit allow or deny is specified?",
+    "info": "ค่าเริ่มต้นของ IAM คือ Implicit Deny (ปฏิเสธโดยอ้อม) จนกว่าจะมีคำสั่ง Allow ระบุไว้อย่างชัดเจน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Explicit Allow", "correct": false },
+      { "text": "Implicit Deny", "correct": true },
+      { "text": "Implicit Allow", "correct": false },
+      { "text": "Explicit Deny", "correct": false }
+    ]
+  },
+  {
+    "text": "If a request is matches both an Explicit Deny and an Explicit Allow in IAM policies, what is the final decision?",
+    "info": "ใน IAM คำสั่ง Explicit Deny (การปฏิเสธอย่างชัดแจ้ง) จะมีผลเหนือกว่าคำสั่ง Allow ทุกกรณี",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The request is Allowed", "correct": false },
+      { "text": "The request is Denied", "correct": true },
+      { "text": "The system asks for MFA verification", "correct": false },
+      { "text": "The system throws a syntax error", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is a recommended best practice for the AWS account root user?",
+    "info": "AWS แนะนำให้เปิดใช้งาน MFA บน Root Account และเก็บซ่อนข้อมูลประจำตัวไว้ ใช้เฉพาะงานที่จำเป็นจริงๆ เท่านั้น ไม่ควรใช้ในงานประจำวัน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Use it for daily administrative tasks", "correct": false },
+      { "text": "Share root credentials with senior managers", "correct": false },
+      { "text": "Enable MFA and lock away the credentials", "correct": true },
+      { "text": "Generate Access Keys for programmatic application access", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service tracks and records AWS account activity and API calls across your infrastructure?",
+    "info": "AWS CloudTrail ทำหน้าที่บันทึกประวัติการเรียกใช้งาน API และกิจกรรมทั้งหมดที่เกิดขึ้นภายในบัญชี AWS เพื่อการตรวจสอบ (Auditing)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon CloudWatch", "correct": false },
+      { "text": "AWS CloudTrail", "correct": true },
+      { "text": "AWS Config", "correct": false },
+      { "text": "Amazon Inspector", "correct": false }
+    ]
+  },
+  {
+    "text": "Which feature allows you to enforce MFA authentication for sensitive actions in an AWS account?",
+    "info": "Multi-Factor Authentication (MFA) ช่วยเพิ่มความปลอดภัยอีกชั้น นอกเหนือจากรหัสผ่านปกติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Multi-Factor Authentication (MFA)", "correct": true },
+      { "text": "Security Groups", "correct": false },
+      { "text": "AWS KMS", "correct": false },
+      { "text": "Amazon GuardDuty", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service allows you to centrally manage and govern environment rules across multiple AWS accounts?",
+    "info": "AWS Organizations ช่วยรวมและจัดการหลายๆ บัญชี AWS เข้าด้วยกันจากจุดเดียว และควบคุมสิทธิ์ผ่าน Service Control Policies (SCPs)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Control Tower", "correct": false },
+      { "text": "AWS Organizations", "correct": true },
+      { "text": "AWS IAM", "correct": false },
+      { "text": "AWS Systems Manager", "correct": false }
+    ]
+  },
+  {
+    "text": "What type of policy is used in AWS Organizations to specify the maximum available permissions for accounts in an organization?",
+    "info": "Service Control Policy (SCP) คือนโยบายที่ใช้กำหนดขอบเขตสิทธิ์สูงสุด (Maximum permissions) ให้กับแต่ละบัญชีใน AWS Organizations",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IAM Identity Policy", "correct": false },
+      { "text": "Service Control Policy (SCP)", "correct": true },
+      { "text": "Resource-based Policy", "correct": false },
+      { "text": "Bucket Policy", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is a managed threat detection service that continuously monitors for malicious activity and unauthorized behavior?",
+    "info": "Amazon GuardDuty เป็นระบบตรวจจับภัยคุกคามอัจฉริยะ (Threat Detection) ที่เฝ้าระวังพฤติกรรมผิดปกติในระบบชั่วระยะเวลาตลอด 24 ชม.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Macie", "correct": false },
+      { "text": "Amazon GuardDuty", "correct": true },
+      { "text": "AWS Shield", "correct": false },
+      { "text": "Amazon Inspector", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service automates security assessment and vulnerability scans for Amazon EC2 instances and container images?",
+    "info": "Amazon Inspector ทำหน้าที่สแกนหาช่องโหว่ความปลอดภัย (Vulnerability Assessment) ของ EC2 และ Container images โดยอัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Config", "correct": false },
+      { "text": "Amazon Inspector", "correct": true },
+      { "text": "AWS Trusted Advisor", "correct": false },
+      { "text": "AWS Security Hub", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service uses machine learning to discover, classify, and protect sensitive data such as Personally Identifiable Information (PII) in Amazon S3?",
+    "info": "Amazon Macie ใช้ Machine Learning ในการค้นหาและปกป้องข้อมูลสำคัญ เช่น ข้อมูลส่วนบุคคล (PII) ที่ถูกจัดเก็บอยู่ใน Amazon S3",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Macie", "correct": true },
+      { "text": "Amazon GuardDuty", "correct": false },
+      { "text": "AWS KMS", "correct": false },
+      { "text": "Amazon Athena", "correct": false }
+    ]
+  },
+  {
+    "text": "Which managed service helps protect web applications against Distributed Denial of Service (DDoS) attacks?",
+    "info": "AWS Shield คือบริการป้องกันการโจมตีประเภท DDoS โดยมีรุ่น Standard ให้ใช้งานฟรีโดยอัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS WAF", "correct": false },
+      { "text": "AWS Shield", "correct": true },
+      { "text": "AWS KMS", "correct": false },
+      { "text": "AWS Firewall Manager", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the main purpose of AWS WAF (Web Application Firewall)?",
+    "info": "AWS WAF ช่วยกรองและบล็อก ทราฟฟิก HTTP/HTTPS ผิดปกติที่พยายามเข้าถึง เว็บแอปพลิเคชัน (เช่น SQL Injection, Cross-Site Scripting)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To prevent DDoS attacks at the network layer", "correct": false },
+      { "text": "To filter and monitor HTTP/HTTPS traffic targeting web applications", "correct": true },
+      { "text": "To encrypt data stored in Amazon S3", "correct": false },
+      { "text": "To manage SSH access keys for EC2 instances", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service provides on-demand access to AWS security and compliance reports and select online agreements?",
+    "info": "AWS Artifact เป็นศูนย์รวมเอกสารรายงาน Compliance และใบรับรองมาตรฐานสากล (เช่น ISO, SOC, PCI) ที่เปิดให้ดาวน์โหลดได้ตลอดเวลา",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Artifact", "correct": true },
+      { "text": "AWS Trusted Advisor", "correct": false },
+      { "text": "AWS Config", "correct": false },
+      { "text": "AWS Marketplace", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service simplifies the management, creation, and control of cryptographic keys used to encrypt data?",
+    "info": "AWS KMS เป็นบริการจัดการและควบคุม คีย์การเข้ารหัสข้อมูล (Encryption Keys) แบบรวมศูนย์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Secrets Manager", "correct": false },
+      { "text": "AWS Key Management Service (AWS KMS)", "correct": true },
+      { "text": "AWS Certificate Manager (ACM)", "correct": false },
+      { "text": "CloudHSM", "correct": false }
+    ]
+  },
+  {
+    "text": "Which cloud service model places the most responsibility on the customer for operating system management and patching?",
+    "info": "IaaS (เช่น Amazon EC2) ให้การควบคุมระดับโครงสร้างพื้นฐานแก่ลูกค้า ทำให้ลูกค้าต้องดูแลตั้งแต่งาน OS, การ Patch และแอปพลิเคชันเองทั้งหมด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Software as a Service (SaaS)", "correct": false },
+      { "text": "Platform as a Service (PaaS)", "correct": false },
+      { "text": "Infrastructure as a Service (IaaS)", "correct": true },
+      { "text": "Function as a Service (FaaS)", "correct": false }
+    ]
+  },
+  {
+    "text": "In the Shared Responsibility Model, who is responsible for configuring Security Groups and Network ACLs?",
+    "info": "การตั้งค่ากฎ Firewall (Security Groups / Network ACLs) เพื่อควบคุมทราฟฟิกเครือข่ายเป็นความรับผิดชอบของลูกค้า",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Support", "correct": false },
+      { "text": "AWS Infrastructure Team", "correct": false },
+      { "text": "The Customer", "correct": true },
+      { "text": "AWS Security Team", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service allows users to safely store and automatically rotate database credentials, API keys, and passwords?",
+    "info": "AWS Secrets Manager ถูกออกแบบมาเพื่อจัดเก็บและผลัดเปลี่ยน (Rotate) รหัสผ่านและ API keys แบบอัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS KMS", "correct": false },
+      { "text": "AWS Systems Manager Parameter Store", "correct": false },
+      { "text": "AWS Secrets Manager", "correct": true },
+      { "text": "AWS IAM", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary function of AWS Config?",
+    "info": "AWS Config ทำหน้าที่บันทึก ตรวจสอบ และประเมินการตั้งค่า (Configuration) ของทรัพยากร AWS เพื่อให้ตรงตามนโยบายขององค์กร",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Real-time application performance monitoring", "correct": false },
+      { "text": "Assessing, auditing, and evaluating configurations of AWS resources", "correct": true },
+      { "text": "Managing user access permissions", "correct": false },
+      { "text": "Automatic scaling of EC2 instances", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service provides authentication, authorization, and user management for web and mobile applications?",
+    "info": "Amazon Cognito ช่วยจัดการระบบลงทะเบียน เข้าสู่ระบบ (Sign-up / Sign-in) และจัดการผู้ใช้งานสำหรับ Web และ Mobile Apps",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Cognito", "correct": true },
+      { "text": "AWS IAM", "correct": false },
+      { "text": "AWS Directory Service", "correct": false },
+      { "text": "Amazon GuardDuty", "correct": false }
+    ]
+  },
+  {
+    "text": "What does \"Encryption at Rest\" mean in AWS security?",
+    "info": "Encryption at Rest คือการเข้ารหัสข้อมูลขณะถูกจัดเก็บอยู่บนอุปกรณ์จัดเก็บข้อมูล (เช่น EBS, S3, RDS)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Encrypting data while it is being transmitted over the network", "correct": false },
+      { "text": "Encrypting data when it is stored on disk or storage media", "correct": true },
+      { "text": "Encrypting CPU memory during processing", "correct": false },
+      { "text": "Disabling data access during maintenance hours", "correct": false }
+    ]
+  },
+  {
+    "text": "Which type of credential consists of an Access Key ID and a Secret Access Key used for AWS CLI and API access?",
+    "info": "Access Keys (ประกอบด้วย Access Key ID + Secret Access Key) ใช้สำหรับการยืนยันตัวตนผ่าน AWS CLI, SDKs หรือ API",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IAM Password", "correct": false },
+      { "text": "Access Keys", "correct": true },
+      { "text": "Key Pairs", "correct": false },
+      { "text": "SSH Keys", "correct": false }
+    ]
+  },
+  {
+    "text": "Which feature in Amazon S3 blocks public access to all buckets and objects at the AWS account level?",
+    "info": "S3 Block Public Access ช่วยปิดการเข้าถึงแบบ Public ของ S3 Bucket ทั้งหมดในระดับบัญชีเพื่อป้องกันข้อมูลรั่วไหล",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "S3 Versioning", "correct": false },
+      { "text": "S3 Block Public Access", "correct": true },
+      { "text": "S3 Object Lock", "correct": false },
+      { "text": "S3 Lifecycle Policy", "correct": false }
+    ]
+  },
+  {
+    "text": "Under the AWS Shared Responsibility Model, who is responsible for physical data center security?",
+    "info": "ความปลอดภัยทางกายภาพของ Data Center (Security OF the Cloud) เป็นหน้าที่ของ AWS 100%",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS", "correct": true },
+      { "text": "Customer", "correct": false },
+      { "text": "Both AWS and Customer", "correct": false },
+      { "text": "Third-party vendors", "correct": false }
+    ]
+  },
+  {
+    "text": "What AWS tool acts as a virtual firewall for an EC2 instance to control inbound and outbound traffic?",
+    "info": "Security Group ทำหน้าที่เป็น Virtual Firewall ควบคุม Traffic ในระดับ EC2 Instance (Stateful)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Network ACL", "correct": false },
+      { "text": "Security Group", "correct": true },
+      { "text": "AWS WAF", "correct": false },
+      { "text": "Internet Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS compliance resource provides a single location for automated compliance checks and security posture management?",
+    "info": "AWS Security Hub เป็นศูนย์กลางรวบรวมและสรุปผลการตรวจสอบความปลอดภัย รวมถึงตรวจสอบมาตรฐาน Compliance จากหลายๆ บริการของ AWS",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Trusted Advisor", "correct": false },
+      { "text": "AWS Security Hub", "correct": true },
+      { "text": "AWS Artifact", "correct": false },
+      { "text": "AWS Health Dashboard", "correct": false }
+    ]
+  },
+  {
+    "text": "Which component of AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?",
+    "info": "Amazon CloudFront ใช้ AWS Edge Locations ในการส่งมอบข้อมูลและเนื้อหาไปยังผู้ใช้ด้วยความหน่วงต่ำสุด (low latency)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Regions", "correct": false },
+      { "text": "AWS edge locations", "correct": true },
+      { "text": "AWS Availability Zones", "correct": false },
+      { "text": "Amazon Virtual Private Cloud (Amazon VPC)", "correct": false }
+    ]
+  }
+]

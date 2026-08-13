@@ -1,0 +1,332 @@
+[
+  {
+    "text": "According to the OSI Model, at which layer do Routers operate to handle packet routing and forwarding?",
+    "info": "Layer 3 (Network Layer) ทำหน้าที่กำหนดเส้นทาง (Routing) และส่งผ่านแพ็กเก็ตข้อมูลโดยใช้ IP Address ซึ่งเป็นเลเยอร์ที่ Router ทำงาน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Layer 2 - Data Link", "correct": false },
+      { "text": "Layer 3 - Network", "correct": true },
+      { "text": "Layer 4 - Transport", "correct": false },
+      { "text": "Layer 7 - Application", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the maximum and minimum CIDR block sizes allowed when creating an Amazon VPC, respectively?",
+    "info": "AWS กำหนดให้ CIDR Block ของ VPC มีขนาดใหญ่ที่สุดคือ /16 (65,536 IPs) และขนาดเล็กที่สุดคือ /28 (16 IPs)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "/8 and /32", "correct": false },
+      { "text": "/16 and /28", "correct": true },
+      { "text": "/12 and /24", "correct": false },
+      { "text": "/16 and /30", "correct": false }
+    ]
+  },
+  {
+    "text": "If a Subnet has a CIDR block of 10.0.0.0/24 (256 total IP addresses), how many IP addresses are available for host assignment, and how many are reserved by AWS?",
+    "info": "AWS จะสงวน IP Address ไว้ 5 หมายเลขในทุก Subnet เสมอเพื่อใช้ในระบบเครือข่าย ทำให้ Subnet ขนาด /24 (256 IPs) เหลือใช้งานได้จริง 256 - 5 = 251 หมายเลข",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "251 available / 5 reserved", "correct": true },
+      { "text": "254 available / 2 reserved", "correct": false },
+      { "text": "252 available / 4 reserved", "correct": false },
+      { "text": "250 available / 6 reserved", "correct": false }
+    ]
+  },
+  {
+    "text": "Which specific IP address in a subnet CIDR block is reserved by AWS for Domain Name System (DNS) resolution?",
+    "info": "IP หมายเลขที่ 3 ของ Subnet (เช่น .2) AWS จะสงวนไว้สำหรับทำหน้าที่เป็น DNS Resolver ของ VPC",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The 1st IP address (e.g., 10.0.0.0)", "correct": false },
+      { "text": "The 2nd IP address (e.g., 10.0.0.1)", "correct": false },
+      { "text": "The 3rd IP address (e.g., 10.0.0.2)", "correct": true },
+      { "text": "The 4th IP address (e.g., 10.0.0.3)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes the scope of an Amazon VPC and a Subnet?",
+    "info": "VPC 1 ตัวจะครอบคลุมทั้ง Region และข้ามหลาย Availability Zones (AZs) ได้ แต่ Subnet 1 ตัวจะถูกสร้างและสังกัดอยู่ภายใน AZ เพียงแห่งเดียวเท่านั้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A VPC spans multiple Regions, while a Subnet spans multiple Availability Zones.", "correct": false },
+      { "text": "A VPC resides within a single Region and can span multiple Availability Zones; a Subnet resides within a single Availability Zone.", "correct": true },
+      { "text": "Both VPC and Subnet must reside within the same single Availability Zone.", "correct": false },
+      { "text": "A Subnet can span across multiple VPCs within the same Region.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is a key characteristic of an Elastic Network Interface (ENI)?",
+    "info": "ENI เป็นการ์ดแลนเสมือน เมื่อถอด ENI ไปเสียบเข้ากับ EC2 Instance อีกตัว ค่าการตั้งค่าต่างๆ (เช่น Private IP, Security Group) จะติดย้ายตามไปด้วย",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "It is a physical hardware card attached to AWS servers.", "correct": false },
+      { "text": "When detached and attached to another instance, its attributes (like private IP) follow the ENI.", "correct": true },
+      { "text": "It can be freely moved across different VPCs.", "correct": false },
+      { "text": "When an EC2 instance is terminated, its primary network interface is preserved by default.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which route in a VPC Route Table is created by default and cannot be deleted?",
+    "info": "ทุก Route Table จะมี Local Route (เส้นทางสื่อสารภายใน VPC) ถูกสร้างขึ้นมาโดยอัตโนมัติ และไม่สามารถลบออกได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The default route to the Internet Gateway (0.0.0.0/0)", "correct": false },
+      { "text": "The route to the NAT Gateway", "correct": false },
+      { "text": "The local route for internal VPC communication", "correct": true },
+      { "text": "The route to a Virtual Private Gateway (VGW)", "correct": false }
+    ]
+  },
+  {
+    "text": "To allow an EC2 instance in a Private Subnet to initiate outbound connections for software updates while blocking incoming connections from the internet, which component should be deployed and in which subnet?",
+    "info": "NAT Gateway ช่วยให้ EC2 ใน Private Subnet ส่งข้อมูลออกไปอินเทอร์เน็ตได้ (Outbound) แต่ป้องกันไม่ให้อินเทอร์เน็ตต่อเข้ามาหา (Inbound) โดย NAT Gateway ต้องถูกติดตั้งใน Public Subnet",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "An Internet Gateway deployed in the Private Subnet", "correct": false },
+      { "text": "A NAT Gateway deployed in the Public Subnet", "correct": true },
+      { "text": "A NAT Gateway deployed in the Private Subnet", "correct": false },
+      { "text": "A VPC Endpoint deployed in the Public Subnet", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a key limitation of VPC Peering?",
+    "info": "VPC Peering ไม่รองรับ Transitive Peering (ถ้า A ต่อ B และ B ต่อ C ตัว A จะไม่สามารถคุยกับ C ผ่าน B ได้)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It does not support connections across different AWS Accounts.", "correct": false },
+      { "text": "It does not support transitive peering.", "correct": true },
+      { "text": "It only supports VPCs with overlapping IP address ranges.", "correct": false },
+      { "text": "You can create multiple peering connections between the same pair of VPCs for redundancy.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service acts as a central hub to simplify networking between multiple Amazon VPCs and on-premises networks?",
+    "info": "AWS Transit Gateway ทำหน้าที่เป็นศูนย์กลาง (Hub-and-Spoke) ในการเชื่อมต่อหลาย VPCs และ On-premises Networks เข้าด้วยกัน ณ จุดเดียว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Direct Connect", "correct": false },
+      { "text": "AWS Transit Gateway", "correct": true },
+      { "text": "VPC Endpoint", "correct": false },
+      { "text": "AWS Site-to-Site VPN", "correct": false }
+    ]
+  },
+  {
+    "text": "What AWS tool acts as a virtual firewall for an EC2 instance to control inbound and outbound traffic?",
+    "info": "Security Group ทำหน้าที่เป็น Virtual Firewall คอยคัดกรอง Traffic ขาเข้าและขาออกในระดับ EC2 Instance (Stateful)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Network ACL", "correct": false },
+      { "text": "Security Group", "correct": true },
+      { "text": "AWS WAF", "correct": false },
+      { "text": "Internet Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following correctly describes a difference between Security Groups and Network Access Control Lists (NACLs)?",
+    "info": "Security Group ปกป้องระดับ Instance และเป็น Stateful ส่วน NACL ปกป้องระดับ Subnet และเป็น Stateless (ต้องตั้งค่าขาเข้าและขาออกแยกกัน)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Security Groups operate at the subnet level (stateless), while NACLs operate at the instance level (stateful).", "correct": false },
+      { "text": "Security Groups operate at the instance level (stateful), while NACLs operate at the subnet level (stateless).", "correct": true },
+      { "text": "Both operate at the instance level, but Security Groups are stateless while NACLs are stateful.", "correct": false },
+      { "text": "Security Groups allow explicit DENY rules, whereas NACLs only support ALLOW rules.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS feature enables instances in a private subnet to securely connect to AWS services like Amazon S3 or DynamoDB without passing through the public internet?",
+    "info": "VPC Endpoint ช่วยให้ทรัพยากรใน Private Subnet เชื่อมต่อไปยังบริการ AWS (เช่น S3, DynamoDB) ได้โดยตรงผ่านเครือข่ายภายในของ AWS โดยไม่ต้องออกอินเทอร์เน็ต",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Direct Connect", "correct": false },
+      { "text": "VPC Peering", "correct": false },
+      { "text": "VPC Endpoint", "correct": true },
+      { "text": "AWS Transit Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service is a highly available and scalable cloud Domain Name System (DNS) web service?",
+    "info": "Amazon Route 53 เป็นบริการ DNS Web Service ทำหน้าที่แปลงชื่อโดเมน (เช่น example.com) ให้เป็น IP Address",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Route 53", "correct": true },
+      { "text": "Amazon CloudFront", "correct": false },
+      { "text": "AWS Global Accelerator", "correct": false },
+      { "text": "Amazon VPC Private DNS", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary benefit of using Amazon CloudFront?",
+    "info": "Amazon CloudFront เป็นบริการ CDN ช่วยกระจายและแคช (Cache) เนื้อหาไว้ที่ Edge Locations ทั่วโลก เพื่อลด Latency และช่วยให้โหลดเว็บได้เร็วขึ้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Establishing a dedicated private network connection from an on-premises data center to AWS.", "correct": false },
+      { "text": "Delivering content globally with low latency by caching static and dynamic web content at Edge Locations.", "correct": true },
+      { "text": "Distributing incoming application traffic evenly across multiple EC2 instances.", "correct": false },
+      { "text": "Acting as a stateful firewall to block SQL injection attacks on web applications.", "correct": false }
+    ]
+  },
+  {
+    "text": "A company needs a dedicated, private connection from their physical data center to AWS that bypasses the public internet for consistent network performance. Which service should they choose?",
+    "info": "AWS Direct Connect ให้การเชื่อมต่อแบบ Dedicated สายตรงจาก Data Center/On-premises ไปยัง AWS โดยไม่ผ่านอินเทอร์เน็ตสาธารณะ จึงได้ความเร็วและความปลอดภัยสูง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Site-to-Site VPN", "correct": false },
+      { "text": "AWS Direct Connect", "correct": true },
+      { "text": "AWS Client VPN", "correct": false },
+      { "text": "VPC Peering", "correct": false }
+    ]
+  },
+  {
+    "text": "What type of connection creates an encrypted IPsec tunnel over the public internet to connect an on-premises network to an Amazon VPC?",
+    "info": "AWS Site-to-Site VPN สร้างอุโมงค์เชื่อมต่อแบบเข้ารหัส (IPsec Tunnel) ผ่านอินเทอร์เน็ตสาธารณะ ระหว่าง On-premises กับ AWS",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Direct Connect", "correct": false },
+      { "text": "VPC Peering", "correct": false },
+      { "text": "AWS Site-to-Site VPN", "correct": true },
+      { "text": "Internet Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Elastic Load Balancer (ELB) type operates at Layer 7 (Application Layer) of the OSI model and supports advanced features like host-based and path-based routing?",
+    "info": "Application Load Balancer (ALB) ทำงานที่ Layer 7 (Application Layer) รองรับการตรวจจับ HTTP/HTTPS และการทำ Path-based/Host-based Routing",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Network Load Balancer (NLB)", "correct": false },
+      { "text": "Application Load Balancer (ALB)", "correct": true },
+      { "text": "Gateway Load Balancer (GWLB)", "correct": false },
+      { "text": "Classic Load Balancer (CLB)", "correct": false }
+    ]
+  },
+  {
+    "text": "When evaluating inbound network traffic against a Network Access Control List (NACL), how are the rules processed?",
+    "info": "NACL ประมวลผลกฎเรียงตามลำดับตัวเลขจากน้อยไปมาก เมื่อ Traffic ตรงกับ Rule (ALLOW หรือ DENY) ระบบจะทำงานตามนั้นทันทีและไม่เช็ค Rule ลำดับถัดไปอีก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Rules are evaluated in numerical order from lowest to highest number, stopping immediately when a match occurs.", "correct": true },
+      { "text": "DENY rules are always evaluated first regardless of rule number.", "correct": false },
+      { "text": "Rules are evaluated at random until a matching rule is found.", "correct": false },
+      { "text": "All rules are evaluated simultaneously, and ALLOW rules override DENY rules.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Amazon Route 53 feature checks the health and performance of web applications and automatically routes end-users away from unhealthy endpoints?",
+    "info": "Route 53 Health Checks ใช้ตรวจสุขภาพทรัพยากร หากระบบหลักล้มเหลว Failover Routing จะช่วยสลับ Route ไปยังระบบ Backup ให้โดยอัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Dynamic DNS", "correct": false },
+      { "text": "Route 53 Health Checks and Failover Routing", "correct": true },
+      { "text": "Latency-based Routing", "correct": false },
+      { "text": "Geoproximity Routing", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Elastic Load Balancer (ELB) type operates at Layer 4 (Transport Layer) and is designed to handle millions of requests per second with extremely low latency?",
+    "info": "Network Load Balancer (NLB) ทำงานที่ Layer 4 (Transport) รองรับโปรโตคอล TCP/UDP มี Latency ต่ำมาก และรับ Traffic ได้ระดับหลายล้านคำขอต่อวินาที",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Application Load Balancer (ALB)", "correct": false },
+      { "text": "Network Load Balancer (NLB)", "correct": true },
+      { "text": "Gateway Load Balancer (GWLB)", "correct": false },
+      { "text": "Classic Load Balancer (CLB)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS component acts as the target for internet-bound traffic in a public subnet's route table?",
+    "info": "ใน Public Subnet Route Table จะต้องกำหนดเป้าหมาย (Target) ของ Traffic ทั้งหมด (0.0.0.0/0) ชี้ไปที่ Internet Gateway (IGW)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Virtual Private Gateway (VGW)", "correct": false },
+      { "text": "Internet Gateway (IGW)", "correct": true },
+      { "text": "NAT Gateway", "correct": false },
+      { "text": "Customer Gateway (CGW)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which VPC Endpoint type uses an Elastic Network Interface (ENI) with a private IP address as an entry point for traffic destined for supported AWS services?",
+    "info": "Interface Endpoint (ทำงานผ่าน AWS PrivateLink) จะสร้าง Elastic Network Interface (ENI) ที่มี Private IP ฝังไว้ใน Subnet เพื่อเป็นประตูเชื่อมต่อไปบริการ AWS",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Gateway Endpoint", "correct": false },
+      { "text": "Interface Endpoint", "correct": true },
+      { "text": "Service Endpoint", "correct": false },
+      { "text": "Network Endpoint", "correct": false }
+    ]
+  },
+  {
+    "text": "Which two AWS services support Gateway Endpoints?",
+    "info": "Gateway Endpoint รองรับเฉพาะ 2 บริการเท่านั้น ได้แก่ Amazon S3 และ Amazon DynamoDB",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EC2 and Amazon RDS", "correct": false },
+      { "text": "Amazon S3 and Amazon DynamoDB", "correct": true },
+      { "text": "Amazon CloudFront and Route 53", "correct": false },
+      { "text": "AWS Lambda and Amazon SQS", "correct": false }
+    ]
+  },
+  {
+    "text": "What happens by default to the primary Network ACL when a custom Amazon VPC is created?",
+    "info": "Default NACL ที่ถูกสร้างมาพร้อม VPC ใหม่ จะมีค่าเริ่มต้นเป็น ALLOW (อนุญาต) ทั้ง Traffic ขาเข้าและขาออกทั้งหมด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It blocks all inbound and outbound traffic.", "correct": false },
+      { "text": "It allows all inbound traffic but blocks all outbound traffic.", "correct": false },
+      { "text": "It allows all inbound and outbound traffic.", "correct": true },
+      { "text": "No NACL is created until you manually configure one.", "correct": false }
+    ]
+  },
+  {
+    "text": "If you create a custom Network Access Control List (NACL) and associate it with a subnet, what is its initial default behavior for traffic?",
+    "info": "หากสร้าง Custom NACL ขึ้นมาเอง กฎเริ่มต้นจะเป็น DENY (ปฏิเสธ) ขาเข้าและขาออกทั้งหมด จนกว่าเราจะเพิ่มกฎ ALLOW เข้าไป",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It allows all inbound and outbound traffic.", "correct": false },
+      { "text": "It denies all inbound and outbound traffic until rules are added.", "correct": true },
+      { "text": "It copies all rules from the VPC's default NACL.", "correct": false },
+      { "text": "It allows inbound traffic but denies outbound traffic.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Amazon Route 53 routing policy should you use if you want to route traffic to the AWS Region that provides the lowest network latency for the user?",
+    "info": "Latency-based Routing จะประมวลผลและส่ง Traffic ของผู้ใช้ไปยัง AWS Region ที่ตอบสนองได้เร็วที่สุด (Network Latency ต่ำที่สุด)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Weighted Routing", "correct": false },
+      { "text": "Geolocation Routing", "correct": false },
+      { "text": "Latency-based Routing", "correct": true },
+      { "text": "Failover Routing", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of AWS Global Accelerator?",
+    "info": "AWS Global Accelerator ใช้โครงข่ายสายใยแก้วของ AWS ทั่วโลกในการนำพา Traffic ผู้ใช้ไปยัง Endpoint ช่วยลดอาการ Latency และ Packet Loss",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Caching static web content like images and videos at Edge Locations.", "correct": false },
+      { "text": "Improving application availability and performance for global users using the AWS global network backbone.", "correct": true },
+      { "text": "Creating a private, dedicated physical connection between on-premises data centers and AWS.", "correct": false },
+      { "text": "Translating domain names to IP addresses with health check capabilities.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which component must be configured on the customer's on-premises network side to establish an AWS Site-to-Site VPN connection?",
+    "info": "Customer Gateway (CGW) คือตัวแทนฝั่งอุปกรณ์เครือข่าย/ซอฟต์แวร์ของฝั่งลูกค้า (On-premises) สำหรับใช้สร้าง VPN มายัง AWS",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Virtual Private Gateway (VGW)", "correct": false },
+      { "text": "Transit Gateway (TGW)", "correct": false },
+      { "text": "Customer Gateway (CGW)", "correct": true },
+      { "text": "NAT Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following statements about Security Groups is TRUE?",
+    "info": "Security Group จะทำการประมวลผลกฎทั้งหมดในกลุ่มก่อนตัดสินใจ และรองรับเฉพาะกฎ ALLOW เท่านั้น (สิ่งที่ไม่ได้ระบุในกฎจะถูก DENY ทั้งหมด)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Security Groups support both ALLOW and DENY rules.", "correct": false },
+      { "text": "Security Groups are stateless, requiring explicit rules for response traffic.", "correct": false },
+      { "text": "All rules in a Security Group are evaluated before deciding whether to allow traffic.", "correct": true },
+      { "text": "Security Groups are applied at the Subnet level.", "correct": false }
+    ]
+  }
+]

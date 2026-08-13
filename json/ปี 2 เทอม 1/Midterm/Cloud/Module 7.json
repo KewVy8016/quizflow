@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Which AWS storage service provides block-level storage designed specifically to be attached to Amazon EC2 instances?",
+    "info": "Amazon EBS เป็นบริการจัดเก็บข้อมูลระดับ Block (Block-level storage) ที่ออกแบบมาเพื่อใช้งานร่วมกับ Amazon EC2 โดยเฉพาะ เปรียบเสมือน Hard Drive ที่นำมาต่อเข้ากับเซิร์ฟเวอร์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon S3", "correct": false },
+      { "text": "Amazon Elastic Block Store (Amazon EBS)", "correct": true },
+      { "text": "Amazon Elastic File System (Amazon EFS)", "correct": false },
+      { "text": "Amazon S3 Glacier", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the maximum size of a single object that can be stored in Amazon S3?",
+    "info": "แม้ว่า Amazon S3 จะสามารถเก็บข้อมูลรวมทั้งหมดได้ไม่จำกัด แต่วัตถุ (Single Object) 1 ชิ้น จะมีขนาดสูงสุดได้ไม่เกิน 5 TB",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "16 TiB", "correct": false },
+      { "text": "40 TB", "correct": false },
+      { "text": "5 TB", "correct": true },
+      { "text": "Unlimited", "correct": false }
+    ]
+  },
+  {
+    "text": "If a user modifies a single character in a 1 GB file stored on a block storage system, how does the system process this change?",
+    "info": "การทำงานของ Block Storage จะแบ่งไฟล์ออกเป็นชิ้นส่วนเล็กๆ (Blocks) เมื่อมีการแก้ไขข้อมูล ระบบจะทำการอัปเดตเฉพาะ Block ที่มีการเปลี่ยนแปลงเท่านั้น โดยไม่ต้องเขียนไฟล์ใหม่ทั้งหมดเหมือน Object Storage",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It re-uploads the entire 1 GB file.", "correct": false },
+      { "text": "It updates only the specific block containing the modified character.", "correct": true },
+      { "text": "It creates a new bucket to store the modified file.", "correct": false },
+      { "text": "It converts the entire volume into a Snapshot.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Amazon EBS volume type is recommended as the default for most workloads, including boot volumes and virtual desktops?",
+    "info": "General Purpose SSD (gp2/gp3) เป็นประเภท Volume มาตรฐานที่ให้ความคุ้มค่าระหว่างราคากับประสิทธิภาพ เหมาะสมกับ Workload ทั่วไป รวมถึงการใช้เป็น Boot Volume ของ EC2",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Cold HDD (sc1)", "correct": false },
+      { "text": "Provisioned IOPS SSD (io1/io2)", "correct": false },
+      { "text": "General Purpose SSD (gp2/gp3)", "correct": true },
+      { "text": "Throughput Optimized HDD (st1)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following EBS volume types CANNOT be used as an EC2 boot volume?",
+    "info": "EBS Volume ประเภท HDD ทั้งหมด (รวมถึง st1 และ sc1) ไม่สามารถนำมาใช้เป็น Boot Volume ได้ โดยระบบบังคับให้ใช้เฉพาะประเภท SSD เท่านั้น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "General Purpose SSD", "correct": false },
+      { "text": "Provisioned IOPS SSD", "correct": false },
+      { "text": "Throughput Optimized HDD (st1)", "correct": true },
+      { "text": "All SSD volume types", "correct": false }
+    ]
+  },
+  {
+    "text": "How does Amazon EBS handle data redundancy within the AWS Infrastructure?",
+    "info": "ข้อมูลใน Amazon EBS Volume จะถูกทำสำเนา (Replicated) โดยอัตโนมัติภายใน Availability Zone (AZ) เดียวกัน เพื่อป้องกันการสูญหายของข้อมูลจากความเสียหายของฮาร์ดแวร์ชิ้นใดชิ้นหนึ่ง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It automatically replicates data across multiple AWS Regions.", "correct": false },
+      { "text": "It automatically replicates data within a single Availability Zone.", "correct": true },
+      { "text": "It replicates data across at least three Availability Zones in the same Region.", "correct": false },
+      { "text": "Data is not replicated until an EBS Snapshot is manually created.", "correct": false }
+    ]
+  },
+  {
+    "text": "Where are Amazon EBS Snapshots stored for long-term durability?",
+    "info": "เมื่อเราทำการ Point-in-time Snapshot ของ EBS Volume ตัวไฟล์ Snapshot นั้นจะถูกนำไปจัดเก็บไว้บน Amazon S3 ซึ่งมีความทนทานของข้อมูล (Durability) สูงมาก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EFS", "correct": false },
+      { "text": "Amazon S3", "correct": true },
+      { "text": "Amazon EC2 Instance Store", "correct": false },
+      { "text": "AWS Storage Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement is correct regarding the pricing model for Provisioned IOPS SSD (io1/io2) EBS volumes?",
+    "info": "EBS ประเภท Provisioned IOPS SSD จะคิดค่าบริการตามขนาดพื้นที่จัดเก็บ (GB) ที่จองไว้ และจำนวน IOPS ที่เราตั้งค่าแบบ Provision ไว้ต่อเดือน",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "You are charged only for the number of API requests made to the volume.", "correct": false },
+      { "text": "You are charged for allocated storage (GB) and the provisioned IOPS per month.", "correct": true },
+      { "text": "IOPS are completely free; you only pay for storage capacity.", "correct": false },
+      { "text": "You pay based on the volume of data transferred over the network.", "correct": false }
+    ]
+  },
+  {
+    "text": "What level of data durability is offered by Amazon S3 and Amazon S3 Glacier?",
+    "info": "ทั้ง Amazon S3 และ S3 Glacier ถูกออกแบบมาให้มีความทนทานของข้อมูล (Durability) สูงถึง 99.999999999% (11 9s) ต่อปี ซึ่งหมายถึงโอกาสที่ข้อมูลจะสูญหายแทบจะเป็นศูนย์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "99.9%", "correct": false },
+      { "text": "99.99%", "correct": false },
+      { "text": "99.999999999% (11 9s)", "correct": true },
+      { "text": "100%", "correct": false }
+    ]
+  },
+  {
+    "text": "Regarding Amazon S3 Data Transfer charges, which of the following scenarios is FREE of charge?",
+    "info": "การโอนย้ายข้อมูลขาเข้า (Inbound Data Transfer) จากภายนอกเข้ามายัง Amazon S3 จะไม่มีค่าใช้จ่าย (ฟรี) แต่การโอนย้ายข้อมูลขาออก (Outbound) ไปยังอินเทอร์เน็ตหรือข้าม Region จะมีค่าบริการ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data transferred OUT from Amazon S3 to the Internet.", "correct": false },
+      { "text": "Data transferred IN to Amazon S3 from the Internet.", "correct": true },
+      { "text": "Data transferred OUT to another AWS Region.", "correct": false },
+      { "text": "Data transferred OUT via Amazon CloudFront to a different continent.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Amazon S3 Storage Class is ideal for data with unknown or changing access patterns to automatically optimize storage costs?",
+    "info": "Amazon S3 Intelligent-Tiering จะช่วยวิเคราะห์และย้ายข้อมูลระหว่าง Access Tiers ต่างๆ (เช่น Frequent Access และ Infrequent Access) โดยอัตโนมัติตามรูปแบบการใช้งานจริง เพื่อช่วยลดต้นทุนโดยไม่มีค่าธรรมเนียมในการดึงข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon S3 Standard", "correct": false },
+      { "text": "Amazon S3 Intelligent-Tiering", "correct": true },
+      { "text": "Amazon S3 Standard-Infrequent Access (S3 Standard-IA)", "correct": false },
+      { "text": "Amazon S3 Glacier Flexible Retrieval", "correct": false }
+    ]
+  },
+  {
+    "text": "When Object Versioning is enabled on an Amazon S3 Bucket, what happens when a user deletes an object without specifying a version ID?",
+    "info": "เมื่อเปิดใช้งาน S3 Versioning แล้วสั่งลบไฟล์โดยไม่ระบุ Version ID ระบบจะไม่ลบไฟล์จริงทิ้ง แต่จะสร้าง Delete Marker ขึ้นมาครอบไว้ ทำให้ไฟล์ดูเหมือนถูกลบไปแล้ว แต่เวอร์ชันก่อนหน้าทั้งหมดจะยังถูกเก็บไว้ และสามารถกู้คืนได้เสมอ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The object is permanently deleted from the bucket immediately.", "correct": false },
+      { "text": "AWS places a Delete Marker on the object, making it appear deleted while preserving older versions.", "correct": true },
+      { "text": "The deletion fails and returns an Access Denied error.", "correct": false },
+      { "text": "All previous versions of the object are automatically moved to S3 Glacier.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS storage service supports the Network File System (NFSv4) protocol and allows multiple Amazon EC2 instances to access it simultaneously?",
+    "info": "Amazon EFS เป็นบริการ File Storage ที่รองรับโปรโตคอล NFSv4 ช่วยให้ EC2 instances หลายๆ เครื่อง (รวมถึงเซิร์ฟเวอร์ On-premises) สามารถเชื่อมต่อและอ่าน/เขียนไฟล์ร่วมกันได้พร้อมกัน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EBS", "correct": false },
+      { "text": "Amazon S3", "correct": false },
+      { "text": "Amazon Elastic File System (Amazon EFS)", "correct": true },
+      { "text": "Amazon S3 Glacier", "correct": false }
+    ]
+  },
+  {
+    "text": "Which component is required to connect an Amazon EC2 instance within a VPC to an Amazon EFS file system?",
+    "info": "ในการเชื่อมต่อ VPC เข้ากับ Amazon EFS จะต้องมีการสร้าง Mount Target ไว้ใน Subnet ของแต่ละ Availability Zone เพื่อให้ EC2 instance ใช้เป็นจุดเชื่อมต่อผ่าน IP Address ภายใน VPC",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Internet Gateway", "correct": false },
+      { "text": "S3 Bucket Access Policy", "correct": false },
+      { "text": "EFS Mount Target", "correct": true },
+      { "text": "NAT Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "To achieve high availability when mounting an Amazon EFS file system across multiple EC2 instances in different Availability Zones, how should Mount Targets be deployed?",
+    "info": "ควรสร้าง Mount Target ไว้ใน Subnet ของทุกๆ Availability Zone (AZ) ที่มี EC2 Instance ทำงานอยู่ เพื่อให้ Instance ในแต่ละ AZ สามารถเชื่อมต่อผ่าน Mount Target ใน AZ ของตนเองได้ ซึ่งช่วยให้มีความเสถียรและทนทานสูง",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Create one Mount Target in any single Availability Zone.", "correct": false },
+      { "text": "Create a Mount Target in each Availability Zone where EC2 instances reside.", "correct": true },
+      { "text": "Create a Mount Target directly inside the S3 Bucket.", "correct": false },
+      { "text": "Mount Targets are created automatically at the AWS Region boundary without subnets.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Amazon S3 Glacier retrieval option allows you to access archives in 1 to 5 minutes for urgent data requests?",
+    "info": "ตัวเลือกการดึงข้อมูลแบบ Expedited ของ Amazon S3 Glacier ออกแบบมาสำหรับการเข้าถึงข้อมูลด่วน โดยใช้เวลาเพียง 1 - 5 นาทีในการนำข้อมูลออกมา",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Standard", "correct": false },
+      { "text": "Bulk", "correct": false },
+      { "text": "Expedited", "correct": true },
+      { "text": "Instant Access", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Amazon S3 Glacier retrieval option is the lowest-cost method but takes between 5 to 12 hours to complete?",
+    "info": "ตัวเลือกแบบ Bulk มีราคาถูกที่สุดในการดึงข้อมูลจาก S3 Glacier แต่ต้องใช้เวลาในการดึงข้อมูลนานที่สุดคือประมาณ 5 ถึง 12 ชั่วโมง เหมาะกับงานดึงข้อมูลขนาดใหญ่ที่ไม่เร่งด่วน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Expedited", "correct": false },
+      { "text": "Standard", "correct": false },
+      { "text": "Bulk", "correct": true },
+      { "text": "On-Demand", "correct": false }
+    ]
+  },
+  {
+    "text": "Which feature in Amazon S3 Glacier prevents archives from being modified or deleted, helping organizations meet regulatory compliance requirements?",
+    "info": "Vault Lock ช่วยให้สามารถกำหนดนโยบายการรักษาความปลอดภัยแบบ WORM (Write Once, Read Many) บน Glacier Vault เพื่อป้องกันการแก้ไขหรือลบข้อมูลตามนโยบาย Compliance ขององค์กร",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "S3 Lifecycle Rules", "correct": false },
+      { "text": "Glacier Vault Lock", "correct": true },
+      { "text": "AWS Key Management Service (KMS)", "correct": false },
+      { "text": "EBS Snapshot Locking", "correct": false }
+    ]
+  },
+  {
+    "text": "What feature allows users to automate the transition of objects from Amazon S3 Standard to S3 Glacier or delete them after a set period?",
+    "info": "S3 Lifecycle Policies คือการตั้งค่ากฎเพื่อย้าย Object ข้าม Storage Classes ต่างๆ อัตโนมัติ (เช่น ย้ายไป S3-IA หรือ Glacier) หรือสั่งลบข้อมูลตามกรอบระยะเวลาที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Identity and Access Management (IAM)", "correct": false },
+      { "text": "S3 Lifecycle Policies", "correct": true },
+      { "text": "Auto Scaling Group Policies", "correct": false },
+      { "text": "Amazon EBS Elastic Volumes", "correct": false }
+    ]
+  },
+  {
+    "text": "According to standard S3 Lifecycle rules, if an object transitions from S3 Standard to S3 Standard-IA at day 30, what is a valid next transition threshold to S3 Glacier?",
+    "info": "การตั้งค่าวงจรชีวิตข้อมูล (Lifecycle) จะต้องดำเนินไปตามลำดับเวลา เช่น ย้ายเข้า S3 Standard-IA ในวันที่ 30 และย้ายต่อไปยัง Glacier ในวันที่ 60 (ต้องมีจำนวนวันมากกว่าหรือเท่ากับขั้นตอนก่อนหน้า)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Day 15", "correct": false },
+      { "text": "Day 20", "correct": false },
+      { "text": "Day 30", "correct": false },
+      { "text": "Day 60", "correct": true }
+    ]
+  },
+  {
+    "text": "Which encryption standard is automatically used by Amazon S3 Glacier to encrypt data at rest?",
+    "info": "ข้อมูลทั้งหมดที่ถูกจัดเก็บลงใน Amazon S3 Glacier จะถูก เข้ารหัสแบบ Server-Side Encryption โดยใช้รหัสผ่านมาตรฐาน AES-256 โดยอัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "RSA-2048", "correct": false },
+      { "text": "AES-256", "correct": true },
+      { "text": "DES-64", "correct": false },
+      { "text": "ECC-384", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the maximum archive sizes supported by Amazon S3 and Amazon S3 Glacier respectively?",
+    "info": "ขนาดของ Single Object ใน Amazon S3 มีขนาดได้สูงสุด 5 TB ในขณะที่ Single Archive ใน Amazon S3 Glacier สามารถมีขนาดใหญ่ได้สูงสุดถึง 40 TB",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "S3: 5 TB / Glacier: 40 TB", "correct": true },
+      { "text": "S3: 40 TB / Glacier: 5 TB", "correct": false },
+      { "text": "S3: 16 TiB / Glacier: 16 TiB", "correct": false },
+      { "text": "S3: Unlimited / Glacier: 5 TB", "correct": false }
+    ]
+  },
+  {
+    "text": "Which action operations are primary cost components when calculating request charges for Amazon S3 Glacier?",
+    "info": "ค่าธรรมเนียมการร้องขอ (Requests) ของ Amazon S3 Glacier จะคิดหลักๆ จากคำสั่งการอัปโหลดข้อมูล (UPLOAD) และคำสั่งการดึงข้อมูลสำรองออกมารวมถึงปริมาณข้อมูลที่ดึง (RETRIEVAL)",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "PUT and DELETE requests", "correct": false },
+      { "text": "ATTACH and DETACH requests", "correct": false },
+      { "text": "UPLOAD and RETRIEVAL requests", "correct": true },
+      { "text": "MOUNT and UNMOUNT requests", "correct": false }
+    ]
+  },
+  {
+    "text": "The term \"Elasticity\" in Amazon EBS Elastic Volumes refers to which capability?",
+    "info": "Elasticity ของ EBS (Elastic Volumes) หมายถึงความสามารถในการขยายขนาดพื้นที่ (Capacity), ปรับเปลี่ยนประสิทธิภาพ (IOPS) หรือเปลี่ยนประเภทของ Volume (เช่น gp2 เป็น gp3) ได้ทันที โดยไม่ต้องหยุดการทำงานของ EC2 Instance",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Automatically deleting volumes when CPU utilization drops.", "correct": false },
+      { "text": "Dynamically increasing volume size and changing volume types without downtime.", "correct": true },
+      { "text": "Replicating volumes across multiple Regions automatically.", "correct": false },
+      { "text": "Converting EBS volumes into S3 Buckets on demand.", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is NOT a typical use case for Amazon Elastic File System (Amazon EFS)?",
+    "info": "การโฮสต์ Static Website ที่ต้องการต้นทุนต่ำที่สุด ควรเลือกใช้ Amazon S3 เพราะถูกออกแบบมาเพื่อให้บริการ Static File โดยตรงและประหยัดกว่าการใช้ EFS มาก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Big data and analytics", "correct": false },
+      { "text": "Content management systems and web serving", "correct": false },
+      { "text": "Media processing workflows", "correct": false },
+      { "text": "Hosting a static website with a single HTML file at the lowest storage cost", "correct": true }
+    ]
+  },
+  {
+    "text": "A company ingests billions of streaming event records daily using Amazon Kinesis Data Firehose. Which storage service is best suited as a scalable target landing space?",
+    "info": "Amazon S3 เหมาะสมที่สุดในการเป็น Data Lake หรือคลังเก็บข้อมูลขนาดใหญ่ (Target Destination) สำหรับข้อมูลประเภท Streaming จาก Kinesis Data Firehose เนื่องจากรองรับความจุไม่จำกัด และขยายระบบได้ง่าย",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon EBS", "correct": false },
+      { "text": "Amazon S3", "correct": true },
+      { "text": "Amazon EFS", "correct": false },
+      { "text": "Amazon EC2 Instance Store", "correct": false }
+    ]
+  },
+  {
+    "text": "A company needs to store long-term backup data that is rarely accessed and can tolerate a retrieval time of several hours. Which service provides the most cost-effective solution?",
+    "info": "Amazon S3 Glacier ถูกออกแบบมาเพื่อการสำรองข้อมูลระยะยาวที่ไม่ค่อยได้เปิดใช้งาน (Rarely accessed) ให้ต้นทุนการจัดเก็บต่ำที่สุด โดยแลกกับระยะเวลาในการดึงข้อมูลคืนที่มีตั้งแต่หลักนาทีถึงหลักชั่วโมง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "AWS Storage Gateway", "correct": false },
+      { "text": "Amazon S3 Glacier", "correct": true },
+      { "text": "Amazon EBS", "correct": false },
+      { "text": "Amazon Elastic File System (Amazon EFS)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement best highlights a key architectural difference between Amazon EBS and Amazon EFS?",
+    "info": "EBS มีลักษณะเหมือน Local Disk ที่ต่อตรงกับ EC2 1 เครื่อง ใน 1 AZ เป็นหลัก (แม้จะมี Multi-Attach บนบาง Volume แต่จำกัดใน AZ เดียวกัน) ในขณะที่ EFS เป็น Shared File System ที่ให้ EC2 หลายๆ เครื่องข้าม AZ สามารถเข้าถึงพร้อมกันได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "EBS is object storage, whereas EFS is block storage.", "correct": false },
+      { "text": "EBS volume attaches to one EC2 instance in a single AZ, whereas EFS can be shared across multiple EC2 instances in multiple AZs.", "correct": true },
+      { "text": "EBS is completely free, whereas EFS charges per request.", "correct": false },
+      { "text": "EBS uses the NFSv4 protocol, whereas EFS does not support NFS.", "correct": false }
+    ]
+  },
+  {
+    "text": "When calculating the total cost of using Amazon S3, which factor does NOT directly incur a cost?",
+    "info": "การโอนย้ายข้อมูลขาเข้า (Data Transfer IN) มายัง Amazon S3 ฟรีเสมอ ไม่นำมาคิดคำนวณค่าบริการ ต่างจากปริมาณข้อมูลที่จัดเก็บ, การโอนย้ายข้อมูลขาออก (Data Transfer OUT), และจำนวน Requests ที่ทำรายการ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Storage class selection and data capacity stored", "correct": false },
+      { "text": "Data Transfer IN from the Internet to S3", "correct": true },
+      { "text": "Data Transfer OUT to another AWS Region", "correct": false },
+      { "text": "Number of requests made (e.g., GET, PUT, LIST)", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement is correct regarding data encryption for Amazon EBS volumes?",
+    "info": "การเปิดใช้งานการเข้ารหัสข้อมูล (Encryption at rest) บน Amazon EBS Volume สามารถทำได้ฟรีโดยไม่มีค่าบริการเพิ่มเติม และไม่มีผลกระทบต่อประสิทธิภาพ (Performance) การทำงานของ Volume",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Encryption incurs a 10% surcharge on monthly EBS fees.", "correct": false },
+      { "text": "Encryption can be enabled with no additional cost.", "correct": true },
+      { "text": "EBS does not support volume encryption.", "correct": false },
+      { "text": "Only HDD-based EBS volumes support encryption.", "correct": false }
+    ]
+  }
+]
