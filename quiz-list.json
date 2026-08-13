@@ -58,14 +58,14 @@
       {
         "subject": "Midterm/Cloud",
         "files": [
-          "ปี 2 เทอม 1/Midterm/Cloud/AWS Cloud Security.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/AWS Global Infrastructure.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/Cloud concept.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/Cloud Economics and Billing.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/Compute.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/Databases.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/Networking and Content Delivery.json",
-          "ปี 2 เทอม 1/Midterm/Cloud/Storage.json"
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 1 - Cloud concept.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 2 - Cloud Economics and Billing.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 3 - AWS Global Infrastructure.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 4 - AWS Cloud Security.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 5 - Networking and Content Delivery.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 6 - Compute.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 7 - Storage.json",
+          "ปี 2 เทอม 1/Midterm/Cloud/Module 8 - Databases.json"
         ]
       }
     ]
