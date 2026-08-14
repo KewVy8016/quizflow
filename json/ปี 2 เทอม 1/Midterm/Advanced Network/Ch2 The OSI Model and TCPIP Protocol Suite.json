@@ -1,0 +1,662 @@
+[
+  {
+    "text": "How many layers are in the OSI Model and the TCP/IP Protocol Suite (based on this chapter), respectively?",
+    "info": "OSI = 7 Layers, TCP/IP = 5 Layers (Physical, Data Link, Network, Transport, Application).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "OSI: 5 layers, TCP/IP: 7 layers", "correct": false },
+      { "text": "OSI: 7 layers, TCP/IP: 5 layers", "correct": true },
+      { "text": "OSI: 7 layers, TCP/IP: 4 layers", "correct": false },
+      { "text": "OSI: 4 layers, TCP/IP: 5 layers", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes the relationship between the TCP/IP Protocol Suite and the OSI Model?",
+    "info": "Bottom 4 layers (Physical to Transport) are identical in both models.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP/IP was developed after the OSI Model", "correct": false },
+      { "text": "The lower 4 layers of TCP/IP match the lower 4 layers of the OSI Model", "correct": true },
+      { "text": "TCP/IP splits its top layer into Presentation and Session layers", "correct": false },
+      { "text": "The OSI Model is practical while TCP/IP is purely theoretical", "correct": false }
+    ]
+  },
+  {
+    "text": "The Application Layer in TCP/IP covers which layers of the OSI Model?",
+    "info": "TCP/IP combines OSI's top 3 layers (L5, L6, L7) into a single Application Layer.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Physical, Data Link, Network", "correct": false },
+      { "text": "Transport, Network, Data Link", "correct": false },
+      { "text": "Session, Presentation, Application", "correct": true },
+      { "text": "Application, Transport, Network", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the main responsibility of the Application Layer in the OSI Model?",
+    "info": "Application = Access network resources.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To translate, encrypt, and compress data", "correct": false },
+      { "text": "To allow access to network resources", "correct": true },
+      { "text": "To establish, manage, and terminate sessions", "correct": false },
+      { "text": "To organize bits into frames", "correct": false }
+    ]
+  },
+  {
+    "text": "Which layer of the OSI Model is responsible for data translation, encryption, and compression?",
+    "info": "Presentation = Translate, Encrypt, Compress.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Application Layer", "correct": false },
+      { "text": "Presentation Layer", "correct": true },
+      { "text": "Session Layer", "correct": false },
+      { "text": "Transport Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary function of the Session Layer in the OSI Model?",
+    "info": "Session = Establish, Manage, Terminate.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To organize bits into frames", "correct": false },
+      { "text": "To provide hop-to-hop delivery", "correct": false },
+      { "text": "To establish, manage, and terminate sessions", "correct": true },
+      { "text": "To move packets from source to destination", "correct": false }
+    ]
+  },
+  {
+    "text": "Which layer provides \"reliable process-to-process message delivery and error recovery\"?",
+    "info": "Transport = Process-to-process + Error recovery.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Network Layer", "correct": false },
+      { "text": "Transport Layer", "correct": true },
+      { "text": "Data Link Layer", "correct": false },
+      { "text": "Physical Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "Moving packets from source to destination across a network is the primary role of which layer?",
+    "info": "Network = Source to destination + Packets.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Transport Layer", "correct": false },
+      { "text": "Network Layer", "correct": true },
+      { "text": "Data Link Layer", "correct": false },
+      { "text": "Physical Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "\"To organize bits into frames; to provide hop-to-hop delivery\" describes the responsibility of which layer?",
+    "info": "Data Link = Frames + Hop-to-hop delivery.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Physical Layer", "correct": false },
+      { "text": "Data Link Layer", "correct": true },
+      { "text": "Network Layer", "correct": false },
+      { "text": "Transport Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary function of the Physical Layer in the OSI Model?",
+    "info": "Physical = Bits + Transmission Medium + Electrical/Mechanical specs.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To transmit bits over a medium; to provide mechanical and electrical specifications", "correct": true },
+      { "text": "To establish and manage sessions", "correct": false },
+      { "text": "To provide internetworking", "correct": false },
+      { "text": "To translate and encrypt data", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement is TRUE regarding the Physical and Data Link Layers in the TCP/IP suite?",
+    "info": "TCP/IP L1–L2 accepts all pre-existing standard and proprietary protocols.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP/IP defines its own unique protocols for the Physical Layer", "correct": false },
+      { "text": "TCP/IP supports open standard protocols only", "correct": false },
+      { "text": "TCP/IP does not define specific protocols at these layers, but rather supports existing standard and proprietary protocols", "correct": true },
+      { "text": "TCP/IP forces networks to use Ethernet exclusively", "correct": false }
+    ]
+  },
+  {
+    "text": "Which pair of protocols operates at the Data Link / Physical Layers?",
+    "info": "Ethernet & Wi-Fi = Hardware & link-level connections (L1/L2).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IP, ICMP", "correct": false },
+      { "text": "TCP, UDP", "correct": false },
+      { "text": "Ethernet, Wi-Fi (802.11)", "correct": true },
+      { "text": "HTTP, FTP", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the Protocol Data Unit (PDU) at the Data Link Layer called?",
+    "info": "Data Link = Frame.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Packet", "correct": false },
+      { "text": "Frame", "correct": true },
+      { "text": "Segment", "correct": false },
+      { "text": "Bit", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the Protocol Data Unit (PDU) at the Physical Layer called?",
+    "info": "Physical = Bits.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Bits", "correct": true },
+      { "text": "Frame", "correct": false },
+      { "text": "Packet", "correct": false },
+      { "text": "Datagram", "correct": false }
+    ]
+  },
+  {
+    "text": "Which network device operates at the Network Layer (Layer 3)?",
+    "info": "Router = Layer 3 (Network Layer).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Switch / Bridge", "correct": false },
+      { "text": "Router", "correct": true },
+      { "text": "Hub / Repeater", "correct": false },
+      { "text": "Network Interface Card (NIC)", "correct": false }
+    ]
+  },
+  {
+    "text": "What are data packets called in the IP protocol?",
+    "info": "IP Packets = Datagrams.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Segments", "correct": false },
+      { "text": "Frames", "correct": false },
+      { "text": "Datagrams", "correct": true },
+      { "text": "Cells", "correct": false }
+    ]
+  },
+  {
+    "text": "Which options correctly describe the characteristics of the IP protocol?",
+    "info": "IP = Unreliable & Connectionless (Best effort, no setup).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Reliable and connection-oriented", "correct": false },
+      { "text": "Unreliable and connectionless", "correct": true },
+      { "text": "Reliable and connectionless", "correct": false },
+      { "text": "Unreliable and connection-oriented", "correct": false }
+    ]
+  },
+  {
+    "text": "What does \"Best-effort delivery service\" mean in the context of the IP protocol?",
+    "info": "Best-effort = Tries hard, but NO error checking/tracking.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Guarantees 100% data delivery", "correct": false },
+      { "text": "Makes its best attempt to deliver packets, but provides no error checking or tracking", "correct": true },
+      { "text": "Establishes a connection before transmitting", "correct": false },
+      { "text": "Retransmits lost packets automatically", "correct": false }
+    ]
+  },
+  {
+    "text": "Why was IP designed to be Unreliable and Connectionless?",
+    "info": "IP stays fast & simple -> TCP handles reliability.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To maximize transmission speed, leaving reliability control to the Transport Layer (TCP)", "correct": true },
+      { "text": "Because error-checking code could not be written at the time", "correct": false },
+      { "text": "To save cable bandwidth", "correct": false },
+      { "text": "It was an initial design oversight", "correct": false }
+    ]
+  },
+  {
+    "text": "How many main supporting protocols exist at the Network Layer according to this chapter?",
+    "info": "4 Supporting protocols = ARP, RARP, ICMP, IGMP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2", "correct": false },
+      { "text": "3", "correct": false },
+      { "text": "4", "correct": true },
+      { "text": "5", "correct": false }
+    ]
+  },
+  {
+    "text": "At which level does the IP protocol operate communication?",
+    "info": "IP = Host-to-host communication.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Process-to-process", "correct": false },
+      { "text": "Host-to-host", "correct": true },
+      { "text": "Hop-to-hop", "correct": false },
+      { "text": "Peer-to-peer", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the PDU name at the Network Layer?",
+    "info": "Network Layer = Packet or Datagram.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Frame", "correct": false },
+      { "text": "Packet / Datagram", "correct": true },
+      { "text": "Segment", "correct": false },
+      { "text": "Bit", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following protocols does NOT operate at the Network Layer?",
+    "info": "UDP operates at the Transport Layer (Layer 4).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ICMP", "correct": false },
+      { "text": "ARP", "correct": false },
+      { "text": "UDP", "correct": true },
+      { "text": "IGMP", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the process of transmitting data from a source to a destination across multiple networks called?",
+    "info": "IP = Internetworking Protocol (connecting distinct networks).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Intranetworking", "correct": false },
+      { "text": "Internetworking", "correct": true },
+      { "text": "Local Networking", "correct": false },
+      { "text": "Bridging", "correct": false }
+    ]
+  },
+  {
+    "text": "Which device connects networks and makes routing decisions at the Network Layer?",
+    "info": "Router reads IP Addresses to perform Routing.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Hub", "correct": false },
+      { "text": "Switch", "correct": false },
+      { "text": "Router", "correct": true },
+      { "text": "Repeater", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the function of the ARP (Address Resolution Protocol)?",
+    "info": "ARP = IP -> MAC.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Translates MAC Address to IP Address", "correct": false },
+      { "text": "Translates IP Address to Physical Address (MAC Address)", "correct": true },
+      { "text": "Sends network error notifications", "correct": false },
+      { "text": "Manages multicast groups", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is ARP necessary when transmitting data within a Local Area Network (LAN)?",
+    "info": "LAN frames require Physical Addresses for delivery.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Because IP addresses cannot function on LANs", "correct": false },
+      { "text": "Because physical data transmission in a LAN requires a Physical (MAC) Address", "correct": true },
+      { "text": "To encrypt packets before transmission", "correct": false },
+      { "text": "To compress payload sizes", "correct": false }
+    ]
+  },
+  {
+    "text": "How does RARP (Reverse Address Resolution Protocol) differ from ARP?",
+    "info": "RARP = MAC -> IP (Reverse of ARP).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Finds IP Address using a Physical Address", "correct": true },
+      { "text": "Finds Port Number using an IP Address", "correct": false },
+      { "text": "Finds MAC Address using an IP Address", "correct": false },
+      { "text": "Translates Domain Name to IP Address", "correct": false }
+    ]
+  },
+  {
+    "text": "In which situation is RARP typically used?",
+    "info": "RARP = Diskless host retrieving its IP upon boot.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Sending an email to a peer", "correct": false },
+      { "text": "Booting up a Diskless Computer for the first time", "correct": true },
+      { "text": "Detecting a broken Ethernet cable", "correct": false },
+      { "text": "Streaming online video", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary role of ICMP (Internet Control Message Protocol)?",
+    "info": "ICMP = Notification of datagram errors.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Manages domain name registrations", "correct": false },
+      { "text": "Sends error notification messages back to the source when datagram issues occur", "correct": true },
+      { "text": "Maps IP address to MAC address", "correct": false },
+      { "text": "Controls data transmission speed", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the two main categories of ICMP messages?",
+    "info": "ICMP = Query + Error-reporting.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Request and Response", "correct": false },
+      { "text": "Query and Error-reporting messages", "correct": true },
+      { "text": "Open and Close", "correct": false },
+      { "text": "TCP and UDP", "correct": false }
+    ]
+  },
+  {
+    "text": "Which protocol does the ping command rely on?",
+    "info": "ping command uses ICMP Echo Request/Reply.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ARP", "correct": false },
+      { "text": "IGMP", "correct": false },
+      { "text": "ICMP", "correct": true },
+      { "text": "RARP", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the purpose of IGMP (Internet Group Message Protocol)?",
+    "info": "IGMP = Group / Multicast management.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Detects signal collisions", "correct": false },
+      { "text": "Facilitates sending messages to a group of recipients simultaneously (Multicast)", "correct": true },
+      { "text": "Sends error notifications back to the sender", "correct": false },
+      { "text": "Assigns IP addresses to client devices", "correct": false }
+    ]
+  },
+  {
+    "text": "Which pair correctly matches the protocol with its core function?",
+    "info": "ICMP handles diagnostic and error reporting.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ARP : MAC -> IP", "correct": false },
+      { "text": "RARP : IP -> MAC", "correct": false },
+      { "text": "ICMP : Notification of datagram problems", "correct": true },
+      { "text": "IGMP : Unicast communication", "correct": false }
+    ]
+  },
+  {
+    "text": "If a host needs to determine the MAC address corresponding to IP 192.168.1.50, which protocol will be invoked?",
+    "info": "Know IP, want MAC -> Use ARP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ICMP", "correct": false },
+      { "text": "IGMP", "correct": false },
+      { "text": "ARP", "correct": true },
+      { "text": "RARP", "correct": false }
+    ]
+  },
+  {
+    "text": "At which level do Transport Layer protocols communicate?",
+    "info": "Transport Layer = Process-to-process communication.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Host-to-host", "correct": false },
+      { "text": "Node-to-node", "correct": false },
+      { "text": "Process-to-process", "correct": true },
+      { "text": "Link-to-link", "correct": false }
+    ]
+  },
+  {
+    "text": "UDP (User Datagram Protocol) keeps its header minimal. Which field is NOT included in the UDP header?",
+    "info": "UDP Header contains only Port, Length, Checksum (NO sequence numbers).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Source & Destination Port numbers", "correct": false },
+      { "text": "Checksum for error control", "correct": false },
+      { "text": "Length", "correct": false },
+      { "text": "Sequence number for retransmission", "correct": true }
+    ]
+  },
+  {
+    "text": "Which options correctly describe TCP (Transmission Control Protocol)?",
+    "info": "TCP = Reliable + Connection-oriented (Handshake first).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Connectionless and unreliable", "correct": false },
+      { "text": "Reliable and connection-oriented", "correct": true },
+      { "text": "Unreliable and connection-oriented", "correct": false },
+      { "text": "Connectionless and reliable", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Transport Layer protocol is best suited for Live Video Streaming or online gaming?",
+    "info": "Real-time speed over perfection = UDP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP", "correct": false },
+      { "text": "UDP", "correct": true },
+      { "text": "IP", "correct": false },
+      { "text": "ICMP", "correct": false }
+    ]
+  },
+  {
+    "text": "Why do File Transfers (FTP) and Web Browsing (HTTP) require TCP?",
+    "info": "Web/File data must be 100% intact -> TCP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Because UDP is too fast", "correct": false },
+      { "text": "Because 100% data accuracy and reliability are required", "correct": true },
+      { "text": "Because IP is a top-layer protocol", "correct": false },
+      { "text": "Because ICMP validates file content", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a major difference between TCP and UDP?",
+    "info": "TCP retransmits lost segments; UDP sends and forgets.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP is process-to-process, whereas UDP is host-to-host", "correct": false },
+      { "text": "TCP includes a retransmission mechanism for lost packets, whereas UDP does not", "correct": true },
+      { "text": "UDP has a larger header size than TCP", "correct": false },
+      { "text": "TCP operates at the Network Layer, whereas UDP operates at the Transport Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the PDUs of TCP and UDP called, respectively?",
+    "info": "TCP = Segment, UDP = User Datagram.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP = Datagram, UDP = Segment", "correct": false },
+      { "text": "TCP = Segment, UDP = User Datagram", "correct": true },
+      { "text": "TCP = Frame, UDP = Packet", "correct": false },
+      { "text": "TCP = Packet, UDP = Frame", "correct": false }
+    ]
+  },
+  {
+    "text": "According to TCP/IP architecture, how many main types of addresses are used?",
+    "info": "3 Primary Addresses = Physical, IP, and Port addresses.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 types", "correct": false },
+      { "text": "3 types", "correct": true },
+      { "text": "4 types", "correct": false },
+      { "text": "5 types", "correct": false }
+    ]
+  },
+  {
+    "text": "Physical Address is also known by what term, and what does it identify?",
+    "info": "Physical Address = Link Address (identifies physical node).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Logical Address; identifies a program", "correct": false },
+      { "text": "Link Address; identifies a Node in a LAN/WAN", "correct": true },
+      { "text": "Port Address; identifies a server", "correct": false },
+      { "text": "IP Address; identifies international locations", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the length of an Ethernet Physical Address?",
+    "info": "Ethernet MAC Address = 6 Bytes (48 bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1 Byte (8 bits)", "correct": false },
+      { "text": "4 Bytes (32 bits)", "correct": false },
+      { "text": "6 Bytes (48 bits)", "correct": true },
+      { "text": "16 Bytes (128 bits)", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the size of a LocalTalk Physical Address?",
+    "info": "LocalTalk = 1 Byte.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1 Byte", "correct": true },
+      { "text": "2 Bytes", "correct": false },
+      { "text": "4 Bytes", "correct": false },
+      { "text": "6 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "In a Bus Topology example (Device 10 sending to Device 87), which statement is correct?",
+    "info": "Only the node matching the Destination MAC address extracts the payload.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "All devices receive and fully process the data up to the Application Layer", "correct": false },
+      { "text": "Source Address in the Frame is 87", "correct": false },
+      { "text": "Destination Address in the Frame is 87, and only Device 87 accepts and processes the payload", "correct": true },
+      { "text": "Trailer (T2) is placed at the front of the frame", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is an Internet Address (IP Address) needed when Physical Addresses already exist?",
+    "info": "IP = Universal addressing system connecting diverse physical networks.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Physical Addresses cannot cross heterogeneous networks, necessitating a Universal Addressing system", "correct": true },
+      { "text": "Physical Addresses cannot be changed", "correct": false },
+      { "text": "IP Addresses process faster", "correct": false },
+      { "text": "Physical Addresses are too large", "correct": false }
+    ]
+  },
+  {
+    "text": "What happens to IP and Physical addresses as a packet travels across multiple router hops?",
+    "info": "IP = Constant end-to-end; Physical = Changes every hop.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IP Address changes at each hop, while Physical Address remains constant", "correct": false },
+      { "text": "Both IP and Physical addresses change at each hop", "correct": false },
+      { "text": "IP Address remains unchanged end-to-end, while Physical Address changes at each hop/link", "correct": true },
+      { "text": "Neither address changes", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the address length of IPv4?",
+    "info": "IPv4 = 32 bits = 4 bytes.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "16 bits (2 bytes)", "correct": false },
+      { "text": "32 bits (4 bytes)", "correct": true },
+      { "text": "48 bits (6 bytes)", "correct": false },
+      { "text": "128 bits (16 bytes)", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the notation format 132.24.75.9 called?",
+    "info": "Four decimal numbers separated by dots = Dotted-Decimal Notation.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Hexadecimal Notation", "correct": false },
+      { "text": "Dotted-Decimal Notation", "correct": true },
+      { "text": "Binary Notation", "correct": false },
+      { "text": "Decimal-Port Notation", "correct": false }
+    ]
+  },
+  {
+    "text": "Each dot-separated number in an IPv4 address represents how many bytes, and what is its maximum value?",
+    "info": "Each octet = 1 Byte (8 bits) -> Range 0 to 255.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1 Byte, maximum value 255", "correct": true },
+      { "text": "2 Bytes, maximum value 65535", "correct": false },
+      { "text": "4 Bytes, maximum value 100", "correct": false },
+      { "text": "8 Bits, maximum value 512", "correct": false }
+    ]
+  },
+  {
+    "text": "What does a Port Address identify, and what is its length?",
+    "info": "Port Address = Identifies process, 16 bits long.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Identifies a computer host; 32 bits long", "correct": false },
+      { "text": "Identifies a specific process/program; 16 bits long", "correct": true },
+      { "text": "Identifies a network interface card; 48 bits long", "correct": false },
+      { "text": "Identifies a physical transmission line; 8 bits long", "correct": false }
+    ]
+  },
+  {
+    "text": "How is a Port Address typically represented?",
+    "info": "Port Address = Single decimal number (e.g., 80, 443, 753).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "6 pairs of hexadecimal digits separated by colons", "correct": false },
+      { "text": "4 decimal numbers separated by dots", "correct": false },
+      { "text": "A single decimal integer (e.g., 753)", "correct": true },
+      { "text": "English letters", "correct": false }
+    ]
+  },
+  {
+    "text": "When a packet reaches the Network Layer of destination Device P, what happens next?",
+    "info": "Network Layer verifies IP -> Transport Layer inspects Port Address.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data is passed directly to the Application process", "correct": false },
+      { "text": "The Network Layer strips the IP header and passes the packet to the Transport Layer, which reads the Port Address", "correct": true },
+      { "text": "Data is bounced back to Source Device A", "correct": false },
+      { "text": "Data Link Layer checks the Port Address", "correct": false }
+    ]
+  },
+  {
+    "text": "Which IP version is the primary, currently used standard on the Internet?",
+    "info": "Main standard today = Version 4 (IPv4).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Version 4", "correct": true },
+      { "text": "Version 5", "correct": false },
+      { "text": "Version 6", "correct": false },
+      { "text": "Version 7", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement regarding IPv5 is correct?",
+    "info": "Version 5 = Theoretical proposal only (never deployed).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Widely used in modern mobile communication", "correct": false },
+      { "text": "It was only an OSI-based proposal and was never implemented on the public Internet", "correct": true },
+      { "text": "It is a 128-bit extension", "correct": false },
+      { "text": "It was renamed to IPsec", "correct": false }
+    ]
+  },
+  {
+    "text": "What is IPv6 also commonly known as?",
+    "info": "IPv6 = IPng.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IP modern", "correct": false },
+      { "text": "IPng (IP Next Generation)", "correct": true },
+      { "text": "IP advanced", "correct": false },
+      { "text": "IP ultimate", "correct": false }
+    ]
+  },
+  {
+    "text": "Why was IPv6 (IPng) developed?",
+    "info": "IPv6 created due to IPv4 address depletion.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IPv4 packet processing was too slow", "correct": false },
+      { "text": "IPv4 32-bit address space is running out (address exhaustion)", "correct": true },
+      { "text": "IPv4 cannot support file transfers", "correct": false },
+      { "text": "IPv4 is incompatible with fiber optic cables", "correct": false }
+    ]
+  },
+  {
+    "text": "Which option correctly lists the bit sizes of Physical, IP (IPv4), and Port addresses?",
+    "info": "Physical (48) > IP (32) > Port (16) bits.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Physical = 16 bits, IP = 32 bits, Port = 48 bits", "correct": false },
+      { "text": "Physical = 48 bits, IP (IPv4) = 32 bits, Port = 16 bits", "correct": true },
+      { "text": "Physical = 32 bits, IP = 48 bits, Port = 16 bits", "correct": false },
+      { "text": "Physical = 6 bits, IP = 4 bits, Port = 2 bits", "correct": false }
+    ]
+  }
+]

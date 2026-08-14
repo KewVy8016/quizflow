@@ -1,0 +1,662 @@
+[
+  {
+    "text": "Into which two main categories are ICMP messages divided based on their functions?",
+    "info": "ICMP has 2 primary categories: Error-Reporting (reports issues) and Query (requests information).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data Messages and Control Messages", "correct": false },
+      { "text": "Error-Reporting Messages and Query Messages", "correct": true },
+      { "text": "Request Messages and Response Messages", "correct": false },
+      { "text": "Unicast Messages and Broadcast Messages", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the main function of Error-Reporting Messages in ICMP?",
+    "info": "Error-Reporting = Sends issue notifications back to the Source Host only.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To correct invalid data in the IP Header", "correct": false },
+      { "text": "To report problems encountered during IP Datagram transit back to the original source host", "correct": true },
+      { "text": "To query IP Address and Subnet Mask values from a Router", "correct": false },
+      { "text": "To compress the data packet size", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is classified as an ICMP Query Message?",
+    "info": "Echo Request/Reply (used in Ping) and Mask Request/Reply are Query Messages.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Destination Unreachable", "correct": false },
+      { "text": "Time Exceeded", "correct": false },
+      { "text": "Echo Request / Reply", "correct": true },
+      { "text": "Parameter Problem", "correct": false }
+    ]
+  },
+  {
+    "text": "Upon which protocol in the Network Layer does ICMP rely for encapsulation?",
+    "info": "ICMP messages are encapsulated directly inside IP datagrams.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP", "correct": false },
+      { "text": "UDP", "correct": false },
+      { "text": "IP", "correct": true },
+      { "text": "ARP", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is ICMP not classified as a Transport Layer protocol, even though it is a software module that processes data?",
+    "info": "ICMP supports IP operations at the Network Layer, so it is not considered a Transport Layer protocol.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Because it does not directly provide data transmission services to applications, but rather assists IP", "correct": true },
+      { "text": "Because it transmits data at excessively high speeds", "correct": false },
+      { "text": "Because it uses standard TCP communication ports", "correct": false },
+      { "text": "Because it communicates directly with MAC Addresses", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary difference between an Error-Reporting Message and a Query Message?",
+    "info": "Error = Reports a problem / Query = Sent to request and receive specific information.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Error-Reporting uses UDP, whereas Query uses TCP", "correct": false },
+      { "text": "Error-Reporting is generated when an error occurs, whereas Query is generated to request information", "correct": true },
+      { "text": "Error-Reporting is sent only to Routers, whereas Query is sent only to Hosts", "correct": false },
+      { "text": "Error-Reporting does not require a Checksum, whereas Query does", "correct": false }
+    ]
+  },
+  {
+    "text": "When an IP packet encounters an issue and an ICMP Error Report must be generated, who creates and sends this message?",
+    "info": "The router or host that detects the error creates the ICMP Error message and sends it back to the source.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The destination host or the router that encountered the problem", "correct": true },
+      { "text": "The Switch in the LAN", "correct": false },
+      { "text": "The network's DNS Server", "correct": false },
+      { "text": "The source host generates it locally", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following messages does NOT belong to the ICMP Query Message group?",
+    "info": "Source Quench is an Error-Reporting Message (congestion control), not a Query.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Router Solicitation", "correct": false },
+      { "text": "Timestamp Request", "correct": false },
+      { "text": "Source Quench", "correct": true },
+      { "text": "Address-Mask Request", "correct": false }
+    ]
+  },
+  {
+    "text": "ICMP Query Messages are typically sent in pairs in what manner?",
+    "info": "Query messages always work in pairs: Request/Solicit and Reply/Advertise.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Send and Receive", "correct": false },
+      { "text": "Request and Reply (or Solicitation and Advertisement)", "correct": true },
+      { "text": "Push and Pull", "correct": false },
+      { "text": "Syn and Ack", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes the operational nature of ICMP?",
+    "info": "ICMP only reports problems—it does not repair data or retransmit lost packets.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It is a reliable protocol that guarantees packet delivery", "correct": false },
+      { "text": "It is a protocol that supports IP; it does not fix issues itself, but merely reports results", "correct": true },
+      { "text": "It replaces the IP protocol whenever an error occurs", "correct": false },
+      { "text": "It operates using a connection-oriented model", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the first three standard fields present in every ICMP Header type?",
+    "info": "The first 4 Bytes of an ICMP Header must always contain Type (1B), Code (1B), and Checksum (2B).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Type, Code, and Checksum", "correct": true },
+      { "text": "Source IP, Destination IP, and TTL", "correct": false },
+      { "text": "Identifier, Sequence Number, and Data", "correct": false },
+      { "text": "Type, Subnet Mask, and Lifetime", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the size of the Type field in the ICMP Header?",
+    "info": "Type field size is 8 bits (1 Byte), representing the main message type.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8 bits (1 byte)", "correct": true },
+      { "text": "16 bits (2 bytes)", "correct": false },
+      { "text": "32 bits (4 bytes)", "correct": false },
+      { "text": "64 bits (8 bytes)", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the purpose of the Code field in the ICMP Header?",
+    "info": "Code = Specifies the subtype/reason (e.g., Type 3 Code 3 = Port Unreachable).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To specify the connection password", "correct": false },
+      { "text": "To provide additional subtype details or specific reasons for a given ICMP Type", "correct": true },
+      { "text": "To verify data bit accuracy", "correct": false },
+      { "text": "To define router priority", "correct": false }
+    ]
+  },
+  {
+    "text": "Which field in the ICMP Header is used to detect packet corruption?",
+    "info": "Checksum = Detects corrupted bits in transit.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Identifier", "correct": false },
+      { "text": "Checksum", "correct": true },
+      { "text": "Sequence Number", "correct": false },
+      { "text": "Lifetime", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the fixed size of a standard ICMP Header?",
+    "info": "Standard ICMP Header is always 8 Bytes long.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "4 Bytes", "correct": false },
+      { "text": "8 Bytes", "correct": true },
+      { "text": "20 Bytes", "correct": false },
+      { "text": "32 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "What information is included in the Data section of an ICMP Error-Reporting packet?",
+    "info": "ICMP Error attaches the original IP Header + first 8 Bytes of the failed packet payload so the source can identify the failed process.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Passwords and Source IP Address", "correct": false },
+      { "text": "Original IP Header + first 8 Bytes of original IP Datagram payload", "correct": true },
+      { "text": "MAC Addresses of all routers on the network", "correct": false },
+      { "text": "Random 64-Byte data", "correct": false }
+    ]
+  },
+  {
+    "text": "Why must ICMP Error messages include the first 8 Bytes of the original IP Datagram payload?",
+    "info": "The first 8 Bytes contain TCP/UDP source/destination port numbers, allowing the source OS to notify the specific process.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To determine which higher-layer protocol generated the original packet (e.g., TCP/UDP Port numbers)", "correct": true },
+      { "text": "To save bandwidth during transmission", "correct": false },
+      { "text": "To enable routers to correct corrupted data", "correct": false },
+      { "text": "To measure network transmission speed", "correct": false }
+    ]
+  },
+  {
+    "text": "How many bits are allocated to each of the Identifier and Sequence Number fields in Query Messages?",
+    "info": "Identifier = 16 bits, Sequence Number = 16 bits (totaling 32 bits / 4 Bytes).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8 bits", "correct": false },
+      { "text": "16 bits", "correct": true },
+      { "text": "32 bits", "correct": false },
+      { "text": "64 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "If Type = 8 and Code = 0, which message does this packet represent?",
+    "info": "Type 8, Code 0 = Echo Request (Ping outgoing packet).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Echo Reply", "correct": false },
+      { "text": "Echo Request", "correct": true },
+      { "text": "Router Solicitation", "correct": false },
+      { "text": "Time Exceeded", "correct": false }
+    ]
+  },
+  {
+    "text": "If Type = 0 and Code = 0, which message does this packet represent?",
+    "info": "Type 0, Code 0 = Echo Reply (Ping incoming response).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Echo Reply", "correct": true },
+      { "text": "Echo Request", "correct": false },
+      { "text": "Router Advertisement", "correct": false },
+      { "text": "Destination Unreachable", "correct": false }
+    ]
+  },
+  {
+    "text": "When a delivery error occurs, to which device is the ICMP Error-Reporting Message sent?",
+    "info": "Error Reports are directed to the Original Source Host to notify it of the failure.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Sent to the next-hop router", "correct": false },
+      { "text": "Sent to the Destination Host", "correct": false },
+      { "text": "Sent back to the original source host that created the packet", "correct": true },
+      { "text": "Broadcasted to all devices on the local network", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Type value corresponds to the ICMP Destination Unreachable message?",
+    "info": "Destination Unreachable = Type 3.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Type 0", "correct": false },
+      { "text": "Type 3", "correct": true },
+      { "text": "Type 8", "correct": false },
+      { "text": "Type 11", "correct": false }
+    ]
+  },
+  {
+    "text": "If the destination host receives an IP Datagram but has no matching process or port available (Unreachable Port), which ICMP Type and Code will be returned?",
+    "info": "Port Unreachable = Type 3, Code 3 (used by Traceroute to verify destination arrival).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Type 3, Code 0", "correct": false },
+      { "text": "Type 3, Code 1", "correct": false },
+      { "text": "Type 3, Code 3", "correct": true },
+      { "text": "Type 11, Code 0", "correct": false }
+    ]
+  },
+  {
+    "text": "Under what circumstance is an ICMP Time Exceeded (Type 11) message generated?",
+    "info": "Time Exceeded (Type 11) occurs when TTL reaches 0 (packet expires in transit).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The destination host processes data too slowly", "correct": false },
+      { "text": "The TTL (Time to Live) field in the IP Header decrements to 0 during transit", "correct": true },
+      { "text": "The requested port number is not found on the destination host", "correct": false },
+      { "text": "The packet Checksum is invalid", "correct": false }
+    ]
+  },
+  {
+    "text": "During Reassembly (combining fragments), if the first fragment arrives but other fragments fail to arrive within the timeout period, which message is created?",
+    "info": "Reassembly timer expiration = Time Exceeded (Type 11, Code 1).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Destination Unreachable (Type 3)", "correct": false },
+      { "text": "Time Exceeded (Type 11, Code 1)", "correct": true },
+      { "text": "Parameter Problem (Type 12)", "correct": false },
+      { "text": "Source Quench (Type 4)", "correct": false }
+    ]
+  },
+  {
+    "text": "When is an ICMP Parameter Problem (Type 12) message sent?",
+    "info": "Parameter Problem (Type 12) = IP Header contains invalid/unprocessable header fields.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "When there is an error or ambiguity in header fields of the IP Datagram", "correct": true },
+      { "text": "When a physical LAN cable is disconnected", "correct": false },
+      { "text": "When data is sent faster than the receiver can handle", "correct": false },
+      { "text": "When the destination host is powered off", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary objective of the ICMP Source Quench (Type 4) message?",
+    "info": "Source Quench = Requests source to throttle transmission during network congestion.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To report a broken network path", "correct": false },
+      { "text": "To perform flow control by asking the source host to slow down packet transmission", "correct": true },
+      { "text": "To request a routing path change", "correct": false },
+      { "text": "To test connectivity with the default gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "Which device creates an ICMP Redirect (Type 5) message, and for what purpose?",
+    "info": "Redirect (Type 5) = Router advises Host of a more optimal local gateway route.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Created by a Host to change its IP Address", "correct": false },
+      { "text": "Created by a Router to inform a Host to use a better alternative router for a specific destination", "correct": true },
+      { "text": "Created by a Switch to change MAC Addresses", "correct": false },
+      { "text": "Created by a Server to update a URL", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following conditions waives the generation of an ICMP Error-Reporting Message?",
+    "info": "ICMP Error messages are never generated in response to ICMP Errors, Broadcast/Multicast packets, or special IP addresses.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The original failed packet is already an ICMP Error-Reporting Message", "correct": false },
+      { "text": "The original packet was sent as Multicast or Broadcast", "correct": false },
+      { "text": "The IP Datagram has a Source Address of 0.0.0.0 or 127.0.0.1", "correct": false },
+      { "text": "All of the above", "correct": true }
+    ]
+  },
+  {
+    "text": "What does the rule prohibiting ICMP Errors from responding to ICMP Errors aim to prevent?",
+    "info": "Suppressing recursive error reports prevents endless packet looping that could crash the network.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Unauthorized data access", "correct": false },
+      { "text": "Infinite packet loops and broadcast storms", "correct": true },
+      { "text": "Checksum calculation failures", "correct": false },
+      { "text": "Subnet Mask configuration confusion", "correct": false }
+    ]
+  },
+  {
+    "text": "ICMP Echo Request and Echo Reply messages are utilized by which utility program?",
+    "info": "Ping uses Echo Request (Type 8) and Echo Reply (Type 0).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Traceroute", "correct": false },
+      { "text": "Ping", "correct": true },
+      { "text": "ARP", "correct": false },
+      { "text": "DNS", "correct": false }
+    ]
+  },
+  {
+    "text": "If a host needs to request a Subnet Mask from a LAN Router, which pair of ICMP messages is used?",
+    "info": "Address-Mask Request/Reply = Obtains Subnet Mask (Types 17 & 18).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Router Solicitation (Type 10) / Advertisement (Type 9)", "correct": false },
+      { "text": "Address-Mask Request (Type 17) / Reply (Type 18)", "correct": true },
+      { "text": "Echo Request (Type 8) / Reply (Type 0)", "correct": false },
+      { "text": "Timestamp Request (Type 13) / Reply (Type 14)", "correct": false }
+    ]
+  },
+  {
+    "text": "In an Address-Mask Request packet (Type 17), what value is placed in the Address Mask field?",
+    "info": "Request fills the mask field with 32 zeros; the router returns the real mask in Reply (Type 18).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The actual Subnet Mask of the network", "correct": false },
+      { "text": "The IP Address of the Router", "correct": false },
+      { "text": "All zeros (32-bit zeros)", "correct": true },
+      { "text": "255.255.255.255", "correct": false }
+    ]
+  },
+  {
+    "text": "Who sends a Router Solicitation (Type 10) message, and for what purpose?",
+    "info": "Solicitation = Host queries local routers to discover default gateways.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Sent by a Router to announce its IP Address", "correct": false },
+      { "text": "Sent by a Host to discover IP Addresses of Routers on the network", "correct": true },
+      { "text": "Sent by a Host to test internet bandwidth", "correct": false },
+      { "text": "Sent by a Router to request Subnet Masks from Hosts", "correct": false }
+    ]
+  },
+  {
+    "text": "In a Router Advertisement packet (Type 9), what is the function of the Address preference level field?",
+    "info": "Preference level determines priority order when selecting default routers.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Defines router expiration time", "correct": false },
+      { "text": "Ranks router desirability for selection as a Default Router", "correct": true },
+      { "text": "Checks data errors", "correct": false },
+      { "text": "Indicates total router count in system", "correct": false }
+    ]
+  },
+  {
+    "text": "If the Address preference level field in a Router Advertisement is set to 80000000 (hexadecimal), what does this mean?",
+    "info": "Preference = 0 is default candidate; Preference = 80000000 (hex) explicitly forbids selection.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "This Router is the primary Default Router", "correct": false },
+      { "text": "This Router MUST NOT be selected as a Default Router under any circumstances", "correct": true },
+      { "text": "This Router has maximum speed in network", "correct": false },
+      { "text": "This Router is disabled", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Transport Layer protocol packet does Traceroute send, and which ICMP response is returned upon reaching the destination successfully?",
+    "info": "Traceroute sends UDP to an unused port -> Target host returns Port Unreachable (Type 3, Code 3).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Uses TCP / Responds with Echo Reply (Type 0)", "correct": false },
+      { "text": "Uses UDP / Responds with Destination Unreachable (Type 3, Code 3)", "correct": true },
+      { "text": "Uses ICMP / Responds with Time Exceeded (Type 11)", "correct": false },
+      { "text": "Uses UDP / Responds with Router Advertisement (Type 9)", "correct": false }
+    ]
+  },
+  {
+    "text": "How does Traceroute discover intermediate router IP Addresses (Hops)?",
+    "info": "Traceroute increments TTL by 1 starting at 1 -> Intermediate routers drop packet at TTL=0 and reply with Time Exceeded (Type 11).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Looks up local routing tables", "correct": false },
+      { "text": "Forces TTL to expire at each hop to trigger ICMP Time Exceeded (Type 11) responses", "correct": true },
+      { "text": "Receives ICMP Echo Replies sequentially from each router", "correct": false },
+      { "text": "Sends Router Advertisement queries to every router", "correct": false }
+    ]
+  },
+  {
+    "text": "If Ping sends a payload of 56 Bytes, what will be the resulting sizes of the ICMP Packet and Total IP Packet?",
+    "info": "ICMP Packet = 56 (Data) + 8 (ICMP Header) = 64 Bytes. Total IP Packet = 64 + 20 (IP Header) = 84 Bytes.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "ICMP Packet = 56 bytes, Total IP Packet = 76 bytes", "correct": false },
+      { "text": "ICMP Packet = 64 bytes, Total IP Packet = 84 bytes", "correct": true },
+      { "text": "ICMP Packet = 64 bytes, Total IP Packet = 96 bytes", "correct": false },
+      { "text": "ICMP Packet = 84 bytes, Total IP Packet = 104 bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "What components make up a 38-Byte UDP packet in Traceroute Example 4?",
+    "info": "38 Bytes = IP Header (20) + UDP Header (8) + Payload Data (10).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IP Header 20 + UDP Header 8 + Data 10", "correct": true },
+      { "text": "IP Header 20 + ICMP Header 8 + Data 10", "correct": false },
+      { "text": "IP Header 20 + TCP Header 18", "correct": false },
+      { "text": "ICMP Header 8 + Data 30", "correct": false }
+    ]
+  },
+  {
+    "text": "What data scope is included in the ICMP Checksum calculation?",
+    "info": "ICMP Checksum covers both Header and Data (unlike IP Checksum which covers only IP Header).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ICMP Header only", "correct": false },
+      { "text": "ICMP Data only", "correct": false },
+      { "text": "Both ICMP Header and ICMP Data", "correct": true },
+      { "text": "Combined IP Header and ICMP Header", "correct": false }
+    ]
+  },
+  {
+    "text": "What must be done to the Checksum field prior to calculating Checksum at the sender?",
+    "info": "The Checksum field must be initialized to 0 before summing 16-bit words.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Set field value to 0", "correct": true },
+      { "text": "Set field value to all 1s", "correct": false },
+      { "text": "Insert random 16-bit value", "correct": false },
+      { "text": "Populate with ASCII value of message first", "correct": false }
+    ]
+  },
+  {
+    "text": "Into what size word units is an ICMP packet divided for Checksum calculation?",
+    "info": "Checksum calculations group data into 16-bit (2-byte) words.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8-bit words", "correct": false },
+      { "text": "16-bit words", "correct": true },
+      { "text": "32-bit words", "correct": false },
+      { "text": "64-bit words", "correct": false }
+    ]
+  },
+  {
+    "text": "What mathematical method is used to compute the Checksum value?",
+    "info": "Sum 16-bit words using One's complement, then invert all bits (0 -> 1, 1 -> 0).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Two's complement sum", "correct": false },
+      { "text": "One's complement sum followed by bitwise complement (inversion)", "correct": true },
+      { "text": "Cyclic Redundancy Check (CRC)", "correct": false },
+      { "text": "MD5 Hash", "correct": false }
+    ]
+  },
+  {
+    "text": "During Checksum testing at the receiver, when is a packet considered intact and accepted?",
+    "info": "Receiver validation: Summing all 16-bit words (including Checksum) and taking One's complement must yield 0000000000000000.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Sum of 16-bit words and bitwise complement yields all 1s", "correct": false },
+      { "text": "Sum of 16-bit words and bitwise complement yields sixteen zeros (16 0s)", "correct": true },
+      { "text": "Yields value equal to Source IP Address", "correct": false },
+      { "text": "Yields value matching Sequence Number field", "correct": false }
+    ]
+  },
+  {
+    "text": "If the receiver's Checksum calculation does NOT result in sixteen zeros, how does the system handle the packet?",
+    "info": "Checksum failure = Discard/Reject packet immediately.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Sends a retransmission request", "correct": false },
+      { "text": "Rejects and discards the packet", "correct": true },
+      { "text": "Attempts bit-level error correction", "correct": false },
+      { "text": "Accepts packet but logs an entry", "correct": false }
+    ]
+  },
+  {
+    "text": "When calculating Checksum for string TEST, how are letter pairs 'T' and 'E' converted into bit values?",
+    "info": "Characters convert to 8-bit ASCII codes; pairing two characters forms one 16-bit word.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8-bit ASCII codes of each character concatenated into a 16-bit word", "correct": true },
+      { "text": "32-bit Unicode representation", "correct": false },
+      { "text": "English alphabet index order", "correct": false },
+      { "text": "System pseudo-random value", "correct": false }
+    ]
+  },
+  {
+    "text": "If an ICMP packet has an odd total byte count, how is it handled before Checksum calculation?",
+    "info": "Odd byte length requires appending an 8-bit zero pad byte to form complete 16-bit blocks.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Truncate last byte", "correct": false },
+      { "text": "Append a 0-byte (8 zero bits padding) at the end to make length even", "correct": true },
+      { "text": "Calculate only even byte portion", "correct": false },
+      { "text": "Abort Checksum calculation", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement is most accurate regarding Checksum in ICMP?",
+    "info": "ICMP Checksum covers Header + Data; corrupted packets are silently dropped without generating error reports.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Calculates ICMP Header only to save processing time", "correct": false },
+      { "text": "Calculates both ICMP Header and ICMP Data to ensure total packet integrity", "correct": true },
+      { "text": "Receiver skips calculation and trusts received value", "correct": false },
+      { "text": "If Checksum fails, ICMP immediately returns an error report to sender", "correct": false }
+    ]
+  },
+  {
+    "text": "Can Checksum correct corrupted data encountered during transit?",
+    "info": "Checksum is strictly for Error Detection, not Error Correction.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Corrects data immediately", "correct": false },
+      { "text": "Corrects single-bit errors only", "correct": false },
+      { "text": "Cannot correct data; performs Error Detection only", "correct": true },
+      { "text": "Corrects data only if message is Query Type", "correct": false }
+    ]
+  },
+  {
+    "text": "What does ICMP Package refer to in software architecture?",
+    "info": "ICMP Package = Software architecture modules managing incoming (Input) and outgoing (Output) ICMP processing.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A pre-packaged cable set for transmitting ICMP frames", "correct": false },
+      { "text": "A set of software modules (Input Module and Output Module) managing ICMP packet receipt and transmission", "correct": true },
+      { "text": "A utility program for copying files over ICMP", "correct": false },
+      { "text": "A large payload field in IP Header", "correct": false }
+    ]
+  },
+  {
+    "text": "In the ICMP Package structure, when the Input Module receives a Request or Solicitation message, what action does it take?",
+    "info": "Input Module handles incoming Request/Solicitation by constructing and sending Reply/Advertisement via IP Layer.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Forwards it to TCP protocol for processing", "correct": false },
+      { "text": "Generates a Reply or Advertisement and immediately sends it out via IP Layer", "correct": true },
+      { "text": "Returns an Error Message to source", "correct": false },
+      { "text": "Holds data in buffer awaiting admin approval", "correct": false }
+    ]
+  },
+  {
+    "text": "If the Input Module receives an ICMP Error Message, where does it pass the information?",
+    "info": "Incoming Error Message = Dispatch upward to higher-layer protocols (e.g., TCP/UDP/App).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Back to original sender", "correct": false },
+      { "text": "Upward to Upper Layers / Protocols", "correct": true },
+      { "text": "Downward to Data Link Layer", "correct": false },
+      { "text": "Deletes packet immediately", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary role of the Output Module in the ICMP Package?",
+    "info": "Output Module constructs outgoing ICMP messages based on requests from Upper Layers or IP Layer.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Verifies incoming Checksum accuracy", "correct": false },
+      { "text": "Creates Request, Solicitation, or Error Messages requested by Upper Layers or IP Layer", "correct": true },
+      { "text": "Translates IP Addresses to MAC Addresses", "correct": false },
+      { "text": "Logs network history", "correct": false }
+    ]
+  },
+  {
+    "text": "From which sources can the Output Module receive requests to construct ICMP messages?",
+    "info": "Output Module receives requests from above (TCP/UDP/Apps) and below (IP Layer).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Upper Layers (Applications, TCP, UDP) only", "correct": false },
+      { "text": "IP Layer only", "correct": false },
+      { "text": "Both Upper Layers and IP Layer", "correct": true },
+      { "text": "Cannot receive external requests; generates autonomously", "correct": false }
+    ]
+  },
+  {
+    "text": "To which layer are packets constructed by the Output Module delivered for transmission?",
+    "info": "Once constructed by the Output Module, ICMP packets are sent down to the IP Layer.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Application Layer", "correct": false },
+      { "text": "IP Layer", "correct": true },
+      { "text": "Physical Layer", "correct": false },
+      { "text": "Transport Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "If an application (such as Ping) needs to send a Query message, to which module does it send its request?",
+    "info": "Applications invoke the Output Module to format and transmit outgoing messages.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Input Module", "correct": false },
+      { "text": "Output Module", "correct": true },
+      { "text": "Directly to IP Layer bypassing ICMP Package", "correct": false },
+      { "text": "Checksum Module", "correct": false }
+    ]
+  },
+  {
+    "text": "Where is the ICMP Package positioned within the software architectural stack?",
+    "info": "ICMP Package sits between the lower IP Layer and higher Upper Layers.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Between IP Layer and Upper Layers (TCP/UDP/Applications)", "correct": true },
+      { "text": "Between Physical Layer and Data Link Layer", "correct": false },
+      { "text": "Between Transport Layer and Application Layer", "correct": false },
+      { "text": "Outside the operating system kernel", "correct": false }
+    ]
+  },
+  {
+    "text": "When a host receives an ICMP Echo Reply message resulting from a Ping, which module receives it and returns the result to the Ping application?",
+    "info": "Inbound packet = Input Module receives packet and forwards data up to Ping application.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Input Module", "correct": true },
+      { "text": "Output Module", "correct": false },
+      { "text": "Router Module", "correct": false },
+      { "text": "Checksum Module", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement best summarizes the operation of the ICMP Package?",
+    "info": "ICMP Package is situated between IP Layer and Upper Layers to handle inbound and outbound ICMP messages.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Component of Transport Layer replacing TCP", "correct": false },
+      { "text": "Situated between IP Layer and Upper Layers to handle inbound and outbound ICMP messages", "correct": true },
+      { "text": "Translates IP Addresses to MAC Addresses", "correct": false },
+      { "text": "Assigns random IP Addresses to Hosts", "correct": false }
+    ]
+  }
+]

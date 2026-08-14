@@ -1,0 +1,662 @@
+[
+  {
+    "text": "In an ARP Cache Table, what does the FREE (F) state indicate?",
+    "info": "FREE (F) = Empty / Expired, ready for new entry.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "An empty or expired entry ready to be overwritten", "correct": true },
+      { "text": "An entry waiting for an ARP Reply", "correct": false },
+      { "text": "A completed mapping between IP and MAC address", "correct": false },
+      { "text": "A full packet queue unable to send data", "correct": false }
+    ]
+  },
+  {
+    "text": "What does the PENDING (P) state in an ARP Cache Table represent?",
+    "info": "PENDING (P) = Pending response (waiting for ARP Reply).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The cache mapping is complete and valid", "correct": false },
+      { "text": "An ARP Request has been sent, and the system is waiting for an ARP Reply", "correct": true },
+      { "text": "An unused slot reserved for static mapping", "correct": false },
+      { "text": "The packet has successfully reached its destination", "correct": false }
+    ]
+  },
+  {
+    "text": "When ARP receives a MAC address and successfully pairs it with an IP address, what state does the entry transition to?",
+    "info": "RESOLVED (R) = Resolved/Cleared, MAC address is fully resolved and ready to use.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "FREE (F)", "correct": false },
+      { "text": "PENDING (P)", "correct": false },
+      { "text": "RESOLVED (R)", "correct": true },
+      { "text": "COMPLETE (C)", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the function of the Attempt field in an ARP Cache Table?",
+    "info": "Attempt = Attempts count (number of ARP Requests re-transmitted).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Counts down the time-to-live of the entry", "correct": false },
+      { "text": "Records the packet queue sequence number", "correct": false },
+      { "text": "Counts the number of packets waiting in queue", "correct": false },
+      { "text": "Tracks the number of times an ARP Request has been transmitted", "correct": true }
+    ]
+  },
+  {
+    "text": "What is the unit of measurement for the Time-out field in the ARP Cache Table, and what is its default initial value when transitioning to RESOLVED?",
+    "info": "Initial Time-out = 900 seconds (15 minutes).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Seconds, 900 seconds", "correct": true },
+      { "text": "Minutes, 15 minutes", "correct": false },
+      { "text": "Milliseconds, 1000 milliseconds", "correct": false },
+      { "text": "Seconds, 60 seconds", "correct": false }
+    ]
+  },
+  {
+    "text": "If an outgoing packet is waiting to be sent but the destination IP is still in the PENDING state, where is the packet stored?",
+    "info": "State P = Packets must go to the Queue and wait.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Dropped immediately", "correct": false },
+      { "text": "Stored in the Queue corresponding to that IP address", "correct": true },
+      { "text": "Returned immediately to the sender", "correct": false },
+      { "text": "Saved to local hard disk storage", "correct": false }
+    ]
+  },
+  {
+    "text": "How is the Hardware Address field displayed in the ARP Cache Table while in the PENDING state?",
+    "info": "PENDING = MAC unknown, so the Hardware Address field remains blank.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Listed as FF:FF:FF:FF:FF:FF", "correct": false },
+      { "text": "Listed as 00:00:00:00:00:00", "correct": false },
+      { "text": "Left blank (empty)", "correct": true },
+      { "text": "Displays the Gateway's MAC Address", "correct": false }
+    ]
+  },
+  {
+    "text": "As time passes, which field value decreases for an entry in the RESOLVED state?",
+    "info": "RESOLVED = Time-out counts down continuously.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Attempt", "correct": false },
+      { "text": "Queue", "correct": false },
+      { "text": "State", "correct": false },
+      { "text": "Time-out", "correct": true }
+    ]
+  },
+  {
+    "text": "In the RESOLVED state, which field becomes empty or hidden from the table?",
+    "info": "Mapping obtained = No longer need to attempt requests (Attempt field cleared).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Attempt", "correct": true },
+      { "text": "Time-out", "correct": false },
+      { "text": "Protocol Addr.", "correct": false },
+      { "text": "Hardware Addr.", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of maintaining an ARP Cache Table?",
+    "info": "Cache = Remember mappings to avoid repeated Broadcast requests.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To scan packets for viruses", "correct": false },
+      { "text": "To reduce redundant ARP Request broadcasts on the network", "correct": true },
+      { "text": "To throttle internet connection speed", "correct": false },
+      { "text": "To resolve IP addresses into Domain Names", "correct": false }
+    ]
+  },
+  {
+    "text": "Which state in the ARP Cache Table allows the Output Module to immediately use the MAC address for frame encapsulation?",
+    "info": "RESOLVED = Fully resolved and ready for data transmission.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "FREE", "correct": false },
+      { "text": "PENDING", "correct": false },
+      { "text": "RESOLVED", "correct": true },
+      { "text": "TIMEOUT", "correct": false }
+    ]
+  },
+  {
+    "text": "If a destination IP queue contains 3 queued packets when the state transitions to RESOLVED, what happens to those packets?",
+    "info": "State resolved = Release queued packets one by one.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Transmits only the first packet and drops the rest", "correct": false },
+      { "text": "Discards all packets", "correct": false },
+      { "text": "Combines all 3 packets into a single frame", "correct": false },
+      { "text": "Transmits all 3 packets sequentially (one by one)", "correct": true }
+    ]
+  },
+  {
+    "text": "In Example 3, when the Output Module receives an IP Datagram and experiences a Cache Miss, what is its initial action?",
+    "info": "Cache Miss = Reserve slot -> set PENDING -> set Attempt = 1.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Add a new entry with state PENDING and set Attempt = 1", "correct": true },
+      { "text": "Clear the entire Cache Table immediately", "correct": false },
+      { "text": "Send an ICMP Destination Unreachable error", "correct": false },
+      { "text": "Change the first entry's state to RESOLVED", "correct": false }
+    ]
+  },
+  {
+    "text": "In Example 3, when a Cache Miss occurs for a new IP, what packet type does the Output Module generate?",
+    "info": "Unknown MAC = Broadcast an ARP Request.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ARP Reply", "correct": false },
+      { "text": "ARP Request", "correct": true },
+      { "text": "ICMP Echo Request", "correct": false },
+      { "text": "RARP Request", "correct": false }
+    ]
+  },
+  {
+    "text": "In Example 4, which module receives the incoming ARP Reply packet and updates the Cache Table?",
+    "info": "Incoming packet handling = Input Module.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Output Module", "correct": false },
+      { "text": "Cache-Control Module", "correct": false },
+      { "text": "Input Module", "correct": true },
+      { "text": "Queue Module", "correct": false }
+    ]
+  },
+  {
+    "text": "When the Input Module receives an ARP Reply in Example 4, how does the IP state change in the cache table?",
+    "info": "ARP Reply received = State changes from P (Pending) to R (Resolved).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "FREE -> PENDING", "correct": false },
+      { "text": "PENDING -> RESOLVED", "correct": true },
+      { "text": "RESOLVED -> FREE", "correct": false },
+      { "text": "PENDING -> FREE", "correct": false }
+    ]
+  },
+  {
+    "text": "In Example 4, upon updating the state to RESOLVED, what is the initial reset value for Time-out?",
+    "info": "Newly RESOLVED = Reset Time-out counter to 900.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "60", "correct": false },
+      { "text": "450", "correct": false },
+      { "text": "900", "correct": true },
+      { "text": "0", "correct": false }
+    ]
+  },
+  {
+    "text": "Which module periodically checks and updates Time-out and Attempt values in the Cache Table?",
+    "info": "Background table maintenance = Cache-Control Module.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Output Module", "correct": false },
+      { "text": "Cache-Control Module", "correct": true },
+      { "text": "Input Module", "correct": false },
+      { "text": "IP Layer Module", "correct": false }
+    ]
+  },
+  {
+    "text": "In Example 5, after 25 seconds elapse, why is the Time-out value of an existing RESOLVED entry reduced by 60 seconds?",
+    "info": "Cumulative time: 20 + 15 + 25 = 60 seconds.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The system randomly deducts time", "correct": false },
+      { "text": "Total cumulative time passed since example start reached 60 seconds (20s + 15s + 25s)", "correct": true },
+      { "text": "A system clock error occurred", "correct": false },
+      { "text": "Extra time was deducted due to an incoming ARP Request", "correct": false }
+    ]
+  },
+  {
+    "text": "In Example 5, if the Time-out value of a RESOLVED entry reaches 0, what is the outcome?",
+    "info": "Time-out = 0 -> Entry expires, state changes to FREE.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "State changes to PENDING", "correct": false },
+      { "text": "Adds 900 seconds of bonus time", "correct": false },
+      { "text": "State changes to FREE and the entry is removed", "correct": true },
+      { "text": "Immediately broadcasts an ARP Request", "correct": false }
+    ]
+  },
+  {
+    "text": "In Example 5, how does the Cache-Control Module handle the Attempt field for a PENDING entry on each periodic check?",
+    "info": "Still PENDING on next cycle = Attempt count + 1.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Increments by 1", "correct": true },
+      { "text": "Decrements by 1", "correct": false },
+      { "text": "Resets to 0", "correct": false },
+      { "text": "Multiplies by 2", "correct": false }
+    ]
+  },
+  {
+    "text": "If a PENDING entry's Attempt count exceeds the Maximum Attempts limit, what actions take place?",
+    "info": "Max attempts exceeded = Give up -> set FREE, purge queue, send ICMP Error.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Automatically transitions to RESOLVED", "correct": false },
+      { "text": "State changes to FREE, queues are destroyed, and an ICMP Error is generated", "correct": true },
+      { "text": "Transmits packets without a MAC address", "correct": false },
+      { "text": "Resets Attempt count to 1", "correct": false }
+    ]
+  },
+  {
+    "text": "Which ICMP error message is sent back to the source host when ARP fails to resolve a target MAC address?",
+    "info": "MAC resolution failed = Host Unreachable.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Echo Reply", "correct": false },
+      { "text": "Destination Host Unreachable", "correct": true },
+      { "text": "Redirect Message", "correct": false },
+      { "text": "Time Exceeded", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the process called when the Input Module removes queued packets and hands them to the Data Link Layer upon receiving an ARP Reply?",
+    "info": "Put in queue = Enqueue / Remove from queue to send = Dequeue.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Enqueue", "correct": false },
+      { "text": "Encapsulation", "correct": false },
+      { "text": "Dequeue", "correct": true },
+      { "text": "Formatting", "correct": false }
+    ]
+  },
+  {
+    "text": "What does the acronym RARP stand for?",
+    "info": "RARP = Reverse Address Resolution Protocol (opposite of ARP).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Random Address Resolution Protocol", "correct": false },
+      { "text": "Reverse Address Resolution Protocol", "correct": true },
+      { "text": "Routing Address Resolution Protocol", "correct": false },
+      { "text": "Rapid Address Resolution Protocol", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary function of the RARP Protocol?",
+    "info": "ARP = IP -> MAC / RARP = MAC -> IP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Translates IP Address to MAC Address", "correct": false },
+      { "text": "Translates MAC Address to IP Address", "correct": true },
+      { "text": "Translates Domain Name to IP Address", "correct": false },
+      { "text": "Translates Port Number to IP Address", "correct": false }
+    ]
+  },
+  {
+    "text": "RARP was primarily designed to solve networking challenges for which type of device?",
+    "info": "RARP is designed for Diskless Machines.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Core Enterprise Routers", "correct": false },
+      { "text": "High-capacity Storage Servers", "correct": false },
+      { "text": "Diskless Machines (Diskless Workstations)", "correct": true },
+      { "text": "Wireless Access Points", "correct": false }
+    ]
+  },
+  {
+    "text": "Why can't a Diskless Machine permanently store its assigned IP Address in its local ROM?",
+    "info": "MAC address is fixed in ROM; IP changes by subnet and cannot be hardcoded in ROM.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ROM cannot store data permanently", "correct": false },
+      { "text": "IP Addresses are network-dependent and assigned dynamically by Administrators", "correct": true },
+      { "text": "ROM chips are physically too large", "correct": false },
+      { "text": "An IP Address requires 6 bytes, exceeding ROM capacity", "correct": false }
+    ]
+  },
+  {
+    "text": "When a Diskless Machine boots up, what is the ONLY address it natively knows?",
+    "info": "Booting a diskless host = Only knows its ROM MAC Address.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IP Address", "correct": false },
+      { "text": "Subnet Mask", "correct": false },
+      { "text": "MAC Address (Physical Address) burned into ROM", "correct": true },
+      { "text": "DNS Server Address", "correct": false }
+    ]
+  },
+  {
+    "text": "How is a RARP Request Packet transmitted across the physical network?",
+    "info": "RARP Request = Broadcast (shouting because server location is unknown).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Unicast", "correct": false },
+      { "text": "Broadcast", "correct": true },
+      { "text": "Multicast", "correct": false },
+      { "text": "Anycast", "correct": false }
+    ]
+  },
+  {
+    "text": "Why MUST a RARP Request be transmitted as a Broadcast?",
+    "info": "RARP Server location unknown -> Must Broadcast.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To increase data throughput speed", "correct": false },
+      { "text": "Because the requesting client does not know the location/address of the RARP Server", "correct": true },
+      { "text": "Required by fiber-optic network standards", "correct": false },
+      { "text": "Because RARP Servers force broadcast communication", "correct": false }
+    ]
+  },
+  {
+    "text": "How is a RARP Reply Packet transmitted back to the client?",
+    "info": "RARP Reply = Unicast (sent directly to the client).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Broadcast", "correct": false },
+      { "text": "Multicast", "correct": false },
+      { "text": "Anycast", "correct": false },
+      { "text": "Unicast", "correct": true }
+    ]
+  },
+  {
+    "text": "Why CAN a RARP Reply be sent using Unicast?",
+    "info": "Server knows client MAC from Request -> Can Unicast directly back.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The RARP Server learned the client's MAC address from the incoming RARP Request", "correct": true },
+      { "text": "The server selects destination MAC randomly", "correct": false },
+      { "text": "It is required by IP Layer standards", "correct": false },
+      { "text": "The client provided its IP address beforehand", "correct": false }
+    ]
+  },
+  {
+    "text": "Which network entity looks up mapping tables and replies with an IP Address in a RARP system?",
+    "info": "The RARP Server holds the MAC-to-IP binding table.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Client Workstation", "correct": false },
+      { "text": "RARP Server", "correct": true },
+      { "text": "Layer 2 Switch", "correct": false },
+      { "text": "Modem", "correct": false }
+    ]
+  },
+  {
+    "text": "If a standard host (not a RARP Server) receives a RARP Request Packet, how does it handle it?",
+    "info": "Not a RARP Server -> Discard / Ignore the frame.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Replies with its own IP address", "correct": false },
+      { "text": "Saves the request info to its cache table", "correct": false },
+      { "text": "Discards (Ignores) the packet", "correct": true },
+      { "text": "Initiates an immediate system shutdown", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement accurately describes the transmission direction of RARP messages?",
+    "info": "Request = Broadcast / Reply = Unicast.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Request is Unicast / Reply is Broadcast", "correct": false },
+      { "text": "Request is Broadcast / Reply is Broadcast", "correct": false },
+      { "text": "Request is Unicast / Reply is Unicast", "correct": false },
+      { "text": "Request is Broadcast / Reply is Unicast", "correct": true }
+    ]
+  },
+  {
+    "text": "How does the Packet Format of RARP compare to that of ARP?",
+    "info": "RARP format = ARP format (differs only in Operation code).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The structures are identical; they only differ in the Operation field value", "correct": true },
+      { "text": "RARP packets are twice the size of ARP packets", "correct": false },
+      { "text": "RARP lacks the Sender Hardware Address field", "correct": false },
+      { "text": "Their structures are completely different", "correct": false }
+    ]
+  },
+  {
+    "text": "In a RARP Packet, what is the Operation field value when sending a RARP Request?",
+    "info": "ARP Req = 1, ARP Reply = 2 / RARP Req = 3, RARP Reply = 4.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1", "correct": false },
+      { "text": "2", "correct": false },
+      { "text": "3", "correct": true },
+      { "text": "4", "correct": false }
+    ]
+  },
+  {
+    "text": "In a RARP Packet, what is the Operation field value when returning a RARP Reply?",
+    "info": "RARP Reply = 4.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1", "correct": false },
+      { "text": "2", "correct": false },
+      { "text": "3", "correct": false },
+      { "text": "4", "correct": true }
+    ]
+  },
+  {
+    "text": "In a RARP Packet for an Ethernet Network, what is the length of the Hardware Length field in bytes?",
+    "info": "Ethernet MAC address = 6 bytes (48 bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 bytes", "correct": false },
+      { "text": "4 bytes", "correct": false },
+      { "text": "6 bytes", "correct": true },
+      { "text": "8 bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "In a RARP Packet for IPv4, what is the length of the Protocol Length field in bytes?",
+    "info": "IPv4 address = 4 bytes (32 bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "4 bytes", "correct": true },
+      { "text": "6 bytes", "correct": false },
+      { "text": "8 bytes", "correct": false },
+      { "text": "32 bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "In a RARP Request Packet, how is the Sender Protocol Address field filled?",
+    "info": "Requesting host doesn't know its IP yet -> Sender Protocol Address is empty (0s).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Populated with the RARP Server's IP", "correct": false },
+      { "text": "Left empty (filled with zeros)", "correct": true },
+      { "text": "Populated with the Default Gateway's IP", "correct": false },
+      { "text": "Populated with the Broadcast IP address", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is the Sender Protocol Address field left blank in a RARP Request Packet?",
+    "info": "Unknown IP -> Leave blank to ask the server.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The sender does not know its own IP address yet", "correct": true },
+      { "text": "The system forgot to populate it", "correct": false },
+      { "text": "The RARP Server forbids populating this field", "correct": false },
+      { "text": "The MAC address was inserted instead", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the term for placing a RARP Packet into the Data field of an Ethernet Frame?",
+    "info": "Placing payload into frame = Encapsulation.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Decapsulation", "correct": false },
+      { "text": "Encapsulation", "correct": true },
+      { "text": "Modulation", "correct": false },
+      { "text": "Compression", "correct": false }
+    ]
+  },
+  {
+    "text": "In an Ethernet Frame encapsulating a RARP Packet, what hexadecimal value must be specified in the Type field?",
+    "info": "Ethernet Type for RARP = 0x8035 (Standard ARP is 0x0806).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "0x0800", "correct": false },
+      { "text": "0x0806", "correct": false },
+      { "text": "0x8035", "correct": true },
+      { "text": "0x86DD", "correct": false }
+    ]
+  },
+  {
+    "text": "Ethernet Frame Type values 0x0806 and 0x8035 correspond to which protocols, respectively?",
+    "info": "0x0806 = ARP / 0x8035 = RARP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IPv4 and IPv6", "correct": false },
+      { "text": "ARP and RARP", "correct": true },
+      { "text": "RARP and ARP", "correct": false },
+      { "text": "TCP and UDP", "correct": false }
+    ]
+  },
+  {
+    "text": "When a diskless host transmits a RARP Request Frame, what is specified in the Ethernet Frame's Destination Address field?",
+    "info": "Data Link Layer Broadcast = FF:FF:FF:FF:FF:FF.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "RARP Server's MAC address", "correct": false },
+      { "text": "00:00:00:00:00:00", "correct": false },
+      { "text": "FF:FF:FF:FF:FF:FF", "correct": true },
+      { "text": "Sender's IP address", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the function of the 4-byte CRC field appended to an Ethernet Frame?",
+    "info": "CRC = Checksum for frame-level Error Detection.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Records frame timestamp", "correct": false },
+      { "text": "Performs frame integrity verification (Error Detection)", "correct": true },
+      { "text": "Indicates compression ratio", "correct": false },
+      { "text": "Stores transmission authentication keys", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the most significant limitation of RARP that makes it insufficient for modern networks?",
+    "info": "RARP gives IP only -> Missing Subnet Mask, Gateway, DNS.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data transmission speed is too slow", "correct": false },
+      { "text": "It provides only an IP address, failing to supply Subnet Mask, Gateway, and DNS settings", "correct": true },
+      { "text": "It cannot run on CAT6 cabling", "correct": false },
+      { "text": "It supports only Windows operating systems", "correct": false }
+    ]
+  },
+  {
+    "text": "Which essential networking parameters are required by a diskless host for inter-network communication, but CANNOT be supplied by RARP?",
+    "info": "RARP lacks Subnet Mask, Default Gateway, and DNS.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "MAC Address", "correct": false },
+      { "text": "Subnet Mask, Router IP (Gateway), Name Server IP (DNS)", "correct": true },
+      { "text": "Hard Drive Serial Number", "correct": false },
+      { "text": "Operation Code", "correct": false }
+    ]
+  },
+  {
+    "text": "Which protocols were developed to overcome RARP's limitations by delivering comprehensive network configurations?",
+    "info": "Protocols replacing RARP = BOOTP and DHCP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "HTTP and HTTPS", "correct": false },
+      { "text": "ICMP and IGMP", "correct": false },
+      { "text": "BOOTP and DHCP", "correct": true },
+      { "text": "FTP and TFTP", "correct": false }
+    ]
+  },
+  {
+    "text": "What does the acronym BOOTP stand for?",
+    "info": "BOOTP = Bootstrap Protocol.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Boot Program Protocol", "correct": false },
+      { "text": "Bootstrap Protocol", "correct": true },
+      { "text": "Binding Operation Protocol", "correct": false },
+      { "text": "Basic Output Operation Protocol", "correct": false }
+    ]
+  },
+  {
+    "text": "At which layer of the OSI Model do BOOTP and DHCP operate?",
+    "info": "RARP = Data Link/Network Layer; BOOTP & DHCP = Application Layer (uses UDP).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Physical Layer", "correct": false },
+      { "text": "Data Link Layer", "correct": false },
+      { "text": "Network Layer", "correct": false },
+      { "text": "Application Layer", "correct": true }
+    ]
+  },
+  {
+    "text": "What major limitation of BOOTP makes it inconvenient for large-scale enterprise networks?",
+    "info": "BOOTP = Requires Static (Manual) mapping tables.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Supports a maximum of 10 IP addresses", "correct": false },
+      { "text": "Requires static pre-configured MAC-to-IP manual mapping", "correct": true },
+      { "text": "Cannot pass through routers", "correct": false },
+      { "text": "Functions only during daylight hours", "correct": false }
+    ]
+  },
+  {
+    "text": "Which protocol currently serves as the dominant replacement for both RARP and BOOTP?",
+    "info": "Modern standard for dynamic configuration = DHCP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ARP", "correct": false },
+      { "text": "ICMP", "correct": false },
+      { "text": "DHCP", "correct": true },
+      { "text": "DNS", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the key advantage of DHCP over BOOTP and RARP?",
+    "info": "DHCP highlights = Dynamic IP allocation & Lease Time.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Provides Dynamic IP allocation with configurable Lease Times", "correct": true },
+      { "text": "Does not require physical cables", "correct": false },
+      { "text": "Transmits data without needing an IP address", "correct": false },
+      { "text": "Relies exclusively on MAC addressing", "correct": false }
+    ]
+  },
+  {
+    "text": "Which parameter does a Diskless Workstation use to distinguish between Network ID and Host ID?",
+    "info": "Separates Network ID and Host ID = Subnet Mask.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Subnet Mask", "correct": true },
+      { "text": "Gateway Address", "correct": false },
+      { "text": "MAC Address", "correct": false },
+      { "text": "Domain Name", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is a Default Gateway (Router IP) critical for a Diskless Workstation?",
+    "info": "Default Gateway = Exit door to destination networks outside local LAN.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Required to power on the machine", "correct": false },
+      { "text": "Acts as the exit path for sending packets outside the local LAN", "correct": true },
+      { "text": "Writes setup data directly to ROM", "correct": false },
+      { "text": "Converts MAC addresses to IP addresses", "correct": false }
+    ]
+  },
+  {
+    "text": "Which sequence correctly illustrates the chronological evolution of IP configuration protocols?",
+    "info": "Evolution: RARP (Oldest) -> BOOTP -> DHCP (Current Standard).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "DHCP -> BOOTP -> RARP", "correct": false },
+      { "text": "BOOTP -> DHCP -> RARP", "correct": false },
+      { "text": "RARP -> BOOTP -> DHCP", "correct": true },
+      { "text": "RARP -> DHCP -> BOOTP", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is DHCP the most widely used network configuration protocol today?",
+    "info": "DHCP = Full automation, complete configuration, zero manual admin effort.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It is the only protocol that is completely free", "correct": false },
+      { "text": "It operates without requiring a server", "correct": false },
+      { "text": "It functions natively at the Data Link Layer", "correct": false },
+      { "text": "It automates full IP and network parameter assignment, significantly reducing administrative overhead", "correct": true }
+    ]
+  }
+]

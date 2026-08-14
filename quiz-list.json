@@ -56,6 +56,17 @@
     "semester": "ปี 2 เทอม 1",
     "subjects": [
       {
+        "subject": "Midterm/Advanced Network",
+        "files": [
+          "ปี 2 เทอม 1/Midterm/Advanced Network/Ch1 Introduction To Advance Network Protocol.json",
+          "ปี 2 เทอม 1/Midterm/Advanced Network/Ch2 The OSI Model and TCPIP Protocol Suite.json",
+          "ปี 2 เทอม 1/Midterm/Advanced Network/Ch4 The IP Addresses Classful Addressing.json",
+          "ปี 2 เทอม 1/Midterm/Advanced Network/Ch7 ARP and RARP.json",
+          "ปี 2 เทอม 1/Midterm/Advanced Network/Ch8 IP Internet Protocol (IP).json",
+          "ปี 2 เทอม 1/Midterm/Advanced Network/Ch9 Internet Control Message Protocol (ICMP).json"
+        ]
+      },
+      {
         "subject": "Midterm/Cloud",
         "files": [
           "ปี 2 เทอม 1/Midterm/Cloud/Module 1 - Cloud concept.json",

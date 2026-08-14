@@ -1,0 +1,662 @@
+[
+  {
+    "text": "When subnetting is applied to an internal network, how does the rest of the Internet view the organization's network?",
+    "info": "The outside world sees only 1 single site; the border router (R1) handles internal routing.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "As multiple individual subnets", "correct": false },
+      { "text": "As a single network", "correct": true },
+      { "text": "As invisible because the network is hidden", "correct": false },
+      { "text": "As a large Class A network", "correct": false }
+    ]
+  },
+  {
+    "text": "Given the IP address 141.14.192.2, if an incoming packet arrives from the external Internet, where is it forwarded to first?",
+    "info": "External routers only recognize the Site ID (141.14), so packets land at the main entry router first.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Directly to host number 2", "correct": false },
+      { "text": "To the router for subnet 192", "correct": false },
+      { "text": "To the site's main border router (R1)", "correct": true },
+      { "text": "To the central department switch", "correct": false }
+    ]
+  },
+  {
+    "text": "How many levels of hierarchy exist in an IP routing system that uses subnetting?",
+    "info": "3 Levels of Hierarchy = Site → Subnet → Host.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 levels", "correct": false },
+      { "text": "3 levels", "correct": true },
+      { "text": "4 levels", "correct": false },
+      { "text": "5 levels", "correct": false }
+    ]
+  },
+  {
+    "text": "Which sequence correctly represents the routing steps of an IP datagram in a subnetted network?",
+    "info": "Enter organization (Site) → Reach department (Subnet) → Deliver to host (Host).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Host → Subnetwork → Site", "correct": false },
+      { "text": "Site → Subnetwork → Host", "correct": true },
+      { "text": "Subnetwork → Site → Host", "correct": false },
+      { "text": "Site → Host → Subnetwork", "correct": false }
+    ]
+  },
+  {
+    "text": "In a Class B network \"without subnetting\", how is the 32-bit IP address structure divided?",
+    "info": "Without subnetting = Only 2 parts: NetID + HostID (Class B = 16/16).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Site ID (16 bits) and Subnet ID (16 bits)", "correct": false },
+      { "text": "NetID (8 bits) and HostID (24 bits)", "correct": false },
+      { "text": "NetID (16 bits) and HostID (16 bits)", "correct": true },
+      { "text": "SubnetID (8 bits) and HostID (24 bits)", "correct": false }
+    ]
+  },
+  {
+    "text": "In a system \"with subnetting\", where are the bits borrowed from to create the SubnetID?",
+    "info": "SubnetID is created by borrowing bits from the HostID field.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Borrowed from the NetID", "correct": false },
+      { "text": "Borrowed from the HostID", "correct": true },
+      { "text": "Added as extra bits to the IP address", "correct": false },
+      { "text": "Borrowed from the Default Gateway", "correct": false }
+    ]
+  },
+  {
+    "text": "If an IP address is 141.14.192.192 in a subnetted Class B network with an 8-bit subnet, what does 192 in the 3rd byte represent?",
+    "info": "Bytes 1–2 (141.14) = Site, Byte 3 (192) = SubnetID, Byte 4 (192) = HostID.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "NetID (Site)", "correct": false },
+      { "text": "SubnetID", "correct": true },
+      { "text": "HostID", "correct": false },
+      { "text": "Broadcast Address", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary benefit of dividing a network into three levels of hierarchy?",
+    "info": "The global Internet only stores 1 Site route, saving routing table space from hundreds of internal subnets.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Doubles intercontinental transmission speeds", "correct": false },
+      { "text": "Provides internal administrative flexibility without affecting global Internet routing tables", "correct": true },
+      { "text": "Expands IP address length beyond 32 bits", "correct": false },
+      { "text": "Eliminates the need for internal routers", "correct": false }
+    ]
+  },
+  {
+    "text": "Which real-world scenario best parallels the concept of subnetting?",
+    "info": "Company = Site, Department = Subnet, Employee = Host.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Mail sent directly from house number to house number", "correct": false },
+      { "text": "Mail delivered to Company name → Forwarded to Department → Handed to Employee", "correct": true },
+      { "text": "Package sent without a recipient name", "correct": false },
+      { "text": "Public address announcements in a village", "correct": false }
+    ]
+  },
+  {
+    "text": "When an IP address is subnetted, how does the total number of bits in the IP address change?",
+    "info": "IPv4 address length is always 32 bits, regardless of how it is subnetted.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Increases to 48 bits", "correct": false },
+      { "text": "Decreases to 24 bits", "correct": false },
+      { "text": "Remains fixed at 32 bits", "correct": true },
+      { "text": "Varies based on the number of subnets", "correct": false }
+    ]
+  },
+  {
+    "text": "In the routing diagram to reach Host 141.14.192.2, to which subnetwork address will Router R1 forward the packet?",
+    "info": "Router R1 forwards to the destination Subnet Address (HostID bits set to 0).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "141.0.0.0", "correct": false },
+      { "text": "141.14.0.0", "correct": false },
+      { "text": "141.14.192.0", "correct": true },
+      { "text": "255.255.255.0", "correct": false }
+    ]
+  },
+  {
+    "text": "What are the three components of a 3-level IP address hierarchy?",
+    "info": "Standard 3-level hierarchy: Site → Subnet → Host.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Country, City, Street", "correct": false },
+      { "text": "Site, Subnet, Host", "correct": true },
+      { "text": "Network, Router, Switch", "correct": false },
+      { "text": "Domain, Server, Client", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary function of a Mask (Default Mask or Subnet Mask)?",
+    "info": "A mask covers the host bits to expose the Network/Subnet ID.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Encrypts packets for security", "correct": false },
+      { "text": "Distinguishes the Network/Subnet ID portion from the Host ID portion of an IP address", "correct": true },
+      { "text": "Converts IP addresses to MAC addresses", "correct": false },
+      { "text": "Defines transmission bandwidth", "correct": false }
+    ]
+  },
+  {
+    "text": "Which description correctly represents a \"Contiguous Subnet Mask\"?",
+    "info": "Contiguous = 1s on the left, 0s on the right (111...000).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Alternating 1s and 0s throughout", "correct": false },
+      { "text": "A continuous block of 1s on the left followed by a continuous block of 0s on the right", "correct": true },
+      { "text": "1s located only in the middle of the mask", "correct": false },
+      { "text": "All 32 bits must be set to 1", "correct": false }
+    ]
+  },
+  {
+    "text": "Why have \"Noncontiguous Subnet Masks\" (alternating 1s and 0s) become obsolete?",
+    "info": "Noncontiguous masks are too complex for fast router lookup logic.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "They cause instability in Ethernet cables", "correct": false },
+      { "text": "They create extreme complexity and confusion in router routing operations", "correct": true },
+      { "text": "They are restricted by copyright laws", "correct": false },
+      { "text": "They shorten the IP address length", "correct": false }
+    ]
+  },
+  {
+    "text": "To find the Subnet Address, which logical operation is performed between an IP Address and its Subnet Mask?",
+    "info": "Formula: IP AND Mask = Subnet Address.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "OR", "correct": false },
+      { "text": "XOR", "correct": false },
+      { "text": "AND", "correct": true },
+      { "text": "NOT", "correct": false }
+    ]
+  },
+  {
+    "text": "Which truth table rule for the AND operation is correct?",
+    "info": "1 AND 1 is TRUE (1), everything else is 0.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1 AND 1 = 1; all other combinations result in 0", "correct": true },
+      { "text": "0 AND 0 = 1; all other combinations result in 0", "correct": false },
+      { "text": "1 AND 0 = 1; all other combinations result in 0", "correct": false },
+      { "text": "Output is always 1", "correct": false }
+    ]
+  },
+  {
+    "text": "If any byte of an IP address is bitwise ANDed with 255 (all 8 bits set to 1), what is the result?",
+    "info": "Byte AND 255 = Byte (unmodified).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Always 0", "correct": false },
+      { "text": "Retains the original value of that IP byte", "correct": true },
+      { "text": "Always 255", "correct": false },
+      { "text": "Doubles the byte value", "correct": false }
+    ]
+  },
+  {
+    "text": "If any byte of an IP address is bitwise ANDed with 0 (all 8 bits set to 0), what is the result?",
+    "info": "Byte AND 0 = 0.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Retains the original value", "correct": false },
+      { "text": "Always 0", "correct": true },
+      { "text": "Always 255", "correct": false },
+      { "text": "Causes a runtime error", "correct": false }
+    ]
+  },
+  {
+    "text": "Given IP 141.14.72.24 and Default Mask 255.255.0.0, what is the resulting Network Address?",
+    "info": "Bytes 1–2 AND 255 → 141.14, Bytes 3–4 AND 0 → .0.0.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "141.0.0.0", "correct": false },
+      { "text": "141.14.0.0", "correct": true },
+      { "text": "141.14.72.0", "correct": false },
+      { "text": "141.14.72.24", "correct": false }
+    ]
+  },
+  {
+    "text": "Given IP 141.14.72.24 and Subnet Mask 255.255.192.0, what is the resulting Subnet Address?",
+    "info": "Byte 3: 72 (01001000) AND 192 (11000000) = 01000000 (64).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "141.14.0.0", "correct": false },
+      { "text": "141.14.64.0", "correct": true },
+      { "text": "141.14.72.0", "correct": false },
+      { "text": "141.14.128.0", "correct": false }
+    ]
+  },
+  {
+    "text": "Destination Address = 200.45.34.56, Subnet Mask = 255.255.240.0. What is the Subnetwork Address?",
+    "info": "Byte 3: 34 (00100010) AND 240 (11110000) = 00100000 (32).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "200.45.0.0", "correct": false },
+      { "text": "200.45.32.0", "correct": true },
+      { "text": "200.45.34.0", "correct": false },
+      { "text": "200.45.16.0", "correct": false }
+    ]
+  },
+  {
+    "text": "Converting decimal 240 from a subnet mask into an 8-bit binary representation yields:",
+    "info": "128 + 64 + 32 + 16 = 240 (4 consecutive ones).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "11000000", "correct": false },
+      { "text": "11100000", "correct": false },
+      { "text": "11110000", "correct": true },
+      { "text": "11111000", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the key functional difference between a Network Mask and a Subnet Mask?",
+    "info": "Default Mask = Main site address; Subnet Mask = Subnetwork address.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Network Mask calculates the subnet address", "correct": false },
+      { "text": "Subnet Mask is used exclusively in Classless addressing", "correct": false },
+      { "text": "Network Mask identifies the main network address, while Subnet Mask identifies a subnetwork address", "correct": true },
+      { "text": "Both masks are used exclusively to extract MAC addresses", "correct": false }
+    ]
+  },
+  {
+    "text": "How many 1-bits are present in the Default Masks for Class A, B, and C, respectively?",
+    "info": "Class A = 8 bits, Class B = 16 bits, Class C = 24 bits.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "4, 8, 12 bits", "correct": false },
+      { "text": "8, 16, 24 bits", "correct": true },
+      { "text": "16, 24, 32 bits", "correct": false },
+      { "text": "8, 12, 16 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "When comparing the number of 1-bits in a Subnet Mask to its Default Mask, which statement is TRUE?",
+    "info": "Subnetting borrows Host bits turning 0s to 1s → Subnet Mask 1-bits > Default Mask 1-bits.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A Subnet Mask always has fewer 1-bits than the Default Mask", "correct": false },
+      { "text": "A Subnet Mask always has the same number of 1-bits as the Default Mask", "correct": false },
+      { "text": "A Subnet Mask always has more 1-bits than the Default Mask", "correct": true },
+      { "text": "It depends on the IP address class", "correct": false }
+    ]
+  },
+  {
+    "text": "A Class B Default Mask is 255.255.0.0. If 3 bits are borrowed for subnetting, what is the new Subnet Mask?",
+    "info": "3 borrowed bits = 11100000_2 = 128 + 64 + 32 = 224.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "255.255.128.0", "correct": false },
+      { "text": "255.255.192.0", "correct": false },
+      { "text": "255.255.224.0", "correct": true },
+      { "text": "255.255.240.0", "correct": false }
+    ]
+  },
+  {
+    "text": "For a Class B Subnet Mask of 255.255.224.0 (3 bits borrowed), how many 0-bits remain for the HostID?",
+    "info": "Total bits (32) - Mask 1-bits (16 + 3 = 19) = 13 bits remaining for HostID.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8 bits", "correct": false },
+      { "text": "13 bits", "correct": true },
+      { "text": "16 bits", "correct": false },
+      { "text": "19 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the formula to calculate the total number of subnets, where n is the number of borrowed subnet bits?",
+    "info": "Number of subnets = 2n (n = borrowed 1-bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2n", "correct": true },
+      { "text": "2n−2", "correct": false },
+      { "text": "n2", "correct": false },
+      { "text": "32−n", "correct": false }
+    ]
+  },
+  {
+    "text": "If 3 bits are borrowed (n=3), how many subnets can be created?",
+    "info": "2^3 = 8 subnets.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "3 subnets", "correct": false },
+      { "text": "6 subnets", "correct": false },
+      { "text": "8 subnets", "correct": true },
+      { "text": "16 subnets", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the formula to calculate the total number of IP addresses per subnet, where m is the number of remaining host bits (0-bits)?",
+    "info": "Total IP addresses per subnet = 2m (m = host 0-bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2m", "correct": true },
+      { "text": "2m−2", "correct": false },
+      { "text": "m×256", "correct": false },
+      { "text": "32−m", "correct": false }
+    ]
+  },
+  {
+    "text": "If a Subnet Mask leaves 13 bits for the HostID (m=13), what is the total number of IP addresses per subnet?",
+    "info": "2^13 = 8,192 total IP addresses.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2,048", "correct": false },
+      { "text": "4,096", "correct": false },
+      { "text": "8,192", "correct": true },
+      { "text": "16,384", "correct": false }
+    ]
+  },
+  {
+    "text": "How many usable host IP addresses are available in a subnet with 13 host bits (m=13)?",
+    "info": "Usable hosts = 2m−2 → 8,192−2 = 8,190.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8,192", "correct": false },
+      { "text": "8,191", "correct": false },
+      { "text": "8,190", "correct": true },
+      { "text": "8,188", "correct": false }
+    ]
+  },
+  {
+    "text": "Which two IP addresses in every subnet cannot be assigned to individual hosts?",
+    "info": "Always subtract 2 for Subnet ID (first IP) and Broadcast ID (last IP).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Gateway Address and DNS Address", "correct": false },
+      { "text": "Subnet Address and Broadcast Address", "correct": true },
+      { "text": "First Host and Last Host", "correct": false },
+      { "text": "Public IP and Private IP", "correct": false }
+    ]
+  },
+  {
+    "text": "Subnet Mask 255.255.255.192 borrows how many bits from a Class C network (/24)?",
+    "info": "192 = 11000000_2 (2 extra 1-bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1 bit", "correct": false },
+      { "text": "2 bits", "correct": true },
+      { "text": "3 bits", "correct": false },
+      { "text": "4 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "Using Subnet Mask 255.255.255.192 on a Class C network, how many subnets are created, and how many total IP addresses exist per subnet?",
+    "info": "2^2 = 4 subnets; 2^6 = 64 total IPs per subnet.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 subnets, 128 IPs each", "correct": false },
+      { "text": "4 subnets, 64 IPs each", "correct": true },
+      { "text": "8 subnets, 32 IPs each", "correct": false },
+      { "text": "16 subnets, 16 IPs each", "correct": false }
+    ]
+  },
+  {
+    "text": "What does the acronym CIDR stand for?",
+    "info": "CIDR = Classless Inter-Domain Routing.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Classful Inter-Domain Routing", "correct": false },
+      { "text": "Classless Inter-Domain Routing", "correct": true },
+      { "text": "Central Internet Domain Router", "correct": false },
+      { "text": "Common IP Display Representation", "correct": false }
+    ]
+  },
+  {
+    "text": "Which format correctly demonstrates CIDR / Slash Notation?",
+    "info": "Format: IP/PrefixLength (Slash followed by number of 1-bits).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "141.14.192.3:255.255.0.0", "correct": false },
+      { "text": "141.14.192.3 - 16", "correct": false },
+      { "text": "141.14.192.3/16", "correct": true },
+      { "text": "141.14.192.3 (16)", "correct": false }
+    ]
+  },
+  {
+    "text": "In CIDR notation, what does the number following the slash (e.g., /18) specify?",
+    "info": "/X = X consecutive 1-bits in the mask.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Total number of host computers", "correct": false },
+      { "text": "Number of 1-bits in the Subnet Mask (Prefix length)", "correct": true },
+      { "text": "Destination router identifier", "correct": false },
+      { "text": "Number of 0-bits in the HostID", "correct": false }
+    ]
+  },
+  {
+    "text": "The CIDR address 141.14.192.3/16 corresponds to which Subnet Mask?",
+    "info": "/16 = 16 1-bits = 255.255.0.0 (Class B default).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "255.0.0.0", "correct": false },
+      { "text": "255.255.0.0", "correct": true },
+      { "text": "255.255.255.0", "correct": false },
+      { "text": "255.255.192.0", "correct": false }
+    ]
+  },
+  {
+    "text": "The CIDR address 141.14.192.3/18 corresponds to which Subnet Mask?",
+    "info": "/18 = 18 1-bits (8 + 8 + 2) → 3rd byte is 11000000_2 = 192.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "255.255.0.0", "correct": false },
+      { "text": "255.255.128.0", "correct": false },
+      { "text": "255.255.192.0", "correct": true },
+      { "text": "255.255.224.0", "correct": false }
+    ]
+  },
+  {
+    "text": "Which sequence correctly orders network prefixes from LARGEST to SMALLEST network size (most IPs to fewest IPs)?",
+    "info": "Smaller slash number = More 0-bits for hosts = Larger network.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "/8, /16, /24, /30", "correct": true },
+      { "text": "/30, /24, /16, /8", "correct": false },
+      { "text": "/24, /16, /8, /30", "correct": false },
+      { "text": "/8, /30, /16, /24", "correct": false }
+    ]
+  },
+  {
+    "text": "Which CIDR prefix length is equivalent to a Class C Default Mask (255.255.255.0)?",
+    "info": "255.255.255.0 has three sets of 8 1-bits (8×3) = /24.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "/8", "correct": false },
+      { "text": "/16", "correct": false },
+      { "text": "/24", "correct": true },
+      { "text": "/32", "correct": false }
+    ]
+  },
+  {
+    "text": "How is IP 10.0.0.1 combined with Subnet Mask 255.255.255.128 written in CIDR notation?",
+    "info": "/24 (255.255.255.0) + 1 extra bit for 128 (10000000_2) = /25.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "10.0.0.1/24", "correct": false },
+      { "text": "10.0.0.1/25", "correct": true },
+      { "text": "10.0.0.1/26", "correct": false },
+      { "text": "10.0.0.1/27", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary motivation for introducing Supernetting?",
+    "info": "Class B empty + Class C too small (254 usable) → Combine Class C blocks.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Class A and B addresses were nearly depleted, and Class C blocks (256 addresses) were too small for many organizations", "correct": true },
+      { "text": "To divide Class A networks into small sub-networks", "correct": false },
+      { "text": "To phase out Class C addresses completely", "correct": false },
+      { "text": "To increase home broadband speeds", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the definition of Supernetting?",
+    "info": "Supernetting = Combining small Class C blocks into one large network.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Dividing one large network into multiple smaller subnets", "correct": false },
+      { "text": "Combining multiple contiguous Class C blocks to form a single larger address space", "correct": true },
+      { "text": "Translating IPv4 into IPv6", "correct": false },
+      { "text": "Hiding internal IP addresses from external routers", "correct": false }
+    ]
+  },
+  {
+    "text": "How many contiguous Class C networks are combined to form a supernetwork?",
+    "info": "Standard slide example combines 4 Class C networks (.32, .33, .34, .35).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 networks", "correct": false },
+      { "text": "4 networks", "correct": true },
+      { "text": "8 networks", "correct": false },
+      { "text": "16 networks", "correct": false }
+    ]
+  },
+  {
+    "text": "When 4 Class C networks starting at X.Y.32.0 are supernetted, what is the resulting Supernetwork Address?",
+    "info": "The Supernetwork Address uses the first IP address of the first combined block.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "X.Y.0.0", "correct": false },
+      { "text": "X.Y.32.0", "correct": true },
+      { "text": "X.Y.35.255", "correct": false },
+      { "text": "255.255.255.0", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the total number of usable host addresses in a supernet created by combining 4 Class C networks?",
+    "info": "Total IPs = 256×4 = 1,024 → Subtract 2 (Network/Broadcast) = 1,022 hosts.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "254 hosts", "correct": false },
+      { "text": "510 hosts", "correct": false },
+      { "text": "1,022 hosts", "correct": true },
+      { "text": "1,024 hosts", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the most critical requirement when selecting Class C blocks for supernetting?",
+    "info": "Must be contiguous (e.g., .32, .33, .34, .35) and power of 2 (2, 4, 8, 16...).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Blocks must come from different IP classes", "correct": false },
+      { "text": "Blocks must be contiguous and the number of blocks must be a power of 2 (2n)", "correct": true },
+      { "text": "Each block must use a different router", "correct": false },
+      { "text": "Every IP address must end in 0", "correct": false }
+    ]
+  },
+  {
+    "text": "To define the boundary of an IP block in Subnetting/Supernetting, which pieces of information are required?",
+    "info": "Block boundary = First Address + Mask.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Knowing only the first address is sufficient", "correct": false },
+      { "text": "Both the First Address and the Mask (Subnet/Supernet Mask) must be specified", "correct": true },
+      { "text": "A mask is unnecessary if the default mask is used", "correct": false },
+      { "text": "Knowing only the last address is sufficient", "correct": false }
+    ]
+  },
+  {
+    "text": "How does the number of 1-bits in a Supernet Mask compare to a Default Class C Mask?",
+    "info": "Subnetting = More 1-bits; Supernetting = Fewer 1-bits than default.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Supernet Mask has more 1-bits than the Default Mask", "correct": false },
+      { "text": "Supernet Mask has fewer 1-bits than the Default Mask", "correct": true },
+      { "text": "Supernet Mask has the same number of 1-bits as the Default Mask", "correct": false },
+      { "text": "Supernet Mask has no 1-bits", "correct": false }
+    ]
+  },
+  {
+    "text": "If 8 Class C networks are combined into a supernet, by how many bits must the Default Class C mask (/24) be reduced?",
+    "info": "8 networks = 2^3 → Reduce mask length by 3 bits.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Reduced by 1 bit", "correct": false },
+      { "text": "Reduced by 2 bits", "correct": false },
+      { "text": "Reduced by 3 bits", "correct": true },
+      { "text": "Reduced by 4 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the CIDR prefix for a supernet combining 8 Class C networks?",
+    "info": "24−3 = /21.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "/21", "correct": true },
+      { "text": "/22", "correct": false },
+      { "text": "/23", "correct": false },
+      { "text": "/27", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the dotted-decimal representation of a /22 Supernet Mask (combining 4 Class C networks)?",
+    "info": "Byte 3 has six 1-bits (11111100_2 = 252) → 255.255.252.0.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "255.255.255.0", "correct": false },
+      { "text": "255.255.254.0", "correct": false },
+      { "text": "255.255.252.0", "correct": true },
+      { "text": "255.255.248.0", "correct": false }
+    ]
+  },
+  {
+    "text": "What does the statement \"A Supernet Mask is the reverse of a Subnet Mask\" imply?",
+    "info": "Subnetting adds 1s to shrink host space; Supernetting removes 1s to grow host space.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Subnetting splits networks by adding 1-bits, whereas Supernetting combines networks by reducing 1-bits", "correct": true },
+      { "text": "Supernetting calculations use OR logic instead of AND logic", "correct": false },
+      { "text": "Supernet masks are written right-to-left", "correct": false },
+      { "text": "Bits in the IP address are inverted", "correct": false }
+    ]
+  },
+  {
+    "text": "Why have classful subnetting and supernetting concepts become virtually obsolete?",
+    "info": "CIDR / Classless Addressing rendered rigid classful rules obsolete.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Ethernet cables were entirely replaced by Wi-Fi", "correct": false },
+      { "text": "The widespread adoption of Classless Addressing (CIDR)", "correct": true },
+      { "text": "Pure MAC address routing replaced IP routing", "correct": false },
+      { "text": "IPv4 address length expanded to 128 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "In Classless Addressing (CIDR), what traditional concept was completely eliminated?",
+    "info": "Classless = Ignores Class A/B/C boundaries, treating IP space as arbitrary prefix blocks (/X).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Binary calculations", "correct": false },
+      { "text": "Subnet mask usage", "correct": false },
+      { "text": "Traditional Class A, B, and C boundaries", "correct": true },
+      { "text": "Unicast routing", "correct": false }
+    ]
+  },
+  {
+    "text": "Which option correctly compares all three mask types starting from a Default Class C Mask (/24)?",
+    "info": "Subnetting moves prefix right (/27); Supernetting moves prefix left (/21).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Default (/24) → Subnetting (/27, 1-bits increased by 3) → Supernetting (/21, 1-bits reduced by 3)", "correct": true },
+      { "text": "Default (/24) → Subnetting (/21) → Supernetting (/27)", "correct": false },
+      { "text": "Default (/16) → Subnetting (/8) → Supernetting (/24)", "correct": false },
+      { "text": "All three masks contain an equal number of 1-bits", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the core foundation of modern Internet IP address allocation and routing?",
+    "info": "Modern Internet routing relies entirely on Classless Addressing / CIDR.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Classful Addressing", "correct": false },
+      { "text": "Noncontiguous Subnet Masking", "correct": false },
+      { "text": "Classless Addressing / CIDR", "correct": true },
+      { "text": "Class B Default Masking", "correct": false }
+    ]
+  }
+]

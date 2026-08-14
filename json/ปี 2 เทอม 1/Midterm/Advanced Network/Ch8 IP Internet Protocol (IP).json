@@ -1,0 +1,662 @@
+[
+  {
+    "text": "Which layer of the TCP/IP Protocol Suite does the IP (Internet Protocol) belong to?",
+    "info": "IP, ICMP, IGMP, ARP, and RARP operate at the Network layer to handle addressing and routing across networks.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Application layer", "correct": false },
+      { "text": "Transport layer", "correct": false },
+      { "text": "Network layer", "correct": true },
+      { "text": "Data link layer", "correct": false }
+    ]
+  },
+  {
+    "text": "Which Transport Layer protocol focuses on connection-oriented transmission and guarantees data delivery?",
+    "info": "TCP = Connection-oriented (Reliable/Guaranteed delivery); UDP = Connectionless (Fast/Best-effort).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "UDP", "correct": false },
+      { "text": "TCP", "correct": true },
+      { "text": "ICMP", "correct": false },
+      { "text": "BOOTP", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is NOT a main characteristic of the IP protocol?",
+    "info": "The three main characteristics of IP are Unreliable, Connectionless, and Best-effort delivery.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Unreliable", "correct": false },
+      { "text": "Connectionless datagram protocol", "correct": false },
+      { "text": "Best-effort delivery service", "correct": false },
+      { "text": "Connection-oriented delivery service", "correct": true }
+    ]
+  },
+  {
+    "text": "What is the name of the data packet at the IP Layer?",
+    "info": "Data Link = Frame, Transport = Segment/User Datagram, IP = Datagram.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Frame", "correct": false },
+      { "text": "Segment", "correct": false },
+      { "text": "Datagram", "correct": true },
+      { "text": "Bit", "correct": false }
+    ]
+  },
+  {
+    "text": "If an IP Datagram has no Options added, what is the fixed size of the Header?",
+    "info": "The base IP Header without Options is always 20 Bytes.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "10 Bytes", "correct": false },
+      { "text": "20 Bytes", "correct": true },
+      { "text": "40 Bytes", "correct": false },
+      { "text": "60 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the maximum possible size of an IP Header when Options are included?",
+    "info": "IP Header size ranges from 20 to 60 Bytes (Base 20 + Max Options 40).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "40 Bytes", "correct": false },
+      { "text": "50 Bytes", "correct": false },
+      { "text": "60 Bytes", "correct": true },
+      { "text": "65,535 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "The Total Size of an IP Datagram ranges between how many bytes?",
+    "info": "Total Size ranges from 20 to 65,535 Bytes (based on the 16-bit Total Length field: 2^16 - 1).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "20 - 1,500 Bytes", "correct": false },
+      { "text": "20 - 65,535 Bytes", "correct": true },
+      { "text": "60 - 65,535 Bytes", "correct": false },
+      { "text": "0 - 65,536 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "Which field in the IP Header prevents a packet from circulating infinitely in the network?",
+    "info": "TTL sets the maximum lifespan/hop count to prevent routing loops.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "HLEN", "correct": false },
+      { "text": "Identification", "correct": false },
+      { "text": "Time to live (TTL)", "correct": true },
+      { "text": "Protocol", "correct": false }
+    ]
+  },
+  {
+    "text": "How many bits are allocated for the Source IP address and Destination IP address fields in an IPv4 Header?",
+    "info": "IPv4 addresses are 32 bits (4 Bytes) for both Source and Destination.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "8 bits", "correct": false },
+      { "text": "16 bits", "correct": false },
+      { "text": "32 bits", "correct": true },
+      { "text": "64 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the unit of measurement for the HLEN (Header Length) field?",
+    "info": "HLEN measures in 4-byte increments (Actual Header Bytes = HLEN × 4).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Counted in Bits", "correct": false },
+      { "text": "Counted in 4-byte words", "correct": true },
+      { "text": "Counted in 8-byte words", "correct": false },
+      { "text": "Counted directly in Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "If there are no Options, what binary value is set in the HLEN field of the IP Header?",
+    "info": "Header 20 Bytes / 4 = 5. In 4-bit binary, 5 is 0101.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "0010", "correct": false },
+      { "text": "0100", "correct": false },
+      { "text": "0101", "correct": true },
+      { "text": "1000", "correct": false }
+    ]
+  },
+  {
+    "text": "In the original Service Type (TOS) format, what was the purpose of the Precedence subfield (first 3 bits), and what is its status in IPv4?",
+    "info": "The Precedence subfield was designed for priority but is not utilized in IPv4.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Define speed / Primary usage", "correct": false },
+      { "text": "Define priority level / Not used in IPv4", "correct": true },
+      { "text": "Record path / Partial usage", "correct": false },
+      { "text": "Error checking / Deprecated", "correct": false }
+    ]
+  },
+  {
+    "text": "Setting the TOS Bits to 1000 corresponds to which service type?",
+    "info": "1000 = Minimize delay, 0100 = Maximize throughput, 0010 = Maximize reliability, 0001 = Minimize cost.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Normal", "correct": false },
+      { "text": "Minimize cost", "correct": false },
+      { "text": "Maximize throughput", "correct": false },
+      { "text": "Minimize delay", "correct": true }
+    ]
+  },
+  {
+    "text": "Which TOS Bits setting should be used for applications like TELNET, Interactive activities, and DNS (UDP query)?",
+    "info": "Real-time/interactive services require low latency -> Minimize delay.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Minimize delay (1000)", "correct": true },
+      { "text": "Maximize throughput (0100)", "correct": false },
+      { "text": "Maximize reliability (0010)", "correct": false },
+      { "text": "Minimize cost (0001)", "correct": false }
+    ]
+  },
+  {
+    "text": "In Differentiated Services (DiffServ), how many bits long is the Codepoint (DSCP) field?",
+    "info": "DiffServ uses the first 6 bits for DSCP and reserves the remaining 2 bits for ECN.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "3 bits", "correct": false },
+      { "text": "4 bits", "correct": false },
+      { "text": "6 bits", "correct": true },
+      { "text": "8 bits", "correct": false }
+    ]
+  },
+  {
+    "text": "Codepoint values ending in XXXX11 (Category 2) are assigned for use by which authority/scope?",
+    "info": "XXXXX0 = IETF, XXXX11 = Local, XXXX01 = Temporary/Experimental.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Internet (IETF)", "correct": false },
+      { "text": "Local (Local authority / Private network)", "correct": true },
+      { "text": "Temporary or experimental", "correct": false },
+      { "text": "Reserved", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the correct formula to calculate the actual Data Size in an IP Datagram?",
+    "info": "Total Length = Header + Data, so Data = Total Length - Header Length.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data Size = Header Length + Total Length", "correct": false },
+      { "text": "Data Size = Total Length - Header Length", "correct": true },
+      { "text": "Data Size = Total Length / HLEN", "correct": false },
+      { "text": "Data Size = (HLEN × 4) - Total Length", "correct": false }
+    ]
+  },
+  {
+    "text": "Why must Padding be added to an Ethernet Frame when sending a small IP Datagram?",
+    "info": "Ethernet minimum payload is 46 Bytes. Smaller IP datagrams require padding.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Because IP Header requires a fixed 60 Bytes length", "correct": false },
+      { "text": "Because Ethernet Frame enforces a minimum Payload size of at least 46 Bytes", "correct": true },
+      { "text": "To increase transmission speed", "correct": false },
+      { "text": "To make Checksum calculation easier", "correct": false }
+    ]
+  },
+  {
+    "text": "If the first 8 bits of an IP Packet are 01000010, how will the receiver handle it and why?",
+    "info": "The last 4 bits 0010 = 2 (2 × 4 = 8 Bytes). Invalid IPv4 header size (<20 Bytes), so it must be discarded.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "Accept the packet because the header is 20 Bytes", "correct": false },
+      { "text": "Discard the packet because HLEN equals 2 (2 × 4 = 8 Bytes), which is below the minimum 20 Bytes", "correct": true },
+      { "text": "Forward the packet because it is a valid IPv4", "correct": false },
+      { "text": "Fragment the packet because it exceeds standard size", "correct": false }
+    ]
+  },
+  {
+    "text": "If the HLEN in an IP Packet is 1000 in binary, how many Bytes of Options are present?",
+    "info": "1000_2 = 8 -> Total Header = 8 × 4 = 32 Bytes. Options = 32 - 20 = 12 Bytes.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "0 Bytes", "correct": false },
+      { "text": "8 Bytes", "correct": false },
+      { "text": "12 Bytes", "correct": true },
+      { "text": "32 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "A Protocol field value of 6 in the IP Header represents which higher-layer protocol?",
+    "info": "1 = ICMP, 2 = IGMP, 6 = TCP, 17 = UDP, 89 = OSPF.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ICMP", "correct": false },
+      { "text": "IGMP", "correct": false },
+      { "text": "TCP", "correct": true },
+      { "text": "UDP", "correct": false }
+    ]
+  },
+  {
+    "text": "A Protocol field value of 17 in the IP Header represents which higher-layer protocol?",
+    "info": "17 = UDP, 6 = TCP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ICMP", "correct": false },
+      { "text": "IGMP", "correct": false },
+      { "text": "TCP", "correct": false },
+      { "text": "UDP", "correct": true }
+    ]
+  },
+  {
+    "text": "What is the process called when the receiving Network Layer reads the Protocol field to deliver the packet to the correct target protocol?",
+    "info": "Demultiplexing inspects the Protocol field to dispatch data upward to the correct transport protocol.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Fragmentation", "correct": false },
+      { "text": "Encapsulation", "correct": false },
+      { "text": "Demultiplexing", "correct": true },
+      { "text": "Reassembly", "correct": false }
+    ]
+  },
+  {
+    "text": "How do the Source Address and Destination Address fields change while traveling through routers in the network?",
+    "info": "Original Source and Destination IP addresses remain intact end-to-end.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Changed at every hop", "correct": false },
+      { "text": "Only Source Address changes", "correct": false },
+      { "text": "Only Destination Address changes", "correct": false },
+      { "text": "Do not change at all throughout the journey", "correct": true }
+    ]
+  },
+  {
+    "text": "What is the Maximum Transmission Unit (MTU) of a standard Ethernet network in bytes?",
+    "info": "Standard Ethernet MTU = 1,500 Bytes.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "296 Bytes", "correct": false },
+      { "text": "576 Bytes", "correct": false },
+      { "text": "1,500 Bytes", "correct": true },
+      { "text": "4,352 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "Why is the Fragmentation process necessary?",
+    "info": "If IP Datagram Size > Link MTU, it must be fragmented to fit through the physical link.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To increase Checksum accuracy", "correct": false },
+      { "text": "Because the IP Datagram size is larger than the MTU of the next link", "correct": true },
+      { "text": "To securely change the Source IP Address", "correct": false },
+      { "text": "To force packets through TCP only", "correct": false }
+    ]
+  },
+  {
+    "text": "Which device in the network is responsible for Reassembly (combining fragments back into the original datagram)?",
+    "info": "Routers can fragment datagrams, but only the Destination Host performs reassembly.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The first Router encountered", "correct": false },
+      { "text": "Every Router along the path", "correct": false },
+      { "text": "Destination Host only", "correct": true },
+      { "text": "Source Host only", "correct": false }
+    ]
+  },
+  {
+    "text": "Which 16-bit field in the IP Header identifies fragments belonging to the exact same original IP Datagram?",
+    "info": "All fragments from the same original packet share the same Identification number.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "HLEN", "correct": false },
+      { "text": "Identification", "correct": true },
+      { "text": "Flags", "correct": false },
+      { "text": "Fragmentation Offset", "correct": false }
+    ]
+  },
+  {
+    "text": "Which field in the IP Header can be inspected to see how many more hops a packet can travel before being dropped?",
+    "info": "TTL decrements by 1 at each router hop. When TTL reaches 0, the packet is discarded.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Service type", "correct": false },
+      { "text": "Identification", "correct": false },
+      { "text": "Time to live (TTL)", "correct": true },
+      { "text": "Protocol", "correct": false }
+    ]
+  },
+  {
+    "text": "When an IP Datagram undergoes Fragmentation, which field in the IP Header does NOT change its value?",
+    "info": "Identification and IP addresses are copied unchanged to all fragments.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Total Length", "correct": false },
+      { "text": "Flags", "correct": false },
+      { "text": "Fragmentation Offset", "correct": false },
+      { "text": "Identification", "correct": true }
+    ]
+  },
+  {
+    "text": "What is the size of the Flags field in the IP Header, and what is the purpose of the 1st bit?",
+    "info": "Flags field has 3 bits: 1st bit = Reserved (0), 2nd bit = DF, 3rd bit = MF.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "3 bits / Reserved (unassigned)", "correct": true },
+      { "text": "3 bits / Do Not Fragment", "correct": false },
+      { "text": "4 bits / More Fragments", "correct": false },
+      { "text": "8 bits / Error Detection", "correct": false }
+    ]
+  },
+  {
+    "text": "If the Do Not Fragment (DF bit) is set to 1 and the packet size exceeds the next link's MTU, what will the router do?",
+    "info": "DF = 1 forbids fragmentation. If it cannot pass, the router must drop it and report via ICMP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Fragment the packet immediately", "correct": false },
+      { "text": "Discard the packet and send an ICMP Error Message back to the source", "correct": true },
+      { "text": "Ignore the MTU limit and forward the packet", "correct": false },
+      { "text": "Record the data in the Options field", "correct": false }
+    ]
+  },
+  {
+    "text": "What does a More Fragments (MF bit) value of 1 indicate?",
+    "info": "MF = 1 means more fragments follow; MF = 0 means it is either the last fragment or non-fragmented.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "This is the last fragment", "correct": false },
+      { "text": "The packet was not fragmented", "correct": false },
+      { "text": "This is NOT the last fragment (more fragments follow)", "correct": true },
+      { "text": "An error occurred in this packet", "correct": false }
+    ]
+  },
+  {
+    "text": "The Fragmentation Offset field is 13 bits long. What unit does it use to measure data positioning?",
+    "info": "Offset is measured in 8-byte blocks (Offset = Start Byte / 8).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 Bytes", "correct": false },
+      { "text": "4 Bytes", "correct": false },
+      { "text": "8 Bytes", "correct": true },
+      { "text": "16 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the Offset value of the First Fragment in a fragmentation sequence?",
+    "info": "The first fragment starts at byte 0, so Offset = 0 / 8 = 0.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "0", "correct": true },
+      { "text": "1", "correct": false },
+      { "text": "8", "correct": false },
+      { "text": "175", "correct": false }
+    ]
+  },
+  {
+    "text": "If a packet has MF = 0 and Offset = 0, what is its fragmentation status?",
+    "info": "MF = 0 (no more fragments) + Offset = 0 (starts at 0) = Standalone, unfragmented packet.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Middle fragment", "correct": false },
+      { "text": "First fragment with more following", "correct": false },
+      { "text": "Complete non-fragmented packet", "correct": true },
+      { "text": "Last fragment of a large packet", "correct": false }
+    ]
+  },
+  {
+    "text": "If a packet has MF = 1 and Offset = 0, what is its fragmentation status?",
+    "info": "Offset = 0 indicates it is the start; MF = 1 indicates more fragments follow -> First fragment.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "First fragment", "correct": true },
+      { "text": "Middle fragment", "correct": false },
+      { "text": "Last fragment", "correct": false },
+      { "text": "Non-fragmented packet", "correct": false }
+    ]
+  },
+  {
+    "text": "If a packet has a Fragmentation Offset of 100, what is the First Byte Number of the payload in this packet?",
+    "info": "First Byte = Offset × 8 = 100 × 8 = 800.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "100", "correct": false },
+      { "text": "400", "correct": false },
+      { "text": "800", "correct": true },
+      { "text": "1,000", "correct": false }
+    ]
+  },
+  {
+    "text": "Given: Offset = 100, HLEN = 5, Total Length = 100. Find the Last Byte Number of the data in this fragment.",
+    "info": "First Byte = 100 × 8 = 800, Header Size = 5 × 4 = 20 Bytes, Data Size = 100 - 20 = 80 Bytes, Last Byte = First Byte + Data Size - 1 = 800 + 80 - 1 = 879.",
+    "difficulty": "hard",
+    "answers": [
+      { "text": "879", "correct": true },
+      { "text": "880", "correct": false },
+      { "text": "899", "correct": false },
+      { "text": "900", "correct": false }
+    ]
+  },
+  {
+    "text": "If an IP Datagram is fragmented into 3 Fragments, which fragment(s) will have an MF bit value of 0?",
+    "info": "Fragments 1 and 2 have MF = 1, while only the last fragment (3) has MF = 0.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Fragment 1 only", "correct": false },
+      { "text": "Fragment 2 only", "correct": false },
+      { "text": "Fragment 3 (the last fragment) only", "correct": true },
+      { "text": "All fragments", "correct": false }
+    ]
+  },
+  {
+    "text": "Into how many main categories are IP Options divided based on option size?",
+    "info": "IP Options are grouped into 1-byte options (Single-byte) and multi-byte options (Multiple-byte).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 categories (Single-byte and Multiple-byte)", "correct": true },
+      { "text": "3 categories (Small, Medium, Large)", "correct": false },
+      { "text": "4 categories (Control, Data, Testing, Management)", "correct": false },
+      { "text": "6 categories according to function", "correct": false }
+    ]
+  },
+  {
+    "text": "Which options belong entirely to the Single-byte Options group?",
+    "info": "Single-byte Options consist of only two types: No Operation (NOP) and End of Option (EOP).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Record route and Timestamp", "correct": false },
+      { "text": "No operation and End of option", "correct": true },
+      { "text": "Strict source route and Loose source route", "correct": false },
+      { "text": "No operation and Record route", "correct": false }
+    ]
+  },
+  {
+    "text": "What does the first bit (Copy bit) in the Option Code field control?",
+    "info": "Copy bit = 0 (keep in 1st fragment only), Copy bit = 1 (copy to all fragments).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Sets option priority", "correct": false },
+      { "text": "Controls whether the option is copied to all fragments during fragmentation", "correct": true },
+      { "text": "Specifies the data length", "correct": false },
+      { "text": "Defines router operation mode", "correct": false }
+    ]
+  },
+  {
+    "text": "Which options will be copied to all fragments during fragmentation (Copy bit = 1)?",
+    "info": "Only Strict Source Route (Code 137) and Loose Source Route (Code 131) have Copy bit = 1.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "No operation and End of option", "correct": false },
+      { "text": "Record route and Timestamp", "correct": false },
+      { "text": "Strict source route and Loose source route", "correct": true },
+      { "text": "Record route and Strict source route", "correct": false }
+    ]
+  },
+  {
+    "text": "Which option acts as filler to align the start of the next option on a 32-bit boundary?",
+    "info": "No Operation (NOP) is used for padding and memory alignment.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "End of option", "correct": false },
+      { "text": "No operation (NOP)", "correct": true },
+      { "text": "Record route", "correct": false },
+      { "text": "Timestamp", "correct": false }
+    ]
+  },
+  {
+    "text": "Which statement is correct regarding End of Option (EOP)?",
+    "info": "End of Option (Code 0) marks the end of options area and can only appear once at the very end.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Can be placed anywhere inside the Options field", "correct": false },
+      { "text": "Multiple End of Options can be included in the same packet", "correct": false },
+      { "text": "Placed only at the end of the Options field, limited to exactly 1 instance", "correct": true },
+      { "text": "Always has a fixed length of 4 Bytes", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the maximum number of router IP addresses that the Record Route Option can record, and why?",
+    "info": "Maximum Options space is 40 Bytes, allowing a maximum of 9 recorded IPv4 addresses.",
+    "difficulty": "medium",
+    "answers": [
+      { "text": "5 routers / Limited by pointer", "correct": false },
+      { "text": "9 routers / Limited by max 40 Bytes Options field (9 × 4 = 36 Bytes + 4 Bytes Option Header)", "correct": true },
+      { "text": "10 routers / Classful restriction", "correct": false },
+      { "text": "Unlimited / Depends on payload size", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the function of the Pointer field in the Record Route Option, and what is its initial value?",
+    "info": "Pointer starts at offset 4 (first slot) and increments by 4 after each IP is recorded.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Points to source router / Initial value = 0", "correct": false },
+      { "text": "Points to the first available slot to record an IP / Initial value = 4", "correct": true },
+      { "text": "Points to fragment index / Initial value = 1", "correct": false },
+      { "text": "Points to end of packet / Initial value = 20", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the strictest rule of the Strict Source Route Option?",
+    "info": "Strict Source Route enforces exact path adherence; hitting an unlisted router causes immediate packet drop.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Records only incoming router IP addresses", "correct": false },
+      { "text": "The packet MUST visit every router listed and CANNOT pass through any unlisted routers", "correct": true },
+      { "text": "Allowed to bypass routers if network congestion occurs", "correct": false },
+      { "text": "Operates only when Transport Layer is UDP", "correct": false }
+    ]
+  },
+  {
+    "text": "Which option correctly describes the difference between Strict Source Route and Loose Source Route?",
+    "info": "Strict = Exact path matching; Loose = Flexible path allowing extra intermediate routers.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Strict records timestamps, Loose does not", "correct": false },
+      { "text": "Strict forbids taking unlisted hops, whereas Loose allows visiting unlisted routers along the path", "correct": true },
+      { "text": "Strict is 1 Byte, Loose is multi-byte", "correct": false },
+      { "text": "Strict operates at Transport Layer, Loose at Network Layer", "correct": false }
+    ]
+  },
+  {
+    "text": "In what unit is time recorded in the Timestamp Option, and from when is it counted?",
+    "info": "Timestamp measures milliseconds elapsed since Midnight Universal Time (UTC).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Seconds / Counted since router startup", "correct": false },
+      { "text": "Milliseconds / Counted since Midnight UTC", "correct": true },
+      { "text": "Microseconds / Counted since packet departure", "correct": false },
+      { "text": "Minutes / Counted by local time", "correct": false }
+    ]
+  },
+  {
+    "text": "Setting Flag = 1 in the Timestamp Option causes the router to record data in which format?",
+    "info": "Flag 0 = Time only, Flag 1 = IP + Time, Flag 3 = Pre-specified IP + Time.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Records Timestamp value only", "correct": false },
+      { "text": "Records paired Outgoing IP address + Timestamp", "correct": true },
+      { "text": "Checks pre-specified IP addresses only", "correct": false },
+      { "text": "Records Overflow count only", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the purpose of the 4-bit Overflow (O-Flow) field in the Timestamp Option?",
+    "info": "Overflow counts how many routers could not record timestamps due to lack of space.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Records the number of routers skipped because option space became full", "correct": true },
+      { "text": "Records Checksum errors count", "correct": false },
+      { "text": "Records total fragment count", "correct": false },
+      { "text": "Records time limit excess", "correct": false }
+    ]
+  },
+  {
+    "text": "If a router finds that the Record Route Option space is full, how will it handle the packet?",
+    "info": "When Record Route space is full, the router simply stops recording and forwards normally.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Discard the packet immediately", "correct": false },
+      { "text": "Forward the packet without recording additional IP addresses", "correct": true },
+      { "text": "Send ICMP Error reporting Option Overflow", "correct": false },
+      { "text": "Fragment the packet to expand Options space", "correct": false }
+    ]
+  },
+  {
+    "text": "Which field in the IP Header is primarily utilized by diagnostic tools (like Traceroute) to measure distance and trace paths hop-by-hop?",
+    "info": "Path tracing tools send packets with TTL = 1, 2, 3... to trigger TTL expiration at each hop.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Checksum", "correct": false },
+      { "text": "Time to live (TTL)", "correct": true },
+      { "text": "Identification", "correct": false },
+      { "text": "HLEN", "correct": false }
+    ]
+  },
+  {
+    "text": "In which IP Header Option does the sender place intermediate router IP addresses in the Option field while placing the current target hop into the Destination IP field?",
+    "info": "Source Routing swaps Destination IP addresses dynamically as the packet moves through designated routers.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Record Route Option", "correct": false },
+      { "text": "Source Route Option (both Strict and Loose)", "correct": true },
+      { "text": "Timestamp Option", "correct": false },
+      { "text": "Stream ID Option", "correct": false }
+    ]
+  },
+  {
+    "text": "What mathematical system is used to calculate the IP Header Checksum at the Sender side?",
+    "info": "IP Checksum uses One's complement addition across all header words, followed by bit inversion.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Two's Complement Arithmetic", "correct": false },
+      { "text": "One's Complement Arithmetic", "correct": true },
+      { "text": "CRC-32 Check", "correct": false },
+      { "text": "Parity Bit Addition", "correct": false }
+    ]
+  },
+  {
+    "text": "During the sender's Checksum creation step, what is the initial value set for the Header Checksum field prior to calculation?",
+    "info": "The Checksum field itself must be set to 0000 0000 0000 0000 (All 0s) before computing.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Set to all 1s", "correct": false },
+      { "text": "Set to all 0s", "correct": true },
+      { "text": "Populated with Source IP Address", "correct": false },
+      { "text": "Set to a random 16-bit value", "correct": false }
+    ]
+  },
+  {
+    "text": "When the receiver processes the packet and sums all header fields including the Checksum, what complement result accepts the packet as valid?",
+    "info": "At the receiver, summing all header fields (including checksum) and taking one's complement must yield 0 to be accepted.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Equals 0", "correct": true },
+      { "text": "Equals 1", "correct": false },
+      { "text": "Equals 255", "correct": false },
+      { "text": "Equals HLEN value", "correct": false }
+    ]
+  },
+  {
+    "text": "What portion of the IP Datagram is protected by the Header Checksum field?",
+    "info": "IP Header Checksum validates only the IP Header. Payload integrity is handled by higher-layer protocols (TCP/UDP).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Data portion (Payload) only", "correct": false },
+      { "text": "IP Header portion only", "correct": true },
+      { "text": "Both Header and Data combined", "correct": false },
+      { "text": "Options portion only", "correct": false }
+    ]
+  }
+]

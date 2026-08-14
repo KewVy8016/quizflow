@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Which of the following best defines the term \"internet\" (with a lowercase 'i')?",
+    "info": "internet (lowercase 'i') = interconnected subnets; Internet (capital 'I') = the global public network.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A network of devices strictly inside a computer laboratory", "correct": false },
+      { "text": "The world's largest public network", "correct": false },
+      { "text": "An interconnection of two or more individual networks", "correct": true },
+      { "text": "A group of computers and printers connected to the same switch", "correct": false }
+    ]
+  },
+  {
+    "text": "Which major historical event occurred in the year 1969?",
+    "info": "1969 = Birth of ARPANET connecting 4 original nodes (UCLA, UCSB, Stanford, and Utah).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "The initial development of the TCP/IP protocol suite", "correct": false },
+      { "text": "The establishment of ARPANET with 4 nodes", "correct": true },
+      { "text": "The official declaration of TCP/IP as a standard", "correct": false },
+      { "text": "The official decommissioning of ARPANET", "correct": false }
+    ]
+  },
+  {
+    "text": "In 1972, which device was invented to connect networks with different packet sizes and transmission rates?",
+    "info": "1972 = Invention of the Gateway to bridge heterogeneous networks.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Router", "correct": false },
+      { "text": "Switch", "correct": false },
+      { "text": "Gateway", "correct": true },
+      { "text": "Repeater", "correct": false }
+    ]
+  },
+  {
+    "text": "In 1977, internet communication was tested using three transmission media. Which of the following was EXCEPTED?",
+    "info": "1977 3-network test = Wired (ARPANET) + Radio + Satellite.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ARPANET (Wired)", "correct": false },
+      { "text": "Packet Radio", "correct": false },
+      { "text": "Packet Satellite", "correct": false },
+      { "text": "Optical Fiber", "correct": true }
+    ]
+  },
+  {
+    "text": "Which significant event took place in 1983?",
+    "info": "1983 = TCP/IP became standard + MILNET (military) separated from ARPANET.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TCP/IP became the official standard protocol, and MILNET split from ARPANET", "correct": true },
+      { "text": "NSFNET was created using T1 lines", "correct": false },
+      { "text": "UC Berkeley integrated TCP/IP into UNIX", "correct": false },
+      { "text": "Private ISPs were allowed to offer commercial Internet services", "correct": false }
+    ]
+  },
+  {
+    "text": "Which backbone network was established in 1986, connecting 5 supercomputer centers?",
+    "info": "1986 = NSFNET built a backbone running at T1 speed (1.544 Mbps).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "CSNET", "correct": false },
+      { "text": "ANSNET", "correct": false },
+      { "text": "NSFNET", "correct": true },
+      { "text": "MILNET", "correct": false }
+    ]
+  },
+  {
+    "text": "In which year was ARPANET officially decommissioned and replaced by NSFNET?",
+    "info": "1990 = ARPANET retired and replaced by NSFNET.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "1983", "correct": false },
+      { "text": "1986", "correct": false },
+      { "text": "1990", "correct": true },
+      { "text": "1995", "correct": false }
+    ]
+  },
+  {
+    "text": "What major milestone occurred in the internet domain in 1995?",
+    "info": "1995 = The start of the commercial Internet era led by private ISPs.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IPv6 was used for the first time", "correct": false },
+      { "text": "Private ISPs began providing commercial Internet services", "correct": true },
+      { "text": "ARPANET was founded", "correct": false },
+      { "text": "The Domain Name System (DNS) was invented", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following is NOT one of the three key elements of a protocol?",
+    "info": "3 Protocol Elements: Syntax - Semantics - Timing.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Syntax", "correct": false },
+      { "text": "Semantics", "correct": false },
+      { "text": "Timing", "correct": false },
+      { "text": "Security", "correct": true }
+    ]
+  },
+  {
+    "text": "\"The element that defines the structure or format of the data, such as indicating that the first 8 bits represent the address.\" Which element does this describe?",
+    "info": "Syntax = Data Structure & Format.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Syntax", "correct": true },
+      { "text": "Semantics", "correct": false },
+      { "text": "Timing", "correct": false },
+      { "text": "Format", "correct": false }
+    ]
+  },
+  {
+    "text": "\"The element that specifies the meaning of bits and the actions to be taken upon receiving data.\" Which element does this describe?",
+    "info": "Semantics = Meaning & Action.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Syntax", "correct": false },
+      { "text": "Semantics", "correct": true },
+      { "text": "Timing", "correct": false },
+      { "text": "Action", "correct": false }
+    ]
+  },
+  {
+    "text": "Which key question is controlled by the \"Timing\" element?",
+    "info": "Timing = When & How fast.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Whether data is correct and who it is addressed to", "correct": false },
+      { "text": "How data is encrypted and who receives it", "correct": false },
+      { "text": "When data should be sent and how fast it can be transmitted", "correct": true },
+      { "text": "How many bytes data contains and which port it uses", "correct": false }
+    ]
+  },
+  {
+    "text": "How does a \"De facto\" standard differ from a \"De jure\" standard?",
+    "info": "De facto = By fact (popular usage), De jure = By law/official body.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "De facto is approved by law, while De jure originates from popularity", "correct": false },
+      { "text": "De facto is widely used without formal approval, whereas De jure is certified by an official standards body", "correct": true },
+      { "text": "De facto applies only to hardware, whereas De jure applies to software", "correct": false },
+      { "text": "There is no difference between the two", "correct": false }
+    ]
+  },
+  {
+    "text": "Which organization developed and defined the OSI Reference Model (7 Layers)?",
+    "info": "ISO = Creator of the OSI Model (ISO/OSI).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IEEE", "correct": false },
+      { "text": "ITU-T", "correct": false },
+      { "text": "ISO", "correct": true },
+      { "text": "ANSI", "correct": false }
+    ]
+  },
+  {
+    "text": "Which organization defines network standards such as Ethernet (802.3) and Wi-Fi (802.11)?",
+    "info": "IEEE = Handles the 802 family standards (802.3 Ethernet, 802.11 Wi-Fi).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IEEE", "correct": true },
+      { "text": "EIA", "correct": false },
+      { "text": "ANSI", "correct": false },
+      { "text": "ITU-T", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary focus of the ITU-T organization?",
+    "info": "ITU-T (Telecommunication) = Focuses on telecom and voice systems.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Defining computer character sets", "correct": false },
+      { "text": "Telecommunications standards and telephone systems", "correct": true },
+      { "text": "Allocating IP addresses", "correct": false },
+      { "text": "Enforcing radio frequency regulations in the US", "correct": false }
+    ]
+  },
+  {
+    "text": "\"Wi-Fi Alliance\" and \"ATM Forum\" fall under which group of standards organizations?",
+    "info": "Forum = Alliances of manufacturers working together to promote specific technologies.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Standards Creation Committees", "correct": false },
+      { "text": "Government Regulatory Agencies", "correct": false },
+      { "text": "Forums", "correct": true },
+      { "text": "International Law Bodies", "correct": false }
+    ]
+  },
+  {
+    "text": "Under which category is the FCC (Federal Communications Commission) of the United States classified?",
+    "info": "FCC = Government regulatory body overseeing communications.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Standards Creation Committee", "correct": false },
+      { "text": "Regulatory Agency", "correct": true },
+      { "text": "Forum", "correct": false },
+      { "text": "Research Task Force", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the official document series used to publish and develop Internet standards called?",
+    "info": "Internet standards are discussed and standardized through RFC documents.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "ISO Standard", "correct": false },
+      { "text": "IEEE Document", "correct": false },
+      { "text": "RFC (Request for Comments)", "correct": true },
+      { "text": "Internet Law", "correct": false }
+    ]
+  },
+  {
+    "text": "Before a technical specification is published as an RFC, what status does it start with?",
+    "info": "First stage = Internet Draft -> RFC.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Proposed Standard", "correct": false },
+      { "text": "Draft Standard", "correct": false },
+      { "text": "Internet Draft", "correct": true },
+      { "text": "Experimental", "correct": false }
+    ]
+  },
+  {
+    "text": "What condition must an RFC meet to progress from \"Proposed Standard\" to \"Draft Standard\"?",
+    "info": "Draft Standard = Minimum 2 independent & interoperable implementations.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It must have been used for at least 5 years", "correct": false },
+      { "text": "It must have at least two successful, independent, and interoperable implementations", "correct": true },
+      { "text": "It must receive a public vote", "correct": false },
+      { "text": "It must be approved by the US government", "correct": false }
+    ]
+  },
+  {
+    "text": "An RFC document that has been retired because it became obsolete or was replaced by a newer standard is assigned which Maturity Level?",
+    "info": "Historic = Outdated / replaced by newer specs.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Experimental", "correct": false },
+      { "text": "Historic", "correct": true },
+      { "text": "Informational", "correct": false },
+      { "text": "Retired", "correct": false }
+    ]
+  },
+  {
+    "text": "An RFC containing historical context, tutorials, or vendor information falls under which category?",
+    "info": "Informational = General info / tutorials / external vendor notes.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Proposed Standard", "correct": false },
+      { "text": "Experimental", "correct": false },
+      { "text": "Informational", "correct": true },
+      { "text": "Draft Standard", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following protocol pairs is classified as \"Required\" (mandatory for an Internet system)?",
+    "info": "Required core protocols = IP & ICMP.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "TELNET and FTP", "correct": false },
+      { "text": "IP and ICMP", "correct": true },
+      { "text": "HTTP and SMTP", "correct": false },
+      { "text": "DNS and DHCP", "correct": false }
+    ]
+  },
+  {
+    "text": "Under which Requirement Level are FTP and TELNET classified according to the standard internet architecture?",
+    "info": "Recommended protocols include FTP and TELNET.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Required", "correct": false },
+      { "text": "Recommended", "correct": true },
+      { "text": "Elective", "correct": false },
+      { "text": "Limited Use", "correct": false }
+    ]
+  },
+  {
+    "text": "RFCs with an \"Experimental\" maturity level are usually mapped to which Requirement Level?",
+    "info": "Experimental RFCs = Limited Use (restricted adoption).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Recommended", "correct": false },
+      { "text": "Elective", "correct": false },
+      { "text": "Limited Use", "correct": true },
+      { "text": "Not Recommended", "correct": false }
+    ]
+  },
+  {
+    "text": "Which body occupies the highest level in the Internet Management & Administrative structure (Figure 1-4)?",
+    "info": "ISOC sits at the top of the internet organization hierarchy.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IAB", "correct": false },
+      { "text": "IETF", "correct": false },
+      { "text": "ISOC", "correct": true },
+      { "text": "ICANN", "correct": false }
+    ]
+  },
+  {
+    "text": "Which organization serves as the technical advisor and oversees the overall TCP/IP protocol architecture?",
+    "info": "IAB = Oversees Internet Architecture.",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IAB (Internet Architecture Board)", "correct": true },
+      { "text": "IRTF (Internet Research Task Force)", "correct": false },
+      { "text": "IESG", "correct": false },
+      { "text": "IRSG", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the main difference between IRTF and IETF?",
+    "info": "IRTF = Research (long-term), IETF = Engineering/RFCs (short-term & active standards).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IRTF focuses on current problems, while IETF focuses on future research", "correct": false },
+      { "text": "IRTF focuses on long-term research, whereas IETF handles short-term engineering and standards", "correct": true },
+      { "text": "IRTF manages Domain Names, while IETF manages IP Addresses", "correct": false },
+      { "text": "IRTF is a private organization, while IETF is a government agency", "correct": false }
+    ]
+  },
+  {
+    "text": "Which management body within the IETF is responsible for administering and approving standards?",
+    "info": "IETF is managed by IESG (just as IRTF is managed by IRSG).",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "IRSG", "correct": false },
+      { "text": "IESG", "correct": true },
+      { "text": "WG", "correct": false },
+      { "text": "RG", "correct": false }
+    ]
+  }
+]
