@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Which of the following is a fully managed NoSQL database service?",
+    "info": "Amazon DynamoDB เป็นบริการฐานข้อมูลประเภท NoSQL ที่มีการจัดการให้ทั้งหมด (Fully managed) รองรับรูปแบบ Key-value และ Document",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": true },
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "Amazon Aurora", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the primary benefit of Amazon RDS Multi-AZ deployments?",
+    "info": "การติดตั้งแบบ Multi-AZ ใน RDS ช่วยให้ระบบมีความพร้อมใช้งานสูง (High availability) โดยจะมีการสร้าง Standby instance ไว้ในอีก AZ หนึ่งและทำสำเนาข้อมูลแบบ Synchronous",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Increased read performance", "correct": false },
+      { "text": "High availability and failover support", "correct": true },
+      { "text": "Lower cost", "correct": false },
+      { "text": "Horizontal scalability for writes", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is best suited for an enterprise data warehouse and complex SQL queries on large datasets?",
+    "info": "Amazon Redshift ถูกออกแบบมาเพื่อเป็นคลังข้อมูล (Data Warehouse) ระดับองค์กรที่รองรับการรัน Query ที่ซับซ้อนกับข้อมูลขนาดใหญ่ (Big Data)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon DynamoDB", "correct": false },
+      { "text": "Amazon ElastiCache", "correct": false },
+      { "text": "Amazon Redshift", "correct": true },
+      { "text": "Amazon Aurora", "correct": false }
+    ]
+  },
+  {
+    "text": "Amazon DynamoDB runs exclusively on which type of storage to ensure low latency?",
+    "info": "DynamoDB รันบน SSD ทั้งหมดเพื่อให้ได้ประสิทธิภาพความเร็วในการเข้าถึงข้อมูลในระดับมิลลิวินาที (Single-digit millisecond latency)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Magnetic drives", "correct": false },
+      { "text": "Tape drives", "correct": false },
+      { "text": "Solid State Drives (SSDs)", "correct": true },
+      { "text": "Optical storage", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of these is NOT a supported database engine in Amazon RDS?",
+    "info": "RDS รองรับ Aurora, PostgreSQL, MySQL, MariaDB, Oracle และ Microsoft SQL Server แต่ไม่รองรับ MongoDB (ซึ่งเป็น NoSQL)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "MySQL", "correct": false },
+      { "text": "IBM DB2", "correct": false },
+      { "text": "MongoDB", "correct": true },
+      { "text": "Oracle", "correct": false }
+    ]
+  },
+  {
+    "text": "In the AWS Shared Responsibility Model for managed services like RDS, what is the customer responsible for?",
+    "info": "สำหรับบริการ Managed Services ลูกค้าจะดูแลเฉพาะการปรับแต่งแอปพลิเคชัน (Application optimization) ส่วน AWS จะดูแลเรื่องการ Patch OS, ติดตั้งซอฟต์แวร์ และดูแลเซิร์ฟเวอร์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Operating system patching", "correct": false },
+      { "text": "Database software installation", "correct": false },
+      { "text": "Application optimization", "correct": true },
+      { "text": "Server maintenance", "correct": false }
+    ]
+  },
+  {
+    "text": "Which feature of Amazon RDS allows you to offload read traffic from the primary database instance?",
+    "info": "Read Replicas ใช้สำหรับแยกทราฟฟิกการอ่าน (Read-heavy workloads) ออกจากฐานข้อมูลหลัก เพื่อเพิ่มประสิทธิภาพการทำงาน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Multi-AZ deployment", "correct": false },
+      { "text": "Read Replicas", "correct": true },
+      { "text": "Snapshots", "correct": false },
+      { "text": "Provisioned IOPS", "correct": false }
+    ]
+  },
+  {
+    "text": "Which database service is compatible with MySQL and PostgreSQL and provides up to 5 times the throughput of standard MySQL?",
+    "info": "Amazon Aurora เป็นฐานข้อมูลระดับ Enterprise ที่เข้ากันได้กับ MySQL และ PostgreSQL โดยให้ประสิทธิภาพสูงกว่าฐานข้อมูลมาตรฐานอย่างมาก",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "Amazon Aurora", "correct": true },
+      { "text": "Amazon Neptune", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": false }
+    ]
+  },
+  {
+    "text": "What is a Partition Key used for in Amazon DynamoDB?",
+    "info": "Partition Key ถูกใช้เพื่อกระจายข้อมูลไปยังพาร์ทิชันต่างๆ เพื่อให้ฐานข้อมูลสามารถขยายตัว (Scalability) และประมวลผลได้รวดเร็ว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "To sort items with the same partition key", "correct": false },
+      { "text": "To distribute data across multiple partitions for scalability", "correct": true },
+      { "text": "To encrypt the database table", "correct": false },
+      { "text": "To create a secondary index", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service uses Columnar storage to reduce the amount of data loaded from disk?",
+    "info": "Redshift ใช้สถาปัตยกรรมแบบ Columnar storage และการประมวลผลแบบขนาน (Parallel processing) เพื่อให้ประมวลผล Query ข้อมูลมหาศาลได้อย่างรวดเร็ว",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon Aurora", "correct": false },
+      { "text": "Amazon Redshift", "correct": true },
+      { "text": "Amazon DynamoDB", "correct": false }
+    ]
+  },
+  {
+    "text": "How is Amazon RDS typically billed?",
+    "info": "การคิดเงินของ RDS จะคิดตามชั่วโมงการใช้งาน (Clock-hour billing) ตามขนาดและประเภทของอินสแตนซ์ที่รันอยู่",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Based on the number of tables created", "correct": false },
+      { "text": "Per complex query executed", "correct": false },
+      { "text": "Clock-hour billing based on the instance running", "correct": true },
+      { "text": "Based on the number of users connected", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS database service would you choose for a serverless application that needs to scale rapidly without managing instances?",
+    "info": "DynamoDB เป็นบริการแบบ Serverless ที่รองรับการขยายตัวได้อย่างรวดเร็วโดยที่ผู้ใช้ไม่ต้องจัดการเซิร์ฟเวอร์หรืออินสแตนซ์เอง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon RDS for MySQL", "correct": false },
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": true },
+      { "text": "Amazon EC2 with Oracle", "correct": false }
+    ]
+  },
+  {
+    "text": "In Amazon Redshift, which node receives queries from client applications and manages communication with compute nodes?",
+    "info": "Leader Node ทำหน้าที่รับคำสั่ง SQL จากแอปพลิเคชัน วิเคราะห์ และกระจายงานไปยัง Compute Nodes เพื่อประมวลผล",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Compute Node", "correct": false },
+      { "text": "Leader Node", "correct": true },
+      { "text": "Storage Node", "correct": false },
+      { "text": "Worker Node", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the maximum storage size for a single item in Amazon DynamoDB?",
+    "info": "ขนาดสูงสุดของ 1 ไอเท็มใน DynamoDB คือ 400 KB (เป็นข้อเท็จจริงทั่วไปที่มักออกสอบ)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "100 KB", "correct": false },
+      { "text": "400 KB", "correct": true },
+      { "text": "1 MB", "correct": false },
+      { "text": "1 GB", "correct": false }
+    ]
+  },
+  {
+    "text": "Which of the following allows for asynchronous replication and can be promoted to a primary instance if needed?",
+    "info": "Read Replica ใช้การทำสำเนาข้อมูลแบบ Asynchronous และสามารถยกฐานะเป็นอินสแตนซ์หลัก (Primary) ได้หากจำเป็น",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "RDS Standby Instance", "correct": false },
+      { "text": "RDS Read Replica", "correct": true },
+      { "text": "EBS Volume", "correct": false },
+      { "text": "S3 Bucket", "correct": false }
+    ]
+  },
+  {
+    "text": "What does Managed service mean in the context of Amazon RDS?",
+    "info": "Managed service หมายความว่า AWS จะดูแลงานที่ซับซ้อน เช่น การสำรองข้อมูล (Backups), การอัปเดตแพตช์ (Patching) และการดูแลฮาร์ดแวร์ให้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "You must install the database engine yourself", "correct": false },
+      { "text": "AWS handles tasks like backups, patching, and hardware maintenance", "correct": true },
+      { "text": "You are responsible for racking and stacking servers", "correct": false },
+      { "text": "Scaling must be done manually by adding physical hardware", "correct": false }
+    ]
+  },
+  {
+    "text": "If you need to customize the database software or have access to the underlying operating system, which option should you choose?",
+    "info": "หากต้องการสิทธิ์เข้าถึง OS หรือปรับแต่งซอฟต์แวร์ฐานข้อมูลเอง ควรเลือกติดตั้งฐานข้อมูลบน Amazon EC2 (Unmanaged)",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon Aurora", "correct": false },
+      { "text": "Amazon EC2 with a self-installed database", "correct": true },
+      { "text": "Amazon DynamoDB", "correct": false }
+    ]
+  },
+  {
+    "text": "Which database service is best for highly structured data with fixed schemas?",
+    "info": "บริการประเภท Relational Database (SQL) อย่าง RDS เหมาะสำหรับข้อมูลที่มีโครงสร้างชัดเจน (Highly structured) และมี Schema ที่แน่นอน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": false },
+      { "text": "Amazon RDS", "correct": true },
+      { "text": "Amazon S3", "correct": false }
+    ]
+  },
+  {
+    "text": "In a Multi-AZ RDS deployment, what happens to the standby instance during normal operation?",
+    "info": "อินสแตนซ์ Standby จะรอทำงานเมื่อเครื่องหลักล่ม โดยจะทำการซิงค์ข้อมูลให้ตรงกับเครื่องหลักอยู่เสมอ แต่ไม่ได้มีไว้รับทราฟฟิกการใช้งานปกติ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It serves read traffic to users", "correct": false },
+      { "text": "It serves write traffic to users", "correct": false },
+      { "text": "It remains idle and stays in sync with the primary instance", "correct": true },
+      { "text": "It is used for daily data warehouse reports", "correct": false }
+    ]
+  },
+  {
+    "text": "Amazon Aurora automatically replicates your data how many times across Availability Zones?",
+    "info": "Aurora ถูกออกแบบมาให้ทนทานสูง โดยจะทำสำเนาข้อมูลไว้ 6 ชุด กระจายอยู่ใน 3 Availability Zones",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "2 copies in 1 AZ", "correct": false },
+      { "text": "3 copies in 2 AZs", "correct": false },
+      { "text": "6 copies across 3 AZs", "correct": true },
+      { "text": "1 copy in 3 AZs", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service provides a way to run SQL queries directly on data stored in Amazon S3 for analytics?",
+    "info": "Amazon Redshift Spectrum ช่วยให้สามารถรัน SQL Query วิเคราะห์ข้อมูลที่เก็บอยู่ใน S3 ได้โดยตรง",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Redshift Spectrum", "correct": true },
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": false },
+      { "text": "Amazon Aurora", "correct": false }
+    ]
+  },
+  {
+    "text": "Which storage type in RDS is recommended for high-performance database workloads?",
+    "info": "Provisioned IOPS เป็นประเภทพื้นที่เก็บข้อมูลที่ออกแบบมาสำหรับงานที่ต้องการประสิทธิภาพการอ่าน/เขียน (I/O) สูงและสม่ำเสมอ",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Magnetic", "correct": false },
+      { "text": "General Purpose SSD", "correct": false },
+      { "text": "Provisioned IOPS (SSD)", "correct": true },
+      { "text": "Instance Store", "correct": false }
+    ]
+  },
+  {
+    "text": "What is the main advantage of DynamoDB being a non-relational database?",
+    "info": "ข้อดีของ NoSQL (Non-relational) คือการขยายระบบในแนวราบ (Horizontal scalability) เพื่อรองรับข้อมูลมหาศาลโดยไม่มีขีดจำกัด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "It supports complex joins between tables", "correct": false },
+      { "text": "It has a rigid and fixed schema", "correct": false },
+      { "text": "It provides horizontal scalability for virtually unlimited data", "correct": true },
+      { "text": "It is only used for small-scale applications", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service would an online gaming company use to store player scores and profiles with single-digit millisecond response times?",
+    "info": "DynamoDB เหมาะสำหรับแอปพลิเคชันที่ต้องการความเร็วสูงและคงที่ เช่น เกมออนไลน์",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": true },
+      { "text": "Amazon S3 Glacier", "correct": false }
+    ]
+  },
+  {
+    "text": "For RDS billing, which factor does NOT directly affect the cost?",
+    "info": "RDS ไม่คิดเงินตามจำนวน Query แต่คิดตามประเภทของ Engine, ขนาดของ Instance และพื้นที่เก็บข้อมูลที่จองไว้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "DB Engine type", "correct": false },
+      { "text": "Number of SQL queries executed", "correct": true },
+      { "text": "DB Instance Class (CPU/Memory)", "correct": false },
+      { "text": "Amount of provisioned storage", "correct": false }
+    ]
+  },
+  {
+    "text": "In the context of Amazon RDS, what is a Snapshot?",
+    "info": "Snapshot คือการสำรองข้อมูล ณ จุดเวลาใดเวลาหนึ่ง ซึ่งผู้ใช้สามารถสั่งทำเองได้",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "A real-time stream of database changes", "correct": false },
+      { "text": "A manual point-in-time backup of your database", "correct": true },
+      { "text": "A specialized type of read replica", "correct": false },
+      { "text": "A tool for migrating NoSQL data to SQL", "correct": false }
+    ]
+  },
+  {
+    "text": "Which service is a fully managed, petabyte-scale data warehouse?",
+    "info": "Amazon Redshift รองรับข้อมูลระดับเพตาไบต์ (Petabyte-scale) และเป็นบริการ Data Warehouse ที่มีการจัดการให้ทั้งหมด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon Aurora", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": false },
+      { "text": "Amazon Redshift", "correct": true },
+      { "text": "Amazon Neptune", "correct": false }
+    ]
+  },
+  {
+    "text": "Which database service uses a Cluster consisting of a Leader Node and Compute Nodes?",
+    "info": "โครงสร้างของ Redshift ประกอบด้วยคลัสเตอร์ที่มี Leader Node ควบคุม Compute Nodes หลายตัวทำงานร่วมกัน",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon Redshift", "correct": true },
+      { "text": "Amazon DynamoDB", "correct": false },
+      { "text": "Amazon DocumentDB", "correct": false }
+    ]
+  },
+  {
+    "text": "Amazon RDS Reserved Instances are best suited for which use case?",
+    "info": "Reserved Instances ช่วยลดราคาลงได้มากหากคุณมีการใช้งานที่แน่นอนและยอมผูกพันสัญญา 1 หรือ 3 ปี",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Temporary testing and development", "correct": false },
+      { "text": "Unpredictable workloads that change every day", "correct": false },
+      { "text": "Steady-state workloads with a 1-year or 3-year commitment", "correct": true },
+      { "text": "Applications that only run for a few hours a month", "correct": false }
+    ]
+  },
+  {
+    "text": "Which AWS service would be used to store unstructured metadata for a de-duplication service as seen in Case Study 1?",
+    "info": "สำหรับข้อมูล metadata ที่ไม่มีโครงสร้าง (Unstructured) การใช้ NoSQL อย่าง DynamoDB เป็นทางเลือกที่เหมาะสมที่สุด",
+    "difficulty": "easy",
+    "answers": [
+      { "text": "Amazon RDS", "correct": false },
+      { "text": "Amazon DynamoDB", "correct": true },
+      { "text": "Amazon Redshift", "correct": false },
+      { "text": "Amazon Aurora", "correct": false }
+    ]
+  }
+]
