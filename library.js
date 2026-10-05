@@ -1,350 +1,250 @@
-// Auto-discover quiz files by trying to load them
-async function discoverQuizFiles() {
-    // Try to load quiz-list.json first (if exists from build)
-    try {
-        const response = await fetch('quiz-list.json');
-        if (response.ok) {
-            const quizList = await response.json();
-            console.log('Loaded from quiz-list.json:', quizList);
-            return quizList;
-        }
-    } catch (error) {
-        console.log('quiz-list.json not found, using auto-discovery');
-    }
-    
-    // Fallback: Auto-discover by trying common file patterns
-    const potentialFiles = [];
-    const jsonDir = 'json/';
-    
-    // Try to fetch index of json directory (works on some servers)
-    try {
-        const response = await fetch(jsonDir);
-        const text = await response.text();
-        
-        // Parse HTML directory listing (if available)
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        const links = doc.querySelectorAll('a');
-        
-        links.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && href.endsWith('.json')) {
-                potentialFiles.push(href);
-            }
-        });
-        
-        if (potentialFiles.length > 0) {
-            console.log('Auto-discovered files:', potentialFiles);
-            return potentialFiles;
-        }
-    } catch (error) {
-        console.log('Directory listing not available');
-    }
-    
-    // Last resort: Try to load known files
-    const knownFiles = [
-        'Main Memory Management_ OS Concepts.json',
-        'Threads and Concurrency in Operating Systems.json',
-        'memory-management.json',
-        'cpu-scheduling.json',
-        'networking.json'
-    ];
-    
-    const existingFiles = [];
-    for (const file of knownFiles) {
-        try {
-            const response = await fetch(`${jsonDir}${file}`, { method: 'HEAD' });
-            if (response.ok) {
-                existingFiles.push(file);
-            }
-        } catch (error) {
-            // File doesn't exist, skip
-        }
-    }
-    
-    console.log('Found files:', existingFiles);
-    return existingFiles;
+const libraryState = { entries: [], semester: '', course: '', assessment: '', view: 'all' };
+const storage = window.QuizFlowStorage;
+const byId = id => document.getElementById(id);
+const collator = new Intl.Collator('th', { numeric: true, sensitivity: 'base' });
+
+function normalizeQuizList(list) {
+    if (!Array.isArray(list)) return [];
+    if (list[0]?.subjects) return list;
+    if (list[0]?.files) return [{ semester: 'ทุกภาคเรียน', subjects: list }];
+    return [{ semester: 'ทุกภาคเรียน', subjects: [{ subject: 'ทั่วไป', files: list }] }];
 }
-
-// แปลงโครงสร้าง quiz-list ให้เป็นรูปแบบมาตรฐานที่มี semester เสมอ:
-//   [{ semester: 'ปี 1 เทอม 1', subjects: [{ subject, files }] }, ...]
-// รองรับทั้งรูปแบบใหม่ (มี semester), รูปแบบเก่า (มี subject เดิม) และรูปแบบ string array
-function normalizeQuizList(quizList) {
-    if (!Array.isArray(quizList) || quizList.length === 0) {
-        return [];
-    }
-
-    const first = quizList[0];
-
-    // รูปแบบใหม่: [{ semester: 'ปี 1 เทอม 1', subjects: [{ subject, files }] }, ...]
-    if (typeof first === 'object' && first !== null && 'semester' in first && Array.isArray(first.subjects)) {
-        return quizList.map(sem => ({
-            semester: sem.semester,
-            subjects: (sem.subjects || []).map(sub => ({
-                subject: sub.subject || 'ทั่วไป',
-                files: Array.isArray(sub.files) ? sub.files : []
-            }))
+function getProgress(file) {
+    const state = storage.read(file);
+    const answered = Object.keys(state?.answers || {}).length;
+    const completed = answered > 0 && state?.totalQuestions > 0 && answered >= state.totalQuestions;
+    return { answered, completed, updatedAt: state?.updatedAt || 0 };
+}
+function scopedEntries() {
+    return libraryState.entries.filter(entry => !libraryState.semester || entry.semester === libraryState.semester);
+}
+function makeFilterButton(label, count, active, onClick, className = 'subject-item') {
+    const button = document.createElement('button');
+    button.className = `${className}${active ? ' active' : ''}`;
+    button.setAttribute('aria-pressed', String(active));
+    const text = document.createElement('span');
+    text.textContent = label;
+    const badge = document.createElement('span');
+    badge.className = 'nav-count';
+    badge.textContent = count;
+    button.append(text, badge);
+    button.addEventListener('click', onClick);
+    return button;
+}
+function renderNavigation() {
+    const menuHadFocus = byId('subject-menu').contains(document.activeElement);
+    const entries = scopedEntries();
+    const courses = [...new Set(entries.map(entry => entry.course))].sort(collator.compare);
+    if (!courses.includes(libraryState.course)) libraryState.course = '';
+    byId('subject-count').textContent = courses.length;
+    const courseSelect = byId('course-select');
+    courseSelect.replaceChildren(new Option('ทุกวิชา', ''), ...courses.map(course => new Option(course, course)));
+    courseSelect.value = libraryState.course;
+    courseSelect.disabled = false;
+    const menu = byId('subject-menu');
+    menu.replaceChildren(makeFilterButton('ทุกวิชา', entries.length, !libraryState.course, () => selectCourse('')));
+    courses.forEach(course => menu.appendChild(makeFilterButton(course, entries.filter(entry => entry.course === course).length, libraryState.course === course, () => selectCourse(course))));
+    if (menuHadFocus) menu.querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
+    ['all', 'continue'].forEach(view => {
+        byId(`view-${view}`).classList.toggle('active', libraryState.view === view);
+        byId(`view-${view}`).setAttribute('aria-pressed', String(libraryState.view === view));
+    });
+    byId('all-count').textContent = libraryState.entries.length;
+    byId('continue-count').textContent = libraryState.entries.filter(entry => { const p = getProgress(entry.file); return p.answered && !p.completed; }).length;
+}
+function selectCourse(course) {
+    libraryState.course = course;
+    libraryState.assessment = '';
+    persistSelection();
+    renderNavigation();
+    renderLibrary();
+}
+function persistSelection() {
+    try {
+        sessionStorage.setItem('quizflow_library', JSON.stringify({
+            semester: libraryState.semester, course: libraryState.course,
+            assessment: libraryState.assessment, view: libraryState.view,
+            search: byId('quiz-search').value, status: byId('status-filter').value,
+            sort: byId('sort-select').value
         }));
-    }
-
-    // รูปแบบเดิม: [{ subject: 'OS', files: [...] }, ...] → ครอบด้วยภาคเรียนเดียว
-    if (typeof first === 'object' && first !== null && 'subject' in first && Array.isArray(first.files)) {
-        return [{
-            semester: 'ทุกภาคเรียน',
-            subjects: quizList.map(cat => ({
-                subject: cat.subject,
-                files: Array.isArray(cat.files) ? cat.files.map(f => (typeof f === 'string' ? f : f.file)) : []
-            }))
-        }];
-    }
-
-    // รูปแบบเดิม: ['foo.json', 'bar.json', ...] → วิชา "ทั่วไป"
-    if (typeof first === 'string') {
-        return [{
-            semester: 'ทุกภาคเรียน',
-            subjects: [{ subject: 'ทั่วไป', files: quizList }]
-        }];
-    }
-
-    return [];
+    } catch { /* Browsing remains available when storage is blocked. */ }
 }
-
-// หา subject ทั้งหมดที่ซ้ำชื่อกันในภาคเรียนเดียวกัน (label path ซ้อน เช่น "Midterm/Stat")
-function findSubject(semester, subjectName) {
-    for (const sub of semester.subjects) {
-        if (sub.subject === subjectName) return sub;
-    }
-    return null;
+function resetFilters() {
+    Object.assign(libraryState, { semester: '', course: '', assessment: '', view: 'all' });
+    byId('semester-select').value = '';
+    byId('quiz-search').value = '';
+    byId('status-filter').value = 'all';
+    persistSelection();
+    refreshLibrary();
 }
-
-// เก็บสถานะปัจจุบันของหน้า library เพื่อ re-render เมื่อกลับมาจากหน้าสอบ (bfcache)
-let libraryState = {
-    semesters: [],
-    semesterName: '',
-    subjectName: '',
-    subjectWrapper: null,
-    sectionWrapper: null
-};
-
-function refreshLibraryState() {
-    if (!libraryState.sectionWrapper || libraryState.semesters.length === 0) return;
-    const semester = libraryState.semesters.find(s => s.semester === libraryState.semesterName);
-    if (!semester) return;
-
-    let subjectName = findSubject(semester, libraryState.subjectName)
-        ? libraryState.subjectName
-        : semester.subjects[0].subject;
-
-    renderSubjectSection(libraryState.sectionWrapper, semester, subjectName);
-}
-
-// Load and display quiz library
-async function loadQuizLibrary() {
-    const libraryContainer = document.getElementById('quiz-library');
-    
-    try {
-        const rawQuizList = await discoverQuizFiles();
-        const semesters = normalizeQuizList(rawQuizList);
-        
-        libraryContainer.innerHTML = '';
-        
-        if (!semesters || semesters.length === 0) {
-            libraryContainer.innerHTML = `
-                <div class="loading">
-                    <p>❌ ไม่พบไฟล์ quiz</p>
-                    <p style="font-size: 0.9em; color: #eee; margin-top: 10px;">
-                        กรุณาเพิ่มไฟล์ในโฟลเดอร์ <code>json/</code> หรือรัน:<br>
-                        <code style="background: #f0f0f0; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 5px; color: #333;">
-                            npm run setup
-                        </code>
-                    </p>
-                </div>
-            `;
-            return;
-        }
-
-        // wrapper สำหรับ semester selector
-        const semesterWrapper = document.createElement('div');
-        semesterWrapper.id = 'semester-selector-wrapper';
-
-        // wrapper สำหรับ subject selector
-        const subjectWrapper = document.createElement('div');
-        subjectWrapper.id = 'subject-selector-wrapper';
-
-        // wrapper สำหรับ quiz grid section
-        const sectionWrapper = document.createElement('div');
-        sectionWrapper.id = 'subject-section-wrapper';
-
-        libraryContainer.appendChild(semesterWrapper);
-        libraryContainer.appendChild(subjectWrapper);
-        libraryContainer.appendChild(sectionWrapper);
-
-        libraryState.semesters = semesters;
-        libraryState.subjectWrapper = subjectWrapper;
-        libraryState.sectionWrapper = sectionWrapper;
-
-        // restore semester ที่เคยเลือกไว้ (ถ้ามี)
-        const savedSemester = sessionStorage.getItem('quiz_last_semester');
-        let currentSemester = semesters.find(s => s.semester === savedSemester)
-            ? savedSemester
-            : semesters[0].semester;
-        libraryState.semesterName = currentSemester;
-
-        // ── แถวที่ 1: ปุ่มเลือกภาคเรียน ──
-        const semesterSelector = document.createElement('div');
-        semesterSelector.className = 'semester-selector';
-
-        semesters.forEach((sem) => {
-            const btn = document.createElement('button');
-            btn.className = 'semester-chip';
-            if (sem.semester === currentSemester) btn.classList.add('active');
-            btn.textContent = sem.semester;
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.semester-chip').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentSemester = sem.semester;
-                libraryState.semesterName = currentSemester;
-                sessionStorage.setItem('quiz_last_semester', currentSemester);
-                renderSubjects(subjectWrapper, sectionWrapper, semesters, currentSemester);
-            });
-            semesterSelector.appendChild(btn);
-        });
-
-        semesterWrapper.appendChild(semesterSelector);
-
-        // ── แถวที่ 2 + เนื้อหาของภาคเรียนปัจจุบัน ──
-        renderSubjects(subjectWrapper, sectionWrapper, semesters, currentSemester);
-    } catch (error) {
-        console.error('Error loading quiz library:', error);
-        libraryContainer.innerHTML = `
-            <div class="loading">
-                <p>❌ ไม่สามารถโหลดรายการ quiz ได้</p>
-                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-                    กรุณารัน web server เพื่อใช้งาน:<br>
-                    <code style="background: #f0f0f0; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 5px;">
-                        serve . -p 3000
-                    </code>
-                </p>
-            </div>
-        `;
-    }
-}
-
-// render ปุ่มเลือกวิชาของภาคเรียน + เนื้อหาวิชาที่เลือก
-function renderSubjects(subjectWrapper, sectionWrapper, semesters, semesterName) {
-    const semester = semesters.find(s => s.semester === semesterName);
-    subjectWrapper.innerHTML = '';
-
-    if (!semester || semester.subjects.length === 0) {
-        sectionWrapper.innerHTML = `
-            <div class="loading">
-                <p>ไม่มี quiz ในภาคเรียนนี้</p>
-            </div>
-        `;
-        return;
-    }
-
-    // restore subject ที่เคยเลือกไว้ (ถ้ายังอยู่ในภาคเรียนนี้)
-    const savedSubject = sessionStorage.getItem('quiz_last_subject');
-    let currentSubject = findSubject(semester, savedSubject)
-        ? savedSubject
-        : semester.subjects[0].subject;
-    libraryState.semesterName = semesterName;
-    libraryState.subjectName = currentSubject;
-
-    const subjectSelector = document.createElement('div');
-    subjectSelector.className = 'subject-selector';
-
-    semester.subjects.forEach((sub) => {
-        const btn = document.createElement('button');
-        btn.className = 'subject-chip';
-        if (sub.subject === currentSubject) btn.classList.add('active');
-        btn.textContent = sub.subject;
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.subject-chip').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentSubject = sub.subject;
-            libraryState.subjectName = currentSubject;
-            sessionStorage.setItem('quiz_last_subject', currentSubject);
-            renderSubjectSection(sectionWrapper, semester, sub.subject);
-        });
-        subjectSelector.appendChild(btn);
-    });
-
-    subjectWrapper.appendChild(subjectSelector);
-    renderSubjectSection(sectionWrapper, semester, currentSubject);
-}
-
-// render quiz เฉพาะของ subject ที่เลือก (lazy per subject)
-async function renderSubjectSection(sectionWrapper, semester, subjectName) {
-    sectionWrapper.innerHTML = '';
-
-    const subject = findSubject(semester, subjectName);
-    if (!subject) return;
-
-    const title = document.createElement('h2');
-    title.className = 'subject-title';
-    title.textContent = `${semester.semester} › ${subject.subject}`;
-    sectionWrapper.appendChild(title);
-
-    const grid = document.createElement('div');
-    grid.className = 'quiz-library';
-
-    for (const quizFile of subject.files) {
-        const card = await createQuizCard(quizFile, subject.subject);
-        grid.appendChild(card);
-    }
-
-    sectionWrapper.appendChild(grid);
-}
-
-async function createQuizCard(quizFile, subject) {
-    console.log('Creating card for quiz file:', quizFile);
-    // รองรับ path ที่มี subfolder เช่น "ปี 1 เทอม 1/Ebusiness/EB04.json"
-    const fileName = quizFile.split('/').pop().split('\\').pop();
-    const topicName = fileName.replace('.json', '').replace(/_/g, ' ');
-    
-    // ไม่โหลดไฟล์ quiz ตอนหน้า library เพื่อความเร็ว
-    // ใช้แค่ progress จาก localStorage (ถ้ามี)
-    // Get progress from localStorage
-    const stateKey = `quiz_state_${topicName}`;
-    const savedState = localStorage.getItem(stateKey);
-    let progress = 0;
-    
-    if (savedState) {
-        const state = JSON.parse(savedState);
-        progress = Object.keys(state.answers || {}).length;
-    }
-    
-    // Create card element
-    const card = document.createElement('div');
+function createQuizCard(entry) {
+    const p = getProgress(entry.file);
+    const card = document.createElement('a');
     card.className = 'quiz-card';
-    card.innerHTML = `
-        <h3>${topicName}</h3>
-        ${subject ? `<div class="quiz-subject-tag">${subject}</div>` : ''}
-        <div class="quiz-info">คลิกเพื่อเริ่มทำข้อสอบ</div>
-        <div class="quiz-progress">${progress > 0 ? `Progress: ${progress} ข้อ` : 'ยังไม่ได้เริ่มทำ'}</div>
-    `;
-    
-    card.addEventListener('click', () => {
-        sessionStorage.setItem('quiz_last_subject', subject);
-        const url = `quiz.html?topic=${encodeURIComponent(quizFile)}`;
-        console.log('Navigating to quiz:', url);
-        window.location.href = url;
-    });
-    
+    card.href = `quiz.html?topic=${encodeURIComponent(entry.file)}`;
+    const top = document.createElement('div');
+    top.className = 'card-top';
+    const icon = document.createElement('span');
+    icon.className = 'course-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = entry.course.slice(0, 2).toUpperCase();
+    const status = document.createElement('span');
+    status.className = `status-badge ${p.completed ? 'completed' : p.answered ? 'started' : ''}`;
+    status.textContent = p.completed ? '✓ ทำครบแล้ว' : p.answered ? 'กำลังทำ' : 'ยังไม่ได้เริ่ม';
+    top.append(icon, status);
+    const metadata = document.createElement('p');
+    metadata.className = 'card-metadata';
+    metadata.textContent = [entry.course, entry.assessment].filter(Boolean).join(' · ');
+    const title = document.createElement('h3');
+    title.textContent = entry.title;
+    const semester = document.createElement('p');
+    semester.className = 'card-semester';
+    semester.textContent = entry.semester;
+    const bottom = document.createElement('div');
+    bottom.className = 'card-bottom';
+    const count = document.createElement('span');
+    count.textContent = p.answered ? `ตอบแล้ว ${p.answered} ข้อ` : 'พร้อมเริ่มเรียนรู้';
+    const action = document.createElement('span');
+    action.className = 'card-action';
+    action.textContent = p.completed ? 'ดูผล →' : p.answered ? 'ทำต่อ →' : 'เริ่มทำ →';
+    bottom.append(count, action);
+    card.append(top, metadata, title, semester, bottom);
     return card;
 }
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', loadQuizLibrary);
-
-// เมื่อกลับมาจากหน้าสอบ (history back / bfcache) ให้ re-render การ์ดเพื่ออัปเดต progress
-window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-        refreshLibraryState();
+function renderLibrary() {
+    const assessmentHadFocus = byId('assessment-filters').contains(document.activeElement);
+    const search = byId('quiz-search').value.trim().toLocaleLowerCase('th');
+    const status = byId('status-filter').value;
+    const base = scopedEntries().filter(entry => !libraryState.course || entry.course === libraryState.course);
+    const assessments = [...new Set(base.map(entry => entry.assessment))];
+    if (!assessments.includes(libraryState.assessment)) libraryState.assessment = '';
+    const groupMenu = byId('assessment-filters');
+    groupMenu.replaceChildren();
+    if (assessments.some(Boolean)) {
+        const addGroup = (label, value, count) => groupMenu.appendChild(makeFilterButton(label, count, libraryState.assessment === value, () => { libraryState.assessment = value; renderLibrary(); }, 'filter-chip'));
+        addGroup('ทุกช่วงสอบ', '', base.length);
+        assessments.filter(Boolean).sort(collator.compare).forEach(group => addGroup(group, group, base.filter(entry => entry.assessment === group).length));
     }
+    if (assessmentHadFocus) groupMenu.querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
+    const entries = base.filter(entry => {
+        const p = getProgress(entry.file);
+        if (libraryState.view === 'continue' && (!p.answered || p.completed)) return false;
+        if (libraryState.assessment && entry.assessment !== libraryState.assessment) return false;
+        if (status === 'new' && p.answered) return false;
+        if (status === 'started' && (!p.answered || p.completed)) return false;
+        if (status === 'completed' && !p.completed) return false;
+        return `${entry.title} ${entry.course} ${entry.semester} ${entry.assessment}`.toLocaleLowerCase('th').includes(search);
+    });
+    const sort = byId('sort-select').value;
+    entries.sort((a, b) => sort === 'recent' ? getProgress(b.file).updatedAt - getProgress(a.file).updatedAt || collator.compare(a.title, b.title) : sort === 'name' ? collator.compare(a.title, b.title) : collator.compare(a.course, b.course) || collator.compare(a.title, b.title));
+    byId('library-heading').textContent = libraryState.view === 'continue' ? 'กลับมาทำต่อ' : libraryState.course || 'แบบฝึกหัดทั้งหมด';
+    byId('breadcrumb-current').textContent = libraryState.course || (libraryState.view === 'continue' ? 'ทำต่อ' : 'ทุกวิชา');
+    byId('scope-label').textContent = libraryState.semester || 'ทุกภาคเรียน';
+    byId('results-count').textContent = `พบ ${entries.length} ชุด${search ? ` สำหรับ “${byId('quiz-search').value.trim()}”` : ''} · ${libraryState.course || 'ทุกวิชา'} · ${libraryState.semester || 'ทุกภาคเรียน'}`;
+    byId('clear-filters').classList.toggle('hidden', !(search || libraryState.course || libraryState.semester || libraryState.assessment || libraryState.view !== 'all' || status !== 'all'));
+    const grid = byId('quiz-library');
+    grid.replaceChildren(...entries.map(createQuizCard));
+    grid.setAttribute('aria-busy', 'false');
+    if (!entries.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        const title = document.createElement('h3');
+        title.textContent = libraryState.view === 'continue' && !search ? 'ยังไม่มีแบบฝึกหัดที่ค้างไว้' : 'ไม่พบแบบฝึกหัดในรายการที่เลือก';
+        const hint = document.createElement('p');
+        hint.textContent = 'ลองเลือกทุกภาคเรียน หรือค้นหาด้วยคำที่สั้นลง';
+        const button = document.createElement('button');
+        button.className = 'btn-primary';
+        button.textContent = 'ดูแบบฝึกหัดทั้งหมด';
+        button.addEventListener('click', resetFilters);
+        empty.append(title, hint, button);
+        grid.appendChild(empty);
+    }
+    persistSelection();
+}
+function refreshLibrary() {
+    if (!libraryState.entries.length) return;
+    renderNavigation();
+    renderLibrary();
+    byId('stat-started').textContent = libraryState.entries.filter(entry => getProgress(entry.file).answered > 0).length;
+    const recent = libraryState.entries.filter(entry => { const p = getProgress(entry.file); return p.answered && !p.completed; }).sort((a, b) => getProgress(b.file).updatedAt - getProgress(a.file).updatedAt)[0];
+    const resume = byId('resume-section');
+    resume.classList.toggle('hidden', !recent);
+    resume.replaceChildren();
+    if (recent) {
+        const content = document.createElement('div');
+        const label = document.createElement('p');
+        label.className = 'eyebrow';
+        label.textContent = 'ต่อจากครั้งที่แล้ว';
+        const title = document.createElement('h2');
+        title.id = 'resume-title';
+        title.textContent = recent.title;
+        const subtitle = document.createElement('p');
+        subtitle.textContent = `${recent.course} · ตอบแล้ว ${getProgress(recent.file).answered} ข้อ`;
+        const link = document.createElement('a');
+        link.className = 'btn-primary';
+        link.href = `quiz.html?topic=${encodeURIComponent(recent.file)}`;
+        link.textContent = 'ทำต่อ →';
+        content.append(label, title, subtitle);
+        resume.append(content, link);
+    }
+}
+async function loadQuizLibrary() {
+    try {
+        const response = await fetch('quiz-list.json');
+        if (!response.ok) throw new Error('Unable to load quiz list');
+        const semesters = normalizeQuizList(await response.json());
+        libraryState.entries = semesters.flatMap(semester => (semester.subjects || []).flatMap(subject => (subject.files || []).map(item => {
+            const file = typeof item === 'string' ? item : item.file;
+            if (typeof file !== 'string') return null;
+            const parts = (subject.subject || 'ทั่วไป').split(/[\\/]/);
+            return { file, title: storage.topic(file), semester: semester.semester, course: parts.pop(), assessment: parts.join(' › ') };
+        }).filter(Boolean)));
+        if (!libraryState.entries.length) throw new Error('Empty quiz list');
+        try {
+            const saved = JSON.parse(sessionStorage.getItem('quizflow_library') || '{}');
+            libraryState.semester = semesters.some(semester => semester.semester === saved.semester) ? saved.semester : '';
+            libraryState.course = saved.course || '';
+            libraryState.assessment = saved.assessment || '';
+            libraryState.view = saved.view === 'continue' ? 'continue' : 'all';
+            byId('quiz-search').value = typeof saved.search === 'string' ? saved.search : '';
+            if (['all', 'new', 'started', 'completed'].includes(saved.status)) byId('status-filter').value = saved.status;
+            if (['default', 'name', 'recent'].includes(saved.sort)) byId('sort-select').value = saved.sort;
+        } catch {}
+        const select = byId('semester-select');
+        semesters.forEach(semester => select.add(new Option(semester.semester, semester.semester)));
+        select.value = libraryState.semester;
+        select.disabled = false;
+        byId('stat-quizzes').textContent = libraryState.entries.length;
+        byId('stat-subjects').textContent = new Set(libraryState.entries.map(entry => entry.course)).size;
+        refreshLibrary();
+    } catch (error) {
+        console.error(error);
+        const grid = byId('quiz-library');
+        grid.setAttribute('aria-busy', 'false');
+        grid.innerHTML = '<div class="empty-state"><h3>โหลดแบบฝึกหัดไม่สำเร็จ</h3><p>ลองโหลดหน้าใหม่อีกครั้ง</p><button class="btn-primary" id="reload-library">ลองอีกครั้ง</button></div>';
+        byId('reload-library').addEventListener('click', () => window.location.reload());
+    }
+}
+byId('semester-select').addEventListener('change', event => {
+    libraryState.semester = event.target.value;
+    libraryState.course = '';
+    libraryState.assessment = '';
+    persistSelection();
+    refreshLibrary();
 });
-
-// เมื่อสลับกลับมาที่แท็บนี้ ให้อัปเดต progress ใหม่จาก localStorage
-window.addEventListener('focus', refreshLibraryState);
+byId('course-select').addEventListener('change', event => selectCourse(event.target.value));
+['all', 'continue'].forEach(view => byId(`view-${view}`).addEventListener('click', () => {
+    Object.assign(libraryState, { view, semester: '', course: '', assessment: '' });
+    byId('semester-select').value = '';
+    byId('quiz-search').value = '';
+    byId('status-filter').value = 'all';
+    persistSelection();
+    refreshLibrary();
+}));
+byId('quiz-search').addEventListener('input', renderLibrary);
+['status-filter', 'sort-select'].forEach(id => byId(id).addEventListener('change', renderLibrary));
+byId('clear-filters').addEventListener('click', resetFilters);
+document.addEventListener('DOMContentLoaded', loadQuizLibrary);
+window.addEventListener('pageshow', event => { if (event.persisted) refreshLibrary(); });
+window.addEventListener('focus', refreshLibrary);
+window.addEventListener('storage', refreshLibrary);

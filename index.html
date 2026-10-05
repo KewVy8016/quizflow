@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizFlow - Quiz Library</title>
+    <meta name="theme-color" content="#f6f7fb">
+    <title>QuizFlow — คลังแบบฝึกหัด</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>🧩 QuizFlow</h1>
-            <p class="subtitle">เลือกหัวข้อที่ต้องการทำข้อสอบ</p>
-        </header>
-        
-        <div id="quiz-library">
-            <div class="loading">กำลังโหลด...</div>
-        </div>
+<body class="library-page">
+    <a class="skip-link" href="#main-content">ข้ามไปยังแบบฝึกหัด</a>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="เมนูคลังแบบฝึกหัด">
+            <a class="brand" href="index.html" aria-label="QuizFlow หน้าแรก"><span class="brand-mark" aria-hidden="true">Q</span>QuizFlow<span class="brand-dot">.</span></a>
+            <p class="sidebar-caption">พื้นที่ทบทวนของคุณ</p>
+            <nav class="primary-nav" aria-label="เมนูหลัก">
+                <button class="nav-item active" id="view-all" aria-pressed="true"><span aria-hidden="true">▦</span> คลังแบบฝึกหัด <span class="nav-count" id="all-count">0</span></button>
+                <button class="nav-item" id="view-continue" aria-pressed="false"><span aria-hidden="true">▷</span> ทำต่อ <span class="nav-count" id="continue-count">0</span></button>
+            </nav>
+            <div class="sidebar-divider"></div>
+            <label class="menu-label" for="semester-select">ภาคเรียน</label>
+            <select id="semester-select" disabled><option value="">ทุกภาคเรียน</option></select>
+            <div class="subjects-heading"><h2 class="menu-label">รายวิชา</h2><span id="subject-count" class="muted"></span></div>
+            <label class="sr-only" for="course-select">เลือกรายวิชา</label>
+            <select id="course-select" class="mobile-course-select" disabled><option value="">ทุกวิชา</option></select>
+            <nav id="subject-menu" class="subject-menu" aria-label="เลือกรายวิชา"></nav>
+            <div class="sidebar-note"><span class="note-dot" aria-hidden="true"></span><div>ค่อย ๆ เรียนรู้ ทีละข้อ<p>ความคืบหน้าบันทึกในเบราว์เซอร์นี้</p></div></div>
+        </aside>
+        <main class="main-content" id="main-content">
+            <header class="page-topbar"><span>คลังการเรียนรู้ / <span id="breadcrumb-current">ทุกวิชา</span></span><span class="topbar-note">ฝึกฝน · ทบทวน · เข้าใจ</span></header>
+            <section class="library-intro" aria-labelledby="page-title"><div><p class="eyebrow">YOUR LEARNING SPACE</p><h1 id="page-title">วันนี้อยากทบทวนเรื่องไหน?</h1><p class="subtitle">เลือกวิชาที่สนใจ หรือกลับไปทำแบบฝึกหัดที่ค้างไว้</p></div><div class="intro-symbol" aria-hidden="true">✳</div></section>
+            <section class="library-stats" aria-label="ภาพรวมการเรียนรู้"><div><span id="stat-quizzes">—</span><p>ชุดแบบฝึกหัด</p></div><div><span id="stat-subjects">—</span><p>รายวิชา</p></div><div><span id="stat-started">—</span><p>ชุดที่เริ่มเรียนแล้ว</p></div></section>
+            <section id="resume-section" class="resume-section hidden" aria-labelledby="resume-title"></section>
+            <section class="library-content" aria-labelledby="library-heading">
+                <div class="section-heading"><div><p class="eyebrow" id="scope-label">ทุกภาคเรียน</p><h2 id="library-heading">แบบฝึกหัดทั้งหมด</h2></div><button id="clear-filters" class="text-button hidden">ล้างตัวกรอง</button></div>
+                <div class="library-toolbar">
+                    <div class="search-field"><span aria-hidden="true">⌕</span><label class="sr-only" for="quiz-search">ค้นหาหัวข้อหรือวิชาในรายการที่เลือก</label><input id="quiz-search" type="search" placeholder="ค้นหาหัวข้อ หรือชื่อวิชา…" autocomplete="off"></div>
+                    <label class="sr-only" for="status-filter">สถานะแบบฝึกหัด</label><select id="status-filter"><option value="all">ทุกสถานะ</option><option value="new">ยังไม่ได้เริ่ม</option><option value="started">กำลังทำ</option><option value="completed">ทำครบแล้ว</option></select>
+                    <label class="sr-only" for="sort-select">เรียงแบบฝึกหัด</label><select id="sort-select"><option value="default">ตามรายวิชา</option><option value="name">ชื่อ A–Z</option><option value="recent">ทำล่าสุดก่อน</option></select>
+                </div>
+                <div id="assessment-filters" class="assessment-filters" role="group" aria-label="ช่วงสอบ"></div>
+                <p id="results-count" class="results-count" role="status" aria-live="polite"></p>
+                <div id="quiz-library" class="quiz-library" aria-busy="true"><div class="empty-state">กำลังโหลดแบบฝึกหัด…</div></div>
+            </section>
+            <footer class="page-footer"><span>QuizFlow</span><p>เรียนรู้จากคำอธิบาย แล้วกลับมาฝึกได้ทุกเมื่อ</p></footer>
+        </main>
     </div>
-    
+    <script src="storage.js"></script>
     <script src="library.js"></script>
 </body>
 </html>

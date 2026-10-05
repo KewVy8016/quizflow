@@ -3,39 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizFlow - Quiz</title>
+    <title>QuizFlow — แบบฝึกหัด</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
+<body class="quiz-page">
+    <a class="skip-link" href="#quiz-container">ข้ามไปยังคำถาม</a>
+    <div class="quiz-shell">
+        <header class="quiz-topbar"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">Q</span>QuizFlow<span class="brand-dot">.</span></a><button id="back-btn" class="btn-secondary">← กลับคลังแบบฝึกหัด</button></header>
+        <nav class="breadcrumb" aria-label="ตำแหน่งปัจจุบัน"><a href="index.html">คลังแบบฝึกหัด</a><span aria-hidden="true">/</span><span id="quiz-context">แบบฝึกหัด</span></nav>
         <header class="quiz-header">
-            <button id="back-btn" class="btn-back">← <span class="btn-label">กลับ</span></button>
-            <h2 id="quiz-title">Quiz</h2>
-            <div class="header-controls">
-                <button id="shuffle-questions-btn" class="btn-shuffle" title="เปิด/ปิดการสลับลำดับข้อสอบ">📋 <span class="btn-label">สลับข้อสอบ</span></button>
-                <button id="shuffle-btn" class="btn-shuffle" title="เปิด/ปิดการสลับตัวเลือกคำตอบ">🔀 <span class="btn-label">สลับตัวเลือก</span></button>
-                <button id="reset-btn" class="btn-reset">🔄 <span class="btn-label">รีเซ็ต</span></button>
-            </div>
+            <div><p class="eyebrow">LEARN AT YOUR OWN PACE</p><h1 id="quiz-title">กำลังโหลด…</h1></div>
+            <details class="quiz-settings" id="quiz-settings"><summary>⚙ ตั้งค่าการฝึก</summary><div class="settings-panel"><p class="menu-label">รูปแบบการฝึก</p><button id="shuffle-questions-btn" class="setting-toggle" aria-pressed="false" disabled>สลับลำดับคำถาม <span>ปิด</span></button><button id="shuffle-btn" class="setting-toggle" aria-pressed="false" disabled>สลับตัวเลือกคำตอบ <span>ปิด</span></button><p class="settings-hint">เปลี่ยนลำดับคำถามจะกลับไปข้อแรก โดยเก็บคำตอบที่ทำแล้ว</p><button id="reset-btn" class="btn-reset" disabled>เริ่มชุดนี้ใหม่</button></div></details>
         </header>
-        
-        <div class="progress-bar">
-            <div id="progress-fill" class="progress-fill"></div>
-        </div>
-        
-        <div id="quiz-container" class="quiz-container">
-            <div class="loading">กำลังโหลดข้อสอบ...</div>
-        </div>
-        
-        <div id="result-container" class="result-container hidden">
-            <h2>🏆 ผลคะแนน</h2>
-            <div id="score-display" class="score-display"></div>
-            <div class="result-actions">
-                <button id="retry-btn" class="btn-primary">ทำใหม่</button>
-                <button id="home-btn" class="btn-secondary">กลับหน้าแรก</button>
-            </div>
-        </div>
+        <div class="progress-label"><span id="progress-text" role="status">กำลังเตรียมแบบฝึกหัด</span><span id="save-notice">บันทึกความคืบหน้าอัตโนมัติ</span></div>
+        <div class="progress-bar" role="progressbar" aria-label="จำนวนข้อที่ตอบแล้ว" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill" class="progress-fill"></div></div>
+        <main>
+            <div id="quiz-container" class="quiz-container"><div class="loading">กำลังโหลดข้อสอบ…</div></div>
+            <div id="result-container" class="result-container hidden"><p class="eyebrow">PRACTICE COMPLETE</p><h2 tabindex="-1" id="result-title">ทบทวนครบแล้ว!</h2><div id="score-display" class="score-display"></div><p class="result-note">กลับมาฝึกอีกครั้ง เพื่อเข้าใจได้มากขึ้น</p><div class="result-actions"><button id="retry-btn" class="btn-primary">ฝึกชุดนี้อีกครั้ง</button><button id="home-btn" class="btn-secondary">กลับคลังแบบฝึกหัด</button></div></div>
+        </main>
+        <p class="quiz-footer">ตอบทีละข้อ เรียนรู้จากคำอธิบาย แล้วค่อยไปต่อ</p>
     </div>
-    
+    <script src="storage.js"></script>
     <script src="quiz.js"></script>
 </body>
 </html>

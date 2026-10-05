@@ -3,6 +3,7 @@ let currentQuestion = 0;
 let answers = {};
 let quizTopic = '';
 let quizFile = '';
+const storage = window.QuizFlowStorage;
 
 // Shuffle answers (ตัวเลือกคำตอบ)
 let shuffleEnabled = false;
@@ -22,10 +23,11 @@ function getQuizFileFromURL() {
 // Initialize quiz
 async function initQuiz() {
     console.log('Initializing quiz with file:', quizFile);
-    // ใช้แค่ชื่อไฟล์ (ไม่รวม subfolder path) เพื่อให้ stateKey สม่ำเสมอ
-    const fileName = quizFile.split('/').pop().split('\\').pop();
-    quizTopic = fileName.replace('.json', '').replace(/_/g, ' ');
+    // Use the filename as a readable title; storage uses the full file path.
+    quizTopic = storage.topic(quizFile);
     document.getElementById('quiz-title').textContent = quizTopic;
+    document.title = `${quizTopic} — QuizFlow`;
+    document.getElementById('quiz-context').textContent = quizFile.split(/[\\/]/).slice(0, -1).join(' / ') || 'ทั่วไป';
     
     try {
         const filePath = `json/${quizFile}`;
@@ -37,6 +39,9 @@ async function initQuiz() {
         }
         
         quizData = await response.json();
+        if (!Array.isArray(quizData) || !quizData.length || quizData.some(q => !Array.isArray(q.answers) || !q.answers.length)) {
+            throw new Error('รูปแบบคำถามไม่ถูกต้อง');
+        }
         console.log('Quiz data loaded successfully, questions:', quizData.length);
         
         // Load saved state and shuffle preference
@@ -48,53 +53,57 @@ async function initQuiz() {
         }
         
         // Render first question
-        renderQuestion();
+        ['shuffle-btn', 'shuffle-questions-btn', 'reset-btn'].forEach(id => document.getElementById(id).disabled = false);
+        saveState();
+        if (Object.keys(answers).length === quizData.length) showResult();
+        else renderQuestion();
     } catch (error) {
         console.error('Error loading quiz:', error);
-        document.getElementById('quiz-container').innerHTML = 
-            `<div class="loading">
-                <p>ไม่สามารถโหลดข้อสอบได้</p>
-                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-                    ไฟล์: ${quizFile}<br>
-                    ข้อผิดพลาด: ${error.message}
-                </p>
-            </div>`;
+        const container = document.getElementById('quiz-container');
+        container.replaceChildren();
+        const message = document.createElement('p');
+        message.className = 'loading';
+        message.textContent = 'โหลดแบบฝึกหัดไม่สำเร็จ กรุณากลับไปเลือกชุดอื่น หรือลองโหลดหน้าใหม่';
+        container.appendChild(message);
+        document.getElementById('progress-text').textContent = 'ยังไม่ได้เริ่ม';
     }
 }
 
 function loadState() {
-    const stateKey = `quiz_state_${quizTopic}`;
-    const savedState = localStorage.getItem(stateKey);
+    const savedState = storage.read(quizFile);
     
     if (savedState) {
-        const state = JSON.parse(savedState);
-        currentQuestion = state.currentQuestion || 0;
-        answers = state.answers || {};
+        const state = savedState;
+        currentQuestion = Number.isInteger(state.currentQuestion) ? Math.max(0, Math.min(state.currentQuestion, quizData.length)) : 0;
+        answers = Object.fromEntries(Object.entries(state.answers || {}).filter(([index, value]) => quizData[index]?.answers[value] && Number.isInteger(value)));
+        shuffledQuestionOrder = Array.isArray(state.questionOrder) ? state.questionOrder : [];
+        if (currentQuestion === quizData.length && Object.keys(answers).length < quizData.length) {
+            currentQuestion = 0;
+        }
     }
     
     // Load shuffle answers preference
-    const shuffleKey = `quiz_shuffle_${quizTopic}`;
-    const savedShuffle = localStorage.getItem(shuffleKey);
-    shuffleEnabled = savedShuffle === 'true';
+    shuffleEnabled = storage.read(quizFile, 'shuffle') === true;
     updateShuffleButton();
 
     // Load shuffle questions preference
-    const shuffleQKey = `quiz_shuffle_questions_${quizTopic}`;
-    const savedShuffleQ = localStorage.getItem(shuffleQKey);
-    shuffleQuestionsEnabled = savedShuffleQ === 'true';
+    shuffleQuestionsEnabled = storage.read(quizFile, 'shuffle_questions') === true;
     if (shuffleQuestionsEnabled) {
-        createShuffledQuestionOrder();
+        const validOrder = shuffledQuestionOrder.length === quizData.length && new Set(shuffledQuestionOrder).size === quizData.length && shuffledQuestionOrder.every(i => Number.isInteger(i) && i >= 0 && i < quizData.length);
+        if (!validOrder) createShuffledQuestionOrder();
     }
     updateShuffleQuestionsButton();
 }
 
 function saveState() {
-    const stateKey = `quiz_state_${quizTopic}`;
     const state = {
         currentQuestion,
-        answers
+        answers,
+        totalQuestions: quizData.length,
+        questionOrder: shuffledQuestionOrder,
+        updatedAt: Date.now()
     };
-    localStorage.setItem(stateKey, JSON.stringify(state));
+    storage.write(quizFile, state);
 }
 
 // Fisher-Yates shuffle algorithm
@@ -109,8 +118,7 @@ function shuffleArray(array) {
 
 function toggleShuffle() {
     shuffleEnabled = !shuffleEnabled;
-    const shuffleKey = `quiz_shuffle_${quizTopic}`;
-    localStorage.setItem(shuffleKey, shuffleEnabled);
+    storage.write(quizFile, shuffleEnabled, 'shuffle');
     updateShuffleButton();
     
     // Re-shuffle if enabling
@@ -124,17 +132,10 @@ function createShuffledQuiz() {
     // Create a deep copy of quiz data with shuffled answers
     shuffledQuizData = quizData.map((question, qIndex) => {
         // Shuffle the answers and create a mapping
-        const shuffledAnswers = shuffleArray(question.answers);
+        const mapping = shuffleArray(question.answers.map((_, index) => index));
+        const shuffledAnswers = mapping.map(index => question.answers[index]);
         
         // Create mapping from shuffled index to original index
-        const mapping = [];
-        shuffledAnswers.forEach(shuffledAnswer => {
-            const originalIndex = question.answers.findIndex(
-                a => a.text === shuffledAnswer.text && a.correct === shuffledAnswer.correct
-            );
-            mapping.push(originalIndex);
-        });
-        
         answerMappings[qIndex] = mapping;
         
         return {
@@ -147,13 +148,9 @@ function createShuffledQuiz() {
 function updateShuffleButton() {
     const btn = document.getElementById('shuffle-btn');
     if (btn) {
-        if (shuffleEnabled) {
-            btn.classList.add('active');
-            btn.innerHTML = '🔀 <span class="btn-label">สลับตัวเลือก ✓</span>';
-        } else {
-            btn.classList.remove('active');
-            btn.innerHTML = '🔀 <span class="btn-label">สลับตัวเลือก</span>';
-        }
+        btn.classList.toggle('active', shuffleEnabled);
+        btn.setAttribute('aria-pressed', String(shuffleEnabled));
+        btn.innerHTML = `สลับตัวเลือกคำตอบ <span>${shuffleEnabled ? 'เปิด' : 'ปิด'}</span>`;
     }
 }
 
@@ -161,8 +158,7 @@ function updateShuffleButton() {
 
 function toggleShuffleQuestions() {
     shuffleQuestionsEnabled = !shuffleQuestionsEnabled;
-    const shuffleQKey = `quiz_shuffle_questions_${quizTopic}`;
-    localStorage.setItem(shuffleQKey, shuffleQuestionsEnabled);
+    storage.write(quizFile, shuffleQuestionsEnabled, 'shuffle_questions');
     updateShuffleQuestionsButton();
     
     if (shuffleQuestionsEnabled) {
@@ -189,13 +185,9 @@ function createShuffledQuestionOrder() {
 function updateShuffleQuestionsButton() {
     const btn = document.getElementById('shuffle-questions-btn');
     if (btn) {
-        if (shuffleQuestionsEnabled) {
-            btn.classList.add('active');
-            btn.innerHTML = '📋 <span class="btn-label">สลับข้อสอบ ✓</span>';
-        } else {
-            btn.classList.remove('active');
-            btn.innerHTML = '📋 <span class="btn-label">สลับข้อสอบ</span>';
-        }
+        btn.classList.toggle('active', shuffleQuestionsEnabled);
+        btn.setAttribute('aria-pressed', String(shuffleQuestionsEnabled));
+        btn.innerHTML = `สลับลำดับคำถาม <span>${shuffleQuestionsEnabled ? 'เปิด' : 'ปิด'}</span>`;
     }
 }
 
@@ -216,21 +208,25 @@ function renderQuestion() {
     const hasAnswered = answers.hasOwnProperty(originalQIndex);
     
     const container = document.getElementById('quiz-container');
+    container.classList.remove('hidden');
+    document.getElementById('result-container').classList.add('hidden');
     container.innerHTML = `
         <div class="question-number">คำถามที่ ${currentQuestion + 1} / ${quizData.length}</div>
-        <div class="question-text">${question.text}</div>
+        <h2 class="question-text" tabindex="-1" id="question-title"></h2>
         <div class="answers" id="answers-container"></div>
         ${hasAnswered ? `
             <div class="explanation">
-                <div class="explanation-title">💡 คำอธิบาย</div>
-                <div class="explanation-text">${question.info || 'ไม่มีคำอธิบาย'}</div>
+                <div class="explanation-title">เรียนรู้จากคำตอบ</div>
+                <div class="explanation-text" id="explanation-text"></div>
             </div>
         ` : ''}
         <div class="quiz-actions">
             ${currentQuestion > 0 ? '<button id="prev-btn" class="btn-secondary">← ก่อนหน้า</button>' : ''}
-            ${hasAnswered ? '<button id="next-btn" class="btn-primary">ถัดไป →</button>' : ''}
+            ${hasAnswered ? `<button id="next-btn" class="btn-primary">${currentQuestion === quizData.length - 1 ? 'ดูผลคะแนน →' : 'ข้อถัดไป →'}</button>` : '<span class="quiz-hint">เลือกคำตอบเพื่อดูคำอธิบาย</span>'}
         </div>
     `;
+    document.getElementById('question-title').textContent = question.text;
+    if (hasAnswered) document.getElementById('explanation-text').textContent = question.info || 'ไม่มีคำอธิบาย';
     
     renderAnswers(question, hasAnswered, originalQIndex);
     updateProgress();
@@ -250,7 +246,13 @@ function renderAnswers(question, hasAnswered, originalQIndex) {
     question.answers.forEach((answer, displayIndex) => {
         const btn = document.createElement('button');
         btn.className = 'answer-btn';
-        btn.textContent = answer.text;
+        const letter = document.createElement('span');
+        letter.className = 'answer-letter';
+        letter.setAttribute('aria-hidden', 'true');
+        letter.textContent = String.fromCharCode(65 + displayIndex);
+        const text = document.createElement('span');
+        text.textContent = answer.text;
+        btn.append(letter, text);
         btn.disabled = hasAnswered;
         
         // Get the original answer index if answer-shuffle is enabled
@@ -261,6 +263,12 @@ function renderAnswers(question, hasAnswered, originalQIndex) {
                 btn.classList.add('correct');
             } else if (answers[originalQIndex] === originalAnsIndex) {
                 btn.classList.add('incorrect');
+            }
+            if (answer.correct || answers[originalQIndex] === originalAnsIndex) {
+                const verdict = document.createElement('span');
+                verdict.className = 'answer-verdict';
+                verdict.textContent = answer.correct ? (answers[originalQIndex] === originalAnsIndex ? '✓ คุณตอบถูก' : '✓ คำตอบที่ถูกต้อง') : '✕ คำตอบของคุณ';
+                text.appendChild(verdict);
             }
         } else if (answers[originalQIndex] === originalAnsIndex) {
             btn.classList.add('selected');
@@ -275,26 +283,33 @@ function selectAnswer(originalQIndex, answerIndex) {
     answers[originalQIndex] = answerIndex;
     saveState();
     renderQuestion();
+    document.getElementById('next-btn')?.focus({ preventScroll: true });
 }
 
 function nextQuestion() {
     currentQuestion++;
     saveState();
     renderQuestion();
+    document.getElementById('question-title')?.focus({ preventScroll: true });
 }
 
 function prevQuestion() {
     currentQuestion--;
     saveState();
     renderQuestion();
+    document.getElementById('question-title')?.focus({ preventScroll: true });
 }
 
 function updateProgress() {
-    const progress = ((currentQuestion + 1) / quizData.length) * 100;
+    const answered = Object.keys(answers).length;
+    const progress = (answered / quizData.length) * 100;
     document.getElementById('progress-fill').style.width = `${progress}%`;
+    document.querySelector('.progress-bar').setAttribute('aria-valuenow', String(Math.round(progress)));
+    document.getElementById('progress-text').textContent = `ตอบแล้ว ${answered} จาก ${quizData.length} ข้อ`;
 }
 
 function showResult() {
+    updateProgress();
     document.getElementById('quiz-container').classList.add('hidden');
     const resultContainer = document.getElementById('result-container');
     resultContainer.classList.remove('hidden');
@@ -303,7 +318,7 @@ function showResult() {
     // Always score against original quizData indices stored in answers
     quizData.forEach((question, index) => {
         const userAnswer = answers[index];
-        if (userAnswer !== undefined && question.answers[userAnswer].correct) {
+        if (userAnswer !== undefined && question.answers[userAnswer]?.correct) {
             correctCount++;
         }
     });
@@ -311,26 +326,24 @@ function showResult() {
     const percentage = Math.round((correctCount / quizData.length) * 100);
     
     document.getElementById('score-display').innerHTML = `
-        <div style="font-size: 3em; color: #667eea; font-weight: 700;">${percentage}%</div>
+        <div class="score-percentage">${percentage}%</div>
         <div class="score-detail">${correctCount} / ${quizData.length} ข้อถูกต้อง</div>
     `;
+    document.getElementById('result-title').focus({ preventScroll: true });
 }
 
 // Event listeners
 document.getElementById('back-btn').addEventListener('click', () => {
-    if (document.referrer && document.referrer.includes('index.html') || history.length > 1) {
-        history.back();
-    } else {
-        window.location.href = 'index.html';
-    }
+    window.location.href = 'index.html';
 });
 
 document.getElementById('reset-btn').addEventListener('click', () => {
     if (confirm('ต้องการรีเซ็ตความก้าวหน้าและเริ่มใหม่?')) {
-        const stateKey = `quiz_state_${quizTopic}`;
-        localStorage.removeItem(stateKey);
+        storage.reset(quizFile);
         currentQuestion = 0;
         answers = {};
+        document.getElementById('quiz-settings').open = false;
+        saveState();
         renderQuestion();
     }
 });
@@ -358,8 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (document.getElementById('retry-btn')) {
         document.getElementById('retry-btn').addEventListener('click', () => {
-            const stateKey = `quiz_state_${quizTopic}`;
-            localStorage.removeItem(stateKey);
+            storage.reset(quizFile);
             window.location.reload();
         });
     }
@@ -371,4 +383,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     initQuiz();
+});
+
+// Close settings with Escape or a click outside the disclosure.
+document.addEventListener('click', event => {
+    const settings = document.getElementById('quiz-settings');
+    if (!settings.contains(event.target)) settings.open = false;
+});
+document.addEventListener('keydown', event => {
+    const settings = document.getElementById('quiz-settings');
+    if (event.key === 'Escape' && settings.open) {
+        settings.open = false;
+        settings.querySelector('summary').focus();
+    }
 });
