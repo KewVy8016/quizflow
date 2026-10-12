@@ -1,0 +1,692 @@
+[
+  {
+    "text": "A service provider wants consumers to access one application without broad network connectivity between VPCs. Which model is appropriate?",
+    "info": "PrivateLink เป็นการเปิดเข้าถึงบริการเฉพาะผ่าน endpoints แทนการเปิดเส้นทางทั่วเครือข่ายแบบ peering",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Move every consumer into the provider's database subnet",
+        "correct": false
+      },
+      {
+        "text": "Peer every consumer VPC and expose all private routes",
+        "correct": false
+      },
+      {
+        "text": "Give consumers the provider's root credentials",
+        "correct": false
+      },
+      {
+        "text": "Publish the service through AWS PrivateLink",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "How many VPN tunnels are provided by a standard AWS Site-to-Site VPN connection?",
+    "info": "แต่ละ Site-to-Site VPN connection มีสอง tunnels เพื่อรองรับ redundancy",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "One tunnel per IAM user",
+        "correct": false
+      },
+      {
+        "text": "Two",
+        "correct": true
+      },
+      {
+        "text": "Five",
+        "correct": false
+      },
+      {
+        "text": "One",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Two VPCs have overlapping CIDRs, and a consumer only needs access to a provider's supported application service. Which approach fits?",
+    "info": "PrivateLink เปิดการเข้าถึงบริการผ่าน interface endpoint โดยไม่ต้องสร้าง peering ระหว่าง CIDRs ที่ทับซ้อน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "VPC peering using the overlapping CIDRs",
+        "correct": false
+      },
+      {
+        "text": "AWS PrivateLink with an endpoint service behind a Network Load Balancer",
+        "correct": true
+      },
+      {
+        "text": "One public NAT gateway to merge both address spaces",
+        "correct": false
+      },
+      {
+        "text": "An IAM group to route network packets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a Direct Connect public virtual interface used for?",
+    "info": "Public VIF ใช้เข้าถึง public AWS service endpoints ที่รองรับผ่าน Direct Connect",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Assigning public access to every S3 bucket",
+        "correct": false
+      },
+      {
+        "text": "Accessing supported public AWS service endpoints",
+        "correct": true
+      },
+      {
+        "text": "Making private databases public automatically",
+        "correct": false
+      },
+      {
+        "text": "Sharing root credentials between accounts",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does AWS Site-to-Site VPN connect?",
+    "info": "Site-to-Site VPN เชื่อมเครือข่าย on-premises กับ AWS ผ่าน encrypted tunnels",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Two IAM user passwords",
+        "correct": false
+      },
+      {
+        "text": "An on-premises network and an AWS network",
+        "correct": true
+      },
+      {
+        "text": "Two S3 object versions",
+        "correct": false
+      },
+      {
+        "text": "A browser and its local cache",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is AWS Transit Gateway?",
+    "info": "Transit Gateway เป็น managed Regional router ที่เชื่อม VPCs และเครือข่าย on-premises ผ่านจุดศูนย์กลาง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A relational database proxy",
+        "correct": false
+      },
+      {
+        "text": "An application user directory",
+        "correct": false
+      },
+      {
+        "text": "A global object storage bucket",
+        "correct": false
+      },
+      {
+        "text": "A managed Regional router connecting VPCs and on-premises networks",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a Direct Connect private virtual interface commonly used for?",
+    "info": "Private VIF เชื่อมไปยัง private resources ใน VPC ผ่าน gateway ที่เหมาะสม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Accessing private VPC resources",
+        "correct": true
+      },
+      {
+        "text": "Managing Cognito user passwords",
+        "correct": false
+      },
+      {
+        "text": "Creating S3 lifecycle rules",
+        "correct": false
+      },
+      {
+        "text": "Giving every EC2 instance a public DNS domain",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which component can be the AWS-side VPN endpoint attached to a VPC?",
+    "info": "Virtual private gateway ใช้เป็น VPN endpoint ฝั่ง AWS สำหรับ VPC หรืออาจใช้ Transit Gateway ในสถาปัตยกรรมที่เหมาะสม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An IAM group",
+        "correct": false
+      },
+      {
+        "text": "An EC2 image pipeline",
+        "correct": false
+      },
+      {
+        "text": "A virtual private gateway",
+        "correct": true
+      },
+      {
+        "text": "An S3 object key",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A peering connection is active, but the VPC route tables have not been updated. What must be added?",
+    "info": "ต้องมี routes สำหรับ CIDR ของ VPC ปลายทางชี้ไป peering connection ในทั้งสองฝั่งที่เกี่ยวข้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Routes to IAM group names",
+        "correct": false
+      },
+      {
+        "text": "A database snapshot for each subnet",
+        "correct": false
+      },
+      {
+        "text": "Routes to the remote VPC CIDRs through the peering connection",
+        "correct": true
+      },
+      {
+        "text": "New S3 storage classes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which virtual interface type connects Direct Connect to Transit Gateway through a Direct Connect gateway?",
+    "info": "Transit VIF ใช้เชื่อม Direct Connect ผ่าน Direct Connect gateway ไปยัง Transit Gateway",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Transit virtual interface",
+        "correct": true
+      },
+      {
+        "text": "Public virtual interface",
+        "correct": false
+      },
+      {
+        "text": "An IAM identity interface",
+        "correct": false
+      },
+      {
+        "text": "A VPC subnet interface only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does a customer gateway represent in a Site-to-Site VPN design?",
+    "info": "Customer gateway resource เป็นตัวแทนข้อมูลของอุปกรณ์หรือซอฟต์แวร์ฝั่งลูกค้าที่ใช้เชื่อม VPN",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The web application's user pool",
+        "correct": false
+      },
+      {
+        "text": "The AWS database standby",
+        "correct": false
+      },
+      {
+        "text": "The customer-side VPN device or software information",
+        "correct": true
+      },
+      {
+        "text": "The S3 bucket holding logs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "VPC A and VPC B use Transit Gateway and must remain isolated, while both can reach an on-premises VPN. Which routing configuration satisfies this?",
+    "info": "ให้ VPC attachments ใช้ตารางที่มีเฉพาะ route ไป on-premises ส่วน VPN attachment ใช้ตารางที่มี routes ไปทั้งสอง VPC และไม่ propagate เส้นทาง VPC ถึงกัน",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Associate the VPC attachments with a table routing only to on-premises, and the VPN attachment with a table routing to both VPCs",
+        "correct": true
+      },
+      {
+        "text": "Advertise only VPC A to every attachment and remove the on-premises route",
+        "correct": false
+      },
+      {
+        "text": "Replace the VPN with VPC peering and rely on transitive routing",
+        "correct": false
+      },
+      {
+        "text": "Associate all attachments with one table containing routes to both VPCs and on-premises",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How should a company use the two tunnels in a Site-to-Site VPN connection for resilience?",
+    "info": "ควรตั้งค่าและตรวจสอบทั้งสอง tunnels เพื่อให้มีเส้นทางสำรองเมื่อ tunnel หนึ่งมีปัญหา",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use one tunnel for IAM and one for billing",
+        "correct": false
+      },
+      {
+        "text": "Disable the second tunnel to increase redundancy",
+        "correct": false
+      },
+      {
+        "text": "Configure both tunnels and monitor their status",
+        "correct": true
+      },
+      {
+        "text": "Configure only one tunnel and ignore the second permanently",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Does VPC peering support transitive routing through another VPC?",
+    "info": "VPC peering ไม่รองรับ transitive routing ดังนั้น A-B และ B-C ไม่ทำให้ A-C ติดต่อกันได้ผ่าน B โดยอัตโนมัติ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "No, peering is non-transitive",
+        "correct": true
+      },
+      {
+        "text": "Yes, if the middle VPC has a larger CIDR block",
+        "correct": false
+      },
+      {
+        "text": "Yes, if every VPC is given the same name",
+        "correct": false
+      },
+      {
+        "text": "Yes, for every chain of peered VPCs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Routes through VPC peering exist on both sides, but an application connection is rejected. What should be checked next?",
+    "info": "การมีเส้นทางไม่เท่ากับการมีสิทธิ์ผ่าน network controls ต้องตรวจ security groups และ network ACLs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Security groups and network ACLs on the path",
+        "correct": true
+      },
+      {
+        "text": "Whether both VPCs have identical tags",
+        "correct": false
+      },
+      {
+        "text": "Only the instance display names",
+        "correct": false
+      },
+      {
+        "text": "Only the account's billing currency",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company connects two VPCs through one Direct Connect location. It must survive that location's failure and retain an encrypted backup path with enough capacity for critical traffic. Which plan best fits?",
+    "info": "ต้องแยกจุดเชื่อมต่อ Direct Connect และมี VPN backup ที่ตั้ง routing กับ failover พร้อมประเมิน bandwidth สำหรับ traffic สำคัญ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use only VPC peering and assume it replaces on-premises connectivity",
+        "correct": false
+      },
+      {
+        "text": "Increase both VPC CIDR sizes and keep the single connection unchanged",
+        "correct": false
+      },
+      {
+        "text": "Add a Direct Connect connection at a separate location and a properly routed, capacity-planned Site-to-Site VPN backup",
+        "correct": true
+      },
+      {
+        "text": "Add another cable at the same location and omit all backup routing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which factors contribute to Transit Gateway charges as described in the chapter?",
+    "info": "Transit Gateway มีค่าใช้จ่ายตาม attachments หรือ connections และการประมวลผล traffic จึงต้องพิจารณา topology กับปริมาณข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the number of IAM users",
+        "correct": false
+      },
+      {
+        "text": "Only the length of VPC names",
+        "correct": false
+      },
+      {
+        "text": "Attachment time and traffic processed",
+        "correct": true
+      },
+      {
+        "text": "Only whether DNS names are uppercase",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which combination provides a dedicated primary connection with an internet-based encrypted backup path?",
+    "info": "Direct Connect เป็นเส้นทางหลัก และ Site-to-Site VPN สามารถเป็นเส้นทางสำรองเมื่อวาง routing กับ failover เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Direct Connect with Site-to-Site VPN as backup",
+        "correct": true
+      },
+      {
+        "text": "One Direct Connect connection with no backup",
+        "correct": false
+      },
+      {
+        "text": "Two IAM policies attached to one user",
+        "correct": false
+      },
+      {
+        "text": "S3 Versioning with CORS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which address condition prevents establishing VPC peering?",
+    "info": "VPCs ที่มี CIDR blocks ทับซ้อนกันไม่สามารถสร้าง peering ระหว่างกันได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Different VPC names",
+        "correct": false
+      },
+      {
+        "text": "Different AWS account owners",
+        "correct": false
+      },
+      {
+        "text": "Different application programming languages",
+        "correct": false
+      },
+      {
+        "text": "Overlapping VPC CIDR blocks",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does VPC peering establish?",
+    "info": "VPC peering เชื่อม VPC สองแห่งแบบหนึ่งต่อหนึ่งเพื่อให้มีเส้นทาง private traffic ระหว่างกัน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A connection between two IAM groups",
+        "correct": false
+      },
+      {
+        "text": "A database replication relationship",
+        "correct": false
+      },
+      {
+        "text": "A public website login session",
+        "correct": false
+      },
+      {
+        "text": "A private networking connection between two VPCs",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Transit gateways in different Regions have a peering attachment. What else is needed for traffic to use the peering path?",
+    "info": "Peering attachment เพียงอย่างเดียวไม่สร้างเส้นทางครบ ต้องตั้งค่า routes ไปเครือข่ายปลายทางผ่าน attachment พร้อม routes ใน VPCs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Identical root passwords in both accounts",
+        "correct": false
+      },
+      {
+        "text": "Routes for the remote networks through the peering attachment and appropriate VPC routes",
+        "correct": true
+      },
+      {
+        "text": "A public IP on every private instance",
+        "correct": false
+      },
+      {
+        "text": "A manual snapshot of each route table",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Two VPCs must reach an on-premises network but must not reach each other through Transit Gateway. Which feature supports this separation?",
+    "info": "สามารถใช้ Transit Gateway route tables หลายชุดและควบคุม association กับ propagation เพื่อแยกเส้นทาง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Separate Transit Gateway route tables with controlled associations and propagation",
+        "correct": true
+      },
+      {
+        "text": "One unrestricted route table advertising every attachment to every VPC",
+        "correct": false
+      },
+      {
+        "text": "A single S3 bucket policy",
+        "correct": false
+      },
+      {
+        "text": "The same Name tag on both VPCs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which network topology is commonly used with Transit Gateway?",
+    "info": "Transit Gateway ใช้แนวคิด hub-and-spoke โดยมี router กลางเชื่อมเครือข่ายหลายส่วน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A separate physical cable between every EC2 instance",
+        "correct": false
+      },
+      {
+        "text": "A single subnet spanning all Regions",
+        "correct": false
+      },
+      {
+        "text": "A topology with no route tables",
+        "correct": false
+      },
+      {
+        "text": "Hub-and-spoke",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Can VPC peering connect VPCs owned by different AWS accounts?",
+    "info": "VPC peering รองรับข้ามบัญชี โดยต้องมีการรับคำขอและตั้งค่า routes กับการอนุญาต traffic ให้เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No, VPCs must always have the same account owner",
+        "correct": false
+      },
+      {
+        "text": "Only if both accounts share the same root password",
+        "correct": false
+      },
+      {
+        "text": "Yes, with the required acceptance and network configuration",
+        "correct": true
+      },
+      {
+        "text": "Only after merging the accounts",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which protocol provides encryption for AWS Site-to-Site VPN tunnels?",
+    "info": "Site-to-Site VPN ใช้ IPsec เพื่อปกป้องข้อมูลที่ส่งระหว่างเครือข่าย",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "IPsec",
+        "correct": true
+      },
+      {
+        "text": "Plain HTTP",
+        "correct": false
+      },
+      {
+        "text": "FTP without encryption",
+        "correct": false
+      },
+      {
+        "text": "SMTP alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a defining characteristic of AWS Direct Connect?",
+    "info": "Direct Connect ให้การเชื่อมต่อเครือข่ายเฉพาะระหว่าง on-premises กับ AWS เพื่อประสิทธิภาพที่คาดการณ์ได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A login service for mobile users",
+        "correct": false
+      },
+      {
+        "text": "An automatic replacement for every VPC security group",
+        "correct": false
+      },
+      {
+        "text": "A storage class for archived files",
+        "correct": false
+      },
+      {
+        "text": "A dedicated network connection between on-premises and AWS",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company needs an encrypted on-premises connection quickly while a dedicated circuit is being arranged. Which option fits?",
+    "info": "Site-to-Site VPN ใช้ encrypted IPsec tunnels ผ่านอินเทอร์เน็ต จึงเหมาะกับการเริ่มเชื่อมต่อก่อนวงจร dedicated พร้อมใช้งาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An RDS read replica",
+        "correct": false
+      },
+      {
+        "text": "Wait for Direct Connect and use no temporary connection",
+        "correct": false
+      },
+      {
+        "text": "S3 Transfer Acceleration",
+        "correct": false
+      },
+      {
+        "text": "AWS Site-to-Site VPN",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company wants its Direct Connect design to tolerate the failure of one Direct Connect location. Which design helps?",
+    "info": "การใช้หลาย Direct Connect locations และเส้นทางที่แยกกันช่วยลดความเสี่ยงจากจุดล้มเหลวเดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use a larger CIDR block at the same location",
+        "correct": false
+      },
+      {
+        "text": "Use connections through separate Direct Connect locations",
+        "correct": true
+      },
+      {
+        "text": "Put all connections through the same location only",
+        "correct": false
+      },
+      {
+        "text": "Increase the number of VPC tags",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company plans to connect many VPCs and add more over time. Which option simplifies centralized routing?",
+    "info": "Transit Gateway ลดความซับซ้อนจากการสร้าง peering แบบ full mesh และรองรับการเพิ่ม attachments",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A separate full-mesh peering connection for every pair indefinitely",
+        "correct": false
+      },
+      {
+        "text": "AWS Transit Gateway",
+        "correct": true
+      },
+      {
+        "text": "A single security group without network connections",
+        "correct": false
+      },
+      {
+        "text": "An internet gateway as the only internal router",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A hybrid workload needs more predictable network performance than a typical public internet path. Which option should be evaluated?",
+    "info": "Direct Connect ให้ dedicated connectivity ที่มีประสิทธิภาพและ bandwidth คาดการณ์ได้มากขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Cognito hosted UI",
+        "correct": false
+      },
+      {
+        "text": "AWS Direct Connect",
+        "correct": true
+      },
+      {
+        "text": "Only a standard internet VPN path with unchanged bandwidth",
+        "correct": false
+      },
+      {
+        "text": "S3 Lifecycle transitions",
+        "correct": false
+      }
+    ]
+  }
+]

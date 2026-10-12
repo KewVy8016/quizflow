@@ -1,0 +1,692 @@
+[
+  {
+    "text": "What is the identity provider's role in federation?",
+    "info": "Identity provider หรือ IdP รับผิดชอบการยืนยันตัวตนของผู้ใช้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Store every service provider's application data",
+        "correct": false
+      },
+      {
+        "text": "Set every AWS service price",
+        "correct": false
+      },
+      {
+        "text": "Authenticate the user",
+        "correct": true
+      },
+      {
+        "text": "Route all VPC traffic",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a primary function of a Cognito user pool?",
+    "info": "User pool เป็น user directory ที่รองรับ sign-up, sign-in และออก authentication tokens",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Pool relational database connections",
+        "correct": false
+      },
+      {
+        "text": "Create EC2 root volumes",
+        "correct": false
+      },
+      {
+        "text": "Manage application users and issue authentication tokens",
+        "correct": true
+      },
+      {
+        "text": "Provide a dedicated network connection",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does AWS Security Token Service (STS) issue?",
+    "info": "AWS STS ให้ temporary security credentials ที่มีสิทธิ์และอายุจำกัด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Database snapshots",
+        "correct": false
+      },
+      {
+        "text": "Temporary security credentials",
+        "correct": true
+      },
+      {
+        "text": "Public IPv4 addresses",
+        "correct": false
+      },
+      {
+        "text": "Permanent root passwords",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does attribute-based access control (ABAC) use to define permissions?",
+    "info": "ABAC กำหนดสิทธิ์ตาม attributes โดยใน AWS มักใช้ tags ของตัวตนและทรัพยากร",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only the physical server's manufacturer",
+        "correct": false
+      },
+      {
+        "text": "Only a user's preferred programming language",
+        "correct": false
+      },
+      {
+        "text": "Attributes such as identity and resource tags",
+        "correct": true
+      },
+      {
+        "text": "The alphabetic order of account names",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is AWS IAM Identity Center used for?",
+    "info": "IAM Identity Center ช่วยจัดการสิทธิ์ workforce แบบรวมศูนย์ข้าม AWS accounts และแอปที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Central workforce access to AWS accounts and applications",
+        "correct": true
+      },
+      {
+        "text": "Replicating database tables",
+        "correct": false
+      },
+      {
+        "text": "Serving public image files",
+        "correct": false
+      },
+      {
+        "text": "Inspecting IP packets inside a subnet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "For an IAM user in a member account, the identity policy allows ec2:DescribeInstances, s3:GetObject, and sqs:SendMessage. Its boundary permits only S3 and SQS, while an applicable SCP explicitly denies sqs:SendMessage. Assuming other SCPs permit these services and no other grants exist, which action remains allowed?",
+    "info": "EC2 อยู่นอก boundary และ SQS ถูก explicit deny จาก SCP จึงเหลือ s3:GetObject ที่ผ่านทั้ง identity policy, boundary และ SCP",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "All three actions",
+        "correct": false
+      },
+      {
+        "text": "s3:GetObject only",
+        "correct": true
+      },
+      {
+        "text": "sqs:SendMessage only",
+        "correct": false
+      },
+      {
+        "text": "ec2:DescribeInstances only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is identity federation?",
+    "info": "Federation เป็นระบบความเชื่อถือระหว่าง identity provider กับ service provider เพื่อยืนยันตัวตนและส่งข้อมูลสำหรับอนุญาตการเข้าถึง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Copying every IAM password into an application",
+        "correct": false
+      },
+      {
+        "text": "A trust arrangement allowing externally authenticated identities to access a service",
+        "correct": true
+      },
+      {
+        "text": "Combining several Availability Zones into one",
+        "correct": false
+      },
+      {
+        "text": "Replacing all access policies with public access",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An IAM user's identity policy allows iam:CreateUser, but its permissions boundary allows only S3 and EC2. With no resource-based grants or other policies, can it create a user?",
+    "info": "สิทธิ์จาก identity policy ต้องอยู่ภายใน permissions boundary ด้วย จึงใช้ iam:CreateUser ไม่ได้ในกรณีนี้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, identity policies always bypass boundaries",
+        "correct": false
+      },
+      {
+        "text": "No, the action is outside the permissions boundary",
+        "correct": true
+      },
+      {
+        "text": "Yes, if the new user is in the same account",
+        "correct": false
+      },
+      {
+        "text": "No, because EC2 permissions prevent every IAM action explicitly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an AWS tag?",
+    "info": "Tag เป็น metadata แบบ key-value pair ใช้เพื่อจัดหมวดหมู่ ค่าใช้จ่าย หรือ access control",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A temporary password",
+        "correct": false
+      },
+      {
+        "text": "A physical disk identifier only",
+        "correct": false
+      },
+      {
+        "text": "A key-value metadata pair",
+        "correct": true
+      },
+      {
+        "text": "A network packet payload",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does AWS Key Management Service (KMS) help manage?",
+    "info": "AWS KMS ใช้สร้าง จัดการ และควบคุมการใช้งาน cryptographic keys",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Cryptographic keys and their usage permissions",
+        "correct": true
+      },
+      {
+        "text": "EC2 Auto Scaling group sizes",
+        "correct": false
+      },
+      {
+        "text": "Public DNS hosted zones",
+        "correct": false
+      },
+      {
+        "text": "Database schemas",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an organizational unit (OU) in AWS Organizations?",
+    "info": "OU ใช้จัดกลุ่ม accounts หรือ OUs ภายในโครงสร้างองค์กรเพื่อจัดการนโยบาย",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A Cognito authentication token",
+        "correct": false
+      },
+      {
+        "text": "An S3 object version",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance type",
+        "correct": false
+      },
+      {
+        "text": "A grouping in the organization's account hierarchy",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a primary function of a Cognito identity pool?",
+    "info": "Identity pool ใช้แลกตัวตนหรือ tokens ที่รองรับเป็น temporary AWS credentials ตาม roles ที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Register internet domain names",
+        "correct": false
+      },
+      {
+        "text": "Provide temporary AWS credentials for supported identities",
+        "correct": true
+      },
+      {
+        "text": "Store all users' files as database rows",
+        "correct": false
+      },
+      {
+        "text": "Replace VPC security groups",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is envelope encryption?",
+    "info": "Envelope encryption ใช้ data key เข้ารหัสข้อมูล แล้วใช้ key อีกตัวเข้ารหัส data key เพื่อปกป้อง key ที่จัดเก็บร่วมกับ ciphertext",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Encrypt data with a data key, then encrypt that data key with another key",
+        "correct": true
+      },
+      {
+        "text": "Encrypt only the file name while leaving its contents readable",
+        "correct": false
+      },
+      {
+        "text": "Store the plaintext data key in a public bucket",
+        "correct": false
+      },
+      {
+        "text": "Replace encryption with an IAM group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A group policy allows access to Kinesis, but a user's attached policy explicitly denies the same action. What is the result?",
+    "info": "Explicit deny มีผลเหนือ allow แม้ allow จะได้รับจาก group policy",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The action is allowed only from the console",
+        "correct": false
+      },
+      {
+        "text": "The group policy always overrides the user policy",
+        "correct": false
+      },
+      {
+        "text": "The action is denied",
+        "correct": true
+      },
+      {
+        "text": "The user automatically leaves the group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Employees already have corporate identities and need centralized access to several AWS accounts. Which service should be evaluated?",
+    "info": "IAM Identity Center รองรับการเชื่อม identities และกำหนดสิทธิ์ข้าม accounts จากส่วนกลาง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "AWS IAM Identity Center",
+        "correct": true
+      },
+      {
+        "text": "Amazon S3 Transfer Acceleration",
+        "correct": false
+      },
+      {
+        "text": "AWS Network Firewall",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why might a company use separate AWS accounts for production and development?",
+    "info": "การแยก accounts สร้างขอบเขต isolation และช่วยจัดการ governance กับค่าใช้จ่ายตาม environment",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "To avoid needing any backups",
+        "correct": false
+      },
+      {
+        "text": "To eliminate all IAM configuration",
+        "correct": false
+      },
+      {
+        "text": "To make every resource public",
+        "correct": false
+      },
+      {
+        "text": "To establish isolation and separate governance and cost tracking",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company wants to discover sensitive information such as personal data in S3 objects. Which service fits?",
+    "info": "Amazon Macie วิเคราะห์ข้อมูลใน S3 ด้วย machine learning และ pattern matching เพื่อค้นหาข้อมูลละเอียดอ่อน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Transit Gateway",
+        "correct": false
+      },
+      {
+        "text": "EC2 Auto Scaling",
+        "correct": false
+      },
+      {
+        "text": "Amazon Macie",
+        "correct": true
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A web application must allow or block HTTP requests using rules for headers, IP addresses, and other request properties. Which service fits?",
+    "info": "AWS WAF ตรวจสอบ HTTP/HTTPS requests และใช้ rules ควบคุม traffic ของเว็บแอป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS WAF",
+        "correct": true
+      },
+      {
+        "text": "AWS Schema Conversion Tool",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53 as a packet firewall",
+        "correct": false
+      },
+      {
+        "text": "Amazon EBS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company requires its application to encrypt a document before AWS receives it. Which approach meets this requirement?",
+    "info": "Client-side encryption เข้ารหัสที่ฝั่งแอปก่อนส่งข้อมูลไป AWS ส่วน server-side encryption เกิดที่บริการปลายทาง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Versioning alone",
+        "correct": false
+      },
+      {
+        "text": "Client-side encryption",
+        "correct": true
+      },
+      {
+        "text": "An SCP denying account deletion",
+        "correct": false
+      },
+      {
+        "text": "Server-side encryption alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "New project resources are created frequently. Permissions should follow matching Project tags instead of listing every resource. Which strategy fits?",
+    "info": "ABAC ใช้เงื่อนไข tags ลดความจำเป็นในการแก้ policy ทุกครั้งที่เพิ่มทรัพยากร โดยต้องควบคุมสิทธิ์แก้ tags ด้วย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A shared root user",
+        "correct": false
+      },
+      {
+        "text": "Access controlled only by resource creation dates",
+        "correct": false
+      },
+      {
+        "text": "A separate unrestricted administrator policy for every resource",
+        "correct": false
+      },
+      {
+        "text": "Attribute-based access control",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which service provides managed authentication and user management for web and mobile applications?",
+    "info": "Amazon Cognito จัดการ authentication, federation และผู้ใช้แอปเว็บหรือมือถือ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "AWS Direct Connect",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": true
+      },
+      {
+        "text": "Amazon Redshift",
+        "correct": false
+      },
+      {
+        "text": "Amazon EBS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes symmetric encryption?",
+    "info": "Symmetric encryption ใช้ key เดียวกันในการเข้ารหัสและถอดรหัส และเหมาะกับข้อมูลจำนวนมาก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A public key always decrypts data encrypted with a private key",
+        "correct": false
+      },
+      {
+        "text": "No key is needed to decrypt the data",
+        "correct": false
+      },
+      {
+        "text": "Every file must be stored in a different Region",
+        "correct": false
+      },
+      {
+        "text": "The same key encrypts and decrypts the data",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company wants guided setup and governance of a secure multi-account AWS environment. Which service fits?",
+    "info": "AWS Control Tower ช่วยตั้งค่าและกำกับดูแล multi-account environment ตามแนวปฏิบัติ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "EC2 Image Builder",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS Control Tower",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is AWS Organizations used for?",
+    "info": "AWS Organizations จัดการหลาย accounts แบบรวมศูนย์และรองรับ consolidated billing กับ policy controls",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Centrally manage multiple AWS accounts",
+        "correct": true
+      },
+      {
+        "text": "Increase EC2 CPU clock speed",
+        "correct": false
+      },
+      {
+        "text": "Run SQL queries on a single database",
+        "correct": false
+      },
+      {
+        "text": "Host a static website",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which service helps audit AWS KMS key usage through recorded API events?",
+    "info": "CloudTrail บันทึกกิจกรรม API ที่เกี่ยวข้องกับ KMS เพื่อช่วยตรวจสอบการใช้งาน keys",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon CloudFront",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "AWS CloudTrail",
+        "correct": true
+      },
+      {
+        "text": "AWS Direct Connect",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company wants automated scanning for software vulnerabilities in supported EC2, container image, and Lambda workloads. Which service fits?",
+    "info": "Amazon Inspector ใช้ค้นหา software vulnerabilities และความเสี่ยงที่รองรับใน workloads ของ AWS",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Inspector",
+        "correct": true
+      },
+      {
+        "text": "Amazon Macie",
+        "correct": false
+      },
+      {
+        "text": "AWS IAM Identity Center",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3 Inventory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How do IAM groups simplify permission management?",
+    "info": "ผู้ใช้ IAM ในกลุ่มได้รับสิทธิ์จาก policies ของกลุ่ม ทำให้จัดการตามหน้าที่ร่วมกันได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "They replace every IAM role",
+        "correct": false
+      },
+      {
+        "text": "They make every member a root user",
+        "correct": false
+      },
+      {
+        "text": "They merge all AWS accounts into one account",
+        "correct": false
+      },
+      {
+        "text": "They let multiple IAM users inherit common policy permissions",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An SCP permits a service, but an IAM user has no policy granting the required action. Does the SCP grant access?",
+    "info": "SCP เป็น guardrail ไม่ใช่ grant ผู้ใช้ยังต้องมี IAM permission ที่อนุญาตคำขอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No, an appropriate permission grant is still required",
+        "correct": true
+      },
+      {
+        "text": "No, SCPs apply only to S3 objects",
+        "correct": false
+      },
+      {
+        "text": "Yes, an SCP grants every action it permits",
+        "correct": false
+      },
+      {
+        "text": "Yes, but only to users without MFA",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of a service control policy (SCP)?",
+    "info": "SCP กำหนดขอบเขตสิทธิ์สูงสุดของตัวตนใน member accounts ที่ได้รับผล ไม่ได้ให้สิทธิ์ใช้งานด้วยตัวมันเอง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Set permission guardrails for affected member accounts",
+        "correct": true
+      },
+      {
+        "text": "Grant application permissions by itself",
+        "correct": false
+      },
+      {
+        "text": "Encrypt every network packet automatically",
+        "correct": false
+      },
+      {
+        "text": "Store a user's MFA codes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A mobile app authenticates users with a Cognito user pool and needs them to access permitted AWS resources directly. What is commonly added?",
+    "info": "User pool ออก tokens ส่วน identity pool ใช้ tokens ที่รองรับเพื่อให้ temporary AWS credentials ตาม IAM roles",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Direct Connect private virtual interface on each phone",
+        "correct": false
+      },
+      {
+        "text": "A root access key embedded in the mobile app",
+        "correct": false
+      },
+      {
+        "text": "A public bucket with unrestricted writes",
+        "correct": false
+      },
+      {
+        "text": "A Cognito identity pool that exchanges supported tokens for temporary AWS credentials",
+        "correct": true
+      }
+    ]
+  }
+]

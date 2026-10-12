@@ -1,0 +1,692 @@
+[
+  {
+    "text": "Traffic varies unpredictably, and the group should react to measured CPU utilization. Which scaling mechanism fits?",
+    "info": "Dynamic scaling ใช้ metrics เพื่อปรับความจุตามความต้องการที่สังเกตได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only a larger maximum with no scaling policy",
+        "correct": false
+      },
+      {
+        "text": "Dynamic scaling policies",
+        "correct": true
+      },
+      {
+        "text": "Changing instance names when CPU rises",
+        "correct": false
+      },
+      {
+        "text": "Only a fixed annual schedule",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A web application uses an Auto Scaling group with minimum 2, desired 2, and maximum 4 instances. Peak load needs 6 instances, and its single-AZ RDS DB must gain automatic failover. Which plan addresses both limitations?",
+    "info": "ต้องเพิ่ม maximum capacity ให้รองรับโหลดหลังวัดความต้องการ พร้อม scaling policy และเปลี่ยน RDS เป็น Multi-AZ เพื่อ automatic failover การเพิ่ม read replica อย่างเดียวไม่แก้ทั้งสองข้อ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Add Route 53 geolocation records without changing compute or database capacity",
+        "correct": false
+      },
+      {
+        "text": "Set desired capacity to 6 while keeping maximum 4, and add only a reporting read replica",
+        "correct": false
+      },
+      {
+        "text": "Raise the group's maximum to a validated sufficient limit, configure scaling, and use an RDS Multi-AZ deployment",
+        "correct": true
+      },
+      {
+        "text": "Change only the minimum to 1 and keep the single-AZ database",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DNS design has primary and secondary endpoints and should use the secondary when the primary is unhealthy. Which routing policy fits?",
+    "info": "Failover routing ใช้ primary กับ secondary ร่วมกับ health checking เพื่อเปลี่ยน DNS answers เมื่อปลายทางหลักไม่พร้อม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "IP-based routing only",
+        "correct": false
+      },
+      {
+        "text": "Simple routing without health-based failover",
+        "correct": false
+      },
+      {
+        "text": "Failover routing",
+        "correct": true
+      },
+      {
+        "text": "Geolocation routing only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an EC2 Auto Scaling group manage?",
+    "info": "Auto Scaling group เป็นกลุ่ม EC2 instances ที่จัดการจำนวนและการทดแทน instances ตามการตั้งค่า",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A directory of application users",
+        "correct": false
+      },
+      {
+        "text": "A logical collection of EC2 instances",
+        "correct": true
+      },
+      {
+        "text": "A group of database SQL statements",
+        "correct": false
+      },
+      {
+        "text": "A collection of S3 object versions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the main role of Elastic Load Balancing?",
+    "info": "ELB กระจาย traffic ไปหลาย targets และใช้ health checks เพื่อเลือก targets ที่พร้อมใช้งาน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Distribute traffic across multiple targets",
+        "correct": true
+      },
+      {
+        "text": "Provide shared file storage",
+        "correct": false
+      },
+      {
+        "text": "Convert Oracle schemas to PostgreSQL",
+        "correct": false
+      },
+      {
+        "text": "Store permanent IAM access keys",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Traffic must be distributed through a fleet of virtual network security appliances. Which load balancer is designed for this use?",
+    "info": "Gateway Load Balancer ใช้กระจาย traffic ไป network appliances เช่น firewalls เพื่อการตรวจสอบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Gateway Load Balancer",
+        "correct": true
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "An S3 gateway endpoint",
+        "correct": false
+      },
+      {
+        "text": "Application Load Balancer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application has a known daily traffic peak at 9 AM. Which scaling mechanism is the most direct fit?",
+    "info": "Scheduled scaling เหมาะกับความต้องการที่รู้วันและเวลาล่วงหน้า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disabling monitoring during the peak",
+        "correct": false
+      },
+      {
+        "text": "Random capacity changes",
+        "correct": false
+      },
+      {
+        "text": "Manual instance termination after every request",
+        "correct": false
+      },
+      {
+        "text": "Scheduled scaling actions",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which CloudWatch feature collects and stores application log records?",
+    "info": "CloudWatch Logs ใช้รับ เก็บ และวิเคราะห์ log records จากแหล่งข้อมูลที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "EC2 Image Builder",
+        "correct": false
+      },
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "CloudWatch Logs",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does a CloudWatch alarm do?",
+    "info": "Alarm ประเมิน metric เทียบกับเงื่อนไขและเปลี่ยนสถานะเพื่อใช้แจ้งเตือนหรือเรียก action ที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Grant administrator access to users",
+        "correct": false
+      },
+      {
+        "text": "Automatically rewrite application source code",
+        "correct": false
+      },
+      {
+        "text": "Evaluate metric conditions and trigger configured actions",
+        "correct": true
+      },
+      {
+        "text": "Replace every database backup",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application uses TCP or UDP and needs a load balancer with static IP options. Which type fits?",
+    "info": "Network Load Balancer ทำงานที่ transport layer รองรับ TCP/UDP และ static IP options",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Application Load Balancer",
+        "correct": false
+      },
+      {
+        "text": "Gateway Load Balancer used only for security appliances",
+        "correct": false
+      },
+      {
+        "text": "An internet gateway",
+        "correct": false
+      },
+      {
+        "text": "Network Load Balancer",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A website should serve localized endpoints according to the user's geographic location. Which Route 53 policy fits?",
+    "info": "Geolocation routing เลือกปลายทางตามตำแหน่งทางภูมิศาสตร์ของคำขอ DNS",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Simple routing",
+        "correct": false
+      },
+      {
+        "text": "Geolocation routing",
+        "correct": true
+      },
+      {
+        "text": "Failover routing",
+        "correct": false
+      },
+      {
+        "text": "Weighted routing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What type of service is Amazon Route 53?",
+    "info": "Route 53 เป็น DNS service ที่รองรับ domain registration, hosted zones, routing และ health checks",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A DNS service",
+        "correct": true
+      },
+      {
+        "text": "A database connection proxy",
+        "correct": false
+      },
+      {
+        "text": "A container image registry",
+        "correct": false
+      },
+      {
+        "text": "A block storage service",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An order-processing system uses SQS and one EC2 worker. Queue backlog grows during peaks, and the worker is a single point of failure. Jobs are independent and workers safely handle repeated deliveries. Which change best improves capacity and availability?",
+    "info": "เมื่อ jobs เป็นอิสระและรองรับการส่งซ้ำได้ สามารถเพิ่ม workers หลาย AZ และ scale จาก backlog ต่อ worker โดยตั้ง launch template ให้สร้าง workers ซ้ำได้",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Increase only the SQS queue name length",
+        "correct": false
+      },
+      {
+        "text": "Use Route 53 weighted routing between two DNS names that both point to the same worker",
+        "correct": false
+      },
+      {
+        "text": "Use a multi-AZ Auto Scaling group of workers and scale using an appropriate queue backlog metric",
+        "correct": true
+      },
+      {
+        "text": "Add an ALB in front of the same single worker without changing worker capacity",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an Auto Scaling group's minimum capacity define?",
+    "info": "Minimum capacity กำหนดจำนวน instances ต่ำสุดที่กลุ่มรักษาไว้ตามการจัดการปกติ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The largest allowed instance size",
+        "correct": false
+      },
+      {
+        "text": "The lower bound on the group's instance count",
+        "correct": true
+      },
+      {
+        "text": "The number of database engines in the application",
+        "correct": false
+      },
+      {
+        "text": "The minimum number of AWS accounts",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants DNS responses to divide traffic between two endpoints according to assigned proportions. Which Route 53 policy fits?",
+    "info": "Weighted routing กำหนดน้ำหนักให้ records เพื่อแบ่งสัดส่วน DNS responses ไม่ใช่รับประกันจำนวน HTTP requests แบบเป๊ะ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Failover routing",
+        "correct": false
+      },
+      {
+        "text": "Geolocation routing",
+        "correct": false
+      },
+      {
+        "text": "Simple routing with no weighting",
+        "correct": false
+      },
+      {
+        "text": "Weighted routing",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Traffic follows recurring patterns, and the team wants capacity added before expected demand. Which mechanism should be considered?",
+    "info": "Predictive scaling ใช้รูปแบบการใช้งานย้อนหลังเพื่อคาดการณ์และเตรียม capacity ล่วงหน้า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Versioning",
+        "correct": false
+      },
+      {
+        "text": "Predictive scaling",
+        "correct": true
+      },
+      {
+        "text": "A database manual snapshot",
+        "correct": false
+      },
+      {
+        "text": "A network ACL deny rule",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is vertical scaling?",
+    "info": "Vertical scaling เปลี่ยนขนาดหรือความสามารถของทรัพยากรเดิม เช่น instance ที่มี CPU หรือ RAM มากขึ้น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Adding more DNS record names",
+        "correct": false
+      },
+      {
+        "text": "Adding more IAM groups",
+        "correct": false
+      },
+      {
+        "text": "Replacing a resource with a different-sized resource",
+        "correct": true
+      },
+      {
+        "text": "Adding more instances of the same size",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DynamoDB table uses provisioned capacity and must adjust throughput as demand changes. Which mechanism fits?",
+    "info": "DynamoDB auto scaling ใช้ Application Auto Scaling และ CloudWatch ปรับ provisioned capacity ตามการใช้งาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "DynamoDB auto scaling through Application Auto Scaling",
+        "correct": true
+      },
+      {
+        "text": "A Route 53 CNAME for each partition",
+        "correct": false
+      },
+      {
+        "text": "An RDS standby instance",
+        "correct": false
+      },
+      {
+        "text": "EC2 launch templates for every item",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon EventBridge used for?",
+    "info": "EventBridge รับและ route events ไปยัง targets โดยใช้ event buses, rules หรือ pipes ที่เหมาะสม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Routing events to configured targets",
+        "correct": true
+      },
+      {
+        "text": "Creating relational database tables",
+        "correct": false
+      },
+      {
+        "text": "Attaching EBS volumes to instances",
+        "correct": false
+      },
+      {
+        "text": "Providing a Windows SMB file share",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A CloudWatch alarm should notify administrators by email through topic subscriptions. Which service should receive the alarm action?",
+    "info": "Amazon SNS topics ใช้ส่ง notifications ไป subscribers เช่น email ตามการตั้งค่าการสมัคร",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon SNS",
+        "correct": true
+      },
+      {
+        "text": "AWS Direct Connect",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a primary purpose of Amazon CloudWatch?",
+    "info": "CloudWatch ใช้รวบรวม metrics และ logs เพื่อติดตามการใช้งานและสุขภาพของ workload",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Register internet domains",
+        "correct": false
+      },
+      {
+        "text": "Monitor resources using metrics and logs",
+        "correct": true
+      },
+      {
+        "text": "Manage physical AWS data center access",
+        "correct": false
+      },
+      {
+        "text": "Convert database schemas",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An Auto Scaling group must replace instances that fail application-level load balancer checks. Which setting is relevant?",
+    "info": "ต้องตั้งให้กลุ่มใช้ ELB health checks เพื่อให้ application-level unhealthy status มีผลต่อการทดแทน instance",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable all health checks on the load balancer",
+        "correct": false
+      },
+      {
+        "text": "Increase only the instance Name tag length",
+        "correct": false
+      },
+      {
+        "text": "Enable the appropriate ELB health checks for the Auto Scaling group",
+        "correct": true
+      },
+      {
+        "text": "Remove the launch template",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An RDS database is constrained by read traffic. Which option can distribute suitable read queries?",
+    "info": "Read replicas เพิ่ม capacity สำหรับงานอ่าน แต่ไม่ได้เพิ่ม writer throughput โดยอัตโนมัติ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Send reporting queries to a traditional Multi-AZ standby",
+        "correct": false
+      },
+      {
+        "text": "Use an internet gateway as a query router",
+        "correct": false
+      },
+      {
+        "text": "Increase the number of IAM groups",
+        "correct": false
+      },
+      {
+        "text": "Add read replicas and route suitable reads to them",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which action demonstrates horizontal scaling of compute resources?",
+    "info": "Horizontal scaling เพิ่มหรือลดจำนวนทรัพยากร เช่น instances เพื่อรองรับโหลด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Changing the AWS account password",
+        "correct": false
+      },
+      {
+        "text": "Increasing RAM on one instance only",
+        "correct": false
+      },
+      {
+        "text": "Moving one server's files into a different folder",
+        "correct": false
+      },
+      {
+        "text": "Adding or removing resource instances",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a CloudWatch metric?",
+    "info": "Metric คือชุดค่าข้อมูลที่มีเวลา เช่น CPU utilization และสามารถระบุ dimensions เพื่อแยกข้อมูลตามทรัพยากร",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A time-stamped set of measurement data points",
+        "correct": true
+      },
+      {
+        "text": "A permanent IAM password",
+        "correct": false
+      },
+      {
+        "text": "A complete database backup",
+        "correct": false
+      },
+      {
+        "text": "A VPC subnet definition",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is elasticity in cloud infrastructure?",
+    "info": "Elasticity คือความสามารถในการขยายและลดทรัพยากรให้สอดคล้องกับความต้องการที่เปลี่ยนแปลง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Keeping resource capacity permanently fixed",
+        "correct": false
+      },
+      {
+        "text": "Expanding and contracting capacity as demand changes",
+        "correct": true
+      },
+      {
+        "text": "Moving every request to a different Region",
+        "correct": false
+      },
+      {
+        "text": "Retaining every deleted file forever",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an EC2 launch template specify?",
+    "info": "Launch template กำหนดการตั้งค่าที่ใช้เปิด instance เช่น AMI, instance type และ security groups",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The company's tax reporting format",
+        "correct": false
+      },
+      {
+        "text": "Only the application's monthly revenue",
+        "correct": false
+      },
+      {
+        "text": "A DNS domain's owner password",
+        "correct": false
+      },
+      {
+        "text": "Configuration used to launch instances, such as AMI and instance type",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A web application needs HTTP routing based on URL paths and host names. Which load balancer fits?",
+    "info": "Application Load Balancer ทำงานระดับ application layer และรองรับ host-based กับ path-based routing",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Network Load Balancer",
+        "correct": false
+      },
+      {
+        "text": "A NAT gateway",
+        "correct": false
+      },
+      {
+        "text": "Application Load Balancer",
+        "correct": true
+      },
+      {
+        "text": "Gateway Load Balancer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an Auto Scaling group's maximum capacity define?",
+    "info": "Maximum capacity จำกัดจำนวน instances สูงสุดที่กลุ่มสามารถขยายได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The upper bound on the group's instance count",
+        "correct": true
+      },
+      {
+        "text": "The largest permitted S3 object",
+        "correct": false
+      },
+      {
+        "text": "The maximum DNS name length",
+        "correct": false
+      },
+      {
+        "text": "The number of IAM roles per application request",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "One registered target fails its load balancer health check while other targets remain healthy. What should the load balancer do?",
+    "info": "เมื่อยังมี healthy targets อยู่ load balancer จะส่ง traffic ไปยัง targets ที่ผ่าน health checks",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Send all new traffic only to the failed target",
+        "correct": false
+      },
+      {
+        "text": "Route new traffic to the remaining healthy targets",
+        "correct": true
+      },
+      {
+        "text": "Delete every target immediately",
+        "correct": false
+      },
+      {
+        "text": "Disable DNS for the entire AWS account",
+        "correct": false
+      }
+    ]
+  }
+]

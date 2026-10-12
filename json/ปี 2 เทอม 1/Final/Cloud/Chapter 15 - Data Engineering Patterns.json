@@ -1,0 +1,1382 @@
+[
+  {
+    "text": "A pipeline must transform and aggregate raw gameplay logs before analysis. Which Glue component performs this work?",
+    "info": "Glue ETL jobs รันขั้นตอนแปลงและ aggregate ข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A crawler alone without a transformation job",
+        "correct": false
+      },
+      {
+        "text": "A Data Catalog entry alone",
+        "correct": false
+      },
+      {
+        "text": "An S3 bucket name alone",
+        "correct": false
+      },
+      {
+        "text": "A Glue ETL job",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does ELT stand for?",
+    "info": "ELT โหลดข้อมูลก่อนแล้วจึงแปลงในขั้นตอนถัดไป",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Encrypt, Lock, Transfer",
+        "correct": false
+      },
+      {
+        "text": "Extract, Load, Transform",
+        "correct": true
+      },
+      {
+        "text": "Evaluate, Launch, Test",
+        "correct": false
+      },
+      {
+        "text": "Export, List, Tag",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Weather sensors need immediate anomaly alerts and historical SQL analysis. Which pipeline combines both requirements?",
+    "info": "Kinesis กับ Flink รองรับ stream alerts ส่วน S3 และ Athena รองรับข้อมูลย้อนหลัง",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use only a monthly CSV export",
+        "correct": false
+      },
+      {
+        "text": "Use Kinesis Data Streams with Flink for live processing and S3 with Athena for history",
+        "correct": true
+      },
+      {
+        "text": "Use Route 53 as the sensor event log",
+        "correct": false
+      },
+      {
+        "text": "Use only QuickSight without ingestion or storage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A pipeline must remove sensitive identifiers before making data available to analysts. Where should this occur?",
+    "info": "ควรทำ PII detection และ remediation ใน transformation ก่อนเผยแพร่ข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "In a controlled transformation stage",
+        "correct": true
+      },
+      {
+        "text": "Only after exporting all raw data publicly",
+        "correct": false
+      },
+      {
+        "text": "Only by renaming the bucket",
+        "correct": false
+      },
+      {
+        "text": "Only in the dashboard title",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Connected cameras must send video streams for analytics and playback. Which ingestion service fits?",
+    "info": "Kinesis Video Streams ใช้รับและจัดการ video จาก devices",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Kinesis Video Streams",
+        "correct": true
+      },
+      {
+        "text": "Amazon SNS email notifications",
+        "correct": false
+      },
+      {
+        "text": "Kinesis Data Streams selected solely for its name",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A centralized data lake needs scalable object storage for raw and curated data. Which AWS service fits?",
+    "info": "S3 เป็น storage หลักที่เหมาะกับ data lake",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "AWS STS",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "In a streaming pipeline, what is the producer's role?",
+    "info": "Producer รวบรวมและส่ง records เข้าสู่ stream",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only create user passwords",
+        "correct": false
+      },
+      {
+        "text": "Send records into the stream",
+        "correct": true
+      },
+      {
+        "text": "Only delete warehouse schemas",
+        "correct": false
+      },
+      {
+        "text": "Only draw final dashboards",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A business analyst wants shareable dashboards with charts and graphs. Which service fits?",
+    "info": "QuickSight เป็น BI service สำหรับสร้าง dashboards",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon MQ",
+        "correct": false
+      },
+      {
+        "text": "Amazon QuickSight",
+        "correct": true
+      },
+      {
+        "text": "AWS KMS",
+        "correct": false
+      },
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A business wants efficient analytical queries over curated warehouse data. Which service fits?",
+    "info": "Redshift เป็น data warehouse สำหรับ OLAP",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon MQ",
+        "correct": false
+      },
+      {
+        "text": "AWS IAM Identity Center",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "Amazon Redshift",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Several custom consumers need to read and replay a retained event stream independently. Which service fits?",
+    "info": "Kinesis Data Streams รองรับหลาย consumers และ replay ภายใน retention",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Firehose as a replay log of already delivered data",
+        "correct": false
+      },
+      {
+        "text": "An SNS email subscription alone",
+        "correct": false
+      },
+      {
+        "text": "Amazon Kinesis Data Streams",
+        "correct": true
+      },
+      {
+        "text": "An S3 static website endpoint",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does schema-on-read differ from schema-on-write?",
+    "info": "Schema-on-read ตีความ structure ตอนอ่าน ส่วน schema-on-write กำหนดก่อนจัดเก็บ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The schema is applied when reading rather than enforced before loading",
+        "correct": true
+      },
+      {
+        "text": "It means data has no meaning",
+        "correct": false
+      },
+      {
+        "text": "It requires every file to be public",
+        "correct": false
+      },
+      {
+        "text": "It prevents any transformation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A project processes large datasets but cannot explain what decisions the output supports. Which V needs clarification?",
+    "info": "Value ต้องชัดว่าข้อมูลช่วยตอบปัญหาธุรกิจอย่างไร",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Value",
+        "correct": true
+      },
+      {
+        "text": "Variety",
+        "correct": false
+      },
+      {
+        "text": "Velocity",
+        "correct": false
+      },
+      {
+        "text": "Volume",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In a streaming pipeline, what is a consumer's role?",
+    "info": "Consumer อ่าน stream records เพื่อนำไปประมวลผลหรือส่งต่อ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only register the source's domain",
+        "correct": false
+      },
+      {
+        "text": "Only configure physical network cables",
+        "correct": false
+      },
+      {
+        "text": "Only define corporate email addresses",
+        "correct": false
+      },
+      {
+        "text": "Read and process stream records",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Analysts need access to raw inputs before deciding how to transform them. Which ingestion pattern is suitable?",
+    "info": "ELT โหลด raw data ก่อนและเปิดทางให้แปลงภายหลัง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "ELT",
+        "correct": true
+      },
+      {
+        "text": "Only physical file printing",
+        "correct": false
+      },
+      {
+        "text": "ETL that discards every raw field",
+        "correct": false
+      },
+      {
+        "text": "Only API authentication",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A pipeline converts CSV to Parquet. What is a likely analytics benefit?",
+    "info": "Columnar layout และการบีบอัดช่วยลดข้อมูลที่ต้องอ่านในงานที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Automatic correction of every wrong value",
+        "correct": false
+      },
+      {
+        "text": "More efficient column-oriented storage and reads",
+        "correct": true
+      },
+      {
+        "text": "Removal of all access-control needs",
+        "correct": false
+      },
+      {
+        "text": "Guaranteed zero query cost",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A streaming application must compute windowed aggregates and detect anomalies. Which managed processing service fits?",
+    "info": "Managed Service for Apache Flink ใช้ประมวลผล stream และคำนวณต่อเนื่อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      },
+      {
+        "text": "Amazon Managed Service for Apache Flink",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A data team wants schemas discovered from files in S3. Which Glue component fits?",
+    "info": "Glue crawler สำรวจข้อมูลและสร้าง metadata สำหรับ catalog",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An IAM group",
+        "correct": false
+      },
+      {
+        "text": "A NAT gateway",
+        "correct": false
+      },
+      {
+        "text": "A Cognito user pool",
+        "correct": false
+      },
+      {
+        "text": "A Glue crawler",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Analysts need to find and subscribe to third-party datasets. Which service fits?",
+    "info": "AWS Data Exchange รองรับการค้นหาและใช้ข้อมูลจากผู้ให้บริการภายนอก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "AWS IAM Identity Center",
+        "correct": false
+      },
+      {
+        "text": "AWS CloudFormation",
+        "correct": false
+      },
+      {
+        "text": "AWS Data Exchange",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A pipeline receives more data and must react faster than before. Which two Vs most directly shape throughput needs?",
+    "info": "Volume กับ velocity ร่วมกันกำหนดความต้องการ capacity และ throughput",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Volume and velocity",
+        "correct": true
+      },
+      {
+        "text": "Variety and password length",
+        "correct": false
+      },
+      {
+        "text": "Value and logo design",
+        "correct": false
+      },
+      {
+        "text": "Veracity and domain age",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A dataset contains inaccurate timestamps and duplicated records. Which V is most directly affected?",
+    "info": "ข้อผิดพลาดและ duplicates ลด veracity หรือความน่าเชื่อถือของข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Velocity alone",
+        "correct": false
+      },
+      {
+        "text": "Veracity",
+        "correct": true
+      },
+      {
+        "text": "Variety alone",
+        "correct": false
+      },
+      {
+        "text": "Volume alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A pipeline must preserve raw data for future analyses while making daily reporting efficient. Which storage and transformation plan fits?",
+    "info": "เก็บ raw ใน lake และสร้าง curated data ที่เหมาะกับ query โดยแยก permissions กับ retention",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Discard all raw inputs before validating transformations",
+        "correct": false
+      },
+      {
+        "text": "Store every dataset only in a dashboard's memory",
+        "correct": false
+      },
+      {
+        "text": "Retain governed raw data in S3 and build optimized curated datasets or warehouse tables",
+        "correct": true
+      },
+      {
+        "text": "Keep all data in one public CSV with no catalog",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A tabular analytics workload reads selected columns from large datasets. Which format can improve efficiency?",
+    "info": "Parquet เป็น columnar format เหมาะกับ analytics ที่เลือกอ่านบาง columns",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An unstructured audio file",
+        "correct": false
+      },
+      {
+        "text": "A single compressed image",
+        "correct": false
+      },
+      {
+        "text": "A screenshot of the table",
+        "correct": false
+      },
+      {
+        "text": "Parquet",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company ingests SaaS records, on-premises files, and continuous device events. Which approach best matches these sources?",
+    "info": "เลือก ingestion services ตาม source แล้วเชื่อมเข้าสู่การเก็บและวิเคราะห์ที่มี governance",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Force every source through a video-only ingestion service",
+        "correct": false
+      },
+      {
+        "text": "Use AppFlow, DataSync, and a suitable streaming service with unified storage governance",
+        "correct": true
+      },
+      {
+        "text": "Manually copy all data once per year regardless of timeliness",
+        "correct": false
+      },
+      {
+        "text": "Use only a DNS resolver for all ingestion",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A pipeline must copy files from an on-premises file share into AWS storage. Which service fits?",
+    "info": "DataSync ช่วยย้าย file และ object data พร้อมตรวจ integrity",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS DataSync",
+        "correct": true
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An existing Kafka-based application needs managed brokers, stream transformations, and searchable operational output. Which combination fits?",
+    "info": "MSK รองรับ Kafka, Flink ประมวลผล stream และ OpenSearch ใช้ค้นหา output",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "DataSync alone as a Kafka broker",
+        "correct": false
+      },
+      {
+        "text": "Redshift snapshots alone as a streaming processor",
+        "correct": false
+      },
+      {
+        "text": "Amazon MSK, Managed Service for Apache Flink, and OpenSearch",
+        "correct": true
+      },
+      {
+        "text": "Cognito, Route 53, and ECR",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which of the five Vs asks what business insights data can provide?",
+    "info": "Value เน้นคุณค่าที่ข้อมูลสร้างให้ธุรกิจ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Value",
+        "correct": true
+      },
+      {
+        "text": "Volume",
+        "correct": false
+      },
+      {
+        "text": "Velocity",
+        "correct": false
+      },
+      {
+        "text": "Variety",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Redshift users need to query suitable data in S3 without loading all of it into warehouse tables. Which feature fits?",
+    "info": "Redshift Spectrum ใช้ query ข้อมูลใน S3",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Direct Connect public VIF alone",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance store",
+        "correct": false
+      },
+      {
+        "text": "A Cognito identity pool",
+        "correct": false
+      },
+      {
+        "text": "Amazon Redshift Spectrum",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a data lake used for?",
+    "info": "Data lake เก็บข้อมูลหลากหลายทั้ง raw และ processed เพื่อใช้วิเคราะห์",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only storing container images",
+        "correct": false
+      },
+      {
+        "text": "Only hosting DNS records",
+        "correct": false
+      },
+      {
+        "text": "Storing raw and processed data from diverse sources",
+        "correct": true
+      },
+      {
+        "text": "Only issuing IAM credentials",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A lake needs centrally managed data access permissions. Which service should be considered?",
+    "info": "Lake Formation ช่วยจัดการ data lake และสิทธิ์การเข้าถึง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Transfer Acceleration",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "AWS Lake Formation",
+        "correct": true
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Raw customer data contains PII. Analysts need curated aggregates, but ingestion operators need raw access. Which design best supports both roles?",
+    "info": "แยก raw กับ curated พร้อม transformation ที่ลบ PII และสิทธิ์ตามบทบาท",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Separate raw and curated zones, remediate PII, and enforce distinct access policies",
+        "correct": true
+      },
+      {
+        "text": "Mask only the dashboard labels while retaining public raw files",
+        "correct": false
+      },
+      {
+        "text": "Disable catalog metadata to replace access controls",
+        "correct": false
+      },
+      {
+        "text": "Give all analysts unrestricted access to raw data",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which data characteristic concerns different sources and formats?",
+    "info": "Variety คือความหลากหลายของชนิดข้อมูลและแหล่งที่มา",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Volume",
+        "correct": false
+      },
+      {
+        "text": "Value",
+        "correct": false
+      },
+      {
+        "text": "Velocity",
+        "correct": false
+      },
+      {
+        "text": "Variety",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company needs managed execution of Hadoop and Spark applications with cluster control. Which service fits?",
+    "info": "Amazon EMR รองรับ big data frameworks พร้อมตัวเลือกดูแล cluster",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Secrets Manager",
+        "correct": false
+      },
+      {
+        "text": "Amazon API Gateway alone",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon EMR",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company wants managed transfer from supported SaaS applications into AWS. Which service fits?",
+    "info": "AppFlow มี integrations สำหรับถ่ายโอนข้อมูล SaaS กับ AWS",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Transit Gateway",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "AWS DataSync for file shares",
+        "correct": false
+      },
+      {
+        "text": "Amazon AppFlow",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team chooses Firehose to deliver records. What should it understand about latency?",
+    "info": "Firehose ใช้ buffering หรือ micro-batches จึงเป็น near-real-time ไม่ใช่ตอบทันทีทุก record",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "It cannot deliver to storage destinations",
+        "correct": false
+      },
+      {
+        "text": "Every record is delivered with zero delay",
+        "correct": false
+      },
+      {
+        "text": "Delivery can include buffering rather than being instantaneous",
+        "correct": true
+      },
+      {
+        "text": "It must wait one calendar year",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A pipeline's storage design is being chosen. Which factors should be considered together?",
+    "info": "ต้องดูรูปแบบข้อมูล access patterns, query needs, retention และต้นทุนร่วมกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Data shape, access patterns, query needs, retention, and cost",
+        "correct": true
+      },
+      {
+        "text": "Only the number of developer laptops",
+        "correct": false
+      },
+      {
+        "text": "Only the dataset name",
+        "correct": false
+      },
+      {
+        "text": "Only the dashboard color",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is AWS Glue primarily used for?",
+    "info": "Glue เป็น data integration service ที่ช่วยทำ ETL และจัดการข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Physical disk repair",
+        "correct": false
+      },
+      {
+        "text": "Dedicated network connections",
+        "correct": false
+      },
+      {
+        "text": "Data integration and transformation",
+        "correct": true
+      },
+      {
+        "text": "Mobile user sign-in",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Multiple analytics tools need shared table and schema metadata. Which component fits?",
+    "info": "Glue Data Catalog เป็นแหล่ง metadata สำหรับชุดข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Glue Data Catalog",
+        "correct": true
+      },
+      {
+        "text": "Only an EC2 Name tag",
+        "correct": false
+      },
+      {
+        "text": "Only the raw file payload",
+        "correct": false
+      },
+      {
+        "text": "Only a DNS hosted zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A MySQL source is copied to an RDS MySQL target without changing its format. Which ingestion pattern does this illustrate?",
+    "info": "Source และ target ใช้รูปแบบหรือ engine เดียวกันเป็น homogeneous ingestion",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Homogeneous ingestion",
+        "correct": true
+      },
+      {
+        "text": "Image transcoding",
+        "correct": false
+      },
+      {
+        "text": "Streaming video analytics",
+        "correct": false
+      },
+      {
+        "text": "Heterogeneous schema conversion by definition",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system must detect unusual sensor readings within moments of arrival. Which pattern fits?",
+    "info": "ข้อมูลที่ต้องตอบสนองรวดเร็วเหมาะกับ streaming",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A static website deployment",
+        "correct": false
+      },
+      {
+        "text": "A monthly batch only",
+        "correct": false
+      },
+      {
+        "text": "Streaming processing",
+        "correct": true
+      },
+      {
+        "text": "Annual manual exports only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the basic principle of parallel big data processing?",
+    "info": "แบ่ง dataset เป็นส่วนเพื่อประมวลผลพร้อมกันแล้วรวมผล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Copy every record into DNS",
+        "correct": false
+      },
+      {
+        "text": "Delete all intermediate results before processing",
+        "correct": false
+      },
+      {
+        "text": "Split work into parts, process concurrently, and aggregate results",
+        "correct": true
+      },
+      {
+        "text": "Require one serial task for all records",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DevOps team wants indexed application logs with search and real-time visualization. Which service fits?",
+    "info": "OpenSearch ใช้ index ค้นหา และวิเคราะห์ข้อมูล logs",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "Amazon OpenSearch Service",
+        "correct": true
+      },
+      {
+        "text": "Amazon FSx for Windows File Server",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A data team needs automated assessment of dataset quality. Which Glue feature fits?",
+    "info": "Glue Data Quality ช่วยประเมินคุณภาพตาม rules ที่กำหนด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An S3 lifecycle rule alone",
+        "correct": false
+      },
+      {
+        "text": "An EC2 placement group",
+        "correct": false
+      },
+      {
+        "text": "An API usage plan",
+        "correct": false
+      },
+      {
+        "text": "AWS Glue Data Quality",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does the ingestion layer of a data pipeline do?",
+    "info": "Ingestion นำข้อมูลจากแหล่งต้นทางเข้าสู่ pipeline",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only assigns user passwords",
+        "correct": false
+      },
+      {
+        "text": "Only deletes old reports",
+        "correct": false
+      },
+      {
+        "text": "Brings source data into the pipeline",
+        "correct": true
+      },
+      {
+        "text": "Only displays final dashboards",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which data characteristic concerns the amount of data?",
+    "info": "Volume คือปริมาณข้อมูลที่ต้องเก็บและประมวลผล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Volume",
+        "correct": true
+      },
+      {
+        "text": "Variety",
+        "correct": false
+      },
+      {
+        "text": "Veracity",
+        "correct": false
+      },
+      {
+        "text": "Value",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team already uses Apache Kafka tooling and wants a managed Kafka service. Which fits?",
+    "info": "Amazon MSK รองรับ Apache Kafka และลดงานดูแล infrastructure",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS Glue DataBrew",
+        "correct": false
+      },
+      {
+        "text": "Amazon MSK",
+        "correct": true
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants supported EMR analytics jobs without managing persistent clusters. Which option fits?",
+    "info": "EMR Serverless ลดงานจัดการ clusters สำหรับงานที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EMR Serverless",
+        "correct": true
+      },
+      {
+        "text": "A manually maintained always-on EC2 cluster",
+        "correct": false
+      },
+      {
+        "text": "An S3 bucket policy alone",
+        "correct": false
+      },
+      {
+        "text": "A Route 53 latency policy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An ETL role only needs to read raw data and write curated output. Which permission approach fits?",
+    "info": "Least privilege จำกัดสิทธิ์ตาม input และ output ที่ job ต้องใช้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use root credentials for every job",
+        "correct": false
+      },
+      {
+        "text": "Scope permissions to the required sources and destinations",
+        "correct": true
+      },
+      {
+        "text": "Make both datasets publicly writable",
+        "correct": false
+      },
+      {
+        "text": "Grant access to every bucket and account",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants managed near-real-time delivery of streaming records to a supported S3 destination with little custom code. Which service fits?",
+    "info": "Firehose จัดการ buffering และ delivery ไป destinations ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EKS alone",
+        "correct": false
+      },
+      {
+        "text": "Amazon Data Firehose",
+        "correct": true
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A data scientist needs one-off SQL queries over files stored in S3. Which service fits?",
+    "info": "Athena query ข้อมูลใน S3 ด้วย SQL โดยใช้ metadata ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EBS",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon Athena",
+        "correct": true
+      },
+      {
+        "text": "AWS Transit Gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which data characteristic concerns accuracy and trustworthiness?",
+    "info": "Veracity เกี่ยวกับความถูกต้องและความน่าเชื่อถือของข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Volume",
+        "correct": false
+      },
+      {
+        "text": "Veracity",
+        "correct": true
+      },
+      {
+        "text": "Velocity",
+        "correct": false
+      },
+      {
+        "text": "Variety",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Data must be cleaned before entering a reporting warehouse. Which pattern fits?",
+    "info": "ETL ทำ transformation ก่อน load ไป warehouse",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only object replication with no processing",
+        "correct": false
+      },
+      {
+        "text": "ETL",
+        "correct": true
+      },
+      {
+        "text": "Only DNS routing",
+        "correct": false
+      },
+      {
+        "text": "ELT with no pre-load transformation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does ETL stand for?",
+    "info": "ETL แปลงข้อมูลก่อนโหลดเข้าปลายทาง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Extract, Transform, Load",
+        "correct": true
+      },
+      {
+        "text": "Extract, Tag, Log",
+        "correct": false
+      },
+      {
+        "text": "Encrypt, Transfer, Lock",
+        "correct": false
+      },
+      {
+        "text": "Evaluate, Test, Launch",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An analyst wants the no-code data preparation tool discussed in the chapter. Which service fits?",
+    "info": "บทนี้ใช้ Glue DataBrew สำหรับเตรียมและทำความสะอาดข้อมูลแบบ no-code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Glue DataBrew",
+        "correct": true
+      },
+      {
+        "text": "AWS Direct Connect",
+        "correct": false
+      },
+      {
+        "text": "Amazon MQ",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Two consumers need independent replay, while a third path delivers records to S3 with managed buffering. Which design fits?",
+    "info": "ใช้ replayable stream เป็นแกนและเพิ่ม delivery path ไป S3 แทนพึ่ง Firehose เป็น history",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use Firehose alone and assume delivered records remain replayable there",
+        "correct": false
+      },
+      {
+        "text": "Use one competing-consumer SQS queue as if every consumer receives every record",
+        "correct": false
+      },
+      {
+        "text": "Use a retained Kinesis stream with independent consumers and an appropriate Firehose delivery path",
+        "correct": true
+      },
+      {
+        "text": "Write events only into temporary Lambda memory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Delivered streaming data must be replayed later by a new consumer. Which architectural property is needed?",
+    "info": "Replay ต้องมี retained records ที่ consumer อ่านย้อนหลังได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only a larger IAM group",
+        "correct": false
+      },
+      {
+        "text": "A retained stream or durable event history",
+        "correct": true
+      },
+      {
+        "text": "Only a longer DNS TTL",
+        "correct": false
+      },
+      {
+        "text": "Only a delivery service with no replayable history",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A business needs sales totals every morning from the previous day's records. Which processing pattern fits?",
+    "info": "รายงานตามรอบที่ไม่ต้องตอบทันทีเหมาะกับ batch",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "DNS failover processing",
+        "correct": false
+      },
+      {
+        "text": "Real-time video ingestion only",
+        "correct": false
+      },
+      {
+        "text": "Batch processing",
+        "correct": true
+      },
+      {
+        "text": "Immediate event processing required for every record",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What characterizes batch processing?",
+    "info": "Batch ประมวลผลข้อมูลเป็นชุดตามรอบหรือช่วงเวลาที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only streaming live video",
+        "correct": false
+      },
+      {
+        "text": "Processing collected data in groups",
+        "correct": true
+      },
+      {
+        "text": "Always processing every event immediately",
+        "correct": false
+      },
+      {
+        "text": "Never storing any input data",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Unused datasets and oversized processing resources are increasing pipeline costs. What should be done?",
+    "info": "ทบทวน retention และ right-size เพื่อลด storage กับ compute ที่ไม่จำเป็น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Duplicate every dataset into every Region",
+        "correct": false
+      },
+      {
+        "text": "Remove unnecessary data and right-size infrastructure",
+        "correct": true
+      },
+      {
+        "text": "Disable cost monitoring",
+        "correct": false
+      },
+      {
+        "text": "Retain every unused resource indefinitely",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which data characteristic concerns how quickly data arrives and must be acted on?",
+    "info": "Velocity คือความเร็วของข้อมูลและความเร่งด่วนในการประมวลผล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Volume",
+        "correct": false
+      },
+      {
+        "text": "Variety",
+        "correct": false
+      },
+      {
+        "text": "Veracity",
+        "correct": false
+      },
+      {
+        "text": "Velocity",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What characterizes streaming data?",
+    "info": "Streaming เป็นลำดับข้อมูลที่ส่งต่อเนื่องและเพิ่มเข้ามาทีละส่วน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only a static database schema",
+        "correct": false
+      },
+      {
+        "text": "A single complete dataset that never changes",
+        "correct": false
+      },
+      {
+        "text": "Only a monthly archived report",
+        "correct": false
+      },
+      {
+        "text": "A continuous incremental sequence of events",
+        "correct": true
+      }
+    ]
+  }
+]

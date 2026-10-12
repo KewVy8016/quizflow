@@ -1,0 +1,1382 @@
+[
+  {
+    "text": "Only a replicated database core runs in the recovery Region; web and app servers are created on failure. Which pattern is this?",
+    "info": "Pilot light คง core ไว้และเปิดส่วนอื่นเมื่อจำเป็น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Backup and restore with no running core",
+        "correct": false
+      },
+      {
+        "text": "Multi-site at full capacity",
+        "correct": false
+      },
+      {
+        "text": "Pilot light",
+        "correct": true
+      },
+      {
+        "text": "Warm standby with every tier already running",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does fault tolerance aim to do?",
+    "info": "Fault tolerance ลดการหยุดบริการเมื่อองค์ประกอบบางส่วนเสีย",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Eliminate the need for data recovery",
+        "correct": false
+      },
+      {
+        "text": "Stop all workloads after one failed request",
+        "correct": false
+      },
+      {
+        "text": "Keep a workload operating despite component failures",
+        "correct": true
+      },
+      {
+        "text": "Ensure every resource is manually rebuilt",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DNS design should direct users to a healthy secondary endpoint after primary failure. Which service helps?",
+    "info": "Route 53 รองรับ DNS failover ร่วมกับ health checks",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": true
+      },
+      {
+        "text": "AWS DMS",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Does a traditional RDS Multi-AZ deployment alone provide recovery from loss of its entire Region?",
+    "info": "Multi-AZ ป้องกัน failure ภายใน Region ไม่ใช่ทดแทน cross-Region DR",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, its standby always runs in another Region",
+        "correct": false
+      },
+      {
+        "text": "No, a separate regional recovery strategy is needed",
+        "correct": true
+      },
+      {
+        "text": "No, Multi-AZ cannot help with any availability issue",
+        "correct": false
+      },
+      {
+        "text": "Yes, Multi-AZ automatically means multi-Region",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A corrupt record is replicated to the secondary environment. What additional protection is valuable?",
+    "info": "Replication อาจส่งต่อ corruption จึงต้องมี backups หรือ PITR สำหรับย้อนก่อนความผิดพลาด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Replication alone with no retained history",
+        "correct": false
+      },
+      {
+        "text": "Recoverable backups or point-in-time recovery",
+        "correct": true
+      },
+      {
+        "text": "A longer DNS TTL alone",
+        "correct": false
+      },
+      {
+        "text": "A larger secondary instance name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which DR pattern keeps essential core resources running while other components are started during recovery?",
+    "info": "Pilot light คง core สำคัญไว้และเพิ่มส่วนอื่นเมื่อกู้คืน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "One local backup file only",
+        "correct": false
+      },
+      {
+        "text": "Multi-site at full capacity",
+        "correct": false
+      },
+      {
+        "text": "Backup and restore only",
+        "correct": false
+      },
+      {
+        "text": "Pilot light",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A DR plan relies on cross-Region object replication. Which measurement matters for RPO?",
+    "info": "Replication lag ทำให้ข้อมูลปลายทางอาจตามต้นทางไม่ทัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Replication lag",
+        "correct": true
+      },
+      {
+        "text": "Only the number of IAM groups",
+        "correct": false
+      },
+      {
+        "text": "Only the destination dashboard color",
+        "correct": false
+      },
+      {
+        "text": "Only the source bucket name length",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which DR pattern maintains a fully running duplicate environment in the chapter?",
+    "info": "Multi-site มีระบบรองรับ production load พร้อมใช้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Pilot light",
+        "correct": false
+      },
+      {
+        "text": "Multi-site",
+        "correct": true
+      },
+      {
+        "text": "A manual snapshot only",
+        "correct": false
+      },
+      {
+        "text": "Backup and restore",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which DR pattern primarily rebuilds infrastructure and restores data after a disaster?",
+    "info": "Backup and restore กู้ข้อมูลพร้อมสร้างระบบเมื่อเกิดเหตุ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An always-active duplicate at full capacity",
+        "correct": false
+      },
+      {
+        "text": "Warm standby",
+        "correct": false
+      },
+      {
+        "text": "Backup and restore",
+        "correct": true
+      },
+      {
+        "text": "Multi-site",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of disaster recovery planning?",
+    "info": "DR planning วางวิธีกู้ระบบและข้อมูลเมื่อเกิดเหตุร้ายแรง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Replace all security controls",
+        "correct": false
+      },
+      {
+        "text": "Guarantee disasters never happen",
+        "correct": false
+      },
+      {
+        "text": "Restore systems and data after a major disruption",
+        "correct": true
+      },
+      {
+        "text": "Remove every operating cost",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An RDS database needs snapshot-based recovery in a second Region. What should be prepared?",
+    "info": "สำเนา RDS snapshot ข้าม Region ช่วยให้ restore เมื่อ Region หลักใช้ไม่ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only a standby in the primary AZ",
+        "correct": false
+      },
+      {
+        "text": "Only a public database endpoint",
+        "correct": false
+      },
+      {
+        "text": "Only an extra database user",
+        "correct": false
+      },
+      {
+        "text": "A usable snapshot copy in the recovery Region",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A backup job reports success. What is still needed to establish recoverability?",
+    "info": "ต้องทดลอง restore และตรวจข้อมูล ไม่ใช้สถานะ backup สำเร็จเพียงอย่างเดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Restore and validate the backup",
+        "correct": true
+      },
+      {
+        "text": "Only change the backup name",
+        "correct": false
+      },
+      {
+        "text": "Only count IAM users",
+        "correct": false
+      },
+      {
+        "text": "Only check the file's color in the console",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An event-driven system needs the regional event failover feature described in the chapter. What should be evaluated?",
+    "info": "EventBridge global endpoints ช่วยวาง regional event failover ร่วมกับ health monitoring",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only an EC2 Name tag",
+        "correct": false
+      },
+      {
+        "text": "EventBridge global endpoints",
+        "correct": true
+      },
+      {
+        "text": "Only a local log file",
+        "correct": false
+      },
+      {
+        "text": "An ECR image tag",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workload must recover after its primary Region becomes unavailable. What is a key requirement?",
+    "info": "ต้องมีข้อมูลและทางกู้คืนที่ไม่พึ่ง Region หลักเพียงแห่งเดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Recoverable data and deployment capability outside the primary Region",
+        "correct": true
+      },
+      {
+        "text": "Only a different account alias",
+        "correct": false
+      },
+      {
+        "text": "Only a larger primary database",
+        "correct": false
+      },
+      {
+        "text": "Only more instances in the same AZ",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system creates at most 100 records per hour and can lose at most 800 records. What time-based RPO follows from these assumptions?",
+    "info": "800 หาร 100 ได้ 8 ชั่วโมงของข้อมูลที่ยอมเสียได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "100 hours",
+        "correct": false
+      },
+      {
+        "text": "8 minutes",
+        "correct": false
+      },
+      {
+        "text": "80 hours",
+        "correct": false
+      },
+      {
+        "text": "8 hours",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A workload must survive regional loss, accidental deletion, and unauthorized backup access. Which protection set best covers all three?",
+    "info": "ต้องมี regional recovery, retained recoverable history และ access controls สำหรับ backups กับ keys",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Only continuous replication with unrestricted delete permissions",
+        "correct": false
+      },
+      {
+        "text": "Only larger instances in the primary AZ",
+        "correct": false
+      },
+      {
+        "text": "Only a Multi-AZ primary database",
+        "correct": false
+      },
+      {
+        "text": "Cross-Region recoverable copies, retained backup history, and restricted recovery/key access",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team needs to recreate networks and application resources consistently during DR. Which approach fits?",
+    "info": "IaC ทำให้สร้าง infrastructure ซ้ำจากนิยามที่ตรวจทบทวนได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Keep no record of network configuration",
+        "correct": false
+      },
+      {
+        "text": "Use database replication to create subnets",
+        "correct": false
+      },
+      {
+        "text": "Use reviewed infrastructure templates",
+        "correct": true
+      },
+      {
+        "text": "Rely only on an administrator's memory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the main purpose of a backup?",
+    "info": "Backup เก็บสำเนาที่ใช้กู้คืนข้อมูลหรือระบบได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Replace all application monitoring",
+        "correct": false
+      },
+      {
+        "text": "Improve DNS spelling",
+        "correct": false
+      },
+      {
+        "text": "Grant public access to records",
+        "correct": false
+      },
+      {
+        "text": "Provide a recoverable copy of data or systems",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a disaster recovery Game Day exercise?",
+    "info": "Game Day ทดสอบสถานการณ์ failure และวิธีกู้คืนที่วางไว้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A way to skip backup verification",
+        "correct": false
+      },
+      {
+        "text": "A marketing event for cloud pricing",
+        "correct": false
+      },
+      {
+        "text": "A practical exercise of failure and recovery procedures",
+        "correct": true
+      },
+      {
+        "text": "A method for sharing root passwords",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Backups are fifteen minutes old, but restoring service takes six hours. Which objective is directly affected by the six-hour recovery?",
+    "info": "เวลาที่ใช้กู้บริการเป็นประเด็น RTO ส่วนอายุข้อมูลเป็น RPO",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "RPO only",
+        "correct": false
+      },
+      {
+        "text": "RTO",
+        "correct": true
+      },
+      {
+        "text": "Storage capacity only",
+        "correct": false
+      },
+      {
+        "text": "DNS TTL only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cross-Region read replica is part of a relational DR plan. What must recovery procedures address?",
+    "info": "ต้องวางขั้นตอน promotion, connectivity และเปลี่ยนปลายทางแอปให้ใช้งาน replica ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only increasing the DNS record count",
+        "correct": false
+      },
+      {
+        "text": "Promotion, application connection changes, and validation",
+        "correct": true
+      },
+      {
+        "text": "Only changing the replica's display name",
+        "correct": false
+      },
+      {
+        "text": "Only rotating unrelated IAM keys",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An outage starts at 16:00 and the RTO is two hours. By what time should service be restored?",
+    "info": "RTO สองชั่วโมงกำหนด deadline ที่ 18:00",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "20:00",
+        "correct": false
+      },
+      {
+        "text": "16:02",
+        "correct": false
+      },
+      {
+        "text": "The next day at 16:00",
+        "correct": false
+      },
+      {
+        "text": "18:00",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Custom AMIs are used for regional recovery. What preparation is needed?",
+    "info": "ต้องมี AMIs และ dependencies ที่ใช้ได้ใน Region กู้คืน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Store only screenshots of the source instance",
+        "correct": false
+      },
+      {
+        "text": "Make suitable AMI copies available in the recovery Region",
+        "correct": true
+      },
+      {
+        "text": "Delete all images after each deployment",
+        "correct": false
+      },
+      {
+        "text": "Assume one regional AMI ID works everywhere",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "After regional failover, new orders are written in the recovery Region. The original Region returns with older data. What is the safest failback approach?",
+    "info": "ต้อง reconcile ข้อมูลและกำหนด authoritative writes ก่อนเปลี่ยน traffic เพื่อไม่ให้ orders สูญหาย",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Immediately direct all users to the stale original database",
+        "correct": false
+      },
+      {
+        "text": "Reconcile and synchronize data, control writes, validate, then switch traffic deliberately",
+        "correct": true
+      },
+      {
+        "text": "Delete recovery orders to match the original state",
+        "correct": false
+      },
+      {
+        "text": "Run both databases independently with no conflict strategy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An EBS snapshot must support recovery in another Region. What should the plan include?",
+    "info": "ต้องมีสำเนา snapshot ใน Region ปลายทางที่เข้าถึงและใช้ restore ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Assume every snapshot already exists in all Regions",
+        "correct": false
+      },
+      {
+        "text": "Only rename the source volume",
+        "correct": false
+      },
+      {
+        "text": "Only enlarge the primary instance",
+        "correct": false
+      },
+      {
+        "text": "Copy the snapshot to the recovery Region",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does recovery time objective (RTO) measure?",
+    "info": "RTO คือระยะหยุดบริการสูงสุดที่ธุรกิจยอมรับหลังเกิดเหตุ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The number of AZs in a Region",
+        "correct": false
+      },
+      {
+        "text": "Maximum acceptable downtime after a disruption",
+        "correct": true
+      },
+      {
+        "text": "Maximum size of a database snapshot",
+        "correct": false
+      },
+      {
+        "text": "The age of an IAM user",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is failover?",
+    "info": "Failover เปลี่ยนไปใช้ทรัพยากรสำรองที่พร้อมเมื่อระบบหลักมีปัญหา",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Switching service to a healthy alternative",
+        "correct": true
+      },
+      {
+        "text": "Renaming the primary database",
+        "correct": false
+      },
+      {
+        "text": "Reducing the number of users",
+        "correct": false
+      },
+      {
+        "text": "Deleting all backups",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DR exercise takes longer than the stated RTO. What should the team do?",
+    "info": "ใช้ผลทดสอบหาคอขวดและปรับขั้นตอนหรือ capacity ให้ตรง objective",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Delete the RTO from the dashboard only",
+        "correct": false
+      },
+      {
+        "text": "Stop recording recovery times",
+        "correct": false
+      },
+      {
+        "text": "Declare success because documentation exists",
+        "correct": false
+      },
+      {
+        "text": "Identify bottlenecks and improve the recovery plan",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An S3 cross-Region replication design is being configured. Which prerequisite applies to the source and destination buckets?",
+    "info": "S3 replication ต้องเปิด versioning ใน buckets ที่เกี่ยวข้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable encryption on both buckets",
+        "correct": false
+      },
+      {
+        "text": "Enable versioning on both buckets",
+        "correct": true
+      },
+      {
+        "text": "Make both buckets publicly writable",
+        "correct": false
+      },
+      {
+        "text": "Use the same bucket name in both Regions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DR plan has replicated data and IaC, but deployment depends on keys, images, and secrets available only in the failed Region. What is missing?",
+    "info": "Dependencies ของ recovery ต้องพร้อมนอก Region หลัก ไม่ใช่มีเฉพาะข้อมูลกับ template",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Recovery-Region availability and permissions for all required dependencies",
+        "correct": true
+      },
+      {
+        "text": "Only additional primary-Region administrators",
+        "correct": false
+      },
+      {
+        "text": "Only more copies of the same unusable template",
+        "correct": false
+      },
+      {
+        "text": "Only a larger DNS TTL",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Normal administrative access may be unavailable during a disaster. What should be prepared?",
+    "info": "Emergency access ต้องใช้ได้จริงและมีการควบคุมตรวจสอบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No access procedure until the outage happens",
+        "correct": false
+      },
+      {
+        "text": "Permanent administrator access for all users",
+        "correct": false
+      },
+      {
+        "text": "A controlled and auditable emergency access process",
+        "correct": true
+      },
+      {
+        "text": "A public root password",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Inside one Region, traffic must move away from a failed application instance. Which feature helps?",
+    "info": "ELB health checks ใช้เลือก healthy targets สำหรับ traffic",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An RDS snapshot copy alone",
+        "correct": false
+      },
+      {
+        "text": "An S3 archive class alone",
+        "correct": false
+      },
+      {
+        "text": "An IAM account alias",
+        "correct": false
+      },
+      {
+        "text": "Load balancer health checks",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An organization needs managed copying of file data between on-premises storage and AWS. Which service fits?",
+    "info": "DataSync ช่วย copy file data ระหว่าง locations ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS DataSync",
+        "correct": true
+      },
+      {
+        "text": "AWS STS",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An EC2 volume must be recreated in a recovery AZ from a usable snapshot. What operation fits?",
+    "info": "สร้าง EBS volume จาก snapshot ใน AZ ที่ต้อง attach",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Convert the snapshot into an IAM policy",
+        "correct": false
+      },
+      {
+        "text": "Attach the original volume across AZs directly",
+        "correct": false
+      },
+      {
+        "text": "Create an EBS volume from the snapshot in the target AZ",
+        "correct": true
+      },
+      {
+        "text": "Use a DNS record as block storage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application uses DynamoDB and needs replicated tables in multiple Regions. Which feature is relevant?",
+    "info": "DynamoDB global tables ใช้ทำ multi-Region replication",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An RDS Proxy connection pool",
+        "correct": false
+      },
+      {
+        "text": "An EBS placement group",
+        "correct": false
+      },
+      {
+        "text": "DynamoDB global tables",
+        "correct": true
+      },
+      {
+        "text": "A Cognito user pool",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A warm standby can immediately serve 20% of production traffic, but full recovery is required within ten minutes. What must be demonstrated?",
+    "info": "การมี tiers ครบยังไม่รับประกัน RTO ต้องทดสอบ scaling, dependencies และ traffic switch จนรองรับ load เป้าหมาย",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Only that the standby costs less",
+        "correct": false
+      },
+      {
+        "text": "Scaling, dependency readiness, and traffic switching reach required service capacity within ten minutes",
+        "correct": true
+      },
+      {
+        "text": "Only that one standby web page returns HTTP 200",
+        "correct": false
+      },
+      {
+        "text": "Only that an AMI exists in the primary Region",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A low-priority application tolerates hours of downtime and prioritizes low standby cost. Which pattern should be considered?",
+    "info": "Backup and restore มี standby cost ต่ำกว่าแต่ต้องใช้เวลากู้ระบบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Multi-site at full capacity",
+        "correct": false
+      },
+      {
+        "text": "Maximum-capacity warm standby required for every workload",
+        "correct": false
+      },
+      {
+        "text": "Backup and restore",
+        "correct": true
+      },
+      {
+        "text": "An always-active full duplicate",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A standby environment must rapidly expand after a disaster. Which preparation is important?",
+    "info": "ต้องวาง service quotas และ capacity ให้การขยายทำได้จริง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Validate quotas and capacity needed for recovery",
+        "correct": true
+      },
+      {
+        "text": "Only rename the Auto Scaling group",
+        "correct": false
+      },
+      {
+        "text": "Only add more template comments",
+        "correct": false
+      },
+      {
+        "text": "Only shorten the database password",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An attacker could delete both production data and every backup using the same broad role. What should be improved?",
+    "info": "แยก permissions และปกป้อง backup ลดผลกระทบจากตัวตนเดียวถูกยึด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable all audit logging",
+        "correct": false
+      },
+      {
+        "text": "Make backups public",
+        "correct": false
+      },
+      {
+        "text": "Separate and restrict access to production and backup resources",
+        "correct": true
+      },
+      {
+        "text": "Give that role additional permissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DR runbook has commands but no owners or activation criteria. What should be added?",
+    "info": "Runbook ต้องระบุผู้รับผิดชอบ เงื่อนไขเริ่ม และลำดับงาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Roles, activation criteria, and recovery responsibilities",
+        "correct": true
+      },
+      {
+        "text": "Only more screenshots",
+        "correct": false
+      },
+      {
+        "text": "Only additional account aliases",
+        "correct": false
+      },
+      {
+        "text": "Only longer command names",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What should drive the choice among DR patterns?",
+    "info": "เลือกตามผลกระทบธุรกิจ RPO RTO และต้นทุน ไม่ใช้ pattern เดียวกับทุกระบบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the shortest pattern name",
+        "correct": false
+      },
+      {
+        "text": "Only the oldest deployment date",
+        "correct": false
+      },
+      {
+        "text": "Business impact, RPO, RTO, and cost",
+        "correct": true
+      },
+      {
+        "text": "Only the cloud logo",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Customers need timely information during an outage. Which plan should be established?",
+    "info": "ต้องมี customer communication plan พร้อมผู้รับผิดชอบและช่องทางแจ้ง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An outage communication plan",
+        "correct": true
+      },
+      {
+        "text": "Only a new subnet",
+        "correct": false
+      },
+      {
+        "text": "Only an AMI naming rule",
+        "correct": false
+      },
+      {
+        "text": "Only a database password policy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A backup-based plan misses its data-loss target. Which aspect should first be reviewed?",
+    "info": "ต้องดูความถี่ backup ความสำเร็จและจุดข้อมูลที่กู้ได้จริง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Backup frequency, success, and recoverable data age",
+        "correct": true
+      },
+      {
+        "text": "Only the number of dashboards",
+        "correct": false
+      },
+      {
+        "text": "Only the support contact's job title",
+        "correct": false
+      },
+      {
+        "text": "Only server naming conventions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A service is disrupted at 09:00 and restored at 10:30. What recovery duration should be compared with its RTO?",
+    "info": "ช่วง 09:00 ถึง 10:30 เท่ากับ 90 นาที",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "150 minutes",
+        "correct": false
+      },
+      {
+        "text": "30 minutes",
+        "correct": false
+      },
+      {
+        "text": "90 minutes",
+        "correct": true
+      },
+      {
+        "text": "9 hours",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DR template contains primary-Region-only resource identifiers. What should be changed?",
+    "info": "การกู้ข้าม Region ต้องใช้ IDs และ dependencies ที่เหมาะกับปลายทาง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Change only the template's title",
+        "correct": false
+      },
+      {
+        "text": "Use valid recovery-Region configuration and identifiers",
+        "correct": true
+      },
+      {
+        "text": "Remove every access policy",
+        "correct": false
+      },
+      {
+        "text": "Keep the identifiers unchanged without review",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does recovery point objective (RPO) measure?",
+    "info": "RPO คือการสูญเสียข้อมูลสูงสุดที่ยอมรับได้วัดเป็นเวลา",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The number of recovery servers",
+        "correct": false
+      },
+      {
+        "text": "The cost of a backup account",
+        "correct": false
+      },
+      {
+        "text": "Maximum allowed CPU usage",
+        "correct": false
+      },
+      {
+        "text": "Maximum acceptable data loss measured in time",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Successful backups occur every six hours. Can this alone guarantee an RPO of four hours?",
+    "info": "หากเหตุเกิดก่อน backup รอบใหม่ อาจเสียข้อมูลเกือบหกชั่วโมง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, backup frequency never affects data loss",
+        "correct": false
+      },
+      {
+        "text": "No, backups cannot support any RPO",
+        "correct": false
+      },
+      {
+        "text": "No, the backup gap can exceed the RPO",
+        "correct": true
+      },
+      {
+        "text": "Yes, if the backup file has a short name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which DR pattern keeps a complete but smaller environment running?",
+    "info": "Warm standby มีระบบครบแต่ capacity ต่ำกว่าระบบ production",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Pilot light with only a core database",
+        "correct": false
+      },
+      {
+        "text": "Cold offline storage only",
+        "correct": false
+      },
+      {
+        "text": "Backup and restore",
+        "correct": false
+      },
+      {
+        "text": "Warm standby",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An on-premises application uses an NFS file share and needs S3-backed hybrid storage. Which gateway fits?",
+    "info": "S3 File Gateway รองรับ file interface สำหรับข้อมูลที่เก็บใน S3",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Storage Gateway S3 File Gateway",
+        "correct": true
+      },
+      {
+        "text": "An internet gateway",
+        "correct": false
+      },
+      {
+        "text": "Tape Gateway used only as a virtual tape library",
+        "correct": false
+      },
+      {
+        "text": "A NAT gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A failover health check tests only a static home page while checkout is broken. What should be improved?",
+    "info": "Health check ควรสะท้อนความพร้อมของ business operation ที่สำคัญ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Check meaningful application health and dependencies",
+        "correct": true
+      },
+      {
+        "text": "Disable all health checks",
+        "correct": false
+      },
+      {
+        "text": "Assume a static page proves every dependency is healthy",
+        "correct": false
+      },
+      {
+        "text": "Only lengthen the home page title",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system generates at most 200 records per minute and accepts losing 1,000 records. RTO is 15 minutes. Which measured recovery design meets both objectives?",
+    "info": "RPO คำนวณได้ 5 นาที ดังนั้น replication lag 2 นาทีและ recovery 10 นาทีผ่านทั้ง RPO กับ RTO",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Backups every 5 minutes with 60-minute recovery",
+        "correct": false
+      },
+      {
+        "text": "Backups every 30 minutes with 10-minute recovery",
+        "correct": false
+      },
+      {
+        "text": "Pilot light with a 2-minute lag but 40-minute recovery",
+        "correct": false
+      },
+      {
+        "text": "Warm standby with a validated 2-minute replication lag and 10-minute recovery",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A system generates at most 50 records per minute and can lose at most 300 records. What is its calculated RPO?",
+    "info": "300 หาร 50 ได้ 6 นาที",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "15 minutes",
+        "correct": false
+      },
+      {
+        "text": "6 minutes",
+        "correct": true
+      },
+      {
+        "text": "300 minutes",
+        "correct": false
+      },
+      {
+        "text": "50 minutes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "All recovery tiers are running, but at reduced capacity. Which pattern is this?",
+    "info": "Warm standby มีระบบครบพร้อมขยาย capacity เมื่อ failover",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Backup and restore",
+        "correct": false
+      },
+      {
+        "text": "One offline backup tape",
+        "correct": false
+      },
+      {
+        "text": "Pilot light with only a core database",
+        "correct": false
+      },
+      {
+        "text": "Warm standby",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "RTO is 45 minutes. Sequential recovery requires 8 minutes for networking, 25 for data restore, and 15 for validation and traffic switch. What conclusion follows?",
+    "info": "เวลารวม 8+25+15 เท่ากับ 48 นาที เกิน RTO 45 นาที",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "The plan meets RTO because network work does not count",
+        "correct": false
+      },
+      {
+        "text": "The plan meets RTO because data restore is below 45 minutes",
+        "correct": false
+      },
+      {
+        "text": "The plan misses RTO by 3 minutes and needs improvement",
+        "correct": true
+      },
+      {
+        "text": "The RPO is automatically 48 minutes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a business continuity plan (BCP)?",
+    "info": "BCP รวมแผนป้องกันและกู้คืนเพื่อให้ธุรกิจดำเนินต่อได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only a list of EC2 prices",
+        "correct": false
+      },
+      {
+        "text": "Only a user password list",
+        "correct": false
+      },
+      {
+        "text": "Only an application style guide",
+        "correct": false
+      },
+      {
+        "text": "A plan for business prevention, continuity, and recovery",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A recovery plan must copy file data between supported file systems in different locations. Which tool from the chapter can help?",
+    "info": "DataSync ใช้ย้ายหรือ synchronize file data ตาม locations ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS DataSync",
+        "correct": true
+      },
+      {
+        "text": "API Gateway usage plans",
+        "correct": false
+      },
+      {
+        "text": "An IAM password policy",
+        "correct": false
+      },
+      {
+        "text": "SNS email alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "After operating in the recovery Region, the company plans to return to the original Region. What must be planned?",
+    "info": "Failback ต้องจัดการข้อมูลล่าสุดและการเปลี่ยน traffic กลับอย่างปลอดภัย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Deletion of all recovery data first",
+        "correct": false
+      },
+      {
+        "text": "Data synchronization and controlled failback",
+        "correct": true
+      },
+      {
+        "text": "Immediate return without checking data changes",
+        "correct": false
+      },
+      {
+        "text": "Only a new home page color",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workload needs the fastest failover and accepts the cost of a fully running duplicate. Which pattern fits?",
+    "info": "Multi-site เตรียมระบบเต็มพร้อมรับ load แต่มีต้นทุนสูงขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Multi-site",
+        "correct": true
+      },
+      {
+        "text": "An offline snapshot only",
+        "correct": false
+      },
+      {
+        "text": "Backup and restore",
+        "correct": false
+      },
+      {
+        "text": "Pilot light with no application tier running",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company wants to integrate existing tape backup workflows with cloud storage. Which gateway fits?",
+    "info": "Tape Gateway เชื่อม workflow สำรองแบบ tape กับ cloud storage",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Storage Gateway Tape Gateway",
+        "correct": true
+      },
+      {
+        "text": "A Route 53 resolver",
+        "correct": false
+      },
+      {
+        "text": "A CloudFront origin",
+        "correct": false
+      },
+      {
+        "text": "An SQS FIFO queue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Encrypted backups exist in a recovery Region, but the recovery role cannot use their key. What must be fixed?",
+    "info": "ต้องมีสิทธิ์ใช้ key และข้อมูลที่เข้ารหัสในขั้นตอน recovery",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the backup file name",
+        "correct": false
+      },
+      {
+        "text": "Only the instance's screen resolution",
+        "correct": false
+      },
+      {
+        "text": "Only the DNS record type",
+        "correct": false
+      },
+      {
+        "text": "Recovery access to the required encryption key",
+        "correct": true
+      }
+    ]
+  }
+]

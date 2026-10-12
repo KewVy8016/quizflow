@@ -1,0 +1,1382 @@
+[
+  {
+    "text": "A consumer receives a message and completes its work. What should it do next?",
+    "info": "ต้องสั่ง delete หลังประมวลผลสำเร็จเพื่อไม่ให้ข้อความกลับมาถูกอ่าน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Delete the entire queue",
+        "correct": false
+      },
+      {
+        "text": "Extend visibility forever",
+        "correct": false
+      },
+      {
+        "text": "Leave it in the queue indefinitely",
+        "correct": false
+      },
+      {
+        "text": "Delete the message using the received receipt handle",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A visibility timeout is much longer than task processing requires. What recovery trade-off matters?",
+    "info": "Timeout ยาวทำให้ต้องรอนานกว่าข้อความจาก worker ที่เสียจะพร้อมให้ลองใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Failed work may take longer to become available again",
+        "correct": true
+      },
+      {
+        "text": "Every successful task is deleted early",
+        "correct": false
+      },
+      {
+        "text": "Messages always become unordered within FIFO groups",
+        "correct": false
+      },
+      {
+        "text": "The producer loses permission to send",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A downstream outage creates a backlog. Recovery must not overload the database or duplicate business effects. Which plan fits?",
+    "info": "ต้อง scale workers แบบมีขอบเขต รองรับ idempotency และแยก failures เพื่อระบาย backlog อย่างปลอดภัย",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Delete the entire backlog to restore a low queue depth",
+        "correct": false
+      },
+      {
+        "text": "Drain with controlled worker concurrency, idempotency, and failure isolation",
+        "correct": true
+      },
+      {
+        "text": "Increase producer traffic during the outage",
+        "correct": false
+      },
+      {
+        "text": "Launch unlimited workers and disable duplicate checks",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Several events for one account must be processed in their intended order. Which queue type fits?",
+    "info": "FIFO รองรับการรักษาลำดับภายใน message group",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An SQS Standard queue relying on best-effort order",
+        "correct": false
+      },
+      {
+        "text": "An S3 bucket without application ordering",
+        "correct": false
+      },
+      {
+        "text": "An SNS standard topic alone",
+        "correct": false
+      },
+      {
+        "text": "An SQS FIFO queue",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon MQ?",
+    "info": "Amazon MQ ให้บริการ managed brokers สำหรับ ActiveMQ และ RabbitMQ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A managed message broker service",
+        "correct": true
+      },
+      {
+        "text": "A CDN service",
+        "correct": false
+      },
+      {
+        "text": "An S3 storage class",
+        "correct": false
+      },
+      {
+        "text": "An IAM directory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does moving to Amazon MQ reduce compared with operating a broker on EC2 yourself?",
+    "info": "Managed broker ลดงาน setup และ operation ของ messaging infrastructure",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Broker infrastructure management effort",
+        "correct": true
+      },
+      {
+        "text": "All application integration responsibility",
+        "correct": false
+      },
+      {
+        "text": "Every possible consumer failure",
+        "correct": false
+      },
+      {
+        "text": "All network permission configuration",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A FIFO queue handles independent customers. How can ordering be preserved per customer without forcing one global sequence?",
+    "info": "ใช้ message group แยกตาม customer ให้แต่ละกลุ่มเรียงลำดับของตน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Place every customer in one group regardless of need",
+        "correct": false
+      },
+      {
+        "text": "Use no ordering mechanism",
+        "correct": false
+      },
+      {
+        "text": "Use a message group for each customer",
+        "correct": true
+      },
+      {
+        "text": "Sort by worker instance name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "One event must notify billing, analytics, and email services. Which pattern fits?",
+    "info": "Pub/sub ส่ง event เดียวไปหลาย subscribers",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A single synchronous call to one service",
+        "correct": false
+      },
+      {
+        "text": "Publish/subscribe fanout",
+        "correct": true
+      },
+      {
+        "text": "A database snapshot without notifications",
+        "correct": false
+      },
+      {
+        "text": "One shared work queue with competing consumers only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An SNS publisher should avoid knowing every recipient's endpoint. What provides this decoupling?",
+    "info": "Publisher ส่งไป topic โดยให้ subscriptions จัดการผู้รับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Publish to a topic with independently managed subscriptions",
+        "correct": true
+      },
+      {
+        "text": "Require every subscriber to call the producer synchronously",
+        "correct": false
+      },
+      {
+        "text": "Hard-code every recipient in producer code",
+        "correct": false
+      },
+      {
+        "text": "Use one root password for all recipients",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A microservice should own one business function and scale separately. Which architectural direction supports this?",
+    "info": "แยก services ตาม business function ช่วยให้งานเฉพาะส่วน scale ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "One shared server IP embedded in all clients",
+        "correct": false
+      },
+      {
+        "text": "Specialized loosely coupled services",
+        "correct": true
+      },
+      {
+        "text": "One deployment requiring all teams to release together",
+        "correct": false
+      },
+      {
+        "text": "One inseparable process for all functions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An HTTP subscriber has transient failures. What SNS configuration is relevant?",
+    "info": "Delivery policy สำหรับ HTTP/HTTPS ควบคุม retry behavior ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The database's sort key",
+        "correct": false
+      },
+      {
+        "text": "The VPC's Name tag",
+        "correct": false
+      },
+      {
+        "text": "The publisher's AMI size",
+        "correct": false
+      },
+      {
+        "text": "Its delivery retry policy",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A producer must continue accepting work during a short worker outage. What provides temporal decoupling?",
+    "info": "Durable queue เก็บงานไว้จน consumers กลับมาประมวลผล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A durable message queue",
+        "correct": true
+      },
+      {
+        "text": "Only a longer server name",
+        "correct": false
+      },
+      {
+        "text": "Only a direct synchronous socket",
+        "correct": false
+      },
+      {
+        "text": "Only a static DNS record",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which metric is useful when scaling queue workers based on outstanding work?",
+    "info": "Backlog ต่อ worker สะท้อนภาระงานต่อ capacity มากกว่า CPU อย่างเดียวในบางงาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the number of topic tags",
+        "correct": false
+      },
+      {
+        "text": "Queue backlog per active worker",
+        "correct": true
+      },
+      {
+        "text": "Only instance uptime",
+        "correct": false
+      },
+      {
+        "text": "Only the queue description length",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A queue has poison messages, variable processing times, and normal traffic that must continue. Which combined configuration fits?",
+    "info": "DLQ แยกงานผิดปกติ ส่วน visibility extension ช่วยป้องกันงานยาวกลับมาเร็วเกินไป",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Stop all producers until every failed message succeeds",
+        "correct": false
+      },
+      {
+        "text": "Use unlimited retries and a zero visibility timeout",
+        "correct": false
+      },
+      {
+        "text": "Use a DLQ, suitable visibility settings, and visibility extensions for long jobs",
+        "correct": true
+      },
+      {
+        "text": "Purge the queue whenever one job fails",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What should a team do before redriving failed messages from a DLQ?",
+    "info": "ควรแก้สาเหตุและยืนยันว่าการลองใหม่ปลอดภัยก่อนส่งกลับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable message validation permanently",
+        "correct": false
+      },
+      {
+        "text": "Delete all application logs",
+        "correct": false
+      },
+      {
+        "text": "Investigate and fix the processing failure",
+        "correct": true
+      },
+      {
+        "text": "Send them back indefinitely without diagnosis",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A queue contains sensitive business messages. Which combination protects access and transmission?",
+    "info": "ใช้ IAM จำกัดสิทธิ์ร่วมกับ encryption ตามข้อกำหนดของข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Public send and receive permissions",
+        "correct": false
+      },
+      {
+        "text": "A secret queue name alone",
+        "correct": false
+      },
+      {
+        "text": "Least-privilege permissions and appropriate encryption",
+        "correct": true
+      },
+      {
+        "text": "Disabling all audit records",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Only a subset of events is relevant to a subscriber. Which SNS capability can reduce unnecessary deliveries?",
+    "info": "Subscription filtering ช่วยส่งเฉพาะข้อความที่ตรงเงื่อนไข",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A longer queue name",
+        "correct": false
+      },
+      {
+        "text": "A subscription filter policy",
+        "correct": true
+      },
+      {
+        "text": "A database read replica",
+        "correct": false
+      },
+      {
+        "text": "An unrelated NAT gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Each of three services must receive every event and process at its own speed. Which design fits?",
+    "info": "SNS fanout ไป SQS แยกแต่ละ service ให้ทุกฝ่ายมีสำเนางานของตน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "One SQS queue with all three services competing",
+        "correct": false
+      },
+      {
+        "text": "A direct call to whichever service responds first",
+        "correct": false
+      },
+      {
+        "text": "One queue with only one service allowed to read",
+        "correct": false
+      },
+      {
+        "text": "An SNS topic with one SQS subscription per service",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "FIFO order is required per customer, and one customer's slow job must not serialize every customer's work. Which design fits?",
+    "info": "แยก message groups ตาม customer และให้ processing รองรับ retries อย่าง idempotent",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Place all customers in one FIFO group",
+        "correct": false
+      },
+      {
+        "text": "Use customer-specific message groups and idempotent consumers",
+        "correct": true
+      },
+      {
+        "text": "Use a Standard queue and assume exact ordering",
+        "correct": false
+      },
+      {
+        "text": "Sort messages only after applying their business effects",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application uses SQS Standard. What must its processing logic tolerate?",
+    "info": "Standard queue อาจส่งข้อความซ้ำจึงต้องรองรับ duplicates",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only perfectly ordered delivery",
+        "correct": false
+      },
+      {
+        "text": "Only one consumer ever",
+        "correct": false
+      },
+      {
+        "text": "Automatic rollback of external side effects",
+        "correct": false
+      },
+      {
+        "text": "Duplicate message delivery",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Three independent services all need every order event, durable buffering, and separate scaling. Which design meets all requirements?",
+    "info": "SNS fanout แจก event ให้ SQS แยกแต่ละ service เพื่อ buffer และ scale อิสระ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "One SQS queue shared by three competing services",
+        "correct": false
+      },
+      {
+        "text": "Direct synchronous calls with no retries or buffering",
+        "correct": false
+      },
+      {
+        "text": "SNS fanout to three SQS queues, each with its own workers",
+        "correct": true
+      },
+      {
+        "text": "One SNS email subscription used as a work queue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an SQS visibility timeout control?",
+    "info": "Visibility timeout ซ่อนข้อความที่รับแล้วจาก consumers อื่นชั่วคราว",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The producer's network bandwidth",
+        "correct": false
+      },
+      {
+        "text": "How long a received message is temporarily hidden",
+        "correct": true
+      },
+      {
+        "text": "The lifetime of an IAM password",
+        "correct": false
+      },
+      {
+        "text": "How long a queue name is displayed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which SQS queue type provides at-least-once delivery and best-effort ordering?",
+    "info": "Standard queue อาจส่งซ้ำและไม่รับประกันลำดับแบบ FIFO",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An IAM queue",
+        "correct": false
+      },
+      {
+        "text": "Standard queue",
+        "correct": true
+      },
+      {
+        "text": "A DNS queue",
+        "correct": false
+      },
+      {
+        "text": "FIFO queue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A worker charges a card, then crashes before deleting its SQS message. What best prevents charging again on redelivery?",
+    "info": "ต้องใช้ idempotency key และบันทึกผลธุรกรรมอย่างทนทาน เพราะ queue deletion ไม่รวมกับ external side effect",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use a stable payment idempotency key and durable processing records",
+        "correct": true
+      },
+      {
+        "text": "Rely only on increasing the visibility timeout",
+        "correct": false
+      },
+      {
+        "text": "Delete the message before attempting every payment",
+        "correct": false
+      },
+      {
+        "text": "Assume receiving the message deleted it",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What characterizes tightly coupled components?",
+    "info": "Tight coupling ทำให้ส่วนหนึ่งพึ่งรายละเอียดหรือความพร้อมของอีกส่วนสูง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Communication only through durable queues",
+        "correct": false
+      },
+      {
+        "text": "No dependencies between services",
+        "correct": false
+      },
+      {
+        "text": "Independent deployment by definition",
+        "correct": false
+      },
+      {
+        "text": "Strong dependence on other components",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a benefit of loose coupling?",
+    "info": "Loose coupling ช่วยให้ส่วนต่าง ๆ เปลี่ยนและขยายได้อิสระมากขึ้น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Components can evolve and scale more independently",
+        "correct": true
+      },
+      {
+        "text": "All messages become synchronous",
+        "correct": false
+      },
+      {
+        "text": "Databases no longer need backups",
+        "correct": false
+      },
+      {
+        "text": "Every failure becomes impossible",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company needs message ordering from an SNS topic to compatible subscribers. Which topic type should be considered?",
+    "info": "SNS FIFO ใช้สำหรับ ordering requirements โดยต้องใช้ subscribers ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A CloudFront distribution",
+        "correct": false
+      },
+      {
+        "text": "An SNS standard topic assuming strict order",
+        "correct": false
+      },
+      {
+        "text": "An SNS FIFO topic",
+        "correct": true
+      },
+      {
+        "text": "An IAM permissions boundary",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A task may sit in a queue during an extended outage. What must retention planning consider?",
+    "info": "Retention ต้องยาวพอสำหรับ outage และเวลาที่ใช้ระบาย backlog",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the IAM password policy",
+        "correct": false
+      },
+      {
+        "text": "The outage duration and time needed to drain the backlog",
+        "correct": true
+      },
+      {
+        "text": "Only the worker's host name",
+        "correct": false
+      },
+      {
+        "text": "Only the number of DNS records",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A worker tier must scale separately from the web tier. Which design supports this?",
+    "info": "Queue ทำให้ worker รับงานได้อิสระจากจำนวนเว็บเซิร์ฟเวอร์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Place a queue between producers and workers",
+        "correct": true
+      },
+      {
+        "text": "Store every task only in browser memory",
+        "correct": false
+      },
+      {
+        "text": "Require one worker per web server using fixed addresses",
+        "correct": false
+      },
+      {
+        "text": "Stop producers whenever a worker is busy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An interactive request starts a slow background task. Which design reduces waiting on the request path?",
+    "info": "ย้ายงานที่ทำภายหลังได้ไป queue แล้วให้ worker ประมวลผล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Increase only the DNS TTL",
+        "correct": false
+      },
+      {
+        "text": "Make the browser wait for every background step",
+        "correct": false
+      },
+      {
+        "text": "Enqueue the task and process it asynchronously",
+        "correct": true
+      },
+      {
+        "text": "Hard-code one worker address in every client",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application uses industry-standard broker protocols rather than AWS-native queue APIs. Which option should be evaluated?",
+    "info": "MQ เหมาะกับการคง protocols และ APIs ของ message broker ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only SQS without changing the client",
+        "correct": false
+      },
+      {
+        "text": "Only Route 53",
+        "correct": false
+      },
+      {
+        "text": "Amazon MQ",
+        "correct": true
+      },
+      {
+        "text": "Only SNS without changing the client",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which service pushes published notifications to subscribers?",
+    "info": "SNS ส่ง notifications ตาม subscriptions ส่วน SQS consumers ดึงข้อความ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon SQS consumers polling alone",
+        "correct": false
+      },
+      {
+        "text": "Amazon EBS",
+        "correct": false
+      },
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      },
+      {
+        "text": "Amazon SNS",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does a queue consumer do?",
+    "info": "Consumer รับและประมวลผลข้อความจาก queue",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Sets AWS service pricing",
+        "correct": false
+      },
+      {
+        "text": "Creates every producer's source code",
+        "correct": false
+      },
+      {
+        "text": "Receives and processes messages",
+        "correct": true
+      },
+      {
+        "text": "Registers all DNS domains",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A producer and consumer use a documented message contract. What benefit does this provide?",
+    "info": "Contract ที่ชัดเจนลดการพึ่ง implementation ภายในของกันและกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "They automatically share one database transaction",
+        "correct": false
+      },
+      {
+        "text": "They no longer need version compatibility",
+        "correct": false
+      },
+      {
+        "text": "They never need validation",
+        "correct": false
+      },
+      {
+        "text": "They can change implementations while preserving the contract",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon SQS?",
+    "info": "SQS เป็น managed message queue สำหรับแยกผู้ส่งกับผู้ประมวลผล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A managed message queueing service",
+        "correct": true
+      },
+      {
+        "text": "A DNS service",
+        "correct": false
+      },
+      {
+        "text": "A relational database engine",
+        "correct": false
+      },
+      {
+        "text": "A container image registry",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A malformed message repeatedly fails while healthy messages succeed. Which feature isolates it?",
+    "info": "DLQ แยกข้อความที่ล้มเหลวซ้ำเพื่อวิเคราะห์และไม่ให้รบกวนงานปกติ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A dead-letter queue with a redrive policy",
+        "correct": true
+      },
+      {
+        "text": "An extra S3 origin",
+        "correct": false
+      },
+      {
+        "text": "A longer DNS TTL",
+        "correct": false
+      },
+      {
+        "text": "A larger public subnet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does a message producer do?",
+    "info": "Producer ส่งข้อความให้ระบบ messaging",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only resolves DNS names",
+        "correct": false
+      },
+      {
+        "text": "Only restores database backups",
+        "correct": false
+      },
+      {
+        "text": "Only deletes consumed messages",
+        "correct": false
+      },
+      {
+        "text": "Sends messages",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An SNS subscription exists, but SNS cannot send to its SQS queue. What should be checked?",
+    "info": "Queue policy ต้องอนุญาตการส่งจาก SNS topic ที่ถูกต้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the database backup schedule",
+        "correct": false
+      },
+      {
+        "text": "The queue policy allowing the intended SNS topic",
+        "correct": true
+      },
+      {
+        "text": "Only the queue's display color",
+        "correct": false
+      },
+      {
+        "text": "Only the subscriber's CPU size",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A worker crashes before deleting a received message. What typically happens after visibility expires?",
+    "info": "ข้อความที่ยังไม่ถูกลบกลับมา visible และมีโอกาสถูกประมวลผลอีก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The message is always lost immediately",
+        "correct": false
+      },
+      {
+        "text": "The queue is automatically deleted",
+        "correct": false
+      },
+      {
+        "text": "The producer must recreate the AWS account",
+        "correct": false
+      },
+      {
+        "text": "The message becomes available for another receive",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A consumer processes the same order twice after redelivery. Which application property prevents duplicate effects?",
+    "info": "Idempotency ทำให้ทำซ้ำแล้วไม่สร้างผลข้างเคียงซ้ำ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A lower DNS TTL",
+        "correct": false
+      },
+      {
+        "text": "A new worker name for every retry",
+        "correct": false
+      },
+      {
+        "text": "A longer message body alone",
+        "correct": false
+      },
+      {
+        "text": "Idempotent processing using a stable business identifier",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An administrator publishes an incorrect SNS message. Can it be recalled from recipients that already received it?",
+    "info": "ข้อความที่ส่งถึงผู้รับแล้วไม่มี recall จึงต้องวางวิธีแก้ไขระดับแอป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, stopping one EC2 instance recalls all copies",
+        "correct": false
+      },
+      {
+        "text": "Yes, changing its name recalls it",
+        "correct": false
+      },
+      {
+        "text": "No, an application-level correction may be needed",
+        "correct": true
+      },
+      {
+        "text": "Yes, deleting the topic erases every recipient's copy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A hybrid application uses ActiveMQ protocols. The company wants managed brokers and minimal code changes, while retaining network controls. Which choice fits?",
+    "info": "MQ รักษาความเข้ากันได้ของ broker พร้อมต้องออกแบบ connectivity และ access controls",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Replace it with SNS and make every endpoint public",
+        "correct": false
+      },
+      {
+        "text": "Put messages in DNS records to avoid a broker",
+        "correct": false
+      },
+      {
+        "text": "Replace it with SQS and assume the existing ActiveMQ client is compatible",
+        "correct": false
+      },
+      {
+        "text": "Use Amazon MQ with supported ActiveMQ compatibility and secured hybrid connectivity",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A queue absorbs a traffic spike. Does this automatically make the workers fast enough?",
+    "info": "Queue ช่วย buffer แต่ต้องวาง capacity และ scaling ของ consumers",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, queues automatically rewrite worker code",
+        "correct": false
+      },
+      {
+        "text": "No, queues cannot absorb any spikes",
+        "correct": false
+      },
+      {
+        "text": "No, consumer capacity and scaling still matter",
+        "correct": true
+      },
+      {
+        "text": "Yes, every queued task completes instantly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Receiving an SQS message succeeds. Has the message been permanently removed?",
+    "info": "Receive ทำให้ข้อความถูกซ่อนชั่วคราว ไม่ใช่ลบถาวร",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, if any consumer has an IAM role",
+        "correct": false
+      },
+      {
+        "text": "No, it must be explicitly deleted after successful processing",
+        "correct": true
+      },
+      {
+        "text": "Yes, receiving always deletes it",
+        "correct": false
+      },
+      {
+        "text": "No, SQS messages can never be deleted",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon SNS?",
+    "info": "SNS เป็น managed publish/subscribe messaging service",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A managed publish/subscribe messaging service",
+        "correct": true
+      },
+      {
+        "text": "An EC2 image pipeline",
+        "correct": false
+      },
+      {
+        "text": "A database migration tool",
+        "correct": false
+      },
+      {
+        "text": "A block storage service",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does SQS message retention control?",
+    "info": "Retention กำหนดระยะเวลาที่ข้อความอยู่ใน queue หากยังไม่ถูกลบ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "How long messages can remain in a queue",
+        "correct": true
+      },
+      {
+        "text": "How long EC2 instances run",
+        "correct": false
+      },
+      {
+        "text": "How long DNS answers are cached",
+        "correct": false
+      },
+      {
+        "text": "How long a user's MFA session lasts",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company runs ActiveMQ on premises and wants a managed broker in AWS. Which service fits?",
+    "info": "Amazon MQ รองรับ ActiveMQ และช่วยลดงานดูแล broker",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon MQ",
+        "correct": true
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3 Glacier",
+        "correct": false
+      },
+      {
+        "text": "Amazon Kinesis Video Streams",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a dead-letter queue used for?",
+    "info": "DLQ เก็บข้อความที่ประมวลผลไม่สำเร็จตาม redrive policy",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Making every message public",
+        "correct": false
+      },
+      {
+        "text": "Storing container images",
+        "correct": false
+      },
+      {
+        "text": "Holding messages that repeatedly fail processing",
+        "correct": true
+      },
+      {
+        "text": "Replacing all source queues",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A task takes longer than its visibility timeout. What problem can occur?",
+    "info": "หมด visibility ก่อนงานเสร็จอาจทำให้ worker อื่นรับข้อความเดิม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Another worker may receive the same message",
+        "correct": true
+      },
+      {
+        "text": "The database schema changes",
+        "correct": false
+      },
+      {
+        "text": "All other messages are permanently deleted",
+        "correct": false
+      },
+      {
+        "text": "SNS recalls every published message",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A worker frequently receives empty short-poll responses. Which change can reduce unnecessary requests?",
+    "info": "Long polling รอข้อความแทนตอบว่างทันที จึงลด empty responses",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Remove all consumers",
+        "correct": false
+      },
+      {
+        "text": "Poll more frequently with zero wait",
+        "correct": false
+      },
+      {
+        "text": "Use long polling",
+        "correct": true
+      },
+      {
+        "text": "Increase only the queue name length",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an SNS topic?",
+    "info": "Topic เป็นจุดเผยแพร่ข้อความให้ subscribers ที่สมัครรับ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A channel to which publishers send messages for subscribers",
+        "correct": true
+      },
+      {
+        "text": "A VPC subnet",
+        "correct": false
+      },
+      {
+        "text": "An EC2 boot disk",
+        "correct": false
+      },
+      {
+        "text": "A database primary key",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A queue's oldest-message age keeps increasing. What does this suggest?",
+    "info": "Age ที่เพิ่มต่อเนื่องบ่งชี้ว่างานรอสะสมหรือประมวลผลช้า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Every worker is necessarily idle",
+        "correct": false
+      },
+      {
+        "text": "The queue has become a DNS service",
+        "correct": false
+      },
+      {
+        "text": "All messages have been deleted",
+        "correct": false
+      },
+      {
+        "text": "Work is accumulating faster than it is completed",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Can an SQS queue subscribe to an SNS topic?",
+    "info": "SNS ส่งข้อความไป SQS subscriptions ได้เมื่อ permissions เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only if every consumer is the root user",
+        "correct": false
+      },
+      {
+        "text": "Only if the queue is publicly writable",
+        "correct": false
+      },
+      {
+        "text": "No, SNS supports only email",
+        "correct": false
+      },
+      {
+        "text": "Yes, with appropriate subscription and permissions",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A new cloud-native work queue has no legacy broker compatibility requirement. Which service is the direct fit?",
+    "info": "SQS เหมาะกับ managed work queue สำหรับ cloud-native applications",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon SQS",
+        "correct": true
+      },
+      {
+        "text": "Amazon MQ required for every queue",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A legacy application already uses RabbitMQ protocols. Which managed migration target minimizes messaging API changes?",
+    "info": "Amazon MQ รองรับ RabbitMQ ช่วยลดการเขียน integration ใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "SQS with no client changes assumed",
+        "correct": false
+      },
+      {
+        "text": "SNS with no client changes assumed",
+        "correct": false
+      },
+      {
+        "text": "Amazon MQ for RabbitMQ",
+        "correct": true
+      },
+      {
+        "text": "Amazon Athena",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Order submissions arrive faster than workers can process them. Which component buffers the work?",
+    "info": "SQS เก็บงานรอช่วยแยกอัตราการผลิตกับการประมวลผล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Route 53 alias alone",
+        "correct": false
+      },
+      {
+        "text": "An SQS queue",
+        "correct": true
+      },
+      {
+        "text": "A Cognito user pool",
+        "correct": false
+      },
+      {
+        "text": "An EBS snapshot alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Web servers directly call one fixed application server IP. What improves coupling between the tiers?",
+    "info": "Load balancer ช่วยลดการผูกกับ server เครื่องเดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Copy the fixed IP into more clients",
+        "correct": false
+      },
+      {
+        "text": "Introduce a load balancer between the tiers",
+        "correct": true
+      },
+      {
+        "text": "Combine every tier into one process",
+        "correct": false
+      },
+      {
+        "text": "Remove all health checks",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A worker needs to receive and delete messages but must not purge the queue. Which permission approach fits?",
+    "info": "ให้เฉพาะ actions ที่ worker ต้องใช้ ไม่เพิ่ม destructive permissions",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Grant all SQS actions to everyone",
+        "correct": false
+      },
+      {
+        "text": "Grant only required receive, visibility, and delete permissions",
+        "correct": true
+      },
+      {
+        "text": "Use root credentials in the worker",
+        "correct": false
+      },
+      {
+        "text": "Grant queue purge permission only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Processing time varies and sometimes exceeds the initial timeout. Which SQS operation helps?",
+    "info": "ChangeMessageVisibility ใช้ขยายเวลาซ่อนระหว่างประมวลผล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "CreateHostedZone",
+        "correct": false
+      },
+      {
+        "text": "PutBucketPolicy",
+        "correct": false
+      },
+      {
+        "text": "ChangeMessageVisibility",
+        "correct": true
+      },
+      {
+        "text": "CopySnapshot",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which setting distinguishes long polling from short polling in the chapter?",
+    "info": "Long polling กำหนด receive wait time มากกว่าศูนย์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A larger IAM group",
+        "correct": false
+      },
+      {
+        "text": "An encrypted queue name",
+        "correct": false
+      },
+      {
+        "text": "A different Region name",
+        "correct": false
+      },
+      {
+        "text": "A receive wait time greater than zero",
+        "correct": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,1382 @@
+[
+  {
+    "text": "A website publishes app.v2.js instead of overwriting app.v1.js. Which technique is this?",
+    "info": "ชื่อไฟล์ที่มีเวอร์ชันสร้าง cache key ใหม่สำหรับเนื้อหาใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Database sharding",
+        "correct": false
+      },
+      {
+        "text": "Connection pooling",
+        "correct": false
+      },
+      {
+        "text": "VPC peering",
+        "correct": false
+      },
+      {
+        "text": "Content versioning",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Read latency remains high after adding ElastiCache, and logs show the application always queries RDS first. What should be changed?",
+    "info": "ต้องใช้ cache ใน read path จริง มิฉะนั้นยังจ่ายต้นทุนอ่านฐานข้อมูลทุกครั้ง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Invalidate every key before every read",
+        "correct": false
+      },
+      {
+        "text": "Add more cache nodes without changing the read path",
+        "correct": false
+      },
+      {
+        "text": "Check the cache before suitable database reads",
+        "correct": true
+      },
+      {
+        "text": "Increase only the database password length",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Different files need different freshness policies. Which origin mechanism helps control caching per response?",
+    "info": "Cache-Control headers ใช้ระบุพฤติกรรม cache ของแต่ละ response ภายใต้การตั้งค่า CDN",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "EC2 key pair names",
+        "correct": false
+      },
+      {
+        "text": "VPC CIDR blocks",
+        "correct": false
+      },
+      {
+        "text": "Cache-Control headers",
+        "correct": true
+      },
+      {
+        "text": "IAM group descriptions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team raises TTL for rarely changing images. What is a likely benefit?",
+    "info": "TTL ยาวช่วยใช้ cached copy ซ้ำและลดโหลด origin",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Immediate updates without invalidation",
+        "correct": false
+      },
+      {
+        "text": "Automatic application authentication",
+        "correct": false
+      },
+      {
+        "text": "A guarantee of zero transfer cost",
+        "correct": false
+      },
+      {
+        "text": "More opportunities to serve cache hits",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which data is generally a strong caching candidate?",
+    "info": "ข้อมูลอ่านบ่อยและเปลี่ยนไม่ถี่มักได้รับประโยชน์จาก cache",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A one-time random value never reused",
+        "correct": false
+      },
+      {
+        "text": "An unrepeatable response that must always be live",
+        "correct": false
+      },
+      {
+        "text": "Every secret without access isolation",
+        "correct": false
+      },
+      {
+        "text": "Frequently requested data that changes infrequently",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is the main purpose of a CDN?",
+    "info": "CDN ช่วยส่งเนื้อหาถึงผู้ใช้ที่กระจายหลายพื้นที่ด้วย latency ต่ำ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Convert every database to SQL",
+        "correct": false
+      },
+      {
+        "text": "Create application users",
+        "correct": false
+      },
+      {
+        "text": "Deliver content efficiently to geographically distributed users",
+        "correct": true
+      },
+      {
+        "text": "Manage physical office networks",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A computation is expensive and repeated with identical inputs. What should be considered?",
+    "info": "Cache ผลลัพธ์ที่ใช้ซ้ำได้ช่วยลดการคำนวณซ้ำ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Repeat the calculation more often",
+        "correct": false
+      },
+      {
+        "text": "Cache the reusable calculation result",
+        "correct": true
+      },
+      {
+        "text": "Disable all application monitoring",
+        "correct": false
+      },
+      {
+        "text": "Move only the DNS records",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why does CloudFront use edge locations?",
+    "info": "Edge locations นำเนื้อหาที่ cache ไปอยู่ใกล้ผู้ใช้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "To serve content closer to viewers",
+        "correct": true
+      },
+      {
+        "text": "To store every database backup permanently",
+        "correct": false
+      },
+      {
+        "text": "To replace IAM permissions",
+        "correct": false
+      },
+      {
+        "text": "To create a VPC for each viewer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A price update must be visible immediately, but cache entries remain valid for an hour. Which change best meets this requirement?",
+    "info": "ต้องปรับหรือ invalidate cache ใน update path และอ่าน source ที่เชื่อถือได้เมื่อความสดสำคัญ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Increase TTL to reduce origin traffic",
+        "correct": false
+      },
+      {
+        "text": "Store the new price under an unrelated key that reads never use",
+        "correct": false
+      },
+      {
+        "text": "Keep lazy loading and the one-hour TTL unchanged",
+        "correct": false
+      },
+      {
+        "text": "Update or invalidate affected keys as part of a reliable write process",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A file changes at the origin while a valid edge copy still exists. What may viewers receive?",
+    "info": "การเปลี่ยน origin ไม่ทำให้ cached copy หายทันทีหากยังไม่หมดอายุหรือ invalidate",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An automatic database snapshot",
+        "correct": false
+      },
+      {
+        "text": "The older cached copy until expiration or invalidation",
+        "correct": true
+      },
+      {
+        "text": "Always the new file immediately",
+        "correct": false
+      },
+      {
+        "text": "Only an IAM error regardless of permissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cache reduces database reads by 90%, but introduces private data leakage and stale balances. How should the design be evaluated?",
+    "info": "ต้องประเมิน correctness และ security ร่วมกับ performance ไม่ใช้ hit ratio เพียงอย่างเดียว",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Fix isolation and freshness requirements before judging success by hit ratio alone",
+        "correct": true
+      },
+      {
+        "text": "Increase cache memory without changing keys or update logic",
+        "correct": false
+      },
+      {
+        "text": "Accept the design because fewer reads prove correctness",
+        "correct": false
+      },
+      {
+        "text": "Disable access logging to reduce latency",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a cache?",
+    "info": "Cache เก็บสำเนาหรือผลลัพธ์ที่เรียกซ้ำเพื่อเข้าถึงได้เร็วขึ้น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A fast storage layer holding reusable data",
+        "correct": true
+      },
+      {
+        "text": "An IAM authentication method",
+        "correct": false
+      },
+      {
+        "text": "The only required permanent backup",
+        "correct": false
+      },
+      {
+        "text": "A physical network cable",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cache stores copies of database records. What should remain the source of truth in this design?",
+    "info": "ใน cache-aside design ฐานข้อมูลหลักเป็น authoritative source",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The CDN distribution name",
+        "correct": false
+      },
+      {
+        "text": "A random viewer's browser",
+        "correct": false
+      },
+      {
+        "text": "The primary database",
+        "correct": true
+      },
+      {
+        "text": "The oldest cached copy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A live application has some reusable public responses and some personalized responses. How should caching be designed?",
+    "info": "ต้องกำหนด cache policy ตามชนิด response และหลีกเลี่ยงการแชร์ข้อมูลส่วนตัวผิดผู้ใช้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable origin authorization after adding the CDN",
+        "correct": false
+      },
+      {
+        "text": "Cache only suitable responses with correct request and user separation",
+        "correct": true
+      },
+      {
+        "text": "Use one shared cache key for every response",
+        "correct": false
+      },
+      {
+        "text": "Cache all authenticated pages as public content",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company wants lower delivery cost as well as lower latency. What should it model before adding caching?",
+    "info": "ต้องประเมิน cache cost, hit ratio และ data transfer เพื่อดูความคุ้มค่า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Cache costs, expected hit ratio, and data transfer",
+        "correct": true
+      },
+      {
+        "text": "Only the CDN logo",
+        "correct": false
+      },
+      {
+        "text": "Only file names",
+        "correct": false
+      },
+      {
+        "text": "Only account creation dates",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A CloudFront cache hit occurs for a valid object. What happens to origin load for that request?",
+    "info": "Cache hit ส่งจาก cache จึงไม่ต้องดึง object จาก origin สำหรับคำขอนั้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The origin must recompute the object every time",
+        "correct": false
+      },
+      {
+        "text": "The origin always processes two copies",
+        "correct": false
+      },
+      {
+        "text": "The request can be served without fetching that object from the origin",
+        "correct": true
+      },
+      {
+        "text": "The database must create a new table",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An edge location lacks an object. Which layer can reduce repeated retrievals from the origin?",
+    "info": "Regional edge caches มี cache ใหญ่กว่าช่วยลดการเข้าถึง origin",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Regional edge cache",
+        "correct": true
+      },
+      {
+        "text": "A CloudFormation Output",
+        "correct": false
+      },
+      {
+        "text": "A database connection password",
+        "correct": false
+      },
+      {
+        "text": "An IAM group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application updates its database but not an existing lazy-loaded cache entry. What risk arises?",
+    "info": "Cached copy อาจยังเป็นค่าเก่าจนกว่าจะ expire หรือถูก invalidate",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Permanent loss of the database schema",
+        "correct": false
+      },
+      {
+        "text": "Automatic database rollback",
+        "correct": false
+      },
+      {
+        "text": "Stale reads from the cached entry",
+        "correct": true
+      },
+      {
+        "text": "Automatic refresh of every cache key",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application needs complex in-memory data types rather than only opaque cached values. Which engine fits?",
+    "info": "Redis มี data structures หลากหลายกว่า basic key-value caching",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Memcached",
+        "correct": false
+      },
+      {
+        "text": "Redis",
+        "correct": true
+      },
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      },
+      {
+        "text": "Amazon EBS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which metric directly indicates how often requests are served from a cache?",
+    "info": "Cache hit ratio สะท้อนสัดส่วนคำขอที่พบข้อมูลใน cache",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "DNS domain age",
+        "correct": false
+      },
+      {
+        "text": "Cache hit ratio",
+        "correct": true
+      },
+      {
+        "text": "Template comment count",
+        "correct": false
+      },
+      {
+        "text": "Number of IAM roles",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A frequently used query has high execution cost. Which caching approach is relevant?",
+    "info": "เก็บผล query ที่เหมาะสมช่วยลดโหลดและเวลา query ซ้ำ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Cache reusable query results",
+        "correct": true
+      },
+      {
+        "text": "Remove every database index without review",
+        "correct": false
+      },
+      {
+        "text": "Cache only the SQL editor's font",
+        "correct": false
+      },
+      {
+        "text": "Increase the number of user passwords",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workload adds a cache. Which assumption should the architect avoid?",
+    "info": "Cache เพิ่มความเร็วได้แต่ไม่แทน backup หรือ guarantees ด้านข้อมูลทุกอย่าง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "That TTL affects freshness",
+        "correct": false
+      },
+      {
+        "text": "That a cache replaces backups and authoritative storage",
+        "correct": true
+      },
+      {
+        "text": "That cache hits can reduce origin load",
+        "correct": false
+      },
+      {
+        "text": "That workloads have different access patterns",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A large set of popular keys expires simultaneously, overwhelming the database. Which mitigation best preserves cache benefits?",
+    "info": "กระจายเวลาหมดอายุและรวมคำขอเติม cache ช่วยลดการอ่าน origin พร้อมกัน",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Remove all request limits on the database",
+        "correct": false
+      },
+      {
+        "text": "Stagger expirations and coordinate cache fills for hot keys",
+        "correct": true
+      },
+      {
+        "text": "Expire every key on every request",
+        "correct": false
+      },
+      {
+        "text": "Increase the synchronized TTL without changing the expiry pattern",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A leaderboard needs sorted in-memory datasets. Which engine from the chapter fits?",
+    "info": "Redis รองรับ data types ที่เหมาะกับการจัดอันดับ เช่น sorted sets",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Redis",
+        "correct": true
+      },
+      {
+        "text": "Memcached's basic key-value model alone",
+        "correct": false
+      },
+      {
+        "text": "S3 Glacier Deep Archive",
+        "correct": false
+      },
+      {
+        "text": "RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Users worldwide download the same product images from one Region. Which service most directly reduces delivery latency?",
+    "info": "CloudFront cache ภาพใกล้ผู้ใช้ผ่าน edge locations",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon CloudFront",
+        "correct": true
+      },
+      {
+        "text": "AWS Schema Conversion Tool",
+        "correct": false
+      },
+      {
+        "text": "AWS IAM Identity Center",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A public image can tolerate one hour of staleness, while an inventory response cannot. What policy is appropriate?",
+    "info": "กำหนด TTL และ caching แยกตามข้อกำหนด freshness ของข้อมูลแต่ละชนิด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Force both into one public cache entry",
+        "correct": false
+      },
+      {
+        "text": "Ignore freshness because the cache is managed",
+        "correct": false
+      },
+      {
+        "text": "Give both responses the longest possible TTL",
+        "correct": false
+      },
+      {
+        "text": "Use different caching policies based on freshness requirements",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a cache miss?",
+    "info": "Cache miss หมายถึงไม่พบข้อมูลที่ต้องการใน cache",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The network ACL allows traffic",
+        "correct": false
+      },
+      {
+        "text": "The requested data is absent from the cache",
+        "correct": true
+      },
+      {
+        "text": "The application has no users",
+        "correct": false
+      },
+      {
+        "text": "The requested data is successfully cached",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When does lazy loading populate a missing cache entry?",
+    "info": "Lazy loading ดึงข้อมูลจากต้นทางเมื่อถูกขอ แล้วเติม cache",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only when the AWS account is created",
+        "correct": false
+      },
+      {
+        "text": "Only after deleting the database",
+        "correct": false
+      },
+      {
+        "text": "Before any possible data exists",
+        "correct": false
+      },
+      {
+        "text": "When the data is requested and fetched from the origin",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A cache entry expires. Under a lazy-loading design, what should the next read do?",
+    "info": "เมื่อ entry ไม่มีแล้ว แอปอ่านจากฐานข้อมูลและเติม cache ใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Treat the old value as permanently valid",
+        "correct": false
+      },
+      {
+        "text": "Fetch authoritative data and repopulate the cache",
+        "correct": true
+      },
+      {
+        "text": "Delete all cache nodes",
+        "correct": false
+      },
+      {
+        "text": "Reject every subsequent request forever",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A write-through update commits to the database but the cache update fails. What is the safest response for correctness?",
+    "info": "Database commit ไม่รับประกันว่า cache ใหม่ ต้องจัดการ failure และป้องกัน stale entry",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Detect the failure, invalidate or repair the affected entry, and use authoritative reads as needed",
+        "correct": true
+      },
+      {
+        "text": "Assume write-through guarantees both writes always succeed together",
+        "correct": false
+      },
+      {
+        "text": "Roll back unrelated users' data",
+        "correct": false
+      },
+      {
+        "text": "Treat the stale cache value as permanently authoritative",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What storage approach does ElastiCache use for fast access?",
+    "info": "ElastiCache เป็น in-memory data store สำหรับเข้าถึงข้อมูลรวดเร็ว",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only archival tape",
+        "correct": false
+      },
+      {
+        "text": "Only optical disks",
+        "correct": false
+      },
+      {
+        "text": "Only offline backups",
+        "correct": false
+      },
+      {
+        "text": "In-memory storage",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A strict real-time value changes constantly and must always reflect the latest committed state. What is the key caching concern?",
+    "info": "ข้อมูลที่ต้องสดทันทีต้องระวัง stale data และอาจต้องอ่าน authoritative source",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The color of cache nodes",
+        "correct": false
+      },
+      {
+        "text": "Serving stale data",
+        "correct": true
+      },
+      {
+        "text": "The number of IAM groups",
+        "correct": false
+      },
+      {
+        "text": "The length of the file name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which limitation is typical of lazy loading?",
+    "info": "คำขอแรกหลัง miss ต้องรออ่าน origin และเติม cache",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "It removes the need for a database",
+        "correct": false
+      },
+      {
+        "text": "It prevents every stale response automatically",
+        "correct": false
+      },
+      {
+        "text": "The first request for uncached data pays the origin access cost",
+        "correct": true
+      },
+      {
+        "text": "It requires caching all data before startup",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team assumes CloudFront can cache only images. Which statement corrects this assumption?",
+    "info": "CloudFront ใช้ส่งและ cache วิดีโอ web objects และ dynamic content ที่เหมาะสมได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "It runs arbitrary database joins at every edge",
+        "correct": false
+      },
+      {
+        "text": "It can also cache videos, web objects, and suitable generated content",
+        "correct": true
+      },
+      {
+        "text": "It can cache only JPEG files",
+        "correct": false
+      },
+      {
+        "text": "It replaces every application server",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application adopts lazy loading. What happens after a cache miss?",
+    "info": "แอปอ่านข้อมูลจากฐานข้อมูลแล้วเติม cache สำหรับคำขอถัดไป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable all future cache writes",
+        "correct": false
+      },
+      {
+        "text": "Return cached data that does not exist",
+        "correct": false
+      },
+      {
+        "text": "Read from the database and populate the cache",
+        "correct": true
+      },
+      {
+        "text": "Delete the authoritative database record",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A site serves immutable images globally and repeatedly reads mutable catalog data from RDS. Which combination fits both workloads?",
+    "info": "CloudFront ใช้ส่ง static assets ทั่วโลก ส่วน ElastiCache ลดอ่านฐานข้อมูลซ้ำโดยจัดการ freshness",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use CloudFront for images and ElastiCache with appropriate freshness handling for catalog reads",
+        "correct": true
+      },
+      {
+        "text": "Use only RDS Proxy to cache image files globally",
+        "correct": false
+      },
+      {
+        "text": "Use one public cache key for images and all customer records",
+        "correct": false
+      },
+      {
+        "text": "Move every record to an archive tier before each read",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does write-through caching do when data is updated?",
+    "info": "Write-through ปรับ cache ในเส้นทางการเขียนเพื่อให้สอดคล้องกับข้อมูลหลัก",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Never writes to the cache",
+        "correct": false
+      },
+      {
+        "text": "Changes the database engine",
+        "correct": false
+      },
+      {
+        "text": "Deletes every cache node",
+        "correct": false
+      },
+      {
+        "text": "Updates the cache as part of the write path",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Where does a database cache usually sit logically in the request path?",
+    "info": "แอปตรวจ cache ก่อนอ่าน origin database ตาม caching strategy",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Inside the account billing ledger",
+        "correct": false
+      },
+      {
+        "text": "Between physical power supplies",
+        "correct": false
+      },
+      {
+        "text": "Only between two IAM groups",
+        "correct": false
+      },
+      {
+        "text": "Between the application and the origin data store",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A distribution needs to serve files from S3. What must be configured as the content source?",
+    "info": "S3 bucket เป็น origin ของ distribution ที่ดึงไฟล์ไปส่งต่อ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The account's billing email",
+        "correct": false
+      },
+      {
+        "text": "The appropriate S3 origin",
+        "correct": true
+      },
+      {
+        "text": "A database replication slot",
+        "correct": false
+      },
+      {
+        "text": "An unrelated VPN tunnel",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team lowers TTL to reduce stale content. What trade-off should it expect?",
+    "info": "TTL สั้นลงทำให้ต้องดึงข้อมูลจาก origin บ่อยขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "More origin requests and fewer reusable cache hits",
+        "correct": true
+      },
+      {
+        "text": "Permanent cache retention",
+        "correct": false
+      },
+      {
+        "text": "Fewer origin reads in every case",
+        "correct": false
+      },
+      {
+        "text": "Guaranteed elimination of all network latency",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cache requires persistence and automatic failover features. Which engine from the chapter should be evaluated?",
+    "info": "Redis รองรับ persistence และรูปแบบ HA ที่ Memcached ไม่มีในแบบเดียวกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An unreplicated instance store",
+        "correct": false
+      },
+      {
+        "text": "Redis",
+        "correct": true
+      },
+      {
+        "text": "Memcached",
+        "correct": false
+      },
+      {
+        "text": "A local text file",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cache is unavailable, but the database is healthy. What should the application plan include?",
+    "info": "ต้องออกแบบ fallback และป้องกันโหลดกระแทกฐานข้อมูลเมื่อ cache หาย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Assume the database is also deleted",
+        "correct": false
+      },
+      {
+        "text": "Return arbitrary values as valid data",
+        "correct": false
+      },
+      {
+        "text": "Disable every database permission permanently",
+        "correct": false
+      },
+      {
+        "text": "Controlled fallback to the database with load protection",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A CloudFront-backed site needs request filtering for malicious HTTP headers. Which service complements the CDN?",
+    "info": "AWS WAF ใช้ rules ตรวจและ block HTTP requests",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "AWS Compute Optimizer",
+        "correct": false
+      },
+      {
+        "text": "AWS WAF",
+        "correct": true
+      },
+      {
+        "text": "AWS DMS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cache should hold mainly data users actually request. Which strategy fits?",
+    "info": "Lazy loading เติมข้อมูลตามการอ่านจริง จึงไม่ต้อง cache ทุก record",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Full preloading of every record regardless of demand",
+        "correct": false
+      },
+      {
+        "text": "Keeping no cache at all",
+        "correct": false
+      },
+      {
+        "text": "Write-through for every unused record",
+        "correct": false
+      },
+      {
+        "text": "Lazy loading",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a benefit of versioned asset names?",
+    "info": "ผู้ใช้อ้างอิงชื่อใหม่จึงไม่ต้องรอ cached copy ของชื่อเดิมหมดอายุ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "New references can retrieve the new asset without waiting for the old key to expire",
+        "correct": true
+      },
+      {
+        "text": "Every asset becomes private automatically",
+        "correct": false
+      },
+      {
+        "text": "All cache storage becomes free",
+        "correct": false
+      },
+      {
+        "text": "Old references automatically change themselves",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which AWS service is a content delivery network?",
+    "info": "CloudFront เป็น CDN สำหรับส่งเนื้อหาใกล้ผู้ใช้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "Amazon CloudFront",
+        "correct": true
+      },
+      {
+        "text": "AWS DMS",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which application action can reduce stale data after updating a cached record?",
+    "info": "การปรับหรือ invalidate key ที่เกี่ยวข้องช่วยให้คำขอถัดไปไม่ใช้ข้อมูลเก่า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable all database writes",
+        "correct": false
+      },
+      {
+        "text": "Increase its TTL indefinitely",
+        "correct": false
+      },
+      {
+        "text": "Change an unrelated DNS record",
+        "correct": false
+      },
+      {
+        "text": "Update or invalidate the corresponding cache key",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A shared cache returns one user's account page to another user. Which design change most directly prevents this exposure?",
+    "info": "ต้องไม่ใช้ shared key กับข้อมูลเฉพาะผู้ใช้ และยังต้องตรวจ authorization",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Increase the shared entry's TTL",
+        "correct": false
+      },
+      {
+        "text": "Add more cache nodes with the same key design",
+        "correct": false
+      },
+      {
+        "text": "Invalidate the page only once per month",
+        "correct": false
+      },
+      {
+        "text": "Exclude private responses from shared caching or safely isolate authorized user-specific keys",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Two queries differ by product category but use the same cache key. What defect can occur?",
+    "info": "Key ต้องสะท้อนปัจจัยที่ทำให้ผลลัพธ์ต่างกัน มิฉะนั้นอาจคืนข้อมูลผิด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The CDN fixes the application key automatically",
+        "correct": false
+      },
+      {
+        "text": "The database automatically creates separate keys",
+        "correct": false
+      },
+      {
+        "text": "One query may receive the other's result",
+        "correct": true
+      },
+      {
+        "text": "All data becomes strongly consistent",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does TTL stand for in caching?",
+    "info": "TTL คือ Time to Live ใช้กำหนดอายุของข้อมูลที่ cache",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Trusted Token List",
+        "correct": false
+      },
+      {
+        "text": "Time to Live",
+        "correct": true
+      },
+      {
+        "text": "Table Transaction Limit",
+        "correct": false
+      },
+      {
+        "text": "Total Transfer Load",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which AWS protection service complements CloudFront for DDoS resilience?",
+    "info": "AWS Shield ช่วยป้องกันการโจมตี DDoS ร่วมกับ edge architecture",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Shield",
+        "correct": true
+      },
+      {
+        "text": "AWS Schema Conversion Tool",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon DocumentDB",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system writes records rarely read later. What write-through drawback matters?",
+    "info": "Write-through อาจใช้ memory กับข้อมูลที่ไม่มีใครอ่าน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "It cannot receive database updates",
+        "correct": false
+      },
+      {
+        "text": "It forbids TTLs",
+        "correct": false
+      },
+      {
+        "text": "It always removes write latency",
+        "correct": false
+      },
+      {
+        "text": "It may cache data that is never requested",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An RDS database is overloaded by repeated reads of the same product data. Which addition fits?",
+    "info": "ElastiCache ลดคำขออ่านซ้ำที่ไปถึงฐานข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A second DNS domain only",
+        "correct": false
+      },
+      {
+        "text": "A larger IAM group",
+        "correct": false
+      },
+      {
+        "text": "ElastiCache for suitable frequently read data",
+        "correct": true
+      },
+      {
+        "text": "A NAT gateway as a query cache",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a cache hit?",
+    "info": "Cache hit หมายถึงพบข้อมูลที่ต้องการใน cache",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The requested data is found in the cache",
+        "correct": true
+      },
+      {
+        "text": "The database rejects a write",
+        "correct": false
+      },
+      {
+        "text": "A cache node has no memory",
+        "correct": false
+      },
+      {
+        "text": "The origin server fails",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application cache must support publish/subscribe messaging. Which compared engine fits?",
+    "info": "Redis รองรับ pub/sub ตามความสามารถที่บทอธิบาย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Memcached",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS for Oracle",
+        "correct": false
+      },
+      {
+        "text": "Redis",
+        "correct": true
+      },
+      {
+        "text": "S3 One Zone-IA",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team needs CloudFront to stop serving a specific cached file before its TTL expires. What can it use?",
+    "info": "Invalidation ทำให้ CloudFront เลิกใช้ cached object ตาม path ที่ระบุ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An invalidation request",
+        "correct": true
+      },
+      {
+        "text": "A new IAM group",
+        "correct": false
+      },
+      {
+        "text": "A longer TTL",
+        "correct": false
+      },
+      {
+        "text": "An unrelated database restart",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an origin in a content delivery architecture?",
+    "info": "Origin เป็นแหล่งข้อมูลต้นทางที่ CDN ดึงเนื้อหามา",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The cache's monthly invoice",
+        "correct": false
+      },
+      {
+        "text": "The viewer's password",
+        "correct": false
+      },
+      {
+        "text": "The source from which content is retrieved",
+        "correct": true
+      },
+      {
+        "text": "The browser's screen size",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A cache has a low hit ratio and stores many rarely used keys. What should be reviewed?",
+    "info": "ทบทวน keys, TTLs และรูปแบบการเข้าถึงเพื่อเลือกข้อมูลที่ควร cache",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the organization's logo",
+        "correct": false
+      },
+      {
+        "text": "Only the database administrator's name",
+        "correct": false
+      },
+      {
+        "text": "Only EC2 console colors",
+        "correct": false
+      },
+      {
+        "text": "Access patterns, cache keys, and TTLs",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which two ElastiCache engines are compared in this chapter?",
+    "info": "บทนี้เปรียบเทียบ Redis และ Memcached",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Neptune and Aurora",
+        "correct": false
+      },
+      {
+        "text": "PostgreSQL and Cassandra",
+        "correct": false
+      },
+      {
+        "text": "Redis and Memcached",
+        "correct": true
+      },
+      {
+        "text": "MySQL and Oracle",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A simple cache needs basic key-value operations and multi-threaded nodes. Which engine from the chapter is a fit?",
+    "info": "Memcached เหมาะกับ cache key-value ที่เรียบง่ายและใช้หลาย threads",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Aurora",
+        "correct": false
+      },
+      {
+        "text": "Redis selected solely for sorted sets",
+        "correct": false
+      },
+      {
+        "text": "Memcached",
+        "correct": true
+      },
+      {
+        "text": "Neptune",
+        "correct": false
+      }
+    ]
+  }
+]

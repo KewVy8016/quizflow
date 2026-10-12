@@ -1,0 +1,692 @@
+[
+  {
+    "text": "An object is deleted without specifying a version ID in a versioning-enabled bucket. What normally happens?",
+    "info": "การลบทั่วไปใน bucket ที่เปิด versioning เพิ่ม delete marker โดยยังมีเวอร์ชันเดิมให้กู้คืน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Versioning is automatically suspended",
+        "correct": false
+      },
+      {
+        "text": "All versions are permanently deleted",
+        "correct": false
+      },
+      {
+        "text": "A delete marker is added and earlier versions remain",
+        "correct": true
+      },
+      {
+        "text": "The bucket is immediately deleted",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an S3 bucket?",
+    "info": "Bucket เป็นภาชนะสำหรับเก็บ objects ใน Amazon S3",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A container for objects",
+        "correct": true
+      },
+      {
+        "text": "An IAM group",
+        "correct": false
+      },
+      {
+        "text": "A database row",
+        "correct": false
+      },
+      {
+        "text": "A virtual machine",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Users far from an S3 bucket's Region need faster long-distance uploads. Which feature should be evaluated?",
+    "info": "S3 Transfer Acceleration ใช้ edge locations และเครือข่าย AWS เพื่อช่วยเร่งการส่งข้อมูลระยะไกล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Object Versioning",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "S3 Transfer Acceleration",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which tool can upload S3 objects from a terminal or script?",
+    "info": "AWS CLI ใช้เรียกคำสั่งอัปโหลดและดาวน์โหลดข้อมูลจาก terminal หรือ script",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "AWS CLI",
+        "correct": true
+      },
+      {
+        "text": "AWS Control Tower",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A large file upload is frequently interrupted by network failures. Which S3 feature helps avoid restarting the entire transfer?",
+    "info": "Multipart upload แบ่งไฟล์เป็นส่วน ทำให้ส่งซ้ำเฉพาะส่วนที่มีปัญหาและเพิ่ม throughput ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Inventory",
+        "correct": false
+      },
+      {
+        "text": "S3 Lifecycle expiration",
+        "correct": false
+      },
+      {
+        "text": "Bucket versioning suspension",
+        "correct": false
+      },
+      {
+        "text": "Multipart upload",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company receives large uploads from distant users, stores private frequently read files, and archives older files. Which combination best addresses transfer performance, access control, and storage cost?",
+    "info": "Transfer Acceleration และ multipart ช่วยการส่งข้อมูล ส่วน private access และ lifecycle จัดการความปลอดภัยและค่าเก็บข้อมูลตามอายุ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use lifecycle expiration for every new file and disable access policies",
+        "correct": false
+      },
+      {
+        "text": "Make the bucket public, use only single-part uploads, and keep all files in Standard forever",
+        "correct": false
+      },
+      {
+        "text": "Evaluate Transfer Acceleration and multipart upload, retain private access, and use suitable lifecycle transitions",
+        "correct": true
+      },
+      {
+        "text": "Move all files directly to Deep Archive and distribute root access keys to uploaders",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A versioning-enabled bucket contains documents updated daily. Current documents must remain available, old versions should move to cheaper storage and eventually expire, and accidental overwrites must be recoverable. Which approach fits?",
+    "info": "Versioning รองรับการกู้คืน ส่วน lifecycle สำหรับ noncurrent versions ช่วยย้ายและหมดอายุเวอร์ชันเก่าโดยไม่ลบ current version ที่ยังต้องใช้",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Keep versioning enabled and configure lifecycle rules for noncurrent versions",
+        "correct": true
+      },
+      {
+        "text": "Make all document versions public and disable lifecycle rules",
+        "correct": false
+      },
+      {
+        "text": "Use CORS to delete old versions automatically",
+        "correct": false
+      },
+      {
+        "text": "Suspend versioning and expire all current documents immediately",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company stores a secondary, reproducible copy of data that is rarely read and can tolerate losing one AZ. Which class is appropriate?",
+    "info": "S3 One Zone-IA เหมาะกับข้อมูลที่เข้าถึงไม่บ่อยและสามารถสร้างใหม่ได้ โดยจัดเก็บใน AZ เดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EBS as a multi-Region object store",
+        "correct": false
+      },
+      {
+        "text": "S3 Glacier Deep Archive for immediate frequent reads",
+        "correct": false
+      },
+      {
+        "text": "S3 Standard for frequently accessed primary data",
+        "correct": false
+      },
+      {
+        "text": "S3 One Zone-IA",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A browser application on one domain must make permitted cross-origin requests to an S3 resource. Which configuration is relevant?",
+    "info": "CORS กำหนดว่าคำขอจาก origin อื่นใน browser ได้รับอนุญาตอย่างไร แต่ไม่ได้ใช้แทนสิทธิ์เข้าถึง object",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A database read replica",
+        "correct": false
+      },
+      {
+        "text": "CORS configuration",
+        "correct": true
+      },
+      {
+        "text": "An AWS Organizations OU",
+        "correct": false
+      },
+      {
+        "text": "An EC2 placement group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A partner must continue using SFTP while uploading files into S3. Which managed service fits this requirement?",
+    "info": "AWS Transfer Family รองรับการถ่ายโอนไฟล์ด้วย SFTP และเชื่อมกับ S3 หรือ EFS",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Well-Architected Tool",
+        "correct": false
+      },
+      {
+        "text": "AWS Transfer Family",
+        "correct": true
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "Amazon DynamoDB",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does S3 Versioning help protect against?",
+    "info": "Versioning เก็บหลายเวอร์ชัน จึงช่วยกู้คืนเมื่อเกิดการเขียนทับหรือลบโดยไม่ตั้งใจ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Accidental overwrites and deletions",
+        "correct": true
+      },
+      {
+        "text": "Incorrect application calculations",
+        "correct": false
+      },
+      {
+        "text": "Unauthorized access without any access policy",
+        "correct": false
+      },
+      {
+        "text": "Every possible network outage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of an S3 Lifecycle transition action?",
+    "info": "Transition action ย้าย object ไปยัง storage class อื่นตามกฎที่กำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Create a new EC2 instance",
+        "correct": false
+      },
+      {
+        "text": "Change the AWS account password",
+        "correct": false
+      },
+      {
+        "text": "Disable all bucket encryption",
+        "correct": false
+      },
+      {
+        "text": "Move objects to another storage class",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does an S3 Lifecycle expiration action do?",
+    "info": "Expiration action ใช้กำหนดการหมดอายุของ objects ตามกฎ lifecycle",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Expires objects according to a rule",
+        "correct": true
+      },
+      {
+        "text": "Adds RAM to an application",
+        "correct": false
+      },
+      {
+        "text": "Copies a bucket to every Region",
+        "correct": false
+      },
+      {
+        "text": "Creates permanent public access URLs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an object's key identify in S3?",
+    "info": "Object key เป็นชื่อที่ระบุ object ภายใน bucket",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The EC2 instance that uploaded the object",
+        "correct": false
+      },
+      {
+        "text": "The object's name within a bucket",
+        "correct": true
+      },
+      {
+        "text": "The bucket owner's password",
+        "correct": false
+      },
+      {
+        "text": "The encryption algorithm's source code",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What type of storage does Amazon S3 provide?",
+    "info": "Amazon S3 เป็น object storage ใช้เก็บข้อมูลเป็น objects ภายใน buckets",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Block storage attached as a boot disk",
+        "correct": false
+      },
+      {
+        "text": "Local instance storage",
+        "correct": false
+      },
+      {
+        "text": "A relational database",
+        "correct": false
+      },
+      {
+        "text": "Object storage",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which S3 storage class is a general-purpose choice for frequently accessed data?",
+    "info": "S3 Standard เหมาะกับข้อมูลที่เข้าถึงบ่อยและ workload ทั่วไป",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "S3 One Zone-IA for irreplaceable primary data",
+        "correct": false
+      },
+      {
+        "text": "S3 Standard",
+        "correct": true
+      },
+      {
+        "text": "S3 Glacier Deep Archive",
+        "correct": false
+      },
+      {
+        "text": "S3 Glacier Flexible Retrieval",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What can developers use to upload S3 objects directly from application code?",
+    "info": "AWS SDKs ให้ไลบรารีสำหรับเรียกใช้บริการ AWS จากโค้ดแอปพลิเคชัน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A Route 53 hosted zone",
+        "correct": false
+      },
+      {
+        "text": "An EC2 placement group",
+        "correct": false
+      },
+      {
+        "text": "AWS SDKs",
+        "correct": true
+      },
+      {
+        "text": "A network ACL alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A customer needs temporary access to a private object without receiving IAM credentials. What should be used?",
+    "info": "Presigned URL ให้เข้าถึง object ได้ชั่วคราวภายใต้สิทธิ์และอายุของ URL และ credentials ที่ใช้ลงนาม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Public access to the entire bucket",
+        "correct": false
+      },
+      {
+        "text": "The bucket owner's console password",
+        "correct": false
+      },
+      {
+        "text": "An unlimited anonymous IAM access key",
+        "correct": false
+      },
+      {
+        "text": "A presigned URL",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "How are folder-like structures commonly represented in S3?",
+    "info": "S3 ใช้ prefixes ใน object keys เพื่อแสดงโครงสร้างคล้ายโฟลเดอร์ โดยไม่ได้เป็น file system แบบลำดับชั้น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "By assigning one IAM user to each directory",
+        "correct": false
+      },
+      {
+        "text": "By prefixes in object keys",
+        "correct": true
+      },
+      {
+        "text": "By creating an Availability Zone for every folder",
+        "correct": false
+      },
+      {
+        "text": "By attaching a disk partition to each bucket",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which website is suitable for S3 static website hosting?",
+    "info": "S3 static website hosting เหมาะกับไฟล์ HTML, CSS, JavaScript และสื่อที่ไม่ต้องรันโค้ดฝั่งเซิร์ฟเวอร์ใน S3",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A site made of HTML, CSS, client-side JavaScript, and images",
+        "correct": true
+      },
+      {
+        "text": "A site requiring a database server process inside S3",
+        "correct": false
+      },
+      {
+        "text": "A site requiring PHP execution inside S3",
+        "correct": false
+      },
+      {
+        "text": "A site requiring an operating system login to the bucket",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A user uploads a file using an existing key in a versioning-enabled bucket. What happens?",
+    "info": "S3 สร้างเวอร์ชันใหม่พร้อม version ID ใหม่ และยังเก็บเวอร์ชันก่อนหน้า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A new version is created and the previous version remains",
+        "correct": true
+      },
+      {
+        "text": "The previous version is always permanently destroyed",
+        "correct": false
+      },
+      {
+        "text": "The upload is rejected because keys cannot be reused",
+        "correct": false
+      },
+      {
+        "text": "The bucket is automatically renamed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which S3 storage class is designed for long-term archival data with infrequent retrieval?",
+    "info": "S3 Glacier Deep Archive เหมาะกับการเก็บระยะยาวที่ไม่ต้องดึงข้อมูลทันที",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon EFS Standard",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance store",
+        "correct": false
+      },
+      {
+        "text": "S3 Glacier Deep Archive",
+        "correct": true
+      },
+      {
+        "text": "S3 Standard",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An administrator needs scheduled reports of object encryption and replication status. Which feature fits?",
+    "info": "S3 Inventory จัดทำรายการและ metadata ตามรอบเพื่อช่วยตรวจสอบสถานะ objects",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "EC2 user data",
+        "correct": false
+      },
+      {
+        "text": "S3 Transfer Acceleration",
+        "correct": false
+      },
+      {
+        "text": "S3 Inventory",
+        "correct": true
+      },
+      {
+        "text": "An internet gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is server-side encryption in S3?",
+    "info": "S3 เข้ารหัสข้อมูลที่ปลายทางก่อนจัดเก็บและถอดรหัสเมื่อเข้าถึงตามสิทธิ์",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "S3 encrypts data before storing it",
+        "correct": true
+      },
+      {
+        "text": "The client must always encrypt before uploading",
+        "correct": false
+      },
+      {
+        "text": "Objects are protected only by changing their names",
+        "correct": false
+      },
+      {
+        "text": "Versioning replaces cryptographic keys",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "After a successful overwrite of an S3 object, what does a subsequent GET return under S3's strong consistency model?",
+    "info": "S3 มี strong read-after-write consistency ดังนั้นหลัง PUT สำเร็จ GET จะเห็นข้อมูลเวอร์ชันที่เขียนล่าสุด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The old data until a fixed 24-hour delay ends",
+        "correct": false
+      },
+      {
+        "text": "The newly written object data",
+        "correct": true
+      },
+      {
+        "text": "A randomly chosen historical version",
+        "correct": false
+      },
+      {
+        "text": "Only metadata until the bucket is restarted",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Object access patterns are unpredictable and change over time. Which storage class helps manage tier placement automatically?",
+    "info": "S3 Intelligent-Tiering เหมาะกับรูปแบบการเข้าถึงที่ไม่แน่นอน โดยจัดการ tier ตามการใช้งาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 One Zone-IA selected regardless of access patterns",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance store",
+        "correct": false
+      },
+      {
+        "text": "S3 Standard with no tier management",
+        "correct": false
+      },
+      {
+        "text": "S3 Intelligent-Tiering",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "The current version of an object is a delete marker. How can an existing earlier version be retrieved?",
+    "info": "สามารถระบุ version ID ของเวอร์ชันเดิมใน GET เพื่อดึงเวอร์ชันนั้น แม้ current version เป็น delete marker",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Increase the bucket's storage capacity",
+        "correct": false
+      },
+      {
+        "text": "Change the bucket's Region",
+        "correct": false
+      },
+      {
+        "text": "Request the object using the earlier version ID",
+        "correct": true
+      },
+      {
+        "text": "Create a new IAM group named after the object",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How can an authorized user permanently remove a specific object version?",
+    "info": "การลบโดยระบุ version ID จะลบเวอร์ชันนั้นอย่างถาวร จึงต่างจากการลบที่ไม่ระบุเวอร์ชัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Perform a GET request without a version ID",
+        "correct": false
+      },
+      {
+        "text": "Delete the object with that version ID",
+        "correct": true
+      },
+      {
+        "text": "Enable CORS for the object",
+        "correct": false
+      },
+      {
+        "text": "Rename the bucket",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Data is rarely accessed but must be immediately available and stored across multiple AZs. Which class best fits?",
+    "info": "S3 Standard-IA เหมาะกับข้อมูลเข้าถึงไม่บ่อยที่ต้องดึงได้ทันทีและต้องการจัดเก็บหลาย AZ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Standard-IA",
+        "correct": true
+      },
+      {
+        "text": "S3 Glacier Flexible Retrieval requiring restoration",
+        "correct": false
+      },
+      {
+        "text": "S3 One Zone-IA",
+        "correct": false
+      },
+      {
+        "text": "S3 Glacier Deep Archive",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is object metadata?",
+    "info": "Metadata เป็นข้อมูลประกอบ object ในรูปแบบคู่ชื่อและค่า",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The physical address of an AWS server",
+        "correct": false
+      },
+      {
+        "text": "Name-value information describing an object",
+        "correct": true
+      },
+      {
+        "text": "The contents of every object in the bucket",
+        "correct": false
+      },
+      {
+        "text": "The complete IAM password history",
+        "correct": false
+      }
+    ]
+  }
+]

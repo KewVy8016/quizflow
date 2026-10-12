@@ -1,0 +1,1382 @@
+[
+  {
+    "text": "Deleting a disposable test stack should remove its ordinary managed resources. What must also be reviewed?",
+    "info": "DeletionPolicy และข้อจำกัดทรัพยากรอาจทำให้บางรายการคงอยู่หรือทำให้ deletion ไม่สำเร็จ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the spelling of the stack name",
+        "correct": false
+      },
+      {
+        "text": "Retention policies and resource deletion constraints",
+        "correct": true
+      },
+      {
+        "text": "Only the developer's preferred language",
+        "correct": false
+      },
+      {
+        "text": "Only the template's indentation style",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A stack contains valuable data that must survive stack deletion. Which attribute should be considered?",
+    "info": "DeletionPolicy แบบ Retain ช่วยเก็บทรัพยากรนั้นไว้เมื่อ stack ถูกลบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A lower instance CPU threshold",
+        "correct": false
+      },
+      {
+        "text": "DeletionPolicy with Retain",
+        "correct": true
+      },
+      {
+        "text": "An Output containing the data name",
+        "correct": false
+      },
+      {
+        "text": "A longer stack description",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A shared network supports three application stacks. One app must be rebuilt without deleting the network. Which boundary design best supports this?",
+    "info": "แยก shared network ออกจาก application stacks ทำให้จัดการ lifecycle แต่ละแอปได้โดยไม่ลบเครือข่ายร่วม",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Put the network inside the most frequently rebuilt application stack",
+        "correct": false
+      },
+      {
+        "text": "Keep the network in a separate stack and pass its identifiers to application stacks",
+        "correct": true
+      },
+      {
+        "text": "Create an internet gateway in an IAM policy instead of a stack",
+        "correct": false
+      },
+      {
+        "text": "Recreate all networking whenever any app is rebuilt",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of CloudFormation change sets?",
+    "info": "Change sets ให้ตรวจผลการเปลี่ยนแปลงก่อนดำเนินการ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Replace access policies",
+        "correct": false
+      },
+      {
+        "text": "Monitor CPU utilization",
+        "correct": false
+      },
+      {
+        "text": "Preview proposed stack changes",
+        "correct": true
+      },
+      {
+        "text": "Automatically approve all changes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An author wants readable infrastructure files with embedded comments. Which template format is convenient?",
+    "info": "YAML รองรับ comments และรูปแบบที่อ่านง่าย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A binary disk image",
+        "correct": false
+      },
+      {
+        "text": "YAML",
+        "correct": true
+      },
+      {
+        "text": "JPEG",
+        "correct": false
+      },
+      {
+        "text": "MP3",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A security group has unauthorized drift, and a template update also changes instance capacity. What is the best controlled approach?",
+    "info": "ต้องจัดการ drift ตามการตั้งค่าที่อนุมัติ พร้อมทบทวน update แยกผลกระทบก่อนดำเนินการ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Assume the capacity change automatically fixes every drifted property",
+        "correct": false
+      },
+      {
+        "text": "Copy the unauthorized rule into every environment without review",
+        "correct": false
+      },
+      {
+        "text": "Disable logging and execute the update immediately",
+        "correct": false
+      },
+      {
+        "text": "Review the drift, reconcile approved settings, and inspect the update change set",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An automated deployment still requires someone to reconstruct missing network settings manually. What should be improved?",
+    "info": "นิยามองค์ประกอบที่จำเป็นครบช่วยให้สร้าง environment ซ้ำได้จริง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Create more untracked setup notes",
+        "correct": false
+      },
+      {
+        "text": "Include required network configuration in the reproducible deployment",
+        "correct": true
+      },
+      {
+        "text": "Increase only instance memory",
+        "correct": false
+      },
+      {
+        "text": "Remove the application from version control",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which template section exposes useful values after deployment?",
+    "info": "Outputs แสดงค่าที่ต้องการส่งออกจาก stack",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Rules",
+        "correct": false
+      },
+      {
+        "text": "Outputs",
+        "correct": true
+      },
+      {
+        "text": "Parameters",
+        "correct": false
+      },
+      {
+        "text": "Description",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which CloudFormation template section is required?",
+    "info": "Resources เป็นส่วนบังคับที่ระบุทรัพยากรที่จะสร้าง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Outputs",
+        "correct": false
+      },
+      {
+        "text": "Resources",
+        "correct": true
+      },
+      {
+        "text": "Metadata",
+        "correct": false
+      },
+      {
+        "text": "Description",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Many applications use one shared VPC. How should stack boundaries reflect this relationship?",
+    "info": "แยก network stack ที่ใช้ร่วมกันออกจาก lifecycle ของแต่ละแอป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Put the VPC in every application template as a new copy",
+        "correct": false
+      },
+      {
+        "text": "Keep the network undocumented",
+        "correct": false
+      },
+      {
+        "text": "Rebuild the VPC whenever one application changes",
+        "correct": false
+      },
+      {
+        "text": "Use a shared network stack and separate application stacks",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A developer wants shorthand definitions for Lambda functions and related serverless resources. Which framework fits?",
+    "info": "AWS SAM ย่อการประกาศ serverless resources บน CloudFormation",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS SAM",
+        "correct": true
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "AWS Direct Connect",
+        "correct": false
+      },
+      {
+        "text": "Amazon Inspector",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An architect needs one template for different instance sizes. What should be parameterized?",
+    "info": "Parameter ทำให้เลือกขนาด instance ตอน deploy ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The stack event timestamps",
+        "correct": false
+      },
+      {
+        "text": "The AWS account's root password",
+        "correct": false
+      },
+      {
+        "text": "The instance type",
+        "correct": true
+      },
+      {
+        "text": "The template's file extension",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A supported database resource should be backed up when its stack is deleted. Which deletion policy fits?",
+    "info": "Snapshot ใช้สร้าง snapshot สำหรับ resource types ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "DeletionPolicy with Snapshot",
+        "correct": true
+      },
+      {
+        "text": "An empty Outputs section",
+        "correct": false
+      },
+      {
+        "text": "DeletionPolicy with Delete",
+        "correct": false
+      },
+      {
+        "text": "A Name tag only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An EC2 declaration must specify its image and instance size. Where do those settings belong?",
+    "info": "Properties เก็บค่าการตั้งค่าของ resource นั้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An unrelated DNS record",
+        "correct": false
+      },
+      {
+        "text": "The stack's display name only",
+        "correct": false
+      },
+      {
+        "text": "Resource Properties",
+        "correct": true
+      },
+      {
+        "text": "The billing dashboard",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system generates infrastructure documents and already handles JSON reliably. Which supported format can it use?",
+    "info": "CloudFormation ใช้ JSON ได้ เหมาะกับระบบที่สร้างและ parse JSON อยู่แล้ว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only PDF",
+        "correct": false
+      },
+      {
+        "text": "JSON",
+        "correct": true
+      },
+      {
+        "text": "Only YAML",
+        "correct": false
+      },
+      {
+        "text": "Only CSV",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An automation role has unrestricted access although it deploys only one application. What should be improved?",
+    "info": "ใช้ least privilege กับ automation เพื่อจำกัดผลกระทบจากสิทธิ์เกินจำเป็น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Scope its permissions to deployment needs",
+        "correct": true
+      },
+      {
+        "text": "Share the role's credentials publicly",
+        "correct": false
+      },
+      {
+        "text": "Use root credentials instead",
+        "correct": false
+      },
+      {
+        "text": "Disable all access logging",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Before executing a stack update, a reviewer wants to see which resources may be replaced. What should be created?",
+    "info": "Change set แสดงการเปลี่ยนแปลงรวมถึงการทดแทนทรัพยากรที่คาดการณ์ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A database connection pool",
+        "correct": false
+      },
+      {
+        "text": "A DNS health check",
+        "correct": false
+      },
+      {
+        "text": "A change set",
+        "correct": true
+      },
+      {
+        "text": "An unrelated test user",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants to upload application code and have a managed service provision its application environment. Which option fits?",
+    "info": "Elastic Beanstalk ช่วยจัดเตรียม environment จาก application code",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Transit Gateway",
+        "correct": false
+      },
+      {
+        "text": "AWS CloudTrail",
+        "correct": false
+      },
+      {
+        "text": "AWS Elastic Beanstalk",
+        "correct": true
+      },
+      {
+        "text": "AWS KMS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does Infrastructure as Code provision and manage?",
+    "info": "IaC ใช้โค้ดหรือเทมเพลตจัดการทรัพยากรโครงสร้างพื้นฐาน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Physical office furniture",
+        "correct": false
+      },
+      {
+        "text": "Only employee passwords",
+        "correct": false
+      },
+      {
+        "text": "Only application screenshots",
+        "correct": false
+      },
+      {
+        "text": "Cloud infrastructure",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A resource property must use a user-provided template parameter. Which intrinsic function commonly retrieves it?",
+    "info": "Ref ใช้อ้างอิงค่า parameter และค่าของ resources ตามชนิด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Ref",
+        "correct": true
+      },
+      {
+        "text": "GetMetricData",
+        "correct": false
+      },
+      {
+        "text": "DeleteStack",
+        "correct": false
+      },
+      {
+        "text": "AssumeRole",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which resources belong most naturally in a network template?",
+    "info": "VPC, subnets และ gateways เป็นส่วนของโครงสร้างเครือข่าย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "VPCs, subnets, and gateways",
+        "correct": true
+      },
+      {
+        "text": "Only database query results",
+        "correct": false
+      },
+      {
+        "text": "Only payment calculation code",
+        "correct": false
+      },
+      {
+        "text": "User interface text and images",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does AWS SAM primarily simplify?",
+    "info": "SAM เพิ่ม syntax แบบย่อสำหรับโครงสร้างพื้นฐาน serverless",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Physical server repairs",
+        "correct": false
+      },
+      {
+        "text": "Domain ownership transfers",
+        "correct": false
+      },
+      {
+        "text": "Serverless infrastructure definitions",
+        "correct": true
+      },
+      {
+        "text": "Cross-country tax calculations",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon Q Developer's role in infrastructure authoring?",
+    "info": "Amazon Q Developer ช่วยแนะนำและอธิบายโค้ดที่ผู้พัฒนาต้องทบทวน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Replace all permission reviews",
+        "correct": false
+      },
+      {
+        "text": "Automatically own the AWS account",
+        "correct": false
+      },
+      {
+        "text": "Assist with code generation and explanation",
+        "correct": true
+      },
+      {
+        "text": "Guarantee every deployment is secure",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which template section supports conditional resource creation?",
+    "info": "Conditions ใช้กำหนดว่าจะสร้างทรัพยากรเมื่อใด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Description",
+        "correct": false
+      },
+      {
+        "text": "Conditions",
+        "correct": true
+      },
+      {
+        "text": "Metadata",
+        "correct": false
+      },
+      {
+        "text": "Outputs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why is an automated deployment preferable to an undocumented manual sequence?",
+    "info": "Automation เพิ่มการทำซ้ำ ความสม่ำเสมอ และการตรวจสอบขั้นตอน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "It guarantees infinite capacity",
+        "correct": false
+      },
+      {
+        "text": "It removes all need for authorization",
+        "correct": false
+      },
+      {
+        "text": "It improves repeatability and reduces configuration errors",
+        "correct": true
+      },
+      {
+        "text": "It eliminates every possible application defect",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team stores a template in S3 instead of uploading local text. Can CloudFormation use it?",
+    "info": "CloudFormation รับ template จากไฟล์หรือ URL ของ template ที่เข้าถึงได้ใน S3",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only if every bucket is public",
+        "correct": false
+      },
+      {
+        "text": "Yes, it can use an accessible S3 template URL",
+        "correct": true
+      },
+      {
+        "text": "Only if the template contains no resources",
+        "correct": false
+      },
+      {
+        "text": "No, all templates must be typed manually",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does CloudFormation drift detection identify?",
+    "info": "Drift detection ตรวจความต่างระหว่างค่าที่รองรับกับสิ่งที่เทมเพลตกำหนด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Database query plans",
+        "correct": false
+      },
+      {
+        "text": "Configuration differences from the template",
+        "correct": true
+      },
+      {
+        "text": "Monthly billing taxes",
+        "correct": false
+      },
+      {
+        "text": "Application syntax errors",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A payment service changes frequently while shared networking changes rarely. What stack structure is preferable?",
+    "info": "แยก stacks ลดการผูก lifecycle ของสิ่งที่เปลี่ยนต่างจังหวะ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Manual networking changes without a template",
+        "correct": false
+      },
+      {
+        "text": "Separate payment and shared network stacks",
+        "correct": true
+      },
+      {
+        "text": "One stack that must rebuild both for every code change",
+        "correct": false
+      },
+      {
+        "text": "One unrelated network per payment request",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "The chapter describes AWS Quick Starts. What is their primary architectural value?",
+    "info": "Quick Starts ในบทเป็น reference architectures พร้อมเทมเพลตและแนวทาง deploy",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A replacement for all application requirements",
+        "correct": false
+      },
+      {
+        "text": "A method for sharing root passwords",
+        "correct": false
+      },
+      {
+        "text": "Prebuilt reference deployments based on AWS best practices",
+        "correct": true
+      },
+      {
+        "text": "A guarantee of zero cost",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A stack update unexpectedly changes more resources than intended. Which action best supports controlled implementation?",
+    "info": "ทบทวน change set และแก้ template ก่อน execute ลดผลกระทบที่ไม่ตั้งใจ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Delete the audit history",
+        "correct": false
+      },
+      {
+        "text": "Execute immediately and inspect later",
+        "correct": false
+      },
+      {
+        "text": "Disable drift detection permanently",
+        "correct": false
+      },
+      {
+        "text": "Review the change set and revise the template before execution",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team prefers defining infrastructure in TypeScript and deploying through CloudFormation. Which tool fits?",
+    "info": "AWS CDK รองรับนิยาม infrastructure ด้วยภาษาโปรแกรมแล้ว deploy ผ่าน CloudFormation",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Macie",
+        "correct": false
+      },
+      {
+        "text": "AWS DMS",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS CDK",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A proposed update replaces a data-bearing resource. The team needs to preserve the old resource specifically during replacement. Which attribute should be reviewed?",
+    "info": "UpdateReplacePolicy ควบคุมการเก็บหรือสำรอง resource เดิมเมื่อถูก replace ต่างจาก DeletionPolicy ที่ต้องพิจารณาร่วมด้วย",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Only an instance Name tag",
+        "correct": false
+      },
+      {
+        "text": "Only the stack Description",
+        "correct": false
+      },
+      {
+        "text": "UpdateReplacePolicy",
+        "correct": true
+      },
+      {
+        "text": "Only an Output with the resource ID",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants to deploy the same application in another Region. What must be checked in its template?",
+    "info": "ทรัพยากรเฉพาะ Region เช่น AMI IDs และบริการที่รองรับต้องเหมาะกับปลายทาง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the number of developers",
+        "correct": false
+      },
+      {
+        "text": "Only whether the stack name is uppercase",
+        "correct": false
+      },
+      {
+        "text": "Region-specific identifiers and service availability",
+        "correct": true
+      },
+      {
+        "text": "Only the source template's comments",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which resources belong most naturally in a security-focused template?",
+    "info": "IAM policies และ roles เป็นองค์ประกอบควบคุมสิทธิ์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only product photographs",
+        "correct": false
+      },
+      {
+        "text": "Only analytics chart results",
+        "correct": false
+      },
+      {
+        "text": "Only static page content",
+        "correct": false
+      },
+      {
+        "text": "IAM policies and roles",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does the AWS CDK let developers use to model infrastructure?",
+    "info": "CDK ใช้ภาษาโปรแกรมที่คุ้นเคยเพื่อสร้างโครงสร้างพื้นฐานผ่าน CloudFormation",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only manual console clicks",
+        "correct": false
+      },
+      {
+        "text": "Only spreadsheet formulas",
+        "correct": false
+      },
+      {
+        "text": "Only SQL queries",
+        "correct": false
+      },
+      {
+        "text": "Familiar programming languages",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Amazon Q Developer suggests an infrastructure change. What should happen before deployment?",
+    "info": "คำแนะนำจาก AI ต้องทบทวนความถูกต้อง ความปลอดภัย และผลกระทบเหมือนโค้ดอื่น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Review the generated code and its deployment impact",
+        "correct": true
+      },
+      {
+        "text": "Deploy automatically because AI output is guaranteed correct",
+        "correct": false
+      },
+      {
+        "text": "Remove all validation steps",
+        "correct": false
+      },
+      {
+        "text": "Grant public access to avoid permission errors",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which deployment habit aligns with Operational Excellence guidance in this chapter?",
+    "info": "การเปลี่ยนเล็ก บ่อย และย้อนกลับได้ช่วยควบคุมความเสี่ยงการปฏิบัติการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Make frequent, small, reversible changes",
+        "correct": true
+      },
+      {
+        "text": "Make rare, undocumented changes to many systems",
+        "correct": false
+      },
+      {
+        "text": "Skip review for large changes",
+        "correct": false
+      },
+      {
+        "text": "Use different manual processes in each environment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A CloudFormation resource declaration needs to identify the AWS resource kind. Which element does this?",
+    "info": "Type ระบุชนิด resource เช่น AWS::S3::Bucket",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Outputs alone",
+        "correct": false
+      },
+      {
+        "text": "Type",
+        "correct": true
+      },
+      {
+        "text": "Description alone",
+        "correct": false
+      },
+      {
+        "text": "The template file name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which formats can represent a CloudFormation template?",
+    "info": "CloudFormation รองรับเทมเพลต JSON และ YAML",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "JSON and YAML",
+        "correct": true
+      },
+      {
+        "text": "MP3 and WAV",
+        "correct": false
+      },
+      {
+        "text": "JPEG and PNG",
+        "correct": false
+      },
+      {
+        "text": "CSV and PDF only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "After creating a stack, which operations can CloudFormation perform on that managed collection?",
+    "info": "CloudFormation จัดการ lifecycle ของ stack รวมถึง update และ delete",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Update or delete the stack",
+        "correct": true
+      },
+      {
+        "text": "Only rename EC2 consoles",
+        "correct": false
+      },
+      {
+        "text": "Only rotate physical disks",
+        "correct": false
+      },
+      {
+        "text": "Only edit source code",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team is choosing an IaC tool. Which factors are most relevant?",
+    "info": "เลือกเครื่องมือตาม use case ความสะดวก ระดับควบคุม และทักษะทีม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only product name length",
+        "correct": false
+      },
+      {
+        "text": "Only the number of social media mentions",
+        "correct": false
+      },
+      {
+        "text": "Use case, control requirements, and team skills",
+        "correct": true
+      },
+      {
+        "text": "Only logo design",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team reuses a deployment across Regions with different AMI IDs and across environments with different HA needs. Which combination fits?",
+    "info": "Input หรือ lookup จัดการความต่างของ Region ส่วน conditions จัดการความต่างตาม environment",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "One hard-coded AMI ID and no conditions",
+        "correct": false
+      },
+      {
+        "text": "Only extra Outputs with no resource configuration changes",
+        "correct": false
+      },
+      {
+        "text": "Only longer stack names",
+        "correct": false
+      },
+      {
+        "text": "Regional AMI inputs or lookups plus environment-based conditions",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A prebuilt template creates resources the workload does not need. What is the best response?",
+    "info": "ปรับเทมเพลตตามความต้องการและทบทวนผลกระทบก่อน deploy",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Deploy it unchanged regardless of cost",
+        "correct": false
+      },
+      {
+        "text": "Make all resources public to simplify testing",
+        "correct": false
+      },
+      {
+        "text": "Remove all security controls first",
+        "correct": false
+      },
+      {
+        "text": "Adapt and review the template for the workload",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A security group was manually changed after stack creation. Which feature helps detect this discrepancy?",
+    "info": "Drift detection เปรียบเทียบค่าทรัพยากรที่รองรับกับเทมเพลต",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Transfer Acceleration",
+        "correct": false
+      },
+      {
+        "text": "A change set for an unchanged template only",
+        "correct": false
+      },
+      {
+        "text": "Drift detection",
+        "correct": true
+      },
+      {
+        "text": "An EC2 CPU alarm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "One template serves development and production. Production needs a second AZ and a standby database; development needs neither. Which design is most maintainable?",
+    "info": "Parameter เลือก environment แล้ว conditions ควบคุมทั้ง network และ standby โดยใช้ template ที่ดูแลร่วมกัน",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use Outputs to decide which resources CloudFormation creates",
+        "correct": false
+      },
+      {
+        "text": "Create everything and manually delete production-only resources in development",
+        "correct": false
+      },
+      {
+        "text": "Maintain two manually diverging templates with no shared review",
+        "correct": false
+      },
+      {
+        "text": "Use an environment parameter with conditions on the additional resources",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Drift detection reports a supported property as modified. What should the team do next?",
+    "info": "ควรทบทวนความต่างและปรับทรัพยากรหรือเทมเพลตให้ตรงกับการตั้งค่าที่อนุมัติ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Ignore it because the stack once deployed successfully",
+        "correct": false
+      },
+      {
+        "text": "Delete all account resources immediately",
+        "correct": false
+      },
+      {
+        "text": "Assume drift was automatically corrected",
+        "correct": false
+      },
+      {
+        "text": "Review the difference and reconcile the approved configuration",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team repeatedly rebuilds the same network. Which approach most directly saves deployment effort?",
+    "info": "CloudFormation สร้างเครือข่ายซ้ำจากนิยามที่บันทึกไว้ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Keep only screenshots of settings",
+        "correct": false
+      },
+      {
+        "text": "Assign more public IP addresses",
+        "correct": false
+      },
+      {
+        "text": "Recreate every subnet by memory",
+        "correct": false
+      },
+      {
+        "text": "Define the network in CloudFormation",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A reusable EC2 template has a hard-coded AMI ID from one Region. Which design improves portability?",
+    "info": "ใช้ input หรือ lookup ที่เหมาะกับ Region แทน AMI ID คงที่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Remove the instance's operating system",
+        "correct": false
+      },
+      {
+        "text": "Rename the AMI ID string randomly",
+        "correct": false
+      },
+      {
+        "text": "Supply or look up an appropriate regional AMI ID",
+        "correct": true
+      },
+      {
+        "text": "Use that AMI ID in every Region unchanged",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which template section accepts deployment input values?",
+    "info": "Parameters ใช้รับค่าจากผู้สร้าง stack",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Outputs",
+        "correct": false
+      },
+      {
+        "text": "Parameters",
+        "correct": true
+      },
+      {
+        "text": "Metadata",
+        "correct": false
+      },
+      {
+        "text": "Description",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A large template mixes networking, security, and application resources. Which organization improves maintainability?",
+    "info": "แบ่งตามความรับผิดชอบช่วยลดความซับซ้อนและควบคุมผลกระทบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Separate templates or stacks by responsibility",
+        "correct": true
+      },
+      {
+        "text": "Remove all descriptive names",
+        "correct": false
+      },
+      {
+        "text": "Copy the whole template for every resource",
+        "correct": false
+      },
+      {
+        "text": "Move every setting to manual steps",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a CloudFormation stack?",
+    "info": "Stack คือชุดทรัพยากรที่ CloudFormation จัดการร่วมกัน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A managed collection of AWS resources",
+        "correct": true
+      },
+      {
+        "text": "A user's browser session",
+        "correct": false
+      },
+      {
+        "text": "An individual API request",
+        "correct": false
+      },
+      {
+        "text": "A physical server rack",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A template was edited in version control. Will all existing stacks using an older copy update automatically?",
+    "info": "การแก้ไฟล์เทมเพลตไม่อัปเดต stacks จนกว่าจะสั่ง update ที่เกี่ยวข้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No, the stacks must be updated explicitly",
+        "correct": true
+      },
+      {
+        "text": "Yes, if the file uses YAML",
+        "correct": false
+      },
+      {
+        "text": "Yes, every stack updates immediately",
+        "correct": false
+      },
+      {
+        "text": "No, existing stacks can never be updated",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Before using a prebuilt reference deployment, what should an architect review?",
+    "info": "ต้องตรวจข้อกำหนด permissions และทรัพยากรให้เข้ากับ workload จริง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Its architecture, permissions, costs, and deployment guide",
+        "correct": true
+      },
+      {
+        "text": "Only the template author's logo",
+        "correct": false
+      },
+      {
+        "text": "Only the number of comments",
+        "correct": false
+      },
+      {
+        "text": "Only the shortest resource name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Production needs a standby database, but development does not. How can one template support both?",
+    "info": "ใช้ environment parameter ร่วมกับ condition ควบคุมทรัพยากรสำรอง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Always create the standby everywhere",
+        "correct": false
+      },
+      {
+        "text": "Use an Output to create the standby",
+        "correct": false
+      },
+      {
+        "text": "Manually delete the standby after every deployment",
+        "correct": false
+      },
+      {
+        "text": "Use an environment parameter and a condition",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team wants an auditable history of infrastructure changes. What should accompany IaC templates?",
+    "info": "Version control เก็บประวัติการแก้ไขและช่วยทบทวนการเปลี่ยนแปลง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Untracked files on one laptop",
+        "correct": false
+      },
+      {
+        "text": "Only the latest screenshot",
+        "correct": false
+      },
+      {
+        "text": "Shared root credentials",
+        "correct": false
+      },
+      {
+        "text": "Version control and reviewed changes",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A web team wants a framework that simplifies full-stack web and mobile backend integration. Which service fits?",
+    "info": "Amplify ช่วยพัฒนาและเชื่อมส่วนต่าง ๆ ของเว็บและมือถือ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Amplify",
+        "correct": true
+      },
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      },
+      {
+        "text": "AWS Artifact",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Test environments differ because administrators configure them manually. Which change best improves consistency?",
+    "info": "ใช้เทมเพลตร่วมกันช่วยลดความต่างจากการตั้งค่าด้วยมือ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use different templates without review",
+        "correct": false
+      },
+      {
+        "text": "Add more manual setup steps",
+        "correct": false
+      },
+      {
+        "text": "Deploy them from a common IaC template",
+        "correct": true
+      },
+      {
+        "text": "Give administrators larger instances",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants secure settings applied consistently to new environments. What should it automate?",
+    "info": "บันทึกการตั้งค่าความปลอดภัยใน deployment ช่วยให้ใช้มาตรฐานเดียวกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only resource display colors",
+        "correct": false
+      },
+      {
+        "text": "Only account nicknames",
+        "correct": false
+      },
+      {
+        "text": "Manual exception creation for every environment",
+        "correct": false
+      },
+      {
+        "text": "Security configuration in deployment templates",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A reference template and AI-generated modifications will deploy a production database. Which review sequence best controls risk?",
+    "info": "ต้องตรวจ template กับสิทธิ์ เตรียมการป้องกันข้อมูล และทบทวน change set ก่อน execute",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Delete the existing database before reading the proposed changes",
+        "correct": false
+      },
+      {
+        "text": "Review architecture and permissions, plan data retention, and inspect a change set before execution",
+        "correct": true
+      },
+      {
+        "text": "Trust both sources and deploy directly with root credentials",
+        "correct": false
+      },
+      {
+        "text": "Focus only on whether the template is valid JSON",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A template should return a deployed load balancer's address. Which section should contain it?",
+    "info": "Outputs ใช้เผยแพร่ค่าจากทรัพยากรที่สร้างแล้ว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Outputs",
+        "correct": true
+      },
+      {
+        "text": "Parameters",
+        "correct": false
+      },
+      {
+        "text": "Conditions",
+        "correct": false
+      },
+      {
+        "text": "Mappings",
+        "correct": false
+      }
+    ]
+  }
+]

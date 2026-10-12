@@ -1,0 +1,692 @@
+[
+  {
+    "text": "What does Resource specify in an IAM policy statement?",
+    "info": "Resource ระบุทรัพยากรที่การกระทำมีผล เช่น ARN ของ bucket, object หรือ queue",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The resources affected by the listed actions",
+        "correct": true
+      },
+      {
+        "text": "The most recent console user",
+        "correct": false
+      },
+      {
+        "text": "The application programming language",
+        "correct": false
+      },
+      {
+        "text": "The number of required MFA challenges",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does authorization determine?",
+    "info": "Authorization ประเมินว่าผู้ร้องขอมีสิทธิ์ทำอะไรกับทรัพยากร",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "What the requester is allowed to do",
+        "correct": true
+      },
+      {
+        "text": "The physical server manufacturer",
+        "correct": false
+      },
+      {
+        "text": "The requester's internet speed",
+        "correct": false
+      },
+      {
+        "text": "The requester's console sign-in name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which service should a company use to audit who made AWS API calls?",
+    "info": "AWS CloudTrail บันทึกเหตุการณ์ API และข้อมูลตัวตนเพื่อช่วยตรวจสอบย้อนหลัง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Direct Connect",
+        "correct": false
+      },
+      {
+        "text": "Amazon CloudFront",
+        "correct": false
+      },
+      {
+        "text": "AWS CloudTrail",
+        "correct": true
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which is an example of a resource-based policy?",
+    "info": "Bucket policy แนบกับ S3 bucket ซึ่งเป็นทรัพยากร จึงเป็น resource-based policy",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A policy attached to an IAM group",
+        "correct": false
+      },
+      {
+        "text": "A policy attached to an S3 bucket",
+        "correct": true
+      },
+      {
+        "text": "A policy attached to an IAM user",
+        "correct": false
+      },
+      {
+        "text": "A policy attached to an IAM role",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A request has no applicable explicit allow and no explicit deny. What is the default result?",
+    "info": "เมื่อไม่มี explicit allow ที่ใช้ได้ คำขอจะถูกปฏิเสธโดยปริยาย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A result determined by the number of Availability Zones",
+        "correct": false
+      },
+      {
+        "text": "Implicit deny",
+        "correct": true
+      },
+      {
+        "text": "Automatic read-only access",
+        "correct": false
+      },
+      {
+        "text": "Automatic allow",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does multi-factor authentication (MFA) protect access?",
+    "info": "MFA ใช้ปัจจัยยืนยันตัวตนมากกว่าหนึ่งชนิด เช่น รหัสผ่านร่วมกับอุปกรณ์ยืนยันตัวตน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "It automatically grants administrator permissions",
+        "correct": false
+      },
+      {
+        "text": "It lets all users share one password",
+        "correct": false
+      },
+      {
+        "text": "It removes the need to authenticate",
+        "correct": false
+      },
+      {
+        "text": "It requires an additional authentication factor",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of AWS Identity and Access Management (IAM)?",
+    "info": "IAM ใช้จัดการตัวตนและควบคุมสิทธิ์เข้าถึงทรัพยากร AWS อย่างละเอียด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Manage identities and permissions for AWS resources",
+        "correct": true
+      },
+      {
+        "text": "Deliver cached content from edge locations",
+        "correct": false
+      },
+      {
+        "text": "Resize storage volumes on a schedule",
+        "correct": false
+      },
+      {
+        "text": "Back up databases each day",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is client-side encryption?",
+    "info": "Client-side encryption เข้ารหัสข้อมูลฝั่งลูกค้าก่อนส่งไปยังบริการจัดเก็บ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Encrypting data on the client before sending it to storage",
+        "correct": true
+      },
+      {
+        "text": "Deleting the source file after every upload",
+        "correct": false
+      },
+      {
+        "text": "Converting file names to uppercase",
+        "correct": false
+      },
+      {
+        "text": "Encrypting data at the storage service after receiving it",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does the principle of least privilege mean?",
+    "info": "Least privilege ให้สิทธิ์ขั้นต่ำที่จำเป็นต่อหน้าที่ และปรับสิทธิ์ตามความต้องการจริง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Grant AdministratorAccess to every user",
+        "correct": false
+      },
+      {
+        "text": "Grant all permissions permanently before assessing needs",
+        "correct": false
+      },
+      {
+        "text": "Grant only the permissions needed to perform a task",
+        "correct": true
+      },
+      {
+        "text": "Share the root user among all employees",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an IAM policy define?",
+    "info": "Policy ระบุการกระทำและทรัพยากรที่ได้รับอนุญาตหรือถูกปฏิเสธ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Automatic database sizing decisions",
+        "correct": false
+      },
+      {
+        "text": "The contents of S3 objects",
+        "correct": false
+      },
+      {
+        "text": "IP addresses assigned to instances",
+        "correct": false
+      },
+      {
+        "text": "Allowed or denied actions on resources",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does authentication establish?",
+    "info": "Authentication ยืนยันตัวตนของผู้ร้องขอ ส่วน authorization กำหนดสิทธิ์การกระทำ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Who is requesting access",
+        "correct": true
+      },
+      {
+        "text": "How many copies of the data exist",
+        "correct": false
+      },
+      {
+        "text": "Which Region should store the data",
+        "correct": false
+      },
+      {
+        "text": "How much a request will cost",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A statement allows s3:GetObject on a specified object. Which operation does this permit?",
+    "info": "s3:GetObject เป็นสิทธิ์อ่านหรือดึง object ไม่ได้ให้สิทธิ์เขียนหรือลบโดยตัวมันเอง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Uploading a new object",
+        "correct": false
+      },
+      {
+        "text": "Changing an IAM user's policies",
+        "correct": false
+      },
+      {
+        "text": "Deleting the bucket",
+        "correct": false
+      },
+      {
+        "text": "Reading or downloading the object",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which mechanism helps protect data in transit?",
+    "info": "TLS เข้ารหัสการสื่อสารระหว่างทางเพื่อลดความเสี่ยงจากการดักอ่าน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A larger EC2 instance",
+        "correct": false
+      },
+      {
+        "text": "TLS",
+        "correct": true
+      },
+      {
+        "text": "A hard-to-guess bucket name alone",
+        "correct": false
+      },
+      {
+        "text": "S3 Versioning alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A user is allowed only iam:Get* and iam:List*, with no other permissions. Can the user create an IAM user?",
+    "info": "iam:CreateUser ไม่ตรงกับ Get หรือ List จึงไม่มี explicit allow สำหรับการสร้างผู้ใช้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, because every IAM action starts with iam:",
+        "correct": false
+      },
+      {
+        "text": "Yes, because List includes Create operations",
+        "correct": false
+      },
+      {
+        "text": "Yes, if the new user name contains only digits",
+        "correct": false
+      },
+      {
+        "text": "No, iam:CreateUser is not allowed",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does Principal identify in a resource-based policy?",
+    "info": "Principal ระบุตัวตนหรือผู้ร้องขอที่ statement นั้นมีผลต่อการเข้าถึง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The Region storing the policy",
+        "correct": false
+      },
+      {
+        "text": "The service's price per request",
+        "correct": false
+      },
+      {
+        "text": "The identity to which the statement applies",
+        "correct": true
+      },
+      {
+        "text": "The policy's complexity level",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement describes an IAM role?",
+    "info": "IAM role สามารถถูก assume เพื่อรับ temporary credentials และไม่ได้ผูกกับบุคคลเดียวเสมอไป",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "It can only be used by one person for the account's lifetime",
+        "correct": false
+      },
+      {
+        "text": "It provides temporary security credentials when assumed",
+        "correct": true
+      },
+      {
+        "text": "It always requires a permanent console password",
+        "correct": false
+      },
+      {
+        "text": "It is another name for the account root user",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When should an administrator use the account root user?",
+    "info": "ควรปกป้อง root user และใช้เฉพาะงานที่จำเป็นต้องใช้ root ส่วนงานประจำใช้ตัวตนที่ได้รับสิทธิ์เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Whenever an employee uploads an image",
+        "correct": false
+      },
+      {
+        "text": "Every time application logs are read",
+        "correct": false
+      },
+      {
+        "text": "Only for tasks that require root user access",
+        "correct": true
+      },
+      {
+        "text": "For all daily administration tasks",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is server-side encryption?",
+    "info": "Server-side encryption ให้บริการปลายทางเข้ารหัสข้อมูลก่อนจัดเก็บและถอดรหัสตามสิทธิ์เมื่อเข้าถึง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "TLS is disabled whenever data is uploaded",
+        "correct": false
+      },
+      {
+        "text": "Only the client encrypts data before transmission",
+        "correct": false
+      },
+      {
+        "text": "An IAM policy replaces cryptographic protection",
+        "correct": false
+      },
+      {
+        "text": "The receiving service encrypts data before storing it",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which format is used for IAM policy documents?",
+    "info": "IAM policies เป็นเอกสาร JSON ที่ประกอบด้วย statements กำหนดสิทธิ์",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "JPEG",
+        "correct": false
+      },
+      {
+        "text": "MP3",
+        "correct": false
+      },
+      {
+        "text": "A CSV file containing only user names",
+        "correct": false
+      },
+      {
+        "text": "JSON",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Many IAM users perform the same job function. How should their common permissions be managed?",
+    "info": "การแนบ policies กับกลุ่มแล้วเพิ่มผู้ใช้เป็นสมาชิกช่วยให้ปรับสิทธิ์ร่วมกันได้จากจุดเดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Give every user the same access key",
+        "correct": false
+      },
+      {
+        "text": "Attach policies to an IAM group and add the users to it",
+        "correct": true
+      },
+      {
+        "text": "Maintain a separate copied policy for every user indefinitely",
+        "correct": false
+      },
+      {
+        "text": "Create one AWS Region for each user",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An access key is confirmed to be unused. What is the best action?",
+    "info": "ควรปิดใช้งานหรือลบ credentials ที่ไม่จำเป็นเพื่อลดช่องทางเข้าถึงที่ไม่มีเหตุผลทางธุรกิจ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Copy the key to more team members",
+        "correct": false
+      },
+      {
+        "text": "Deactivate or delete the key",
+        "correct": true
+      },
+      {
+        "text": "Increase the key's permissions for future use",
+        "correct": false
+      },
+      {
+        "text": "Keep the key in public source code",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An identity policy allows s3:PutObject, but the bucket policy explicitly denies the same request. What happens?",
+    "info": "Explicit deny ใน policy ที่เกี่ยวข้องมีผลเหนือ explicit allow",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The request is allowed during office hours",
+        "correct": false
+      },
+      {
+        "text": "The identity policy always takes priority",
+        "correct": false
+      },
+      {
+        "text": "The request is denied",
+        "correct": true
+      },
+      {
+        "text": "A new bucket is created automatically",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which policy element can restrict a statement to requests from a particular source IP range?",
+    "info": "Condition ระบุเงื่อนไขที่ต้องตรงเพื่อให้ statement มีผลกับคำขอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Sid",
+        "correct": false
+      },
+      {
+        "text": "The policy description alone",
+        "correct": false
+      },
+      {
+        "text": "Version",
+        "correct": false
+      },
+      {
+        "text": "Condition",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "When using Amazon EC2, which task is the customer's responsibility?",
+    "info": "ลูกค้าต้องจัดการระบบปฏิบัติการ guest และความปลอดภัยของแอปที่รันบน EC2",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Replacing physical disks in an AWS data center",
+        "correct": false
+      },
+      {
+        "text": "Maintaining the Region's power systems",
+        "correct": false
+      },
+      {
+        "text": "Patching the guest operating system and configuring applications",
+        "correct": true
+      },
+      {
+        "text": "Maintaining physical security of an Availability Zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Under the AWS shared responsibility model, which responsibility belongs to AWS?",
+    "info": "AWS รับผิดชอบความปลอดภัยของโครงสร้างพื้นฐานคลาวด์ เช่น ศูนย์ข้อมูลและฮาร์ดแวร์",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Protecting physical data centers and underlying hardware",
+        "correct": true
+      },
+      {
+        "text": "Fixing customer application code",
+        "correct": false
+      },
+      {
+        "text": "Assigning permissions to every customer's IAM users",
+        "correct": false
+      },
+      {
+        "text": "Deciding which customer data should be public",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application on EC2 needs to read S3 objects. How should it obtain AWS permissions?",
+    "info": "Role ที่แนบกับ EC2 ผ่าน instance profile ให้ temporary credentials โดยไม่ต้องฝัง long-term keys ในโค้ด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use an IAM role attached to the EC2 instance",
+        "correct": true
+      },
+      {
+        "text": "Have EC2 assume an IAM group",
+        "correct": false
+      },
+      {
+        "text": "Send the console password to the application",
+        "correct": false
+      },
+      {
+        "text": "Embed the root user's access keys in source code",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A marketing employee only needs to read reports from one S3 bucket. Which permission approach follows least privilege?",
+    "info": "ควรให้เฉพาะสิทธิ์อ่านที่จำเป็นกับ bucket และ objects เป้าหมาย โดยไม่ให้สิทธิ์แก้ไขหรือลบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Grant necessary read permissions only for the target bucket and objects",
+        "correct": true
+      },
+      {
+        "text": "Grant AdministratorAccess",
+        "correct": false
+      },
+      {
+        "text": "Grant s3:* on every bucket",
+        "correct": false
+      },
+      {
+        "text": "Provide root credentials during office hours",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workload still requires long-term access keys. Which practice is appropriate?",
+    "info": "ควรปกป้อง credentials หมุนเวียน keys ตามนโยบาย และยกเลิก keys ที่ไม่จำเป็น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Replace all keys with root access keys",
+        "correct": false
+      },
+      {
+        "text": "Store keys securely and rotate them according to policy",
+        "correct": true
+      },
+      {
+        "text": "Publish keys in shared public documentation",
+        "correct": false
+      },
+      {
+        "text": "Disable API logging to hide key usage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an IAM group?",
+    "info": "IAM group เป็นกลุ่ม IAM users เพื่อจัดการสิทธิ์ร่วมกันด้วย policies ที่แนบกับกลุ่ม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An identity applications assume for temporary credentials",
+        "correct": false
+      },
+      {
+        "text": "A password backup file",
+        "correct": false
+      },
+      {
+        "text": "A collection of IAM users with shared permissions",
+        "correct": true
+      },
+      {
+        "text": "A collection of connected AWS Regions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In one account, an IAM user has Allow for GetObject and PutObject on bucket X. Its bucket policy explicitly denies PutObject and says nothing about GetObject. With no other restrictions, what can the user do?",
+    "info": "Identity policy อนุญาต GetObject แต่ explicit deny ของ bucket policy ปิดกั้น PutObject การไม่ระบุ GetObject ใน bucket policy ไม่ใช่ explicit deny",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Read and write objects",
+        "correct": false
+      },
+      {
+        "text": "Read objects but not write objects",
+        "correct": true
+      },
+      {
+        "text": "Neither, because both policies must explicitly allow every action",
+        "correct": false
+      },
+      {
+        "text": "Write objects but not read objects",
+        "correct": false
+      }
+    ]
+  }
+]

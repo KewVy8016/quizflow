@@ -1,0 +1,692 @@
+[
+  {
+    "text": "Which EC2 purchasing option requires no long-term commitment?",
+    "info": "On-Demand จ่ายตามการใช้งานโดยไม่ต้องผูกพันระยะยาว",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "On-Demand Instances",
+        "correct": true
+      },
+      {
+        "text": "Reserved Instances",
+        "correct": false
+      },
+      {
+        "text": "Savings Plans commitments",
+        "correct": false
+      },
+      {
+        "text": "A three-year dedicated capacity contract",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company must ensure EC2 capacity is available in a particular AZ at a planned time. Which feature directly addresses this?",
+    "info": "On-Demand Capacity Reservations จองความจุใน AZ ที่ระบุ โดยมีวัตถุประสงค์ต่างจากการลดราคาผ่าน Savings Plans",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Savings Plans alone",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance name tag",
+        "correct": false
+      },
+      {
+        "text": "On-Demand Capacity Reservations",
+        "correct": true
+      },
+      {
+        "text": "S3 Lifecycle rules",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which EC2 instance family category is suited to CPU-intensive workloads?",
+    "info": "Compute optimized เหมาะกับงานที่ต้องการ CPU สูง เช่น batch processing และการคำนวณหนัก",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "General purpose chosen without evaluating CPU needs",
+        "correct": false
+      },
+      {
+        "text": "Compute optimized",
+        "correct": true
+      },
+      {
+        "text": "Storage optimized",
+        "correct": false
+      },
+      {
+        "text": "Memory optimized",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An administrator manually installs software after launching every server. Which approach improves repeatability?",
+    "info": "การใส่ขั้นตอนติดตั้งใน AMI หรือ user data ช่วยให้สร้างใหม่ได้อย่างสม่ำเสมอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Document only the final screen appearance",
+        "correct": false
+      },
+      {
+        "text": "Let each administrator install a different version",
+        "correct": false
+      },
+      {
+        "text": "Use larger instances while keeping all setup manual",
+        "correct": false
+      },
+      {
+        "text": "Capture the configuration in an AMI or initialization script",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An EC2 instance needs to attach an existing EBS volume. Which location requirement applies?",
+    "info": "EBS volume ต้องอยู่ใน AZ เดียวกับ instance ที่จะ attach",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The volume and instance must be in the same Availability Zone",
+        "correct": true
+      },
+      {
+        "text": "The instance must be at an edge location",
+        "correct": false
+      },
+      {
+        "text": "The volume must be in a different Region",
+        "correct": false
+      },
+      {
+        "text": "The volume must be in a different AWS account",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What type of storage does Amazon EBS provide?",
+    "info": "EBS เป็น persistent block storage สำหรับ EC2 โดยมีวงจรชีวิตของ volume แยกจาก instance ตามการตั้งค่า",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A global DNS directory",
+        "correct": false
+      },
+      {
+        "text": "Persistent block storage",
+        "correct": true
+      },
+      {
+        "text": "A content delivery network",
+        "correct": false
+      },
+      {
+        "text": "A user identity store",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A machine learning training workload requires GPU acceleration. Which instance category is appropriate?",
+    "info": "Accelerated computing มี hardware accelerators เช่น GPU สำหรับงานที่ได้รับประโยชน์จากการประมวลผลแบบนี้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "General purpose without accelerator support",
+        "correct": false
+      },
+      {
+        "text": "Accelerated computing",
+        "correct": true
+      },
+      {
+        "text": "Memory optimized solely for larger RAM",
+        "correct": false
+      },
+      {
+        "text": "Storage optimized solely for HDD throughput",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is instance metadata?",
+    "info": "Instance metadata คือข้อมูลเกี่ยวกับ instance ที่เรียกอ่านจากภายใน instance ได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The contents of all S3 buckets",
+        "correct": false
+      },
+      {
+        "text": "Information describing the running instance",
+        "correct": true
+      },
+      {
+        "text": "A permanent copy of the root user's password",
+        "correct": false
+      },
+      {
+        "text": "Every customer's AWS billing details",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which benefit comes from launching instances from the same configured AMI?",
+    "info": "AMI ช่วยสร้าง instances ด้วยการตั้งค่าเริ่มต้นที่ทำซ้ำได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Repeatable initial configurations",
+        "correct": true
+      },
+      {
+        "text": "Automatic permission to all AWS resources",
+        "correct": false
+      },
+      {
+        "text": "Unlimited CPU capacity",
+        "correct": false
+      },
+      {
+        "text": "Automatic replication to every AWS Region",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an Amazon Machine Image (AMI)?",
+    "info": "AMI มีข้อมูลที่จำเป็นสำหรับเปิด EC2 instance เช่น ระบบปฏิบัติการและการตั้งค่า storage",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An IAM password policy",
+        "correct": false
+      },
+      {
+        "text": "A public IP address",
+        "correct": false
+      },
+      {
+        "text": "A billing report for an AWS account",
+        "correct": false
+      },
+      {
+        "text": "A template containing information needed to launch an EC2 instance",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which service provides managed file storage with native SMB support for Windows workloads?",
+    "info": "Amazon FSx for Windows File Server รองรับ Windows file shares และโปรโตคอล SMB",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon S3 Glacier",
+        "correct": false
+      },
+      {
+        "text": "Amazon DynamoDB",
+        "correct": false
+      },
+      {
+        "text": "AWS CloudTrail",
+        "correct": false
+      },
+      {
+        "text": "Amazon FSx for Windows File Server",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which EC2 purchasing option uses spare capacity and can be interrupted?",
+    "info": "Spot Instances ใช้ความจุที่เหลือและอาจถูกเรียกคืน จึงเหมาะกับงานที่รับการขัดจังหวะได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Spot Instances",
+        "correct": true
+      },
+      {
+        "text": "On-Demand Capacity Reservations",
+        "correct": false
+      },
+      {
+        "text": "On-Demand Instances",
+        "correct": false
+      },
+      {
+        "text": "Dedicated Hosts as a purchasing category",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement describes EC2 instance store?",
+    "info": "Instance store เป็น storage ชั่วคราวบน host เดียวกับ instance และข้อมูลอาจสูญหายเมื่อ stop หรือ terminate",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Temporary block storage associated with the instance's host",
+        "correct": true
+      },
+      {
+        "text": "A managed Windows file share",
+        "correct": false
+      },
+      {
+        "text": "A backup retained independently forever",
+        "correct": false
+      },
+      {
+        "text": "Persistent object storage across Regions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A Linux application uses several web instances, requires persistent shared uploads, and runs restartable batch jobs. Which combination best matches these requirements?",
+    "info": "EFS รองรับไฟล์ร่วมกัน EBS ใช้เป็น root volume ส่วน Spot เหมาะกับ batch ที่ยอมให้ขัดจังหวะและเริ่มใหม่ได้",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use S3 as the operating system boot disk and store shared uploads only in each server's RAM",
+        "correct": false
+      },
+      {
+        "text": "Use instance store for all persistent uploads and On-Demand only for every batch job",
+        "correct": false
+      },
+      {
+        "text": "Use one ordinary EBS volume as an unrestricted shared file system across all AZs",
+        "correct": false
+      },
+      {
+        "text": "Use EBS root volumes, EFS for shared uploads, and Spot capacity for restartable batch jobs",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A workload has a predictable baseline for years. Which approach can reduce compute costs for that baseline?",
+    "info": "Reserved Instances หรือ Savings Plans ช่วยลดค่าใช้จ่ายเมื่อมีการใช้งานต่อเนื่องที่เหมาะกับ commitment",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Purchase extra unused instances for higher utilization",
+        "correct": false
+      },
+      {
+        "text": "Use only On-Demand indefinitely without evaluating commitments",
+        "correct": false
+      },
+      {
+        "text": "Evaluate Reserved Instances or Savings Plans",
+        "correct": true
+      },
+      {
+        "text": "Move all baseline capacity to interruptible Spot without assessing tolerance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application stores essential data on instance store. What should the architect change before relying on stop and start operations?",
+    "info": "Instance store ไม่ใช่ที่เก็บข้อมูลถาวร ควรย้ายข้อมูลสำคัญไป persistent storage เช่น EBS ตามความต้องการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Assume instance store survives every stop and start",
+        "correct": false
+      },
+      {
+        "text": "Rename the instance store volume",
+        "correct": false
+      },
+      {
+        "text": "Move essential data to suitable persistent storage such as EBS",
+        "correct": true
+      },
+      {
+        "text": "Add MFA to make local disks persistent",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A new application has uncertain, short-term usage and cannot tolerate Spot interruption. Which purchasing option is the best initial fit?",
+    "info": "On-Demand เหมาะกับการทดลองหรือความต้องการที่ยังไม่แน่นอน โดยไม่ต้องผูกพันระยะยาวหรือรับการขัดจังหวะแบบ Spot",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A three-year commitment before measuring usage",
+        "correct": false
+      },
+      {
+        "text": "On-Demand Instances",
+        "correct": true
+      },
+      {
+        "text": "Dedicated Hosts required solely because usage is uncertain",
+        "correct": false
+      },
+      {
+        "text": "Spot Instances",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is EC2 user data commonly used for?",
+    "info": "User data ใช้ส่ง initialization script หรือ cloud-init เพื่อเตรียม instance ตอนเริ่มใช้งาน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Changing the instance's AWS account owner",
+        "correct": false
+      },
+      {
+        "text": "Providing physical host maintenance",
+        "correct": false
+      },
+      {
+        "text": "Running initialization scripts at launch",
+        "correct": true
+      },
+      {
+        "text": "Replacing all IAM permissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An instance requires an EBS boot volume. Which volume category is appropriate?",
+    "info": "SSD-backed EBS volumes ใช้เป็น boot volume ได้ ส่วน HDD-backed st1 และ sc1 ไม่ใช้เป็น boot volume",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Cold HDD (sc1) volume",
+        "correct": false
+      },
+      {
+        "text": "An S3 bucket mounted as a native EBS root volume",
+        "correct": false
+      },
+      {
+        "text": "An SSD-backed EBS volume",
+        "correct": true
+      },
+      {
+        "text": "A Throughput Optimized HDD (st1) volume",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application frequently runs out of RAM while CPU utilization stays low. What is the most relevant change?",
+    "info": "ควรเลือกทรัพยากรตามคอขวด โดยกรณีนี้ต้องพิจารณา instance ที่มี memory มากขึ้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable storage encryption",
+        "correct": false
+      },
+      {
+        "text": "Evaluate an instance with more memory",
+        "correct": true
+      },
+      {
+        "text": "Increase only CPU capacity while keeping memory unchanged",
+        "correct": false
+      },
+      {
+        "text": "Replace IAM groups",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which service analyzes workload patterns and recommends appropriate EC2 instance sizes?",
+    "info": "AWS Compute Optimizer วิเคราะห์การใช้งานและแนะนำ instance types หรือ sizes ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Macie",
+        "correct": false
+      },
+      {
+        "text": "AWS Artifact",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS Compute Optimizer",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A Windows application requires a managed SMB share and Active Directory integration. Which service fits?",
+    "info": "FSx for Windows File Server มีความเข้ากันได้กับ Windows และรองรับ SMB กับ Active Directory",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Versioning",
+        "correct": false
+      },
+      {
+        "text": "Amazon FSx for Windows File Server",
+        "correct": true
+      },
+      {
+        "text": "EC2 instance store",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS using only NFS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A batch job is limited mainly by CPU usage. Which instance category should be evaluated first?",
+    "info": "งานที่คอขวดเป็น CPU ควรเริ่มประเมิน compute optimized โดยวัดผลกับ workload จริง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Compute optimized",
+        "correct": true
+      },
+      {
+        "text": "Memory optimized solely for extra RAM",
+        "correct": false
+      },
+      {
+        "text": "Storage optimized solely for larger disks",
+        "correct": false
+      },
+      {
+        "text": "The smallest instance regardless of CPU demand",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team has a configured AMI in one Region and wants to launch an equivalent instance in another Region. What should it do?",
+    "info": "AMI เป็นทรัพยากรระดับ Region จึงต้องคัดลอก AMI ไปยัง Region ปลายทางก่อนเปิด instance จากสำเนา",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Move the source Region's Availability Zone to the destination",
+        "correct": false
+      },
+      {
+        "text": "Use the original AMI ID in every Region without copying",
+        "correct": false
+      },
+      {
+        "text": "Copy the AMI to the target Region and launch from the copy",
+        "correct": true
+      },
+      {
+        "text": "Change the instance name to the target Region's name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does an EC2 instance type define?",
+    "info": "Instance type กำหนดคุณลักษณะ เช่น CPU, memory, storage และ network performance",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The customer's business process",
+        "correct": false
+      },
+      {
+        "text": "Only the instance's display name",
+        "correct": false
+      },
+      {
+        "text": "The bucket policy for S3",
+        "correct": false
+      },
+      {
+        "text": "CPU, memory, storage, and networking characteristics",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Several Linux web servers need concurrent access to the same shared files. Which storage solution fits best?",
+    "info": "EFS รองรับ shared file access จากหลาย Linux instances ผ่าน NFS",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": true
+      },
+      {
+        "text": "Separate instance stores with no synchronization",
+        "correct": false
+      },
+      {
+        "text": "One ordinary EBS volume attached independently to all servers",
+        "correct": false
+      },
+      {
+        "text": "A Route 53 hosted zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which instance category is a strong starting point for large in-memory caches?",
+    "info": "Memory optimized เหมาะกับงานที่ต้องเก็บและประมวลผลข้อมูลจำนวนมากใน RAM",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Storage optimized",
+        "correct": false
+      },
+      {
+        "text": "Memory optimized",
+        "correct": true
+      },
+      {
+        "text": "Compute optimized",
+        "correct": false
+      },
+      {
+        "text": "Instances selected only by disk capacity",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants automated creation and maintenance of standardized machine images. Which service should it use?",
+    "info": "EC2 Image Builder ช่วยสร้าง pipeline สำหรับจัดทำและดูแล images ที่มีมาตรฐาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "EC2 Image Builder",
+        "correct": true
+      },
+      {
+        "text": "AWS Transfer Family",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does Amazon EC2 primarily provide?",
+    "info": "Amazon EC2 ให้บริการ virtual machines ที่ปรับขนาดและเลือกการตั้งค่าได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only DNS hosting",
+        "correct": false
+      },
+      {
+        "text": "Only user authentication",
+        "correct": false
+      },
+      {
+        "text": "Only object storage",
+        "correct": false
+      },
+      {
+        "text": "Virtual machines in the cloud",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which service provides managed shared file storage commonly used by Linux EC2 workloads?",
+    "info": "Amazon EFS เป็น managed file system ที่รองรับ NFS และใช้ร่วมกับ Linux instances ได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "AWS IAM",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS",
+        "correct": false
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": true
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      }
+    ]
+  }
+]

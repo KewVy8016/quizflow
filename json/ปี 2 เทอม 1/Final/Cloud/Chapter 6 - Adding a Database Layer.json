@@ -1,0 +1,692 @@
+[
+  {
+    "text": "A company wants a managed database service compatible with Apache Cassandra workloads. Which should it choose?",
+    "info": "Amazon Keyspaces เป็น managed database service ที่รองรับความเข้ากันได้กับ Apache Cassandra",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon DocumentDB",
+        "correct": false
+      },
+      {
+        "text": "Amazon Keyspaces",
+        "correct": true
+      },
+      {
+        "text": "Amazon Redshift",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS for MariaDB",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application needs DynamoDB tables that support local reads and writes in multiple Regions. Which feature fits?",
+    "info": "DynamoDB global tables รองรับ multi-Region, multi-active data replication สำหรับแอประดับโลก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "DynamoDB global tables",
+        "correct": true
+      },
+      {
+        "text": "A traditional RDS standby instance",
+        "correct": false
+      },
+      {
+        "text": "An EC2 placement group",
+        "correct": false
+      },
+      {
+        "text": "S3 CORS rules",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an RDS manual database snapshot?",
+    "info": "Manual snapshot เป็นสำเนาสถานะฐานข้อมูลที่ผู้ใช้สั่งสร้างและเก็บไว้จนกว่าจะลบ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A temporary network route",
+        "correct": false
+      },
+      {
+        "text": "A read-only IAM identity",
+        "correct": false
+      },
+      {
+        "text": "A user-initiated backup of the database state",
+        "correct": true
+      },
+      {
+        "text": "A live database connection pool",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A gaming application needs a managed key-value store for player profiles with high concurrency and low latency. Which service fits?",
+    "info": "DynamoDB เหมาะกับข้อมูลแบบ key-value และ document ที่ต้องการ scale และ latency ต่ำ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon DynamoDB",
+        "correct": true
+      },
+      {
+        "text": "Amazon Neptune solely for relationship traversal",
+        "correct": false
+      },
+      {
+        "text": "Amazon Redshift for analytical reporting",
+        "correct": false
+      },
+      {
+        "text": "Amazon FSx for Windows File Server",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An existing unencrypted RDS DB instance must be replaced by an encrypted one while retaining its data. Which workflow is appropriate?",
+    "info": "สำหรับ DB instance ที่ไม่เข้ารหัส ให้สร้าง snapshot แล้วคัดลอก snapshot โดยเปิด encryption จากนั้น restore เป็น instance ใหม่และเปลี่ยนแอปไปใช้งานหลังตรวจสอบ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Encrypt only the connection password and keep the database storage unchanged",
+        "correct": false
+      },
+      {
+        "text": "Take a snapshot, copy it with encryption enabled, restore a new DB instance, and migrate application connections",
+        "correct": true
+      },
+      {
+        "text": "Enable TLS and assume this encrypts existing data at rest",
+        "correct": false
+      },
+      {
+        "text": "Enable encryption in place on the existing DB instance without creating a replacement",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An operator needs to recover a database to just before an accidental change made this morning. Which feature is most appropriate if enabled and within retention?",
+    "info": "Point-in-time recovery จาก automated backups ใช้กู้คืนไปยังเวลาที่เลือกก่อนเกิดความผิดพลาด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Changing the database security group",
+        "correct": false
+      },
+      {
+        "text": "Increasing the database connection limit",
+        "correct": false
+      },
+      {
+        "text": "RDS point-in-time recovery",
+        "correct": true
+      },
+      {
+        "text": "Only a manual snapshot from six months ago",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an item in DynamoDB?",
+    "info": "Item คือรายการข้อมูลหนึ่งรายการที่มี attributes และสามารถระบุเอกลักษณ์ด้วย primary key",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A complete AWS Region",
+        "correct": false
+      },
+      {
+        "text": "A database connection pool",
+        "correct": false
+      },
+      {
+        "text": "A uniquely identifiable collection of attributes",
+        "correct": true
+      },
+      {
+        "text": "An EC2 boot volume",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does AWS Database Migration Service (AWS DMS) provide?",
+    "info": "AWS DMS เป็น managed migration และ replication service สำหรับย้ายหรือจำลองข้อมูลฐานข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Static website hosting",
+        "correct": false
+      },
+      {
+        "text": "DNS domain registration",
+        "correct": false
+      },
+      {
+        "text": "Web application authentication",
+        "correct": false
+      },
+      {
+        "text": "Database migration and replication",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An RDS database must recover automatically if its primary DB instance fails. Which deployment addresses this requirement?",
+    "info": "Traditional RDS Multi-AZ DB instance deployment มี standby และ automatic failover สำหรับ availability",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An S3 bucket with versioning",
+        "correct": false
+      },
+      {
+        "text": "A single-AZ instance with a larger display name",
+        "correct": false
+      },
+      {
+        "text": "A manual snapshot only",
+        "correct": false
+      },
+      {
+        "text": "An RDS Multi-AZ DB instance deployment",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company is migrating an Oracle database to Aurora PostgreSQL and must replicate ongoing source changes during migration. Which sequence best addresses both schema differences and data movement?",
+    "info": "การย้ายต่าง engine ต้องประเมินและแปลง schema กับ SQL ด้วยเครื่องมือ conversion แล้วใช้ DMS ย้ายข้อมูลและ replicate การเปลี่ยนแปลงที่รองรับ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use DMS alone and assume it automatically converts every schema and SQL feature",
+        "correct": false
+      },
+      {
+        "text": "Assess and convert the schema with AWS SCT or DMS Schema Conversion, then use DMS for data migration and ongoing replication",
+        "correct": true
+      },
+      {
+        "text": "Use an RDS read replica of Oracle as an Aurora PostgreSQL database",
+        "correct": false
+      },
+      {
+        "text": "Copy Oracle data files directly into Aurora storage without conversion",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Only an application tier should connect to an RDS database. Which network configuration best supports this?",
+    "info": "ควรวางฐานข้อมูลใน private subnets และให้ security group อนุญาตพอร์ตฐานข้อมูลจาก application security group เท่านั้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use a public subnet and rely only on an obscure database name",
+        "correct": false
+      },
+      {
+        "text": "Use private subnets and allow the database port from the application security group",
+        "correct": true
+      },
+      {
+        "text": "Give all internet clients administrator database accounts",
+        "correct": false
+      },
+      {
+        "text": "Make the database public and allow all ports from 0.0.0.0/0",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which characteristic is typical of a relational database?",
+    "info": "ฐานข้อมูลเชิงสัมพันธ์เก็บข้อมูลเป็นตารางที่มี rows และ columns และรองรับความสัมพันธ์กับ SQL",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Data organized into tables with rows and columns",
+        "correct": true
+      },
+      {
+        "text": "Only network packets in memory",
+        "correct": false
+      },
+      {
+        "text": "Only files arranged in directories",
+        "correct": false
+      },
+      {
+        "text": "A requirement that every item has a different primary key definition",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which service is designed for data warehousing and large analytical workloads?",
+    "info": "Amazon Redshift เป็น data warehouse สำหรับ OLAP และการวิเคราะห์ข้อมูลจำนวนมาก",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon Redshift",
+        "correct": true
+      },
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DynamoDB access pattern keeps the same partition key but needs an alternate sort key. Which index type matches this definition?",
+    "info": "LSI ใช้ partition key เดียวกับ base table แต่มี sort key ต่างกัน โดยต้องกำหนด LSI ตอนสร้าง table",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An S3 lifecycle rule",
+        "correct": false
+      },
+      {
+        "text": "A local secondary index",
+        "correct": true
+      },
+      {
+        "text": "An RDS read replica",
+        "correct": false
+      },
+      {
+        "text": "A new IAM policy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the main purpose of a traditional RDS Multi-AZ DB instance deployment?",
+    "info": "RDS Multi-AZ DB instance deployment มี standby เพื่อเพิ่ม availability และรองรับ automatic failover",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Making the database public by default",
+        "correct": false
+      },
+      {
+        "text": "High availability with automatic failover to a standby",
+        "correct": true
+      },
+      {
+        "text": "Distributing reads to a traditional standby instance",
+        "correct": false
+      },
+      {
+        "text": "Removing the need for database credentials",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an attribute in DynamoDB?",
+    "info": "Attribute เป็นองค์ประกอบข้อมูลพื้นฐานภายใน item เช่น ชื่อผู้ใช้หรืออุณหภูมิ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An Availability Zone",
+        "correct": false
+      },
+      {
+        "text": "A fundamental data element in an item",
+        "correct": true
+      },
+      {
+        "text": "An entire AWS account",
+        "correct": false
+      },
+      {
+        "text": "A VPN tunnel",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DynamoDB table uses DeviceId as its partition key. The application also needs efficient queries using a different partition key. What should be considered?",
+    "info": "GSI สามารถใช้ partition key และ sort key ที่ต่างจาก base table เพื่อรองรับ access pattern ใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An RDS standby database",
+        "correct": false
+      },
+      {
+        "text": "A local secondary index with a different partition key",
+        "correct": false
+      },
+      {
+        "text": "A VPC internet gateway",
+        "correct": false
+      },
+      {
+        "text": "A global secondary index",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which RDS backup feature supports point-in-time recovery within its retention period?",
+    "info": "Automated backups ร่วมกับ transaction logs รองรับการกู้คืนไปยังเวลาที่เลือกภายในช่วง retention",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Automated backups",
+        "correct": true
+      },
+      {
+        "text": "A security group",
+        "correct": false
+      },
+      {
+        "text": "An IAM group",
+        "correct": false
+      },
+      {
+        "text": "An internet gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon RDS?",
+    "info": "Amazon RDS เป็น managed service สำหรับฐานข้อมูลเชิงสัมพันธ์ ช่วยลดงานดูแลโครงสร้างพื้นฐานและซอฟต์แวร์ฐานข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A physical server purchasing service",
+        "correct": false
+      },
+      {
+        "text": "A DNS routing service",
+        "correct": false
+      },
+      {
+        "text": "A managed relational database service",
+        "correct": true
+      },
+      {
+        "text": "An object storage service",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a key function of Amazon RDS Proxy?",
+    "info": "RDS Proxy รวมและใช้ database connections ร่วมกันเพื่อช่วยลดภาระจากการเปิด connections จำนวนมาก",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Pooling and sharing database connections",
+        "correct": true
+      },
+      {
+        "text": "Converting every SQL statement into a file",
+        "correct": false
+      },
+      {
+        "text": "Replacing the database engine with S3",
+        "correct": false
+      },
+      {
+        "text": "Hosting public DNS records",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which data models does Amazon DynamoDB support?",
+    "info": "DynamoDB เป็น NoSQL database ที่รองรับ key-value และ document data models",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only relational tables with SQL joins",
+        "correct": false
+      },
+      {
+        "text": "Only graph vertices and edges",
+        "correct": false
+      },
+      {
+        "text": "Only shared file system directories",
+        "correct": false
+      },
+      {
+        "text": "Key-value and document",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An RDS primary database is overloaded by report queries, but write traffic is moderate. Which change most directly scales reads?",
+    "info": "Read replicas รับงานอ่านและลดภาระ primary โดยต้องให้แอปส่งคำขออ่านไป replica ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use a traditional Multi-AZ standby as a reporting endpoint",
+        "correct": false
+      },
+      {
+        "text": "Disable automated backups",
+        "correct": false
+      },
+      {
+        "text": "Add read replicas and direct suitable read queries to them",
+        "correct": true
+      },
+      {
+        "text": "Increase the number of database passwords",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Short-lived application workers open many database connections and exhaust database resources. What should the architect add?",
+    "info": "RDS Proxy ช่วย pool connections จึงลดภาระจากการเปิด connection จำนวนมาก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": true
+      },
+      {
+        "text": "A Route 53 geolocation policy",
+        "correct": false
+      },
+      {
+        "text": "A larger number of IAM groups",
+        "correct": false
+      },
+      {
+        "text": "S3 Transfer Acceleration",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application needs structured transactions, SQL joins, and relational integrity. Which option should be evaluated first?",
+    "info": "งานที่มี transactions, joins และ relational integrity เหมาะกับฐานข้อมูลเชิงสัมพันธ์ เช่น RDS",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon RDS with a suitable relational engine",
+        "correct": true
+      },
+      {
+        "text": "A VPC route table",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance store used as the only data store",
+        "correct": false
+      },
+      {
+        "text": "S3 static website hosting",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Amazon Aurora is compatible with which database families?",
+    "info": "Aurora เป็น relational engine ที่รองรับความเข้ากันได้กับ MySQL และ PostgreSQL",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Redis and Memcached",
+        "correct": false
+      },
+      {
+        "text": "MySQL and PostgreSQL",
+        "correct": true
+      },
+      {
+        "text": "Neptune and DynamoDB",
+        "correct": false
+      },
+      {
+        "text": "MongoDB and Cassandra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A fraud detection application must efficiently traverse complex relationships among accounts and transactions. Which database fits?",
+    "info": "Neptune เป็น graph database เหมาะกับการค้นหาเส้นทางและความสัมพันธ์ในข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "Amazon Redshift solely for warehouse reporting",
+        "correct": false
+      },
+      {
+        "text": "Amazon DocumentDB solely for document storage",
+        "correct": false
+      },
+      {
+        "text": "Amazon Neptune",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is the main purpose of an RDS read replica?",
+    "info": "Read replica ช่วยรับงานอ่านเพื่อลดภาระฐานข้อมูลหลัก โดยใช้ asynchronous replication ในรูปแบบที่กล่าวถึงในบท",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "To replace all backup requirements",
+        "correct": false
+      },
+      {
+        "text": "To accept every primary write automatically",
+        "correct": false
+      },
+      {
+        "text": "To scale read workloads",
+        "correct": true
+      },
+      {
+        "text": "To provide a public IP for the primary database",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What forms a DynamoDB composite primary key?",
+    "info": "Composite primary key ประกอบด้วย partition key และ sort key",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A partition key and a sort key",
+        "correct": true
+      },
+      {
+        "text": "A user name and an IAM group",
+        "correct": false
+      },
+      {
+        "text": "An IP address and a DNS server",
+        "correct": false
+      },
+      {
+        "text": "A Region and an Availability Zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A content application needs a managed MongoDB-compatible JSON document database. Which service fits?",
+    "info": "Amazon DocumentDB รองรับ document data model และความเข้ากันได้กับ MongoDB",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon RDS for SQL Server",
+        "correct": false
+      },
+      {
+        "text": "Amazon Neptune",
+        "correct": false
+      },
+      {
+        "text": "Amazon Keyspaces",
+        "correct": false
+      },
+      {
+        "text": "Amazon DocumentDB",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A workload needs an in-memory primary database with durable data and recoverability. Which purpose-built service is appropriate?",
+    "info": "Amazon MemoryDB รวมความเร็วจาก in-memory กับ distributed transactional log เพื่อความทนทานและการกู้คืน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "EC2 instance store without backups",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3 Glacier Deep Archive",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "Amazon MemoryDB",
+        "correct": true
+      }
+    ]
+  }
+]

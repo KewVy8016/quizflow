@@ -1,0 +1,1382 @@
+[
+  {
+    "text": "Two services benefit from different runtimes. What microservice characteristic can support this?",
+    "info": "Service ที่มี API contract ชัดเจนสามารถเลือกเทคโนโลยีให้เหมาะกับงาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A prohibition on API contracts",
+        "correct": false
+      },
+      {
+        "text": "A requirement that all services use one programming language",
+        "correct": false
+      },
+      {
+        "text": "Technology choices behind well-defined interfaces",
+        "correct": true
+      },
+      {
+        "text": "A requirement that every service share source code",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A payment workflow can retry tasks and later fail during delivery. What design best prevents duplicate charges and handles partial completion?",
+    "info": "ต้องใช้ payment idempotency และ compensation สำหรับผลที่ทำไปแล้วเมื่อ workflow ไม่สำเร็จ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use idempotent payment requests and explicit compensation or recovery steps",
+        "correct": true
+      },
+      {
+        "text": "Charge again after every timeout without checking state",
+        "correct": false
+      },
+      {
+        "text": "Delete all payment records before retrying",
+        "correct": false
+      },
+      {
+        "text": "Assume workflow retries automatically undo completed external payments",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A web client needs a response from a Lambda-backed API during the request. Which invocation model fits?",
+    "info": "Synchronous invocation ให้ผู้เรียกรอผลของ function ใน request path",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Synchronous invocation",
+        "correct": true
+      },
+      {
+        "text": "Asynchronous invocation with no response contract",
+        "correct": false
+      },
+      {
+        "text": "A database snapshot restore",
+        "correct": false
+      },
+      {
+        "text": "Manual nightly invocation only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An API needs usage plans, request validation, and the REST management features described in the chapter. Which API type fits?",
+    "info": "REST APIs รองรับ management features ที่บทระบุ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "API Gateway HTTP API assuming every REST feature",
+        "correct": false
+      },
+      {
+        "text": "API Gateway WebSocket API solely for static requests",
+        "correct": false
+      },
+      {
+        "text": "API Gateway REST API",
+        "correct": true
+      },
+      {
+        "text": "A DNS hosted zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An SQS-triggered Lambda worker scales rapidly and overwhelms a limited database. Which improvement fits?",
+    "info": "จำกัด concurrency ให้เหมาะกับฐานข้อมูล พร้อมจัดการ connections และ retries อย่างปลอดภัย",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Increase concurrency without limit",
+        "correct": false
+      },
+      {
+        "text": "Control worker concurrency, manage connections, and retain safe retry behavior",
+        "correct": true
+      },
+      {
+        "text": "Delete messages before all database writes to hide errors",
+        "correct": false
+      },
+      {
+        "text": "Remove database authorization to reduce latency",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An API must protect its backend from excessive request rates. Which control is relevant?",
+    "info": "Throttling จำกัดอัตราคำขอเพื่อควบคุมโหลด backend",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "More image file versions",
+        "correct": false
+      },
+      {
+        "text": "API throttling",
+        "correct": true
+      },
+      {
+        "text": "A longer endpoint name",
+        "correct": false
+      },
+      {
+        "text": "A wider VPC CIDR only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does AWS Lambda execute?",
+    "info": "Lambda ใช้รัน function code ตามการเรียกใช้งาน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only database backups",
+        "correct": false
+      },
+      {
+        "text": "Only physical machine repairs",
+        "correct": false
+      },
+      {
+        "text": "Only DNS records",
+        "correct": false
+      },
+      {
+        "text": "Code functions",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team splits a monolith into containers but requires every container to deploy together and depend on internal implementation details. What should change?",
+    "info": "Microservices ต้องมีขอบเขตงานและ interfaces ที่รองรับ lifecycle อิสระ ไม่ใช่แบ่ง containers อย่างเดียว",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Only rename the containers as microservices",
+        "correct": false
+      },
+      {
+        "text": "Combine all dependencies into a larger image",
+        "correct": false
+      },
+      {
+        "text": "Require a single shared release forever",
+        "correct": false
+      },
+      {
+        "text": "Define stable service contracts and independent deployment boundaries",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A workflow must apply processing to each item in an input collection. Which state type fits?",
+    "info": "Map ใช้ประมวลผลแต่ละ item ใน dataset",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Succeed",
+        "correct": false
+      },
+      {
+        "text": "Choice",
+        "correct": false
+      },
+      {
+        "text": "Fail",
+        "correct": false
+      },
+      {
+        "text": "Map",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A task experiences a transient backend failure. Which workflow feature can handle another attempt?",
+    "info": "Retry configuration กำหนดการลองใหม่สำหรับ errors ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A permanent Fail state for every response",
+        "correct": false
+      },
+      {
+        "text": "Only renaming the state",
+        "correct": false
+      },
+      {
+        "text": "Only adding an Output to CloudFormation",
+        "correct": false
+      },
+      {
+        "text": "A Retry policy",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A public shopping API uses Lambda and DynamoDB. It needs user isolation, burst protection, and reliable event processing. Which combination is appropriate?",
+    "info": "ต้องมี API authorization, throttling, scoped roles และ idempotent processing เพื่อคุมทั้งสิทธิ์และ failure behavior",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Authorize users, enforce request limits, scope execution roles, and make event handlers idempotent",
+        "correct": true
+      },
+      {
+        "text": "Trust every client-provided user ID without validation",
+        "correct": false
+      },
+      {
+        "text": "Increase only the number of API stages",
+        "correct": false
+      },
+      {
+        "text": "Use CORS alone, unrestricted roles, and no duplicate handling",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A service event starts background processing without the caller waiting for the result. Which model fits?",
+    "info": "Asynchronous invocation เหมาะกับงาน background ที่ผู้เรียกไม่รอผลโดยตรง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A required synchronous browser session",
+        "correct": false
+      },
+      {
+        "text": "Asynchronous invocation",
+        "correct": true
+      },
+      {
+        "text": "A public DNS lookup only",
+        "correct": false
+      },
+      {
+        "text": "A physical server login",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A thumbnail should be generated when an image is uploaded to S3. Which pattern fits?",
+    "info": "S3 event trigger เรียก Lambda เพื่อแปลงภาพโดยไม่ต้องรอ polling server",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use Route 53 to resize the image",
+        "correct": false
+      },
+      {
+        "text": "Use an IAM group as an image processor",
+        "correct": false
+      },
+      {
+        "text": "Trigger a Lambda function from the upload event",
+        "correct": true
+      },
+      {
+        "text": "Keep an idle EC2 process manually checking every second",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An API serves signed-in application users managed by Cognito. What should be integrated at the API boundary?",
+    "info": "ต้องตรวจ authentication และ authorization ผ่านกลไก authorizer ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only a public DNS name",
+        "correct": false
+      },
+      {
+        "text": "An unrestricted bucket policy",
+        "correct": false
+      },
+      {
+        "text": "Only the API's description",
+        "correct": false
+      },
+      {
+        "text": "An appropriate Cognito or token-based authorizer",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team wants the same application dependencies packaged consistently for deployment. Which approach fits?",
+    "info": "Container image รวมแอปกับ dependencies เพื่อให้ deploy อย่างสม่ำเสมอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Build a container image",
+        "correct": true
+      },
+      {
+        "text": "Keep only screenshots of installed packages",
+        "correct": false
+      },
+      {
+        "text": "Install different dependencies manually on every host",
+        "correct": false
+      },
+      {
+        "text": "Use a DNS record as the application package",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An ECS application needs a desired number of long-running tasks maintained. Which component manages this?",
+    "info": "ECS service รักษาจำนวน tasks ตาม desired configuration",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A CloudWatch log stream alone",
+        "correct": false
+      },
+      {
+        "text": "An IAM group",
+        "correct": false
+      },
+      {
+        "text": "An ECS service",
+        "correct": true
+      },
+      {
+        "text": "An ECR repository alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a Step Functions state machine?",
+    "info": "State machine เป็นนิยาม workflow ที่มี states และ transitions",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A single S3 object version",
+        "correct": false
+      },
+      {
+        "text": "A workflow defined by states and transitions",
+        "correct": true
+      },
+      {
+        "text": "An EC2 purchasing agreement",
+        "correct": false
+      },
+      {
+        "text": "A VPC route table",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A Lambda function should process messages from an SQS queue. What integration commonly reads the queue?",
+    "info": "Event source mapping ใช้ polling queue และเรียก function ตาม configuration",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An API Gateway domain name alone",
+        "correct": false
+      },
+      {
+        "text": "A public subnet tag",
+        "correct": false
+      },
+      {
+        "text": "An ECR image label",
+        "correct": false
+      },
+      {
+        "text": "A Lambda event source mapping",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What characterizes a microservice?",
+    "info": "Microservice มีหน้าที่เฉพาะและสามารถพัฒนาหรือ deploy อย่างอิสระ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An application with no communication interfaces",
+        "correct": false
+      },
+      {
+        "text": "A mandatory shared database for every service",
+        "correct": false
+      },
+      {
+        "text": "One process containing every unrelated function",
+        "correct": false
+      },
+      {
+        "text": "An autonomous service focused on a business function",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A chat application needs a persistent bidirectional client connection. Which API type fits?",
+    "info": "WebSocket APIs รองรับ session และการสื่อสารสองทางแบบ real-time",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only a stateless static file endpoint",
+        "correct": false
+      },
+      {
+        "text": "Only a DNS A record",
+        "correct": false
+      },
+      {
+        "text": "An RDS read replica",
+        "correct": false
+      },
+      {
+        "text": "API Gateway WebSocket API",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a Lambda layer commonly used for?",
+    "info": "Layer ช่วยจัดแพ็ก dependencies หรือโค้ดที่ใช้ร่วมกันในรูปแบบที่รองรับ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Adding a second AWS Region automatically",
+        "correct": false
+      },
+      {
+        "text": "Granting unrestricted IAM access",
+        "correct": false
+      },
+      {
+        "text": "Packaging shared code or dependencies",
+        "correct": true
+      },
+      {
+        "text": "Replacing all function configuration",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants AWS-native container orchestration without adopting Kubernetes tooling. Which service fits?",
+    "info": "ECS เหมาะกับการใช้ container orchestration ในแนวทาง AWS-native",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon ECS",
+        "correct": true
+      },
+      {
+        "text": "Amazon EKS specifically for Kubernetes",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR alone as a runtime",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3 alone as a container scheduler",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team already uses Kubernetes manifests and wants managed Kubernetes in AWS. Which service fits?",
+    "info": "EKS รองรับ Kubernetes และ tooling ของระบบนั้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EKS",
+        "correct": true
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECS without adapting manifests",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An event-driven function may receive the same event again. What should its business logic support?",
+    "info": "Idempotent logic ป้องกันผลข้างเคียงซ้ำเมื่อ event ถูกส่งใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A guarantee that events can never repeat",
+        "correct": false
+      },
+      {
+        "text": "Idempotent processing",
+        "correct": true
+      },
+      {
+        "text": "Only larger function names",
+        "correct": false
+      },
+      {
+        "text": "Shared root credentials",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is AWS Fargate's role?",
+    "info": "Fargate ให้ compute สำหรับ containers โดยลดงานดูแล servers",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Store only container source files",
+        "correct": false
+      },
+      {
+        "text": "Act only as a DNS resolver",
+        "correct": false
+      },
+      {
+        "text": "Replace all container orchestration APIs",
+        "correct": false
+      },
+      {
+        "text": "Run containers without managing underlying servers",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is a Lambda handler?",
+    "info": "Handler เป็น entry point ที่รับ event และเริ่มประมวลผล function",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The database's standby server",
+        "correct": false
+      },
+      {
+        "text": "The function's execution entry point",
+        "correct": true
+      },
+      {
+        "text": "The account's root password",
+        "correct": false
+      },
+      {
+        "text": "The container registry's billing plan",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team uses ECS but does not want to patch container host operating systems. Which compute option fits?",
+    "info": "Fargate ลดงาน provision และ patch hosts ที่ใช้รัน containers",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Self-managed EC2 hosts",
+        "correct": false
+      },
+      {
+        "text": "AWS Fargate",
+        "correct": true
+      },
+      {
+        "text": "Local developer laptops",
+        "correct": false
+      },
+      {
+        "text": "An S3 website endpoint",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A pipeline builds a container image before deployment. Where can it push the image for ECS to pull?",
+    "info": "ECR เก็บ container images สำหรับ runtime ดึงไปใช้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon ECR",
+        "correct": true
+      },
+      {
+        "text": "AWS Organizations",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS STS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application has fast API functions, long-running container jobs, and a human approval step. Which service combination fits?",
+    "info": "Lambda รับงานสั้น Fargate รัน container jobs และ Standard workflow จัด approval กับลำดับงาน",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "CloudFront alone to coordinate database transactions",
+        "correct": false
+      },
+      {
+        "text": "ECR alone to execute all jobs and decisions",
+        "correct": false
+      },
+      {
+        "text": "Lambda for short functions, Fargate for long jobs, and Step Functions Standard for orchestration",
+        "correct": true
+      },
+      {
+        "text": "One Lambda invocation waiting indefinitely for every job and approval",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A function needs a database password. Which approach avoids hard-coding it in source code?",
+    "info": "ใช้ Secrets Manager พร้อมสิทธิ์ที่เหมาะสมเพื่อจัดการ secret นอกโค้ด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Embed root credentials in the deployment package",
+        "correct": false
+      },
+      {
+        "text": "Publish it in an API response",
+        "correct": false
+      },
+      {
+        "text": "Retrieve it from AWS Secrets Manager with scoped permissions",
+        "correct": true
+      },
+      {
+        "text": "Store it in a public image tag",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon ECS?",
+    "info": "ECS ใช้ orchestrate และจัดการ container workloads",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A block storage service",
+        "correct": false
+      },
+      {
+        "text": "A container orchestration service",
+        "correct": true
+      },
+      {
+        "text": "A CDN distribution",
+        "correct": false
+      },
+      {
+        "text": "A data warehouse",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How do containers commonly differ from full virtual machines?",
+    "info": "Containers แชร์ host OS kernel แทนมี guest OS เต็มแยกทุกตัว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Containers cannot run multiple applications on one host",
+        "correct": false
+      },
+      {
+        "text": "Containers never package dependencies",
+        "correct": false
+      },
+      {
+        "text": "Containers share the host operating system kernel",
+        "correct": true
+      },
+      {
+        "text": "Every container requires its own physical server",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Only the image-processing feature needs more capacity. What is a microservice advantage?",
+    "info": "Service เฉพาะงานสามารถ scale โดยไม่เพิ่ม capacity ให้ทุกส่วน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Scale every unrelated feature equally",
+        "correct": false
+      },
+      {
+        "text": "Scale that service independently",
+        "correct": true
+      },
+      {
+        "text": "Move every service into one process",
+        "correct": false
+      },
+      {
+        "text": "Require every team to deploy together",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workflow should run independent branches concurrently. Which state type fits?",
+    "info": "Parallel ใช้รันหลาย branches พร้อมกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Parallel",
+        "correct": true
+      },
+      {
+        "text": "Wait",
+        "correct": false
+      },
+      {
+        "text": "Choice",
+        "correct": false
+      },
+      {
+        "text": "Fail",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A simple stateless microservice API needs basic HTTP routing without advanced REST management features. Which type should be evaluated?",
+    "info": "HTTP APIs เหมาะกับ microservices ที่ไม่ต้องใช้ฟีเจอร์ REST ขั้นสูง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "WebSocket API required for every request",
+        "correct": false
+      },
+      {
+        "text": "A public S3 write endpoint",
+        "correct": false
+      },
+      {
+        "text": "API Gateway HTTP API",
+        "correct": true
+      },
+      {
+        "text": "A database connection string",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A Lambda function reads one S3 prefix. How should its execution role be scoped?",
+    "info": "Execution role ให้สิทธิ์ที่ function ใช้ทำงาน และควรจำกัดตามทรัพยากรจริง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use the root user's access keys",
+        "correct": false
+      },
+      {
+        "text": "Allow only the required reads on the target resources",
+        "correct": true
+      },
+      {
+        "text": "Allow every service action on every resource",
+        "correct": false
+      },
+      {
+        "text": "Grant AdministratorAccess to simplify deployment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Amazon ECR used for?",
+    "info": "ECR เป็น registry สำหรับเก็บและเรียกใช้ container images",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Issuing user authentication tokens",
+        "correct": false
+      },
+      {
+        "text": "Registering domain names",
+        "correct": false
+      },
+      {
+        "text": "Running SQL joins",
+        "correct": false
+      },
+      {
+        "text": "Storing container images",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A VPC-connected Lambda function needs outbound IPv4 internet access. What network design is commonly required?",
+    "info": "การต่อ public subnet ไม่ให้ Lambda public IP ต้องมี outbound path เช่น NAT ที่ตั้งถูกต้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A suitable outbound path such as NAT from its private subnets",
+        "correct": true
+      },
+      {
+        "text": "Only placing the function in a public subnet",
+        "correct": false
+      },
+      {
+        "text": "Only naming its security group Internet",
+        "correct": false
+      },
+      {
+        "text": "Only enabling an S3 lifecycle rule",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workflow pauses for human approval and needs durable execution history. Which workflow type fits?",
+    "info": "Standard workflow เหมาะกับ workflow ยาวและ callback เช่น approval",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A single in-memory browser loop",
+        "correct": false
+      },
+      {
+        "text": "An ECR repository",
+        "correct": false
+      },
+      {
+        "text": "A short Express workflow chosen without callback support",
+        "correct": false
+      },
+      {
+        "text": "Step Functions Standard Workflow",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A sales report function should run at a defined daily time. Which trigger fits?",
+    "info": "EventBridge Scheduler ตั้งเวลาเรียกงานตามกำหนดได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An EventBridge schedule",
+        "correct": true
+      },
+      {
+        "text": "A manual daily root login",
+        "correct": false
+      },
+      {
+        "text": "A random S3 delete event",
+        "correct": false
+      },
+      {
+        "text": "A VPC Flow Logs record",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A Lambda function must retain customer state between separate invocations. Where should durable state be kept?",
+    "info": "ใช้ external durable store แทนการพึ่ง execution environment ที่อาจถูกแทนที่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only in the function's local variables",
+        "correct": false
+      },
+      {
+        "text": "In an appropriate external durable data store",
+        "correct": true
+      },
+      {
+        "text": "Only in a developer's console session",
+        "correct": false
+      },
+      {
+        "text": "Only in a single invocation's memory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workflow must choose a branch based on an input value. Which state type fits?",
+    "info": "Choice ใช้เงื่อนไขเลือกเส้นทาง workflow",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Choice",
+        "correct": true
+      },
+      {
+        "text": "Wait",
+        "correct": false
+      },
+      {
+        "text": "Pass",
+        "correct": false
+      },
+      {
+        "text": "Succeed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workflow needs a deliberate delay before its next step. Which state type fits?",
+    "info": "Wait หน่วง workflow ตามระยะเวลาหรือเวลาที่กำหนด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Succeed",
+        "correct": false
+      },
+      {
+        "text": "Pass",
+        "correct": false
+      },
+      {
+        "text": "Task without a delay configuration",
+        "correct": false
+      },
+      {
+        "text": "Wait",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A Lambda function must parse input fields from a triggering event. Where should that logic begin?",
+    "info": "Handler รับ event และส่งข้อมูลให้ logic ภายใน function",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "In the VPC's DNS record only",
+        "correct": false
+      },
+      {
+        "text": "In the AWS account billing settings",
+        "correct": false
+      },
+      {
+        "text": "In the configured handler",
+        "correct": true
+      },
+      {
+        "text": "In an unrelated ECR repository",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A large volume of short workflows does not need human callbacks or a long-running execution. Which type should be evaluated?",
+    "info": "Express เหมาะกับงานสั้นปริมาณสูง โดยต้องตรวจ semantics ให้เข้ากับแอป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Standard workflow required solely for every short request",
+        "correct": false
+      },
+      {
+        "text": "A manual server checklist",
+        "correct": false
+      },
+      {
+        "text": "Step Functions Express Workflow",
+        "correct": true
+      },
+      {
+        "text": "A database snapshot",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A function should process records from a supported data stream. Which Lambda capability fits?",
+    "info": "Event source mapping เชื่อม stream ที่รองรับเข้ากับ function",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An event source mapping",
+        "correct": true
+      },
+      {
+        "text": "An RDS manual snapshot",
+        "correct": false
+      },
+      {
+        "text": "A DNS failover record",
+        "correct": false
+      },
+      {
+        "text": "A user pool group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A Lambda function must access an RDS database in private VPC subnets. What is required?",
+    "info": "ต้องกำหนด VPC connectivity พร้อม subnets และ security groups ที่เข้าถึงฐานข้อมูลได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Make the database public for every internet client",
+        "correct": false
+      },
+      {
+        "text": "Place the function's code in the database password field",
+        "correct": false
+      },
+      {
+        "text": "Configure VPC connectivity and appropriate network permissions",
+        "correct": true
+      },
+      {
+        "text": "Use a larger DNS TTL",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Several services must run in sequence with tracked progress and retries. Which service fits?",
+    "info": "Step Functions จัด workflow state และ error handling ระหว่างหลายบริการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      },
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "AWS Step Functions",
+        "correct": true
+      },
+      {
+        "text": "Amazon EBS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A private RDS-backed Lambda API must also call an external IPv4 service. Which combination meets network and access requirements?",
+    "info": "ต้องมี VPC access ไป RDS, NAT path ออกอินเทอร์เน็ต และ execution role ที่จำกัดสิทธิ์",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Use CORS as both routing and database authorization",
+        "correct": false
+      },
+      {
+        "text": "VPC-connected Lambda, restricted database access, suitable NAT egress, and a scoped execution role",
+        "correct": true
+      },
+      {
+        "text": "Make RDS public and distribute root credentials",
+        "correct": false
+      },
+      {
+        "text": "Only place Lambda in a public subnet and remove all security groups",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does serverless computing remove from the customer's routine responsibilities?",
+    "info": "Serverless ลดงาน provision และดูแล servers แต่ลูกค้ายังดูแลแอปและข้อมูล",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Defining access permissions",
+        "correct": false
+      },
+      {
+        "text": "Writing application code",
+        "correct": false
+      },
+      {
+        "text": "Understanding business requirements",
+        "correct": false
+      },
+      {
+        "text": "Provisioning and maintaining underlying servers",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What does Amazon EKS provide?",
+    "info": "EKS ให้ managed Kubernetes service",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Managed Kubernetes",
+        "correct": true
+      },
+      {
+        "text": "An S3 storage class",
+        "correct": false
+      },
+      {
+        "text": "Managed ActiveMQ only",
+        "correct": false
+      },
+      {
+        "text": "An IAM policy format",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A monolith contains shopping cart, payment, and delivery logic. Which decomposition best follows microservice principles?",
+    "info": "แยกตาม business capabilities ทำให้แต่ละ service มีหน้าที่ชัดเจน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Create one service per source-code line",
+        "correct": false
+      },
+      {
+        "text": "Create services around the distinct business capabilities",
+        "correct": true
+      },
+      {
+        "text": "Split only by arbitrary file names",
+        "correct": false
+      },
+      {
+        "text": "Put all functions into one inseparable container and call it three services",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workload is a continuously running containerized daemon. Which platform is a better fit than a single Lambda invocation?",
+    "info": "งาน process ต่อเนื่องเหมาะกับ container runtime แทน function ที่จำกัดเวลาการรัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A CloudFront invalidation request",
+        "correct": false
+      },
+      {
+        "text": "A Lambda invocation intended to run indefinitely",
+        "correct": false
+      },
+      {
+        "text": "A Route 53 hosted zone",
+        "correct": false
+      },
+      {
+        "text": "A container service such as ECS with Fargate",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Where does ECS define container images and task resource requirements?",
+    "info": "Task definition กำหนด containers และการตั้งค่าที่ต้องใช้รัน task",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only a Route 53 record",
+        "correct": false
+      },
+      {
+        "text": "A task definition",
+        "correct": true
+      },
+      {
+        "text": "Only an S3 bucket name",
+        "correct": false
+      },
+      {
+        "text": "Only an account alias",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An API only needs to send a validated request to SQS. Which design can reduce unnecessary compute?",
+    "info": "Direct service integration ลด Lambda ที่ทำหน้าที่เพียงส่งต่อคำขอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use a supported direct API Gateway service integration",
+        "correct": true
+      },
+      {
+        "text": "Write the request into a DNS record",
+        "correct": false
+      },
+      {
+        "text": "Run a permanent EC2 server for each request",
+        "correct": false
+      },
+      {
+        "text": "Add a Lambda function solely to rename every field unnecessarily",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does Amazon API Gateway provide?",
+    "info": "API Gateway ใช้สร้าง เผยแพร่ และจัดการ APIs",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A replacement for every database",
+        "correct": false
+      },
+      {
+        "text": "A physical load balancer purchase",
+        "correct": false
+      },
+      {
+        "text": "A persistent local file system",
+        "correct": false
+      },
+      {
+        "text": "Managed API creation and access",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A workflow should move to a recovery branch when a task fails. Which feature fits?",
+    "info": "Catch ใช้จับ error แล้วส่ง workflow ไปขั้นตอนจัดการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A public bucket policy",
+        "correct": false
+      },
+      {
+        "text": "A Catch configuration",
+        "correct": true
+      },
+      {
+        "text": "A DNS TTL",
+        "correct": false
+      },
+      {
+        "text": "A larger container image",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A client is allowed to invoke Lambda. Does that automatically give the function permission to read a database secret?",
+    "info": "สิทธิ์ invoke ของ caller แยกจากสิทธิ์ที่ function ใช้ผ่าน execution role",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, if the function name is public",
+        "correct": false
+      },
+      {
+        "text": "Yes, caller permission grants every backend action",
+        "correct": false
+      },
+      {
+        "text": "No, the function needs its own appropriate execution permissions",
+        "correct": true
+      },
+      {
+        "text": "No, Lambda cannot read secrets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A browser can call an API because CORS is configured. Does CORS alone authorize the user?",
+    "info": "CORS ควบคุม cross-origin browser access ไม่ใช่สิทธิ์ผู้ใช้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, the browser replaces IAM",
+        "correct": false
+      },
+      {
+        "text": "Yes, CORS grants every user administrator access",
+        "correct": false
+      },
+      {
+        "text": "No, authentication and authorization still need separate controls",
+        "correct": true
+      },
+      {
+        "text": "No, browsers cannot call APIs with authorization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is AWS Step Functions used for?",
+    "info": "Step Functions จัดลำดับและประสาน workflow ระหว่างบริการ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Orchestrating workflows across services",
+        "correct": true
+      },
+      {
+        "text": "Delivering physical hardware",
+        "correct": false
+      },
+      {
+        "text": "Storing EC2 boot disks",
+        "correct": false
+      },
+      {
+        "text": "Assigning static IPv4 addresses",
+        "correct": false
+      }
+    ]
+  }
+]

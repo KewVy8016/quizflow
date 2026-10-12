@@ -1,0 +1,692 @@
+[
+  {
+    "text": "What is Infrastructure as Code (IaC)?",
+    "info": "IaC ใช้โค้ดหรือเทมเพลตจัดเตรียมโครงสร้างพื้นฐาน ทำให้สร้างซ้ำและเปลี่ยนการตั้งค่าได้สม่ำเสมอ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Configuring every environment manually",
+        "correct": false
+      },
+      {
+        "text": "Saving all passwords in one text file",
+        "correct": false
+      },
+      {
+        "text": "Provisioning infrastructure using code or templates",
+        "correct": true
+      },
+      {
+        "text": "Purchasing servers with more CPU cores",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which activity is part of a cloud architect's planning responsibilities?",
+    "info": "Cloud Architect ร่วมกับผู้นำธุรกิจกำหนดกลยุทธ์เทคนิคและวิเคราะห์ความต้องการ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Repairing AWS data center power systems",
+        "correct": false
+      },
+      {
+        "text": "Setting cloud technical strategy with business leaders",
+        "correct": true
+      },
+      {
+        "text": "Delivering physical servers to customers",
+        "correct": false
+      },
+      {
+        "text": "Manufacturing network equipment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How do edge locations improve content delivery?",
+    "info": "Edge locations ช่วยเก็บและส่งเนื้อหาใกล้ผู้ใช้เพื่อลด latency",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "They disable file encryption to speed up downloads",
+        "correct": false
+      },
+      {
+        "text": "They combine all Regions into one Availability Zone",
+        "correct": false
+      },
+      {
+        "text": "They cache and deliver content closer to users",
+        "correct": true
+      },
+      {
+        "text": "They automatically add RAM to every EC2 instance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of the AWS Well-Architected Framework?",
+    "info": "Framework ให้แนวทางที่สม่ำเสมอในการประเมินสถาปัตยกรรมและปรับปรุงตามแนวปฏิบัติที่ดี",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "To generate IAM user passwords",
+        "correct": false
+      },
+      {
+        "text": "To register website domain names",
+        "correct": false
+      },
+      {
+        "text": "To calculate taxes in every country",
+        "correct": false
+      },
+      {
+        "text": "To evaluate and improve cloud architectures",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What should an architect evaluate first when choosing a database technology?",
+    "info": "ควรจับคู่เทคโนโลยีกับลักษณะงาน เช่น access patterns, latency และข้อกำหนดความทนทานของข้อมูล",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The workload's access patterns and data requirements",
+        "correct": true
+      },
+      {
+        "text": "Only the total number of AWS Regions",
+        "correct": false
+      },
+      {
+        "text": "Whether the database logo matches the company brand",
+        "correct": false
+      },
+      {
+        "text": "The database name mentioned most often by the team",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which combination best protects an architecture at multiple layers?",
+    "info": "Defense in depth ใช้หลายมาตรการร่วมกัน เช่น จำกัดสิทธิ์ เข้ารหัส แยกเครือข่าย และบันทึกการเข้าถึง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Encryption with unrestricted public read access",
+        "correct": false
+      },
+      {
+        "text": "Least privilege, encryption, network isolation, and access logging",
+        "correct": true
+      },
+      {
+        "text": "Open network ports followed by occasional reviews",
+        "correct": false
+      },
+      {
+        "text": "A shared password for all team members",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is cloud architecture?",
+    "info": "Cloud architecture คือการออกแบบโดยใช้คุณลักษณะและบริการคลาวด์ให้ตอบโจทย์ทางเทคนิคและธุรกิจ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Selecting the most expensive hardware available",
+        "correct": false
+      },
+      {
+        "text": "Moving every file to the internet",
+        "correct": false
+      },
+      {
+        "text": "Writing applications without considering business requirements",
+        "correct": false
+      },
+      {
+        "text": "Designing cloud solutions to meet technical and business needs",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which pillar focuses on running workloads and continuously improving supporting processes?",
+    "info": "Operational Excellence เน้นการดำเนินงานเพื่อส่งมอบคุณค่าทางธุรกิจและปรับปรุงกระบวนการสนับสนุน",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Cost Optimization",
+        "correct": false
+      },
+      {
+        "text": "Security",
+        "correct": false
+      },
+      {
+        "text": "Operational Excellence",
+        "correct": true
+      },
+      {
+        "text": "Sustainability",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An online store has two web servers in one AZ, local session storage on each server, and one database. It must handle traffic growth and an AZ failure. Which design best addresses both needs?",
+    "info": "เว็บหลาย AZ พร้อม scaling, การแยก session และฐานข้อมูลที่ failover ข้าม AZ ช่วยแก้ทั้งการขยายตัวและจุดล้มเหลวร่วม",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Add a third web server in the same AZ and copy the database manually each month",
+        "correct": false
+      },
+      {
+        "text": "Use a multi-AZ load-balanced scaling group, shared session storage, and database failover across AZs",
+        "correct": true
+      },
+      {
+        "text": "Resize both web servers and the database in their current AZ",
+        "correct": false
+      },
+      {
+        "text": "Move sessions to the existing database and keep every component in one AZ",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an Availability Zone?",
+    "info": "AZ ประกอบด้วยศูนย์ข้อมูลหนึ่งแห่งหรือมากกว่า และออกแบบให้แยกความขัดข้องจาก AZ อื่นใน Region",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Another name for a VPC subnet",
+        "correct": false
+      },
+      {
+        "text": "A geographic area containing multiple AWS Regions",
+        "correct": false
+      },
+      {
+        "text": "One or more data centers designed for fault isolation within a Region",
+        "correct": true
+      },
+      {
+        "text": "A DNS service for all internet users",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which pillar most directly addresses eliminating unnecessary expenses?",
+    "info": "Cost Optimization เน้นการลดค่าใช้จ่ายที่ไม่จำเป็นและเลือกวิธีใช้ทรัพยากรให้คุ้มค่า",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Operational Excellence",
+        "correct": false
+      },
+      {
+        "text": "Reliability",
+        "correct": false
+      },
+      {
+        "text": "Security",
+        "correct": false
+      },
+      {
+        "text": "Cost Optimization",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company must keep restricted data in an approved Region. Only public content may be cached outside that Region. Which design best reduces global user latency while respecting this requirement?",
+    "info": "ควรเก็บข้อมูลจำกัดใน Region ที่อนุญาต และ cache เฉพาะเนื้อหาสาธารณะที่นโยบายยอมรับใกล้ผู้ใช้",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Select the cheapest Region regardless of residency requirements",
+        "correct": false
+      },
+      {
+        "text": "Keep restricted data in the approved Region and use a CDN for permitted public content",
+        "correct": true
+      },
+      {
+        "text": "Replicate all data to every Region",
+        "correct": false
+      },
+      {
+        "text": "Store all data on one server near the headquarters",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which pillar focuses on selecting and using computing resources efficiently?",
+    "info": "Performance Efficiency เน้นการใช้ทรัพยากรอย่างมีประสิทธิภาพให้ตรงกับความต้องการของ workload",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Reliability",
+        "correct": false
+      },
+      {
+        "text": "Sustainability",
+        "correct": false
+      },
+      {
+        "text": "Performance Efficiency",
+        "correct": true
+      },
+      {
+        "text": "Security",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which pillar focuses on reducing a workload's environmental impact?",
+    "info": "Sustainability เน้นการใช้ทรัพยากรให้เกิดประโยชน์สูงสุดและลดผลกระทบต่อสิ่งแวดล้อม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Sustainability",
+        "correct": true
+      },
+      {
+        "text": "Operational Excellence",
+        "correct": false
+      },
+      {
+        "text": "Security",
+        "correct": false
+      },
+      {
+        "text": "Reliability",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants to review its workload against AWS best practices and receive improvement guidance. Which tool should it use?",
+    "info": "AWS Well-Architected Tool ช่วยทบทวน workload เทียบกับแนวปฏิบัติและจัดทำแนวทางปรับปรุง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Well-Architected Tool",
+        "correct": true
+      },
+      {
+        "text": "Amazon S3 Transfer Acceleration",
+        "correct": false
+      },
+      {
+        "text": "AWS IAM Identity Center",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An architect must choose between lower cost and lower latency. What is the best decision process?",
+    "info": "ควรประเมิน trade-offs ด้วยข้อมูลจากการวัดจริงและความต้องการของธุรกิจ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Measure both options and compare results with business requirements",
+        "correct": true
+      },
+      {
+        "text": "Always choose the cheapest option regardless of latency",
+        "correct": false
+      },
+      {
+        "text": "Always choose the option using the most services",
+        "correct": false
+      },
+      {
+        "text": "Always choose the most complex design",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A website serves images and CSS files that rarely change. Which choice follows the principle of designing services, not servers?",
+    "info": "Static assets สามารถเก็บใน S3 เพื่อแยกงานจัดเก็บไฟล์ออกจากเซิร์ฟเวอร์แอป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Store the static assets in Amazon S3",
+        "correct": true
+      },
+      {
+        "text": "Keep all assets in one web server's memory",
+        "correct": false
+      },
+      {
+        "text": "Serve the files from an employee's workstation",
+        "correct": false
+      },
+      {
+        "text": "Create a relational database for each image",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application must continue operating if one Availability Zone fails. What deployment approach should be used?",
+    "info": "การกระจายองค์ประกอบสำคัญไปหลาย AZ ช่วยแยกความขัดข้องและเพิ่มความต่อเนื่องของบริการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Rename the VPC every month",
+        "correct": false
+      },
+      {
+        "text": "Replace multiple Availability Zones with multiple IAM users",
+        "correct": false
+      },
+      {
+        "text": "Deploy critical components across multiple Availability Zones",
+        "correct": true
+      },
+      {
+        "text": "Add more instances in only one Availability Zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Repeated reads of the same data are increasing database load. Which technique should the architect consider?",
+    "info": "Caching ลดการดึงข้อมูลซ้ำจากต้นทาง จึงลดโหลดและเวลาในการตอบสนอง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Reduce the number of Availability Zones",
+        "correct": false
+      },
+      {
+        "text": "Cache suitable frequently requested data",
+        "correct": true
+      },
+      {
+        "text": "Write new records whenever data is read",
+        "correct": false
+      },
+      {
+        "text": "Duplicate every database read request",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an AWS Region?",
+    "info": "Region เป็นพื้นที่ทางภูมิศาสตร์ที่ประกอบด้วย Availability Zones หลายแห่ง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A geographic area containing multiple Availability Zones",
+        "correct": true
+      },
+      {
+        "text": "A group of IAM users in the same country",
+        "correct": false
+      },
+      {
+        "text": "A single virtual server",
+        "correct": false
+      },
+      {
+        "text": "A storage area inside one S3 object",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is horizontal scaling?",
+    "info": "Horizontal scaling เพิ่มหรือลดจำนวนทรัพยากร ส่วน vertical scaling เปลี่ยนขนาดทรัพยากร",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Renaming an instance without changing capacity",
+        "correct": false
+      },
+      {
+        "text": "Moving a server to a larger room",
+        "correct": false
+      },
+      {
+        "text": "Adding RAM to the same instance",
+        "correct": false
+      },
+      {
+        "text": "Adding more instances to handle a workload",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Several test environments have inconsistent configurations. What should the team do?",
+    "info": "เทมเพลต IaC ช่วยสร้างสภาพแวดล้อมซ้ำด้วยการตั้งค่าเดียวกันและลดข้อผิดพลาดจากการทำด้วยมือ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use screenshots as the only deployment instructions",
+        "correct": false
+      },
+      {
+        "text": "Let each administrator choose different settings",
+        "correct": false
+      },
+      {
+        "text": "Remove access controls to accelerate deployment",
+        "correct": false
+      },
+      {
+        "text": "Create the environments from the same IaC template",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A web tier depends on a hard-coded application server address. Which change improves loose coupling?",
+    "info": "การใช้ตัวกลาง เช่น load balancer ลดการผูกติดกับ application server เครื่องใดเครื่องหนึ่ง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Use a load balancer between the web and application tiers",
+        "correct": true
+      },
+      {
+        "text": "Hard-code the same server address in more components",
+        "correct": false
+      },
+      {
+        "text": "Disable application server health checks",
+        "correct": false
+      },
+      {
+        "text": "Combine the web, application, and database tiers on one server",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application experiences seasonal traffic peaks. Which approach best supports demand while controlling ongoing costs?",
+    "info": "การขยายและลดทรัพยากรตามโหลดรองรับช่วงใช้งานสูงและลดค่าใช้จ่ายเมื่อความต้องการลดลง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Increase and decrease resource capacity with demand",
+        "correct": true
+      },
+      {
+        "text": "Limit the application to a fixed number of daily users",
+        "correct": false
+      },
+      {
+        "text": "Keep peak capacity running throughout the year",
+        "correct": false
+      },
+      {
+        "text": "Use one server and stop monitoring utilization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which pillar includes a strong identity foundation and traceability?",
+    "info": "Security เน้นรากฐานด้านตัวตน การตรวจสอบย้อนกลับ และการป้องกันในทุกชั้น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Sustainability",
+        "correct": false
+      },
+      {
+        "text": "Performance Efficiency",
+        "correct": false
+      },
+      {
+        "text": "Security",
+        "correct": true
+      },
+      {
+        "text": "Cost Optimization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A latency-sensitive workload serves users near a city without an AWS Region. Which infrastructure option should be considered?",
+    "info": "AWS Local Zones เป็นส่วนขยายของ Region ที่นำบริการบางชนิดไปอยู่ใกล้ผู้ใช้ในพื้นที่เฉพาะ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Lifecycle expiration",
+        "correct": false
+      },
+      {
+        "text": "AWS Local Zones",
+        "correct": true
+      },
+      {
+        "text": "AWS Organizations consolidated billing",
+        "correct": false
+      },
+      {
+        "text": "IAM groups",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A critical application has only one database server. Which change most directly reduces this single point of failure?",
+    "info": "ฐานข้อมูลสำรองพร้อม replication และกลไก failover ช่วยรองรับเมื่อฐานข้อมูลหลักเสีย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Disable alerts when the database becomes unavailable",
+        "correct": false
+      },
+      {
+        "text": "Shorten database passwords to improve connection speed",
+        "correct": false
+      },
+      {
+        "text": "Increase only the primary database's CPU capacity",
+        "correct": false
+      },
+      {
+        "text": "Add a standby database with replication and failover",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which pillar focuses on recovering from failures and mitigating disruptions?",
+    "info": "Reliability ครอบคลุมการกู้คืน การรองรับความต้องการที่เปลี่ยนแปลง และการลดผลกระทบจากความขัดข้อง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Operational Excellence",
+        "correct": false
+      },
+      {
+        "text": "Reliability",
+        "correct": true
+      },
+      {
+        "text": "Sustainability",
+        "correct": false
+      },
+      {
+        "text": "Cost Optimization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants to automatically replace a failed server with an identically configured server. Which principle supports this goal?",
+    "info": "การมองทรัพยากรเป็นสิ่งที่ทดแทนได้ต้องมีวิธีสร้างใหม่ด้วยการตั้งค่าที่ทำซ้ำได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Depend on manual repairs to the original server",
+        "correct": false
+      },
+      {
+        "text": "Grant every user root access",
+        "correct": false
+      },
+      {
+        "text": "Keep configuration details only in an administrator's memory",
+        "correct": false
+      },
+      {
+        "text": "Treat resources as disposable",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company must store customer data in approved countries. Which factor should first constrain Region selection?",
+    "info": "ข้อกำหนดถิ่นที่อยู่ของข้อมูลเป็นข้อจำกัดที่ต้องผ่านก่อนพิจารณาปัจจัยอื่น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The personal preferences of employees",
+        "correct": false
+      },
+      {
+        "text": "Data residency and compliance requirements",
+        "correct": true
+      },
+      {
+        "text": "How easy the Region name is to remember",
+        "correct": false
+      },
+      {
+        "text": "Which Region was used for an unrelated personal project",
+        "correct": false
+      }
+    ]
+  }
+]

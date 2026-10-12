@@ -1,0 +1,692 @@
+[
+  {
+    "text": "What is an Elastic IP address?",
+    "info": "Elastic IP เป็น static public IPv4 address ที่สามารถย้ายไป associate กับทรัพยากรที่รองรับได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A database primary key",
+        "correct": false
+      },
+      {
+        "text": "A private DNS hosted zone",
+        "correct": false
+      },
+      {
+        "text": "A temporary IAM access key",
+        "correct": false
+      },
+      {
+        "text": "A static public IPv4 address",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "How many Availability Zones can a single subnet span?",
+    "info": "Subnet อยู่ภายใน AZ เดียว หากต้องการหลาย AZ ต้องสร้างหลาย subnets",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "One",
+        "correct": true
+      },
+      {
+        "text": "All AZs in a Region",
+        "correct": false
+      },
+      {
+        "text": "Two",
+        "correct": false
+      },
+      {
+        "text": "All AZs across all Regions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A network ACL has rule 100 denying a source range and rule 200 allowing all traffic. What happens to traffic matching rule 100?",
+    "info": "Network ACL ประเมินจากหมายเลข rule ต่ำไปสูง และหยุดเมื่อพบ rule แรกที่ตรง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The security group is deleted",
+        "correct": false
+      },
+      {
+        "text": "It is allowed because rule 200 has a larger number",
+        "correct": false
+      },
+      {
+        "text": "Both rules are ignored",
+        "correct": false
+      },
+      {
+        "text": "It is denied by rule 100",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which services are supported by gateway VPC endpoints?",
+    "info": "Gateway VPC endpoints ใช้กับ Amazon S3 และ DynamoDB โดยกำหนด routes ใน route tables",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon Cognito and Route 53",
+        "correct": false
+      },
+      {
+        "text": "Every AWS service automatically",
+        "correct": false
+      },
+      {
+        "text": "Amazon S3 and DynamoDB",
+        "correct": true
+      },
+      {
+        "text": "Amazon RDS and EC2 Image Builder",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A VPC endpoint exists, but its policy does not permit the required S3 request. Does private connectivity alone grant S3 access?",
+    "info": "VPC endpoint สร้างช่องทางเชื่อมต่อ แต่คำขอยังต้องผ่าน policies และสิทธิ์ที่เกี่ยวข้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, a private IP grants administrator access",
+        "correct": false
+      },
+      {
+        "text": "Yes, endpoints override all IAM policies",
+        "correct": false
+      },
+      {
+        "text": "No, the applicable endpoint and access policies must also permit the request",
+        "correct": true
+      },
+      {
+        "text": "No, endpoints can never be used with S3",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Private EC2 instances need access only to S3 in the same Region. Which option avoids requiring a NAT gateway for that S3 access?",
+    "info": "S3 gateway endpoint ใช้ routes สำหรับ S3 ทำให้เข้าถึงบริการได้โดยไม่ต้องออกผ่าน NAT หรือ IGW",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A Route 53 record alone",
+        "correct": false
+      },
+      {
+        "text": "An S3 gateway VPC endpoint",
+        "correct": true
+      },
+      {
+        "text": "An EC2 placement group",
+        "correct": false
+      },
+      {
+        "text": "An internet gateway with no public IP or NAT",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A database should accept connections only from application instances. What is the preferred security group source?",
+    "info": "การอ้างอิง application security group ช่วยให้อนุญาต traffic จากแอปโดยไม่ต้องเปิดรับ IP ทั้งอินเทอร์เน็ต",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The application instances' security group",
+        "correct": true
+      },
+      {
+        "text": "0.0.0.0/0 on all ports",
+        "correct": false
+      },
+      {
+        "text": "The database's DNS name as a source security group",
+        "correct": false
+      },
+      {
+        "text": "The AWS account's billing email",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What information do VPC Flow Logs capture?",
+    "info": "VPC Flow Logs เก็บ metadata เกี่ยวกับ IP traffic เช่น source, destination, ports และผล accept หรือ reject ไม่ใช่ packet payload ทั้งหมด",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The root user's password history",
+        "correct": false
+      },
+      {
+        "text": "Metadata about IP traffic to and from network interfaces",
+        "correct": true
+      },
+      {
+        "text": "All application source code",
+        "correct": false
+      },
+      {
+        "text": "The complete contents of every packet by default",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A security appliance needs copies of supported EC2 network traffic for inspection. Which feature should be considered?",
+    "info": "Traffic Mirroring ทำสำเนา network traffic จาก interfaces ที่รองรับเพื่อส่งไปยังระบบตรวจสอบ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "IAM group nesting",
+        "correct": false
+      },
+      {
+        "text": "RDS read replicas",
+        "correct": false
+      },
+      {
+        "text": "S3 Lifecycle",
+        "correct": false
+      },
+      {
+        "text": "VPC Traffic Mirroring",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which tool helps identify unintended network access to AWS resources?",
+    "info": "Network Access Analyzer ช่วยตรวจหาเส้นทางการเข้าถึงที่ไม่ตรงกับข้อกำหนดขององค์กร",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "AWS DMS",
+        "correct": false
+      },
+      {
+        "text": "EC2 Image Builder",
+        "correct": false
+      },
+      {
+        "text": "VPC Network Access Analyzer",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "What is the geographic scope of a VPC?",
+    "info": "VPC อยู่ภายใน Region เดียว และสามารถมี subnets ในหลาย AZ ของ Region นั้น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "One AWS Region",
+        "correct": true
+      },
+      {
+        "text": "Every AWS Region automatically",
+        "correct": false
+      },
+      {
+        "text": "Only one physical server",
+        "correct": false
+      },
+      {
+        "text": "One edge location",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which route characterizes a public subnet?",
+    "info": "Public subnet มี route ไป internet gateway ที่ attached กับ VPC แต่ instance ยังต้องมีการตั้งค่าอื่นเพื่อเข้าถึงอินเทอร์เน็ต",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Only a route to a NAT gateway",
+        "correct": false
+      },
+      {
+        "text": "A direct route to an internet gateway",
+        "correct": true
+      },
+      {
+        "text": "Only a local VPC route",
+        "correct": false
+      },
+      {
+        "text": "A route to an IAM group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An architect wants managed network intrusion detection and prevention for VPC traffic. Which service fits?",
+    "info": "AWS Network Firewall เพิ่มการตรวจสอบและป้องกัน traffic ใน VPC ผ่าน firewall endpoints และ routing ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Network Firewall",
+        "correct": true
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon Cognito",
+        "correct": false
+      },
+      {
+        "text": "S3 Inventory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An EC2 instance has a public IPv4 address, an internet gateway route, and a security group allowing HTTPS. Its subnet ACL allows inbound TCP 443 but allows outbound only TCP 443. A client uses source port 52000. Why can the connection fail?",
+    "info": "Response จาก server ใช้ source port 443 แต่ destination port เป็น client port 52000 เนื่องจาก ACL เป็น stateless จึงต้องอนุญาต outbound response ไปพอร์ตนั้น",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Public IPv4 addresses cannot be used with network ACLs",
+        "correct": false
+      },
+      {
+        "text": "The internet gateway cannot route HTTPS",
+        "correct": false
+      },
+      {
+        "text": "The security group must explicitly allow outbound port 52000 for established responses",
+        "correct": false
+      },
+      {
+        "text": "The stateless ACL blocks responses destined for the client's port 52000",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A growing application must run across two AZs. What should the network plan include?",
+    "info": "ควรมี subnets ในแต่ละ AZ และจัดสรร CIDR ที่ไม่ทับกันโดยเผื่อการเติบโต",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A single public IP shared by all private subnet definitions",
+        "correct": false
+      },
+      {
+        "text": "Separate non-overlapping subnets in each AZ with room for growth",
+        "correct": true
+      },
+      {
+        "text": "One subnet stretched across both AZs",
+        "correct": false
+      },
+      {
+        "text": "The same subnet CIDR assigned to two subnets in one VPC",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An EC2 instance in a private subnet needs to download updates over IPv4 without a public IP. Which design fits?",
+    "info": "ให้ private subnet route ไป public NAT gateway ใน public subnet ที่มีเส้นทางออก internet gateway",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Put the database behind a Route 53 record only",
+        "correct": false
+      },
+      {
+        "text": "Assign a route to an IAM role",
+        "correct": false
+      },
+      {
+        "text": "Route outbound traffic through a public NAT gateway in a public subnet",
+        "correct": true
+      },
+      {
+        "text": "Remove all route table entries",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An administrator uses a bastion host to reach private EC2 instances over SSH. Which rule should protect the private instances?",
+    "info": "ควรอนุญาต SSH จาก security group ของ bastion แทนการเปิดให้ทั้งอินเทอร์เน็ต",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Allow SSH from 0.0.0.0/0 on every private instance",
+        "correct": false
+      },
+      {
+        "text": "Grant all internet clients IAM administrator access",
+        "correct": false
+      },
+      {
+        "text": "Remove the private instances' security groups",
+        "correct": false
+      },
+      {
+        "text": "Allow SSH from the bastion host's security group",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which action can be specified directly in a security group rule?",
+    "info": "Security group rules ระบุ allow เท่านั้น การไม่อนุญาตเกิดจากไม่มี allow ที่ตรง ไม่ใช่การเพิ่ม deny rule",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Override all network ACL rules",
+        "correct": false
+      },
+      {
+        "text": "Allow traffic",
+        "correct": true
+      },
+      {
+        "text": "Convert the subnet into a public subnet",
+        "correct": false
+      },
+      {
+        "text": "Explicitly deny a selected IP range",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of a VPC route table?",
+    "info": "Route table ระบุเส้นทางและ targets สำหรับส่ง traffic ไปยังปลายทาง",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Determine where network traffic is directed",
+        "correct": true
+      },
+      {
+        "text": "Store user passwords",
+        "correct": false
+      },
+      {
+        "text": "Encrypt every application file",
+        "correct": false
+      },
+      {
+        "text": "Choose EC2 purchasing models",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which VPC endpoint type uses AWS PrivateLink and network interfaces?",
+    "info": "Interface VPC endpoints ใช้ AWS PrivateLink และ ENIs ที่มี private IP addresses ใน subnets",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "VPC peering connection",
+        "correct": false
+      },
+      {
+        "text": "Gateway VPC endpoint",
+        "correct": false
+      },
+      {
+        "text": "Interface VPC endpoint",
+        "correct": true
+      },
+      {
+        "text": "Internet gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an Amazon VPC?",
+    "info": "VPC เป็น virtual network ที่แยกทางตรรกะและกำหนดการตั้งค่าเครือข่ายได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An IAM user directory",
+        "correct": false
+      },
+      {
+        "text": "A logically isolated virtual network in AWS",
+        "correct": true
+      },
+      {
+        "text": "A global object storage bucket",
+        "correct": false
+      },
+      {
+        "text": "A database snapshot",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a common use of a public NAT gateway?",
+    "info": "Public NAT gateway ให้ทรัพยากรใน private subnet เริ่มการเชื่อมต่อ IPv4 ออกอินเทอร์เน็ตได้ โดยไม่เปิดรับการเริ่มเชื่อมต่อจากอินเทอร์เน็ต",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Allowing private subnet resources to initiate outbound IPv4 internet connections",
+        "correct": true
+      },
+      {
+        "text": "Allowing unsolicited inbound internet connections to private instances",
+        "correct": false
+      },
+      {
+        "text": "Hosting application user passwords",
+        "correct": false
+      },
+      {
+        "text": "Replicating database writes across Regions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "At which level do security groups control traffic?",
+    "info": "Security groups ควบคุม traffic ของ resources ผ่าน network interfaces ที่ associate กับกลุ่ม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The entire AWS organization",
+        "correct": false
+      },
+      {
+        "text": "Only the physical data center",
+        "correct": false
+      },
+      {
+        "text": "The associated resource or network interface",
+        "correct": true
+      },
+      {
+        "text": "The account's billing profile",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A security group permits an inbound HTTPS request. How is the response traffic treated?",
+    "info": "Security groups เป็น stateful จึงอนุญาต response traffic ของการเชื่อมต่อที่อนุญาตไว้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "It is automatically allowed as response traffic",
+        "correct": true
+      },
+      {
+        "text": "It requires a second IAM user",
+        "correct": false
+      },
+      {
+        "text": "It must use a different VPC",
+        "correct": false
+      },
+      {
+        "text": "It is always denied unless all outbound ports are explicitly opened",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An IPv4 EC2 instance is in a public subnet but has no public IPv4 address. Can it directly communicate with the internet through the internet gateway?",
+    "info": "การออกอินเทอร์เน็ตโดยตรงแบบ IPv4 ผ่าน IGW ต้องมี public IPv4 หรือ Elastic IP พร้อม route และกฎเครือข่ายที่อนุญาต",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Yes, the subnet name automatically provides a public IP",
+        "correct": false
+      },
+      {
+        "text": "No, it also needs a public IPv4 address or Elastic IP for direct IPv4 internet access",
+        "correct": true
+      },
+      {
+        "text": "No, public subnets can never access the internet",
+        "correct": false
+      },
+      {
+        "text": "Yes, a security group creates a public IP",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is an internet gateway used for?",
+    "info": "Internet gateway เชื่อม VPC กับอินเทอร์เน็ตเมื่อ routes และการตั้งค่าของทรัพยากรเหมาะสม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Providing database connection pooling",
+        "correct": false
+      },
+      {
+        "text": "Enabling internet connectivity for a VPC",
+        "correct": true
+      },
+      {
+        "text": "Creating temporary IAM credentials",
+        "correct": false
+      },
+      {
+        "text": "Storing encrypted backups",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does a VPC CIDR block define?",
+    "info": "CIDR block กำหนดช่วง IP addresses ของเครือข่าย",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The AWS support plan",
+        "correct": false
+      },
+      {
+        "text": "The database engine version",
+        "correct": false
+      },
+      {
+        "text": "The VPC's IP address range",
+        "correct": true
+      },
+      {
+        "text": "The number of IAM users",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which tool analyzes whether a configured network path between supported VPC resources is reachable?",
+    "info": "Reachability Analyzer วิเคราะห์เส้นทางและการตั้งค่าเพื่อระบุจุดที่ปิดกั้น connectivity",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon RDS automated backups",
+        "correct": false
+      },
+      {
+        "text": "AWS Compute Optimizer",
+        "correct": false
+      },
+      {
+        "text": "VPC Reachability Analyzer",
+        "correct": true
+      },
+      {
+        "text": "Amazon Macie",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How do network ACLs differ in scope from security groups?",
+    "info": "Network ACLs ควบคุม traffic ที่ระดับ subnet ส่วน security groups ใช้กับ resources หรือ interfaces",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Network ACLs replace all VPC routes",
+        "correct": false
+      },
+      {
+        "text": "Network ACLs apply only to DNS names",
+        "correct": false
+      },
+      {
+        "text": "Network ACLs operate only at the IAM user level",
+        "correct": false
+      },
+      {
+        "text": "Network ACLs operate at the subnet level",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A network ACL allows inbound HTTPS requests. What else must be considered for successful responses?",
+    "info": "Network ACLs เป็น stateless จึงต้องอนุญาต response traffic ในอีกทิศทางด้วย รวมถึงพอร์ตปลายทางของ client",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Outbound rules permitting the response traffic, including relevant client ports",
+        "correct": true
+      },
+      {
+        "text": "Only the instance's name tag",
+        "correct": false
+      },
+      {
+        "text": "Only the S3 bucket policy",
+        "correct": false
+      },
+      {
+        "text": "No outbound rules because ACLs are stateful",
+        "correct": false
+      }
+    ]
+  }
+]
