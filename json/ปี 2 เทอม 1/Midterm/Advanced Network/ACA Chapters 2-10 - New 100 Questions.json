@@ -1,0 +1,2302 @@
+[
+  {
+    "text": "CPU metrics look healthy, but customers report failed checkouts. Which additional monitoring best measures this user-facing problem?",
+    "info": "CPU ไม่สะท้อนผล business operation โดยตรง ควรติดตามอัตราสำเร็จหรือความผิดพลาดของ checkout",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only another copy of the CPU graph",
+        "correct": false
+      },
+      {
+        "text": "Only the number of instance tags",
+        "correct": false
+      },
+      {
+        "text": "A checkout success or failure metric emitted by the application",
+        "correct": true
+      },
+      {
+        "text": "Only the database file name length",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An auditor requests AWS-provided compliance reports and agreements rather than customer workload scan results. Which service should the company consult?",
+    "info": "AWS Artifact ให้เข้าถึงรายงานและข้อตกลงด้าน compliance ของ AWS ซึ่งต่างจากการสแกน workload ของลูกค้า",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Artifact",
+        "correct": true
+      },
+      {
+        "text": "AWS Compute Optimizer",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "Amazon Inspector",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A fleet generates temperature readings with timestamps, and analysts query trends over time. Which purpose-built database category fits?",
+    "info": "Time-series database เช่น Timestream เหมาะกับค่าที่บันทึกตามเวลาและการวิเคราะห์แนวโน้ม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A time-series database such as Amazon Timestream",
+        "correct": true
+      },
+      {
+        "text": "A DNS service",
+        "correct": false
+      },
+      {
+        "text": "A container image registry",
+        "correct": false
+      },
+      {
+        "text": "A graph database chosen only for relationship traversal",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "During incidents, operators repeatedly perform the same recovery commands and record actions from memory. Which improvement best supports Operational Excellence?",
+    "info": "บันทึก recovery procedure เป็นโค้ดพร้อม logs ทำให้การปฏิบัติซ้ำและตรวจสอบได้สม่ำเสมอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Increase storage capacity without changing incident procedures",
+        "correct": false
+      },
+      {
+        "text": "Codify repeatable recovery actions and record their execution",
+        "correct": true
+      },
+      {
+        "text": "Remove operational logs to shorten the procedure",
+        "correct": false
+      },
+      {
+        "text": "Give all operators a shared permanent root password",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An on-premises router must reach many VPCs through Transit Gateway over Direct Connect. Which integration from the chapter fits?",
+    "info": "ใช้ transit VIF ผ่าน Direct Connect gateway ไป Transit Gateway เพื่อเชื่อม VPC attachments",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An SNS topic between the router and VPCs",
+        "correct": false
+      },
+      {
+        "text": "A transit VIF through a Direct Connect gateway to Transit Gateway",
+        "correct": true
+      },
+      {
+        "text": "A Cognito identity pool as the central router",
+        "correct": false
+      },
+      {
+        "text": "A public VIF directly attached to every application security group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A historical archive is almost never requested, and retrieval delays are acceptable. Which S3 class is designed for the deepest long-term archival use case?",
+    "info": "Glacier Deep Archive ออกแบบสำหรับเก็บข้อมูลระยะยาวที่เรียกใช้น้อยและไม่ต้องดึงทันที ต้องพิจารณาค่า retrieval กับ retention ด้วย",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 Standard for frequent access",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance store",
+        "correct": false
+      },
+      {
+        "text": "An EFS shared working directory",
+        "correct": false
+      },
+      {
+        "text": "S3 Glacier Deep Archive",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which workload is an example of online transaction processing (OLTP)?",
+    "info": "OLTP รองรับธุรกรรมปฏิบัติการ เช่น บันทึกคำสั่งซื้อ ต่างจาก OLAP ที่วิเคราะห์ข้อมูลรวม",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Building a quarterly analytical dashboard",
+        "correct": false
+      },
+      {
+        "text": "Recording individual customer purchases",
+        "correct": true
+      },
+      {
+        "text": "Summarizing several years of sales trends",
+        "correct": false
+      },
+      {
+        "text": "Scanning an archive for historical statistics",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application update requires many operating system changes. The team can reproduce the full configuration. Which release approach follows disposable-resource design?",
+    "info": "สร้างและตรวจเครื่องใหม่จาก configuration ที่ทำซ้ำได้ แล้วเปลี่ยนไปใช้เครื่องใหม่ ช่วยลดการสะสมการแก้ด้วยมือ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Store the deployment configuration only on the instance being replaced",
+        "correct": false
+      },
+      {
+        "text": "Manually patch each live instance with undocumented commands",
+        "correct": false
+      },
+      {
+        "text": "Keep the oldest instance as the only recoverable copy",
+        "correct": false
+      },
+      {
+        "text": "Build and validate replacement instances, then switch service to them",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A compliance team needs ongoing collection and organization of evidence for audits of its AWS environment. Which service fits?",
+    "info": "AWS Audit Manager ช่วยรวบรวมและจัดหลักฐานตามกรอบการตรวจสอบ ไม่ได้แทนการตัดสินของ auditor",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon ECR",
+        "correct": false
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS Artifact solely as a report download source",
+        "correct": false
+      },
+      {
+        "text": "AWS Audit Manager",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company proposes One Zone-IA for its only copy of irreplaceable files. The files must survive loss of an AZ. Which concern is decisive?",
+    "info": "One Zone-IA เก็บใน AZ เดียวจึงไม่เหมาะกับสำเนาเดียวที่ต้องทนการสูญเสีย AZ ควรเลือกการจัดเก็บหลาย AZ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The bucket must use a shorter name to survive AZ loss",
+        "correct": false
+      },
+      {
+        "text": "Every infrequent-access class disables encryption",
+        "correct": false
+      },
+      {
+        "text": "One Zone-IA cannot store files with extensions",
+        "correct": false
+      },
+      {
+        "text": "The single-AZ design does not meet the stated resilience requirement",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A reporting API may use up to five-minute-old results. Recomputing identical reports consumes most of its CPU. Which trade-off is justified?",
+    "info": "เมื่อธุรกิจยอมรับข้อมูลเก่าได้ตามช่วงที่กำหนด การ cache ผลช่วยแลกพื้นที่เก็บกับเวลาคำนวณที่ลดลง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Cache results indefinitely regardless of their age",
+        "correct": false
+      },
+      {
+        "text": "Use cached results with a freshness policy matching the requirement",
+        "correct": true
+      },
+      {
+        "text": "Recompute every report because caching always violates correctness",
+        "correct": false
+      },
+      {
+        "text": "Reject repeated requests instead of serving valid reports",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An investigator wants relationships and activity context around an IAM entity involved in suspicious behavior. Which service fits this investigation task?",
+    "info": "Amazon Detective จัดข้อมูลและความสัมพันธ์เพื่อช่วยวิเคราะห์สาเหตุของ security findings",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Amazon Detective",
+        "correct": true
+      },
+      {
+        "text": "EC2 Image Builder",
+        "correct": false
+      },
+      {
+        "text": "AWS Artifact used for compliance reports",
+        "correct": false
+      },
+      {
+        "text": "Amazon Macie used only for sensitive-data discovery",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Monitoring shows an instance consistently has much more CPU and memory capacity than its workload needs. Which Compute Optimizer finding is most consistent with this observation?",
+    "info": "Over-provisioned หมายถึงจัดสรรทรัพยากรเกินความต้องการ ควรประเมินการลดขนาดโดยยังผ่าน performance target",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Over-provisioned",
+        "correct": true
+      },
+      {
+        "text": "No workload exists because the instance is running",
+        "correct": false
+      },
+      {
+        "text": "Under-provisioned",
+        "correct": false
+      },
+      {
+        "text": "A network ACL misconfiguration",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team wants a database backup it can keep until an operator explicitly deletes it. Which RDS backup option fits?",
+    "info": "Manual snapshots เก็บจนผู้ใช้ลบ จึงเหมาะกับสำเนาที่ต้องควบคุม retention เอง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A manual DB snapshot",
+        "correct": true
+      },
+      {
+        "text": "Only automated backups with a short retention period",
+        "correct": false
+      },
+      {
+        "text": "Only a database connection pool",
+        "correct": false
+      },
+      {
+        "text": "Only a traditional Multi-AZ standby",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "VPC B is peered with VPC A. B has no internet gateway and tries to use A's internet gateway through the peering connection. Why does this fail?",
+    "info": "VPC peering ไม่รองรับ edge-to-edge routing เพื่อใช้ internet gateway ของ peer เป็นทางออก ต้องออกแบบ connectivity ที่รองรับแยกต่างหาก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Peering always disables all outbound traffic in both VPCs",
+        "correct": false
+      },
+      {
+        "text": "Peering does not provide internet transit through a peer's internet gateway",
+        "correct": true
+      },
+      {
+        "text": "Every peered VPC must use the same CIDR",
+        "correct": false
+      },
+      {
+        "text": "Only public S3 buckets can be used across VPC peering",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An Aurora writer is bottlenecked by writes, while reader utilization is low. Why is adding more read replicas alone unlikely to solve it?",
+    "info": "Read replicas เพิ่ม read capacity ไม่ได้กระจาย write workload ของ writer โดยอัตโนมัติ ต้องประเมิน writer และ write path",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Aurora cannot have readers",
+        "correct": false
+      },
+      {
+        "text": "Writer performance depends only on DNS record count",
+        "correct": false
+      },
+      {
+        "text": "Read replicas permanently disable all writes",
+        "correct": false
+      },
+      {
+        "text": "Read replicas do not automatically increase the writer's write-processing capacity",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A step scaling policy adds 30% of current capacity when CPU exceeds 70%. The group has ten instances and a maximum of twenty. CPU reaches 80%. What is the resulting desired capacity after this one adjustment?",
+    "info": "30% ของ 10 เท่ากับ 3 จึงเพิ่มเป็น 13 และยังไม่ชน maximum 20 ตามเงื่อนไขของโจทย์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Twenty",
+        "correct": false
+      },
+      {
+        "text": "Seven",
+        "correct": false
+      },
+      {
+        "text": "Thirteen",
+        "correct": true
+      },
+      {
+        "text": "Thirty",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A workload meets its response-time target but uses large amounts of idle capacity. The company also wants to reduce environmental impact. Which improvement is appropriate?",
+    "info": "การ right-size และเพิ่ม utilization ที่ยังผ่านเป้าหมายบริการสอดคล้องกับ Sustainability",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Keep oversized resources because low utilization proves sustainability",
+        "correct": false
+      },
+      {
+        "text": "Reduce idle capacity while preserving validated service targets",
+        "correct": true
+      },
+      {
+        "text": "Disable monitoring so idle capacity is no longer reported",
+        "correct": false
+      },
+      {
+        "text": "Add standby servers without evaluating their purpose",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team proposes a database before learning whether the application needs transactions or analytical queries. What should the architect do first?",
+    "info": "ต้องเข้าใจประเภทข้อมูลและการใช้งานก่อนเลือกเทคโนโลยี มิฉะนั้นอาจเลือกบริการที่ไม่ตรงงาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Establish the business requirements and data access patterns",
+        "correct": true
+      },
+      {
+        "text": "Accept the proposal because the database is familiar",
+        "correct": false
+      },
+      {
+        "text": "Select the engine with the longest feature list",
+        "correct": false
+      },
+      {
+        "text": "Choose the smallest instance before identifying the workload",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In an IAM policy, what does the Version element identify?",
+    "info": "Version ระบุรุ่นภาษาของ policy ไม่ใช่วันที่สร้างหรือแก้ไขเอกสาร",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The number of policy statements",
+        "correct": false
+      },
+      {
+        "text": "The EC2 operating system version",
+        "correct": false
+      },
+      {
+        "text": "The date the user last signed in",
+        "correct": false
+      },
+      {
+        "text": "The policy language version",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A user's permissions boundary allows EC2 actions, but no identity-based or resource-based policy grants DescribeInstances. What does the boundary provide?",
+    "info": "Permissions boundary เป็นขอบเขตสูงสุด ไม่ได้ให้ permission ด้วยตัวเอง คำขอที่ไม่มี grant ยังถูกปฏิเสธ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Automatic EC2 administrator access",
+        "correct": false
+      },
+      {
+        "text": "A limit on possible permissions, not a grant to DescribeInstances",
+        "correct": true
+      },
+      {
+        "text": "Only console access to every instance",
+        "correct": false
+      },
+      {
+        "text": "An exception to all implicit denies",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A subnet route table has 0.0.0.0/0 to NAT and 172.20.0.0/16 to a peering connection. Which route handles traffic to 172.20.5.10?",
+    "info": "Route selection ใช้ prefix ที่เฉพาะเจาะจงที่สุด ดังนั้น /16 ชนะ default /0",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Both routes simultaneously for every packet",
+        "correct": false
+      },
+      {
+        "text": "The peering route for 172.20.0.0/16",
+        "correct": true
+      },
+      {
+        "text": "The NAT route because it matches every IPv4 address",
+        "correct": false
+      },
+      {
+        "text": "Neither route because private addresses cannot be routed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A user can list bucket names but cannot download objects. Which distinction should the administrator check?",
+    "info": "สิทธิ์ list และสิทธิ์อ่าน object เป็นคนละ actions และอาจใช้ Resource ต่างชนิดกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Whether listing automatically created an encrypted copy",
+        "correct": false
+      },
+      {
+        "text": "Whether the policy grants the necessary object-read action on object resources",
+        "correct": true
+      },
+      {
+        "text": "Whether the bucket name is written in uppercase",
+        "correct": false
+      },
+      {
+        "text": "Whether the user has a larger console window",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A launch template gets version 2, but an Auto Scaling group still references version 1. Newly launched instances keep the old configuration. What should be changed?",
+    "info": "การสร้าง template version ใหม่ไม่เปลี่ยน reference ที่ระบุ version 1 ต้องปรับ group ให้ใช้ version ที่ต้องการ ส่วน instances เดิมต้องวาง rollout เพิ่ม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only increase maximum capacity",
+        "correct": false
+      },
+      {
+        "text": "Only create version 2 again with another description",
+        "correct": false
+      },
+      {
+        "text": "Only rename the old instances",
+        "correct": false
+      },
+      {
+        "text": "Update the group's launch template reference to the intended version",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A policy contains only Deny for TerminateInstances when the source IP is outside an approved range. A request comes from inside that range, and no policy grants the action. What happens?",
+    "info": "เมื่อ deny condition ไม่ตรง ก็ยังไม่มี allow ดังนั้นคำขอยังเป็น implicit deny การไม่ถูกปฏิเสธอย่างชัดเจนไม่ได้เท่ากับได้รับสิทธิ์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The instance is terminated without evaluating permissions",
+        "correct": false
+      },
+      {
+        "text": "The request is implicitly denied",
+        "correct": true
+      },
+      {
+        "text": "The request is allowed because the Deny condition does not match",
+        "correct": false
+      },
+      {
+        "text": "The requester automatically receives administrator access",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A transactional workload needs sustained high random I/O performance from its EC2 data volume. Which EBS category should be evaluated?",
+    "info": "Provisioned IOPS SSD เหมาะกับงานที่เน้น IOPS และ random I/O มากกว่าประเภท HDD ที่เน้น throughput",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Provisioned IOPS SSD",
+        "correct": true
+      },
+      {
+        "text": "Cold HDD selected only for low storage cost",
+        "correct": false
+      },
+      {
+        "text": "A DNS hosted zone",
+        "correct": false
+      },
+      {
+        "text": "Throughput Optimized HDD for sequential scans only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An IAM policy should grant GetObject only for keys under finance/ in a bucket named reports. Which Resource value fits?",
+    "info": "GetObject ใช้ object ARN โดย finance/* จำกัดเฉพาะ keys ใต้ prefix ที่ต้องการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "arn:aws:s3:::reports",
+        "correct": false
+      },
+      {
+        "text": "arn:aws:iam::123456789012:group/finance",
+        "correct": false
+      },
+      {
+        "text": "arn:aws:s3:::reports/marketing/*",
+        "correct": false
+      },
+      {
+        "text": "arn:aws:s3:::reports/finance/*",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "VPC A (10.1.0.0/16) and B (10.2.0.0/16) route remote traffic to Transit Gateway. A's associated TGW table routes B's CIDR to attachment B. B's associated TGW table contains only 10.99.0.0/24 to VPN. Security controls permit traffic. Requests reach B, but replies to A fail. Which missing route explains this?",
+    "info": "TGW ใช้ table ตาม attachment ที่ traffic เข้ามา ดังนั้น replies จาก B ต้องมี route ไป A ใน table ที่ associate กับ B ไม่ใช่เพิ่ม forward route เดิมใน A",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "10.2.0.0/16 to attachment B in the TGW table associated with A again",
+        "correct": false
+      },
+      {
+        "text": "10.99.0.0/24 to VPN in B's TGW table again",
+        "correct": false
+      },
+      {
+        "text": "0.0.0.0/0 to an internet gateway in A's security group",
+        "correct": false
+      },
+      {
+        "text": "10.1.0.0/16 to attachment A in the TGW table associated with B",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "At which OSI layer does an Application Load Balancer make application routing decisions?",
+    "info": "ALB ทำงานที่ application layer หรือ OSI layer 7",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Layer 2",
+        "correct": false
+      },
+      {
+        "text": "Layer 3 only",
+        "correct": false
+      },
+      {
+        "text": "Layer 1",
+        "correct": false
+      },
+      {
+        "text": "Layer 7",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Five VPCs already form a full mesh. A sixth VPC must peer directly with each existing VPC. How many new connections are needed?",
+    "info": "VPC ใหม่ต้องเชื่อมกับทั้งห้าแห่ง จึงเพิ่ม 5 connections โดยไม่ต้องสร้างคู่เดิมใหม่",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Four",
+        "correct": false
+      },
+      {
+        "text": "Five",
+        "correct": true
+      },
+      {
+        "text": "One",
+        "correct": false
+      },
+      {
+        "text": "Fifteen",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system has a stable baseline, unpredictable interactive spikes that cannot be interrupted, and separate restartable batch jobs. Which purchasing mix fits?",
+    "info": "พิจารณา commitment สำหรับ baseline, On-Demand สำหรับ spikes สำคัญ และ Spot สำหรับ batch ที่รับ interruption ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Spot for all interactive traffic regardless of interruption tolerance",
+        "correct": false
+      },
+      {
+        "text": "Commitments for the baseline, On-Demand for interactive spikes, and Spot for restartable batch work",
+        "correct": true
+      },
+      {
+        "text": "A three-year commitment sized to the highest possible spike before measuring it",
+        "correct": false
+      },
+      {
+        "text": "Dedicated Hosts for every workload solely because traffic varies",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A private server is reached through a bastion. Its SSH rule allows only the administrator's public office IP, and the second SSH hop is rejected. Which source should the private server's rule normally recognize?",
+    "info": "การเชื่อมต่อ hop ที่สองมาจาก bastion ไม่ใช่ public IP ของสำนักงาน จึงควรอ้างอิง bastion security group ที่เหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The bastion host's security group",
+        "correct": true
+      },
+      {
+        "text": "The administrator's browser version",
+        "correct": false
+      },
+      {
+        "text": "The VPC's billing email",
+        "correct": false
+      },
+      {
+        "text": "The public internet without restriction",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which CloudWatch feature presents selected metrics and alarm information together on a customizable page?",
+    "info": "CloudWatch dashboards ใช้รวม graphs และสถานะที่ต้องการติดตามไว้ในมุมมองเดียว",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A permissions boundary",
+        "correct": false
+      },
+      {
+        "text": "A launch template",
+        "correct": false
+      },
+      {
+        "text": "A dashboard",
+        "correct": true
+      },
+      {
+        "text": "A public hosted zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "One Site-to-Site VPN tunnel is unavailable during maintenance. The second tunnel and customer-side failover routing are healthy. What capability remains?",
+    "info": "VPN มีสอง tunnels เพื่อ redundancy จึงสามารถส่ง traffic ผ่าน tunnel ที่ยังพร้อมได้เมื่อ routing ตั้งถูกต้อง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The connection can use the remaining tunnel",
+        "correct": true
+      },
+      {
+        "text": "Direct Connect is created automatically by the outage",
+        "correct": false
+      },
+      {
+        "text": "VPC peering automatically replaces the VPN",
+        "correct": false
+      },
+      {
+        "text": "Both tunnels must fail whenever either one is down",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An Auto Scaling group has minimum 2, desired 3, and maximum 8 instances. What instance count is it configured to maintain initially under normal operation?",
+    "info": "Desired capacity เป็นจำนวนเป้าหมายปัจจุบัน ดังนั้นกลุ่มนี้ตั้งเป้าไว้ที่ 3 ไม่ใช่ minimum หรือ maximum",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Thirteen",
+        "correct": false
+      },
+      {
+        "text": "Three",
+        "correct": true
+      },
+      {
+        "text": "Eight",
+        "correct": false
+      },
+      {
+        "text": "Two",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An ACL allows office subnet 203.0.113.0/24 on TCP 443 at rule 100, then denies all TCP 443 at rule 110. A second office at 203.0.114.0/24 must also connect. Which change fits?",
+    "info": "ต้องเพิ่ม allow ที่ตรง source ใหม่ก่อน rule 110 เพราะ ACL หยุดที่ rule แรกที่ตรง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Change only the subnet's Name tag",
+        "correct": false
+      },
+      {
+        "text": "Add an IAM policy allowing HTTPS packets",
+        "correct": false
+      },
+      {
+        "text": "Add that allow after rule 110",
+        "correct": false
+      },
+      {
+        "text": "Add an allow for the second office on TCP 443 before rule 110",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A launch must occur within 14 days, with latency at most 50 ms and estimated monthly cost at most $1,500. Prototype A measures 35 ms, takes 10 days, and costs $1,200. Prototype B measures 95 ms, takes 25 days, and costs $700. Which decision meets all constraints?",
+    "info": "A ผ่านทั้งเวลาเปิดตัว latency และงบประมาณ ส่วน B แม้ถูกกว่าแต่ไม่ผ่านสองข้อกำหนด จึงต้องพิจารณาข้อจำกัดทั้งหมดร่วมกัน",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Choose B because monthly cost is the only relevant measure",
+        "correct": false
+      },
+      {
+        "text": "Reject A solely because B costs less",
+        "correct": false
+      },
+      {
+        "text": "Choose A because it meets all three constraints",
+        "correct": true
+      },
+      {
+        "text": "Choose B because a lower cost guarantees lower latency",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which EBS feature captures a point-in-time backup of a volume?",
+    "info": "EBS snapshot เก็บสำเนาตามจุดเวลาของ volume เพื่อนำไปสร้าง volume ใหม่ได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A snapshot",
+        "correct": true
+      },
+      {
+        "text": "A user data script",
+        "correct": false
+      },
+      {
+        "text": "A placement group",
+        "correct": false
+      },
+      {
+        "text": "A security group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team restores an RDS database from a snapshot and wants to avoid assuming the original database was overwritten. What is the correct restore model?",
+    "info": "การ restore snapshot สร้าง DB instance ใหม่ ต้องตรวจ endpoint และเปลี่ยนแอปไปใช้เมื่อพร้อม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Convert the snapshot into a security group",
+        "correct": false
+      },
+      {
+        "text": "Replace the database engine with a DNS record",
+        "correct": false
+      },
+      {
+        "text": "Create a new DB instance from the snapshot and reconnect the application as needed",
+        "correct": true
+      },
+      {
+        "text": "Overwrite the original running instance automatically in place",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A DynamoDB table uses a simple primary key. Which key attribute identifies each item?",
+    "info": "Simple primary key ใช้ partition key เพียงตัวเดียว ต่างจาก composite key ที่เพิ่ม sort key",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The item's file extension",
+        "correct": false
+      },
+      {
+        "text": "The account's console password",
+        "correct": false
+      },
+      {
+        "text": "The partition key",
+        "correct": true
+      },
+      {
+        "text": "Only a sort key without a partition key",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which activity belongs to the build stage of a cloud architect's work?",
+    "info": "ขั้น Build รวมการวาง roadmap พร้อม milestones และผู้รับผิดชอบการย้ายระบบ",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Define a migration roadmap with milestones and owners",
+        "correct": true
+      },
+      {
+        "text": "Operate physical cooling systems in an AWS data center",
+        "correct": false
+      },
+      {
+        "text": "Issue customer invoices for AWS",
+        "correct": false
+      },
+      {
+        "text": "Manufacture processors for AWS servers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which storage quality describes protection against losing stored objects rather than continuous access to them?",
+    "info": "Durability เกี่ยวกับการไม่สูญหายของข้อมูล ส่วน availability เกี่ยวกับการเข้าถึงได้เมื่อจำเป็น",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Availability",
+        "correct": false
+      },
+      {
+        "text": "Transfer throughput",
+        "correct": false
+      },
+      {
+        "text": "Request latency",
+        "correct": false
+      },
+      {
+        "text": "Durability",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A company is moving MySQL to RDS MySQL. New source transactions continue during the initial copy. Which migration capability helps keep the target current?",
+    "info": "DMS ใช้ initial migration ร่วมกับ ongoing change replication ที่รองรับ เพื่อลดความต่างของ source กับ target",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A read-only IAM policy with no migration task",
+        "correct": false
+      },
+      {
+        "text": "One static export with no further synchronization",
+        "correct": false
+      },
+      {
+        "text": "Full-load migration with ongoing change replication through DMS",
+        "correct": true
+      },
+      {
+        "text": "An S3 CORS rule",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A partner must send files over FTPS into an EFS file system without the company operating a transfer server. Which service fits?",
+    "info": "Transfer Family รองรับ FTPS และ EFS ช่วยให้รับไฟล์โดยไม่ต้องดูแล transfer infrastructure เอง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS Transfer Family",
+        "correct": true
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "S3 Inventory",
+        "correct": false
+      },
+      {
+        "text": "AWS Transit Gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does a DNS A record associate with a host name?",
+    "info": "A record ใช้ระบุ IPv4 address ส่วน AAAA ใช้ IPv6",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "An S3 lifecycle duration",
+        "correct": false
+      },
+      {
+        "text": "An IAM access key",
+        "correct": false
+      },
+      {
+        "text": "A database password",
+        "correct": false
+      },
+      {
+        "text": "An IPv4 address",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "VPC A routes requests to VPC B through active peering. B's application receives them, but B's subnet route table has no route to A's CIDR. What must be added for the return path?",
+    "info": "Peering ต้องมี route ของ traffic กลับด้วย กรณีนี้ต้องเพิ่ม route ในฝั่ง B ไป CIDR ของ A ผ่าน peering",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A route in B to A's CIDR through the peering connection",
+        "correct": true
+      },
+      {
+        "text": "A public-read bucket policy in B",
+        "correct": false
+      },
+      {
+        "text": "A larger application instance in A",
+        "correct": false
+      },
+      {
+        "text": "A second identical route in A to B's CIDR",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A new DynamoDB table uses AccountId as partition key and TransactionId as sort key. It also needs strongly consistent queries within one account ordered by Amount, and the index can be defined at table creation. Which design fits?",
+    "info": "LSI ใช้ partition key เดิมกับ sort key ใหม่ และรองรับ strongly consistent reads ต่างจาก GSI ที่ไม่รองรับการอ่านแบบนี้",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Create a GSI and require strongly consistent reads from that GSI",
+        "correct": false
+      },
+      {
+        "text": "Use a read replica of the table in RDS",
+        "correct": false
+      },
+      {
+        "text": "Create an LSI with AccountId as partition key and Amount as sort key",
+        "correct": true
+      },
+      {
+        "text": "Use Amount as the table's only key and discard AccountId",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "For a 365-day planning year, a workload permits at most two hours of downtime and a monthly budget of $1,200. Which design estimate satisfies both constraints?",
+    "info": "หนึ่งปีมี 8,760 ชั่วโมง ที่ 99.99% downtime เท่ากับ 0.876 ชั่วโมงหรือ 52.56 นาที D จึงผ่านทั้งเวลาและงบ ส่วน A กับ C หยุดนานเกิน และ B เกินงบ",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Design B: 99.99% availability and $1,500 per month",
+        "correct": false
+      },
+      {
+        "text": "Design C: 99.95% availability and $900 per month",
+        "correct": false
+      },
+      {
+        "text": "Design A: 99.9% availability and $600 per month",
+        "correct": false
+      },
+      {
+        "text": "Design D: 99.99% availability and $1,000 per month",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An employee leaves the company, but their IAM user still has active keys and membership in privileged groups. What is the best access-management response?",
+    "info": "เมื่อไม่มีความต้องการใช้งานแล้วควรยกเลิกช่องทางยืนยันตัวตนและสิทธิ์ เพื่อไม่ให้บัญชีเก่ายังเข้าถึงระบบได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Remove only the user's display name",
+        "correct": false
+      },
+      {
+        "text": "Keep the keys active until the next application release",
+        "correct": false
+      },
+      {
+        "text": "Disable unnecessary credentials and remove obsolete permissions",
+        "correct": true
+      },
+      {
+        "text": "Add the user to another administrator group",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Private instances in two AZs use one zonal NAT gateway located in AZ A. They need outbound access even if AZ A fails. Which design reduces this shared dependency?",
+    "info": "NAT gateway แบบ zonal ผูกกับ AZ การใช้ gateway ในแต่ละ AZ กับ routes ที่เหมาะสมลดการพึ่งจุดเดียวตามการออกแบบในโจทย์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Move only the application logs to another bucket",
+        "correct": false
+      },
+      {
+        "text": "Use a zonal NAT gateway in each AZ with appropriate per-AZ routing",
+        "correct": true
+      },
+      {
+        "text": "Create two route tables pointing to the same zonal NAT gateway",
+        "correct": false
+      },
+      {
+        "text": "Give both AZs identical subnet names",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A Direct Connect design needs access to private EC2 addresses and supported public AWS service endpoints. Which VIF types serve those purposes?",
+    "info": "Private VIF ใช้ไป private VPC resources ส่วน public VIF ใช้ไป public AWS service endpoints ที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Public VIF for both while treating private addresses as public",
+        "correct": false
+      },
+      {
+        "text": "Private VIF for private resources and public VIF for public service endpoints",
+        "correct": true
+      },
+      {
+        "text": "Transit VIF used as an IAM authentication token",
+        "correct": false
+      },
+      {
+        "text": "Private VIF only because public AWS endpoints never use Direct Connect",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A key administrator can describe a KMS key and edit its policy but has no grant for kms:Decrypt. What follows about a current decryption request?",
+    "info": "Key administration กับ key usage เป็นสิทธิ์ต่างกัน การเป็นผู้จัดการ key ไม่ทำให้คำขอ Decrypt ได้รับอนุญาตโดยอัตโนมัติ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Anyone who can describe a key can always decrypt all data",
+        "correct": false
+      },
+      {
+        "text": "The request bypasses authorization because it concerns encryption",
+        "correct": false
+      },
+      {
+        "text": "Editing permissions automatically decrypts every stored object",
+        "correct": false
+      },
+      {
+        "text": "Administrative permissions alone do not authorize the Decrypt request",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An application should react to item changes in a DynamoDB table without repeatedly scanning the entire table. Which feature is relevant?",
+    "info": "DynamoDB Streams ให้ change records สำหรับสร้าง event-driven processing แทนการ scan ซ้ำทั้ง table",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An EC2 placement group",
+        "correct": false
+      },
+      {
+        "text": "An S3 gateway's DNS name alone",
+        "correct": false
+      },
+      {
+        "text": "A Redshift manual snapshot",
+        "correct": false
+      },
+      {
+        "text": "DynamoDB Streams",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which two components form an IAM user's long-term AWS access key?",
+    "info": "Access key ประกอบด้วย access key ID และ secret access key ใช้ลงนามคำขอแบบ programmatic",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A console user name and a subnet ID",
+        "correct": false
+      },
+      {
+        "text": "A bucket name and an object version ID",
+        "correct": false
+      },
+      {
+        "text": "An access key ID and a secret access key",
+        "correct": true
+      },
+      {
+        "text": "An account alias and an Availability Zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A legacy script uses an IAM user's long-term credentials to call AWS APIs. The operator supplies only the console password, and authentication fails. What credentials does this method require?",
+    "info": "วิธีลงนาม API ด้วย long-term access key ต้องใช้ access key ID กับ secret access key ไม่ใช่ console password",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the user's MFA device name",
+        "correct": false
+      },
+      {
+        "text": "Only the account alias",
+        "correct": false
+      },
+      {
+        "text": "The user's access key ID and secret access key",
+        "correct": true
+      },
+      {
+        "text": "Only the console password with a Region appended",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In a versioning-enabled bucket, report.csv has version A, then version B, then a delete marker. A user permanently deletes version B by its version ID. Assuming no other actions, which recovery is still possible?",
+    "info": "การลบ version B แบบระบุ ID ลบเฉพาะ B ถาวร ส่วน A ยังอยู่ และ delete marker ยังทำให้ GET แบบไม่ระบุ version ไม่พบ object",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Retrieve version A by its version ID; a normal GET still encounters the delete marker",
+        "correct": true
+      },
+      {
+        "text": "Use a normal GET to retrieve A automatically despite the current delete marker",
+        "correct": false
+      },
+      {
+        "text": "Retrieve version B because versioning prevents permanent deletion",
+        "correct": false
+      },
+      {
+        "text": "No version remains because deleting B also deletes A",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which CloudFront infrastructure component sits between an origin and edge locations and provides a larger cache?",
+    "info": "Regional edge caches อยู่ระหว่าง origin กับ edge locations และช่วยเก็บเนื้อหาที่ถูกเรียกไม่บ่อย",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "EC2 instance stores",
+        "correct": false
+      },
+      {
+        "text": "IAM identity providers",
+        "correct": false
+      },
+      {
+        "text": "Regional edge caches",
+        "correct": true
+      },
+      {
+        "text": "VPC route tables",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A video renderer creates large temporary scratch files that can be regenerated after a worker stops. Which storage option matches this temporary use?",
+    "info": "Instance store เหมาะกับ scratch data ที่สร้างใหม่ได้ เพราะไม่ได้รับประกันการคงอยู่หลัง stop หรือ host loss",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An IAM identity store",
+        "correct": false
+      },
+      {
+        "text": "Instance store on a suitable worker",
+        "correct": true
+      },
+      {
+        "text": "A permanent archival store required for every temporary file",
+        "correct": false
+      },
+      {
+        "text": "A manual RDS snapshot for each scratch block",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A team changes from x86 instances to an Arm-based instance family. What must be checked before reusing its image?",
+    "info": "AMI architecture และซอฟต์แวร์ต้องเข้ากันได้กับ processor architecture ของ instance",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only the account's billing currency",
+        "correct": false
+      },
+      {
+        "text": "Only the availability of an Elastic IP",
+        "correct": false
+      },
+      {
+        "text": "Only whether the AMI has a short name",
+        "correct": false
+      },
+      {
+        "text": "AMI architecture and application compatibility",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An Aurora application has long quiet periods and highly variable compute demand. The team wants managed compute capacity adjustment. Which configuration should be evaluated?",
+    "info": "Aurora Serverless ปรับ compute capacity ตามการตั้งค่าที่กำหนด เหมาะกับ workload ที่เปลี่ยนแปลงมาก",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Aurora Serverless",
+        "correct": true
+      },
+      {
+        "text": "An additional IAM group",
+        "correct": false
+      },
+      {
+        "text": "An S3 lifecycle expiration rule",
+        "correct": false
+      },
+      {
+        "text": "A permanently fixed oversized DB instance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A subnet needs an explicit network rule rejecting traffic from a known source range. Which VPC control directly supports a deny rule?",
+    "info": "Network ACL รองรับ allow และ deny ที่ระดับ subnet ส่วน security group rules ระบุ allow",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A network ACL",
+        "correct": true
+      },
+      {
+        "text": "A security group deny rule",
+        "correct": false
+      },
+      {
+        "text": "An IAM group description",
+        "correct": false
+      },
+      {
+        "text": "An EC2 user data field",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An administrator assumes that enabling S3 encryption automatically allows employees to read private documents. What else is required?",
+    "info": "Encryption ป้องกันข้อมูลที่จัดเก็บ แต่ผู้ใช้ยังต้องมี permissions ที่อนุญาตการอ่าน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Public write access to the entire bucket",
+        "correct": false
+      },
+      {
+        "text": "Replacing every object key with the employee's password",
+        "correct": false
+      },
+      {
+        "text": "Appropriate access permissions for the employees",
+        "correct": true
+      },
+      {
+        "text": "Suspending versioning",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An EC2 workload needs a dedicated network path to its attached EBS volumes to improve storage I/O. Which instance capability is relevant?",
+    "info": "EBS-optimized instances มี bandwidth ที่จัดไว้สำหรับ EBS ช่วยลดการแย่งกับ traffic อื่น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A longer instance Name tag",
+        "correct": false
+      },
+      {
+        "text": "An extra IAM password policy",
+        "correct": false
+      },
+      {
+        "text": "A new account alias",
+        "correct": false
+      },
+      {
+        "text": "EBS optimization",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Equivalent application endpoints run in two Regions. DNS should choose based on network latency rather than country-specific content. Which Route 53 policy fits?",
+    "info": "Latency routing เลือก Region ตาม latency ที่เกี่ยวข้องกับผู้ร้องขอ ต่างจาก geolocation ที่เลือกตามตำแหน่งทางภูมิศาสตร์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Failover routing chosen only by a primary designation",
+        "correct": false
+      },
+      {
+        "text": "Latency routing",
+        "correct": true
+      },
+      {
+        "text": "Geolocation routing",
+        "correct": false
+      },
+      {
+        "text": "Simple routing with no latency selection",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Security teams receive findings from multiple accounts and services and want one place to correlate and prioritize them. Which service described in the chapter fits?",
+    "info": "Security Hub รวบรวมและจัดลำดับ security findings จากหลาย sources เพื่อช่วยตอบสนอง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "AWS DataSync",
+        "correct": false
+      },
+      {
+        "text": "Amazon RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "AWS Transfer Family",
+        "correct": false
+      },
+      {
+        "text": "AWS Security Hub",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "An ABAC policy allows access only when both Project and Env tags match. A role has Project=pine and Env=test; a resource has Project=pine and Env=prod. With no other grants, what is the result?",
+    "info": "Project ตรงกันแต่ Env ไม่ตรง และ policy ต้องตรงทั้งสองเงื่อนไข จึงไม่มี allow สำหรับคำขอนี้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Access is denied because the Env tags do not match",
+        "correct": true
+      },
+      {
+        "text": "Access is allowed automatically within the same account",
+        "correct": false
+      },
+      {
+        "text": "Access is allowed because all tags are informational only",
+        "correct": false
+      },
+      {
+        "text": "Access is allowed because matching Project overrides Env",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application uses envelope encryption. After encrypting data, it stores ciphertext and the encrypted data key and discards the plaintext key. What is needed later to recover the data?",
+    "info": "ต้องได้รับอนุญาตให้ถอดรหัส encrypted data key ก่อน แล้วใช้ data key ที่ได้ถอดรหัสข้อมูล ไม่จำเป็นต้องเก็บ plaintext key ถาวร",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The plaintext key posted in a public bucket",
+        "correct": false
+      },
+      {
+        "text": "Only the object's file name",
+        "correct": false
+      },
+      {
+        "text": "Authorized decryption of the encrypted data key, then decryption of the ciphertext",
+        "correct": true
+      },
+      {
+        "text": "A new unrelated data key with no link to the original",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A client receives HTTP 500 from an EC2 web application while flow logs show accepted traffic for the connection. Where should investigation begin?",
+    "info": "HTTP 500 เป็นคำตอบจากแอป การอนุญาต traffic ไม่รับประกันว่า business logic หรือ dependencies ทำงานสำเร็จ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Only assigning another public IP",
+        "correct": false
+      },
+      {
+        "text": "Only increasing the inbound port range",
+        "correct": false
+      },
+      {
+        "text": "Application errors and backend dependencies",
+        "correct": true
+      },
+      {
+        "text": "Only making the subnet CIDR larger",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Two Regions satisfy data residency requirements. The nearer Region lacks a required managed feature, while the other meets the measured latency target. What should drive the choice?",
+    "info": "หลังผ่านข้อกำหนดถิ่นที่อยู่ ต้องตรวจ service availability และผล latency จริง ไม่ตัดสินจากระยะทางเพียงอย่างเดียว",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Choose solely by the shortest Region name",
+        "correct": false
+      },
+      {
+        "text": "Assume every AWS feature exists in every Region",
+        "correct": false
+      },
+      {
+        "text": "Always choose the geographically nearer Region",
+        "correct": false
+      },
+      {
+        "text": "Choose a Region that supports the feature and meets the workload's measured requirements",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A log-processing worker reads large files sequentially. Its separate data disk needs throughput rather than high small-operation IOPS. Which EBS category fits?",
+    "info": "Throughput Optimized HDD เหมาะกับงาน sequential และ throughput-intensive ที่ไม่ต้องใช้เป็น boot volume",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An EFS mount used as an EBS volume type",
+        "correct": false
+      },
+      {
+        "text": "A Cognito user pool",
+        "correct": false
+      },
+      {
+        "text": "Provisioned IOPS SSD chosen solely for random transactions",
+        "correct": false
+      },
+      {
+        "text": "Throughput Optimized HDD",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Several branch offices need VPN-based connectivity through a common virtual private gateway using the hub design described in the chapter. Which feature fits?",
+    "info": "VPN CloudHub ใช้เชื่อมหลาย customer networks ผ่าน virtual private gateway กลางตามรูปแบบที่รองรับ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "RDS Proxy",
+        "correct": false
+      },
+      {
+        "text": "AWS VPN CloudHub",
+        "correct": true
+      },
+      {
+        "text": "CloudFront content versioning",
+        "correct": false
+      },
+      {
+        "text": "S3 Object Lock",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which IPv4 CIDR block contains the largest address range?",
+    "info": "Prefix สั้นกว่ามี host bits มากกว่า ดังนั้น /24 มี addresses มากกว่า /26, /27 และ /28",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "10.50.0.0/28",
+        "correct": false
+      },
+      {
+        "text": "10.50.0.0/24",
+        "correct": true
+      },
+      {
+        "text": "10.50.0.0/27",
+        "correct": false
+      },
+      {
+        "text": "10.50.0.0/26",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A monitoring table uses DeviceId and Timestamp. A query should retrieve events for one device ordered by ErrorStatus instead. Which index key definition preserves the base partition key?",
+    "info": "LSI คง DeviceId เป็น partition key แล้วใช้ ErrorStatus เป็น alternate sort key",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An LSI with DeviceId as partition key and ErrorStatus as sort key",
+        "correct": true
+      },
+      {
+        "text": "An RDS read replica using DeviceId as its engine",
+        "correct": false
+      },
+      {
+        "text": "A security group with Timestamp as its source",
+        "correct": false
+      },
+      {
+        "text": "An LSI with ErrorStatus as a different partition key",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A parent OU's SCP explicitly denies an RDS action. A child OU's SCP and the user's IAM policy allow it. The caller is an ordinary IAM user in a member account. What happens?",
+    "info": "Explicit deny ที่สืบทอดจาก parent OU ยังมีผล Child allow กับ IAM allow ไม่สามารถยกเลิก deny นั้น",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The child OU's allow overrides the parent's deny",
+        "correct": false
+      },
+      {
+        "text": "The inherited SCP deny blocks the action",
+        "correct": true
+      },
+      {
+        "text": "The IAM allow overrides every SCP",
+        "correct": false
+      },
+      {
+        "text": "The user can bypass the deny by changing the console language",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "For this exercise, Transit Gateway attachment time costs $0.10 per attachment-hour and data processing costs $0.02 per GB. Four attachments run for ten hours and process 80 GB. Ignoring other charges, what is the total?",
+    "info": "ราคานี้เป็นสมมติในโจทย์: 4 คูณ 10 คูณ 0.10 เท่ากับ 4 ดอลลาร์ บวก 80 คูณ 0.02 เท่ากับ 1.60 รวม 5.60 ดอลลาร์",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "$1.60",
+        "correct": false
+      },
+      {
+        "text": "$80.00",
+        "correct": false
+      },
+      {
+        "text": "$4.00",
+        "correct": false
+      },
+      {
+        "text": "$5.60",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A DynamoDB table has DeviceId as partition key and Timestamp as sort key. It receives (7,10:00), (7,10:01), and (8,10:00). How many distinct primary keys are represented?",
+    "info": "Composite key ใช้ค่าของทั้งสอง attributes ร่วมกัน คู่ทั้งสามต่างกันจึงเป็นสาม primary keys",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Zero because partition keys cannot repeat",
+        "correct": false
+      },
+      {
+        "text": "One because only one timestamp is allowed",
+        "correct": false
+      },
+      {
+        "text": "Three",
+        "correct": true
+      },
+      {
+        "text": "Two because timestamps must be globally unique",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An interface endpoint resolves to a private IP, but connections to TCP 443 time out. Its security group allows only an unrelated source group. What should be corrected?",
+    "info": "Interface endpoint มี security group จึงต้องอนุญาต traffic จาก clients ที่ต้องเข้าถึงตามพอร์ตที่บริการใช้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Increase the endpoint's DNS record name length",
+        "correct": false
+      },
+      {
+        "text": "Allow the intended clients in the endpoint security group",
+        "correct": true
+      },
+      {
+        "text": "Make all S3 objects public",
+        "correct": false
+      },
+      {
+        "text": "Change the database engine",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Existing software licensing requires visibility into host sockets and cores and control over placement on a physical server. Which EC2 option should be evaluated?",
+    "info": "Dedicated Hosts ให้ข้อมูล host และควบคุม placement สำหรับ licensing ที่รองรับได้มากกว่า ordinary shared instances",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Spot Instances on shared hardware",
+        "correct": false
+      },
+      {
+        "text": "On-Demand Instances on shared hardware",
+        "correct": false
+      },
+      {
+        "text": "Dedicated Hosts",
+        "correct": true
+      },
+      {
+        "text": "S3 Transfer Acceleration",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which storage model organizes data using a hierarchical directory and file structure?",
+    "info": "File storage เก็บข้อมูลเป็นไฟล์กับ directories ต่างจาก S3 ที่ใช้ objects และ keys",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "A message queue",
+        "correct": false
+      },
+      {
+        "text": "Block storage alone",
+        "correct": false
+      },
+      {
+        "text": "File storage",
+        "correct": true
+      },
+      {
+        "text": "Object storage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An internal application name should resolve through DNS for associated VPCs without publishing its records to the internet. Which Route 53 configuration fits?",
+    "info": "Private hosted zone ใช้กับ DNS ภายใน VPCs ที่ associate ส่วน public hosted zone เผยแพร่ให้ internet queries",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A private hosted zone associated with the required VPCs",
+        "correct": true
+      },
+      {
+        "text": "An IAM group whose name matches the application",
+        "correct": false
+      },
+      {
+        "text": "A public A record containing a private address as the only privacy control",
+        "correct": false
+      },
+      {
+        "text": "A public hosted zone with an obscure domain name",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An application stores invoices as sales/2026/invoice.pdf and finance/2026/invoice.pdf in one bucket. Why can both objects exist?",
+    "info": "Key ทั้งสองต่างกันเพราะ prefix เป็นส่วนหนึ่งของชื่อ object แม้ basename จะเหมือนกัน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "S3 ignores both prefixes and merges the file contents",
+        "correct": false
+      },
+      {
+        "text": "The objects must have different AWS account owners",
+        "correct": false
+      },
+      {
+        "text": "Their full object keys are different",
+        "correct": true
+      },
+      {
+        "text": "S3 automatically creates a separate bucket for each prefix",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Two departments review similar workloads using different personal checklists and reach inconsistent conclusions. Which approach improves comparability?",
+    "info": "Well-Architected Framework ให้คำถามและหลักการร่วมสำหรับประเมิน workload อย่างสม่ำเสมอ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Choose whichever checklist has fewer questions",
+        "correct": false
+      },
+      {
+        "text": "Apply a common Well-Architected review process to both workloads",
+        "correct": true
+      },
+      {
+        "text": "Rank architectures only by their number of services",
+        "correct": false
+      },
+      {
+        "text": "Approve both workloads without reviewing risks",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A fleet must launch quickly with all application dependencies already installed. The team accepts a longer image-build process. Which AMI model from the chapter fits?",
+    "info": "Golden AMI ใส่ configuration ไว้ล่วงหน้า ทำให้เปิด instance ได้เร็วแต่ต้องดูแลกระบวนการสร้าง image",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An S3 object used directly as the EC2 boot disk",
+        "correct": false
+      },
+      {
+        "text": "A base AMI followed by all installation steps at every boot",
+        "correct": false
+      },
+      {
+        "text": "A golden AMI with the configuration baked in",
+        "correct": true
+      },
+      {
+        "text": "An empty image with no operating system",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A versioning-enabled bucket's bill grows although the current files are small. Each file is overwritten daily. What should be investigated?",
+    "info": "Versioning เก็บ noncurrent versions ที่ยังคิดพื้นที่ ต้องตรวจเวอร์ชันเก่าและใช้ lifecycle ตาม retention ที่ต้องการ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Whether bucket names consume the same space as file contents",
+        "correct": false
+      },
+      {
+        "text": "Whether GET requests changed the files into directories",
+        "correct": false
+      },
+      {
+        "text": "Accumulated noncurrent versions and their lifecycle policy",
+        "correct": true
+      },
+      {
+        "text": "The number of browser bookmarks",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "An analytics company leaves development clusters running overnight even though nobody uses them. Monitoring shows no scheduled jobs. Which action best improves resource efficiency?",
+    "info": "การปิดทรัพยากรที่ไม่ได้ใช้ตามตารางที่ตรวจสอบแล้วลดการใช้ทรัพยากรโดยไม่ลดความจุช่วงทำงาน",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Automate stopping idle development resources outside required hours",
+        "correct": true
+      },
+      {
+        "text": "Buy larger instances to finish idle periods faster",
+        "correct": false
+      },
+      {
+        "text": "Duplicate each cluster into another Region",
+        "correct": false
+      },
+      {
+        "text": "Keep every cluster running to maximize uptime statistics",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A company enables MFA on console sign-in but stores an IAM user's long-term access key in an unprotected shared file. What remains a security concern?",
+    "info": "MFA สำหรับ console ไม่ได้ทำให้ long-term access key ที่รั่วไหลปลอดภัย ต้องปกป้องหรือยกเลิก key และใช้ temporary credentials เมื่อเหมาะสม",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The exposed key can still be used for permitted programmatic requests",
+        "correct": true
+      },
+      {
+        "text": "Only users with console passwords can make AWS API requests",
+        "correct": false
+      },
+      {
+        "text": "Console MFA automatically encrypts every local credential file",
+        "correct": false
+      },
+      {
+        "text": "The key becomes unusable whenever MFA is enabled",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A system should send a notification whenever EC2 emits a matching stopped-state event. Which event-driven mechanism is the most direct fit?",
+    "info": "EventBridge rule จับ event pattern ที่ต้องการแล้วส่งไป target เช่น SNS ได้โดยตรง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An EventBridge rule matching the state-change event and targeting a notifier",
+        "correct": true
+      },
+      {
+        "text": "A yearly manual inventory export",
+        "correct": false
+      },
+      {
+        "text": "An S3 lifecycle transition",
+        "correct": false
+      },
+      {
+        "text": "A CPU alarm that never evaluates instance state",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which AWS service is designed to securely manage secrets such as application database passwords?",
+    "info": "Secrets Manager ใช้จัดเก็บและควบคุมการเข้าถึง secrets แยกจาก source code",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Amazon EFS",
+        "correct": false
+      },
+      {
+        "text": "AWS Secrets Manager",
+        "correct": true
+      },
+      {
+        "text": "Amazon Route 53",
+        "correct": false
+      },
+      {
+        "text": "AWS Transit Gateway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which candidate subnet is contained within the VPC CIDR 10.40.0.0/16?",
+    "info": "10.40.0.0/16 ครอบคลุม addresses ที่สอง octets แรกเป็น 10.40 จึงรับ subnet 10.40.8.0/24 ได้",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "10.41.8.0/24",
+        "correct": false
+      },
+      {
+        "text": "192.0.2.0/24",
+        "correct": false
+      },
+      {
+        "text": "172.16.8.0/24",
+        "correct": false
+      },
+      {
+        "text": "10.40.8.0/24",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A team wants to determine which uploaded document a user sent by examining only VPC Flow Logs. What limitation matters?",
+    "info": "Flow Logs เป็น metadata ของ network flows ไม่ได้เก็บไฟล์หรือ application payload จึงใช้ยืนยันเนื้อหาเอกสารไม่ได้",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Flow Logs automatically include every file's complete content",
+        "correct": false
+      },
+      {
+        "text": "Flow Logs do not contain the uploaded application payload",
+        "correct": true
+      },
+      {
+        "text": "Flow Logs replace application audit records",
+        "correct": false
+      },
+      {
+        "text": "Flow Logs decrypt TLS and save plaintext documents by default",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A same-account bucket policy explicitly grants GetObject to an IAM user's ARN. The user has no identity-based grant, boundary, or applicable deny. Can that resource-based grant authorize the read?",
+    "info": "Resource-based policy สามารถให้สิทธิ์กับ user ในบัญชีเดียวกันได้ภายใต้เงื่อนไขที่โจทย์ระบุ ไม่จำเป็นต้องมี identity allow ซ้ำเสมอไป",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No, the user must become the root user",
+        "correct": false
+      },
+      {
+        "text": "Yes, but only if every object is publicly readable",
+        "correct": false
+      },
+      {
+        "text": "Yes, the applicable resource-based grant can authorize it",
+        "correct": true
+      },
+      {
+        "text": "No, resource-based policies never grant permissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "For asymmetric encryption of a confidential message, which keys are used to encrypt and decrypt it?",
+    "info": "Asymmetric encryption ใช้ public key เข้ารหัส และ private key ของคู่เดียวกันถอดรหัส",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Public key for encryption and private key for decryption",
+        "correct": true
+      },
+      {
+        "text": "Public key for both operations",
+        "correct": false
+      },
+      {
+        "text": "A bucket name for encryption and a Region name for decryption",
+        "correct": false
+      },
+      {
+        "text": "An IAM group name for both operations",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A browser's origin is permitted by an S3 CORS rule, but the caller lacks GetObject permission. What should the application expect?",
+    "info": "CORS ไม่แทน access permissions ดังนั้นการอนุญาต origin อย่างเดียวไม่ทำให้คำขอที่ไม่มีสิทธิ์อ่านสำเร็จ",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "The bucket becomes public automatically",
+        "correct": false
+      },
+      {
+        "text": "The request changes to a permitted DeleteObject operation",
+        "correct": false
+      },
+      {
+        "text": "Access can still be denied by authorization controls",
+        "correct": true
+      },
+      {
+        "text": "CORS grants GetObject to every caller from that origin",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In one account, a user policy allows GetObject and a group policy allows ListBucket. There are no other limits or denies. What permissions does the user receive?",
+    "info": "Allow จาก user และ group policies รวมกันได้ในกรณีนี้ เพราะไม่มี deny หรือขอบเขตสิทธิ์อื่นมาจำกัด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "ListBucket only because group policies replace user policies",
+        "correct": false
+      },
+      {
+        "text": "GetObject only because user policies replace group policies",
+        "correct": false
+      },
+      {
+        "text": "Both GetObject and ListBucket",
+        "correct": true
+      },
+      {
+        "text": "Neither action because two policies cannot be combined",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does VIF stand for in AWS Direct Connect architecture diagrams?",
+    "info": "VIF คือ virtual interface ใช้แบ่งการเชื่อมต่อทางตรรกะบน Direct Connect",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Verified identity federation",
+        "correct": false
+      },
+      {
+        "text": "Virtual instance family",
+        "correct": false
+      },
+      {
+        "text": "Volume integrity file",
+        "correct": false
+      },
+      {
+        "text": "Virtual interface",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Four VPCs need direct peering between every pair. How many peering connections form the full mesh?",
+    "info": "Full mesh มีคู่เชื่อมต่อ n(n-1)/2 ดังนั้น 4 คูณ 3 หาร 2 ได้ 6 connections",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Six",
+        "correct": true
+      },
+      {
+        "text": "Three",
+        "correct": false
+      },
+      {
+        "text": "Four",
+        "correct": false
+      },
+      {
+        "text": "Twelve",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "A policy allows all S3 actions on a project bucket but explicitly denies DeleteObject there. With no other restrictions, what is the effect?",
+    "info": "Explicit deny จำกัด DeleteObject ตามที่ระบุ ไม่ได้ยกเลิก allow ของ actions อื่นทั้งหมด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Permitted reads and writes remain possible, but object deletion is denied",
+        "correct": true
+      },
+      {
+        "text": "Object deletion is allowed because s3:* is broader",
+        "correct": false
+      },
+      {
+        "text": "Only actions performed through the console are allowed",
+        "correct": false
+      },
+      {
+        "text": "Every S3 action is denied because one action is denied",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In the EC2 instance type name m5.large, what does the number 5 indicate?",
+    "info": "เลข 5 ระบุ generation ของ instance family ไม่ใช่จำนวน CPU หรือ RAM",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "The memory size in GiB",
+        "correct": false
+      },
+      {
+        "text": "The instance family generation",
+        "correct": true
+      },
+      {
+        "text": "The number of attached disks",
+        "correct": false
+      },
+      {
+        "text": "The number of AWS accounts allowed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "On-premises clients connected privately to a VPC need private S3 access through endpoint network interfaces. Which S3 endpoint type supports this design?",
+    "info": "S3 interface endpoint รองรับการเข้าถึงผ่าน network interfaces และ private connectivity จาก on-premises ต่างจากการใช้ gateway endpoint โดยตรง",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "An internet gateway with no private network route",
+        "correct": false
+      },
+      {
+        "text": "An S3 gateway endpoint accessed directly from on-premises",
+        "correct": false
+      },
+      {
+        "text": "An EC2 instance Name tag",
+        "correct": false
+      },
+      {
+        "text": "An S3 interface VPC endpoint",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "A multipart upload has ten parts, and only part seven fails. What is the most efficient recovery action before completing the upload?",
+    "info": "Multipart upload ให้ส่งซ้ำเฉพาะส่วนที่ผิดพลาด แล้วรวมส่วนที่ครบเป็น object แทนเริ่มส่งไฟล์ใหม่ทั้งหมด",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Restart every successful part from the beginning",
+        "correct": false
+      },
+      {
+        "text": "Delete unrelated objects to repair the failed part",
+        "correct": false
+      },
+      {
+        "text": "Retry the failed part, then complete the upload when all parts succeed",
+        "correct": true
+      },
+      {
+        "text": "Complete the object while omitting part seven",
+        "correct": false
+      }
+    ]
+  }
+]
