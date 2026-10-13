@@ -1,0 +1,1322 @@
+[
+  {
+    "text": "What are the two usual responsibilities of a transport layer protocol?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Creating host-to-host communications and managing routing",
+        "correct": false
+      },
+      {
+        "text": "Creating process-to-process communications and providing control mechanisms at the transport layer",
+        "correct": true
+      },
+      {
+        "text": "Data encryption and data compression",
+        "correct": false
+      },
+      {
+        "text": "Physical error checking and link speed control",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "At what level does UDP perform control tasks at the transport layer?",
+    "info": "",
+    "answers": [
+      {
+        "text": "At a high level with complex management",
+        "correct": false
+      },
+      {
+        "text": "At a moderate level with explicit acknowledgment",
+        "correct": false
+      },
+      {
+        "text": "At a very minimal level, providing error control only to some extent",
+        "correct": true
+      },
+      {
+        "text": "At zero level with absolute error-free guarantee",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which of the following best describes the characteristics of UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Connection-oriented and reliable",
+        "correct": false
+      },
+      {
+        "text": "Connectionless and unreliable",
+        "correct": true
+      },
+      {
+        "text": "Connection-oriented and unreliable",
+        "correct": false
+      },
+      {
+        "text": "Connectionless and reliable",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does UDP add to the IP protocol?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Only process-to-process communication and very limited error checking",
+        "correct": true
+      },
+      {
+        "text": "A 3-way handshake connection establishment",
+        "correct": false
+      },
+      {
+        "text": "Complete flow control and error recovery mechanisms",
+        "correct": false
+      },
+      {
+        "text": "Sequence numbers for every single packet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the main advantage of the UDP protocol?",
+    "info": "",
+    "answers": [
+      {
+        "text": "High security against data sniffing",
+        "correct": false
+      },
+      {
+        "text": "It is a very simple protocol using a minimum of overhead",
+        "correct": true
+      },
+      {
+        "text": "Guaranteed delivery to the destination 100% of the time",
+        "correct": false
+      },
+      {
+        "text": "Dynamic window size scaling",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In the TCP/IP protocol suite, where is UDP located?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Application layer",
+        "correct": false
+      },
+      {
+        "text": "Transport layer",
+        "correct": true
+      },
+      {
+        "text": "Network layer",
+        "correct": false
+      },
+      {
+        "text": "Data link layer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which of the following application layer protocols uses UDP services (refer to Figure 11-1)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "TCP",
+        "correct": false
+      },
+      {
+        "text": "IP",
+        "correct": false
+      },
+      {
+        "text": "DNS (Domain Name Service)",
+        "correct": true
+      },
+      {
+        "text": "ARP",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which network layer protocol works in conjunction with UDP to transport data across the internet?",
+    "info": "",
+    "answers": [
+      {
+        "text": "TCP",
+        "correct": false
+      },
+      {
+        "text": "IP (Internet Protocol)",
+        "correct": true
+      },
+      {
+        "text": "FTP",
+        "correct": false
+      },
+      {
+        "text": "SMTP",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes the domains of IP and UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "IP operates host-to-host from source to destination computer, while UDP operates process-to-process",
+        "correct": true
+      },
+      {
+        "text": "IP operates process-to-process while UDP operates host-to-host",
+        "correct": false
+      },
+      {
+        "text": "Both IP and UDP operate purely in the process-to-process domain",
+        "correct": false
+      },
+      {
+        "text": "Both IP and UDP operate purely in the host-to-host domain",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary difference between TCP and UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "UDP has a much larger header size than TCP",
+        "correct": false
+      },
+      {
+        "text": "UDP is connectionless and unreliable, whereas TCP provides connection control and reliability",
+        "correct": true
+      },
+      {
+        "text": "UDP implements strict flow control mechanisms",
+        "correct": false
+      },
+      {
+        "text": "UDP always establishes a connection before sending data",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the delivery target of a network layer protocol like IP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The active process running on a computer",
+        "correct": false
+      },
+      {
+        "text": "Only the destination computer",
+        "correct": true
+      },
+      {
+        "text": "A specific application inside the operating system",
+        "correct": false
+      },
+      {
+        "text": "Hubs or switches within a local network",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the delivery target of a transport layer protocol like UDP and TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The appropriate process",
+        "correct": true
+      },
+      {
+        "text": "The IP address of the next router",
+        "correct": false
+      },
+      {
+        "text": "The network interface card (NIC) hardware",
+        "correct": false
+      },
+      {
+        "text": "The physical transmission cable directly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the valid range of port numbers?",
+    "info": "",
+    "answers": [
+      {
+        "text": "0 to 1,023",
+        "correct": false
+      },
+      {
+        "text": "0 to 65,535",
+        "correct": true
+      },
+      {
+        "text": "1,024 to 49,151",
+        "correct": false
+      },
+      {
+        "text": "49,152 to 65,535",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which port category is assigned and controlled globally by IANA for well-known services?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Well-known port numbers",
+        "correct": true
+      },
+      {
+        "text": "Registered port numbers",
+        "correct": false
+      },
+      {
+        "text": "Dynamic port numbers",
+        "correct": false
+      },
+      {
+        "text": "Ephemeral port numbers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which port type is typically chosen randomly by a client process?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Well-known port",
+        "correct": false
+      },
+      {
+        "text": "Registered port",
+        "correct": false
+      },
+      {
+        "text": "Ephemeral port number",
+        "correct": true
+      },
+      {
+        "text": "Reserved port",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "According to IANA ranges, which span defines well-known ports?",
+    "info": "",
+    "answers": [
+      {
+        "text": "0 ~ 1,023",
+        "correct": true
+      },
+      {
+        "text": "1,024 ~ 49,151",
+        "correct": false
+      },
+      {
+        "text": "49,152 ~ 65,535",
+        "correct": false
+      },
+      {
+        "text": "50,000 ~ 65,535",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which range defines registered ports according to IANA?",
+    "info": "",
+    "answers": [
+      {
+        "text": "0 ~ 1,023",
+        "correct": false
+      },
+      {
+        "text": "1,024 ~ 49,151",
+        "correct": true
+      },
+      {
+        "text": "49,152 ~ 65,535",
+        "correct": false
+      },
+      {
+        "text": "10,000 ~ 20,000",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which range defines dynamic (or private) ports?",
+    "info": "",
+    "answers": [
+      {
+        "text": "0 ~ 1,023",
+        "correct": false
+      },
+      {
+        "text": "1,024 ~ 49,151",
+        "correct": false
+      },
+      {
+        "text": "49,152 ~ 65,535",
+        "correct": true
+      },
+      {
+        "text": "80 ~ 443",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement correctly characterizes registered ports?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Strictly controlled by IANA with no outside use permitted",
+        "correct": false
+      },
+      {
+        "text": "Not assigned or controlled by IANA directly, but can be registered with IANA to prevent duplication",
+        "correct": true
+      },
+      {
+        "text": "Uncontrolled and unregistered, used exclusively for ephemeral assignments",
+        "correct": false
+      },
+      {
+        "text": "Reserved exclusively for internal operating system use",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of UDP well-known port 7?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Discard any datagram received",
+        "correct": false
+      },
+      {
+        "text": "Echo a received datagram back to the sender",
+        "correct": true
+      },
+      {
+        "text": "Return the date and time",
+        "correct": false
+      },
+      {
+        "text": "Return a string of characters",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What service is associated with UDP port 13?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Echo",
+        "correct": false
+      },
+      {
+        "text": "Daytime (returns the data and the time)",
+        "correct": true
+      },
+      {
+        "text": "Quote of a day",
+        "correct": false
+      },
+      {
+        "text": "Trivial File Transfer Protocol",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What service is associated with UDP port 53?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Simple Network Management Protocol",
+        "correct": false
+      },
+      {
+        "text": "Nameserver / Domain Name Service",
+        "correct": true
+      },
+      {
+        "text": "Network Time Protocol",
+        "correct": false
+      },
+      {
+        "text": "Remote Procedure Call",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which protocol uses UDP port 69?",
+    "info": "",
+    "answers": [
+      {
+        "text": "TFTP (Trivial File Transfer Protocol)",
+        "correct": true
+      },
+      {
+        "text": "NTP (Network Time Protocol)",
+        "correct": false
+      },
+      {
+        "text": "SNMP (Simple Network Management Protocol)",
+        "correct": false
+      },
+      {
+        "text": "Bootps",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What are the components of a socket address in UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "MAC address + Port number",
+        "correct": false
+      },
+      {
+        "text": "IP address + Port number",
+        "correct": true
+      },
+      {
+        "text": "Host name + MAC address",
+        "correct": false
+      },
+      {
+        "text": "IP address + Sequence number",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In routing and delivery, what do the IP address and port number select respectively?",
+    "info": "",
+    "answers": [
+      {
+        "text": "IP address selects the process, port number selects the host",
+        "correct": false
+      },
+      {
+        "text": "IP address selects the host, port number selects the process",
+        "correct": true
+      },
+      {
+        "text": "IP address selects the router, port number selects the gateway",
+        "correct": false
+      },
+      {
+        "text": "IP address selects the network, port number selects the frame",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What are UDP packets called, and what is their fixed-size header length?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Segments, 20 bytes",
+        "correct": false
+      },
+      {
+        "text": "User datagrams, 8 bytes",
+        "correct": true
+      },
+      {
+        "text": "Packets, 32 bytes",
+        "correct": false
+      },
+      {
+        "text": "Datagrams, 12 bytes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which fields are included in the 8-byte UDP header?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Source port, Destination port, Sequence number, Acknowledgement number",
+        "correct": false
+      },
+      {
+        "text": "Source port number, Destination port number, Total length, Checksum",
+        "correct": true
+      },
+      {
+        "text": "Source IP, Destination IP, Protocol, Checksum",
+        "correct": false
+      },
+      {
+        "text": "Version, IHL, Type of Service, Total length",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the bit length of both the source port number and destination port number fields in the UDP header?",
+    "info": "",
+    "answers": [
+      {
+        "text": "8 bits",
+        "correct": false
+      },
+      {
+        "text": "16 bits",
+        "correct": true
+      },
+      {
+        "text": "32 bits",
+        "correct": false
+      },
+      {
+        "text": "64 bits",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the bit size and definition of the length field in a UDP datagram?",
+    "info": "",
+    "answers": [
+      {
+        "text": "8 bits, measures header length only",
+        "correct": false
+      },
+      {
+        "text": "16 bits, measures total length (header plus data) of the user datagram",
+        "correct": true
+      },
+      {
+        "text": "32 bits, measures data length only",
+        "correct": false
+      },
+      {
+        "text": "16 bits, measures pseudoheader length only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the minimum possible length of a user datagram?",
+    "info": "",
+    "answers": [
+      {
+        "text": "4 bytes",
+        "correct": false
+      },
+      {
+        "text": "8 bytes (containing only the header)",
+        "correct": true
+      },
+      {
+        "text": "20 bytes",
+        "correct": false
+      },
+      {
+        "text": "64 bytes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Besides reading the UDP length field, how else can the length of a UDP datagram be derived from the IP header?",
+    "info": "",
+    "answers": [
+      {
+        "text": "IP length minus IP header's length",
+        "correct": true
+      },
+      {
+        "text": "IP length plus IP header's length",
+        "correct": false
+      },
+      {
+        "text": "IP total length multiplied by 2",
+        "correct": false
+      },
+      {
+        "text": "IP header length divided by 4",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why does the UDP header retain its own length field if length can be derived from the IP header?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Because the IP header might lack a length field entirely",
+        "correct": false
+      },
+      {
+        "text": "Because it is more efficient; asking the IP layer is time-consuming",
+        "correct": true
+      },
+      {
+        "text": "To prevent data corruption if the IP layer is removed",
+        "correct": false
+      },
+      {
+        "text": "Because it is required by physical NIC hardware standards",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many bits long is the checksum field in a UDP datagram?",
+    "info": "",
+    "answers": [
+      {
+        "text": "8 bits",
+        "correct": false
+      },
+      {
+        "text": "16 bits",
+        "correct": true
+      },
+      {
+        "text": "32 bits",
+        "correct": false
+      },
+      {
+        "text": "64 bits",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does the UDP checksum cover for error detection?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Only the UDP header",
+        "correct": false
+      },
+      {
+        "text": "Only the application layer data",
+        "correct": false
+      },
+      {
+        "text": "The entire user datagram (header plus data, including pseudoheader)",
+        "correct": true
+      },
+      {
+        "text": "Everything from the network layer to the transport layer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "If a UDP datagram's length field indicates 12 bytes, what is the size of the application layer data portion?",
+    "info": "",
+    "answers": [
+      {
+        "text": "4 bytes (12 minus 8 bytes header)",
+        "correct": true
+      },
+      {
+        "text": "8 bytes",
+        "correct": false
+      },
+      {
+        "text": "12 bytes",
+        "correct": false
+      },
+      {
+        "text": "20 bytes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many sections are included in the UDP checksum calculation?",
+    "info": "",
+    "answers": [
+      {
+        "text": "2 sections (UDP header and data)",
+        "correct": false
+      },
+      {
+        "text": "3 sections (Pseudoheader, UDP header, and application data)",
+        "correct": true
+      },
+      {
+        "text": "4 sections (IP header, pseudoheader, UDP header, and data)",
+        "correct": false
+      },
+      {
+        "text": "1 section (Checksum field only)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes the pseudoheader used in UDP checksum calculation?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It appears explicitly within the actual UDP datagram transmitted across the network",
+        "correct": false
+      },
+      {
+        "text": "It is part of the IP packet used for calculation, but it does not appear in the UDP datagram",
+        "correct": true
+      },
+      {
+        "text": "It is generated by the application layer for authentication",
+        "correct": false
+      },
+      {
+        "text": "It is a 64-bit reserved field located in the data link layer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which fields are contained within the pseudoheader?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Source MAC, destination MAC, frame type",
+        "correct": false
+      },
+      {
+        "text": "Source IP address, destination IP address, protocol (value 17 for UDP), and UDP total length",
+        "correct": true
+      },
+      {
+        "text": "Source port, destination port, sequence number",
+        "correct": false
+      },
+      {
+        "text": "IP version, IHL, TTL, IP checksum",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What numerical value represents the protocol field for UDP inside the pseudoheader?",
+    "info": "",
+    "answers": [
+      {
+        "text": "6",
+        "correct": false
+      },
+      {
+        "text": "17",
+        "correct": true
+      },
+      {
+        "text": "1",
+        "correct": false
+      },
+      {
+        "text": "89",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of including source and destination IP addresses in the pseudoheader?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To prevent routing loops across routers",
+        "correct": false
+      },
+      {
+        "text": "To ensure that if the IP header is corrupted and delivered to the wrong host, UDP catches it",
+        "correct": true
+      },
+      {
+        "text": "To speed up transmission performance across routers",
+        "correct": false
+      },
+      {
+        "text": "To calculate internet billing metrics",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the initial step when calculating the checksum at the sender?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Divide data proportions by 32 bits",
+        "correct": false
+      },
+      {
+        "text": "Add the pseudoheader to the UDP datagram and fill the checksum field with all zeros",
+        "correct": true
+      },
+      {
+        "text": "Compute one's complement immediately without adding anything",
+        "correct": false
+      },
+      {
+        "text": "Cancel checksum calculation entirely",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What action must the sender take if the total number of bytes to be checked is not even (not a multiple of 16 bits)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Drop the final byte of data",
+        "correct": false
+      },
+      {
+        "text": "Add 1 byte of padding (all zeros)",
+        "correct": true
+      },
+      {
+        "text": "Add 2 bytes of padding",
+        "correct": false
+      },
+      {
+        "text": "Trigger an application layer error alert",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What arithmetic method is used to add the 16-bit sections together for the UDP checksum?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Two's complement arithmetic",
+        "correct": false
+      },
+      {
+        "text": "One's complement arithmetic",
+        "correct": true
+      },
+      {
+        "text": "Standard binary subtraction",
+        "correct": false
+      },
+      {
+        "text": "Modulo-2 arithmetic (CRC)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When the receiver sums all 16-bit sections using one's complement and complements the result, what value indicates a successful, error-free datagram?",
+    "info": "",
+    "answers": [
+      {
+        "text": "All ones (All 1s)",
+        "correct": false
+      },
+      {
+        "text": "All zeros (All 0s)",
+        "correct": true
+      },
+      {
+        "text": "Equal to the destination port number",
+        "correct": false
+      },
+      {
+        "text": "Equal to 17",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "If the receiver's checksum calculation results in a value that is not all zeros, what action is taken on the user datagram?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Accept and pass it to the application layer",
+        "correct": false
+      },
+      {
+        "text": "Automatically correct the corrupted bits",
+        "correct": false
+      },
+      {
+        "text": "Discard the user datagram",
+        "correct": true
+      },
+      {
+        "text": "Send an automatic retransmission request back to the sender",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement describes the connectionless service of UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Each user datagram is independent, even from the same source process, and datagrams are not numbered",
+        "correct": true
+      },
+      {
+        "text": "A connection establishment phase must occur before sending any data",
+        "correct": false
+      },
+      {
+        "text": "Acknowledgments are sent for every transmitted packet",
+        "correct": false
+      },
+      {
+        "text": "Datagrams must be ordered sequentially before transmission",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How are flow control and error control handled in UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Complete flow control with no error control",
+        "correct": false
+      },
+      {
+        "text": "No flow control (receiver queues may overflow) and no error control except for the checksum",
+        "correct": true
+      },
+      {
+        "text": "Full flow control and error control matching TCP",
+        "correct": false
+      },
+      {
+        "text": "Automatic Repeat Request (ARQ) error handling",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the process of wrapping application messages with a UDP header, IP header, and frame header called?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Decapsulation",
+        "correct": false
+      },
+      {
+        "text": "Encapsulation",
+        "correct": true
+      },
+      {
+        "text": "Multiplexing",
+        "correct": false
+      },
+      {
+        "text": "Segmentation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the process of stripping headers layer by layer as data arrives at the destination called?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Encapsulation",
+        "correct": false
+      },
+      {
+        "text": "Decapsulation",
+        "correct": true
+      },
+      {
+        "text": "Fragmentation",
+        "correct": false
+      },
+      {
+        "text": "Demultiplexing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "At the sender side, what does UDP act as?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Demultiplexer",
+        "correct": false
+      },
+      {
+        "text": "Multiplexer",
+        "correct": true
+      },
+      {
+        "text": "Gateway",
+        "correct": false
+      },
+      {
+        "text": "Bridge",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "At the receiver side, what does UDP act as?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Multiplexer",
+        "correct": false
+      },
+      {
+        "text": "Demultiplexer",
+        "correct": true
+      },
+      {
+        "text": "Repeater",
+        "correct": false
+      },
+      {
+        "text": "Router",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What queue types are associated with ports in UDP operations?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Incoming queue and outgoing queue",
+        "correct": true
+      },
+      {
+        "text": "Priority queue and delay queue",
+        "correct": false
+      },
+      {
+        "text": "Send queue and ACK queue",
+        "correct": false
+      },
+      {
+        "text": "Fast queue and slow queue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "If a user datagram arrives for a port with no active waiting process (not found in the control-block table), how does UDP respond?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Stores it in a backup queue until a process opens",
+        "correct": false
+      },
+      {
+        "text": "Discards the user datagram and asks ICMP to send an \"unreachable port\" message to the source",
+        "correct": true
+      },
+      {
+        "text": "Automatically spawns a new process to handle the data",
+        "correct": false
+      },
+      {
+        "text": "Forwards the packet to TCP for handling",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which connection phases are completely absent in UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Connection establishment and connection termination",
+        "correct": true
+      },
+      {
+        "text": "Process-to-process communication",
+        "correct": false
+      },
+      {
+        "text": "Checksum verification",
+        "correct": false
+      },
+      {
+        "text": "Port number assignment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement correctly describes datagram sequencing in UDP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Every datagram must carry a serial number to detect loss",
+        "correct": false
+      },
+      {
+        "text": "Each user datagram is independent and not numbered",
+        "correct": true
+      },
+      {
+        "text": "Datagrams must be delivered in strict order 1, 2, 3 without exception",
+        "correct": false
+      },
+      {
+        "text": "Datagrams form a single persistent session across their lifespan",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which protocol uses UDP for route updating?",
+    "info": "",
+    "answers": [
+      {
+        "text": "FTP",
+        "correct": false
+      },
+      {
+        "text": "RIP (Routing Information Protocol)",
+        "correct": true
+      },
+      {
+        "text": "HTTP",
+        "correct": false
+      },
+      {
+        "text": "SMTP",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why are multicasting and broadcasting built into UDP rather than TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Because TCP supports only one-to-one (unicast) communication, whereas UDP supports group distributions",
+        "correct": true
+      },
+      {
+        "text": "Because UDP has lower speed, making it ideal for broadcasting",
+        "correct": false
+      },
+      {
+        "text": "Because TCP mandates checksum calculations on all packets",
+        "correct": false
+      },
+      {
+        "text": "Because multicasting requires port number zero exclusively",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In the UDP package design presented in the text, how many minimum fields does each entry in the control-block table have, and what are they?",
+    "info": "",
+    "answers": [
+      {
+        "text": "2 fields (IP address, port number)",
+        "correct": false
+      },
+      {
+        "text": "3 fields (State, IP address, queue number)",
+        "correct": false
+      },
+      {
+        "text": "4 fields (State, process ID, port number, corresponding queue number)",
+        "correct": true
+      },
+      {
+        "text": "5 fields (Source port, dest port, seq number, ack number, state)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which module in the UDP package searches the control-block table upon receiving a user datagram from IP and allocates a queue if found?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Control-block module",
+        "correct": false
+      },
+      {
+        "text": "Input module",
+        "correct": true
+      },
+      {
+        "text": "Output module",
+        "correct": false
+      },
+      {
+        "text": "Multiplexer module",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When a new process starts and requests a port number from the operating system, which component creates and manages the entry in the control-block table?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Input module",
+        "correct": false
+      },
+      {
+        "text": "Output module",
+        "correct": false
+      },
+      {
+        "text": "Control-block module",
+        "correct": true
+      },
+      {
+        "text": "ICMP module",
+        "correct": false
+      }
+    ]
+  }
+]

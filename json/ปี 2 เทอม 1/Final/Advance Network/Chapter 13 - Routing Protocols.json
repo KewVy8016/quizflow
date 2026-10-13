@@ -1,0 +1,1322 @@
+[
+  {
+    "text": "According to the provided text, what is the definition of an Autonomous System (AS)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "A group of networks and routers under the authority of a single administration",
+        "correct": true
+      },
+      {
+        "text": "A global combination of internetworks connected without any central administration",
+        "correct": false
+      },
+      {
+        "text": "A routing table that operates exclusively on end-host systems",
+        "correct": false
+      },
+      {
+        "text": "A dedicated protocol used to transmit packets along the optimal physical path",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What metric does the Routing Information Protocol (RIP) use?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Maximum delay",
+        "correct": false
+      },
+      {
+        "text": "Policy set by the administrator",
+        "correct": false
+      },
+      {
+        "text": "Hop count, treating each network equally as one hop",
+        "correct": true
+      },
+      {
+        "text": "Bandwidth availability",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does the metric assigned to each network depend on in Open Shortest Path First (OSPF)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "A fixed hop count for every network link",
+        "correct": false
+      },
+      {
+        "text": "The type of service required, such as maximum throughput or minimum delay",
+        "correct": true
+      },
+      {
+        "text": "The administrative policy established between different Autonomous Systems",
+        "correct": false
+      },
+      {
+        "text": "The total number of routers inside the backbone area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary criterion used by the Border Gateway Protocol (BGP) to make routing decisions?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The lowest hop count",
+        "correct": false
+      },
+      {
+        "text": "Policy set by the administrator",
+        "correct": true
+      },
+      {
+        "text": "Maximum link bandwidth",
+        "correct": false
+      },
+      {
+        "text": "Timer expiration periods",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why does an internet need dynamic routing tables rather than static ones?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Static routing tables provide better security against hacking",
+        "correct": false
+      },
+      {
+        "text": "Dynamic routing tables are automatically managed and updated by routing protocols to adapt to network changes",
+        "correct": true
+      },
+      {
+        "text": "Static tables cannot store IP address prefixes",
+        "correct": false
+      },
+      {
+        "text": "Dynamic tables eliminate the need for any routers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Routing inside an autonomous system is known as what, and what are two common examples?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Exterior routing; BGP and OSPF",
+        "correct": false
+      },
+      {
+        "text": "Interior routing; RIP and OSPF",
+        "correct": true
+      },
+      {
+        "text": "Exterior routing; RIP and BGP",
+        "correct": false
+      },
+      {
+        "text": "Interior routing; BGP only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Routing between autonomous systems is known as exterior routing. Which protocol is typically used for this purpose?",
+    "info": "",
+    "answers": [
+      {
+        "text": "RIP",
+        "correct": false
+      },
+      {
+        "text": "OSPF",
+        "correct": false
+      },
+      {
+        "text": "BGP",
+        "correct": true
+      },
+      {
+        "text": "Dijkstra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which of the following best describes how many exterior routing protocols are usually used for exterior routing?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Multiple protocols are always run simultaneously for redundancy",
+        "correct": false
+      },
+      {
+        "text": "Only one exterior routing protocol is usually used",
+        "correct": true
+      },
+      {
+        "text": "It depends on the number of routers in the backbone area",
+        "correct": false
+      },
+      {
+        "text": "Interior and exterior protocols are completely interchangeable",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When an internet becomes too large for a single routing protocol to handle updating all routers, how is it structured?",
+    "info": "",
+    "answers": [
+      {
+        "text": "By upgrading every router's memory capacity",
+        "correct": false
+      },
+      {
+        "text": "By dividing the internet into Autonomous Systems (AS)",
+        "correct": true
+      },
+      {
+        "text": "By disabling dynamic routing tables completely",
+        "correct": false
+      },
+      {
+        "text": "By forcing all networks to use static routing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In Figure 13-1, which protocols represent interior and exterior routing protocols respectively?",
+    "info": "",
+    "answers": [
+      {
+        "text": "BGP and RIP",
+        "correct": false
+      },
+      {
+        "text": "RIP/OSPF and BGP",
+        "correct": true
+      },
+      {
+        "text": "OSPF and RIP",
+        "correct": false
+      },
+      {
+        "text": "BGP and OSPF",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "RIP is based on distance vector routing and uses which algorithm to calculate routing tables?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Dijkstra algorithm",
+        "correct": false
+      },
+      {
+        "text": "Bellman-Ford algorithm",
+        "correct": true
+      },
+      {
+        "text": "Fletcher's checksum algorithm",
+        "correct": false
+      },
+      {
+        "text": "Spanning tree algorithm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When a router is newly added to a network, how does it initialize its routing table?",
+    "info": "",
+    "answers": [
+      {
+        "text": "By requesting the complete routing table of every router in the internet",
+        "correct": false
+      },
+      {
+        "text": "By using its configuration file to contain only directly attached networks and a hop count of 1",
+        "correct": true
+      },
+      {
+        "text": "By setting all metrics to infinity (16)",
+        "correct": false
+      },
+      {
+        "text": "By waiting for the first periodic update timer to trigger",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In the RIP version 1 message format, how many bytes are allocated for the address field, and how many bytes does IP currently use?",
+    "info": "",
+    "answers": [
+      {
+        "text": "4 bytes allocated, and IP uses all 4 bytes",
+        "correct": false
+      },
+      {
+        "text": "14 bytes allocated to be applicable to any protocol, but IP currently uses only 4 bytes (the rest are 0s)",
+        "correct": true
+      },
+      {
+        "text": "32 bytes allocated, and IP uses 16 bytes",
+        "correct": false
+      },
+      {
+        "text": "8 bytes allocated, and IP uses 2 bytes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What numeric values represent a request and a response in the RIP command field?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Request is 1, Response is 2",
+        "correct": true
+      },
+      {
+        "text": "Request is 2, Response is 1",
+        "correct": false
+      },
+      {
+        "text": "Request is 0, Response is 1",
+        "correct": false
+      },
+      {
+        "text": "Request is 520, Response is 179",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How frequently is an unsolicited RIP response (update packet) sent out periodically?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Every 10 seconds",
+        "correct": false
+      },
+      {
+        "text": "Every 30 seconds",
+        "correct": true
+      },
+      {
+        "text": "Every 120 seconds",
+        "correct": false
+      },
+      {
+        "text": "Every 180 seconds",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary function of the periodic timer in RIP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To control the advertising of regular update messages",
+        "correct": true
+      },
+      {
+        "text": "To govern the validity of a route expiration after 180 seconds",
+        "correct": false
+      },
+      {
+        "text": "To purge invalid routes after 120 seconds",
+        "correct": false
+      },
+      {
+        "text": "To prevent routing loops temporarily",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "To prevent routers from updating simultaneously, what working model value is used instead of a fixed 30-second interval for the periodic timer?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Exactly 30 seconds",
+        "correct": false
+      },
+      {
+        "text": "A random number between 25 and 35 seconds",
+        "correct": true
+      },
+      {
+        "text": "A random number between 10 and 60 seconds",
+        "correct": false
+      },
+      {
+        "text": "Exactly 15 seconds",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "If a route does not receive an update within the expiration timer duration (180 seconds), what happens to that route?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It is immediately purged from the routing table",
+        "correct": false
+      },
+      {
+        "text": "It is considered expired, and its hop count is set to 16 (unreachable)",
+        "correct": true
+      },
+      {
+        "text": "It switches to an alternative path automatically",
+        "correct": false
+      },
+      {
+        "text": "It triggers an immediate broadcast update",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the duration of the garbage collection timer in RIP, and what is its purpose?",
+    "info": "",
+    "answers": [
+      {
+        "text": "30 seconds; to reset the hop count",
+        "correct": false
+      },
+      {
+        "text": "180 seconds; to wait for neighbor acknowledgments",
+        "correct": false
+      },
+      {
+        "text": "120 seconds; to continue advertising an invalid route with a metric of 16 before purging it from the table",
+        "correct": true
+      },
+      {
+        "text": "60 seconds; to check port status errors",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What are the two major problems associated with RIP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "High memory usage for link-state databases",
+        "correct": false
+      },
+      {
+        "text": "Slow convergence and instability",
+        "correct": true
+      },
+      {
+        "text": "Inability to support point-to-point connections",
+        "correct": false
+      },
+      {
+        "text": "Mandatory use of TCP transport services",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why is the maximum hop count in RIP limited to 15, with 16 representing infinity (unreachable)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Because RIP packet size is restricted to 16 bytes",
+        "correct": false
+      },
+      {
+        "text": "To prevent data packets from wandering around forever in loops and to limit AS diameter",
+        "correct": true
+      },
+      {
+        "text": "To align with UDP port 520",
+        "correct": false
+      },
+      {
+        "text": "Because a router can only have 16 neighbors",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which techniques are used to solve instability issues in a RIP-enabled internet?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Triggered update, split horizons, and poison reverses",
+        "correct": true
+      },
+      {
+        "text": "Dijkstra algorithm, area division, and hello packets",
+        "correct": false
+      },
+      {
+        "text": "Path vector, AS_PATH, and origin attributes",
+        "correct": false
+      },
+      {
+        "text": "Designated routers and backup designated routers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the core rule of the Split Horizon technique in RIP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "If a router receives route update information from an interface, that same updated information must not be sent back out through that interface",
+        "correct": true
+      },
+      {
+        "text": "A router must broadcast its table immediately whenever a change occurs",
+        "correct": false
+      },
+      {
+        "text": "A router must set the metric of returning routes to 16",
+        "correct": false
+      },
+      {
+        "text": "Routers must use multicast addresses for all communications",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does Poison Reverse differ from Split Horizon?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Poison Reverse ignores the interface from which information was received",
+        "correct": false
+      },
+      {
+        "text": "Poison Reverse sends routing information out through all interfaces, but sets the metric to 16 for routes coming from that specific interface",
+        "correct": true
+      },
+      {
+        "text": "Poison Reverse waits for a 120-second delay before transmitting",
+        "correct": false
+      },
+      {
+        "text": "Poison Reverse is exclusively used in OSPF",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which new fields were introduced in RIP version 2 to support classless addressing and CIDR?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Routing Tag",
+        "correct": false
+      },
+      {
+        "text": "Subnet mask",
+        "correct": false
+      },
+      {
+        "text": "Next-hop address",
+        "correct": false
+      },
+      {
+        "text": "All of the above",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which multicast address does RIP version 2 use to send RIP messages only to RIP routers in the network?",
+    "info": "",
+    "answers": [
+      {
+        "text": "224.0.0.5",
+        "correct": false
+      },
+      {
+        "text": "224.0.0.6",
+        "correct": false
+      },
+      {
+        "text": "224.0.0.9",
+        "correct": true
+      },
+      {
+        "text": "255.255.255.255",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "RIP relies on which transport layer protocol and well-known port?",
+    "info": "",
+    "answers": [
+      {
+        "text": "TCP port 179",
+        "correct": false
+      },
+      {
+        "text": "UDP port 520",
+        "correct": true
+      },
+      {
+        "text": "TCP port 520",
+        "correct": false
+      },
+      {
+        "text": "UDP port 179",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How is OSPF (Open Shortest Path First) classified?",
+    "info": "",
+    "answers": [
+      {
+        "text": "An exterior routing protocol using path vector",
+        "correct": false
+      },
+      {
+        "text": "An interior routing protocol using link state routing",
+        "correct": true
+      },
+      {
+        "text": "An exterior routing protocol using distance vector",
+        "correct": false
+      },
+      {
+        "text": "An interior routing protocol using distance vector",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the name of the special core area inside an OSPF autonomous system that all other areas must connect to?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Stub area",
+        "correct": false
+      },
+      {
+        "text": "Backbone (Area 0)",
+        "correct": true
+      },
+      {
+        "text": "Transient area",
+        "correct": false
+      },
+      {
+        "text": "Virtual area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What are the routers that summarize information about an area and send it to other areas called?",
+    "info": "",
+    "answers": [
+      {
+        "text": "AS boundary routers",
+        "correct": false
+      },
+      {
+        "text": "Area border routers",
+        "correct": true
+      },
+      {
+        "text": "Designated routers",
+        "correct": false
+      },
+      {
+        "text": "Backbone routers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "If connectivity between the backbone and an area is broken, what must the administrator create?",
+    "info": "",
+    "answers": [
+      {
+        "text": "A virtual link",
+        "correct": true
+      },
+      {
+        "text": "A stub link",
+        "correct": false
+      },
+      {
+        "text": "A direct physical T-1 line",
+        "correct": false
+      },
+      {
+        "text": "An additional designated router",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What are the four types of links defined in OSPF?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Point-to-point, Transient, Stub, Virtual",
+        "correct": true
+      },
+      {
+        "text": "Static, Dynamic, Active, Passive",
+        "correct": false
+      },
+      {
+        "text": "Local, Global, Backbone, External",
+        "correct": false
+      },
+      {
+        "text": "Internal, External, Border, Stub",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In a transient link (such as an Ethernet LAN with multiple routers), what is the realistic and efficient graphical representation solution used in OSPF?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Creating a full mesh of direct links between every pair of routers",
+        "correct": false
+      },
+      {
+        "text": "Selecting one of the routers to act as a Designated router serving as a single crossroad network",
+        "correct": true
+      },
+      {
+        "text": "Eliminating all routers except one",
+        "correct": false
+      },
+      {
+        "text": "Using a hub-and-spoke broadcast mechanism",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which link type in OSPF connects to only one router, where data packets enter and leave through that single router?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Point-to-point link",
+        "correct": false
+      },
+      {
+        "text": "Transient link",
+        "correct": false
+      },
+      {
+        "text": "Stub link",
+        "correct": true
+      },
+      {
+        "text": "Virtual link",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many different types of Link State Advertisements (LSAs) does OSPF use?",
+    "info": "",
+    "answers": [
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "4",
+        "correct": false
+      },
+      {
+        "text": "5",
+        "correct": true
+      },
+      {
+        "text": "6",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which LSA type is distributed by a designated router on behalf of a transient network to announce all attached routers?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Router link LSA",
+        "correct": false
+      },
+      {
+        "text": "Network link LSA",
+        "correct": true
+      },
+      {
+        "text": "Summary link to network LSA",
+        "correct": false
+      },
+      {
+        "text": "External link LSA",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which algorithm does each router apply to its link state database to calculate the shortest path?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Bellman-Ford algorithm",
+        "correct": false
+      },
+      {
+        "text": "Dijkstra algorithm",
+        "correct": true
+      },
+      {
+        "text": "Distance vector algorithm",
+        "correct": false
+      },
+      {
+        "text": "Spanning tree algorithm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement is true regarding the link state database of routers within the same OSPF area?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Each router has a completely different database based on its physical location",
+        "correct": false
+      },
+      {
+        "text": "Every router in the same area has the exact same link state database",
+        "correct": true
+      },
+      {
+        "text": "Only the designated router maintains the link state database",
+        "correct": false
+      },
+      {
+        "text": "The database is updated every 30 seconds automatically",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many different packet types does OSPF use?",
+    "info": "",
+    "answers": [
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "4",
+        "correct": false
+      },
+      {
+        "text": "5",
+        "correct": true
+      },
+      {
+        "text": "6",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of the OSPF Hello packet?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To exchange database descriptions",
+        "correct": false
+      },
+      {
+        "text": "To create neighborhood relationships and test neighbor reachability",
+        "correct": true
+      },
+      {
+        "text": "To request specific link state updates",
+        "correct": false
+      },
+      {
+        "text": "To acknowledge receipt of update packets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which field in the OSPF Hello packet is used for the selection of the designated router?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Hello interval",
+        "correct": false
+      },
+      {
+        "text": "Dead interval",
+        "correct": false
+      },
+      {
+        "text": "Priority",
+        "correct": true
+      },
+      {
+        "text": "Network mask",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "If a router's priority field in a Hello packet is set to 0, what does it mean?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The router has the highest priority to become the designated router",
+        "correct": false
+      },
+      {
+        "text": "The router never wants to be a designated or backup designated router",
+        "correct": true
+      },
+      {
+        "text": "The router is temporarily disabled",
+        "correct": false
+      },
+      {
+        "text": "The router is functioning as a backbone router",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the main function of the Database Description message in OSPF?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To transmit the entire contents of the link state database all at once",
+        "correct": false
+      },
+      {
+        "text": "To provide an outline or table of contents so the receiving router can check which lines it lacks",
+        "correct": true
+      },
+      {
+        "text": "To handle master/slave flow control acknowledgments",
+        "correct": false
+      },
+      {
+        "text": "To report connection errors",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What special checksum algorithm is used in the LSA header of OSPF?",
+    "info": "",
+    "answers": [
+      {
+        "text": "CRC-32",
+        "correct": false
+      },
+      {
+        "text": "Fletcher’s checksum",
+        "correct": true
+      },
+      {
+        "text": "MD5 checksum",
+        "correct": false
+      },
+      {
+        "text": "Simple parity check",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How are error control and flow control handled in OSPF?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Through the transport layer protocol TCP",
+        "correct": false
+      },
+      {
+        "text": "OSPF contains built-in acknowledgment mechanisms for flow and error control within its own packets",
+        "correct": true
+      },
+      {
+        "text": "Through UDP transport services",
+        "correct": false
+      },
+      {
+        "text": "By exterior gateways exclusively",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How are OSPF packets encapsulated?",
+    "info": "",
+    "answers": [
+      {
+        "text": "In TCP segments",
+        "correct": false
+      },
+      {
+        "text": "In UDP datagrams",
+        "correct": false
+      },
+      {
+        "text": "In IP datagrams",
+        "correct": true
+      },
+      {
+        "text": "Directly in Ethernet frames without IP encapsulation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In the LSA header, which Link State Type value corresponds to an \"External link\"?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Type 1",
+        "correct": false
+      },
+      {
+        "text": "Type 3",
+        "correct": false
+      },
+      {
+        "text": "Type 4",
+        "correct": false
+      },
+      {
+        "text": "Type 5",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "text": "Which routing method does BGP (Border Gateway Protocol) use?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Distance vector routing",
+        "correct": false
+      },
+      {
+        "text": "Link state routing",
+        "correct": false
+      },
+      {
+        "text": "Path vector routing",
+        "correct": true
+      },
+      {
+        "text": "Static source routing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why are distance vector and link state routing poor candidates for inter-autonomous system routing?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Distance vector may prefer insecure paths despite shorter hops, and link state databases become too massive for efficient calculation",
+        "correct": true
+      },
+      {
+        "text": "They use conflicting TCP port numbers",
+        "correct": false
+      },
+      {
+        "text": "They do not support IPv4 addressing",
+        "correct": false
+      },
+      {
+        "text": "They require too little memory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What information does each entry in a path vector routing table contain?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Destination network, next router, and the path defined as an ordered list of ASs",
+        "correct": true
+      },
+      {
+        "text": "Hop count and port numbers only",
+        "correct": false
+      },
+      {
+        "text": "Complete link-state topology and delay metrics",
+        "correct": false
+      },
+      {
+        "text": "Subnet mask and timer expiration countdowns",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does path vector routing prevent routing loops?",
+    "info": "",
+    "answers": [
+      {
+        "text": "By limiting the hop count to 15",
+        "correct": false
+      },
+      {
+        "text": "When a router receives a message, it checks if its own AS is in the path list; if yes, a loop is involved and the message is ignored",
+        "correct": true
+      },
+      {
+        "text": "By exchanging keepalive messages every 30 seconds",
+        "correct": false
+      },
+      {
+        "text": "By applying split horizon rules to all interfaces",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which statement best describes policy routing implemented through path vector routing (BGP)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It always selects the path with the minimum hop count",
+        "correct": false
+      },
+      {
+        "text": "A router can ignore paths and destinations that violate administrative policies, regardless of whether it is the shortest path",
+        "correct": true
+      },
+      {
+        "text": "It forces all ASs worldwide to adopt identical routing policies",
+        "correct": false
+      },
+      {
+        "text": "It calculates paths exclusively using the Dijkstra algorithm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which path attributes in BGP belong to the Well-known mandatory category (must be recognized and appear in update messages)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "ORIGIN, AS_PATH, NEXT_HOP",
+        "correct": true
+      },
+      {
+        "text": "LOCAL_PREF, MED",
+        "correct": false
+      },
+      {
+        "text": "ATOMIC_AGGREGATOR",
+        "correct": false
+      },
+      {
+        "text": "COMMUNITY",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many different types of messages does BGP use?",
+    "info": "",
+    "answers": [
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "4",
+        "correct": true
+      },
+      {
+        "text": "5",
+        "correct": false
+      },
+      {
+        "text": "6",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What are the names of the four BGP message types?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Hello, Database Description, Link State Request, Link State Update",
+        "correct": false
+      },
+      {
+        "text": "Request, Response, Update, Acknowledgment",
+        "correct": false
+      },
+      {
+        "text": "Open, Update, Keepalive, Notification",
+        "correct": true
+      },
+      {
+        "text": "Hello, Update, Query, Reply",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "When a BGP router wants to establish a neighborhood relationship, what does it do first?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It opens a TCP connection with a neighbor and sends an Open message",
+        "correct": true
+      },
+      {
+        "text": "It opens a UDP connection and sends a Hello message",
+        "correct": false
+      },
+      {
+        "text": "It broadcasts an IP datagram containing a Keepalive message",
+        "correct": false
+      },
+      {
+        "text": "It transmits a Database Description packet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of the Hold time field in a BGP Open message?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To specify delay before transmitting payload data",
+        "correct": false
+      },
+      {
+        "text": "To define the maximum seconds that can elapse before receiving a keepalive or update message before considering the peer dead",
+        "correct": true
+      },
+      {
+        "text": "To set the garbage collection timeout for route deletion",
+        "correct": false
+      },
+      {
+        "text": "To control periodic update intervals",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does a BGP Update message handle destination routes?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It can withdraw multiple destinations in a single update message, but can only advertise one new destination per update message",
+        "correct": true
+      },
+      {
+        "text": "It can advertise multiple destinations but withdraw only one at a time",
+        "correct": false
+      },
+      {
+        "text": "It handles both withdrawals and advertisements strictly one at a time",
+        "correct": false
+      },
+      {
+        "text": "It handles multiple withdrawals and multiple advertisements simultaneously without restriction",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which addressing technology is supported by BGP version 4?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Classful addressing exclusively",
+        "correct": false
+      },
+      {
+        "text": "Classless addressing and CIDR",
+        "correct": true
+      },
+      {
+        "text": "IPv6 addressing only",
+        "correct": false
+      },
+      {
+        "text": "Fixed-length subnet masking (FLSM)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "BGP relies on which transport layer protocol and well-known port?",
+    "info": "",
+    "answers": [
+      {
+        "text": "UDP port 520",
+        "correct": false
+      },
+      {
+        "text": "TCP port 179",
+        "correct": true
+      },
+      {
+        "text": "TCP port 520",
+        "correct": false
+      },
+      {
+        "text": "UDP port 179",
+        "correct": false
+      }
+    ]
+  }
+]

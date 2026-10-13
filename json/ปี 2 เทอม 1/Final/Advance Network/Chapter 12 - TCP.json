@@ -1,0 +1,1322 @@
+[
+  {
+    "text": "What is the primary function introduced at the transport layer to enable communication between application programs running on different hosts?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Node-to-node communication",
+        "correct": false
+      },
+      {
+        "text": "Process-to-process communication",
+        "correct": true
+      },
+      {
+        "text": "Hop-by-hop delivery",
+        "correct": false
+      },
+      {
+        "text": "Frame synchronization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What term is used to describe a client's port number chosen randomly by the TCP software running on the local host?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Well-known port number",
+        "correct": false
+      },
+      {
+        "text": "Registered port number",
+        "correct": false
+      },
+      {
+        "text": "Ephemeral port number",
+        "correct": true
+      },
+      {
+        "text": "Static port number",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What type of port numbers are pre-assigned by authorities to define servers?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Ephemeral port numbers",
+        "correct": false
+      },
+      {
+        "text": "Well-known port numbers",
+        "correct": true
+      },
+      {
+        "text": "Private port numbers",
+        "correct": false
+      },
+      {
+        "text": "Dynamic port numbers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a socket address composed of?",
+    "info": "",
+    "answers": [
+      {
+        "text": "MAC address and port number",
+        "correct": false
+      },
+      {
+        "text": "IP address and port number",
+        "correct": true
+      },
+      {
+        "text": "Logical address and physical address",
+        "correct": false
+      },
+      {
+        "text": "Sequence number and acknowledgement number",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Unlike UDP which treats each chunk independently, how does TCP deliver and receive data?",
+    "info": "",
+    "answers": [
+      {
+        "text": "As discrete datagrams",
+        "correct": false
+      },
+      {
+        "text": "As a stream of bytes",
+        "correct": true
+      },
+      {
+        "text": "As fixed-size frames",
+        "correct": false
+      },
+      {
+        "text": "As isolated packets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Why does TCP require sending and receiving buffers?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Because the sending and receiving speeds may not be the same",
+        "correct": true
+      },
+      {
+        "text": "To encrypt the data stream",
+        "correct": false
+      },
+      {
+        "text": "To bypass the network layer",
+        "correct": false
+      },
+      {
+        "text": "To convert bytes into optical signals",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which service feature allows TCP data to flow in both directions at the same time?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Simplex service",
+        "correct": false
+      },
+      {
+        "text": "Half-duplex service",
+        "correct": false
+      },
+      {
+        "text": "Full-duplex service",
+        "correct": true
+      },
+      {
+        "text": "Multiplexed service",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What kind of connection does TCP establish for its connection-oriented service?",
+    "info": "",
+    "answers": [
+      {
+        "text": "A physical dedicated circuit",
+        "correct": false
+      },
+      {
+        "text": "A virtual connection",
+        "correct": true
+      },
+      {
+        "text": "A circuit-switched permanent link",
+        "correct": false
+      },
+      {
+        "text": "A connectionless datagram path",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What do the sequence number and acknowledgment number in TCP refer to?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The segment number",
+        "correct": false
+      },
+      {
+        "text": "The byte number",
+        "correct": true
+      },
+      {
+        "text": "The packet number in the router buffer",
+        "correct": false
+      },
+      {
+        "text": "The frame sequence in the data link layer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does TCP choose the starting byte number for a connection?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It always starts at 0",
+        "correct": false
+      },
+      {
+        "text": "It always starts at 1",
+        "correct": false
+      },
+      {
+        "text": "It starts randomly between 0 and 2^32 − 1",
+        "correct": true
+      },
+      {
+        "text": "It is determined by the destination IP address",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does the sequence number field in a TCP segment define?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The number of the last data byte in the segment",
+        "correct": false
+      },
+      {
+        "text": "The number of the first data byte contained in that segment",
+        "correct": true
+      },
+      {
+        "text": "The total length of the segment header",
+        "correct": false
+      },
+      {
+        "text": "The expected buffer size of the receiver",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What characteristic describes the TCP acknowledgment number?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It is non-cumulative and specifies a single packet",
+        "correct": false
+      },
+      {
+        "text": "It is cumulative and defines the next byte expected to be received",
+        "correct": true
+      },
+      {
+        "text": "It represents the total bytes successfully decoded at the physical layer",
+        "correct": false
+      },
+      {
+        "text": "It matches the exact sequence number of the current segment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What mechanism does TCP use for flow control?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Stop-and-wait ARQ",
+        "correct": false
+      },
+      {
+        "text": "Sliding window protocol",
+        "correct": true
+      },
+      {
+        "text": "Token bucket algorithm",
+        "correct": false
+      },
+      {
+        "text": "Leaky bucket algorithm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In TCP's sliding window mechanism, what does the receiver window size represent if the total buffer size is N and M locations are occupied?",
+    "info": "",
+    "answers": [
+      {
+        "text": "M",
+        "correct": false
+      },
+      {
+        "text": "N + M",
+        "correct": false
+      },
+      {
+        "text": "N − M",
+        "correct": true
+      },
+      {
+        "text": "N × M",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What happens to the sender window size if the receiving buffer becomes totally full (receiver window value is zero)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The sender expands its window to maximum capacity",
+        "correct": false
+      },
+      {
+        "text": "The sender closes its window and stops sending data",
+        "correct": true
+      },
+      {
+        "text": "The sender ignores the value and continues transmission",
+        "correct": false
+      },
+      {
+        "text": "The sender switches to UDP mode",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What ultimately controls the maximum sender window size in TCP during normal flow control?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The router queue length",
+        "correct": false
+      },
+      {
+        "text": "The receiver window value",
+        "correct": true
+      },
+      {
+        "text": "The physical link bandwidth",
+        "correct": false
+      },
+      {
+        "text": "The application layer process speed alone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is Silly Window Syndrome in TCP operation?",
+    "info": "",
+    "answers": [
+      {
+        "text": "A condition where data is sent in very small segments, reducing network efficiency",
+        "correct": true
+      },
+      {
+        "text": "A memory leak in the transport layer buffer",
+        "correct": false
+      },
+      {
+        "text": "A security vulnerability in the three-way handshake",
+        "correct": false
+      },
+      {
+        "text": "An error in computing the 16-bit checksum",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Whose algorithm is used to prevent the silly window syndrome created by the sender application producing data too slowly?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Clark's algorithm",
+        "correct": false
+      },
+      {
+        "text": "Karn's algorithm",
+        "correct": false
+      },
+      {
+        "text": "Nagle's algorithm",
+        "correct": true
+      },
+      {
+        "text": "Dijkstra's algorithm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Whose solution is used to prevent the silly window syndrome created by the receiver application consuming data slowly?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Nagle's solution",
+        "correct": false
+      },
+      {
+        "text": "Clark's solution",
+        "correct": true
+      },
+      {
+        "text": "Karn's solution",
+        "correct": false
+      },
+      {
+        "text": "Shannon's solution",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is a key advantage of delayed acknowledgment in TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It increases packet overhead",
+        "correct": false
+      },
+      {
+        "text": "It reduces network traffic by avoiding separate acknowledgement segments",
+        "correct": true
+      },
+      {
+        "text": "It speeds up the initial connection establishment",
+        "correct": false
+      },
+      {
+        "text": "It forces the sender to double its window size immediately",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which components are used by TCP for error detection?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Checksum, acknowledgment, and time-out",
+        "correct": true
+      },
+      {
+        "text": "Flow charts, sequence masks, and parity checks",
+        "correct": false
+      },
+      {
+        "text": "Congestion windows and persistence timers",
+        "correct": false
+      },
+      {
+        "text": "IP addresses and port numbers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does TCP handle a corrupted or lost segment?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It ignores the corruption and delivers bad data to the application layer",
+        "correct": false
+      },
+      {
+        "text": "It waits for a retransmission timer to expire and retransmits the segment",
+        "correct": true
+      },
+      {
+        "text": "It requests the data link layer to fix the bits",
+        "correct": false
+      },
+      {
+        "text": "It resets the entire network interface card",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does the destination TCP handle a duplicate segment?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It accepts both and passes them to the application",
+        "correct": false
+      },
+      {
+        "text": "It detects it via the sequence number and discards the later segment",
+        "correct": true
+      },
+      {
+        "text": "It responds with a reset (RST) packet immediately",
+        "correct": false
+      },
+      {
+        "text": "It doubles its receiving buffer size",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does TCP handle out-of-order segments?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It immediately sends an error code to the router",
+        "correct": false
+      },
+      {
+        "text": "It does not acknowledge an out-of-order segment until preceding segments arrive",
+        "correct": true
+      },
+      {
+        "text": "It reorders them at the network layer",
+        "correct": false
+      },
+      {
+        "text": "It drops all preceding segments",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which TCP timer is triggered when a segment is sent and used to handle retransmissions upon expiration?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Persistence timer",
+        "correct": false
+      },
+      {
+        "text": "Keepalive timer",
+        "correct": false
+      },
+      {
+        "text": "Retransmission timer",
+        "correct": true
+      },
+      {
+        "text": "Time-waited timer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What algorithm is used to avoid including the RTT of a retransmitted segment in dynamic RTT calculations?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Nagle's algorithm",
+        "correct": false
+      },
+      {
+        "text": "Clark's algorithm",
+        "correct": false
+      },
+      {
+        "text": "Karn's algorithm",
+        "correct": true
+      },
+      {
+        "text": "Leaky bucket algorithm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of the TCP persistence timer?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To deal with zero window-size advertisements and prevent permanent deadlock",
+        "correct": true
+      },
+      {
+        "text": "To keep client connections alive for 2 hours",
+        "correct": false
+      },
+      {
+        "text": "To maintain the TIME-WAIT state after termination",
+        "correct": false
+      },
+      {
+        "text": "To measure the slow-start threshold",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the typical default time-out value for a TCP keepalive timer when checking if an idle client has crashed?",
+    "info": "",
+    "answers": [
+      {
+        "text": "30 seconds",
+        "correct": false
+      },
+      {
+        "text": "5 minutes",
+        "correct": false
+      },
+      {
+        "text": "2 hours",
+        "correct": true
+      },
+      {
+        "text": "24 hours",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does TCP primarily assume is the cause of a lost segment in a modern network?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Hardware failure in the network interface card",
+        "correct": false
+      },
+      {
+        "text": "Congestion in the network",
+        "correct": true
+      },
+      {
+        "text": "Bit corruption due to thermal noise",
+        "correct": false
+      },
+      {
+        "text": "Incorrect port addressing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What defines the actual sending window size when considering both flow control and congestion control?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The maximum segment size (MSS) only",
+        "correct": false
+      },
+      {
+        "text": "The receiver window size only",
+        "correct": false
+      },
+      {
+        "text": "The minimum of the receiver window size and congestion window size",
+        "correct": true
+      },
+      {
+        "text": "The maximum of the receiver window size and congestion window size",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does the congestion window size change during the slow-start phase?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Linearly",
+        "correct": false
+      },
+      {
+        "text": "Exponentially",
+        "correct": true
+      },
+      {
+        "text": "Logarithmically",
+        "correct": false
+      },
+      {
+        "text": "It remains constant",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What action is taken under multiplicative decrease when a time-out (congestion) occurs?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The threshold is set to half of the last congestion window size, and the congestion window returns to one MSS (slow start)",
+        "correct": true
+      },
+      {
+        "text": "The window size is doubled to clear the queue faster",
+        "correct": false
+      },
+      {
+        "text": "The connection is immediately terminated with an RST packet",
+        "correct": false
+      },
+      {
+        "text": "The threshold is set to zero permanently",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the size range of a TCP header?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Exactly 20 bytes",
+        "correct": false
+      },
+      {
+        "text": "8 to 64 bytes",
+        "correct": false
+      },
+      {
+        "text": "20 to 60 bytes",
+        "correct": true
+      },
+      {
+        "text": "64 to 128 bytes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does the HLEN (Header Length) field in a TCP header specify?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The total size of the segment in bytes including data",
+        "correct": false
+      },
+      {
+        "text": "The number of 4-byte words in the TCP header",
+        "correct": true
+      },
+      {
+        "text": "The number of options present in bits",
+        "correct": false
+      },
+      {
+        "text": "The offset of the urgent data pointer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which control flag indicates that the urgent pointer field is valid?",
+    "info": "",
+    "answers": [
+      {
+        "text": "ACK",
+        "correct": false
+      },
+      {
+        "text": "PSH",
+        "correct": false
+      },
+      {
+        "text": "URG",
+        "correct": true
+      },
+      {
+        "text": "SYN",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the maximum size of the window size field in the basic TCP header (without scaling)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "2^8 − 1 bytes",
+        "correct": false
+      },
+      {
+        "text": "2^16 − 1 (65,535) bytes",
+        "correct": true
+      },
+      {
+        "text": "2^32 − 1 bytes",
+        "correct": false
+      },
+      {
+        "text": "1500 bytes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How are options categorized in a TCP header?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Single-byte and multiple-byte",
+        "correct": true
+      },
+      {
+        "text": "Fixed-length and variable-length",
+        "correct": false
+      },
+      {
+        "text": "Mandatory and optional",
+        "correct": false
+      },
+      {
+        "text": "Public and private",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the purpose of the End of Option (EOL) single-byte option?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To double the window size",
+        "correct": false
+      },
+      {
+        "text": "To serve as padding at the very end of the option field",
+        "correct": true
+      },
+      {
+        "text": "To request an immediate connection reset",
+        "correct": false
+      },
+      {
+        "text": "To calculate the RTT dynamically",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the function of the No-Operation (NOP) option in TCP headers?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To abort a stalled transfer",
+        "correct": false
+      },
+      {
+        "text": "To align the next option on a 32-bit boundary",
+        "correct": true
+      },
+      {
+        "text": "To reset the sequence numbering counter",
+        "correct": false
+      },
+      {
+        "text": "To signal a zero window size",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How is the new window size calculated when the Window Scale Factor option is active?",
+    "info": "",
+    "answers": [
+      {
+        "text": "New window size = header window size × scale factor",
+        "correct": false
+      },
+      {
+        "text": "New window size = header window size × 2^(window scale factor)",
+        "correct": true
+      },
+      {
+        "text": "New window size = header window size + scale factor",
+        "correct": false
+      },
+      {
+        "text": "New window size = header window size squared",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Is the inclusion of the checksum in TCP optional or mandatory?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Optional (like UDP)",
+        "correct": false
+      },
+      {
+        "text": "Mandatory",
+        "correct": true
+      },
+      {
+        "text": "Optional for IPv4, mandatory for IPv6",
+        "correct": false
+      },
+      {
+        "text": "Deprecated in modern TCP implementations",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What extra component is added to the TCP segment when calculating the TCP checksum?",
+    "info": "",
+    "answers": [
+      {
+        "text": "An application-layer signature",
+        "correct": false
+      },
+      {
+        "text": "A pseudoheader",
+        "correct": true
+      },
+      {
+        "text": "A hardware MAC address",
+        "correct": false
+      },
+      {
+        "text": "A timestamp echo reply",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which field from the IP layer is included in the TCP pseudoheader for checksum verification?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Type of Service (ToS)",
+        "correct": false
+      },
+      {
+        "text": "Time to Live (TTL)",
+        "correct": false
+      },
+      {
+        "text": "Protocol field (value 6 for TCP)",
+        "correct": true
+      },
+      {
+        "text": "Header Checksum",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary purpose of the 16-bit checksum field in TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To detect corrupted segments during transmission",
+        "correct": true
+      },
+      {
+        "text": "To measure network bandwidth usage",
+        "correct": false
+      },
+      {
+        "text": "To store the round-trip time (RTT)",
+        "correct": false
+      },
+      {
+        "text": "To sequence incoming packet fragments",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many steps are used for TCP connection establishment (three-way handshaking)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Two steps",
+        "correct": false
+      },
+      {
+        "text": "Three steps",
+        "correct": true
+      },
+      {
+        "text": "Four steps",
+        "correct": false
+      },
+      {
+        "text": "Five steps",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What type of segment is sent by the client to initiate a TCP connection?",
+    "info": "",
+    "answers": [
+      {
+        "text": "A FIN segment",
+        "correct": false
+      },
+      {
+        "text": "An RST segment",
+        "correct": false
+      },
+      {
+        "text": "A SYN segment",
+        "correct": true
+      },
+      {
+        "text": "An ACK-only segment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How many steps/segments are typically required to terminate a TCP connection in both directions (four-way handshaking)?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Two steps",
+        "correct": false
+      },
+      {
+        "text": "Three steps",
+        "correct": false
+      },
+      {
+        "text": "Four steps",
+        "correct": true
+      },
+      {
+        "text": "Five steps",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In what scenarios is a connection reset (RST) triggered?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Requesting a connection to a nonexistent port, aborting due to abnormality, or destroying long-idle connections",
+        "correct": true
+      },
+      {
+        "text": "Regular graceful file transfer completion",
+        "correct": false
+      },
+      {
+        "text": "Normal slow-start threshold adjustments",
+        "correct": false
+      },
+      {
+        "text": "Standard acknowledgment timeout recovery",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What state does a server TCP enter after a passive open while waiting for a client connection request?",
+    "info": "",
+    "answers": [
+      {
+        "text": "ESTABLISHED",
+        "correct": false
+      },
+      {
+        "text": "LISTEN",
+        "correct": true
+      },
+      {
+        "text": "SYN-SENT",
+        "correct": false
+      },
+      {
+        "text": "TIME-WAIT",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What state does a client enter immediately after sending the initial SYN segment?",
+    "info": "",
+    "answers": [
+      {
+        "text": "SYN-SENT",
+        "correct": true
+      },
+      {
+        "text": "SYN-RCVD",
+        "correct": false
+      },
+      {
+        "text": "ESTABLISHED",
+        "correct": false
+      },
+      {
+        "text": "CLOSE-WAIT",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which state represents an active, fully operational data-transfer connection in TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "LISTEN",
+        "correct": false
+      },
+      {
+        "text": "ESTABLISHED",
+        "correct": true
+      },
+      {
+        "text": "TIME-WAIT",
+        "correct": false
+      },
+      {
+        "text": "LAST-ACK",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "During connection termination, which state does the active closer enter right after sending the final ACK in response to the server's FIN?",
+    "info": "",
+    "answers": [
+      {
+        "text": "CLOSED",
+        "correct": false
+      },
+      {
+        "text": "TIME-WAIT",
+        "correct": true
+      },
+      {
+        "text": "FIN-WAIT-1",
+        "correct": false
+      },
+      {
+        "text": "CLOSE-WAIT",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does TCP handle application data during encapsulation?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It adds a TCP header to the application message, creating a TCP segment which is then encapsulated in an IP datagram",
+        "correct": true
+      },
+      {
+        "text": "It fragments the data directly into Ethernet frames without headers",
+        "correct": false
+      },
+      {
+        "text": "It passes raw bytes straight to the physical layer",
+        "correct": false
+      },
+      {
+        "text": "It converts text into UDP datagrams",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What mechanism does TCP use to handle multiple application programs sending and receiving data simultaneously on a single host?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Multiplexing and Demultiplexing",
+        "correct": true
+      },
+      {
+        "text": "Parity error correction",
+        "correct": false
+      },
+      {
+        "text": "Slow-start threshold scaling",
+        "correct": false
+      },
+      {
+        "text": "Pseudoheader checksum generation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the function of the Push (PSH) operation in TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To force TCP to send data immediately without waiting for the window to fill",
+        "correct": true
+      },
+      {
+        "text": "To reset the connection if buffer space is low",
+        "correct": false
+      },
+      {
+        "text": "To retransmit lost segments instantly",
+        "correct": false
+      },
+      {
+        "text": "To prioritize urgent out-of-band data pointers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "How does TCP handle urgent data when requested by an application?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It places the urgent data at the beginning of the segment and sets the URG bit",
+        "correct": true
+      },
+      {
+        "text": "It drops all normal data until the urgent stream finishes",
+        "correct": false
+      },
+      {
+        "text": "It routes the urgent data through UDP to save bandwidth",
+        "correct": false
+      },
+      {
+        "text": "It encrypts the urgent bytes with an independent key",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What is the primary role of the Transmission Control Block (TCB) in a TCP software package implementation?",
+    "info": "",
+    "answers": [
+      {
+        "text": "To store connection-specific state information such as socket numbers, window pointers, and sequence numbers",
+        "correct": true
+      },
+      {
+        "text": "To calculate 16-bit IP header checksums",
+        "correct": false
+      },
+      {
+        "text": "To physically route network packets across routers",
+        "correct": false
+      },
+      {
+        "text": "To parse HTTP application requests",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "What does a TCP software package typically manage regarding connection endpoints?",
+    "info": "",
+    "answers": [
+      {
+        "text": "It handles connection tables and controls module interactions across local and remote socket pairs",
+        "correct": true
+      },
+      {
+        "text": "It only manages physical cable connections",
+        "correct": false
+      },
+      {
+        "text": "It translates domain names directly into MAC addresses",
+        "correct": false
+      },
+      {
+        "text": "It configures switch port VLANs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "In the context of TCP package architecture, how are incoming IP datagrams handed off to TCP?",
+    "info": "",
+    "answers": [
+      {
+        "text": "Through the IP demultiplexing interface matching protocol number 6",
+        "correct": true
+      },
+      {
+        "text": "Through the physical network interface driver directly",
+        "correct": false
+      },
+      {
+        "text": "By converting them into Ethernet frames",
+        "correct": false
+      },
+      {
+        "text": "By bypassing the transport layer entirely",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "text": "Which internal software component is responsible for timing out unacknowledged segments within a TCP package implementation?",
+    "info": "",
+    "answers": [
+      {
+        "text": "The retransmission timer management module",
+        "correct": true
+      },
+      {
+        "text": "The physical layer clock sync",
+        "correct": false
+      },
+      {
+        "text": "The application process scheduler",
+        "correct": false
+      },
+      {
+        "text": "The DNS resolver daemon",
+        "correct": false
+      }
+    ]
+  }
+]
